@@ -50,7 +50,32 @@
     <Compile Include="Kullanici\KullaniciGuncelleDTO.cs" />
     <Compile Include="Kullanici\KullaniciListeleDTO.cs" />
     <Compile Include="LogDTO.cs" />
+    <Compile Include="Madde\MaddeDetayDTO.cs" />
+    <Compile Include="Madde\MaddeEkleDTO.cs" />
+    <Compile Include="Madde\MaddeGuncelleDTO.cs" />
+    <Compile Include="Madde\MaddeListeleDTO.cs" />
+    <Compile Include="Marka\MarkaDetayDTO.cs" />
+    <Compile Include="Marka\MarkaEkleDTO.cs" />
+    <Compile Include="Marka\MarkaGuncelleDTO.cs" />
+    <Compile Include="Marka\MarkaListeleDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rol\RolDetayDTO.cs" />
+    <Compile Include="Rol\RolEkleDTO.cs" />
+    <Compile Include="Rol\RolGuncelleDTO.cs" />
+    <Compile Include="Rol\RolListeleDTO.cs" />
+    <Compile Include="Uretici\UreticiDetayDTO.cs" />
+    <Compile Include="Uretici\UreticiEkleDTO.cs" />
+    <Compile Include="Uretici\UreticiGuncelleDTO.cs" />
+    <Compile Include="Uretici\UreticiListeleDTO.cs" />
+    <Compile Include="Urun\UrunDetayDTO.cs" />
+    <Compile Include="Urun\UrunEkleDTO.cs" />
+    <Compile Include="Urun\UrunGuncelleDTO.cs" />
+    <Compile Include="Urun\UrunListeleDTO.cs" />
+    <Compile Include="Yetki\YetkiDetayDTO.cs" />
+    <Compile Include="Yetki\YetkiEkleDTO.cs" />
+    <Compile Include="Yetki\YetkiGuncelleDTO.cs" />
+    <Compile Include="Yetki\YetkiListeleDTO.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

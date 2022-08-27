@@ -11,7 +11,7 @@ namespace YesilEvCodeFirst.DTOs.Kullanici
         public string Mail { get; set; }
         public string Sifre { get; set; }
         public string Rol { get; set; }
-        public List<String> YasakMaddeler{ get; set; }
+        public List<int> YasakMaddeler{ get; set; }
         //todo burada fav listesi ve kara liste olacak sanirim
     }
 }
