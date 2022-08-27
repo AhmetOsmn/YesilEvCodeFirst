@@ -19,7 +19,8 @@ namespace YesilEvCodeFirst.Core.Entities
         [StringLength(100)]
         public string Aciklama { get; set; }
 
-        List<string> Pictures { get; set; }
+        public string FrontPicture { get; set; }
+        public string BackPicture { get; set; }
 
 
         #region Iliskiler

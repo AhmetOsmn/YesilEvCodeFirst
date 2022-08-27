@@ -78,6 +78,11 @@
     <Compile Include="Yetki\YetkiGuncelleDTO.cs" />
     <Compile Include="Yetki\YetkiListeleDTO.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\YesilEvCodeFirst.Core\YesilEvCodeFirst.Core.csproj">
+      <Project>{a4183c9b-69c0-441d-8258-d0677fa06e86}</Project>
+      <Name>YesilEvCodeFirst.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,13 +13,6 @@ namespace YesilEvCodeFirst.DAL
 {
     public class UseUrunDAL : EfRepoBase<YesilEvDbContext, Urun>
     {
-        private readonly IMapper _mapper;
-
-        public UseUrunDAL(IMapper mapper)
-        {
-            _mapper = mapper;
-        }
-
         public bool UrunEkle(UrunEkleDTO dto)
         {
             JsonLogger<LogDTO> myLog = new JsonLogger<LogDTO>("MyLog");
@@ -28,15 +21,21 @@ namespace YesilEvCodeFirst.DAL
 
             try
             {
-                // validator.IsValid
-                //if(!validator.IsValid)
-                //{
-                //    throw new ModelNotValidException(validator.ValidationMessages);
-                //}
 
                 UrunDAL dal = new UrunDAL();
+                var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<UrunEkleDTO, Urun>()
+                                                                    .ForMember(dest => dest.Maddeler, act => act.MapFrom(src => src.Maddeler))
+                                                                    .AfterMap((urunDto, urun) =>
+                                                                    {
+                                                                        foreach (var item in urunDto.Maddeler)
+                                                                        {
+                                                                            urun.Maddeler = urunDto.Maddeler;
+                                                                        }
+                                                                    }));
+                var mapper = new Mapper(mapperConfig);
 
-                dal.Add(_mapper.Map<Urun>(dto));
+                Urun eklenecekUrun = mapper.Map<Urun>(dto);
+                dal.Add(eklenecekUrun);
 
                 dal.MySaveChanges();
 
@@ -50,7 +49,7 @@ namespace YesilEvCodeFirst.DAL
             }
             catch (Exception ex)
             {
-                LogFunc(myLog,"","Ahmet",ex.Message,"Urun",Islem.Error);
+                LogFunc(myLog, "", "Ahmet", ex.Message, "Urun", Islem.Error);
             }
             return false;
         }
