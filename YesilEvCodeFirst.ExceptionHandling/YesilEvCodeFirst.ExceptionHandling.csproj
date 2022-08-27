@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{94D00F1C-7006-49F9-9AB8-2804DEFE0036}</ProjectGuid>
+    <ProjectGuid>{623E766D-0492-4101-AE9D-CDDFBBE41551}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>YesilEvCodeFirst.Mapping</RootNamespace>
-    <AssemblyName>YesilEvCodeFirst.Mapping</AssemblyName>
+    <RootNamespace>YesilEvCodeFirst.ExceptionHandling</RootNamespace>
+    <AssemblyName>YesilEvCodeFirst.ExceptionHandling</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoMapper.10.0.0\lib\net461\AutoMapper.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,21 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MappingProfile.cs" />
+    <Compile Include="ExceptionBase.cs" />
+    <Compile Include="ModelNotValidException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\YesilEvCodeFirst.Core\YesilEvCodeFirst.Core.csproj">
-      <Project>{A4183C9B-69C0-441D-8258-D0677FA06E86}</Project>
-      <Name>YesilEvCodeFirst.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\YesilEvCodeFirst.DTOs\YesilEvCodeFirst.DTOs.csproj">
-      <Project>{99A0A7BE-EA90-4C9E-A97D-F193FAB15C7E}</Project>
-      <Name>YesilEvCodeFirst.DTOs</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

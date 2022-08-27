@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -68,11 +71,24 @@
     <Compile Include="Concrete\UrunDAL.cs" />
     <Compile Include="Concrete\YetkiDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UseUrunDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YesilEvCodeFirst.Core\YesilEvCodeFirst.Core.csproj">
       <Project>{a4183c9b-69c0-441d-8258-d0677fa06e86}</Project>
       <Name>YesilEvCodeFirst.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YesilEvCodeFirst.DTOs\YesilEvCodeFirst.DTOs.csproj">
+      <Project>{99A0A7BE-EA90-4C9E-A97D-F193FAB15C7E}</Project>
+      <Name>YesilEvCodeFirst.DTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YesilEvCodeFirst.ExceptionHandling\YesilEvCodeFirst.ExceptionHandling.csproj">
+      <Project>{623E766D-0492-4101-AE9D-CDDFBBE41551}</Project>
+      <Name>YesilEvCodeFirst.ExceptionHandling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YesilEvCodeFirst.Logs\YesilEvCodeFirst.Logs.csproj">
+      <Project>{4B8FD883-6D4B-49A2-B1DB-39836431FA17}</Project>
+      <Name>YesilEvCodeFirst.Logs</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
