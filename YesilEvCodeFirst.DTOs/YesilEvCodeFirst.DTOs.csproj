@@ -68,9 +68,11 @@
     <Compile Include="Uretici\UreticiGuncelleDTO.cs" />
     <Compile Include="Uretici\UreticiListeleDTO.cs" />
     <Compile Include="Urun\UrunDetayDTO.cs" />
+    <Compile Include="Urun\UrunDetayGetirDTO.cs" />
     <Compile Include="Urun\UrunEkleDTO.cs" />
     <Compile Include="Urun\UrunGuncelleDTO.cs" />
     <Compile Include="Urun\UrunListeleDTO.cs" />
+    <Compile Include="Urun\UrunSilDTO.cs" />
     <Compile Include="Yetki\YetkiDetayDTO.cs" />
     <Compile Include="Yetki\YetkiEkleDTO.cs" />
     <Compile Include="Yetki\YetkiGuncelleDTO.cs" />

@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YesilEvCodeFirst.Common", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YesilEvCodeFirst.DTOs", "YesilEvCodeFirst.DTOs\YesilEvCodeFirst.DTOs.csproj", "{99A0A7BE-EA90-4C9E-A97D-F193FAB15C7E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YesilEvCodeFirst.Validation", "YesilEvCodeFirst.Validation\YesilEvCodeFirst.Validation.csproj", "{747878DB-4D2A-4C4E-880C-7519A208F1BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{99A0A7BE-EA90-4C9E-A97D-F193FAB15C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99A0A7BE-EA90-4C9E-A97D-F193FAB15C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99A0A7BE-EA90-4C9E-A97D-F193FAB15C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{747878DB-4D2A-4C4E-880C-7519A208F1BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{747878DB-4D2A-4C4E-880C-7519A208F1BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{747878DB-4D2A-4C4E-880C-7519A208F1BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{747878DB-4D2A-4C4E-880C-7519A208F1BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
