@@ -10,7 +10,7 @@ namespace YesilEvCodeFirst.Mapping
         public static Product AddProductDTOToProduct(AddProductDTO dto)
         {
             var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddProductDTO, Product>());
-                                                                        
+
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<Product>(dto);
         }
@@ -24,6 +24,17 @@ namespace YesilEvCodeFirst.Mapping
             var result = mapper.Map<List<ListProductDTO>>(productList);
             return result;
         }
+
+        public static ListProductDTO ProductToListProductDTO(Product product)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<Product, ListProductDTO>());
+
+            var mapper = new Mapper(mapperConfig);
+
+            var result = mapper.Map<ListProductDTO>(product);
+            return result;
+        }
+
 
         public static GetProductDetailDTO ProductToGetProductDetailDTO(Product product)
         {

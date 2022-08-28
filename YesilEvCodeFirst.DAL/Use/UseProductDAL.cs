@@ -27,15 +27,11 @@ namespace YesilEvCodeFirst.DAL.Use
                 {
                     throw new ModelNotValidException(validator.ValidationMessages);
                 }
-
                 ProductDAL dal = new ProductDAL();
-
                 Product eklenecekUrun = MappingProfile.AddProductDTOToProduct(dto);
                 // maddeler split(",")
                 dal.Add(eklenecekUrun);
-
                 dal.MySaveChanges();
-
                 LogFunc(myLog, "", "Osman", "Ekleme islemi basarili", "Urun", Islem.Info);
 
                 return true;
@@ -56,21 +52,35 @@ namespace YesilEvCodeFirst.DAL.Use
             try
             {
                 ProductDAL dal = new ProductDAL();
-
-                var urunler = dal.GetAll();
-                List<ListProductDTO> urunList = MappingProfile.ProductListToProductListDTO(urunler);
+                List<ListProductDTO> productDTOList = MappingProfile.ProductListToProductListDTO(dal.GetAll());
                 LogFunc(myLog, "", "Ahmet Osman", "Listeleme islemi basarili", "Urun", Islem.Info);
-                return urunList;
+                return productDTOList;
             }
             catch (Exception ex)
             {
-
                 LogFunc(myLog, "", "Ahmet Osman", ex.Message, "Urun", Islem.Error);
             }
 
             return null;
         }
-        
+
+        public List<ListProductDTO> GetProductListForSearchbar(string filter)
+        {
+            try
+            {
+                ProductDAL dal = new ProductDAL();
+                List<ListProductDTO> listProductDTOList = MappingProfile.ProductListToProductListDTO(dal.GetByCondition(x => x.ProductName.ToLower().Contains(filter.ToLower())));
+                //log alinacak mi? her harf girildiginde log almak saglikli olmaz.
+                return listProductDTOList;
+            }
+            catch (Exception ex)
+            {
+                LogFunc(myLog, "", "Ahmet Osman", ex.Message, "Urun", Islem.Error);
+            }
+
+            return null;
+        }
+
         public GetProductDetailDTO GetProductDetailWithBarcode(string barcode)
         {
             // new barcodeValidator
@@ -83,8 +93,8 @@ namespace YesilEvCodeFirst.DAL.Use
                 //}
 
                 ProductDAL dal = new ProductDAL();
-                Product product = dal.GetByConditionWithInclude(produtct => produtct.Barcode.Equals(barcode),"Supplier","Category").SingleOrDefault();
-                if(product != null)
+                Product product = dal.GetByConditionWithInclude(produtct => produtct.Barcode.Equals(barcode), "Supplier", "Category").SingleOrDefault();
+                if (product != null)
                 {
                     //mapping Urun -> GetProductDetailDTO
                     GetProductDetailDTO urunDetail = MappingProfile.ProductToGetProductDetailDTO(product);
@@ -93,6 +103,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
+                    //  Eşleşmezse, yeni ürün ekleme sayfası gelecek ve doldurulması gereken formda barkod no hazır olarak gözükecek.
                     throw new Exception("Urun bulunamadi");
                 }
             }
@@ -100,6 +111,7 @@ namespace YesilEvCodeFirst.DAL.Use
             {
                 LogFunc(myLog, "", "Admin", ex.Message, "Urun", Islem.Info);
             }
+
             return null;
         }
 

@@ -49,9 +49,21 @@ namespace YesilEvCodeFirst.MyTest
         public void GetProductDetailTest()
         {
             UseProductDAL dal = new UseProductDAL();
-            var result = dal.GetProductDetailWithBarcode("T-ASFFH");
+            var result = dal.GetProductDetailWithBarcode("014A76");
 
             if(result == null)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+
+        [TestMethod]
+        public void GetProductListForSearchbarTest()
+        {
+            UseProductDAL dal = new UseProductDAL();
+            var result = dal.GetProductListForSearchbar("a");
+
+            if (result == null)
             {
                 throw new Exception("test sirasinda hata olustu");
             }
