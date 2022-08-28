@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.IO;
 using YesilEvCodeFirst.Logs.Abstract;
 
@@ -19,7 +20,7 @@ namespace YesilEvCodeFirst.Logs.Concrete
         {
             string strJson = JsonConvert.SerializeObject(alinacakLog);
             string fullPath = Path.Combine(filePath, _fileName);
-            File.WriteAllText(fullPath, strJson);
+            File.AppendAllText(fullPath, strJson + Environment.NewLine);
             //todo: loglari aynı dosya icerisine satir satir eklesin. Eski Loglar silinmesin, yeni gelenler alta eklenerek devam etsin.
         }
     }

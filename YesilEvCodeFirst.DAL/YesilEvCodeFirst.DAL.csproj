@@ -90,6 +90,14 @@
       <Project>{4B8FD883-6D4B-49A2-B1DB-39836431FA17}</Project>
       <Name>YesilEvCodeFirst.Logs</Name>
     </ProjectReference>
+    <ProjectReference Include="..\YesilEvCodeFirst.Mapping\YesilEvCodeFirst.Mapping.csproj">
+      <Project>{94D00F1C-7006-49F9-9AB8-2804DEFE0036}</Project>
+      <Name>YesilEvCodeFirst.Mapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YesilEvCodeFirst.Validation\YesilEvCodeFirst.Validation.csproj">
+      <Project>{747878DB-4D2A-4C4E-880C-7519A208F1BC}</Project>
+      <Name>YesilEvCodeFirst.Validation</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

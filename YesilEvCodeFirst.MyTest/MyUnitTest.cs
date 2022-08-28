@@ -34,5 +34,17 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
+
+        [TestMethod]
+        public void UrunListelemeTest()
+        {
+            UseUrunDAL dal = new UseUrunDAL();
+            var result = dal.UrunleriListele();
+
+            if(result == null)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
     }
 }
