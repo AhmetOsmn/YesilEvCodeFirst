@@ -1,25 +1,24 @@
-﻿using AutoMapper;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
 using YesilEvCodeFirst.DAL.Concrete;
 using YesilEvCodeFirst.DTOs;
-using YesilEvCodeFirst.DTOs.Urun;
+using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.ExceptionHandling;
 using YesilEvCodeFirst.Logs.Concrete;
 using YesilEvCodeFirst.Mapping;
-using YesilEvCodeFirst.Validation.Urun;
+using YesilEvCodeFirst.Validation.Product;
 
 namespace YesilEvCodeFirst.DAL
 {
-    public class UseUrunDAL : EfRepoBase<YesilEvDbContext, Urun>
+    public class UseUrunDAL : EfRepoBase<YesilEvDbContext, Product>
     {
         JsonLogger<LogDTO> myLog = new JsonLogger<LogDTO>("MyLog.txt");
-        public bool UrunEkle(UrunEkleDTO dto)
+        public bool AddProduct(AddProductDTO dto)
         {
-            UrunEkleValidator validator = new UrunEkleValidator(dto);
+            AddProductValidator validator = new AddProductValidator(dto);
 
             try
             {
@@ -28,9 +27,9 @@ namespace YesilEvCodeFirst.DAL
                     throw new ModelNotValidException(validator.ValidationMessages);
                 }
 
-                UrunDAL dal = new UrunDAL();
+                ProductDAL dal = new ProductDAL();
 
-                Urun eklenecekUrun = MappingProfile.UrunEkleDTOToUrun(dto);
+                Product eklenecekUrun = MappingProfile.AddProductDTOToProduct(dto);
                 dal.Add(eklenecekUrun);
 
                 dal.MySaveChanges();
@@ -50,14 +49,14 @@ namespace YesilEvCodeFirst.DAL
             return false;
         }
 
-        public List<UrunListeleDTO> UrunleriListele()
+        public List<ListProductDTO> GetProductList()
         {
             try
             {
-                UrunDAL dal = new UrunDAL();
+                ProductDAL dal = new ProductDAL();
 
                 var urunler = dal.GetAll();
-                List<UrunListeleDTO> urunList = MappingProfile.UrunListTOUrunDTOList(urunler);
+                List<ListProductDTO> urunList = MappingProfile.ProductListToProductListDTO(urunler);
                 LogFunc(myLog, "", "Ahmet Osman", "Listeleme islemi basarili", "Urun", Islem.Info);
                 return urunList;
             }
@@ -69,6 +68,8 @@ namespace YesilEvCodeFirst.DAL
 
             return null;
         }
+        
+
         private void LogFunc(JsonLogger<LogDTO> myLog, string dataID, string kisi, string not, string tablo, Islem islem)
         {
             myLog.Log(new LogDTO()

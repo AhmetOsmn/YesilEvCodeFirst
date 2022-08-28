@@ -13,54 +13,55 @@ namespace YesilEvCodeFirst.Core.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
-            // KullaniciMadde Tablosu
-            modelBuilder.Entity<Kullanici>()
-                .HasMany(kullanici => kullanici.Maddeler)
-                .WithMany(madde => madde.Kullanicilar)
+
+            // FavoriListUrun Tablosu
+            modelBuilder.Entity<FavList>()
+             .HasMany(lst => lst.Products)
+             .WithMany(product => product.FavLists)
+             .Map(map =>
+             {
+                 map.ToTable("ProductFavor");
+                 map.MapLeftKey("FavorID");
+                 map.MapRightKey("ProductID");
+             });
+
+
+            // KaralisteMadde Tablosu
+            modelBuilder.Entity<BlackList>()
+                .HasMany(lst => lst.Supplements)
+                .WithMany(supplement => supplement.BlackLists)
                 .Map(map =>
                 {
-                    map.ToTable("KullaniciMadde");
-                    map.MapLeftKey("KullaniciID");
-                    map.MapLeftKey("MaddeID");
+                    map.ToTable("BlackListSupplement");
+                    map.MapLeftKey("BlackListID");
+                    map.MapRightKey("SupplementID");
                 });
 
             // UrunMadde Tablosu
-            modelBuilder.Entity<Urun>()
-                .HasMany(urun => urun.Maddeler)
-                .WithMany(madde => madde.Urunler)
-                .Map(map =>
-                {
-                    map.ToTable("UrunMadde");
-                    map.MapRightKey("UrunID");
-                    map.MapLeftKey("MaddeID");
-                });
-
-            // RolYetki Tablosu
-            modelBuilder.Entity<Rol>()
-                .HasMany(rol => rol.Yetkiler)
-                .WithMany(yetki => yetki.Roller)
-                .Map(map =>
-                {
-                    map.ToTable("RolYetki");
-                    map.MapLeftKey("RolID");
-                    map.MapLeftKey("YetkiID");
-                });
-
-
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Product>()
+              .HasMany(product => product.Supplements)
+              .WithMany(supplement => supplement.Products)
+              .Map(map =>
+              {
+                  map.ToTable("ProductSupplement");
+                  map.MapLeftKey("ProductID");
+                  map.MapRightKey("SupplementID");
+              });
         }
 
-        public DbSet<Kategori> Kategori { get; set; }
-        public DbSet<Kullanici> Kullanici { get; set; }
-        public DbSet<Madde> Madde { get; set; }
-        public DbSet<Marka> Marka { get; set; }
-        public DbSet<Rol> Rol { get; set; }
-        public DbSet<Uretici> Uretici { get; set; }
-        public DbSet<Urun> Urun { get; set; }
-        public DbSet<Yetki> Yetki { get; set; }
+        public DbSet<BlackList> BlackList { get; set; }
+        public DbSet<Category> Category { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<FavList> FavList{ get; set; }
+        public DbSet<Picture> Picture { get; set; }
+        public DbSet<Product> Product { get; set; }
+        public DbSet<Role> Role { get; set; }
+        public DbSet<Supplement> Supliment { get; set; }
+        public DbSet<Supplier> Supplier { get; set; }
 
 
     }

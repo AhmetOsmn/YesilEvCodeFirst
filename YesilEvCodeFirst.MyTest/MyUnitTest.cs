@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.DAL;
-using YesilEvCodeFirst.DTOs.Urun;
+using YesilEvCodeFirst.DTOs.Product;
 
 namespace YesilEvCodeFirst.MyTest
 {
@@ -12,21 +12,19 @@ namespace YesilEvCodeFirst.MyTest
     public class MyUnitTest
     {
         [TestMethod]
-        public void UrunEklemeTest()
+        public void AddProductTest()
         {
             UseUrunDAL dal = new UseUrunDAL();
-            bool result = dal.UrunEkle(new UrunEkleDTO()
+            bool result = dal.AddProduct(new AddProductDTO()
             {
-                Aciklama = "TEST",
-                BarkodNo = Guid.NewGuid(),
-                KategoriID = 2,
+                ProductContent = "TEST",
+                BarcodeCode = Guid.NewGuid(),
+                CategoryID = 2,
                 // todo: maddeler'in int ile ID leri verilecek
-                Maddeler = new List<Madde> { new Madde { MaddeAdi = "Madde 1" }, new Madde { MaddeAdi = "Madde 2" }},
-                MarkaID = 2,
-                UreticiID = 3,
-                UrunAdi = "TEST URUN 1",
-                BackPicture = "back picture path",
-                FrontPicture = "front picture path"
+                //Maddeler = new List<Supplement> { new Supplement { SupplementName = "Madde 1" }, new Supplement { SupplementName = "Madde 2" }},
+                SupplierID = 3,
+                ProductName = "TEST URUN 1",
+               
             });
 
             if (!result)
@@ -36,10 +34,10 @@ namespace YesilEvCodeFirst.MyTest
         }
 
         [TestMethod]
-        public void UrunListelemeTest()
+        public void ListProductsTest()
         {
             UseUrunDAL dal = new UseUrunDAL();
-            var result = dal.UrunleriListele();
+            var result = dal.GetProductList();
 
             if(result == null)
             {

@@ -41,12 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Kategori\KategoriEkleValidator.cs" />
-    <Compile Include="Urun\UrunDetailValidator.cs" />
-    <Compile Include="Urun\UrunDetayGetirValidator.cs" />
-    <Compile Include="Urun\UrunEkleValidator.cs" />
-    <Compile Include="Urun\UrunGuncelleValidator.cs" />
-    <Compile Include="Urun\UrunSilValidator.cs" />
+    <Compile Include="Product\AddProductValidator.cs" />
+    <Compile Include="Product\UpdateProductValidator.cs" />
     <Compile Include="ValidatorBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

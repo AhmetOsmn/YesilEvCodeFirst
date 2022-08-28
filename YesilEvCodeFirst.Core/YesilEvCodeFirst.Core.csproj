@@ -71,14 +71,15 @@
   <ItemGroup>
     <Compile Include="Context\YesilEvDbContext.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
-    <Compile Include="Entities\Kategori.cs" />
-    <Compile Include="Entities\Kullanici.cs" />
-    <Compile Include="Entities\Madde.cs" />
-    <Compile Include="Entities\Marka.cs" />
-    <Compile Include="Entities\Rol.cs" />
-    <Compile Include="Entities\Uretici.cs" />
-    <Compile Include="Entities\Urun.cs" />
-    <Compile Include="Entities\Yetki.cs" />
+    <Compile Include="Entities\FavList.cs" />
+    <Compile Include="Entities\BlackList.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Picture.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\Supplement.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\Supplier.cs" />
+    <Compile Include="Entities\Product.cs" />
     <Compile Include="Interfaces\IDeletableRepo.cs" />
     <Compile Include="Interfaces\IInsertableRepo.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
