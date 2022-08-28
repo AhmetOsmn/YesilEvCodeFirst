@@ -50,6 +50,11 @@ namespace YesilEvCodeFirst.Core.Repos
         {
             return _context.Set<TEntity>().Where(whereCondition).ToList();
         }
+        public List<TEntity> GetByConditionWithInclude(Func<TEntity, bool> whereCondition, string table, string table2)
+        {
+            var result = _context.Set<TEntity>().Include(table).Include(table2).Where(whereCondition).ToList();
+            return result;
+        }
 
         public TEntity GetByID(object ID)
         {
@@ -66,5 +71,7 @@ namespace YesilEvCodeFirst.Core.Repos
             _context.Entry(item).State = EntityState.Modified;
             _context.Set<TEntity>().Attach(item);
         }
+
+
     }
 }

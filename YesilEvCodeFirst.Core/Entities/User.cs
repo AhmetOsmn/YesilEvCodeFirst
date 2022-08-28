@@ -26,6 +26,10 @@ namespace YesilEvCodeFirst.Core.Entities
         public string UserName { get; set; }
 
         [Column(TypeName = "NVARCHAR")]
+        [StringLength(25)]
+        public string Phone { get; set; }
+
+        [Column(TypeName = "NVARCHAR")]
         [StringLength(10)]
         public string Password { get; set; }
 

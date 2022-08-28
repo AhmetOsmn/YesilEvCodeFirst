@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
@@ -11,9 +12,9 @@ using YesilEvCodeFirst.Logs.Concrete;
 using YesilEvCodeFirst.Mapping;
 using YesilEvCodeFirst.Validation.Product;
 
-namespace YesilEvCodeFirst.DAL
+namespace YesilEvCodeFirst.DAL.Use
 {
-    public class UseUrunDAL : EfRepoBase<YesilEvDbContext, Product>
+    public class UseProductDAL : EfRepoBase<YesilEvDbContext, Product>
     {
         JsonLogger<LogDTO> myLog = new JsonLogger<LogDTO>("MyLog.txt");
         public bool AddProduct(AddProductDTO dto)
@@ -30,6 +31,7 @@ namespace YesilEvCodeFirst.DAL
                 ProductDAL dal = new ProductDAL();
 
                 Product eklenecekUrun = MappingProfile.AddProductDTOToProduct(dto);
+                // maddeler split(",")
                 dal.Add(eklenecekUrun);
 
                 dal.MySaveChanges();
@@ -69,6 +71,37 @@ namespace YesilEvCodeFirst.DAL
             return null;
         }
         
+        public GetProductDetailDTO GetProductDetailWithBarcode(string barcode)
+        {
+            // new barcodeValidator
+            try
+            {
+                // validasyon
+                //if (!validator.IsValid)
+                //{
+                //    throw new ModelNotValidException(validator.ValidationMessages);
+                //}
+
+                ProductDAL dal = new ProductDAL();
+                Product product = dal.GetByConditionWithInclude(produtct => produtct.Barcode.Equals(barcode),"Supplier","Category").SingleOrDefault();
+                if(product != null)
+                {
+                    //mapping Urun -> GetProductDetailDTO
+                    GetProductDetailDTO urunDetail = MappingProfile.ProductToGetProductDetailDTO(product);
+                    LogFunc(myLog, "", "Admin", "Detay getirme basarili", "Urun", Islem.Info);
+                    return urunDetail;
+                }
+                else
+                {
+                    throw new Exception("Urun bulunamadi");
+                }
+            }
+            catch (Exception ex)
+            {
+                LogFunc(myLog, "", "Admin", ex.Message, "Urun", Islem.Info);
+            }
+            return null;
+        }
 
         private void LogFunc(JsonLogger<LogDTO> myLog, string dataID, string kisi, string not, string tablo, Islem islem)
         {

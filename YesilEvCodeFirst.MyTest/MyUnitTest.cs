@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.DAL;
+using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs.Product;
 
 namespace YesilEvCodeFirst.MyTest
@@ -14,17 +15,16 @@ namespace YesilEvCodeFirst.MyTest
         [TestMethod]
         public void AddProductTest()
         {
-            UseUrunDAL dal = new UseUrunDAL();
+            UseProductDAL dal = new UseProductDAL();
             bool result = dal.AddProduct(new AddProductDTO()
             {
-                ProductContent = "TEST",
-                BarcodeCode = Guid.NewGuid(),
-                CategoryID = 2,
-                // todo: maddeler'in int ile ID leri verilecek
-                //Maddeler = new List<Supplement> { new Supplement { SupplementName = "Madde 1" }, new Supplement { SupplementName = "Madde 2" }},
-                SupplierID = 3,
                 ProductName = "TEST URUN 1",
-               
+                Barcode = Guid.NewGuid().ToString().Substring(0,7),
+                CategoryID = 2,
+                SupplierID = 2,
+                ProductContent = "madde1, madde2, madde3, madde4, madde5, madde6",
+                PictureBackPath = "backtest",
+                PictureFronthPath = "fronttest"
             });
 
             if (!result)
@@ -36,8 +36,20 @@ namespace YesilEvCodeFirst.MyTest
         [TestMethod]
         public void ListProductsTest()
         {
-            UseUrunDAL dal = new UseUrunDAL();
+            UseProductDAL dal = new UseProductDAL();
             var result = dal.GetProductList();
+
+            if(result == null)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+
+        [TestMethod]
+        public void GetProductDetailTest()
+        {
+            UseProductDAL dal = new UseProductDAL();
+            var result = dal.GetProductDetailWithBarcode("T-ASFFH");
 
             if(result == null)
             {

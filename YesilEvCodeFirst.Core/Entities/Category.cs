@@ -10,7 +10,7 @@ namespace YesilEvCodeFirst.Core.Entities
         [Column(TypeName = "NVARCHAR")]
         [StringLength(100)]
         public string CategoryName { get; set; }
-        public int UstCategoryID { get; set; }
+        public int? UstCategoryID { get; set; }
         [ForeignKey("UstCategoryID")]
         public Category UstCategory { get; set; }
     }

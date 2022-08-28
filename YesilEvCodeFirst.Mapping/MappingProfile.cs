@@ -9,29 +9,32 @@ namespace YesilEvCodeFirst.Mapping
     {
         public static Product AddProductDTOToProduct(AddProductDTO dto)
         {
-            //var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<UrunEkleDTO, Product>()
-            //                                                             .ForMember(dest => dest.Maddeler, act => act.MapFrom(src => src.Maddeler))
-            //                                                             .AfterMap((urunDto, urun) =>
-            //                                                             {
-            //                                                                 urun.Maddeler = urunDto.Maddeler;
-            //                                                             }));
-            //var mapper = new Mapper(mapperConfig);
-            //return mapper.Map<Product>(dto);
-            return new Product() { };
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddProductDTO, Product>());
+                                                                        
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<Product>(dto);
         }
 
         public static List<ListProductDTO> ProductListToProductListDTO(List<Product> productList)
         {
-            //var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<Product, UrunListeleDTO>());
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<Product, ListProductDTO>());
 
-            //var mapper = new Mapper(mapperConfig);
+            var mapper = new Mapper(mapperConfig);
 
-            //var result = mapper.Map<List<UrunListeleDTO>>(urunList);
-            //return result;
-            return new List<ListProductDTO>();
+            var result = mapper.Map<List<ListProductDTO>>(productList);
+            return result;
         }
 
-
-
+        public static GetProductDetailDTO ProductToGetProductDetailDTO(Product product)
+        {
+            var mapperConfig = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Product, GetProductDetailDTO>()
+                   .ForMember(dest => dest.SupplierName, opt => opt.MapFrom(src => src.Supplier.SupplierName))
+                   .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.CategoryName));
+            });
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<GetProductDetailDTO>(product);
+        }
     }
 }

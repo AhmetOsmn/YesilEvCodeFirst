@@ -15,17 +15,15 @@ namespace YesilEvCodeFirst.Core.Entities
         public string ProductName { get; set; }
 
         [Column(TypeName = "NVARCHAR")]
-        [StringLength(30)]
+        [StringLength(50)]
         public string Barcode { get; set; }
-
-        public string TracingNo { get; set; }
-        public string FrontPicture { get; set; }
-        public string BackPicture { get; set; }
+        public string TracingNo { get; set; } = Guid.NewGuid().ToString();
+        public string PictureFronthPath { get; set; }
+        public string PictureBackPath { get; set; }
         public string ProductContent { get; set; }
 
         #region Relations
-        public int SupplementID { get; set; }
-        [ForeignKey("SupplementID")]
+       
         public List<Supplement> Supplements { get; set; }
 
 

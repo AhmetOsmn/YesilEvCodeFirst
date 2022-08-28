@@ -11,7 +11,7 @@ namespace YesilEvCodeFirst.Core.Entities
         [Column(TypeName = "NVARCHAR")]
         [StringLength(30)]
         public string RolName { get; set; }
-        public int UstRolID { get; set; }
+        public int? UstRolID { get; set; }
         [ForeignKey("UstRolID")]
         public Role UstRol { get; set; }
     }

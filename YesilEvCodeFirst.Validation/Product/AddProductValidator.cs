@@ -78,7 +78,7 @@ namespace YesilEvCodeFirst.Validation.Product
 
         private void BarcodeCodeValidator()
         {
-            if (Model.BarcodeCode == null)
+            if (Model.Barcode == null)
             {
                 IsValid = false;
                 ValidationMessages.Add("BarkodNo bos olamaz.");
