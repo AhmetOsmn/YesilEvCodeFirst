@@ -4,6 +4,7 @@ using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.DTOs.Category;
 using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.Supplier;
+using YesilEvCodeFirst.DTOs.UserAdmin;
 
 namespace YesilEvCodeFirst.Mapping
 {
@@ -56,5 +57,12 @@ namespace YesilEvCodeFirst.Mapping
             return mapper.Map<List<CategoryDTO>>(categoryList);
         }
 
+        public static User AddUserDTOtoUser(AddUserDTO dt)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddUserDTO, User>());
+
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<User>(dt);
+        }
     }
 }

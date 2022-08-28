@@ -7,6 +7,7 @@ using YesilEvCodeFirst.DAL;
 using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Product;
+using YesilEvCodeFirst.DTOs.User;
 
 namespace YesilEvCodeFirst.MyTest
 {
@@ -19,8 +20,8 @@ namespace YesilEvCodeFirst.MyTest
             UseUserDAL dal = new UseUserDAL();
             var result = dal.Login(new LoginDTO
             {
-                Email = "sar22p@gmail.com",
-                Password = "sarp555"
+                Email = "ahmet@gmail.com",
+                Password = "ahmet555"
             });
 
             if (result == false)
@@ -44,6 +45,27 @@ namespace YesilEvCodeFirst.MyTest
                 ProductContent = "madde1, madde2, madde3, madde4, madde5, madde6",
                 PictureBackPath = "backtest",
                 PictureFronthPath = "fronttest"
+            });
+
+            if (!result)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+
+        [TestMethod]
+        public void AddUserTest()
+        {
+            UseUserDAL dal = new UseUserDAL();
+            bool result = dal.AddUser(new AddUserDTO()
+            {
+                FirstName = "Veli",
+                LastName = "Canlı",
+                Email = "veli@gmail.com",
+                UserName = "userveli",
+                Password = "veli555",
+                Phone = "5345898818",
+                RolID = 2
             });
 
             if (!result)

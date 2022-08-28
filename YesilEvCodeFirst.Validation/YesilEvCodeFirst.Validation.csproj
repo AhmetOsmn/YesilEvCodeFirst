@@ -44,6 +44,7 @@
     <Compile Include="Login\LoginValidator.cs" />
     <Compile Include="Product\AddProductValidator.cs" />
     <Compile Include="Product\UpdateProductValidator.cs" />
+    <Compile Include="User\AddUserValidator.cs" />
     <Compile Include="ValidatorBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
