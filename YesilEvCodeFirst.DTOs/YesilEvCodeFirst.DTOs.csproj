@@ -41,12 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category\CategoryDTO.cs" />
     <Compile Include="LogDTO.cs" />
+    <Compile Include="LoginDTO.cs" />
     <Compile Include="Product\AddProductDTO.cs" />
     <Compile Include="Product\GetProductDetailDTO.cs" />
     <Compile Include="Product\ListProductDTO.cs" />
     <Compile Include="Product\UpdateProductDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Supplier\SupplierDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YesilEvCodeFirst.Core\YesilEvCodeFirst.Core.csproj">
@@ -55,10 +58,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Category\" />
     <Folder Include="Role\" />
     <Folder Include="Supplement\" />
-    <Folder Include="Supplier\" />
     <Folder Include="User\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

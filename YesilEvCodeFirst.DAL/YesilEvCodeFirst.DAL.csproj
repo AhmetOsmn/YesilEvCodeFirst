@@ -67,9 +67,16 @@
     <Compile Include="Concrete\SupplierDAL.cs" />
     <Compile Include="Concrete\ProductDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Use\UseCategoryDAL.cs" />
     <Compile Include="Use\UseProductDAL.cs" />
+    <Compile Include="Use\UseSupplierDAL.cs" />
+    <Compile Include="Use\UseUserDAL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\YesilEvCodeFirst.Common\YesilEvCodeFirst.Common.csproj">
+      <Project>{A226C8BB-85FB-4330-9E98-37F32E2AB732}</Project>
+      <Name>YesilEvCodeFirst.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\YesilEvCodeFirst.Core\YesilEvCodeFirst.Core.csproj">
       <Project>{a4183c9b-69c0-441d-8258-d0677fa06e86}</Project>
       <Name>YesilEvCodeFirst.Core</Name>

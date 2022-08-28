@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
@@ -11,6 +12,7 @@ using YesilEvCodeFirst.ExceptionHandling;
 using YesilEvCodeFirst.Logs.Concrete;
 using YesilEvCodeFirst.Mapping;
 using YesilEvCodeFirst.Validation.Product;
+using YesilEvCodeFirst.Validation.Urun;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
@@ -32,18 +34,58 @@ namespace YesilEvCodeFirst.DAL.Use
                 // maddeler split(",")
                 dal.Add(eklenecekUrun);
                 dal.MySaveChanges();
-                LogFunc(myLog, "", "Osman", "Ekleme islemi basarili", "Urun", Islem.Info);
+                LogExtension.LogFunc(myLog, "", "Ahmet", "Ekleme islemi basarili", "Urun", Islem.Info);
 
                 return true;
             }
             catch (ModelNotValidException ex)
             {
-                LogFunc(myLog, "", "Ahmet", ex.Message, "Urun", Islem.Error);
+                LogExtension.LogFunc(myLog, "", "Ahmet", ex.Message, "Urun", Islem.Error);
             }
             catch (Exception ex)
             {
-                LogFunc(myLog, "", "Ahmet", ex.Message, "Urun", Islem.Error);
+                LogExtension.LogFunc(myLog, "", "Ahmet", ex.Message, "Urun", Islem.Error);
             }
+            return false;
+        }
+
+        public bool UpdateProduct(UpdateProductDTO dto)
+        {
+            UpdateProductValidator validator = new UpdateProductValidator(dto);
+            
+            try
+            {
+                if(!validator.IsValid)
+                {
+                    throw new ModelNotValidException(validator.ValidationMessages);
+                }
+
+                ProductDAL dal = new ProductDAL();
+                var tempProduct = dal.GetByCondition(x => x.Barcode.Equals(dto.Barcode)).SingleOrDefault();
+                //tempProduct = MappingProfile.UpdateProductDTOToProduct(dto);
+                tempProduct.ProductName = dto.ProductName;
+                tempProduct.Barcode = dto.Barcode;
+                tempProduct.CategoryID = dto.CategoryID;
+                tempProduct.SupplierID = dto.SupplierID;
+                tempProduct.ProductContent = dto.ProductContent;
+                tempProduct.PictureFronthPath = dto.PictureFronthPath;
+                tempProduct.PictureBackPath = dto.PictureBackPath;
+
+                dal.Update(tempProduct);
+                dal.MySaveChanges();
+                LogExtension.LogFunc(myLog, "", "Ahmet", "Guncelleme islemi basarili", "Urun", Islem.Info);
+                return true;
+            }
+
+            catch (ModelNotValidException ex)
+            {
+                LogExtension.LogFunc(myLog, "", "Ahmet", ex.Message, "Urun", Islem.Error);
+            }
+            catch (Exception ex)
+            {
+                LogExtension.LogFunc(myLog, "", "Ahmet", ex.Message, "Urun", Islem.Error);
+            }
+
             return false;
         }
 
@@ -53,12 +95,12 @@ namespace YesilEvCodeFirst.DAL.Use
             {
                 ProductDAL dal = new ProductDAL();
                 List<ListProductDTO> productDTOList = MappingProfile.ProductListToProductListDTO(dal.GetAll());
-                LogFunc(myLog, "", "Ahmet Osman", "Listeleme islemi basarili", "Urun", Islem.Info);
+                LogExtension.LogFunc(myLog, "", "Ahmet", "Listeleme islemi basarili", "Urun", Islem.Info);
                 return productDTOList;
             }
             catch (Exception ex)
             {
-                LogFunc(myLog, "", "Ahmet Osman", ex.Message, "Urun", Islem.Error);
+                LogExtension.LogFunc(myLog, "", "Ahmet", ex.Message, "Urun", Islem.Error);
             }
 
             return null;
@@ -75,7 +117,7 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             catch (Exception ex)
             {
-                LogFunc(myLog, "", "Ahmet Osman", ex.Message, "Urun", Islem.Error);
+                LogExtension.LogFunc(myLog, "", "Ahmet", ex.Message, "Urun", Islem.Error);
             }
 
             return null;
@@ -83,22 +125,16 @@ namespace YesilEvCodeFirst.DAL.Use
 
         public GetProductDetailDTO GetProductDetailWithBarcode(string barcode)
         {
-            // new barcodeValidator
+            // barcode validator
             try
             {
-                // validasyon
-                //if (!validator.IsValid)
-                //{
-                //    throw new ModelNotValidException(validator.ValidationMessages);
-                //}
-
                 ProductDAL dal = new ProductDAL();
                 Product product = dal.GetByConditionWithInclude(produtct => produtct.Barcode.Equals(barcode), "Supplier", "Category").SingleOrDefault();
                 if (product != null)
                 {
                     //mapping Urun -> GetProductDetailDTO
                     GetProductDetailDTO urunDetail = MappingProfile.ProductToGetProductDetailDTO(product);
-                    LogFunc(myLog, "", "Admin", "Detay getirme basarili", "Urun", Islem.Info);
+                    LogExtension.LogFunc(myLog, "", "Ahmet", "Detay getirme basarili", "Urun", Islem.Info);
                     return urunDetail;
                 }
                 else
@@ -109,23 +145,10 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             catch (Exception ex)
             {
-                LogFunc(myLog, "", "Admin", ex.Message, "Urun", Islem.Info);
+                LogExtension.LogFunc(myLog, "", "Ahmet", ex.Message, "Urun", Islem.Info);
             }
 
             return null;
-        }
-
-        private void LogFunc(JsonLogger<LogDTO> myLog, string dataID, string kisi, string not, string tablo, Islem islem)
-        {
-            myLog.Log(new LogDTO()
-            {
-                DataID = dataID,
-                Islem = islem,
-                Kisi = kisi,
-                Not = not,
-                Tablo = tablo,
-                IslemTarihi = DateTime.Now
-            });
         }
     }
 }

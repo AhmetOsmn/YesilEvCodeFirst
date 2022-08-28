@@ -17,6 +17,6 @@ namespace YesilEvCodeFirst.DTOs
         public Islem Islem { get; set; }
         public string DataID { get; set; }
         public string Not { get; set; }
-        public DateTime IslemTarihi { get; set; }
+        public string IslemTarihi { get; set; }
     }
 }

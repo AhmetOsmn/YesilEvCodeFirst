@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using System.Collections.Generic;
 using YesilEvCodeFirst.Core.Entities;
+using YesilEvCodeFirst.DTOs.Category;
 using YesilEvCodeFirst.DTOs.Product;
+using YesilEvCodeFirst.DTOs.Supplier;
 
 namespace YesilEvCodeFirst.Mapping
 {
@@ -21,20 +23,8 @@ namespace YesilEvCodeFirst.Mapping
 
             var mapper = new Mapper(mapperConfig);
 
-            var result = mapper.Map<List<ListProductDTO>>(productList);
-            return result;
+            return mapper.Map<List<ListProductDTO>>(productList);
         }
-
-        public static ListProductDTO ProductToListProductDTO(Product product)
-        {
-            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<Product, ListProductDTO>());
-
-            var mapper = new Mapper(mapperConfig);
-
-            var result = mapper.Map<ListProductDTO>(product);
-            return result;
-        }
-
 
         public static GetProductDetailDTO ProductToGetProductDetailDTO(Product product)
         {
@@ -47,5 +37,24 @@ namespace YesilEvCodeFirst.Mapping
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<GetProductDetailDTO>(product);
         }
+
+        public static List<SupplierDTO> SupplierListToSupplierDTOList(List<Supplier> supplierList)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<Supplier, SupplierDTO>());
+
+            var mapper = new Mapper(mapperConfig);
+
+            return mapper.Map<List<SupplierDTO>>(supplierList);
+        }
+
+        public static List<CategoryDTO> CategoryListToCategoryDTOList(List<Category> categoryList)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<Category, CategoryDTO>());
+
+            var mapper = new Mapper(mapperConfig);
+
+            return mapper.Map<List<CategoryDTO>>(categoryList);
+        }
+
     }
 }

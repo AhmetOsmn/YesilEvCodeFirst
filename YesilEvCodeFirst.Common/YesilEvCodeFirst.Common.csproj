@@ -41,7 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YesilEvCodeFirst.DTOs\YesilEvCodeFirst.DTOs.csproj">
+      <Project>{99A0A7BE-EA90-4C9E-A97D-F193FAB15C7E}</Project>
+      <Name>YesilEvCodeFirst.DTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YesilEvCodeFirst.Logs\YesilEvCodeFirst.Logs.csproj">
+      <Project>{4B8FD883-6D4B-49A2-B1DB-39836431FA17}</Project>
+      <Name>YesilEvCodeFirst.Logs</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

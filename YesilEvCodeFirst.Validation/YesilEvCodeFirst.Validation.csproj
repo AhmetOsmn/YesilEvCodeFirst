@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Login\LoginValidator.cs" />
     <Compile Include="Product\AddProductValidator.cs" />
     <Compile Include="Product\UpdateProductValidator.cs" />
     <Compile Include="ValidatorBase.cs" />
