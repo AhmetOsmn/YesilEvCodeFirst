@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Transactions;
@@ -39,28 +40,43 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                   // begin transection
-
-                    var tempProduct = context.Product.Where(p => p.Barcode.Equals(dto.Barcode)).FirstOrDefault();
-                    if (tempProduct == null)
+                    // begin transection
+                    using (var dbContextTransection = context.Database.BeginTransaction())
                     {
-                        Product eklenecekUrun = MappingProfile.AddProductDTOToProduct(dto);
-                        var supplements = eklenecekUrun.ProductContent.Trim(' ').Split(',');
-                        for (int i = 0; i < supplements.Length; i++)
+                        try
                         {
-                            string sup = supplements[i];
-                            var result = context.Supliment.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
-                            if (result == null)
+                            var tempProduct = context.Product.Where(p => p.Barcode.Equals(dto.Barcode)).FirstOrDefault();
+                            if (tempProduct == null)
                             {
-                                context.Supliment.Add(new Supplement { SupplementName = supplements[i] });
+                                Product eklenecekUrun = MappingProfile.AddProductDTOToProduct(dto);
+                                var supplements = eklenecekUrun.ProductContent.Trim(' ').Split(',');
+                                for (int i = 0; i < supplements.Length; i++)
+                                {
+                                    string sup = supplements[i];
+                                    var result = context.Supliment.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
+                                    if (result == null)
+                                    {
+                                        context.Supliment.Add(new Supplement { SupplementName = supplements[i] });
+                                    }
+                                }
+                                context.Product.Add(eklenecekUrun);
+                                context.SaveChanges();
+                                dbContextTransection.Commit();
+                            }
+                            else
+                            {
+                                throw new Exception("Urun zaten mevcut");
                             }
                         }
-                        context.Product.Add(eklenecekUrun);
-                        context.SaveChanges();
-                    }
-                    else
-                    {
-                        throw new Exception("Urun zaten mevcut");
+                        catch (Exception ex)
+                        {
+                            dbContextTransection.Rollback();
+                            throw new Exception(ex.Message);
+                        }
+                        finally
+                        {
+                            dbContextTransection.Dispose();
+                        }
                     }
                 }
 
@@ -82,31 +98,50 @@ namespace YesilEvCodeFirst.DAL.Use
         public bool UpdateProduct(UpdateProductDTO dto)
         {
             UpdateProductValidator validator = new UpdateProductValidator(dto);
-            
             try
             {
-                if(!validator.IsValid)
+                if (!validator.IsValid)
                 {
                     throw new ModelNotValidException(validator.ValidationMessages);
                 }
+                using (YesilEvDbContext context = new YesilEvDbContext())
+                {
+                    using (DbContextTransaction trans = context.Database.BeginTransaction())
+                    {
+                        try
+                        {
+                            var tempProduct = context.Product.Where(x => x.Barcode.Equals(dto.Barcode)).FirstOrDefault();
+                            if (tempProduct != null)
+                            {
+                                tempProduct.ProductName = dto.ProductName;
+                                tempProduct.CategoryID = dto.CategoryID;
+                                tempProduct.ProductContent = dto.ProductContent;
+                                tempProduct.PictureBackPath = dto.PictureBackPath;
+                                tempProduct.PictureFronthPath = dto.PictureFronthPath;
+                                tempProduct.SupplierID = dto.SupplierID;
+                                context.SaveChanges();
+                                trans.Commit();
+                            }
+                            else
+                            {
+                                throw new Exception("Urun mevcut değil");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            trans.Rollback();
+                            throw new Exception("Urun Eklerken hata olustu");
+                        }
+                        finally
+                        {
+                            trans.Dispose();
+                        }
+                        LogExtension.LogFunc(myLog, "", "Ahmet", "Update islemi basarili", "Urun", Islem.Info);
+                        return true;
+                    }
+                }
 
-                //ProductDAL dal = new ProductDAL();
-                //var tempProduct = dal.GetByCondition(x => x.Barcode.Equals(dto.Barcode)).SingleOrDefault();
-                ////tempProduct = MappingProfile.UpdateProductDTOToProduct(dto);
-                //tempProduct.ProductName = dto.ProductName;
-                //tempProduct.Barcode = dto.Barcode;
-                //tempProduct.CategoryID = dto.CategoryID;
-                //tempProduct.SupplierID = dto.SupplierID;
-                //tempProduct.ProductContent = dto.ProductContent;
-                //tempProduct.PictureFronthPath = dto.PictureFronthPath;
-                ////tempProduct.PictureBackPath = dto.PictureBackPath;
-
-                //dal.Update(tempProduct);
-                //dal.MySaveChanges();
-                //LogExtension.LogFunc(myLog, "", "Ahmet", "Guncelleme islemi basarili", "Urun", Islem.Info);
-                //return true;
             }
-
             catch (ModelNotValidException ex)
             {
                 LogExtension.LogFunc(myLog, "", "Ahmet", ex.Message, "Urun", Islem.Error);
@@ -115,7 +150,6 @@ namespace YesilEvCodeFirst.DAL.Use
             {
                 LogExtension.LogFunc(myLog, "", "Ahmet", ex.Message, "Urun", Islem.Error);
             }
-
             return false;
         }
 
@@ -123,10 +157,14 @@ namespace YesilEvCodeFirst.DAL.Use
         {
             try
             {
-                //ProductDAL dal = new ProductDAL();
-                //List<ListProductDTO> productDTOList = MappingProfile.ProductListToProductListDTO(dal.GetAll());
-                //LogExtension.LogFunc(myLog, "", "Ahmet", "Listeleme islemi basarili", "Urun", Islem.Info);
-                //return productDTOList;
+                using (YesilEvDbContext context = new YesilEvDbContext())
+                {
+                    List<Product> productList = context.Product.ToList();
+                    List<ListProductDTO> productDTOList = MappingProfile.ProductListToProductListDTO(productList);
+                    LogExtension.LogFunc(myLog, "", "Ahmet", "Listeleme islemi basarili", "Urun", Islem.Info);
+                    return productDTOList;
+                }
+                
             }
             catch (Exception ex)
             {
@@ -140,10 +178,9 @@ namespace YesilEvCodeFirst.DAL.Use
         {
             try
             {
-                //ProductDAL dal = new ProductDAL();
-                //List<ListProductDTO> listProductDTOList = MappingProfile.ProductListToProductListDTO(dal.GetByCondition(x => x.ProductName.ToLower().Contains(filter.ToLower())));
-                ////log alinacak mi? her harf girildiginde log almak saglikli olmaz.
-                //return listProductDTOList;
+                List<ListProductDTO> listProductDTOList = MappingProfile.ProductListToProductListDTO(GetByCondition(x => x.ProductName.ToLower().Contains(filter.ToLower())));
+                //log alinacak mi? her harf girildiginde log almak saglikli olmaz.
+                return listProductDTOList;
             }
             catch (Exception ex)
             {
@@ -158,20 +195,22 @@ namespace YesilEvCodeFirst.DAL.Use
             // barcode validator
             try
             {
-                //ProductDAL dal = new ProductDAL();
-                //Product product = dal.GetByConditionWithInclude(produtct => produtct.Barcode.Equals(barcode), "Supplier", "Category").SingleOrDefault();
-                //if (product != null)
-                //{
-                //    //mapping Urun -> GetProductDetailDTO
-                //    GetProductDetailDTO urunDetail = MappingProfile.ProductToGetProductDetailDTO(product);
-                //    LogExtension.LogFunc(myLog, "", "Ahmet", "Detay getirme basarili", "Urun", Islem.Info);
-                //    return urunDetail;
-                //}
-                //else
-                //{
-                //    //  Eşleşmezse, yeni ürün ekleme sayfası gelecek ve doldurulması gereken formda barkod no hazır olarak gözükecek.
-                //    throw new Exception("Urun bulunamadi");
-                //}
+                using (YesilEvDbContext context = new YesilEvDbContext())
+                {
+                    // todo: burada this.getbycondition metodu mu kullanmaliyiz, context.products.. seklinde mi yapmaliyiz.
+                    Product product = this.GetByConditionWithInclude(p => p.Barcode.Equals(barcode),"Supplier","Category").FirstOrDefault();
+                    if (product != null)
+                    {
+                        //mapping Urun -> GetProductDetailDTO
+                        LogExtension.LogFunc(myLog, "", "Ahmet", "Detay getirme basarili", "Urun", Islem.Info);
+                        return MappingProfile.ProductToGetProductDetailDTO(product);
+                    }
+                    else
+                    {
+                        //  Eşleşmezse, yeni ürün ekleme sayfası gelecek ve doldurulması gereken formda barkod no hazır olarak gözükecek.
+                        throw new Exception("Urun bulunamadi");
+                    }
+                }
             }
             catch (Exception ex)
             {

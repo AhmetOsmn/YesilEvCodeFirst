@@ -10,11 +10,13 @@ namespace YesilEvCodeFirst.MyTest
     [TestClass]
     public class MyUnitTest
     {
+        #region Login Testleri
+
         [TestMethod]
-        public void LoginTest()
+        public void UserLoginTest()
         {
             UseUserDAL dal = new UseUserDAL();
-            var result = dal.Login(new LoginDTO
+            var result = dal.UserLogin(new LoginDTO
             {
                 Email = "ahmet@gmail.com",
                 Password = "ahmet555"
@@ -26,6 +28,24 @@ namespace YesilEvCodeFirst.MyTest
             }
         }
 
+        [TestMethod]
+        public void AdminLoginTest()
+        {
+            UseAdminDAL dal = new UseAdminDAL();
+            var result = dal.AdminLogin(new LoginDTO
+            {
+                Email = "ahmet@gmail.com",
+                Password = "ahmet555"
+            });
+
+            if (result == false)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+
+        #endregion
+
         #region Ekleme Testleri
 
         [TestMethod]
@@ -34,11 +54,11 @@ namespace YesilEvCodeFirst.MyTest
             UseProductDAL dal = new UseProductDAL();
             bool result = dal.AddProduct(new AddProductDTO()
             {
-                ProductName = "TEST URUN 2",
+                ProductName = "TEST URUN 33",
                 Barcode = Guid.NewGuid().ToString().Substring(0, 7),
                 CategoryID = 1,
                 SupplierID = 1,
-                ProductContent = "madde1, madde2, madde3, madde4",
+                ProductContent = "madde1, madde2, madde3, madde4, madde33",
                 PictureBackPath = "backtest2",
                 PictureFronthPath = "fronttest2"
             });
@@ -55,9 +75,9 @@ namespace YesilEvCodeFirst.MyTest
             UseUserDAL dal = new UseUserDAL();
             bool result = dal.AddUser(new AddUserDTO()
             {
-                FirstName = "Mert",
-                LastName = "Dalkıran",
-                Email = "MErt@gmail.com",
+                FirstName = "Veli",
+                LastName = "Kara",
+                Email = "velikara@gmail.com",
                 Password = "mert555",
                 Phone = "5345898818",
             });
@@ -137,7 +157,7 @@ namespace YesilEvCodeFirst.MyTest
         public void GetProductDetailTest()
         {
             UseProductDAL dal = new UseProductDAL();
-            var result = dal.GetProductDetailWithBarcode("014A76");
+            var result = dal.GetProductDetailWithBarcode("014B72");
 
             if (result == null)
             {
@@ -149,7 +169,7 @@ namespace YesilEvCodeFirst.MyTest
         public void GetProductListForSearchbarTest()
         {
             UseProductDAL dal = new UseProductDAL();
-            var result = dal.GetProductListForSearchbar("a");
+            var result = dal.GetProductListForSearchbar("ülk");
 
             if (result == null)
             {

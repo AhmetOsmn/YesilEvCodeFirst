@@ -19,7 +19,7 @@ namespace YesilEvCodeFirst.DAL.Use
     {
         JsonLogger<LogDTO> myLog = new JsonLogger<LogDTO>("MyLog.txt");
 
-        public bool Login(LoginDTO dto)
+        public bool UserLogin(LoginDTO dto)
         {
             LoginValidator validator = new LoginValidator(dto);
 

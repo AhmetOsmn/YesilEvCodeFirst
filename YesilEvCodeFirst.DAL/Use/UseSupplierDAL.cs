@@ -19,10 +19,8 @@ namespace YesilEvCodeFirst.DAL.Use
         public List<SupplierDTO> GetSupplierList()
         {
             try
-            {
-                
+            {                
                 List<Supplier> suppliers = new List<Supplier>();
-                // dal.GetAll()
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
