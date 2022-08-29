@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YesilEvCodeFirst.Validation
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YesilEvCodeFirst.ExceptionHandling", "YesilEvCodeFirst.ExceptionHandling\YesilEvCodeFirst.ExceptionHandling.csproj", "{623E766D-0492-4101-AE9D-CDDFBBE41551}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YesilEvCodeFirst.UIWinForm", "..\..\..\Users\Ahmet\Desktop\YesilEvFrontend\YesilEvCodeFirst.UIWinForm\YesilEvCodeFirst.UIWinForm.csproj", "{CF4073F1-EECF-44CD-A41C-C08C5FBE13BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YesilEvCodeFirst.UIWinForm", "YesilEvCodeFirst.UIWinForm\YesilEvCodeFirst.UIWinForm.csproj", "{CF4073F1-EECF-44CD-A41C-C08C5FBE13BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF4073F1-EECF-44CD-A41C-C08C5FBE13BD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>YesilEvCodeFirst.UIWinForm</RootNamespace>
+    <AssemblyName>YesilEvCodeFirst.UIWinForm</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GirisKayitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GirisKayitForm.Designer.cs">
+      <DependentUpon>GirisKayitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserSayfasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSayfasi.Designer.cs">
+      <DependentUpon>UserSayfasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helper\CustomComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Helper\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helper\CustomPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Helper\CustomTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Helper\CustomTextBox.designer.cs">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GirisKayitForm.resx">
+      <DependentUpon>GirisKayitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSayfasi.resx">
+      <DependentUpon>UserSayfasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helper\CustomTextBox.resx">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ContextLtst\Image\arama.png" />
+    <Content Include="ContextLtst\Image\aramagecmisi.png" />
+    <Content Include="ContextLtst\Image\aramatemizle.png" />
+    <Content Include="ContextLtst\Image\Barkod.png" />
+    <Content Include="ContextLtst\Image\bildirim.png" />
+    <Content Include="ContextLtst\Image\bizeulas.png" />
+    <Content Include="ContextLtst\Image\cikisyap.png" />
+    <Content Include="ContextLtst\Image\ekle-düzenle.png" />
+    <Content Include="ContextLtst\Image\epostadegistir.png" />
+    <Content Include="ContextLtst\Image\facebook.png" />
+    <Content Include="ContextLtst\Image\favori.png" />
+    <Content Include="ContextLtst\Image\hakkinda.png" />
+    <Content Include="ContextLtst\Image\home.png" />
+    <Content Include="ContextLtst\Image\instagram.png" />
+    <Content Include="ContextLtst\Image\karaliste.png" />
+    <Content Include="ContextLtst\Image\kullanimkosullari.png" />
+    <Content Include="ContextLtst\Image\menu.png" />
+    <Content Include="ContextLtst\Image\paylas.png" />
+    <Content Include="ContextLtst\Image\premium.png" />
+    <Content Include="ContextLtst\Image\profilduzenle.png" />
+    <Content Include="ContextLtst\Image\puanver.png" />
+    <Content Include="ContextLtst\Image\sifredegistir.png" />
+    <Content Include="ContextLtst\Image\sosyalmedyabislestir.png" />
+    <Content Include="ContextLtst\Image\twitter.png" />
+    <Content Include="ContextLtst\Image\user.png" />
+    <Content Include="ContextLtst\Image\yesilev.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
