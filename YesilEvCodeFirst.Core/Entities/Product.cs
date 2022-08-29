@@ -18,6 +18,7 @@ namespace YesilEvCodeFirst.Core.Entities
         [StringLength(50)]
         public string Barcode { get; set; }
         public string TracingNo { get; set; } = Guid.NewGuid().ToString();
+        
         public string PictureFronthPath { get; set; }
         public string PictureBackPath { get; set; }
         public string ProductContent { get; set; }

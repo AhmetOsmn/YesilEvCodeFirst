@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YesilEvCodeFirst.DAL.Use;
+using YesilEvCodeFirst.DTOs.Category;
+using YesilEvCodeFirst.DTOs.Supplier;
 
 namespace YesilEvCodeFirst.UIWinForm
 {
@@ -14,11 +17,15 @@ namespace YesilEvCodeFirst.UIWinForm
     public partial class UserSayfasi : Form
     {
         bool sideBarExpand = false;
+        public string KullaniciMail;
+        UseSupplierDAL SupDAL = new UseSupplierDAL();
+        UseCategoryDAL CategoryDAL = new UseCategoryDAL();
         public UserSayfasi()
         {
             InitializeComponent();
             sideBarKapa();
             UrunEkleDuzenle.Visible = false;
+            UserBilgileri.Visible = false;
             Anasayfa.Visible = true;
             SideBar.Visible = true;
         }
@@ -102,6 +109,16 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             Anasayfa.Visible= false;
             UrunEkleDuzenle.Visible = true;
+            List<SupplierDTO> suppliers = SupDAL.GetSupplierList();
+            List<CategoryDTO> categories = CategoryDAL.GetCategoryList();
+            foreach(SupplierDTO item in suppliers)
+            {
+                cmbBoxUrunEkleUretici.Items.Add(item.SupplierName);
+            }
+            foreach(CategoryDTO item in categories)
+            {
+                cmbBoxUrunEkleKategori.Items.Add(item.CategoryName);
+            }
         }
 
         private void UserButton_Click(object sender, EventArgs e)
@@ -110,6 +127,7 @@ namespace YesilEvCodeFirst.UIWinForm
             sideBarKapa();
             UrunEkleDuzenle.Visible = false;
             UserBilgileri.Visible = true;
+
         }
     }
 }

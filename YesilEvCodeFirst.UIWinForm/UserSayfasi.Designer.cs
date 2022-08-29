@@ -78,6 +78,14 @@
             this.Anasayfa = new System.Windows.Forms.Panel();
             this.btnAnasayfaUser = new System.Windows.Forms.Button();
             this.UserBilgileri = new System.Windows.Forms.Panel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureAramaGecmisi = new System.Windows.Forms.PictureBox();
+            this.pictureKaraliste = new System.Windows.Forms.PictureBox();
+            this.pictureFavori = new System.Windows.Forms.PictureBox();
+            this.pictureUserBilgileriGüncelle = new System.Windows.Forms.PictureBox();
+            this.pictureUserSosyalMedyaBirlestir = new System.Windows.Forms.PictureBox();
+            this.pictureUserSifreDegistir = new System.Windows.Forms.PictureBox();
+            this.pictureUserEposta = new System.Windows.Forms.PictureBox();
             this.pictureUserPremium = new System.Windows.Forms.PictureBox();
             this.button9 = new System.Windows.Forms.Button();
             this.btnAramaGeçmişiTemizle = new System.Windows.Forms.Button();
@@ -97,6 +105,8 @@
             this.btnUrunEkle = new System.Windows.Forms.Button();
             this.btnUrunDuzenle = new System.Windows.Forms.Button();
             this.UrunEkle = new System.Windows.Forms.GroupBox();
+            this.cmbBoxUrunEkleKategori = new System.Windows.Forms.ComboBox();
+            this.cmbBoxUrunEkleUretici = new System.Windows.Forms.ComboBox();
             this.btnUrunEkleOnYuz = new System.Windows.Forms.Button();
             this.btnUrunEkleArkaYuz = new System.Windows.Forms.Button();
             this.btnUrunEkleUrunIcerik = new System.Windows.Forms.Button();
@@ -105,8 +115,8 @@
             this.lblUrunEkleOnYuz = new System.Windows.Forms.Label();
             this.lblUrunEkleUrunIcerik = new System.Windows.Forms.Label();
             this.txtUrunEkleUrunAdi = new System.Windows.Forms.TextBox();
-            this.txtUrunEkleUretici = new System.Windows.Forms.TextBox();
             this.txtUrunEkleBarkod = new System.Windows.Forms.TextBox();
+            this.lblUrunEkleKategori = new System.Windows.Forms.Label();
             this.lblUrunEkleUrunAdi = new System.Windows.Forms.Label();
             this.lblUrunEkleUretici = new System.Windows.Forms.Label();
             this.lblUrunEkleBarkodNo = new System.Windows.Forms.Label();
@@ -125,14 +135,6 @@
             this.lblUrunAdi = new System.Windows.Forms.Label();
             this.lblUretici = new System.Windows.Forms.Label();
             this.lblBarkodNo = new System.Windows.Forms.Label();
-            this.pictureUserEposta = new System.Windows.Forms.PictureBox();
-            this.pictureUserSifreDegistir = new System.Windows.Forms.PictureBox();
-            this.pictureUserSosyalMedyaBirlestir = new System.Windows.Forms.PictureBox();
-            this.pictureUserBilgileriGüncelle = new System.Windows.Forms.PictureBox();
-            this.pictureFavori = new System.Windows.Forms.PictureBox();
-            this.pictureKaraliste = new System.Windows.Forms.PictureBox();
-            this.pictureAramaGecmisi = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pnlHome.SuspendLayout();
             this.pnlUygulamaPuanVer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUygulamaPuanVer)).BeginInit();
@@ -164,18 +166,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureAramaGecmisiFavori)).BeginInit();
             this.Anasayfa.SuspendLayout();
             this.UserBilgileri.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAramaGecmisi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureKaraliste)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFavori)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserBilgileriGüncelle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserSosyalMedyaBirlestir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserSifreDegistir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserEposta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserPremium)).BeginInit();
             this.UrunEkleDuzenle.SuspendLayout();
             this.UrunEkle.SuspendLayout();
             this.UrunDuzenle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserEposta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserSifreDegistir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserSosyalMedyaBirlestir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserBilgileriGüncelle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFavori)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureKaraliste)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAramaGecmisi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlHome
@@ -811,6 +813,86 @@
             this.UserBilgileri.Size = new System.Drawing.Size(364, 510);
             this.UserBilgileri.TabIndex = 7;
             // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.BackgroundImage")));
+            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox9.Location = new System.Drawing.Point(46, 437);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(37, 32);
+            this.pictureBox9.TabIndex = 4;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureAramaGecmisi
+            // 
+            this.pictureAramaGecmisi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureAramaGecmisi.BackgroundImage")));
+            this.pictureAramaGecmisi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureAramaGecmisi.Location = new System.Drawing.Point(46, 399);
+            this.pictureAramaGecmisi.Name = "pictureAramaGecmisi";
+            this.pictureAramaGecmisi.Size = new System.Drawing.Size(37, 32);
+            this.pictureAramaGecmisi.TabIndex = 4;
+            this.pictureAramaGecmisi.TabStop = false;
+            // 
+            // pictureKaraliste
+            // 
+            this.pictureKaraliste.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureKaraliste.BackgroundImage")));
+            this.pictureKaraliste.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureKaraliste.Location = new System.Drawing.Point(46, 361);
+            this.pictureKaraliste.Name = "pictureKaraliste";
+            this.pictureKaraliste.Size = new System.Drawing.Size(37, 32);
+            this.pictureKaraliste.TabIndex = 4;
+            this.pictureKaraliste.TabStop = false;
+            // 
+            // pictureFavori
+            // 
+            this.pictureFavori.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureFavori.BackgroundImage")));
+            this.pictureFavori.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureFavori.Location = new System.Drawing.Point(46, 323);
+            this.pictureFavori.Name = "pictureFavori";
+            this.pictureFavori.Size = new System.Drawing.Size(37, 32);
+            this.pictureFavori.TabIndex = 4;
+            this.pictureFavori.TabStop = false;
+            // 
+            // pictureUserBilgileriGüncelle
+            // 
+            this.pictureUserBilgileriGüncelle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserBilgileriGüncelle.BackgroundImage")));
+            this.pictureUserBilgileriGüncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureUserBilgileriGüncelle.Location = new System.Drawing.Point(46, 285);
+            this.pictureUserBilgileriGüncelle.Name = "pictureUserBilgileriGüncelle";
+            this.pictureUserBilgileriGüncelle.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserBilgileriGüncelle.TabIndex = 4;
+            this.pictureUserBilgileriGüncelle.TabStop = false;
+            // 
+            // pictureUserSosyalMedyaBirlestir
+            // 
+            this.pictureUserSosyalMedyaBirlestir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserSosyalMedyaBirlestir.BackgroundImage")));
+            this.pictureUserSosyalMedyaBirlestir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureUserSosyalMedyaBirlestir.Location = new System.Drawing.Point(46, 247);
+            this.pictureUserSosyalMedyaBirlestir.Name = "pictureUserSosyalMedyaBirlestir";
+            this.pictureUserSosyalMedyaBirlestir.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserSosyalMedyaBirlestir.TabIndex = 4;
+            this.pictureUserSosyalMedyaBirlestir.TabStop = false;
+            // 
+            // pictureUserSifreDegistir
+            // 
+            this.pictureUserSifreDegistir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserSifreDegistir.BackgroundImage")));
+            this.pictureUserSifreDegistir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureUserSifreDegistir.Location = new System.Drawing.Point(46, 209);
+            this.pictureUserSifreDegistir.Name = "pictureUserSifreDegistir";
+            this.pictureUserSifreDegistir.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserSifreDegistir.TabIndex = 4;
+            this.pictureUserSifreDegistir.TabStop = false;
+            // 
+            // pictureUserEposta
+            // 
+            this.pictureUserEposta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserEposta.BackgroundImage")));
+            this.pictureUserEposta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureUserEposta.Location = new System.Drawing.Point(46, 171);
+            this.pictureUserEposta.Name = "pictureUserEposta";
+            this.pictureUserEposta.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserEposta.TabIndex = 4;
+            this.pictureUserEposta.TabStop = false;
+            // 
             // pictureUserPremium
             // 
             this.pictureUserPremium.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserPremium.BackgroundImage")));
@@ -976,7 +1058,7 @@
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUserName.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblUserName.Location = new System.Drawing.Point(138, 51);
+            this.lblUserName.Location = new System.Drawing.Point(111, 51);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(86, 21);
             this.lblUserName.TabIndex = 0;
@@ -1052,6 +1134,8 @@
             // 
             // UrunEkle
             // 
+            this.UrunEkle.Controls.Add(this.cmbBoxUrunEkleKategori);
+            this.UrunEkle.Controls.Add(this.cmbBoxUrunEkleUretici);
             this.UrunEkle.Controls.Add(this.btnUrunEkleOnYuz);
             this.UrunEkle.Controls.Add(this.btnUrunEkleArkaYuz);
             this.UrunEkle.Controls.Add(this.btnUrunEkleUrunIcerik);
@@ -1060,8 +1144,8 @@
             this.UrunEkle.Controls.Add(this.lblUrunEkleOnYuz);
             this.UrunEkle.Controls.Add(this.lblUrunEkleUrunIcerik);
             this.UrunEkle.Controls.Add(this.txtUrunEkleUrunAdi);
-            this.UrunEkle.Controls.Add(this.txtUrunEkleUretici);
             this.UrunEkle.Controls.Add(this.txtUrunEkleBarkod);
+            this.UrunEkle.Controls.Add(this.lblUrunEkleKategori);
             this.UrunEkle.Controls.Add(this.lblUrunEkleUrunAdi);
             this.UrunEkle.Controls.Add(this.lblUrunEkleUretici);
             this.UrunEkle.Controls.Add(this.lblUrunEkleBarkodNo);
@@ -1072,9 +1156,25 @@
             this.UrunEkle.TabStop = false;
             this.UrunEkle.Text = "Ürün Ekle";
             // 
+            // cmbBoxUrunEkleKategori
+            // 
+            this.cmbBoxUrunEkleKategori.FormattingEnabled = true;
+            this.cmbBoxUrunEkleKategori.Location = new System.Drawing.Point(89, 125);
+            this.cmbBoxUrunEkleKategori.Name = "cmbBoxUrunEkleKategori";
+            this.cmbBoxUrunEkleKategori.Size = new System.Drawing.Size(210, 21);
+            this.cmbBoxUrunEkleKategori.TabIndex = 8;
+            // 
+            // cmbBoxUrunEkleUretici
+            // 
+            this.cmbBoxUrunEkleUretici.FormattingEnabled = true;
+            this.cmbBoxUrunEkleUretici.Location = new System.Drawing.Point(89, 64);
+            this.cmbBoxUrunEkleUretici.Name = "cmbBoxUrunEkleUretici";
+            this.cmbBoxUrunEkleUretici.Size = new System.Drawing.Size(210, 21);
+            this.cmbBoxUrunEkleUretici.TabIndex = 8;
+            // 
             // btnUrunEkleOnYuz
             // 
-            this.btnUrunEkleOnYuz.Location = new System.Drawing.Point(43, 174);
+            this.btnUrunEkleOnYuz.Location = new System.Drawing.Point(43, 207);
             this.btnUrunEkleOnYuz.Name = "btnUrunEkleOnYuz";
             this.btnUrunEkleOnYuz.Size = new System.Drawing.Size(75, 45);
             this.btnUrunEkleOnYuz.TabIndex = 5;
@@ -1083,7 +1183,7 @@
             // 
             // btnUrunEkleArkaYuz
             // 
-            this.btnUrunEkleArkaYuz.Location = new System.Drawing.Point(203, 174);
+            this.btnUrunEkleArkaYuz.Location = new System.Drawing.Point(203, 207);
             this.btnUrunEkleArkaYuz.Name = "btnUrunEkleArkaYuz";
             this.btnUrunEkleArkaYuz.Size = new System.Drawing.Size(75, 45);
             this.btnUrunEkleArkaYuz.TabIndex = 5;
@@ -1092,7 +1192,7 @@
             // 
             // btnUrunEkleUrunIcerik
             // 
-            this.btnUrunEkleUrunIcerik.Location = new System.Drawing.Point(266, 123);
+            this.btnUrunEkleUrunIcerik.Location = new System.Drawing.Point(266, 156);
             this.btnUrunEkleUrunIcerik.Name = "btnUrunEkleUrunIcerik";
             this.btnUrunEkleUrunIcerik.Size = new System.Drawing.Size(33, 23);
             this.btnUrunEkleUrunIcerik.TabIndex = 4;
@@ -1101,7 +1201,7 @@
             // 
             // txtUrunEkleUrunIcerik
             // 
-            this.txtUrunEkleUrunIcerik.Location = new System.Drawing.Point(89, 123);
+            this.txtUrunEkleUrunIcerik.Location = new System.Drawing.Point(89, 156);
             this.txtUrunEkleUrunIcerik.Multiline = true;
             this.txtUrunEkleUrunIcerik.Name = "txtUrunEkleUrunIcerik";
             this.txtUrunEkleUrunIcerik.Size = new System.Drawing.Size(171, 23);
@@ -1111,7 +1211,7 @@
             // 
             this.lblUrunEkleArkaYuz.AutoSize = true;
             this.lblUrunEkleArkaYuz.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunEkleArkaYuz.Location = new System.Drawing.Point(193, 158);
+            this.lblUrunEkleArkaYuz.Location = new System.Drawing.Point(193, 191);
             this.lblUrunEkleArkaYuz.Name = "lblUrunEkleArkaYuz";
             this.lblUrunEkleArkaYuz.Size = new System.Drawing.Size(96, 13);
             this.lblUrunEkleArkaYuz.TabIndex = 2;
@@ -1121,7 +1221,7 @@
             // 
             this.lblUrunEkleOnYuz.AutoSize = true;
             this.lblUrunEkleOnYuz.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunEkleOnYuz.Location = new System.Drawing.Point(40, 158);
+            this.lblUrunEkleOnYuz.Location = new System.Drawing.Point(40, 191);
             this.lblUrunEkleOnYuz.Name = "lblUrunEkleOnYuz";
             this.lblUrunEkleOnYuz.Size = new System.Drawing.Size(87, 13);
             this.lblUrunEkleOnYuz.TabIndex = 2;
@@ -1131,7 +1231,7 @@
             // 
             this.lblUrunEkleUrunIcerik.AutoSize = true;
             this.lblUrunEkleUrunIcerik.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunEkleUrunIcerik.Location = new System.Drawing.Point(21, 128);
+            this.lblUrunEkleUrunIcerik.Location = new System.Drawing.Point(22, 159);
             this.lblUrunEkleUrunIcerik.Name = "lblUrunEkleUrunIcerik";
             this.lblUrunEkleUrunIcerik.Size = new System.Drawing.Size(61, 13);
             this.lblUrunEkleUrunIcerik.TabIndex = 2;
@@ -1145,14 +1245,6 @@
             this.txtUrunEkleUrunAdi.Size = new System.Drawing.Size(210, 23);
             this.txtUrunEkleUrunAdi.TabIndex = 1;
             // 
-            // txtUrunEkleUretici
-            // 
-            this.txtUrunEkleUretici.Location = new System.Drawing.Point(89, 64);
-            this.txtUrunEkleUretici.Multiline = true;
-            this.txtUrunEkleUretici.Name = "txtUrunEkleUretici";
-            this.txtUrunEkleUretici.Size = new System.Drawing.Size(210, 23);
-            this.txtUrunEkleUretici.TabIndex = 1;
-            // 
             // txtUrunEkleBarkod
             // 
             this.txtUrunEkleBarkod.Location = new System.Drawing.Point(89, 34);
@@ -1160,6 +1252,16 @@
             this.txtUrunEkleBarkod.Name = "txtUrunEkleBarkod";
             this.txtUrunEkleBarkod.Size = new System.Drawing.Size(210, 23);
             this.txtUrunEkleBarkod.TabIndex = 1;
+            // 
+            // lblUrunEkleKategori
+            // 
+            this.lblUrunEkleKategori.AutoSize = true;
+            this.lblUrunEkleKategori.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUrunEkleKategori.Location = new System.Drawing.Point(21, 128);
+            this.lblUrunEkleKategori.Name = "lblUrunEkleKategori";
+            this.lblUrunEkleKategori.Size = new System.Drawing.Size(51, 13);
+            this.lblUrunEkleKategori.TabIndex = 0;
+            this.lblUrunEkleKategori.Text = "Kategori";
             // 
             // lblUrunEkleUrunAdi
             // 
@@ -1342,95 +1444,15 @@
             this.lblBarkodNo.TabIndex = 0;
             this.lblBarkodNo.Text = "Barkod No";
             // 
-            // pictureUserEposta
-            // 
-            this.pictureUserEposta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserEposta.BackgroundImage")));
-            this.pictureUserEposta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserEposta.Location = new System.Drawing.Point(46, 171);
-            this.pictureUserEposta.Name = "pictureUserEposta";
-            this.pictureUserEposta.Size = new System.Drawing.Size(37, 32);
-            this.pictureUserEposta.TabIndex = 4;
-            this.pictureUserEposta.TabStop = false;
-            // 
-            // pictureUserSifreDegistir
-            // 
-            this.pictureUserSifreDegistir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserSifreDegistir.BackgroundImage")));
-            this.pictureUserSifreDegistir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserSifreDegistir.Location = new System.Drawing.Point(46, 209);
-            this.pictureUserSifreDegistir.Name = "pictureUserSifreDegistir";
-            this.pictureUserSifreDegistir.Size = new System.Drawing.Size(37, 32);
-            this.pictureUserSifreDegistir.TabIndex = 4;
-            this.pictureUserSifreDegistir.TabStop = false;
-            // 
-            // pictureUserSosyalMedyaBirlestir
-            // 
-            this.pictureUserSosyalMedyaBirlestir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserSosyalMedyaBirlestir.BackgroundImage")));
-            this.pictureUserSosyalMedyaBirlestir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserSosyalMedyaBirlestir.Location = new System.Drawing.Point(46, 247);
-            this.pictureUserSosyalMedyaBirlestir.Name = "pictureUserSosyalMedyaBirlestir";
-            this.pictureUserSosyalMedyaBirlestir.Size = new System.Drawing.Size(37, 32);
-            this.pictureUserSosyalMedyaBirlestir.TabIndex = 4;
-            this.pictureUserSosyalMedyaBirlestir.TabStop = false;
-            // 
-            // pictureUserBilgileriGüncelle
-            // 
-            this.pictureUserBilgileriGüncelle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserBilgileriGüncelle.BackgroundImage")));
-            this.pictureUserBilgileriGüncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserBilgileriGüncelle.Location = new System.Drawing.Point(46, 285);
-            this.pictureUserBilgileriGüncelle.Name = "pictureUserBilgileriGüncelle";
-            this.pictureUserBilgileriGüncelle.Size = new System.Drawing.Size(37, 32);
-            this.pictureUserBilgileriGüncelle.TabIndex = 4;
-            this.pictureUserBilgileriGüncelle.TabStop = false;
-            // 
-            // pictureFavori
-            // 
-            this.pictureFavori.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureFavori.BackgroundImage")));
-            this.pictureFavori.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureFavori.Location = new System.Drawing.Point(46, 323);
-            this.pictureFavori.Name = "pictureFavori";
-            this.pictureFavori.Size = new System.Drawing.Size(37, 32);
-            this.pictureFavori.TabIndex = 4;
-            this.pictureFavori.TabStop = false;
-            // 
-            // pictureKaraliste
-            // 
-            this.pictureKaraliste.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureKaraliste.BackgroundImage")));
-            this.pictureKaraliste.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureKaraliste.Location = new System.Drawing.Point(46, 361);
-            this.pictureKaraliste.Name = "pictureKaraliste";
-            this.pictureKaraliste.Size = new System.Drawing.Size(37, 32);
-            this.pictureKaraliste.TabIndex = 4;
-            this.pictureKaraliste.TabStop = false;
-            // 
-            // pictureAramaGecmisi
-            // 
-            this.pictureAramaGecmisi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureAramaGecmisi.BackgroundImage")));
-            this.pictureAramaGecmisi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureAramaGecmisi.Location = new System.Drawing.Point(46, 399);
-            this.pictureAramaGecmisi.Name = "pictureAramaGecmisi";
-            this.pictureAramaGecmisi.Size = new System.Drawing.Size(37, 32);
-            this.pictureAramaGecmisi.TabIndex = 4;
-            this.pictureAramaGecmisi.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.BackgroundImage")));
-            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox9.Location = new System.Drawing.Point(46, 437);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(37, 32);
-            this.pictureBox9.TabIndex = 4;
-            this.pictureBox9.TabStop = false;
-            // 
             // UserSayfasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 511);
+            this.Controls.Add(this.UrunEkleDuzenle);
             this.Controls.Add(this.SideBar);
             this.Controls.Add(this.Anasayfa);
             this.Controls.Add(this.UserBilgileri);
-            this.Controls.Add(this.UrunEkleDuzenle);
             this.MaximumSize = new System.Drawing.Size(380, 550);
             this.Name = "UserSayfasi";
             this.Text = "Form3";
@@ -1466,20 +1488,20 @@
             this.Anasayfa.ResumeLayout(false);
             this.UserBilgileri.ResumeLayout(false);
             this.UserBilgileri.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAramaGecmisi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureKaraliste)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFavori)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserBilgileriGüncelle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserSosyalMedyaBirlestir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserSifreDegistir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserEposta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserPremium)).EndInit();
             this.UrunEkleDuzenle.ResumeLayout(false);
             this.UrunEkle.ResumeLayout(false);
             this.UrunEkle.PerformLayout();
             this.UrunDuzenle.ResumeLayout(false);
             this.UrunDuzenle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserEposta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserSifreDegistir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserSosyalMedyaBirlestir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserBilgileriGüncelle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFavori)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureKaraliste)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAramaGecmisi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1539,7 +1561,6 @@
         private System.Windows.Forms.Button btnUrunDuzenle;
         private System.Windows.Forms.GroupBox UrunEkle;
         private System.Windows.Forms.TextBox txtUrunEkleUrunAdi;
-        private System.Windows.Forms.TextBox txtUrunEkleUretici;
         private System.Windows.Forms.TextBox txtUrunEkleBarkod;
         private System.Windows.Forms.Label lblUrunEkleUrunAdi;
         private System.Windows.Forms.Label lblUrunEkleUretici;
@@ -1590,5 +1611,8 @@
         private System.Windows.Forms.PictureBox pictureUserSosyalMedyaBirlestir;
         private System.Windows.Forms.PictureBox pictureUserSifreDegistir;
         private System.Windows.Forms.PictureBox pictureUserEposta;
+        private System.Windows.Forms.ComboBox cmbBoxUrunEkleKategori;
+        private System.Windows.Forms.ComboBox cmbBoxUrunEkleUretici;
+        private System.Windows.Forms.Label lblUrunEkleKategori;
     }
 }

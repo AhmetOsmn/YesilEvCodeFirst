@@ -64,5 +64,12 @@ namespace YesilEvCodeFirst.Mapping
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<User>(dt);
         }
+        public static GetUserDetailDTO UserToGetUserDetailDTO(User user)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<User, GetUserDetailDTO>());
+
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<GetUserDetailDTO>(user);
+        }
     }
 }

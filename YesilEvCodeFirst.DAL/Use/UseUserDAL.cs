@@ -100,5 +100,37 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             return false;
         }
+        public GetUserDetailDTO GetUserDeatilWithEmail(string email)
+        {
+            try
+            {
+                User tempUser = GetByCondition(x => x.Email.Equals(email)).FirstOrDefault();
+                if (tempUser != null)
+                {
+                    LogExtension.LogFunc(myLog, "", "Ahmet", "Detay getirme basarili", "User", Islem.Info);
+                    //int sayi = GetUserProductCount(tempUser.CustomerID);
+                    return MappingProfile.UserToGetUserDetailDTO(tempUser);
+                }
+                else
+                {
+                    throw new Exception("Kullanici bulunamadi.");
+                }
+            }
+            catch (Exception ex)
+            {
+                LogExtension.LogFunc(myLog, "", "Ahmet", ex.Message, "User", Islem.Info);
+            }
+
+            return null;
+        }
+        /*public int GetUserProductCount(int id)
+        {
+            using (YesilEvDbContext context = new YesilEvDbContext())
+            {
+
+                return context.Product.Where(x=> x.);
+            }
+            
+        }*/
     }
 }

@@ -111,10 +111,12 @@
             this.btnKayitOl.TabIndex = 4;
             this.btnKayitOl.Text = "Kayıt Ol";
             this.btnKayitOl.UseVisualStyleBackColor = false;
+            this.btnKayitOl.Click += new System.EventHandler(this.btnKayitOl_Click);
             // 
             // txtIsim
             // 
             this.txtIsim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.txtIsim.ForeColor = System.Drawing.Color.White;
             this.txtIsim.Location = new System.Drawing.Point(20, 54);
             this.txtIsim.Multiline = true;
             this.txtIsim.Name = "txtIsim";
@@ -124,6 +126,7 @@
             // txtSoyisim
             // 
             this.txtSoyisim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.txtSoyisim.ForeColor = System.Drawing.Color.White;
             this.txtSoyisim.Location = new System.Drawing.Point(230, 53);
             this.txtSoyisim.Multiline = true;
             this.txtSoyisim.Name = "txtSoyisim";
@@ -133,6 +136,7 @@
             // txtSifre
             // 
             this.txtSifre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.txtSifre.ForeColor = System.Drawing.Color.White;
             this.txtSifre.Location = new System.Drawing.Point(22, 181);
             this.txtSifre.Multiline = true;
             this.txtSifre.Name = "txtSifre";
@@ -143,6 +147,7 @@
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.txtEmail.ForeColor = System.Drawing.Color.White;
             this.txtEmail.Location = new System.Drawing.Point(22, 116);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
@@ -225,6 +230,7 @@
             // txtGirisYapSifre
             // 
             this.txtGirisYapSifre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.txtGirisYapSifre.ForeColor = System.Drawing.Color.White;
             this.txtGirisYapSifre.Location = new System.Drawing.Point(17, 135);
             this.txtGirisYapSifre.Name = "txtGirisYapSifre";
             this.txtGirisYapSifre.PasswordChar = '*';
@@ -245,6 +251,7 @@
             // txtGirisYapEmail
             // 
             this.txtGirisYapEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.txtGirisYapEmail.ForeColor = System.Drawing.Color.White;
             this.txtGirisYapEmail.Location = new System.Drawing.Point(17, 83);
             this.txtGirisYapEmail.Name = "txtGirisYapEmail";
             this.txtGirisYapEmail.Size = new System.Drawing.Size(387, 20);
@@ -261,17 +268,17 @@
             this.lblGirisYapEmail.TabIndex = 1;
             this.lblGirisYapEmail.Text = "Email";
             // 
-            // Form1
+            // GirisKayitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(456, 475);
+            this.Controls.Add(this.GroupBoxKayitOl);
             this.Controls.Add(this.btnGroupBoxGirisYap);
             this.Controls.Add(this.btnGroupBoxKayitOl);
             this.Controls.Add(this.GroupBoxGirisYap);
-            this.Controls.Add(this.GroupBoxKayitOl);
-            this.Name = "Form1";
+            this.Name = "GirisKayitForm";
             this.Text = "Form1";
             this.GroupBoxKayitOl.ResumeLayout(false);
             this.GroupBoxKayitOl.PerformLayout();

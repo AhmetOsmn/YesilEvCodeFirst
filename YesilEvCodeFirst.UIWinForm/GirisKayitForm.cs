@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YesilEvCodeFirst.DAL.Use;
+using YesilEvCodeFirst.DTOs;
+using YesilEvCodeFirst.DTOs.UserAdmin;
 
 namespace YesilEvCodeFirst.UIWinForm
 {
     public partial class GirisKayitForm : Form
     {
+        UseUserDAL userDAL = new UseUserDAL();
         public GirisKayitForm()
         {
             InitializeComponent();
@@ -35,8 +39,53 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void SignInButton_Click(object sender, EventArgs e)
         {
-            UserSayfasi f = new UserSayfasi();
-            f.Show();
+            if (txtGirisYapEmail.Text.Contains('@'))
+            {
+                LoginDTO dto = new LoginDTO()
+                {
+                    Email = txtGirisYapEmail.Text,
+                    Password = txtGirisYapSifre.Text,
+                };
+                var result = userDAL.UserLogin(dto);
+                if (!result)
+                {
+                    MessageBox.Show("Giriş Bilgileri Yanlış");
+                }
+                else
+                {
+                    UserSayfasi f = new UserSayfasi();
+                    f.KullaniciMail = txtGirisYapEmail.Text;
+                    this.Visible = false;
+                    f.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Girilen Email Hatalıdır.");
+            }
+            
+        }
+
+        private void btnKayitOl_Click(object sender, EventArgs e)
+        {
+            if (txtEmail.Text.Contains('@'))
+            {
+                AddUserDTO dto = new AddUserDTO()
+                {
+                    Email = txtEmail.Text,
+                    FirstName = txtIsim.Text,
+                    LastName = txtSoyisim.Text,
+                    Password = txtSifre.Text,
+                    Phone = "1234567891"
+                };
+                var result = userDAL.AddUser(dto);
+                if (result)
+                {
+                    MessageBox.Show("Başarıyla Kayıt Oldunuz. Giriş Yapabilirsiniz");
+                    GroupBoxKayitOl.Visible = false;
+                    GroupBoxGirisYap.Visible = true;
+                }
+            }
         }
     }
 }

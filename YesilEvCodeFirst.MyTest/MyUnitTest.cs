@@ -176,6 +176,18 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
+        
+        [TestMethod]
+        public void GetUserDetailTest()
+        {
+            UseUserDAL dal = new UseUserDAL();
+            var result = dal.GetUserDeatilWithEmail("mertdalkiran@gmail.com");
+
+            if (result == null)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
 
         #endregion
     }
