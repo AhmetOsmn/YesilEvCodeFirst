@@ -9,6 +9,6 @@
         public string Password { get; set; }
         public string Phone { get; set; }
         //todo rolID burada olacak mi?
-        public int RolID { get; set; } = 3;
+        public int? RolID { get; set; } = 3;
     }
 }

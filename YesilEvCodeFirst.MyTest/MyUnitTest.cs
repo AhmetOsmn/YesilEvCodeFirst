@@ -1,13 +1,9 @@
-﻿using AutoMapper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using YesilEvCodeFirst.Core.Entities;
-using YesilEvCodeFirst.DAL;
 using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Product;
-using YesilEvCodeFirst.DTOs.User;
+using YesilEvCodeFirst.DTOs.UserAdmin;
 
 namespace YesilEvCodeFirst.MyTest
 {

@@ -50,6 +50,8 @@ namespace YesilEvCodeFirst.Core.Repos
         {
             return _context.Set<TEntity>().Where(whereCondition).ToList();
         }
+
+        // todo: alt kisimdaki metot cok saglikli degil, duzenlenecek.
         public List<TEntity> GetByConditionWithInclude(Func<TEntity, bool> whereCondition, string table, string table2)
         {
             var result = _context.Set<TEntity>().Include(table).Include(table2).Where(whereCondition).ToList();

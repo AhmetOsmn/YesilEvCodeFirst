@@ -4,9 +4,9 @@
     {
         public string Barcode { get; set; }
         public string ProductName { get; set; }
-        public int SupplierID { get; set; }
+        public int? SupplierID { get; set; }
         public string SupplierName { get; set; }
-        public int CategoryID { get; set; }
+        public int? CategoryID { get; set; }
         public string CategoryName { get; set; }
         public string ProductContent { get; set; }
         public string PictureFronthPath { get; set; }

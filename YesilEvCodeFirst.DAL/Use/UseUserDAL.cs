@@ -67,6 +67,8 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 UserDAL dal = new UserDAL();
                 User adduser = MappingProfile.AddUserDTOtoUser(dto);
+                //todo: eklenmek istenen kullanici zaten var mi kontrolu olmali,
+                // password hashlenerek ve sold'lama yapilarak db'ye kaydedilmeli
                 dal.Add(adduser);
                 dal.MySaveChanges();
 

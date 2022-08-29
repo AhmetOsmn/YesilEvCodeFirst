@@ -31,10 +31,12 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 ProductDAL dal = new ProductDAL();
                 Product eklenecekUrun = MappingProfile.AddProductDTOToProduct(dto);
+                // todo: urun eklerken icerisindeki maddeler, maddeler tablosuna eklenmeli.
                 // maddeler split(",")
                 dal.Add(eklenecekUrun);
                 dal.MySaveChanges();
                 LogExtension.LogFunc(myLog, "", "Ahmet", "Ekleme islemi basarili", "Urun", Islem.Info);
+                // todo: bazı yerlere nlog eklenecek
 
                 return true;
             }

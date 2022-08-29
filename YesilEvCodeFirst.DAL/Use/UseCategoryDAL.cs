@@ -12,6 +12,7 @@ using YesilEvCodeFirst.Mapping;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
+    // todo: metotlarin ustlerinde summary, icerisinde aciklamalar olmali.
     public class UseCategoryDAL : EfRepoBase<YesilEvDbContext, Category>
     {
         JsonLogger<LogDTO> myLog = new JsonLogger<LogDTO>("MyLog.txt");
