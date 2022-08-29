@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
-using YesilEvCodeFirst.DAL.Concrete;
 using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Supplier;
 using YesilEvCodeFirst.Logs.Concrete;
@@ -20,10 +20,19 @@ namespace YesilEvCodeFirst.DAL.Use
         {
             try
             {
-                SupplierDAL dal = new SupplierDAL();
-                List<SupplierDTO> productDTOList = MappingProfile.SupplierListToSupplierDTOList(dal.GetAll());
+                
+                List<Supplier> suppliers = new List<Supplier>();
+                // dal.GetAll()
+
+                using (YesilEvDbContext context = new YesilEvDbContext())
+                {
+                    var result = context.Supplier.ToList();
+
+                    suppliers = result;
+                }
+                List<SupplierDTO> supplierDTOList = MappingProfile.SupplierListToSupplierDTOList(suppliers);
                 LogExtension.LogFunc(myLog, "", "Ahmet", "Listeleme islemi basarili", "Supplier", Islem.Info);
-                return productDTOList;
+                return supplierDTOList;
             }
             catch (Exception ex)
             {

@@ -34,13 +34,13 @@ namespace YesilEvCodeFirst.MyTest
             UseProductDAL dal = new UseProductDAL();
             bool result = dal.AddProduct(new AddProductDTO()
             {
-                ProductName = "TEST URUN 1",
+                ProductName = "TEST URUN 2",
                 Barcode = Guid.NewGuid().ToString().Substring(0, 7),
-                CategoryID = 2,
-                SupplierID = 2,
-                ProductContent = "madde1, madde2, madde3, madde4, madde5, madde6",
-                PictureBackPath = "backtest",
-                PictureFronthPath = "fronttest"
+                CategoryID = 1,
+                SupplierID = 1,
+                ProductContent = "madde1, madde2, madde3, madde4",
+                PictureBackPath = "backtest2",
+                PictureFronthPath = "fronttest2"
             });
 
             if (!result)
@@ -55,13 +55,11 @@ namespace YesilEvCodeFirst.MyTest
             UseUserDAL dal = new UseUserDAL();
             bool result = dal.AddUser(new AddUserDTO()
             {
-                FirstName = "Veli",
-                LastName = "Canlı",
-                Email = "veli@gmail.com",
-                UserName = "userveli",
-                Password = "veli555",
+                FirstName = "Mert",
+                LastName = "Dalkıran",
+                Email = "MErt@gmail.com",
+                Password = "mert555",
                 Phone = "5345898818",
-                RolID = 2
             });
 
             if (!result)

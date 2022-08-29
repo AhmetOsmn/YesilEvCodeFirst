@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
-using YesilEvCodeFirst.DAL.Concrete;
 using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Category;
 using YesilEvCodeFirst.Logs.Concrete;
@@ -21,8 +21,15 @@ namespace YesilEvCodeFirst.DAL.Use
         {
             try
             {
-                CategoryDAL dal = new CategoryDAL();
-                List<CategoryDTO> productDTOList = MappingProfile.CategoryListToCategoryDTOList(dal.GetAll());
+                List<Category> categories = new List<Category>();
+
+                using (YesilEvDbContext context = new YesilEvDbContext())
+                {
+                    var result = context.Category.ToList();
+
+                    categories = result;
+                }
+                List<CategoryDTO> productDTOList = MappingProfile.CategoryListToCategoryDTOList(categories);
                 LogExtension.LogFunc(myLog, "", "Ahmet", "Listeleme islemi basarili", "Category", Islem.Info);
                 return productDTOList;
             }

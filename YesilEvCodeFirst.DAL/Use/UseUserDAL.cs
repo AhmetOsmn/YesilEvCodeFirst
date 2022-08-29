@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
-using YesilEvCodeFirst.DAL.Concrete;
 using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.UserAdmin;
 using YesilEvCodeFirst.ExceptionHandling;
@@ -30,9 +30,13 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new ModelNotValidException(validator.ValidationMessages);
                 }
 
-                UserDAL dal = new UserDAL();
+                User user = null;
 
-                User user = dal.GetByCondition(users => users.Email.Equals(dto.Email) && users.Password.Equals(dto.Password)).SingleOrDefault();
+                using (YesilEvDbContext context = new YesilEvDbContext())
+                {
+                    var result = context.User.Where(u => u.Email.Equals(dto.Email) && u.Password.Equals(dto.Password)).FirstOrDefault();
+                    user = result;
+                }
 
                 if (user == null)
                 {
@@ -64,13 +68,23 @@ namespace YesilEvCodeFirst.DAL.Use
                 {
                     throw new ModelNotValidException(validator.ValidationMessages);
                 }
-
-                UserDAL dal = new UserDAL();
-                User adduser = MappingProfile.AddUserDTOtoUser(dto);
-                //todo: eklenmek istenen kullanici zaten var mi kontrolu olmali,
-                // password hashlenerek ve sold'lama yapilarak db'ye kaydedilmeli
-                dal.Add(adduser);
-                dal.MySaveChanges();
+                using (YesilEvDbContext context = new YesilEvDbContext())
+                {
+                    var tempUser = context.User.Where(u => u.Email.Equals(dto.Email)).FirstOrDefault();
+                    if(tempUser == null)
+                    {
+                        User addUser = MappingProfile.AddUserDTOtoUser(dto);
+                        addUser.RolID = 2;
+                        // todo: password hashlenerek ve sold'lama yapilarak db'ye kaydedilmeli
+                        context.User.Add(addUser);
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        throw new Exception("Email ile kayitli kullanici mevcut.");
+                    }
+                
+                }
 
                 LogExtension.LogFunc(myLog, "", "Ahmet", "Ekleme islemi basarili", "User", Islem.Info);
 
