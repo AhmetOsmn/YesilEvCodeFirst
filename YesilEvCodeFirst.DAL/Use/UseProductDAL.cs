@@ -10,6 +10,7 @@ using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
 using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Product;
+using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.ExceptionHandling;
 using YesilEvCodeFirst.Logs.Concrete;
 using YesilEvCodeFirst.Mapping;
@@ -29,7 +30,6 @@ namespace YesilEvCodeFirst.DAL.Use
         public bool AddProduct(AddProductDTO dto)
         {
             AddProductValidator validator = new AddProductValidator(dto);
-
             try
             {
                 if (!validator.IsValid)
@@ -40,52 +40,45 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    // todo: burada urun ve madde tablosuna eklerken ProductSupplement tablosuna da eklenmeli
-                    using (var dbContextTransection = context.Database.BeginTransaction())
+                    var tempProduct = context.Product.Where(p => p.Barcode.Equals(dto.Barcode)).FirstOrDefault();
+                    if (tempProduct == null)
                     {
-                        try
+                        Product eklenecekUrun = MappingProfile.AddProductDTOToProduct(dto);
+                        context.Product.Add(eklenecekUrun);
+                        context.SaveChanges();
+
+                        var supplements = eklenecekUrun.ProductContent.Split(',');
+                        for (int i = 0; i < supplements.Length; i++)
                         {
-
-                            var tempProduct = context.Product.Where(p => p.Barcode.Equals(dto.Barcode)).FirstOrDefault();
-                            if (tempProduct == null)
+                            string sup = supplements[i].Trim();
+                            var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
+                            if (result == null)
                             {
-                                Product eklenecekUrun = MappingProfile.AddProductDTOToProduct(dto);
-                                context.Product.Add(eklenecekUrun);
-
-                                var supplements = eklenecekUrun.ProductContent.Trim(' ').Split(',');
-                                for (int i = 0; i < supplements.Length; i++)
+                                //context.Supplement.Add(new Supplement { SupplementName = supplements[i] });
+                                // todo: UseSupplementDal'ı burada kullanmaya gerek var mi? Yukaridaki kullanim da var.
+                                UseSupplementDAL supplementDAL = new UseSupplementDAL();
+                                supplementDAL.AddSupplement(new AddSupplementDTO { SupplementName = sup });
+                                context.ProductSupplement.Add(new ProductSupplement()
                                 {
-                                    string sup = supplements[i];
-                                    var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
-                                    if (result == null)
-                                    {
-                                        // todo: UseSupplementDal'ı burada kullanmaya gerek var mi?
-                                        context.Supplement.Add(new Supplement { SupplementName = supplements[i] });
-                                    }
-                                }
-                                context.SaveChanges();
-                                dbContextTransection.Commit();
-                                //context.ProductSupplement.Add(new ProductSupplement()
-                                //{
-                                //    ProductID = context.Product.ToList().LastOrDefault().ProductID,
-                                //    //SupplementID = context.Supplement.LastOrDefault().SupplementID
-                                //    SupplementID = result.SupplementID
-                                //});
+                                    ProductID = context.Product.ToList().LastOrDefault().ProductID,
+                                    SupplementID = context.Supplement.ToList().LastOrDefault().SupplementID
+                                });
                             }
                             else
                             {
-                                throw new Exception("Urun zaten mevcut");
+                                context.ProductSupplement.Add(new ProductSupplement()
+                                {
+                                    ProductID = context.Product.ToList().LastOrDefault().ProductID,
+                                    SupplementID = result.SupplementID
+                                });
                             }
                         }
-                        catch (Exception ex)
-                        {
-                            dbContextTransection.Rollback();
-                            throw new Exception(ex.Message);
-                        }
-                        finally
-                        {
-                            dbContextTransection.Dispose();
-                        }
+                        context.SaveChanges();
+
+                    }
+                    else
+                    {
+                        throw new Exception("Urun zaten mevcut");
                     }
                 }
 
@@ -125,6 +118,34 @@ namespace YesilEvCodeFirst.DAL.Use
                                 tempProduct.ProductName = dto.ProductName;
                                 tempProduct.CategoryID = dto.CategoryID;
                                 tempProduct.ProductContent = dto.ProductContent;
+                                var supplements = tempProduct.ProductContent.Split(',');
+                                //refactor edilecek
+                                var temp = context.ProductSupplement.Where(x => x.ProductID == tempProduct.ProductID).ToList();
+                                context.ProductSupplement.RemoveRange(temp);
+                                MySaveChanges();
+                                for (int i = 0; i < supplements.Length; i++)
+                                {
+                                    string sup = supplements[i].Trim();
+                                    var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
+                                    if (result == null)
+                                    {
+                                        UseSupplementDAL supplementDAL = new UseSupplementDAL();
+                                        supplementDAL.AddSupplement(new AddSupplementDTO { SupplementName = sup });
+                                        context.ProductSupplement.Add(new ProductSupplement()
+                                        {
+                                            ProductID = tempProduct.ProductID,
+                                            SupplementID = context.Supplement.ToList().LastOrDefault().SupplementID
+                                        });
+                                    }
+                                    else
+                                    {
+                                        context.ProductSupplement.Add(new ProductSupplement()
+                                        {
+                                            ProductID = tempProduct.ProductID,
+                                            SupplementID = result.SupplementID
+                                        });
+                                    }
+                                }
                                 tempProduct.PictureBackPath = dto.PictureBackPath;
                                 tempProduct.PictureFronthPath = dto.PictureFronthPath;
                                 tempProduct.SupplierID = dto.SupplierID;

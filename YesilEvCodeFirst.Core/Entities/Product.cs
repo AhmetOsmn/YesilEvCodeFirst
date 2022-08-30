@@ -18,8 +18,8 @@ namespace YesilEvCodeFirst.Core.Entities
         [StringLength(50)]
         public string Barcode { get; set; }
         public string TracingNo { get; set; } = Guid.NewGuid().ToString();
-        
-        public bool IsApproved { get; set; }
+
+        public bool IsApproved { get; set; } = false;
         public string PictureFronthPath { get; set; }
         public string PictureBackPath { get; set; }
         public string ProductContent { get; set; }
@@ -34,9 +34,9 @@ namespace YesilEvCodeFirst.Core.Entities
         public Category Category { get; set; }
 
 
-        public int ApprovedBy { get; set; }
+        public int? ApprovedBy { get; set; }
         [ForeignKey("ApprovedBy")]
-        public User Admin { get; set; }
+        public User Admin { get; set; } 
 
         public List<ProductSupplement> ProductSupplements{ get; set; }
         public List<ProductFavList> ProductFavList { get; set; }

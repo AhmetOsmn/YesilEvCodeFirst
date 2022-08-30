@@ -8,7 +8,7 @@ namespace YesilEvCodeFirst.Core.Context
     {
         public YesilEvDbContext() : base("name=AhmetConn")
         {
-
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

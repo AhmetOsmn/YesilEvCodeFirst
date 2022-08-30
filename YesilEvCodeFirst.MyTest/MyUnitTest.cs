@@ -55,11 +55,11 @@ namespace YesilEvCodeFirst.MyTest
             UseProductDAL dal = new UseProductDAL();
             bool result = dal.AddProduct(new AddProductDTO()
             {
-                ProductName = "Test productsupplement 1",
+                ProductName = "Test productsupplement 3",
                 Barcode = Guid.NewGuid().ToString().Substring(0, 7),
-                CategoryID = 1,
-                SupplierID = 1,
-                ProductContent = "madde2, madde3, Parfum, madde33",
+                CategoryID = 4,
+                SupplierID = 2,
+                ProductContent = "Cocamidopropyl Betaine, PEG-150 Distearate, Sodium Chloride, Yellow 6, Madde A, Madde B",
                 PictureBackPath = "backtest3",
                 PictureFronthPath = "fronttest3"
             });
@@ -115,13 +115,13 @@ namespace YesilEvCodeFirst.MyTest
             UseProductDAL dal = new UseProductDAL();
             bool result = dal.UpdateProduct(new UpdateProductDTO()
             {
-                Barcode = "e58a083",
-                ProductName = "TEST URUN 1",
+                Barcode = "477a0e0",
+                ProductName = "Test productsupplement 2",
                 CategoryID = 2,
-                SupplierID = 1,
-                ProductContent = "madde1, madde2, madde3, madde4, madde5, madde6",
-                PictureBackPath = "backtest",
-                PictureFronthPath = "fronttest"
+                SupplierID = 4,
+                ProductContent = "Madde A, Madde B, Madde C, Madde D, Madde Sezgin, Madde Y",
+                PictureBackPath = "backtest2",
+                PictureFronthPath = "fronttest2"
             });
 
             if (!result)
