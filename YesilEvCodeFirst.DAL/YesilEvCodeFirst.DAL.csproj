@@ -65,6 +65,7 @@
     <Compile Include="Use\UseAdminDAL.cs" />
     <Compile Include="Use\UseCategoryDAL.cs" />
     <Compile Include="Use\UseProductDAL.cs" />
+    <Compile Include="Use\UseSupplementDAL.cs" />
     <Compile Include="Use\UseSupplierDAL.cs" />
     <Compile Include="Use\UseUserDAL.cs" />
   </ItemGroup>

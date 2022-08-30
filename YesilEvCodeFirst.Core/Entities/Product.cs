@@ -19,31 +19,28 @@ namespace YesilEvCodeFirst.Core.Entities
         public string Barcode { get; set; }
         public string TracingNo { get; set; } = Guid.NewGuid().ToString();
         
+        public bool IsApproved { get; set; }
         public string PictureFronthPath { get; set; }
         public string PictureBackPath { get; set; }
         public string ProductContent { get; set; }
 
         #region Relations
-       
-        public List<Supplement> Supplements { get; set; }
-
 
         public int SupplierID { get; set; }
-        [ForeignKey("SupplierID")]
         public Supplier Supplier { get; set; }
 
 
         public int CategoryID { get; set; }
-        [ForeignKey("CategoryID")]
         public Category Category { get; set; }
 
 
-        public List<FavList> FavLists { get; set; }
+        public int ApprovedBy { get; set; }
+        [ForeignKey("ApprovedBy")]
+        public User Admin { get; set; }
 
+        public List<ProductSupplement> ProductSupplements{ get; set; }
+        public List<ProductFavList> ProductFavList { get; set; }
 
-        //public int PictureID { get; set; }
-        //[ForeignKey("PictureID")]
-        //public Picture Picture { get; set; }
         #endregion
     }
 }

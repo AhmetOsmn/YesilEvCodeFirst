@@ -40,7 +40,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    // begin transection
+                    // todo: burada urun ve madde tablosuna eklerken ProductSupplement tablosuna da eklenmeli
                     using (var dbContextTransection = context.Database.BeginTransaction())
                     {
                         try
@@ -53,10 +53,10 @@ namespace YesilEvCodeFirst.DAL.Use
                                 for (int i = 0; i < supplements.Length; i++)
                                 {
                                     string sup = supplements[i];
-                                    var result = context.Supliment.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
+                                    var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
                                     if (result == null)
                                     {
-                                        context.Supliment.Add(new Supplement { SupplementName = supplements[i] });
+                                        context.Supplement.Add(new Supplement { SupplementName = supplements[i] });
                                     }
                                 }
                                 context.Product.Add(eklenecekUrun);

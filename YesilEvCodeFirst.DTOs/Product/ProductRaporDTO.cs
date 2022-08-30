@@ -1,8 +1,8 @@
 ﻿namespace YesilEvCodeFirst.DTOs.Product
 {
-    public class ListProductDTO
+    public class ProductRaporDTO
     {
         public string ProductName { get; set; }
-        public string ProductContent { get; set; }
+        public int SupplementCount { get; set; }
     }
 }

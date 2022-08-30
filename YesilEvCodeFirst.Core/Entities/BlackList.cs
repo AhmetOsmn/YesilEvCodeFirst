@@ -8,9 +8,11 @@ namespace YesilEvCodeFirst.Core.Entities
     {
         [Key]
         public int BlackListID { get; set; }
+
         public int UserID { get; set; }
         [ForeignKey("UserID")]
         public User User{ get; set; }
-        public List<Supplement> Supplements { get; set; }
+
+        public List<SupplementBlackList> SupplementBlackLists{ get; set; }
     }
 }

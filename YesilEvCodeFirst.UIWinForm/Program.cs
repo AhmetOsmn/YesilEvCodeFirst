@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using YesilEvCodeFirst.UIWinForm.Raporlar;
 
 namespace YesilEvCodeFirst.UIWinForm
 {
@@ -16,7 +14,7 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GirisKayitForm());
+            Application.Run(new Rapor01Form());
         }
     }
 }

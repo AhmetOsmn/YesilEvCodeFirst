@@ -75,11 +75,15 @@
     <Compile Include="Entities\BlackList.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Picture.cs" />
+    <Compile Include="Entities\ProductFavList.cs" />
+    <Compile Include="Entities\ProductSupplement.cs" />
+    <Compile Include="Entities\SupplementBlackList.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\Supplement.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\Supplier.cs" />
     <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\UserFavList.cs" />
     <Compile Include="Interfaces\IDeletableRepo.cs" />
     <Compile Include="Interfaces\IInsertableRepo.cs" />
     <Compile Include="Interfaces\IRepo.cs" />

@@ -10,10 +10,9 @@ namespace YesilEvCodeFirst.Core.Entities
         public int FavorID { get; set; }
 
         public int UserID { get; set; }
-        [ForeignKey("UserID")]
         public User User{ get; set; }
-        public int ProductID { get; set; }
-        [ForeignKey("ProductID")]
-        public List<Product> Products { get; set; }
+
+        public List<ProductFavList> ProductFavList { get; set; }
+        public List<UserFavList> UserFavList { get; set; }
     }
 }

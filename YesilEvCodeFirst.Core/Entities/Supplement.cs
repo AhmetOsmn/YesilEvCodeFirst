@@ -12,7 +12,8 @@ namespace YesilEvCodeFirst.Core.Entities
         [Column(TypeName = "NVARCHAR")]
         [StringLength(100)]
         public string SupplementName { get; set; }
-        public List<Product> Products { get; set; }
-        public List<BlackList> BlackLists { get; set; }
+        public string RiskRatio { get; set; }
+        public List<ProductSupplement> ProductSupplements { get; set; }
+        public List<SupplementBlackList> SupplementBlackLists { get; set; }
     }
 }

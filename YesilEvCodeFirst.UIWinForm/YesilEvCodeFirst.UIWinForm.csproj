@@ -62,6 +62,72 @@
     <Compile Include="GirisKayitForm.Designer.cs">
       <DependentUpon>GirisKayitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\Rapor10Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Rapor10Form.Designer.cs">
+      <DependentUpon>Rapor10Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Rapor01Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Rapor01Form.Designer.cs">
+      <DependentUpon>Rapor01Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Rapor02Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Rapor02Form.Designer.cs">
+      <DependentUpon>Rapor02Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Rapor03Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Rapor03Form.Designer.cs">
+      <DependentUpon>Rapor03Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Rapor04Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Rapor04Form.Designer.cs">
+      <DependentUpon>Rapor04Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Rapor05Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Rapor05Form.Designer.cs">
+      <DependentUpon>Rapor05Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Rapor06Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Rapor06Form.Designer.cs">
+      <DependentUpon>Rapor06Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Rapor07Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Rapor07Form.Designer.cs">
+      <DependentUpon>Rapor07Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Rapor08Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Rapor08Form.Designer.cs">
+      <DependentUpon>Rapor08Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Rapor09Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Rapor09Form.Designer.cs">
+      <DependentUpon>Rapor09Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Rapor11Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Rapor11Form.Designer.cs">
+      <DependentUpon>Rapor11Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserSayfasi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +156,39 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GirisKayitForm.resx">
       <DependentUpon>GirisKayitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Rapor01Form.resx">
+      <DependentUpon>Rapor01Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Rapor02Form.resx">
+      <DependentUpon>Rapor02Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Rapor03Form.resx">
+      <DependentUpon>Rapor03Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Rapor04Form.resx">
+      <DependentUpon>Rapor04Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Rapor05Form.resx">
+      <DependentUpon>Rapor05Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Rapor06Form.resx">
+      <DependentUpon>Rapor06Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Rapor07Form.resx">
+      <DependentUpon>Rapor07Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Rapor08Form.resx">
+      <DependentUpon>Rapor08Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Rapor09Form.resx">
+      <DependentUpon>Rapor09Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Rapor10Form.resx">
+      <DependentUpon>Rapor10Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Rapor11Form.resx">
+      <DependentUpon>Rapor11Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserSayfasi.resx">
       <DependentUpon>UserSayfasi.cs</DependentUpon>

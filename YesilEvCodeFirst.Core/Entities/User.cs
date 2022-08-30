@@ -7,7 +7,7 @@ namespace YesilEvCodeFirst.Core.Entities
     public class User : BaseEntity
     {
         [Key]
-        public int CustomerID { get; set; }
+        public int UserID { get; set; }
 
         [Column(TypeName = "NVARCHAR")]
         [StringLength(100)]
@@ -34,7 +34,8 @@ namespace YesilEvCodeFirst.Core.Entities
         public string Password { get; set; }
 
         public int RolID { get; set; }
-        [ForeignKey("RolID")]
         public Role Rol { get; set; }
+
+        public List<UserFavList> UserFavList { get; set; }
     }
 }
