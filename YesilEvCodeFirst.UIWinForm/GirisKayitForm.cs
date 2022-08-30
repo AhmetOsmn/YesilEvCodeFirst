@@ -39,7 +39,7 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void SignInButton_Click(object sender, EventArgs e)
         {
-            if (txtGirisYapEmail.Text.Contains('@'))
+            /*if (txtGirisYapEmail.Text.Contains('@'))
             {
                 LoginDTO dto = new LoginDTO()
                 {
@@ -62,8 +62,9 @@ namespace YesilEvCodeFirst.UIWinForm
             else
             {
                 MessageBox.Show("Girilen Email Hatalıdır.");
-            }
-            
+            }*/
+            Form1 f = new Form1();
+            f.Show();
         }
 
         private void btnKayitOl_Click(object sender, EventArgs e)

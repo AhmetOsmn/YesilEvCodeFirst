@@ -274,10 +274,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(456, 475);
-            this.Controls.Add(this.GroupBoxKayitOl);
             this.Controls.Add(this.btnGroupBoxGirisYap);
             this.Controls.Add(this.btnGroupBoxKayitOl);
             this.Controls.Add(this.GroupBoxGirisYap);
+            this.Controls.Add(this.GroupBoxKayitOl);
             this.Name = "GirisKayitForm";
             this.Text = "Form1";
             this.GroupBoxKayitOl.ResumeLayout(false);
