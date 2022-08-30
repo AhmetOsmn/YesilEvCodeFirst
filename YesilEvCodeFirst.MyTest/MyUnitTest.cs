@@ -3,6 +3,7 @@ using System;
 using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Product;
+using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.DTOs.UserAdmin;
 
 namespace YesilEvCodeFirst.MyTest
@@ -54,13 +55,13 @@ namespace YesilEvCodeFirst.MyTest
             UseProductDAL dal = new UseProductDAL();
             bool result = dal.AddProduct(new AddProductDTO()
             {
-                ProductName = "TEST URUN 33",
+                ProductName = "Test productsupplement 1",
                 Barcode = Guid.NewGuid().ToString().Substring(0, 7),
                 CategoryID = 1,
                 SupplierID = 1,
-                ProductContent = "madde1, madde2, madde3, madde4, madde33",
-                PictureBackPath = "backtest2",
-                PictureFronthPath = "fronttest2"
+                ProductContent = "madde2, madde3, Parfum, madde33",
+                PictureBackPath = "backtest3",
+                PictureFronthPath = "fronttest3"
             });
 
             if (!result)
@@ -80,6 +81,22 @@ namespace YesilEvCodeFirst.MyTest
                 Email = "velikara@gmail.com",
                 Password = "mert555",
                 Phone = "5345898818",
+            });
+
+            if (!result)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+
+
+        [TestMethod]
+        public void AddSupplementTest()
+        {
+            UseSupplementDAL dal = new UseSupplementDAL();
+            var result = dal.AddSupplement(new AddSupplementDTO
+            {
+                SupplementName = "test supplement"
             });
 
             if (!result)

@@ -45,10 +45,13 @@ namespace YesilEvCodeFirst.DAL.Use
                     {
                         try
                         {
+
                             var tempProduct = context.Product.Where(p => p.Barcode.Equals(dto.Barcode)).FirstOrDefault();
                             if (tempProduct == null)
                             {
                                 Product eklenecekUrun = MappingProfile.AddProductDTOToProduct(dto);
+                                context.Product.Add(eklenecekUrun);
+
                                 var supplements = eklenecekUrun.ProductContent.Trim(' ').Split(',');
                                 for (int i = 0; i < supplements.Length; i++)
                                 {
@@ -56,12 +59,18 @@ namespace YesilEvCodeFirst.DAL.Use
                                     var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
                                     if (result == null)
                                     {
+                                        // todo: UseSupplementDal'ı burada kullanmaya gerek var mi?
                                         context.Supplement.Add(new Supplement { SupplementName = supplements[i] });
                                     }
                                 }
-                                context.Product.Add(eklenecekUrun);
                                 context.SaveChanges();
                                 dbContextTransection.Commit();
+                                //context.ProductSupplement.Add(new ProductSupplement()
+                                //{
+                                //    ProductID = context.Product.ToList().LastOrDefault().ProductID,
+                                //    //SupplementID = context.Supplement.LastOrDefault().SupplementID
+                                //    SupplementID = result.SupplementID
+                                //});
                             }
                             else
                             {
@@ -81,7 +90,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
 
                 LogExtension.LogFunc(myLog, "", "Ahmet", "Ekleme islemi basarili", "Urun", Islem.Info);
-                
+
                 return true;
             }
             catch (ModelNotValidException ex)
@@ -164,7 +173,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     LogExtension.LogFunc(myLog, "", "Ahmet", "Listeleme islemi basarili", "Urun", Islem.Info);
                     return productDTOList;
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -198,7 +207,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
                     // todo: burada this.getbycondition metodu mu kullanmaliyiz, context.products.. seklinde mi yapmaliyiz.
-                    Product product = this.GetByConditionWithInclude(p => p.Barcode.Equals(barcode),"Supplier","Category").FirstOrDefault();
+                    Product product = this.GetByConditionWithInclude(p => p.Barcode.Equals(barcode), "Supplier", "Category").FirstOrDefault();
                     if (product != null)
                     {
                         //mapping Urun -> GetProductDetailDTO

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.DTOs.Category;
 using YesilEvCodeFirst.DTOs.Product;
+using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.DTOs.Supplier;
 using YesilEvCodeFirst.DTOs.UserAdmin;
 
@@ -64,12 +65,21 @@ namespace YesilEvCodeFirst.Mapping
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<User>(dt);
         }
+
         public static GetUserDetailDTO UserToGetUserDetailDTO(User user)
         {
             var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<User, GetUserDetailDTO>());
 
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<GetUserDetailDTO>(user);
+        }
+
+        public static Supplement AddSupplementDTOToSupplement(AddSupplementDTO dto)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddSupplementDTO, Supplement>());
+
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<Supplement>(dto);
         }
     }
 }

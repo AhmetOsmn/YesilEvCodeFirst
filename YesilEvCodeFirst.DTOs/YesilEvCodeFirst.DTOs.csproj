@@ -60,6 +60,7 @@
     <Compile Include="Product\ProductRaporDTO.cs" />
     <Compile Include="Product\UpdateProductDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Supplement\AddSupplementDTO.cs" />
     <Compile Include="Supplier\SupplierDTO.cs" />
     <Compile Include="UserAdmin\AddUserDTO.cs" />
     <Compile Include="UserAdmin\GetUserDetailDTO.cs" />
@@ -72,7 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Role\" />
-    <Folder Include="Supplement\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
