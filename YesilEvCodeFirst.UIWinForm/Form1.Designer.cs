@@ -33,8 +33,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.MaddeIcerenUrunler = new System.Windows.Forms.Panel();
             this.MaddeFavoriYadaKaraListe = new System.Windows.Forms.Panel();
+            this.MaddeIcerenUrunler = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -85,19 +85,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Rapor Bilgileri";
             // 
-            // panel1
-            // 
-            this.MaddeIcerenUrunler.Location = new System.Drawing.Point(6, 19);
-            this.MaddeIcerenUrunler.Name = "panel1";
-            this.MaddeIcerenUrunler.Size = new System.Drawing.Size(375, 366);
-            this.MaddeIcerenUrunler.TabIndex = 0;
-            // 
-            // panel2
+            // MaddeFavoriYadaKaraListe
             // 
             this.MaddeFavoriYadaKaraListe.Location = new System.Drawing.Point(6, 19);
-            this.MaddeFavoriYadaKaraListe.Name = "panel2";
+            this.MaddeFavoriYadaKaraListe.Name = "MaddeFavoriYadaKaraListe";
             this.MaddeFavoriYadaKaraListe.Size = new System.Drawing.Size(375, 366);
             this.MaddeFavoriYadaKaraListe.TabIndex = 0;
+            // 
+            // MaddeIcerenUrunler
+            // 
+            this.MaddeIcerenUrunler.Location = new System.Drawing.Point(6, 19);
+            this.MaddeIcerenUrunler.Name = "MaddeIcerenUrunler";
+            this.MaddeIcerenUrunler.Size = new System.Drawing.Size(375, 366);
+            this.MaddeIcerenUrunler.TabIndex = 0;
             // 
             // Form1
             // 
@@ -111,6 +111,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

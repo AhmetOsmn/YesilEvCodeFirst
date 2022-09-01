@@ -38,5 +38,6 @@ namespace YesilEvCodeFirst.Core.Entities
         public Role Rol { get; set; }
 
         public List<UserFavList> UserFavList { get; set; }
+        public List<SearchHistory> UserSearchHistories { get; set; }
     }
 }
