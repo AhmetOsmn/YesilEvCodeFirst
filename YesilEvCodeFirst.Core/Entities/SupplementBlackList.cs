@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace YesilEvCodeFirst.Core.Entities
 {
-    public class SupplementBlackList
+    public class SupplementBlackList : BaseEntity
     {
         [Key, Column(Order = 0)]
         public int SupplementID { get; set; }

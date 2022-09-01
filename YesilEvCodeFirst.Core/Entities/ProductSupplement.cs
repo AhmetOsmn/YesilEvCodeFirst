@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace YesilEvCodeFirst.Core.Entities
 {
-    public class ProductSupplement
+    public class ProductSupplement : BaseEntity
     {
         [Key, Column(Order = 0)]
         public int ProductID { get; set; }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace YesilEvCodeFirst.Core.Entities
 {
-    public class BlackList
+    public class BlackList : BaseEntity
     {
         [Key]
         public int BlackListID { get; set; }

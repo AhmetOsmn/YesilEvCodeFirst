@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace YesilEvCodeFirst.Core.Entities
 {
-    public class FavList
+    public class FavList : BaseEntity
     {
         [Key]
         public int FavorID { get; set; }
