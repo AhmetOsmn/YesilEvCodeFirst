@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Use\UseRaporDAL.cs" />
     <Compile Include="Use\UseAdminDAL.cs" />
     <Compile Include="Use\UseCategoryDAL.cs" />
     <Compile Include="Use\UseProductDAL.cs" />

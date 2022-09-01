@@ -37,6 +37,7 @@ namespace YesilEvCodeFirst.Core.Entities
         [ForeignKey("RolID")]
         public Role Rol { get; set; }
 
+        public List<Product> Products { get; set; }
         public List<UserFavList> UserFavList { get; set; }
         public List<SearchHistory> UserSearchHistories { get; set; }
     }

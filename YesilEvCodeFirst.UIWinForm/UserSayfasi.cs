@@ -147,6 +147,7 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 bool result = dal.AddProduct(new AddProductDTO
                 {
+                    AddedBy = Kullanici.UserID,
                     Barcode = txtUrunEkleBarkod.Text,
                     SupplierID = ((CategoryDTO)cmbBoxUrunEkleKategori.SelectedItem).CategoryID,
                     ProductName = txtUrunEkleUrunAdi.Text,
@@ -176,6 +177,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 if(isUpdatable)
                 {
                     UpdateProductDTO updateDto = new UpdateProductDTO() {
+                        AddedBy = Kullanici.UserID,
                         Barcode = txtBarkodNo.Text,
                         SupplierID = ((CategoryDTO)cmbBoxKategori.SelectedItem).CategoryID,
                         ProductName = txtUrunAdi.Text,

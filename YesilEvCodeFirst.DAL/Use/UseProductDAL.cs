@@ -107,11 +107,12 @@ namespace YesilEvCodeFirst.DAL.Use
                         try
                         {
                             var tempProduct = context.Product.Where(x => x.Barcode.Equals(dto.Barcode)).FirstOrDefault();
-                            if (tempProduct != null)
+                            if (tempProduct != null && tempProduct.AddedBy == dto.AddedBy)
                             {
                                 tempProduct.ProductName = dto.ProductName;
                                 tempProduct.CategoryID = dto.CategoryID;
                                 tempProduct.ProductContent = dto.ProductContent;
+                                tempProduct.AddedBy = dto.AddedBy;
                                 var supplements = tempProduct.ProductContent.Split(',');
                                 //refactor edilecek
                                 var temp = context.ProductSupplement.Where(x => x.ProductID == tempProduct.ProductID).ToList();
@@ -150,10 +151,15 @@ namespace YesilEvCodeFirst.DAL.Use
                                 trans.Commit();
                                 nLogger.Info("{} urunu guncellendi", tempProduct.ProductName);
                             }
+                            else if (tempProduct.AddedBy != dto.AddedBy)
+                            {
+                                throw new Exception("Urun Kullaniciya ait degil");
+                            }
                             else
                             {
                                 throw new Exception("Urun mevcut değil");
                             }
+                            
                         }
                         catch (Exception ex)
                         {
