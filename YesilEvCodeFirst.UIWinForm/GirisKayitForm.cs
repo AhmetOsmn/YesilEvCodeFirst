@@ -80,6 +80,7 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void btnKayitOl_Click(object sender, EventArgs e)
         {
+            btnKayitOl.Enabled = false;
             if (txtEmail.Text.Contains('@'))
             {
                 AddUserDTO dto = new AddUserDTO()
