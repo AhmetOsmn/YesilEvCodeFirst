@@ -17,7 +17,7 @@ namespace YesilEvCodeFirst.DAL.Use
     {
         readonly Logger nLogger = LogManager.GetCurrentClassLogger();
 
-        public bool UserLogin(LoginDTO dto)
+        public UserDetailDTO UserLogin(LoginDTO dto)
         {
             LoginValidator validator = new LoginValidator(dto);
 
@@ -27,15 +27,12 @@ namespace YesilEvCodeFirst.DAL.Use
                 {
                     throw new ModelNotValidException(validator.ValidationMessages);
                 }
-
-                User user = null;
-
-                using (YesilEvDbContext context = new YesilEvDbContext())
-                {
-                    var result = context.User.Where(u => u.Email.Equals(dto.Email) && u.Password.Equals(dto.Password)).FirstOrDefault();
-                    user = result;
-                }
-
+                //using (YesilEvDbContext context = new YesilEvDbContext())
+                //{
+                //    var result = context.User.Where(u => u.Email.Equals(dto.Email) && u.Password.Equals(dto.Password)).FirstOrDefault();
+                //    user = result;
+                //}
+                var user = GetByCondition(u => u.Email.Equals(dto.Email) && u.Password.Equals(dto.Password)).FirstOrDefault();
                 if (user == null)
                 {
                     throw new Exception("Kullanıcı bulunamadı.");
@@ -53,7 +50,7 @@ namespace YesilEvCodeFirst.DAL.Use
             {
                 nLogger.Error("System - {}", ex.Message);
             }
-            return false;
+            return null;
         }
 
         public bool AddUser(AddUserDTO dto)
@@ -96,7 +93,7 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             return false;
         }
-        public GetUserDetailDTO GetUserDetailWithEmail(string email)
+        public UserDetailDTO GetUserDetailWithEmail(string email)
         {
             try
             {

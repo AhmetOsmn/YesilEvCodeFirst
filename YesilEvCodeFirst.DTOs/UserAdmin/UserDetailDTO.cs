@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace YesilEvCodeFirst.DTOs.UserAdmin
 {
-    public class GetUserDetailDTO
+    public class UserDetailDTO
     {
+        public int UserID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string CreatedDate { get; set; }
-        // bu kisim burada olmayabilir
-        //public int EkledigiUrunSayisi { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public int RolID { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }

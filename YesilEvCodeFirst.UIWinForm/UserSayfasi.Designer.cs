@@ -137,6 +137,7 @@
             this.lblUrunEkleUrunAdi = new System.Windows.Forms.Label();
             this.lblUrunEkleUretici = new System.Windows.Forms.Label();
             this.lblUrunEkleBarkodNo = new System.Windows.Forms.Label();
+            this.lblUyelikTarihiValue = new System.Windows.Forms.Label();
             this.pnlHome.SuspendLayout();
             this.pnlUygulamaPuanVer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUygulamaPuanVer)).BeginInit();
@@ -808,6 +809,7 @@
             this.UserBilgileri.Controls.Add(this.btnUserEpostaDegistir);
             this.UserBilgileri.Controls.Add(this.btnUserPremium);
             this.UserBilgileri.Controls.Add(this.lblEkledigiUrunSayisi);
+            this.UserBilgileri.Controls.Add(this.lblUyelikTarihiValue);
             this.UserBilgileri.Controls.Add(this.lblUyelikTarihi);
             this.UserBilgileri.Controls.Add(this.lblUserName);
             this.UserBilgileri.Location = new System.Drawing.Point(0, 0);
@@ -1049,7 +1051,7 @@
             this.lblUyelikTarihi.BackColor = System.Drawing.Color.White;
             this.lblUyelikTarihi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUyelikTarihi.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblUyelikTarihi.Location = new System.Drawing.Point(93, 78);
+            this.lblUyelikTarihi.Location = new System.Drawing.Point(64, 76);
             this.lblUyelikTarihi.Name = "lblUyelikTarihi";
             this.lblUyelikTarihi.Size = new System.Drawing.Size(80, 15);
             this.lblUyelikTarihi.TabIndex = 1;
@@ -1060,7 +1062,7 @@
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUserName.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblUserName.Location = new System.Drawing.Point(111, 51);
+            this.lblUserName.Location = new System.Drawing.Point(116, 48);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(86, 21);
             this.lblUserName.TabIndex = 0;
@@ -1469,15 +1471,26 @@
             this.lblUrunEkleBarkodNo.TabIndex = 0;
             this.lblUrunEkleBarkodNo.Text = "Barkod No";
             // 
+            // lblUyelikTarihiValue
+            // 
+            this.lblUyelikTarihiValue.AutoSize = true;
+            this.lblUyelikTarihiValue.BackColor = System.Drawing.Color.White;
+            this.lblUyelikTarihiValue.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUyelikTarihiValue.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblUyelikTarihiValue.Location = new System.Drawing.Point(150, 76);
+            this.lblUyelikTarihiValue.Name = "lblUyelikTarihiValue";
+            this.lblUyelikTarihiValue.Size = new System.Drawing.Size(0, 15);
+            this.lblUyelikTarihiValue.TabIndex = 1;
+            // 
             // UserSayfasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 511);
-            this.Controls.Add(this.UrunEkleDuzenle);
-            this.Controls.Add(this.SideBar);
-            this.Controls.Add(this.Anasayfa);
             this.Controls.Add(this.UserBilgileri);
+            this.Controls.Add(this.SideBar);
+            this.Controls.Add(this.UrunEkleDuzenle);
+            this.Controls.Add(this.Anasayfa);
             this.MaximumSize = new System.Drawing.Size(380, 550);
             this.Name = "UserSayfasi";
             this.Text = "Form3";
@@ -1641,5 +1654,6 @@
         private System.Windows.Forms.Label txtKategori;
         private System.Windows.Forms.ComboBox cmbBoxKategori;
         private System.Windows.Forms.ComboBox cmbBoxUretici;
+        private System.Windows.Forms.Label lblUyelikTarihiValue;
     }
 }
