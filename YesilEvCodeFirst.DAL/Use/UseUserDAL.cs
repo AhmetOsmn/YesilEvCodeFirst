@@ -100,7 +100,7 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             return false;
         }
-        public GetUserDetailDTO GetUserDeatilWithEmail(string email)
+        public GetUserDetailDTO GetUserDetailWithEmail(string email)
         {
             try
             {

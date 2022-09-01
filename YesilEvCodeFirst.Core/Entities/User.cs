@@ -34,6 +34,7 @@ namespace YesilEvCodeFirst.Core.Entities
         public string Password { get; set; }
 
         public int RolID { get; set; }
+        [ForeignKey("RolID")]
         public Role Rol { get; set; }
 
         public List<UserFavList> UserFavList { get; set; }

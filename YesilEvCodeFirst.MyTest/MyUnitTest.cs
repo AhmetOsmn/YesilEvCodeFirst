@@ -198,7 +198,7 @@ namespace YesilEvCodeFirst.MyTest
         public void GetUserDetailTest()
         {
             UseUserDAL dal = new UseUserDAL();
-            var result = dal.GetUserDeatilWithEmail("mertdalkiran@gmail.com");
+            var result = dal.GetUserDetailWithEmail("mertdalkiran@gmail.com");
 
             if (result == null)
             {

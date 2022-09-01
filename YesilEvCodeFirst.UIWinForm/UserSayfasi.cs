@@ -13,7 +13,7 @@ namespace YesilEvCodeFirst.UIWinForm
 
     public partial class UserSayfasi : Form
     {
-        bool isAddProduct = true;
+        bool isAddProduct = false;
         bool isUpdatable = false;
         bool sideBarExpand = false;
         string frontPic = "";
@@ -21,6 +21,7 @@ namespace YesilEvCodeFirst.UIWinForm
         public string KullaniciMail;
         UseSupplierDAL SupDAL = new UseSupplierDAL();
         UseCategoryDAL CategoryDAL = new UseCategoryDAL();
+        UseProductDAL ProductDAL = new UseProductDAL();
         public UserSayfasi()
         {
             InitializeComponent();
@@ -92,6 +93,7 @@ namespace YesilEvCodeFirst.UIWinForm
         private void UrunDuzenle_Click(object sender, EventArgs e)
         {
             UrunEkle.Visible = false;
+            isAddProduct = false;
             btnUrunDuzenle.BackColor = Color.DarkGreen;
             UrunDuzenle.Visible = true;
             btnUrunEkle.BackColor = Color.Green;
@@ -101,6 +103,7 @@ namespace YesilEvCodeFirst.UIWinForm
         private void UrunEkle_Click(object sender, EventArgs e)
         {
             UrunDuzenle.Visible = false;
+            isAddProduct = true;
             btnUrunEkle.BackColor = Color.DarkGreen;
             UrunEkle.Visible = true;
             btnUrunDuzenle.BackColor = Color.Green;
@@ -116,10 +119,12 @@ namespace YesilEvCodeFirst.UIWinForm
             foreach(SupplierDTO item in suppliers)
             {
                 cmbBoxUrunEkleUretici.Items.Add(item);
+                cmbBoxUretici.Items.Add(item);
             }
             foreach(CategoryDTO item in categories)
             {
                 cmbBoxUrunEkleKategori.Items.Add(item);
+                cmbBoxKategori.Items.Add(item);
             }
         }
 
@@ -134,31 +139,70 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void btnGonder_Click(object sender, EventArgs e)
         {
+            btnGonder.Enabled = false;
             UseProductDAL dal = new UseProductDAL();
             if(isAddProduct)
             {
-                dal.AddProduct(new AddProductDTO
+                bool result = dal.AddProduct(new AddProductDTO
                 {
-                    Barcode = txtBarkodNo.Text,
-                    SupplierID = ((CategoryDTO)cmbBoxUrunEkleUretici.SelectedItem).CategoryID,
-                    ProductName = txtUrunAdi.Text,
-                    CategoryID = ((SupplierDTO)cmbBoxUrunEkleKategori.SelectedItem).SupplierID,
+                    Barcode = txtUrunEkleBarkod.Text,
+                    SupplierID = ((CategoryDTO)cmbBoxUrunEkleKategori.SelectedItem).CategoryID,
+                    ProductName = txtUrunEkleUrunAdi.Text,
+                    CategoryID = ((SupplierDTO)cmbBoxUrunEkleUretici.SelectedItem).SupplierID,
                     ProductContent = txtUrunEkleUrunIcerik.Text,
+
+                    //to do file dialog get path
                     PictureFronthPath = "test",
                     PictureBackPath = "test",
                 });
+                if (result)
+                {
+                    MessageBox.Show("Ürün Eklendi");
+                    txtUrunEkleBarkod.Text = "";
+                    txtUrunEkleUrunAdi.Text = "";
+                    txtUrunEkleUrunIcerik.Text = "";
+                    cmbBoxUrunEkleKategori.Text = "";
+                    cmbBoxUrunEkleUretici.Text = "";  
+                }
+                else
+                {
+                    MessageBox.Show("Ürün zaten mevcutta var");
+                }
             }
             else
             {
                 if(isUpdatable)
                 {
-                    
+                    UpdateProductDTO updateDto = new UpdateProductDTO() {
+                        Barcode = txtBarkodNo.Text,
+                        SupplierID = ((CategoryDTO)cmbBoxKategori.SelectedItem).CategoryID,
+                        ProductName = txtUrunAdi.Text,
+                        CategoryID = ((SupplierDTO)cmbBoxUretici.SelectedItem).SupplierID,
+                        PictureBackPath = "test",
+                        PictureFronthPath = "test",
+                        ProductContent = txtUrunIcerik.Text
+                    };
+                    bool result = dal.UpdateProduct(updateDto);
+                    if (result)
+                    {
+                        MessageBox.Show("Ürün Güncellendi");
+                        txtBarkodNo.Text = "";
+                        txtUrunAdi.Text = "";
+                        txtUrunIcerik.Text = "";
+                        cmbBoxKategori.Text = "";
+                        cmbBoxUretici.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ürün bulunamadı");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Lütfen bir barkod numarası giriniz.");
+                    MessageBox.Show("Barkod kullanarak ürünü getirin.");
                 }
             }
+            btnGonder.Enabled = true;
         }
 
         private void btnUrunEkleOnYuz_Click(object sender, EventArgs e)
@@ -175,6 +219,29 @@ namespace YesilEvCodeFirst.UIWinForm
                 frontPic = Path.GetFullPath(fileName);
             }
             fileOpen.Dispose();
+        }
+
+        private void btnUrunGetir_Click(object sender, EventArgs e)
+        {
+            if(txtBarkodNo.Text != ""&& txtBarkodNo.Text.Length==7)
+            {
+                GetProductDetailDTO dto = ProductDAL.GetProductDetailWithBarcode(txtBarkodNo.Text);
+                if(dto != null)
+                {
+                    txtBarkodNo.Text = dto.Barcode;
+                    cmbBoxUretici.Text = dto.SupplierName;
+                    txtUrunAdi.Text = dto.ProductName;
+                    txtUrunIcerik.Text = dto.ProductContent;
+                    cmbBoxKategori.Text = dto.CategoryName;
+                    //to do path to get file function
+                }
+            }
+            isUpdatable = true;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

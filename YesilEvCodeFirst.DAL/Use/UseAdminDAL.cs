@@ -11,7 +11,7 @@ using YesilEvCodeFirst.Validation.Login;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
-    public class UseAdminDAL : EfRepoBase<YesilEvDbContext, User>
+    public class UseAdminDAL : EfRepoBase<YesilEvDbContext, User> 
     {
         JsonLogger<LogDTO> myLog = new JsonLogger<LogDTO>("MyLog.txt");
         public bool AdminLogin(LoginDTO dto)
