@@ -61,6 +61,7 @@
     <Compile Include="Product\UpdateProductDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Supplement\AddSupplementDTO.cs" />
+    <Compile Include="Supplement\ListSupplementDTO.cs" />
     <Compile Include="Supplier\SupplierDTO.cs" />
     <Compile Include="UserAdmin\AddUserDTO.cs" />
     <Compile Include="UserAdmin\GetUserDetailDTO.cs" />

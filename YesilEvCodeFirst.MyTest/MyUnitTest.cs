@@ -19,8 +19,8 @@ namespace YesilEvCodeFirst.MyTest
             UseUserDAL dal = new UseUserDAL();
             var result = dal.UserLogin(new LoginDTO
             {
-                Email = "ahmet@gmail.com",
-                Password = "ahmet555"
+                Email = "veli@gmail.com",
+                Password = "veli555"
             });
 
             if (result == false)
@@ -55,13 +55,13 @@ namespace YesilEvCodeFirst.MyTest
             UseProductDAL dal = new UseProductDAL();
             bool result = dal.AddProduct(new AddProductDTO()
             {
-                ProductName = "Test productsupplement 3",
+                ProductName = "bitter cikolata",
                 Barcode = Guid.NewGuid().ToString().Substring(0, 7),
                 CategoryID = 4,
                 SupplierID = 2,
-                ProductContent = "Cocamidopropyl Betaine, PEG-150 Distearate, Sodium Chloride, Yellow 6, Madde A, Madde B",
-                PictureBackPath = "backtest3",
-                PictureFronthPath = "fronttest3"
+                ProductContent = " PEG-150 Distearate, Madde B, Karbonat, madde ar",
+                PictureBackPath = "backtest23",
+                PictureFronthPath = "fronttest23"
             });
 
             if (!result)
@@ -76,11 +76,11 @@ namespace YesilEvCodeFirst.MyTest
             UseUserDAL dal = new UseUserDAL();
             bool result = dal.AddUser(new AddUserDTO()
             {
-                FirstName = "Veli",
-                LastName = "Kara",
-                Email = "velikara@gmail.com",
-                Password = "mert555",
-                Phone = "5345898818",
+                FirstName = "Utku",
+                LastName = "Hasa",
+                Email = "utku@gmail.com",
+                Password = "utku555",
+                Phone = "11234425",
             });
 
             if (!result)
@@ -89,14 +89,13 @@ namespace YesilEvCodeFirst.MyTest
             }
         }
 
-
         [TestMethod]
         public void AddSupplementTest()
         {
             UseSupplementDAL dal = new UseSupplementDAL();
             var result = dal.AddSupplement(new AddSupplementDTO
             {
-                SupplementName = "test supplement"
+                SupplementName = "test supplement 199"
             });
 
             if (!result)
@@ -169,12 +168,23 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
+        [TestMethod]
+        public void SupplementListTest()
+        {
+            UseSupplementDAL dal = new UseSupplementDAL();
+            var result = dal.GetSupplementList();
+
+            if (result == null)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
 
         [TestMethod]
         public void GetProductDetailTest()
         {
             UseProductDAL dal = new UseProductDAL();
-            var result = dal.GetProductDetailWithBarcode("014B72");
+            var result = dal.GetProductDetailWithBarcode("477a0e0");
 
             if (result == null)
             {
@@ -198,7 +208,9 @@ namespace YesilEvCodeFirst.MyTest
         public void GetUserDetailTest()
         {
             UseUserDAL dal = new UseUserDAL();
-            var result = dal.GetUserDetailWithEmail("mertdalkiran@gmail.com");
+
+            var result = dal.GetUserDeatilWithEmail("utku@gmail.com");
+
 
             if (result == null)
             {
