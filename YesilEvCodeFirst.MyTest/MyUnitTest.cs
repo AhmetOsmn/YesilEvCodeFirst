@@ -4,6 +4,7 @@ using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.Supplement;
+using YesilEvCodeFirst.DTOs.SupplementBlackList;
 using YesilEvCodeFirst.DTOs.UserAdmin;
 using YesilEvCodeFirst.DTOs.UserBlackList;
 
@@ -106,7 +107,7 @@ namespace YesilEvCodeFirst.MyTest
         }
 
         [TestMethod]
-        public void AddBlackList()
+        public void AddBlackListTest()
         {
             UseBlackListDAL dal = new UseBlackListDAL();
             bool result = dal.AddBlackList(new AddOrEditBlackListDTO()
@@ -256,5 +257,28 @@ namespace YesilEvCodeFirst.MyTest
 
 
         #endregion
+
+        #region Deneme
+
+        [TestMethod]
+        public void DenemeTest()
+        {
+            SupplementBlackListDAL dal = new SupplementBlackListDAL();
+
+            var result = dal.AddSupplementBlackList(new AddSupplementBlackListDTO
+            {
+                UserID = 1,
+                SupplementID = 1,
+
+            });
+
+
+            if (result == null)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+
+            #endregion
+        }
     }
 }
