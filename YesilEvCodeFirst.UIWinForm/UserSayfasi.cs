@@ -7,6 +7,7 @@ using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs.Category;
 using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.Supplier;
+using YesilEvCodeFirst.DTOs.UserAdmin;
 
 namespace YesilEvCodeFirst.UIWinForm
 {
@@ -18,7 +19,7 @@ namespace YesilEvCodeFirst.UIWinForm
         bool sideBarExpand = false;
         string frontPic = "";
         string backPic = "";
-        public string KullaniciMail;
+        public UserDetailDTO Kullanici;
         UseSupplierDAL SupDAL = new UseSupplierDAL();
         UseCategoryDAL CategoryDAL = new UseCategoryDAL();
         UseProductDAL ProductDAL = new UseProductDAL();
@@ -134,7 +135,8 @@ namespace YesilEvCodeFirst.UIWinForm
             sideBarKapa();
             UrunEkleDuzenle.Visible = false;
             UserBilgileri.Visible = true;
-
+            lblUyelikTarihiValue.Text = Kullanici.CreatedDate.ToString();
+            lblUserName.Text = Kullanici.FirstName + " " + Kullanici.LastName;
         }
 
         private void btnGonder_Click(object sender, EventArgs e)

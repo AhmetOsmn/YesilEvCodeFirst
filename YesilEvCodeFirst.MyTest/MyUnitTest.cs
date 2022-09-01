@@ -23,7 +23,7 @@ namespace YesilEvCodeFirst.MyTest
                 Password = "ahmet555"
             });
 
-            if (result == false)
+            if (result == null)
             {
                 throw new Exception("test sirasinda hata olustu");
             }

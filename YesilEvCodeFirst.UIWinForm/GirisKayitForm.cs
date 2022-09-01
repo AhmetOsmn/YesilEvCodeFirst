@@ -50,14 +50,14 @@ namespace YesilEvCodeFirst.UIWinForm
                         Password = txtGirisYapSifre.Text,
                     };
                     var result = userDAL.UserLogin(dto);
-                    if (!result)
+                    if (result == null)
                     {
                         MessageBox.Show("Giriş Bilgileri Yanlış");
                     }
                     else
                     {
                         UserSayfasi f = new UserSayfasi();
-                        f.KullaniciMail = txtGirisYapEmail.Text;
+                        f.Kullanici = result;
                         this.Visible = false;
                         f.Show();
                     }
