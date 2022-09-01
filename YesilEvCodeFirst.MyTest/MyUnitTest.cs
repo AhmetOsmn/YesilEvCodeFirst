@@ -209,7 +209,7 @@ namespace YesilEvCodeFirst.MyTest
         {
             UseUserDAL dal = new UseUserDAL();
 
-            var result = dal.GetUserDeatilWithEmail("utku@gmail.com");
+            var result = dal.GetUserDetailWithEmail("utku@gmail.com");
 
 
             if (result == null)

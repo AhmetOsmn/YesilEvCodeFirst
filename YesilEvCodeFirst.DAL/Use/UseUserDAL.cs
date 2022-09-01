@@ -37,10 +37,10 @@ namespace YesilEvCodeFirst.DAL.Use
                 {
                     throw new Exception("Kullanıcı bulunamadı.");
                 }
-
-                nLogger.Info("{} - sisteme giris yapti.", user.FirstName + " " + user.LastName);
-
-                return true;
+                else{
+                    nLogger.Info("{} - sisteme giris yapti.", user.FirstName + " " + user.LastName);
+                    return MappingProfile.UserToGetUserDetailDTO(user);
+                }
             }
             catch (ModelNotValidException ex)
             {
