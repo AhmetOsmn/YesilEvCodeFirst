@@ -27,6 +27,15 @@ namespace YesilEvCodeFirst.Mapping
 
             return mapper.Map<List<ListProductDTO>>(productList);
         }
+       
+        public static List<ListSupplementDTO> SupplementListToSupplementListDTOList(List<Supplement> supplementList)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<Supplement, ListSupplementDTO>());
+
+            var mapper = new Mapper(mapperConfig);
+
+            return mapper.Map<List<ListSupplementDTO>>(supplementList);
+        }
 
         public static GetProductDetailDTO ProductToGetProductDetailDTO(Product product)
         {
