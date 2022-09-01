@@ -1,27 +1,26 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
-using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Category;
-using YesilEvCodeFirst.Logs.Concrete;
 using YesilEvCodeFirst.Mapping;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
     // todo: metotlarin ustlerinde summary, icerisinde aciklamalar olmali.
+    // todo: loglar giris yapan kisiye gore yapilacak
     public class UseCategoryDAL : EfRepoBase<YesilEvDbContext, Category>
     {
-        JsonLogger<LogDTO> myLog = new JsonLogger<LogDTO>("MyLog.txt");
+        readonly Logger nLogger = LogManager.GetCurrentClassLogger();
 
         public List<CategoryDTO> GetCategoryList()
         {
             try
             {
-                List<Category> categories = new List<Category>();
+                List<Category> categories = null;
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
@@ -29,13 +28,22 @@ namespace YesilEvCodeFirst.DAL.Use
 
                     categories = result;
                 }
-                List<CategoryDTO> productDTOList = MappingProfile.CategoryListToCategoryDTOList(categories);
-                LogExtension.LogFunc(myLog, "", "Ahmet", "Listeleme islemi basarili", "Category", Islem.Info);
-                return productDTOList;
+                if (categories == null)
+                {
+                    throw new Exception("Listelenecek kategori bulunamadi.");
+                }
+                else
+                {
+                    List<CategoryDTO> productDTOList = MappingProfile.CategoryListToCategoryDTOList(categories);
+
+                    nLogger.Info("Category tablosu listelendi.");
+
+                    return productDTOList;
+                }
             }
             catch (Exception ex)
             {
-                LogExtension.LogFunc(myLog, "", "Ahmet", ex.Message, "Category", Islem.Error);
+                nLogger.Error("System - {}", ex.Message);
             }
 
             return null;
