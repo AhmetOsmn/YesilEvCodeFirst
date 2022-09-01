@@ -655,7 +655,7 @@
             this.btnYesilEv.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
             this.btnYesilEv.FlatAppearance.BorderSize = 0;
             this.btnYesilEv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnYesilEv.Font = new System.Drawing.Font("Monotype Corsiva", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnYesilEv.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnYesilEv.ForeColor = System.Drawing.Color.White;
             this.btnYesilEv.Location = new System.Drawing.Point(0, 0);
             this.btnYesilEv.Name = "btnYesilEv";
@@ -1101,6 +1101,7 @@
             this.btnGonder.TabIndex = 2;
             this.btnGonder.Text = "Gönder";
             this.btnGonder.UseVisualStyleBackColor = false;
+            this.btnGonder.Click += new System.EventHandler(this.btnGonder_Click);
             // 
             // btnUrunEkle
             // 
@@ -1180,6 +1181,7 @@
             this.btnUrunEkleOnYuz.TabIndex = 5;
             this.btnUrunEkleOnYuz.Text = "+";
             this.btnUrunEkleOnYuz.UseVisualStyleBackColor = true;
+            this.btnUrunEkleOnYuz.Click += new System.EventHandler(this.btnUrunEkleOnYuz_Click);
             // 
             // btnUrunEkleArkaYuz
             // 
@@ -1449,8 +1451,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 511);
-            this.Controls.Add(this.UrunEkleDuzenle);
             this.Controls.Add(this.SideBar);
+            this.Controls.Add(this.UrunEkleDuzenle);
             this.Controls.Add(this.Anasayfa);
             this.Controls.Add(this.UserBilgileri);
             this.MaximumSize = new System.Drawing.Size(380, 550);

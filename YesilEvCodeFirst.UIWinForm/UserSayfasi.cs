@@ -1,22 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs.Category;
+using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.Supplier;
 
 namespace YesilEvCodeFirst.UIWinForm
 {
-    
+
     public partial class UserSayfasi : Form
     {
+        bool isAddProduct = true;
+        bool isUpdatable = false;
         bool sideBarExpand = false;
+        string frontPic = "";
+        string backPic = "";
         public string KullaniciMail;
         UseSupplierDAL SupDAL = new UseSupplierDAL();
         UseCategoryDAL CategoryDAL = new UseCategoryDAL();
@@ -94,7 +95,7 @@ namespace YesilEvCodeFirst.UIWinForm
             btnUrunDuzenle.BackColor = Color.DarkGreen;
             UrunDuzenle.Visible = true;
             btnUrunEkle.BackColor = Color.Green;
-
+            isAddProduct = false;
         }
 
         private void UrunEkle_Click(object sender, EventArgs e)
@@ -103,6 +104,7 @@ namespace YesilEvCodeFirst.UIWinForm
             btnUrunEkle.BackColor = Color.DarkGreen;
             UrunEkle.Visible = true;
             btnUrunDuzenle.BackColor = Color.Green;
+            isAddProduct = true;
         }
 
         private void UrunEkleDuzenle_Click(object sender, EventArgs e)
@@ -113,11 +115,11 @@ namespace YesilEvCodeFirst.UIWinForm
             List<CategoryDTO> categories = CategoryDAL.GetCategoryList();
             foreach(SupplierDTO item in suppliers)
             {
-                cmbBoxUrunEkleUretici.Items.Add(item.SupplierName);
+                cmbBoxUrunEkleUretici.Items.Add(item);
             }
             foreach(CategoryDTO item in categories)
             {
-                cmbBoxUrunEkleKategori.Items.Add(item.CategoryName);
+                cmbBoxUrunEkleKategori.Items.Add(item);
             }
         }
 
@@ -128,6 +130,51 @@ namespace YesilEvCodeFirst.UIWinForm
             UrunEkleDuzenle.Visible = false;
             UserBilgileri.Visible = true;
 
+        }
+
+        private void btnGonder_Click(object sender, EventArgs e)
+        {
+            UseProductDAL dal = new UseProductDAL();
+            if(isAddProduct)
+            {
+                dal.AddProduct(new AddProductDTO
+                {
+                    Barcode = txtBarkodNo.Text,
+                    SupplierID = ((CategoryDTO)cmbBoxUrunEkleUretici.SelectedItem).CategoryID,
+                    ProductName = txtUrunAdi.Text,
+                    CategoryID = ((SupplierDTO)cmbBoxUrunEkleKategori.SelectedItem).SupplierID,
+                    ProductContent = txtUrunEkleUrunIcerik.Text,
+                    PictureFronthPath = "test",
+                    PictureBackPath = "test",
+                });
+            }
+            else
+            {
+                if(isUpdatable)
+                {
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Lütfen bir barkod numarası giriniz.");
+                }
+            }
+        }
+
+        private void btnUrunEkleOnYuz_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileOpen = new OpenFileDialog
+            {
+                Title = "Open Image file",
+                Filter = "JPG Files (*.jpg)| *.jpg | PNG Files (*.png) | *.png"
+            };
+
+            if (fileOpen.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = fileOpen.FileName;
+                frontPic = Path.GetFullPath(fileName);
+            }
+            fileOpen.Dispose();
         }
     }
 }

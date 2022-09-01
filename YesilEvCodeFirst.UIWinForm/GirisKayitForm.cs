@@ -39,32 +39,43 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void SignInButton_Click(object sender, EventArgs e)
         {
-            /*if (txtGirisYapEmail.Text.Contains('@'))
+            // todo: buradaki if'ler validatorler ile yapilabilir mi?
+            if (txtGirisYapEmail.Text.Contains('@'))
             {
-                LoginDTO dto = new LoginDTO()
+                if(!string.IsNullOrEmpty(txtGirisYapSifre.Text))
                 {
-                    Email = txtGirisYapEmail.Text,
-                    Password = txtGirisYapSifre.Text,
-                };
-                var result = userDAL.UserLogin(dto);
-                if (!result)
-                {
-                    MessageBox.Show("Giriş Bilgileri Yanlış");
+                    LoginDTO dto = new LoginDTO()
+                    {
+                        Email = txtGirisYapEmail.Text,
+                        Password = txtGirisYapSifre.Text,
+                    };
+                    var result = userDAL.UserLogin(dto);
+                    if (!result)
+                    {
+                        MessageBox.Show("Giriş Bilgileri Yanlış");
+                    }
+                    else
+                    {
+                        UserSayfasi f = new UserSayfasi();
+                        f.KullaniciMail = txtGirisYapEmail.Text;
+                        this.Visible = false;
+                        f.Show();
+                    }
                 }
                 else
                 {
-                    UserSayfasi f = new UserSayfasi();
-                    f.KullaniciMail = txtGirisYapEmail.Text;
-                    this.Visible = false;
-                    f.Show();
+                    MessageBox.Show("Lütfen şifre giriniz.");
                 }
+                
+            }
+            else if (string.IsNullOrEmpty(txtGirisYapEmail.Text))
+            {
+                MessageBox.Show("Lütfen email giriniz.");
             }
             else
             {
                 MessageBox.Show("Girilen Email Hatalıdır.");
-            }*/
-            Form1 f = new Form1();
-            f.Show();
+            }
         }
 
         private void btnKayitOl_Click(object sender, EventArgs e)

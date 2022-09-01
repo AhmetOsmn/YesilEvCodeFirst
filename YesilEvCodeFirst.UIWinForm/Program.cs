@@ -4,6 +4,8 @@ using YesilEvCodeFirst.UIWinForm.Raporlar;
 
 namespace YesilEvCodeFirst.UIWinForm
 {
+    // todo: UI kisminda urun ekle-duzenle sayfasina tiklandiginda sol menu gelmiyor.
+    // todo: Kullanici urun ekleme yaparken fotograf eklerse, o fotograftaki icerikler ile eklenen urun arasinda nasil iliski kurulacak?
     internal static class Program
     {
         /// <summary>
@@ -14,7 +16,7 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Rapor01Form());
+            Application.Run(new GirisKayitForm());
         }
     }
 }

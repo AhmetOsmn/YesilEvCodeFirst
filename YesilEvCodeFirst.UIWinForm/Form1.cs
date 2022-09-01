@@ -24,21 +24,21 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<ListProductDTO> products = new List<ListProductDTO>();
-            products = use.GetProductList();
-            List<RaporProductDTO> rapor = new List<RaporProductDTO>();
-            foreach(var product in products)
-            {
+        //    List<ListProductDTO> products = new List<ListProductDTO>();
+        //    products = use.GetProductList();
+        //    List<RaporProductDTO> rapor = new List<RaporProductDTO>();
+        //    foreach(var product in products)
+        //    {
                 
-                var str = product.ProductContent.Split(',');
-                rapor.Add(new RaporProductDTO()
-                {
-                    ProductName = product.ProductName,
-                    SupplementCount = str.Length
-                }) ;
-            }
+        //        var str = product.ProductContent.Split(',');
+        //        rapor.Add(new RaporProductDTO()
+        //        {
+        //            ProductName = product.ProductName,
+        //            SupplementCount = str.Length
+        //        }) ;
+        //    }
 
-            dataGridView1.DataSource = rapor;
+        //    dataGridView1.DataSource = rapor;
         }
         private void RaporTuruDoldur()
         {
