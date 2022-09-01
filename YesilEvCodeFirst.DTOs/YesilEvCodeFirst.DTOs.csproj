@@ -67,6 +67,7 @@
     <Compile Include="Supplier\SupplierDTO.cs" />
     <Compile Include="UserAdmin\AddUserDTO.cs" />
     <Compile Include="UserAdmin\UserDetailDTO.cs" />
+    <Compile Include="UserBlackList\AddOrEditBlackListDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YesilEvCodeFirst.Core\YesilEvCodeFirst.Core.csproj">

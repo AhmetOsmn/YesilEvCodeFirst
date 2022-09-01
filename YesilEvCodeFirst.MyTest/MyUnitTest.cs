@@ -5,6 +5,7 @@ using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.DTOs.UserAdmin;
+using YesilEvCodeFirst.DTOs.UserBlackList;
 
 namespace YesilEvCodeFirst.MyTest
 {
@@ -104,6 +105,21 @@ namespace YesilEvCodeFirst.MyTest
             }
         }
 
+        [TestMethod]
+        public void AddBlackList()
+        {
+            UseBlackListDAL dal = new UseBlackListDAL();
+            bool result = dal.AddBlackList(new AddOrEditBlackListDTO()
+            {
+                UserID = 1,
+            });
+
+            if (!result)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+
         #endregion
 
         #region Guncelleme Testleri
@@ -121,6 +137,22 @@ namespace YesilEvCodeFirst.MyTest
                 ProductContent = "Madde A, Madde B, Madde C, Madde D, Madde Sezgin, Madde Y",
                 PictureBackPath = "backtest2",
                 PictureFronthPath = "fronttest2"
+            });
+
+            if (!result)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+
+        [TestMethod]
+        public void DeleteBlackListTest()
+        {
+
+            UseBlackListDAL dal = new UseBlackListDAL();
+            bool result = dal.DeleteBlackList(new AddOrEditBlackListDTO
+            {
+                UserID = 1,
             });
 
             if (!result)
@@ -203,7 +235,7 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
-        
+
         [TestMethod]
         public void GetUserDetailTest()
         {
@@ -217,6 +249,11 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
+
+        #endregion
+
+        #region Silme Testleri
+
 
         #endregion
     }
