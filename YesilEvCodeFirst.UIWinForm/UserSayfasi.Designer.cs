@@ -92,13 +92,13 @@
             this.btnUserFavori = new System.Windows.Forms.Button();
             this.btnUserBilgileriGüncelle = new System.Windows.Forms.Button();
             this.btnUserSosyalMedyaBirlestir = new System.Windows.Forms.Button();
-            this.btnUserSifreDegistir = new System.Windows.Forms.Button();
             this.btnUserEpostaDegistir = new System.Windows.Forms.Button();
             this.lblEkledigiUrunSayisi = new System.Windows.Forms.Label();
             this.lblUyelikTarihiValue = new System.Windows.Forms.Label();
             this.lblUyelikTarihi = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.btnUserPremium = new System.Windows.Forms.Button();
+            this.btnUserSifreDegistir = new System.Windows.Forms.Button();
             this.UrunEkleDuzenle = new System.Windows.Forms.Panel();
             this.btnUrunEkleUser = new System.Windows.Forms.Button();
             this.btnGonder = new System.Windows.Forms.Button();
@@ -137,22 +137,6 @@
             this.lblUrunAdi = new System.Windows.Forms.Label();
             this.lblUretici = new System.Windows.Forms.Label();
             this.lblBarkodNo = new System.Windows.Forms.Label();
-            this.UrunEkle = new System.Windows.Forms.GroupBox();
-            this.cmbBoxUrunEkleKategori = new System.Windows.Forms.ComboBox();
-            this.cmbBoxUrunEkleUretici = new System.Windows.Forms.ComboBox();
-            this.btnUrunEkleOnYuz = new System.Windows.Forms.Button();
-            this.btnUrunEkleArkaYuz = new System.Windows.Forms.Button();
-            this.btnUrunEkleUrunIcerik = new System.Windows.Forms.Button();
-            this.txtUrunEkleUrunIcerik = new System.Windows.Forms.TextBox();
-            this.lblUrunEkleArkaYuz = new System.Windows.Forms.Label();
-            this.lblUrunEkleOnYuz = new System.Windows.Forms.Label();
-            this.lblUrunEkleUrunIcerik = new System.Windows.Forms.Label();
-            this.txtUrunEkleUrunAdi = new System.Windows.Forms.TextBox();
-            this.txtUrunEkleBarkod = new System.Windows.Forms.TextBox();
-            this.lblUrunEkleKategori = new System.Windows.Forms.Label();
-            this.lblUrunEkleUrunAdi = new System.Windows.Forms.Label();
-            this.lblUrunEkleUretici = new System.Windows.Forms.Label();
-            this.lblUrunEkleBarkodNo = new System.Windows.Forms.Label();
             this.AramaGecmisi = new System.Windows.Forms.Panel();
             this.btnGecmisiTemizle = new System.Windows.Forms.Button();
             this.btnAramaGecmisiUser = new System.Windows.Forms.Button();
@@ -161,7 +145,6 @@
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog4 = new System.Windows.Forms.OpenFileDialog();
-
             this.pnlHome.SuspendLayout();
             this.pnlUygulamaPuanVer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUygulamaPuanVer)).BeginInit();
@@ -203,11 +186,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserPremium)).BeginInit();
             this.UrunEkleDuzenle.SuspendLayout();
             this.UrunEkle.SuspendLayout();
-
+            this.UrunDuzenle.SuspendLayout();
             this.AramaGecmisi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-
-            this.UrunDuzenle.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHome
@@ -827,8 +808,8 @@
             this.UserBilgileri.Controls.Add(this.lblUyelikTarihiValue);
             this.UserBilgileri.Controls.Add(this.lblUyelikTarihi);
             this.UserBilgileri.Controls.Add(this.lblUserName);
-            this.UserBilgileri.Controls.Add(this.btnUserPremium);
             this.UserBilgileri.Controls.Add(this.btnUserSifreDegistir);
+            this.UserBilgileri.Controls.Add(this.btnUserPremium);
             this.UserBilgileri.Location = new System.Drawing.Point(0, 0);
             this.UserBilgileri.Name = "UserBilgileri";
             this.UserBilgileri.Size = new System.Drawing.Size(364, 510);
@@ -1010,20 +991,6 @@
             this.btnUserSosyalMedyaBirlestir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserSosyalMedyaBirlestir.UseVisualStyleBackColor = true;
             // 
-            // btnUserSifreDegistir
-            // 
-            this.btnUserSifreDegistir.FlatAppearance.BorderSize = 0;
-            this.btnUserSifreDegistir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserSifreDegistir.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUserSifreDegistir.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserSifreDegistir.Location = new System.Drawing.Point(47, 209);
-            this.btnUserSifreDegistir.Name = "btnUserSifreDegistir";
-            this.btnUserSifreDegistir.Size = new System.Drawing.Size(275, 32);
-            this.btnUserSifreDegistir.TabIndex = 3;
-            this.btnUserSifreDegistir.Text = "         Şifre değiştir";
-            this.btnUserSifreDegistir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserSifreDegistir.UseVisualStyleBackColor = true;
-            // 
             // btnUserEpostaDegistir
             // 
             this.btnUserEpostaDegistir.FlatAppearance.BorderSize = 0;
@@ -1097,6 +1064,20 @@
             this.btnUserPremium.Text = "         Premium üye ol";
             this.btnUserPremium.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserPremium.UseVisualStyleBackColor = true;
+            // 
+            // btnUserSifreDegistir
+            // 
+            this.btnUserSifreDegistir.FlatAppearance.BorderSize = 0;
+            this.btnUserSifreDegistir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserSifreDegistir.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserSifreDegistir.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnUserSifreDegistir.Location = new System.Drawing.Point(47, 209);
+            this.btnUserSifreDegistir.Name = "btnUserSifreDegistir";
+            this.btnUserSifreDegistir.Size = new System.Drawing.Size(275, 32);
+            this.btnUserSifreDegistir.TabIndex = 3;
+            this.btnUserSifreDegistir.Text = "         Şifre değiştir";
+            this.btnUserSifreDegistir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserSifreDegistir.UseVisualStyleBackColor = true;
             // 
             // UrunEkleDuzenle
             // 
@@ -1504,39 +1485,6 @@
             this.lblBarkodNo.TabIndex = 0;
             this.lblBarkodNo.Text = "Barkod No";
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "JPG Files (*.jpg)| *.jpg | PNG Files (*.png) | *.png";
-            this.openFileDialog1.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
-            this.openFileDialog1.RestoreDirectory = true;
-            this.openFileDialog1.Title = "Browse Text Files";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
-            // openFileDialog2
-            // 
-            this.openFileDialog2.FileName = "openFileDialog1";
-            this.openFileDialog2.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
-            this.openFileDialog2.RestoreDirectory = true;
-            this.openFileDialog2.Title = "Browse Text Files";
-            this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
-            // 
-            // openFileDialog3
-            // 
-            this.openFileDialog3.FileName = "openFileDialog1";
-            this.openFileDialog3.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
-            this.openFileDialog3.RestoreDirectory = true;
-            this.openFileDialog3.Title = "Browse Text Files";
-            this.openFileDialog3.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog3_FileOk);
-            // 
-            // openFileDialog4
-            // 
-            this.openFileDialog4.FileName = "openFileDialog1";
-            this.openFileDialog4.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
-            this.openFileDialog4.RestoreDirectory = true;
-            this.openFileDialog4.Title = "Browse Text Files";
-            this.openFileDialog4.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog4_FileOk);
-            // 
             // AramaGecmisi
             // 
             this.AramaGecmisi.Controls.Add(this.btnGecmisiTemizle);
@@ -1578,12 +1526,44 @@
             this.dataGridView1.Size = new System.Drawing.Size(338, 391);
             this.dataGridView1.TabIndex = 0;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "JPG Files (*.jpg)| *.jpg | PNG Files (*.png) | *.png";
+            this.openFileDialog1.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
+            this.openFileDialog1.RestoreDirectory = true;
+            this.openFileDialog1.Title = "Browse Text Files";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog1";
+            this.openFileDialog2.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
+            this.openFileDialog2.RestoreDirectory = true;
+            this.openFileDialog2.Title = "Browse Text Files";
+            this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
+            // 
+            // openFileDialog3
+            // 
+            this.openFileDialog3.FileName = "openFileDialog1";
+            this.openFileDialog3.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
+            this.openFileDialog3.RestoreDirectory = true;
+            this.openFileDialog3.Title = "Browse Text Files";
+            this.openFileDialog3.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog3_FileOk);
+            // 
+            // openFileDialog4
+            // 
+            this.openFileDialog4.FileName = "openFileDialog1";
+            this.openFileDialog4.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
+            this.openFileDialog4.RestoreDirectory = true;
+            this.openFileDialog4.Title = "Browse Text Files";
+            this.openFileDialog4.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog4_FileOk);
+            // 
             // UserSayfasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 511);
-
             this.Controls.Add(this.SideBar);
             this.Controls.Add(this.Anasayfa);
             this.Controls.Add(this.UserBilgileri);
@@ -1635,12 +1615,10 @@
             this.UrunEkleDuzenle.ResumeLayout(false);
             this.UrunEkle.ResumeLayout(false);
             this.UrunEkle.PerformLayout();
-
-            this.AramaGecmisi.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            
             this.UrunDuzenle.ResumeLayout(false);
             this.UrunDuzenle.PerformLayout();
+            this.AramaGecmisi.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
