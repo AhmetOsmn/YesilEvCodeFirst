@@ -60,7 +60,6 @@
             this.pictureHakkinda = new System.Windows.Forms.PictureBox();
             this.btnHakkinda = new System.Windows.Forms.Button();
             this.pnlPremium = new System.Windows.Forms.Panel();
-            this.picturePremium = new System.Windows.Forms.PictureBox();
             this.btnPremium = new System.Windows.Forms.Button();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.SideBar = new System.Windows.Forms.FlowLayoutPanel();
@@ -95,11 +94,11 @@
             this.btnUserSosyalMedyaBirlestir = new System.Windows.Forms.Button();
             this.btnUserSifreDegistir = new System.Windows.Forms.Button();
             this.btnUserEpostaDegistir = new System.Windows.Forms.Button();
-            this.btnUserPremium = new System.Windows.Forms.Button();
             this.lblEkledigiUrunSayisi = new System.Windows.Forms.Label();
             this.lblUyelikTarihiValue = new System.Windows.Forms.Label();
             this.lblUyelikTarihi = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.btnUserPremium = new System.Windows.Forms.Button();
             this.UrunEkleDuzenle = new System.Windows.Forms.Panel();
             this.btnUrunEkleUser = new System.Windows.Forms.Button();
             this.btnGonder = new System.Windows.Forms.Button();
@@ -138,6 +137,10 @@
             this.lblUrunEkleUrunAdi = new System.Windows.Forms.Label();
             this.lblUrunEkleUretici = new System.Windows.Forms.Label();
             this.lblUrunEkleBarkodNo = new System.Windows.Forms.Label();
+            this.AramaGecmisi = new System.Windows.Forms.Panel();
+            this.btnGecmisiTemizle = new System.Windows.Forms.Button();
+            this.btnAramaGecmisiUser = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnlHome.SuspendLayout();
             this.pnlUygulamaPuanVer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUygulamaPuanVer)).BeginInit();
@@ -158,7 +161,6 @@
             this.pnlHakkinda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHakkinda)).BeginInit();
             this.pnlPremium.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePremium)).BeginInit();
             this.pnlMenu.SuspendLayout();
             this.SideBar.SuspendLayout();
             this.pnlYesilEv.SuspendLayout();
@@ -181,6 +183,8 @@
             this.UrunEkleDuzenle.SuspendLayout();
             this.UrunDuzenle.SuspendLayout();
             this.UrunEkle.SuspendLayout();
+            this.AramaGecmisi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlHome
@@ -560,7 +564,6 @@
             // pnlPremium
             // 
             this.pnlPremium.BackColor = System.Drawing.Color.PapayaWhip;
-            this.pnlPremium.Controls.Add(this.picturePremium);
             this.pnlPremium.Controls.Add(this.btnPremium);
             this.pnlPremium.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlPremium.Dock = System.Windows.Forms.DockStyle.Top;
@@ -570,16 +573,6 @@
             this.pnlPremium.Name = "pnlPremium";
             this.pnlPremium.Size = new System.Drawing.Size(190, 40);
             this.pnlPremium.TabIndex = 0;
-            // 
-            // picturePremium
-            // 
-            this.picturePremium.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picturePremium.BackgroundImage")));
-            this.picturePremium.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picturePremium.Location = new System.Drawing.Point(152, -1);
-            this.picturePremium.Name = "picturePremium";
-            this.picturePremium.Size = new System.Drawing.Size(40, 42);
-            this.picturePremium.TabIndex = 3;
-            this.picturePremium.TabStop = false;
             // 
             // btnPremium
             // 
@@ -718,6 +711,7 @@
             this.btnAramaGecmisiFavori.Text = "               Arama Geçmişi / Favori";
             this.btnAramaGecmisiFavori.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAramaGecmisiFavori.UseVisualStyleBackColor = true;
+            this.btnAramaGecmisiFavori.Click += new System.EventHandler(this.btnAramaGecmisiFavori_Click);
             // 
             // pictureBarkod
             // 
@@ -805,13 +799,13 @@
             this.UserBilgileri.Controls.Add(this.btnUserFavori);
             this.UserBilgileri.Controls.Add(this.btnUserBilgileriGüncelle);
             this.UserBilgileri.Controls.Add(this.btnUserSosyalMedyaBirlestir);
-            this.UserBilgileri.Controls.Add(this.btnUserSifreDegistir);
             this.UserBilgileri.Controls.Add(this.btnUserEpostaDegistir);
-            this.UserBilgileri.Controls.Add(this.btnUserPremium);
             this.UserBilgileri.Controls.Add(this.lblEkledigiUrunSayisi);
             this.UserBilgileri.Controls.Add(this.lblUyelikTarihiValue);
             this.UserBilgileri.Controls.Add(this.lblUyelikTarihi);
             this.UserBilgileri.Controls.Add(this.lblUserName);
+            this.UserBilgileri.Controls.Add(this.btnUserPremium);
+            this.UserBilgileri.Controls.Add(this.btnUserSifreDegistir);
             this.UserBilgileri.Location = new System.Drawing.Point(0, 0);
             this.UserBilgileri.Name = "UserBilgileri";
             this.UserBilgileri.Size = new System.Drawing.Size(364, 510);
@@ -935,6 +929,7 @@
             this.btnAramaGeçmişiTemizle.Text = "         Arama geçmişini temizle";
             this.btnAramaGeçmişiTemizle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAramaGeçmişiTemizle.UseVisualStyleBackColor = true;
+            this.btnAramaGeçmişiTemizle.Click += new System.EventHandler(this.GecmisiTemizle);
             // 
             // btnKaraListe
             // 
@@ -1020,20 +1015,6 @@
             this.btnUserEpostaDegistir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserEpostaDegistir.UseVisualStyleBackColor = true;
             // 
-            // btnUserPremium
-            // 
-            this.btnUserPremium.FlatAppearance.BorderSize = 0;
-            this.btnUserPremium.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserPremium.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUserPremium.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserPremium.Location = new System.Drawing.Point(46, 133);
-            this.btnUserPremium.Name = "btnUserPremium";
-            this.btnUserPremium.Size = new System.Drawing.Size(275, 32);
-            this.btnUserPremium.TabIndex = 3;
-            this.btnUserPremium.Text = "         Premium üye ol";
-            this.btnUserPremium.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserPremium.UseVisualStyleBackColor = true;
-            // 
             // lblEkledigiUrunSayisi
             // 
             this.lblEkledigiUrunSayisi.AutoSize = true;
@@ -1079,6 +1060,20 @@
             this.lblUserName.Size = new System.Drawing.Size(86, 21);
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "UserName";
+            // 
+            // btnUserPremium
+            // 
+            this.btnUserPremium.FlatAppearance.BorderSize = 0;
+            this.btnUserPremium.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserPremium.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserPremium.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnUserPremium.Location = new System.Drawing.Point(46, 133);
+            this.btnUserPremium.Name = "btnUserPremium";
+            this.btnUserPremium.Size = new System.Drawing.Size(275, 32);
+            this.btnUserPremium.TabIndex = 3;
+            this.btnUserPremium.Text = "         Premium üye ol";
+            this.btnUserPremium.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserPremium.UseVisualStyleBackColor = true;
             // 
             // UrunEkleDuzenle
             // 
@@ -1483,15 +1478,57 @@
             this.lblUrunEkleBarkodNo.TabIndex = 0;
             this.lblUrunEkleBarkodNo.Text = "Barkod No";
             // 
+            // AramaGecmisi
+            // 
+            this.AramaGecmisi.Controls.Add(this.btnGecmisiTemizle);
+            this.AramaGecmisi.Controls.Add(this.btnAramaGecmisiUser);
+            this.AramaGecmisi.Controls.Add(this.dataGridView1);
+            this.AramaGecmisi.Location = new System.Drawing.Point(1, 1);
+            this.AramaGecmisi.Name = "AramaGecmisi";
+            this.AramaGecmisi.Size = new System.Drawing.Size(360, 510);
+            this.AramaGecmisi.TabIndex = 7;
+            // 
+            // btnGecmisiTemizle
+            // 
+            this.btnGecmisiTemizle.Location = new System.Drawing.Point(258, 75);
+            this.btnGecmisiTemizle.Name = "btnGecmisiTemizle";
+            this.btnGecmisiTemizle.Size = new System.Drawing.Size(91, 26);
+            this.btnGecmisiTemizle.TabIndex = 8;
+            this.btnGecmisiTemizle.Text = "Geçmişi Temizle";
+            this.btnGecmisiTemizle.UseVisualStyleBackColor = true;
+            this.btnGecmisiTemizle.Click += new System.EventHandler(this.GecmisiTemizle);
+            // 
+            // btnAramaGecmisiUser
+            // 
+            this.btnAramaGecmisiUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAramaGecmisiUser.BackgroundImage")));
+            this.btnAramaGecmisiUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAramaGecmisiUser.FlatAppearance.BorderSize = 0;
+            this.btnAramaGecmisiUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAramaGecmisiUser.Location = new System.Drawing.Point(289, 9);
+            this.btnAramaGecmisiUser.Name = "btnAramaGecmisiUser";
+            this.btnAramaGecmisiUser.Size = new System.Drawing.Size(60, 40);
+            this.btnAramaGecmisiUser.TabIndex = 7;
+            this.btnAramaGecmisiUser.UseVisualStyleBackColor = true;
+            this.btnAramaGecmisiUser.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(11, 107);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(338, 391);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // UserSayfasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 511);
             this.Controls.Add(this.SideBar);
+            this.Controls.Add(this.Anasayfa);
             this.Controls.Add(this.UserBilgileri);
             this.Controls.Add(this.UrunEkleDuzenle);
-            this.Controls.Add(this.Anasayfa);
+            this.Controls.Add(this.AramaGecmisi);
             this.MaximumSize = new System.Drawing.Size(380, 550);
             this.Name = "UserSayfasi";
             this.Text = "Form3";
@@ -1515,7 +1552,6 @@
             this.pnlHakkinda.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureHakkinda)).EndInit();
             this.pnlPremium.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picturePremium)).EndInit();
             this.pnlMenu.ResumeLayout(false);
             this.SideBar.ResumeLayout(false);
             this.pnlYesilEv.ResumeLayout(false);
@@ -1541,6 +1577,8 @@
             this.UrunDuzenle.PerformLayout();
             this.UrunEkle.ResumeLayout(false);
             this.UrunEkle.PerformLayout();
+            this.AramaGecmisi.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1584,7 +1622,6 @@
         private System.Windows.Forms.PictureBox pictureKullanimKosullari;
         private System.Windows.Forms.PictureBox pictureBizeUlasin;
         private System.Windows.Forms.PictureBox pictureHakkinda;
-        private System.Windows.Forms.PictureBox picturePremium;
         private System.Windows.Forms.Button btnBarkodOku;
         private System.Windows.Forms.Button btnArama;
         private System.Windows.Forms.Button btnUrunEkleDuzenle;
@@ -1656,5 +1693,9 @@
         private System.Windows.Forms.ComboBox cmbBoxKategori;
         private System.Windows.Forms.ComboBox cmbBoxUretici;
         private System.Windows.Forms.Label lblUyelikTarihiValue;
+        private System.Windows.Forms.Panel AramaGecmisi;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnAramaGecmisiUser;
+        private System.Windows.Forms.Button btnGecmisiTemizle;
     }
 }
