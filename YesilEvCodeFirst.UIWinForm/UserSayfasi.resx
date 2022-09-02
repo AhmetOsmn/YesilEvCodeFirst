@@ -2587,7 +2587,7 @@
         AFf57xoBrvLfNQJc5b9rBLjKf9cIcJX/rhHgqv6F8P8AjBn5xTWZDQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnAramaGecmisiUser.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+ <data name="btnAramaGecmisiUser.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAAB8CAYAAAChbripAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAKgZJREFUeF7tXQm7VcWVzb9MR8WkbZPuNul00p3EWXFMWk2ipr/EqaNRQCaZUREU
@@ -2772,4 +2772,16 @@
         AFf57xoBrvLfNQJc5b9rBLjKf9cIcJX/rhHgqv6F8P8AjBn5xTWZDQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="openFileDialog2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>157, 17</value>
+  </metadata>
+  <metadata name="openFileDialog3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>297, 17</value>
+  </metadata>
+  <metadata name="openFileDialog4.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>437, 17</value>
+  </metadata>
 </root>

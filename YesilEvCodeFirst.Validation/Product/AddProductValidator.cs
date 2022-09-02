@@ -16,6 +16,8 @@ namespace YesilEvCodeFirst.Validation.Product
             BarcodeCodeValidator();
             CategoryIDValidator();
             SupplierIDValidator();
+            FrontPicturePathValidator();
+            BackPicturePathValidator();
         }
 
         private void SupplierIDValidator()
@@ -82,6 +84,22 @@ namespace YesilEvCodeFirst.Validation.Product
             {
                 IsValid = false;
                 ValidationMessages.Add("BarkodNo bos olamaz.");
+            }
+        }
+        private void FrontPicturePathValidator()
+        {
+            if (string.IsNullOrEmpty(Model.PictureFronthPath))
+            {
+                IsValid = false;
+                ValidationMessages.Add("FrontPicturePath bos olamaz.");
+            }
+        }
+        private void BackPicturePathValidator()
+        {
+            if (string.IsNullOrEmpty(Model.PictureBackPath))
+            {
+                IsValid = false;
+                ValidationMessages.Add("BackPicturePath bos olamaz.");
             }
         }
     }

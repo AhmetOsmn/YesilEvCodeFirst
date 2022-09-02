@@ -104,6 +104,22 @@
             this.btnGonder = new System.Windows.Forms.Button();
             this.btnUrunEkle = new System.Windows.Forms.Button();
             this.btnUrunDuzenle = new System.Windows.Forms.Button();
+            this.UrunEkle = new System.Windows.Forms.GroupBox();
+            this.cmbBoxUrunEkleKategori = new System.Windows.Forms.ComboBox();
+            this.cmbBoxUrunEkleUretici = new System.Windows.Forms.ComboBox();
+            this.btnUrunEkleOnYuz = new System.Windows.Forms.Button();
+            this.btnUrunEkleArkaYuz = new System.Windows.Forms.Button();
+            this.btnUrunEkleUrunIcerik = new System.Windows.Forms.Button();
+            this.txtUrunEkleUrunIcerik = new System.Windows.Forms.TextBox();
+            this.lblUrunEkleArkaYuz = new System.Windows.Forms.Label();
+            this.lblUrunEkleOnYuz = new System.Windows.Forms.Label();
+            this.lblUrunEkleUrunIcerik = new System.Windows.Forms.Label();
+            this.txtUrunEkleUrunAdi = new System.Windows.Forms.TextBox();
+            this.txtUrunEkleBarkod = new System.Windows.Forms.TextBox();
+            this.lblUrunEkleKategori = new System.Windows.Forms.Label();
+            this.lblUrunEkleUrunAdi = new System.Windows.Forms.Label();
+            this.lblUrunEkleUretici = new System.Windows.Forms.Label();
+            this.lblUrunEkleBarkodNo = new System.Windows.Forms.Label();
             this.UrunDuzenle = new System.Windows.Forms.GroupBox();
             this.cmbBoxKategori = new System.Windows.Forms.ComboBox();
             this.cmbBoxUretici = new System.Windows.Forms.ComboBox();
@@ -141,6 +157,11 @@
             this.btnGecmisiTemizle = new System.Windows.Forms.Button();
             this.btnAramaGecmisiUser = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog4 = new System.Windows.Forms.OpenFileDialog();
+
             this.pnlHome.SuspendLayout();
             this.pnlUygulamaPuanVer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUygulamaPuanVer)).BeginInit();
@@ -181,10 +202,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserEposta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserPremium)).BeginInit();
             this.UrunEkleDuzenle.SuspendLayout();
-            this.UrunDuzenle.SuspendLayout();
             this.UrunEkle.SuspendLayout();
+
             this.AramaGecmisi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+
+            this.UrunDuzenle.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHome
@@ -1081,8 +1104,8 @@
             this.UrunEkleDuzenle.Controls.Add(this.btnGonder);
             this.UrunEkleDuzenle.Controls.Add(this.btnUrunEkle);
             this.UrunEkleDuzenle.Controls.Add(this.btnUrunDuzenle);
-            this.UrunEkleDuzenle.Controls.Add(this.UrunDuzenle);
             this.UrunEkleDuzenle.Controls.Add(this.UrunEkle);
+            this.UrunEkleDuzenle.Controls.Add(this.UrunDuzenle);
             this.UrunEkleDuzenle.Location = new System.Drawing.Point(0, 0);
             this.UrunEkleDuzenle.Name = "UrunEkleDuzenle";
             this.UrunEkleDuzenle.Size = new System.Drawing.Size(364, 511);
@@ -1144,178 +1167,6 @@
             this.btnUrunDuzenle.UseVisualStyleBackColor = false;
             this.btnUrunDuzenle.Click += new System.EventHandler(this.UrunDuzenle_Click);
             // 
-            // UrunDuzenle
-            // 
-            this.UrunDuzenle.Controls.Add(this.cmbBoxKategori);
-            this.UrunDuzenle.Controls.Add(this.cmbBoxUretici);
-            this.UrunDuzenle.Controls.Add(this.btnUrunGetir);
-            this.UrunDuzenle.Controls.Add(this.btnOnYuz);
-            this.UrunDuzenle.Controls.Add(this.btnArkaYuz);
-            this.UrunDuzenle.Controls.Add(this.btnUrunIcerik);
-            this.UrunDuzenle.Controls.Add(this.txtUrunIcerik);
-            this.UrunDuzenle.Controls.Add(this.lblUrunArkaYuz);
-            this.UrunDuzenle.Controls.Add(this.lblUrunOnYuz);
-            this.UrunDuzenle.Controls.Add(this.lblUrunIcerik);
-            this.UrunDuzenle.Controls.Add(this.txtUrunAdi);
-            this.UrunDuzenle.Controls.Add(this.txtBarkodNo);
-            this.UrunDuzenle.Controls.Add(this.txtKategori);
-            this.UrunDuzenle.Controls.Add(this.lblUrunAdi);
-            this.UrunDuzenle.Controls.Add(this.lblUretici);
-            this.UrunDuzenle.Controls.Add(this.lblBarkodNo);
-            this.UrunDuzenle.Location = new System.Drawing.Point(26, 133);
-            this.UrunDuzenle.Name = "UrunDuzenle";
-            this.UrunDuzenle.Size = new System.Drawing.Size(318, 277);
-            this.UrunDuzenle.TabIndex = 0;
-            this.UrunDuzenle.TabStop = false;
-            this.UrunDuzenle.Text = "Ürün Düzenle";
-            // 
-            // cmbBoxKategori
-            // 
-            this.cmbBoxKategori.FormattingEnabled = true;
-            this.cmbBoxKategori.Location = new System.Drawing.Point(89, 93);
-            this.cmbBoxKategori.Name = "cmbBoxKategori";
-            this.cmbBoxKategori.Size = new System.Drawing.Size(210, 21);
-            this.cmbBoxKategori.TabIndex = 7;
-            // 
-            // cmbBoxUretici
-            // 
-            this.cmbBoxUretici.FormattingEnabled = true;
-            this.cmbBoxUretici.Location = new System.Drawing.Point(89, 64);
-            this.cmbBoxUretici.Name = "cmbBoxUretici";
-            this.cmbBoxUretici.Size = new System.Drawing.Size(210, 21);
-            this.cmbBoxUretici.TabIndex = 7;
-            // 
-            // btnUrunGetir
-            // 
-            this.btnUrunGetir.Location = new System.Drawing.Point(227, 33);
-            this.btnUrunGetir.Name = "btnUrunGetir";
-            this.btnUrunGetir.Size = new System.Drawing.Size(72, 24);
-            this.btnUrunGetir.TabIndex = 6;
-            this.btnUrunGetir.Text = "Ürün\'ü Getir";
-            this.btnUrunGetir.UseVisualStyleBackColor = true;
-            this.btnUrunGetir.Click += new System.EventHandler(this.btnUrunGetir_Click);
-            // 
-            // btnOnYuz
-            // 
-            this.btnOnYuz.Location = new System.Drawing.Point(43, 202);
-            this.btnOnYuz.Name = "btnOnYuz";
-            this.btnOnYuz.Size = new System.Drawing.Size(75, 45);
-            this.btnOnYuz.TabIndex = 5;
-            this.btnOnYuz.Text = "+";
-            this.btnOnYuz.UseVisualStyleBackColor = true;
-            // 
-            // btnArkaYuz
-            // 
-            this.btnArkaYuz.Location = new System.Drawing.Point(203, 202);
-            this.btnArkaYuz.Name = "btnArkaYuz";
-            this.btnArkaYuz.Size = new System.Drawing.Size(75, 45);
-            this.btnArkaYuz.TabIndex = 5;
-            this.btnArkaYuz.Text = "+";
-            this.btnArkaYuz.UseVisualStyleBackColor = true;
-            // 
-            // btnUrunIcerik
-            // 
-            this.btnUrunIcerik.Location = new System.Drawing.Point(266, 151);
-            this.btnUrunIcerik.Name = "btnUrunIcerik";
-            this.btnUrunIcerik.Size = new System.Drawing.Size(33, 23);
-            this.btnUrunIcerik.TabIndex = 4;
-            this.btnUrunIcerik.Text = "+";
-            this.btnUrunIcerik.UseVisualStyleBackColor = true;
-            // 
-            // txtUrunIcerik
-            // 
-            this.txtUrunIcerik.Location = new System.Drawing.Point(89, 151);
-            this.txtUrunIcerik.Multiline = true;
-            this.txtUrunIcerik.Name = "txtUrunIcerik";
-            this.txtUrunIcerik.Size = new System.Drawing.Size(171, 23);
-            this.txtUrunIcerik.TabIndex = 3;
-            // 
-            // lblUrunArkaYuz
-            // 
-            this.lblUrunArkaYuz.AutoSize = true;
-            this.lblUrunArkaYuz.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunArkaYuz.Location = new System.Drawing.Point(193, 186);
-            this.lblUrunArkaYuz.Name = "lblUrunArkaYuz";
-            this.lblUrunArkaYuz.Size = new System.Drawing.Size(96, 13);
-            this.lblUrunArkaYuz.TabIndex = 2;
-            this.lblUrunArkaYuz.Text = "Ürün\'ün Arka Yüzü";
-            // 
-            // lblUrunOnYuz
-            // 
-            this.lblUrunOnYuz.AutoSize = true;
-            this.lblUrunOnYuz.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunOnYuz.Location = new System.Drawing.Point(40, 186);
-            this.lblUrunOnYuz.Name = "lblUrunOnYuz";
-            this.lblUrunOnYuz.Size = new System.Drawing.Size(87, 13);
-            this.lblUrunOnYuz.TabIndex = 2;
-            this.lblUrunOnYuz.Text = "Ürün\'ün Ön Yüzü";
-            // 
-            // lblUrunIcerik
-            // 
-            this.lblUrunIcerik.AutoSize = true;
-            this.lblUrunIcerik.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunIcerik.Location = new System.Drawing.Point(21, 156);
-            this.lblUrunIcerik.Name = "lblUrunIcerik";
-            this.lblUrunIcerik.Size = new System.Drawing.Size(61, 13);
-            this.lblUrunIcerik.TabIndex = 2;
-            this.lblUrunIcerik.Text = "Ürün İçerik";
-            // 
-            // txtUrunAdi
-            // 
-            this.txtUrunAdi.Location = new System.Drawing.Point(89, 122);
-            this.txtUrunAdi.Multiline = true;
-            this.txtUrunAdi.Name = "txtUrunAdi";
-            this.txtUrunAdi.Size = new System.Drawing.Size(210, 23);
-            this.txtUrunAdi.TabIndex = 1;
-            // 
-            // txtBarkodNo
-            // 
-            this.txtBarkodNo.Location = new System.Drawing.Point(89, 34);
-            this.txtBarkodNo.Multiline = true;
-            this.txtBarkodNo.Name = "txtBarkodNo";
-            this.txtBarkodNo.Size = new System.Drawing.Size(132, 23);
-            this.txtBarkodNo.TabIndex = 1;
-            // 
-            // txtKategori
-            // 
-            this.txtKategori.AutoSize = true;
-            this.txtKategori.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtKategori.Location = new System.Drawing.Point(21, 96);
-            this.txtKategori.Name = "txtKategori";
-            this.txtKategori.Size = new System.Drawing.Size(51, 13);
-            this.txtKategori.TabIndex = 0;
-            this.txtKategori.Text = "Kategori";
-            // 
-            // lblUrunAdi
-            // 
-            this.lblUrunAdi.AutoSize = true;
-            this.lblUrunAdi.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunAdi.Location = new System.Drawing.Point(21, 125);
-            this.lblUrunAdi.Name = "lblUrunAdi";
-            this.lblUrunAdi.Size = new System.Drawing.Size(51, 13);
-            this.lblUrunAdi.TabIndex = 0;
-            this.lblUrunAdi.Text = "Ürün Adı";
-            // 
-            // lblUretici
-            // 
-            this.lblUretici.AutoSize = true;
-            this.lblUretici.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUretici.Location = new System.Drawing.Point(21, 67);
-            this.lblUretici.Name = "lblUretici";
-            this.lblUretici.Size = new System.Drawing.Size(40, 13);
-            this.lblUretici.TabIndex = 0;
-            this.lblUretici.Text = "Üretici";
-            // 
-            // lblBarkodNo
-            // 
-            this.lblBarkodNo.AutoSize = true;
-            this.lblBarkodNo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBarkodNo.Location = new System.Drawing.Point(21, 41);
-            this.lblBarkodNo.Name = "lblBarkodNo";
-            this.lblBarkodNo.Size = new System.Drawing.Size(62, 13);
-            this.lblBarkodNo.TabIndex = 0;
-            this.lblBarkodNo.Text = "Barkod No";
-            // 
             // UrunEkle
             // 
             this.UrunEkle.Controls.Add(this.cmbBoxUrunEkleKategori);
@@ -1374,6 +1225,7 @@
             this.btnUrunEkleArkaYuz.TabIndex = 5;
             this.btnUrunEkleArkaYuz.Text = "+";
             this.btnUrunEkleArkaYuz.UseVisualStyleBackColor = true;
+            this.btnUrunEkleArkaYuz.Click += new System.EventHandler(this.btnUrunEkleArkaYuz_Click);
             // 
             // btnUrunEkleUrunIcerik
             // 
@@ -1478,6 +1330,213 @@
             this.lblUrunEkleBarkodNo.TabIndex = 0;
             this.lblUrunEkleBarkodNo.Text = "Barkod No";
             // 
+            // UrunDuzenle
+            // 
+            this.UrunDuzenle.Controls.Add(this.cmbBoxKategori);
+            this.UrunDuzenle.Controls.Add(this.cmbBoxUretici);
+            this.UrunDuzenle.Controls.Add(this.btnUrunGetir);
+            this.UrunDuzenle.Controls.Add(this.btnOnYuz);
+            this.UrunDuzenle.Controls.Add(this.btnArkaYuz);
+            this.UrunDuzenle.Controls.Add(this.btnUrunIcerik);
+            this.UrunDuzenle.Controls.Add(this.txtUrunIcerik);
+            this.UrunDuzenle.Controls.Add(this.lblUrunArkaYuz);
+            this.UrunDuzenle.Controls.Add(this.lblUrunOnYuz);
+            this.UrunDuzenle.Controls.Add(this.lblUrunIcerik);
+            this.UrunDuzenle.Controls.Add(this.txtUrunAdi);
+            this.UrunDuzenle.Controls.Add(this.txtBarkodNo);
+            this.UrunDuzenle.Controls.Add(this.txtKategori);
+            this.UrunDuzenle.Controls.Add(this.lblUrunAdi);
+            this.UrunDuzenle.Controls.Add(this.lblUretici);
+            this.UrunDuzenle.Controls.Add(this.lblBarkodNo);
+            this.UrunDuzenle.Location = new System.Drawing.Point(26, 133);
+            this.UrunDuzenle.Name = "UrunDuzenle";
+            this.UrunDuzenle.Size = new System.Drawing.Size(318, 277);
+            this.UrunDuzenle.TabIndex = 0;
+            this.UrunDuzenle.TabStop = false;
+            this.UrunDuzenle.Text = "Ürün Düzenle";
+            // 
+            // cmbBoxKategori
+            // 
+            this.cmbBoxKategori.FormattingEnabled = true;
+            this.cmbBoxKategori.Location = new System.Drawing.Point(89, 93);
+            this.cmbBoxKategori.Name = "cmbBoxKategori";
+            this.cmbBoxKategori.Size = new System.Drawing.Size(210, 21);
+            this.cmbBoxKategori.TabIndex = 7;
+            // 
+            // cmbBoxUretici
+            // 
+            this.cmbBoxUretici.FormattingEnabled = true;
+            this.cmbBoxUretici.Location = new System.Drawing.Point(89, 64);
+            this.cmbBoxUretici.Name = "cmbBoxUretici";
+            this.cmbBoxUretici.Size = new System.Drawing.Size(210, 21);
+            this.cmbBoxUretici.TabIndex = 7;
+            // 
+            // btnUrunGetir
+            // 
+            this.btnUrunGetir.Location = new System.Drawing.Point(227, 33);
+            this.btnUrunGetir.Name = "btnUrunGetir";
+            this.btnUrunGetir.Size = new System.Drawing.Size(72, 24);
+            this.btnUrunGetir.TabIndex = 6;
+            this.btnUrunGetir.Text = "Ürün\'ü Getir";
+            this.btnUrunGetir.UseVisualStyleBackColor = true;
+            this.btnUrunGetir.Click += new System.EventHandler(this.btnUrunGetir_Click);
+            // 
+            // btnOnYuz
+            // 
+            this.btnOnYuz.Location = new System.Drawing.Point(43, 202);
+            this.btnOnYuz.Name = "btnOnYuz";
+            this.btnOnYuz.Size = new System.Drawing.Size(75, 45);
+            this.btnOnYuz.TabIndex = 5;
+            this.btnOnYuz.Text = "+";
+            this.btnOnYuz.UseVisualStyleBackColor = true;
+            this.btnOnYuz.Click += new System.EventHandler(this.btnOnYuz_Click);
+            // 
+            // btnArkaYuz
+            // 
+            this.btnArkaYuz.Location = new System.Drawing.Point(203, 202);
+            this.btnArkaYuz.Name = "btnArkaYuz";
+            this.btnArkaYuz.Size = new System.Drawing.Size(75, 45);
+            this.btnArkaYuz.TabIndex = 5;
+            this.btnArkaYuz.Text = "+";
+            this.btnArkaYuz.UseVisualStyleBackColor = true;
+            this.btnArkaYuz.Click += new System.EventHandler(this.btnArkaYuz_Click);
+            // 
+            // btnUrunIcerik
+            // 
+            this.btnUrunIcerik.Location = new System.Drawing.Point(266, 151);
+            this.btnUrunIcerik.Name = "btnUrunIcerik";
+            this.btnUrunIcerik.Size = new System.Drawing.Size(33, 23);
+            this.btnUrunIcerik.TabIndex = 4;
+            this.btnUrunIcerik.Text = "+";
+            this.btnUrunIcerik.UseVisualStyleBackColor = true;
+            // 
+            // txtUrunIcerik
+            // 
+            this.txtUrunIcerik.Location = new System.Drawing.Point(89, 151);
+            this.txtUrunIcerik.Multiline = true;
+            this.txtUrunIcerik.Name = "txtUrunIcerik";
+            this.txtUrunIcerik.Size = new System.Drawing.Size(171, 23);
+            this.txtUrunIcerik.TabIndex = 3;
+            // 
+            // lblUrunArkaYuz
+            // 
+            this.lblUrunArkaYuz.AutoSize = true;
+            this.lblUrunArkaYuz.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUrunArkaYuz.Location = new System.Drawing.Point(193, 186);
+            this.lblUrunArkaYuz.Name = "lblUrunArkaYuz";
+            this.lblUrunArkaYuz.Size = new System.Drawing.Size(96, 13);
+            this.lblUrunArkaYuz.TabIndex = 2;
+            this.lblUrunArkaYuz.Text = "Ürün\'ün Arka Yüzü";
+            // 
+            // lblUrunOnYuz
+            // 
+            this.lblUrunOnYuz.AutoSize = true;
+            this.lblUrunOnYuz.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUrunOnYuz.Location = new System.Drawing.Point(40, 186);
+            this.lblUrunOnYuz.Name = "lblUrunOnYuz";
+            this.lblUrunOnYuz.Size = new System.Drawing.Size(87, 13);
+            this.lblUrunOnYuz.TabIndex = 2;
+            this.lblUrunOnYuz.Text = "Ürün\'ün Ön Yüzü";
+            // 
+            // lblUrunIcerik
+            // 
+            this.lblUrunIcerik.AutoSize = true;
+            this.lblUrunIcerik.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUrunIcerik.Location = new System.Drawing.Point(21, 156);
+            this.lblUrunIcerik.Name = "lblUrunIcerik";
+            this.lblUrunIcerik.Size = new System.Drawing.Size(61, 13);
+            this.lblUrunIcerik.TabIndex = 2;
+            this.lblUrunIcerik.Text = "Ürün İçerik";
+            // 
+            // txtUrunAdi
+            // 
+            this.txtUrunAdi.Location = new System.Drawing.Point(89, 122);
+            this.txtUrunAdi.Multiline = true;
+            this.txtUrunAdi.Name = "txtUrunAdi";
+            this.txtUrunAdi.Size = new System.Drawing.Size(210, 23);
+            this.txtUrunAdi.TabIndex = 1;
+            // 
+            // txtBarkodNo
+            // 
+            this.txtBarkodNo.Location = new System.Drawing.Point(89, 34);
+            this.txtBarkodNo.Multiline = true;
+            this.txtBarkodNo.Name = "txtBarkodNo";
+            this.txtBarkodNo.Size = new System.Drawing.Size(132, 23);
+            this.txtBarkodNo.TabIndex = 1;
+            // 
+            // txtKategori
+            // 
+            this.txtKategori.AutoSize = true;
+            this.txtKategori.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtKategori.Location = new System.Drawing.Point(21, 96);
+            this.txtKategori.Name = "txtKategori";
+            this.txtKategori.Size = new System.Drawing.Size(51, 13);
+            this.txtKategori.TabIndex = 0;
+            this.txtKategori.Text = "Kategori";
+            // 
+            // lblUrunAdi
+            // 
+            this.lblUrunAdi.AutoSize = true;
+            this.lblUrunAdi.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUrunAdi.Location = new System.Drawing.Point(21, 125);
+            this.lblUrunAdi.Name = "lblUrunAdi";
+            this.lblUrunAdi.Size = new System.Drawing.Size(51, 13);
+            this.lblUrunAdi.TabIndex = 0;
+            this.lblUrunAdi.Text = "Ürün Adı";
+            // 
+            // lblUretici
+            // 
+            this.lblUretici.AutoSize = true;
+            this.lblUretici.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUretici.Location = new System.Drawing.Point(21, 67);
+            this.lblUretici.Name = "lblUretici";
+            this.lblUretici.Size = new System.Drawing.Size(40, 13);
+            this.lblUretici.TabIndex = 0;
+            this.lblUretici.Text = "Üretici";
+            // 
+            // lblBarkodNo
+            // 
+            this.lblBarkodNo.AutoSize = true;
+            this.lblBarkodNo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBarkodNo.Location = new System.Drawing.Point(21, 41);
+            this.lblBarkodNo.Name = "lblBarkodNo";
+            this.lblBarkodNo.Size = new System.Drawing.Size(62, 13);
+            this.lblBarkodNo.TabIndex = 0;
+            this.lblBarkodNo.Text = "Barkod No";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "JPG Files (*.jpg)| *.jpg | PNG Files (*.png) | *.png";
+            this.openFileDialog1.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
+            this.openFileDialog1.RestoreDirectory = true;
+            this.openFileDialog1.Title = "Browse Text Files";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog1";
+            this.openFileDialog2.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
+            this.openFileDialog2.RestoreDirectory = true;
+            this.openFileDialog2.Title = "Browse Text Files";
+            this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
+            // 
+            // openFileDialog3
+            // 
+            this.openFileDialog3.FileName = "openFileDialog1";
+            this.openFileDialog3.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
+            this.openFileDialog3.RestoreDirectory = true;
+            this.openFileDialog3.Title = "Browse Text Files";
+            this.openFileDialog3.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog3_FileOk);
+            // 
+            // openFileDialog4
+            // 
+            this.openFileDialog4.FileName = "openFileDialog1";
+            this.openFileDialog4.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
+            this.openFileDialog4.RestoreDirectory = true;
+            this.openFileDialog4.Title = "Browse Text Files";
+            this.openFileDialog4.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog4_FileOk);
+            // 
             // AramaGecmisi
             // 
             this.AramaGecmisi.Controls.Add(this.btnGecmisiTemizle);
@@ -1524,6 +1583,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 511);
+
             this.Controls.Add(this.SideBar);
             this.Controls.Add(this.Anasayfa);
             this.Controls.Add(this.UserBilgileri);
@@ -1573,12 +1633,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserEposta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserPremium)).EndInit();
             this.UrunEkleDuzenle.ResumeLayout(false);
-            this.UrunDuzenle.ResumeLayout(false);
-            this.UrunDuzenle.PerformLayout();
             this.UrunEkle.ResumeLayout(false);
             this.UrunEkle.PerformLayout();
+
             this.AramaGecmisi.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            
+            this.UrunDuzenle.ResumeLayout(false);
+            this.UrunDuzenle.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1693,9 +1755,16 @@
         private System.Windows.Forms.ComboBox cmbBoxKategori;
         private System.Windows.Forms.ComboBox cmbBoxUretici;
         private System.Windows.Forms.Label lblUyelikTarihiValue;
+
         private System.Windows.Forms.Panel AramaGecmisi;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAramaGecmisiUser;
         private System.Windows.Forms.Button btnGecmisiTemizle;
+
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog3;
+        private System.Windows.Forms.OpenFileDialog openFileDialog4;
+
     }
 }
