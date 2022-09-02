@@ -28,42 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.MaddeFavoriYadaKaraListe = new System.Windows.Forms.Panel();
-            this.MaddeIcerenUrunler = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(338, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(423, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(365, 426);
-            this.dataGridView1.TabIndex = 1;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Rapor 1",
+            "Rapor 2",
+            "Rapor 3",
+            "Rapor 4",
+            "Rapor 5",
+            "Rapor 6",
+            "Rapor 7",
+            "Rapor 8",
+            "Rapor 9",
+            "Rapor 10",
+            "Rapor 11",
+            "Rapor 12",
+            "Rapor 13",
+            "Rapor 14",
+            "Rapor 15",
+            "Rapor 16"});
             this.comboBox1.Location = new System.Drawing.Point(72, 20);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(260, 21);
+            this.comboBox1.Size = new System.Drawing.Size(345, 21);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -74,59 +68,32 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Rapor Türü";
             // 
-            // groupBox1
+            // panel1
             // 
-            this.groupBox1.Controls.Add(this.MaddeFavoriYadaKaraListe);
-            this.groupBox1.Controls.Add(this.MaddeIcerenUrunler);
-            this.groupBox1.Location = new System.Drawing.Point(12, 47);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(387, 391);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Rapor Bilgileri";
-            // 
-            // MaddeFavoriYadaKaraListe
-            // 
-            this.MaddeFavoriYadaKaraListe.Location = new System.Drawing.Point(6, 19);
-            this.MaddeFavoriYadaKaraListe.Name = "MaddeFavoriYadaKaraListe";
-            this.MaddeFavoriYadaKaraListe.Size = new System.Drawing.Size(375, 366);
-            this.MaddeFavoriYadaKaraListe.TabIndex = 0;
-            // 
-            // MaddeIcerenUrunler
-            // 
-            this.MaddeIcerenUrunler.Location = new System.Drawing.Point(6, 19);
-            this.MaddeIcerenUrunler.Name = "MaddeIcerenUrunler";
-            this.MaddeIcerenUrunler.Size = new System.Drawing.Size(375, 366);
-            this.MaddeIcerenUrunler.TabIndex = 0;
+            this.panel1.Location = new System.Drawing.Point(12, 47);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(720, 558);
+            this.panel1.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(744, 617);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Panel MaddeIcerenUrunler;
-        private System.Windows.Forms.Panel MaddeFavoriYadaKaraListe;
+        private System.Windows.Forms.Panel panel1;
     }
 }

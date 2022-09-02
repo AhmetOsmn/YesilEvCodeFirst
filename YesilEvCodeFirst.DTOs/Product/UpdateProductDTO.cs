@@ -11,5 +11,6 @@ namespace YesilEvCodeFirst.DTOs.Product
         public string ProductContent { get; set; }
         public string PictureFronthPath { get; set; }
         public string PictureBackPath { get; set; }
+        public int AddedBy { get; set; }
     }
 }
