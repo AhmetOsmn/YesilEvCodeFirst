@@ -90,6 +90,7 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             return false;
         }
+        //to do throw exception bastırma yapılacak
 
         public bool UpdateProduct(UpdateProductDTO dto)
         {
@@ -153,6 +154,7 @@ namespace YesilEvCodeFirst.DAL.Use
                             }
                             else if (tempProduct.AddedBy != dto.AddedBy)
                             {
+
                                 throw new Exception("Urun Kullaniciya ait degil");
                             }
                             else

@@ -177,7 +177,8 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 if(isUpdatable)
                 {
-                    UpdateProductDTO updateDto = new UpdateProductDTO() {
+                    UpdateProductDTO updateDto = new UpdateProductDTO()
+                    {
                         AddedBy = Kullanici.UserID,
                         Barcode = txtBarkodNo.Text,
                         SupplierID = ((CategoryDTO)cmbBoxKategori.SelectedItem).CategoryID,
@@ -196,10 +197,6 @@ namespace YesilEvCodeFirst.UIWinForm
                         txtUrunIcerik.Text = "";
                         cmbBoxKategori.Text = "";
                         cmbBoxUretici.Text = "";
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ürün bulunamadı");
                     }
                 }
                 else
@@ -233,12 +230,24 @@ namespace YesilEvCodeFirst.UIWinForm
                 GetProductDetailDTO dto = ProductDAL.GetProductDetailWithBarcode(txtBarkodNo.Text);
                 if(dto != null)
                 {
-                    txtBarkodNo.Text = dto.Barcode;
-                    cmbBoxUretici.Text = dto.SupplierName;
-                    txtUrunAdi.Text = dto.ProductName;
-                    txtUrunIcerik.Text = dto.ProductContent;
-                    cmbBoxKategori.Text = dto.CategoryName;
-                    //to do path to get file function
+                    if(dto.AddedBy == Kullanici.UserID)
+                    {
+                        txtBarkodNo.Text = dto.Barcode;
+                        cmbBoxUretici.Text = dto.SupplierName;
+                        txtUrunAdi.Text = dto.ProductName;
+                        txtUrunIcerik.Text = dto.ProductContent;
+                        cmbBoxKategori.Text = dto.CategoryName;
+                        //to do path to get file function
+                        isUpdatable = true;
+                    }
+                    else 
+                    {
+                        MessageBox.Show("Bu Ürün size ait değil.Düzenleme yapılamaz");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Girilen Barkodlu ürün bulunamadı");
                 }
             }
             else if(txtBarkodNo.Text == "")
@@ -249,7 +258,7 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 MessageBox.Show("Barkod No hatalı");
             }
-            isUpdatable = true;
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
