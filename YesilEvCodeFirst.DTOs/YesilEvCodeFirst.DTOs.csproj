@@ -61,6 +61,7 @@
     <Compile Include="Product\ProductRaporDTO.cs" />
     <Compile Include="Product\UpdateProductDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SupplementBlackList\AddSupplementBlackListDTO.cs" />
     <Compile Include="Rapor\UserFavoriAndBlacklistProductCountDTO.cs" />
     <Compile Include="Rapor\Rapor01DTO.cs" />
     <Compile Include="Rapor\Rapor02DTO.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Supplier\SupplierDTO.cs" />
     <Compile Include="UserAdmin\AddUserDTO.cs" />
     <Compile Include="UserAdmin\UserDetailDTO.cs" />
+    <Compile Include="UserBlackList\AddOrEditBlackListDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YesilEvCodeFirst.Core\YesilEvCodeFirst.Core.csproj">

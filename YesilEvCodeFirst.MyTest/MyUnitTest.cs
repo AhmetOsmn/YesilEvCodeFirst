@@ -4,7 +4,9 @@ using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.Supplement;
+using YesilEvCodeFirst.DTOs.SupplementBlackList;
 using YesilEvCodeFirst.DTOs.UserAdmin;
+using YesilEvCodeFirst.DTOs.UserBlackList;
 
 namespace YesilEvCodeFirst.MyTest
 {
@@ -105,6 +107,21 @@ namespace YesilEvCodeFirst.MyTest
             }
         }
 
+        [TestMethod]
+        public void AddBlackListTest()
+        {
+            UseBlackListDAL dal = new UseBlackListDAL();
+            bool result = dal.AddBlackList(new AddOrEditBlackListDTO()
+            {
+                UserID = 1,
+            });
+
+            if (!result)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+
         #endregion
 
         #region Guncelleme Testleri
@@ -123,6 +140,22 @@ namespace YesilEvCodeFirst.MyTest
                 PictureBackPath = "backtest2",
                 PictureFronthPath = "fronttest2",
                 AddedBy = 4
+            });
+
+            if (!result)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+
+        [TestMethod]
+        public void DeleteBlackListTest()
+        {
+
+            UseBlackListDAL dal = new UseBlackListDAL();
+            bool result = dal.DeleteBlackList(new AddOrEditBlackListDTO
+            {
+                UserID = 1,
             });
 
             if (!result)
@@ -205,7 +238,7 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
-        
+
         [TestMethod]
         public void GetUserDetailTest()
         {
@@ -222,6 +255,32 @@ namespace YesilEvCodeFirst.MyTest
 
         #endregion
 
+        #region Silme Testleri
+
+        #endregion
+
+        #region Deneme
+
+        [TestMethod]
+        public void DenemeTest()
+        {
+            SupplementBlackListDAL dal = new SupplementBlackListDAL();
+
+            var result = dal.AddSupplementBlackList(new AddSupplementBlackListDTO
+            {
+                UserID = 1,
+                SupplementID = 1,
+
+            });
+
+
+            if (result == null)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+
+            #endregion
+        }
         #region Rapor Testleri 
 
         [TestMethod]

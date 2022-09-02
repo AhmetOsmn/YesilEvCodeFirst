@@ -4,8 +4,10 @@ using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.DTOs.Category;
 using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.Supplement;
+using YesilEvCodeFirst.DTOs.SupplementBlackList;
 using YesilEvCodeFirst.DTOs.Supplier;
 using YesilEvCodeFirst.DTOs.UserAdmin;
+using YesilEvCodeFirst.DTOs.UserBlackList;
 
 namespace YesilEvCodeFirst.Mapping
 {
@@ -18,7 +20,13 @@ namespace YesilEvCodeFirst.Mapping
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<Product>(dto);
         }
+        public static SupplementBlackList AddSupplementBlackListDTOToSupplementBlackList(AddSupplementBlackListDTO dto)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddSupplementBlackListDTO, SupplementBlackList>());
 
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<SupplementBlackList>(dto);
+        }
         public static List<ListProductDTO> ProductListToProductListDTO(List<Product> productList)
         {
             var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<Product, ListProductDTO>());
@@ -89,6 +97,13 @@ namespace YesilEvCodeFirst.Mapping
 
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<Supplement>(dto);
+        }
+        public static BlackList AddBlackListDTOToBlackList(AddOrEditBlackListDTO dto)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddOrEditBlackListDTO, BlackList>());
+
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<BlackList>(dto);
         }
     }
 }
