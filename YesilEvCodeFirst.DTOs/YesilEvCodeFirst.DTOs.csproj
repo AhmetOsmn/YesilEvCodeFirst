@@ -1,4 +1,4 @@
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -75,6 +75,9 @@
     <Compile Include="UserAdmin\AddUserDTO.cs" />
     <Compile Include="UserAdmin\UserDetailDTO.cs" />
     <Compile Include="UserBlackList\AddOrEditBlackListDTO.cs" />
+    <Compile Include="SupplementBlackList\ListToSupplementBlackListDTO.cs" />
+    <Compile Include="UserFavList\AddOrEditFavListDTO.cs" />
+    <Compile Include="UserFavList\ListToFavListDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YesilEvCodeFirst.Core\YesilEvCodeFirst.Core.csproj">
