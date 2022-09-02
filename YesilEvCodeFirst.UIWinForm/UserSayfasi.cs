@@ -235,6 +235,8 @@ namespace YesilEvCodeFirst.UIWinForm
                         txtUrunAdi.Text = dto.ProductName;
                         txtUrunIcerik.Text = dto.ProductContent;
                         cmbBoxKategori.SelectedIndex = cmbBoxKategori.FindString(dto.CategoryName);
+                        openFileDialog1.FileName = dto.PictureFronthPath;
+                        openFileDialog2.FileName = dto.PictureBackPath;
                         var item = dto.PictureFronthPath.Split('\\');
                         btnOnYuz.Text = item[item.Length-1];
                         item = dto.PictureBackPath.Split('\\');
