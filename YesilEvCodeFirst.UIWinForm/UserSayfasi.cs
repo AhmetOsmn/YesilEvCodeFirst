@@ -137,6 +137,7 @@ namespace YesilEvCodeFirst.UIWinForm
             UserBilgileri.Visible = true;
             lblUyelikTarihiValue.Text = Kullanici.CreatedDate.ToString();
             lblUserName.Text = Kullanici.FirstName + " " + Kullanici.LastName;
+            lblEkledigiUrunSayisi.Text += " "+ProductDAL.GetProductListWithUserID(Kullanici.UserID).Count.ToString();
         }
 
         private void btnGonder_Click(object sender, EventArgs e)
@@ -147,6 +148,7 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 bool result = dal.AddProduct(new AddProductDTO
                 {
+                    AddedBy = Kullanici.UserID,
                     Barcode = txtUrunEkleBarkod.Text,
                     SupplierID = ((CategoryDTO)cmbBoxUrunEkleKategori.SelectedItem).CategoryID,
                     ProductName = txtUrunEkleUrunAdi.Text,
@@ -176,6 +178,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 if(isUpdatable)
                 {
                     UpdateProductDTO updateDto = new UpdateProductDTO() {
+                        AddedBy = Kullanici.UserID,
                         Barcode = txtBarkodNo.Text,
                         SupplierID = ((CategoryDTO)cmbBoxKategori.SelectedItem).CategoryID,
                         ProductName = txtUrunAdi.Text,
@@ -238,12 +241,28 @@ namespace YesilEvCodeFirst.UIWinForm
                     //to do path to get file function
                 }
             }
+            else if(txtBarkodNo.Text == "")
+            {
+                MessageBox.Show("Ürün barkod no giriniz");
+            }
+            else
+            {
+                MessageBox.Show("Barkod No hatalı");
+            }
             isUpdatable = true;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            GirisKayitForm f = new GirisKayitForm();
+            f.Show();
+            this.Close();
+            
         }
     }
 }

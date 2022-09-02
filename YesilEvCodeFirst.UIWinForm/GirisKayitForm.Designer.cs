@@ -236,6 +236,7 @@
             this.txtGirisYapSifre.PasswordChar = '*';
             this.txtGirisYapSifre.Size = new System.Drawing.Size(387, 20);
             this.txtGirisYapSifre.TabIndex = 2;
+            this.txtGirisYapSifre.Text = "mert555";
             // 
             // lblGirisYapSifre
             // 
@@ -256,6 +257,7 @@
             this.txtGirisYapEmail.Name = "txtGirisYapEmail";
             this.txtGirisYapEmail.Size = new System.Drawing.Size(387, 20);
             this.txtGirisYapEmail.TabIndex = 2;
+            this.txtGirisYapEmail.Text = "mertdalkiran@gmail.com";
             // 
             // lblGirisYapEmail
             // 

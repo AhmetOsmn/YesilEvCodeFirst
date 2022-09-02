@@ -97,6 +97,7 @@
             this.btnUserEpostaDegistir = new System.Windows.Forms.Button();
             this.btnUserPremium = new System.Windows.Forms.Button();
             this.lblEkledigiUrunSayisi = new System.Windows.Forms.Label();
+            this.lblUyelikTarihiValue = new System.Windows.Forms.Label();
             this.lblUyelikTarihi = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.UrunEkleDuzenle = new System.Windows.Forms.Panel();
@@ -137,7 +138,6 @@
             this.lblUrunEkleUrunAdi = new System.Windows.Forms.Label();
             this.lblUrunEkleUretici = new System.Windows.Forms.Label();
             this.lblUrunEkleBarkodNo = new System.Windows.Forms.Label();
-            this.lblUyelikTarihiValue = new System.Windows.Forms.Label();
             this.pnlHome.SuspendLayout();
             this.pnlUygulamaPuanVer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUygulamaPuanVer)).BeginInit();
@@ -920,6 +920,7 @@
             this.button9.Text = "         Çıkış yap";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // btnAramaGeçmişiTemizle
             // 
@@ -1044,6 +1045,17 @@
             this.lblEkledigiUrunSayisi.Size = new System.Drawing.Size(116, 15);
             this.lblEkledigiUrunSayisi.TabIndex = 2;
             this.lblEkledigiUrunSayisi.Text = "Eklediği Ürün Sayısı :";
+            // 
+            // lblUyelikTarihiValue
+            // 
+            this.lblUyelikTarihiValue.AutoSize = true;
+            this.lblUyelikTarihiValue.BackColor = System.Drawing.Color.White;
+            this.lblUyelikTarihiValue.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUyelikTarihiValue.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblUyelikTarihiValue.Location = new System.Drawing.Point(150, 76);
+            this.lblUyelikTarihiValue.Name = "lblUyelikTarihiValue";
+            this.lblUyelikTarihiValue.Size = new System.Drawing.Size(0, 15);
+            this.lblUyelikTarihiValue.TabIndex = 1;
             // 
             // lblUyelikTarihi
             // 
@@ -1471,24 +1483,13 @@
             this.lblUrunEkleBarkodNo.TabIndex = 0;
             this.lblUrunEkleBarkodNo.Text = "Barkod No";
             // 
-            // lblUyelikTarihiValue
-            // 
-            this.lblUyelikTarihiValue.AutoSize = true;
-            this.lblUyelikTarihiValue.BackColor = System.Drawing.Color.White;
-            this.lblUyelikTarihiValue.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUyelikTarihiValue.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblUyelikTarihiValue.Location = new System.Drawing.Point(150, 76);
-            this.lblUyelikTarihiValue.Name = "lblUyelikTarihiValue";
-            this.lblUyelikTarihiValue.Size = new System.Drawing.Size(0, 15);
-            this.lblUyelikTarihiValue.TabIndex = 1;
-            // 
             // UserSayfasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 511);
-            this.Controls.Add(this.UserBilgileri);
             this.Controls.Add(this.SideBar);
+            this.Controls.Add(this.UserBilgileri);
             this.Controls.Add(this.UrunEkleDuzenle);
             this.Controls.Add(this.Anasayfa);
             this.MaximumSize = new System.Drawing.Size(380, 550);

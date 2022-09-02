@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs.Product;
+using YesilEvCodeFirst.UIWinForm.Raporlar;
 
 namespace YesilEvCodeFirst.UIWinForm
 {
@@ -24,21 +25,21 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-        //    List<ListProductDTO> products = new List<ListProductDTO>();
-        //    products = use.GetProductList();
-        //    List<RaporProductDTO> rapor = new List<RaporProductDTO>();
-        //    foreach(var product in products)
-        //    {
-                
-        //        var str = product.ProductContent.Split(',');
-        //        rapor.Add(new RaporProductDTO()
-        //        {
-        //            ProductName = product.ProductName,
-        //            SupplementCount = str.Length
-        //        }) ;
-        //    }
+            //    List<ListProductDTO> products = new List<ListProductDTO>();
+            //    products = use.GetProductList();
+            //    List<RaporProductDTO> rapor = new List<RaporProductDTO>();
+            //    foreach(var product in products)
+            //    {
 
-        //    dataGridView1.DataSource = rapor;
+            //        var str = product.ProductContent.Split(',');
+            //        rapor.Add(new RaporProductDTO()
+            //        {
+            //            ProductName = product.ProductName,
+            //            SupplementCount = str.Length
+            //        }) ;
+            //    }
+
+            //    dataGridView1.DataSource = rapor;
         }
         private void RaporTuruDoldur()
         {
@@ -107,6 +108,99 @@ namespace YesilEvCodeFirst.UIWinForm
             // join[User] u on r.RolID = u.RolID
             // group by r.RolName
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            switch (comboBox1.SelectedItem)
+            {
+                case "Rapor 1":
+                    OpenChildForm(new Rapor01Form());
+                    break;
+                case "Rapor 2":
+                    OpenChildForm(new Rapor02Form());
+                    break;
+
+                case "Rapor 3":
+                    OpenChildForm(new Rapor03Form());
+                    break;
+
+                case "Rapor 4":
+                    OpenChildForm(new Rapor04Form());
+                    break;
+
+                case "Rapor 5":
+                    OpenChildForm(new Rapor05Form());
+                    break;
+
+                case "Rapor 6":
+                    OpenChildForm(new Rapor06Form());
+                    break;
+
+                case "Rapor 7":
+                    OpenChildForm(new Rapor07Form());
+                    break;
+
+                case "Rapor 8":
+                    OpenChildForm(new Rapor08Form());
+                    break;
+
+                case "Rapor 9":
+                    OpenChildForm(new Rapor09Form());
+                    break;
+
+                case "Rapor 10":
+                    OpenChildForm(new Rapor10Form());
+                    break;
+
+                case "Rapor 11":
+                    OpenChildForm(new Rapor11Form());
+                    break;
+
+                case "Rapor 12":
+                    OpenChildForm(new Rapor12Form());
+                    break;
+
+                case "Rapor 13":
+                    OpenChildForm(new Rapor13Form());
+                    break;
+
+                case "Rapor 14":
+                    OpenChildForm(new Rapor14Form());
+                    break;
+
+                case "Rapor 15":
+                    OpenChildForm(new Rapor15Form());
+                    break;
+
+                case "Rapor 16":
+                    OpenChildForm(new Rapor16Form());
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        private Form activeForm = null;
+        private void OpenChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel1.Controls.Add(childForm);
+            panel1.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
     }
 }

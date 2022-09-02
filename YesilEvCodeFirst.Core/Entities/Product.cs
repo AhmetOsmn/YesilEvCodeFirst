@@ -29,6 +29,9 @@ namespace YesilEvCodeFirst.Core.Entities
         public int SupplierID { get; set; }
         public Supplier Supplier { get; set; }
 
+        public int AddedBy { get; set; }
+        [ForeignKey("AddedBy")]
+        public User Adder { get; set; }
 
         public int CategoryID { get; set; }
         public Category Category { get; set; }
@@ -40,6 +43,7 @@ namespace YesilEvCodeFirst.Core.Entities
 
         public List<ProductSupplement> ProductSupplements{ get; set; }
         public List<ProductFavList> ProductFavList { get; set; }
+        public List<SearchHistory> ProductSearchHistories { get; set; }
 
         #endregion
     }

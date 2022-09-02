@@ -79,6 +79,7 @@
     <Compile Include="Entities\Picture.cs" />
     <Compile Include="Entities\ProductFavList.cs" />
     <Compile Include="Entities\ProductSupplement.cs" />
+    <Compile Include="Entities\SearchHistory.cs" />
     <Compile Include="Entities\SupplementBlackList.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\Supplement.cs" />

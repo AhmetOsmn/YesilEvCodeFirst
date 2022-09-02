@@ -16,7 +16,7 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GirisKayitForm());
+            Application.Run(new Form1());
         }
     }
 }
