@@ -39,6 +39,19 @@ namespace YesilEvCodeFirst.Core.Repos
         public TEntity Delete(TEntity item)
         {
             return _context.Set<TEntity>().Remove(item);
+        }  
+        public bool DeleteRange(List<TEntity> items)
+        {
+            try
+            {
+                _context.Set<TEntity>().RemoveRange(items);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
 
         public List<TEntity> GetAll()

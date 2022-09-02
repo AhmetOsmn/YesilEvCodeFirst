@@ -1,4 +1,4 @@
-﻿using System.Data.Entity;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using YesilEvCodeFirst.Core.Entities;
 
@@ -105,7 +105,7 @@ namespace YesilEvCodeFirst.Core.Context
         public DbSet<SupplementBlackList> SupplementBlackList { get; set; }
         public DbSet<UserFavList> UserFavList { get; set; }
         public DbSet<ProductFavList> ProductFavList { get; set; }
-        public DbSet<SearchHistory> SearchHistorie { get; set; }
 
+        public DbSet<SearchHistory> SearchHistoriy { get; set; }
     }
 }

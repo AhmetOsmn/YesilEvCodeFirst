@@ -3,6 +3,7 @@ using System;
 using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Product;
+using YesilEvCodeFirst.DTOs.SearchHistory;
 using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.DTOs.SupplementBlackList;
 using YesilEvCodeFirst.DTOs.UserAdmin;
@@ -132,11 +133,21 @@ namespace YesilEvCodeFirst.MyTest
                 UserID = 1,
             });
 
+        [TestMethod]
+        public void AddSearchHistoryTest()
+        {
+            UseSearchHistoryDAL dal = new UseSearchHistoryDAL();
+            var result = dal.AddSearchHistory(new AddSearchHistoryDTO()
+            {
+                UserID = 1,
+                ProductID = 2,
+            });
             if (!result)
             {
                 throw new Exception("test sirasinda hata olustu");
             }
         }
+
         #endregion
 
         #region Guncelleme Testleri
@@ -201,7 +212,31 @@ namespace YesilEvCodeFirst.MyTest
         #region Listeleme Testleri
 
         [TestMethod]
-        public void ProductListTest()
+        public void GetSearchHistoryListTest()
+        {
+            UseSearchHistoryDAL dal = new UseSearchHistoryDAL();
+            var result = dal.GetSearchHistoryList();
+
+            if (result == null)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+
+        [TestMethod]
+        public void GetSearchHistoryListWithUserIDTest()
+        {
+            UseSearchHistoryDAL dal = new UseSearchHistoryDAL();
+            var result = dal.GetSearchHistoryListWithUserID(1);
+
+            if (result == null)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+
+        [TestMethod]
+        public void GetProductListTest()
         {
             UseProductDAL dal = new UseProductDAL();
             var result = dal.GetProductList();
@@ -213,7 +248,7 @@ namespace YesilEvCodeFirst.MyTest
         }
 
         [TestMethod]
-        public void SupplierListTest()
+        public void GetSupplierListTest()
         {
             UseSupplierDAL dal = new UseSupplierDAL();
             var result = dal.GetSupplierList();
@@ -225,7 +260,7 @@ namespace YesilEvCodeFirst.MyTest
         }
 
         [TestMethod]
-        public void CategoryListTest()
+        public void GetCategoryListTest()
         {
             UseCategoryDAL dal = new UseCategoryDAL();
             var result = dal.GetCategoryList();
@@ -236,7 +271,7 @@ namespace YesilEvCodeFirst.MyTest
             }
         }
         [TestMethod]
-        public void SupplementListTest()
+        public void GetSupplementListTest()
         {
             UseSupplementDAL dal = new UseSupplementDAL();
             var result = dal.GetSupplementList();
@@ -317,9 +352,22 @@ namespace YesilEvCodeFirst.MyTest
 
         #region Silme Testleri
 
+        [TestMethod]
+        public void ClearSearchHistoryWithUserIDTest()
+        {
+            UseSearchHistoryDAL dal = new UseSearchHistoryDAL();
+            var result = dal.ClearSearchHistoryWithUserID(1);
+
+            if (result == false)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+
         #endregion
 
-        #region SupplementBlackLists
+
+        #region BlackList Testleri
 
         [TestMethod]
         public void DenemeTest()
@@ -336,8 +384,8 @@ namespace YesilEvCodeFirst.MyTest
             {
                 throw new Exception("test sirasinda hata olustu");
             }
-
         }
+
         
         [TestMethod]
         public void Deneme1Test()
@@ -350,7 +398,8 @@ namespace YesilEvCodeFirst.MyTest
                 SupplementID = 2,
 
             });
-            if (result == null)
+           
+            if (result == false)
             {
                 throw new Exception("test sirasinda hata olustu");
             }

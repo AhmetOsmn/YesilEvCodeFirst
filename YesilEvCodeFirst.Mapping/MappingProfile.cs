@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.DTOs.Category;
 using YesilEvCodeFirst.DTOs.Product;
+using YesilEvCodeFirst.DTOs.SearchHistory;
 using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.DTOs.SupplementBlackList;
 using YesilEvCodeFirst.DTOs.Supplier;
@@ -21,6 +22,7 @@ namespace YesilEvCodeFirst.Mapping
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<Product>(dto);
         }
+        
         public static SupplementBlackList AddSupplementBlackListDTOToSupplementBlackList(AddSupplementBlackListDTO dto)
         {
             var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddSupplementBlackListDTO, SupplementBlackList>());
@@ -78,6 +80,18 @@ namespace YesilEvCodeFirst.Mapping
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<GetProductDetailDTO>(product);
         }
+        public static List<SearchHistoryDTO> SearchHistoryListToSearchHistoryDTOListWithInclude(List<SearchHistory> searchHistoryList)
+        {
+            var mapperConfig = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<SearchHistory, SearchHistoryDTO>()
+                   .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.ProductName))
+                   .ForMember(dest => dest.SearchDate, opt => opt.MapFrom(src => src.CreatedDate))
+                   .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.FirstName+ " " + src.User.LastName));
+            });
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<List<SearchHistoryDTO>>(searchHistoryList);
+        }
 
         public static List<SupplierDTO> SupplierListToSupplierDTOList(List<Supplier> supplierList)
         {
@@ -120,6 +134,7 @@ namespace YesilEvCodeFirst.Mapping
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<Supplement>(dto);
         }
+        
         public static BlackList AddBlackListDTOToBlackList(AddOrEditBlackListDTO dto)
         {
             var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddOrEditBlackListDTO, BlackList>());
@@ -127,12 +142,30 @@ namespace YesilEvCodeFirst.Mapping
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<BlackList>(dto);
         }
+        
         public static FavList AddFavListDTOToFavList(AddOrEditFavListDTO dto)
         {
             var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddOrEditFavListDTO, FavList>());
 
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<FavList>(dto);
+        }
+    
+        public static SearchHistory AddSearchHistoryDTOToSearchHistory(AddSearchHistoryDTO dto)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddSearchHistoryDTO, SearchHistory>());
+
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<SearchHistory>(dto);
+        }
+
+        public static List<SearchHistoryDTO> SearchHistoryListToSearchHistoryDTOList(List<SearchHistory> searchHistories)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<SearchHistory, SearchHistoryDTO>());
+
+            var mapper = new Mapper(mapperConfig);
+
+            return mapper.Map<List<SearchHistoryDTO>>(searchHistories);
         }
     }
 }

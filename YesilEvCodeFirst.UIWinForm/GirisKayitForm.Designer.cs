@@ -108,7 +108,7 @@
             this.btnKayitOl.Location = new System.Drawing.Point(69, 230);
             this.btnKayitOl.Name = "btnKayitOl";
             this.btnKayitOl.Size = new System.Drawing.Size(289, 41);
-            this.btnKayitOl.TabIndex = 4;
+            this.btnKayitOl.TabIndex = 5;
             this.btnKayitOl.Text = "Kayıt Ol";
             this.btnKayitOl.UseVisualStyleBackColor = false;
             this.btnKayitOl.Click += new System.EventHandler(this.btnKayitOl_Click);
@@ -121,7 +121,7 @@
             this.txtIsim.Multiline = true;
             this.txtIsim.Name = "txtIsim";
             this.txtIsim.Size = new System.Drawing.Size(179, 26);
-            this.txtIsim.TabIndex = 3;
+            this.txtIsim.TabIndex = 1;
             // 
             // txtSoyisim
             // 
@@ -131,7 +131,7 @@
             this.txtSoyisim.Multiline = true;
             this.txtSoyisim.Name = "txtSoyisim";
             this.txtSoyisim.Size = new System.Drawing.Size(179, 26);
-            this.txtSoyisim.TabIndex = 3;
+            this.txtSoyisim.TabIndex = 2;
             // 
             // txtSifre
             // 
@@ -142,7 +142,7 @@
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.PasswordChar = '*';
             this.txtSifre.Size = new System.Drawing.Size(387, 26);
-            this.txtSifre.TabIndex = 3;
+            this.txtSifre.TabIndex = 4;
             // 
             // txtEmail
             // 
@@ -236,7 +236,7 @@
             this.txtGirisYapSifre.PasswordChar = '*';
             this.txtGirisYapSifre.Size = new System.Drawing.Size(387, 20);
             this.txtGirisYapSifre.TabIndex = 2;
-            this.txtGirisYapSifre.Text = "mert555";
+            this.txtGirisYapSifre.Text = "sarp555";
             // 
             // lblGirisYapSifre
             // 
@@ -256,8 +256,8 @@
             this.txtGirisYapEmail.Location = new System.Drawing.Point(17, 83);
             this.txtGirisYapEmail.Name = "txtGirisYapEmail";
             this.txtGirisYapEmail.Size = new System.Drawing.Size(387, 20);
-            this.txtGirisYapEmail.TabIndex = 2;
-            this.txtGirisYapEmail.Text = "mertdalkiran@gmail.com";
+            this.txtGirisYapEmail.TabIndex = 1;
+            this.txtGirisYapEmail.Text = "sarp@gmail.com";
             // 
             // lblGirisYapEmail
             // 
@@ -278,8 +278,8 @@
             this.ClientSize = new System.Drawing.Size(456, 475);
             this.Controls.Add(this.btnGroupBoxGirisYap);
             this.Controls.Add(this.btnGroupBoxKayitOl);
-            this.Controls.Add(this.GroupBoxGirisYap);
             this.Controls.Add(this.GroupBoxKayitOl);
+            this.Controls.Add(this.GroupBoxGirisYap);
             this.Name = "GirisKayitForm";
             this.Text = "Form1";
             this.GroupBoxKayitOl.ResumeLayout(false);
