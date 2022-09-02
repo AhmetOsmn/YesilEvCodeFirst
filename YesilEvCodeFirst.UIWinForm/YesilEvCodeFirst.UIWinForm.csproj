@@ -289,6 +289,7 @@
     <Content Include="ContextLtst\Image\bildirim.png" />
     <Content Include="ContextLtst\Image\bizeulas.png" />
     <Content Include="ContextLtst\Image\cikisyap.png" />
+    <Content Include="ContextLtst\Image\drop.jpg" />
     <Content Include="ContextLtst\Image\ekle-düzenle.png" />
     <Content Include="ContextLtst\Image\epostadegistir.png" />
     <Content Include="ContextLtst\Image\facebook.png" />
@@ -306,6 +307,7 @@
     <Content Include="ContextLtst\Image\sifredegistir.png" />
     <Content Include="ContextLtst\Image\sosyalmedyabislestir.png" />
     <Content Include="ContextLtst\Image\twitter.png" />
+    <Content Include="ContextLtst\Image\up.jpg" />
     <Content Include="ContextLtst\Image\user.png" />
     <Content Include="ContextLtst\Image\yesilev.png" />
   </ItemGroup>

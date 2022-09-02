@@ -100,6 +100,8 @@
             this.btnUserSifreDegistir = new System.Windows.Forms.Button();
             this.btnUserPremium = new System.Windows.Forms.Button();
             this.UrunEkleDuzenle = new System.Windows.Forms.Panel();
+            this.UrunDetay = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnUrunEkleUser = new System.Windows.Forms.Button();
             this.btnGonder = new System.Windows.Forms.Button();
             this.btnUrunEkle = new System.Windows.Forms.Button();
@@ -146,11 +148,35 @@
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog4 = new System.Windows.Forms.OpenFileDialog();
             this.UrunArama = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtAramaSearchbar = new System.Windows.Forms.TextBox();
-            this.lblAramaSearchBar = new System.Windows.Forms.Label();
-            this.btnSearchbarAra = new System.Windows.Forms.Button();
             this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
+            this.btnSearchbarAra = new System.Windows.Forms.Button();
+            this.lblAramaSearchBar = new System.Windows.Forms.Label();
+            this.txtAramaSearchbar = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.pcbUrun = new System.Windows.Forms.PictureBox();
+            this.lblAltKategori = new System.Windows.Forms.Label();
+            this.lblMarka = new System.Windows.Forms.Label();
+            this.lblUrunAd = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblKaraMadde = new System.Windows.Forms.Label();
+            this.lblKaraMaddeNum = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.lblCokRisk = new System.Windows.Forms.Label();
+            this.lblOrtaRisk = new System.Windows.Forms.Label();
+            this.lblAzRisk = new System.Windows.Forms.Label();
+            this.lblTemiz = new System.Windows.Forms.Label();
+            this.lblCokRiskNum = new System.Windows.Forms.Label();
+            this.lblOrtaRiskNum = new System.Windows.Forms.Label();
+            this.lblAzRiskNum = new System.Windows.Forms.Label();
+            this.lblTemizNum = new System.Windows.Forms.Label();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnShowList = new System.Windows.Forms.Button();
+            this.pnlShowProducts = new System.Windows.Forms.Panel();
             this.pnlHome.SuspendLayout();
             this.pnlUygulamaPuanVer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUygulamaPuanVer)).BeginInit();
@@ -191,12 +217,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserEposta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserPremium)).BeginInit();
             this.UrunEkleDuzenle.SuspendLayout();
+            this.UrunDetay.SuspendLayout();
             this.UrunEkle.SuspendLayout();
             this.UrunDuzenle.SuspendLayout();
             this.AramaGecmisi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.UrunArama.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbUrun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlHome
@@ -627,10 +660,10 @@
             this.SideBar.Controls.Add(this.pnlUygulamaPuanVer);
             this.SideBar.Controls.Add(this.pnlHome);
             this.SideBar.Location = new System.Drawing.Point(1, 2);
-            this.SideBar.MaximumSize = new System.Drawing.Size(270, 511);
+            this.SideBar.MaximumSize = new System.Drawing.Size(270, 712);
             this.SideBar.MinimumSize = new System.Drawing.Size(60, 90);
             this.SideBar.Name = "SideBar";
-            this.SideBar.Size = new System.Drawing.Size(80, 511);
+            this.SideBar.Size = new System.Drawing.Size(80, 710);
             this.SideBar.TabIndex = 0;
             // 
             // pnlYesilEv
@@ -779,7 +812,7 @@
             this.Anasayfa.Controls.Add(this.btnBarkodOku);
             this.Anasayfa.Location = new System.Drawing.Point(0, 0);
             this.Anasayfa.Name = "Anasayfa";
-            this.Anasayfa.Size = new System.Drawing.Size(364, 511);
+            this.Anasayfa.Size = new System.Drawing.Size(364, 499);
             this.Anasayfa.TabIndex = 6;
             // 
             // btnAnasayfaUser
@@ -821,7 +854,7 @@
             this.UserBilgileri.Controls.Add(this.btnUserPremium);
             this.UserBilgileri.Location = new System.Drawing.Point(0, 0);
             this.UserBilgileri.Name = "UserBilgileri";
-            this.UserBilgileri.Size = new System.Drawing.Size(364, 510);
+            this.UserBilgileri.Size = new System.Drawing.Size(364, 712);
             this.UserBilgileri.TabIndex = 7;
             // 
             // pictureBox9
@@ -1090,6 +1123,8 @@
             // 
             // UrunEkleDuzenle
             // 
+            this.UrunEkleDuzenle.Controls.Add(this.UrunDetay);
+            this.UrunEkleDuzenle.Controls.Add(this.button3);
             this.UrunEkleDuzenle.Controls.Add(this.btnUrunEkleUser);
             this.UrunEkleDuzenle.Controls.Add(this.btnGonder);
             this.UrunEkleDuzenle.Controls.Add(this.btnUrunEkle);
@@ -1098,8 +1133,54 @@
             this.UrunEkleDuzenle.Controls.Add(this.UrunDuzenle);
             this.UrunEkleDuzenle.Location = new System.Drawing.Point(0, 0);
             this.UrunEkleDuzenle.Name = "UrunEkleDuzenle";
-            this.UrunEkleDuzenle.Size = new System.Drawing.Size(364, 511);
+            this.UrunEkleDuzenle.Size = new System.Drawing.Size(364, 712);
             this.UrunEkleDuzenle.TabIndex = 6;
+            // 
+            // UrunDetay
+            // 
+            this.UrunDetay.BackColor = System.Drawing.Color.White;
+            this.UrunDetay.Controls.Add(this.pnlShowProducts);
+            this.UrunDetay.Controls.Add(this.btnShowList);
+            this.UrunDetay.Controls.Add(this.label1);
+            this.UrunDetay.Controls.Add(this.lblMessage);
+            this.UrunDetay.Controls.Add(this.lblTemizNum);
+            this.UrunDetay.Controls.Add(this.lblAzRiskNum);
+            this.UrunDetay.Controls.Add(this.lblOrtaRiskNum);
+            this.UrunDetay.Controls.Add(this.lblCokRiskNum);
+            this.UrunDetay.Controls.Add(this.lblTemiz);
+            this.UrunDetay.Controls.Add(this.lblAzRisk);
+            this.UrunDetay.Controls.Add(this.lblOrtaRisk);
+            this.UrunDetay.Controls.Add(this.lblCokRisk);
+            this.UrunDetay.Controls.Add(this.pictureBox5);
+            this.UrunDetay.Controls.Add(this.pictureBox4);
+            this.UrunDetay.Controls.Add(this.pictureBox3);
+            this.UrunDetay.Controls.Add(this.pictureBox2);
+            this.UrunDetay.Controls.Add(this.lblKaraMaddeNum);
+            this.UrunDetay.Controls.Add(this.lblKaraMadde);
+            this.UrunDetay.Controls.Add(this.pictureBox1);
+            this.UrunDetay.Controls.Add(this.lblUrunAd);
+            this.UrunDetay.Controls.Add(this.lblMarka);
+            this.UrunDetay.Controls.Add(this.lblAltKategori);
+            this.UrunDetay.Controls.Add(this.pcbUrun);
+            this.UrunDetay.Controls.Add(this.button2);
+            this.UrunDetay.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UrunDetay.Location = new System.Drawing.Point(3, 1);
+            this.UrunDetay.Name = "UrunDetay";
+            this.UrunDetay.Size = new System.Drawing.Size(362, 711);
+            this.UrunDetay.TabIndex = 8;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(290, 18);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(60, 40);
+            this.button2.TabIndex = 8;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.UserButton_Click);
             // 
             // btnUrunEkleUser
             // 
@@ -1501,7 +1582,7 @@
             this.AramaGecmisi.Controls.Add(this.dataGridView1);
             this.AramaGecmisi.Location = new System.Drawing.Point(1, 1);
             this.AramaGecmisi.Name = "AramaGecmisi";
-            this.AramaGecmisi.Size = new System.Drawing.Size(360, 510);
+            this.AramaGecmisi.Size = new System.Drawing.Size(360, 711);
             this.AramaGecmisi.TabIndex = 7;
             // 
             // btnGecmisiTemizle
@@ -1532,7 +1613,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(11, 107);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(338, 391);
+            this.dataGridView1.Size = new System.Drawing.Size(338, 373);
             this.dataGridView1.TabIndex = 0;
             // 
             // openFileDialog1
@@ -1581,45 +1662,6 @@
             this.UrunArama.Size = new System.Drawing.Size(363, 510);
             this.UrunArama.TabIndex = 7;
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(291, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 40);
-            this.button1.TabIndex = 7;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.UserButton_Click);
-            // 
-            // txtAramaSearchbar
-            // 
-            this.txtAramaSearchbar.Location = new System.Drawing.Point(86, 99);
-            this.txtAramaSearchbar.Name = "txtAramaSearchbar";
-            this.txtAramaSearchbar.Size = new System.Drawing.Size(186, 20);
-            this.txtAramaSearchbar.TabIndex = 8;
-            // 
-            // lblAramaSearchBar
-            // 
-            this.lblAramaSearchBar.AutoSize = true;
-            this.lblAramaSearchBar.Location = new System.Drawing.Point(16, 104);
-            this.lblAramaSearchBar.Name = "lblAramaSearchBar";
-            this.lblAramaSearchBar.Size = new System.Drawing.Size(64, 13);
-            this.lblAramaSearchBar.TabIndex = 9;
-            this.lblAramaSearchBar.Text = "Ürün Giriniz:";
-            // 
-            // btnSearchbarAra
-            // 
-            this.btnSearchbarAra.Location = new System.Drawing.Point(282, 99);
-            this.btnSearchbarAra.Name = "btnSearchbarAra";
-            this.btnSearchbarAra.Size = new System.Drawing.Size(54, 21);
-            this.btnSearchbarAra.TabIndex = 11;
-            this.btnSearchbarAra.Text = "Ara";
-            this.btnSearchbarAra.UseVisualStyleBackColor = true;
-            this.btnSearchbarAra.Click += new System.EventHandler(this.btnSearchbarAra_Click);
-            // 
             // dataGridViewProducts
             // 
             this.dataGridViewProducts.AllowUserToAddRows = false;
@@ -1633,18 +1675,308 @@
             this.dataGridViewProducts.TabIndex = 12;
             this.dataGridViewProducts.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProducts_CellContentDoubleClick);
             // 
+            // btnSearchbarAra
+            // 
+            this.btnSearchbarAra.Location = new System.Drawing.Point(282, 99);
+            this.btnSearchbarAra.Name = "btnSearchbarAra";
+            this.btnSearchbarAra.Size = new System.Drawing.Size(54, 21);
+            this.btnSearchbarAra.TabIndex = 11;
+            this.btnSearchbarAra.Text = "Ara";
+            this.btnSearchbarAra.UseVisualStyleBackColor = true;
+            this.btnSearchbarAra.Click += new System.EventHandler(this.btnSearchbarAra_Click);
+            // 
+            // lblAramaSearchBar
+            // 
+            this.lblAramaSearchBar.AutoSize = true;
+            this.lblAramaSearchBar.Location = new System.Drawing.Point(16, 104);
+            this.lblAramaSearchBar.Name = "lblAramaSearchBar";
+            this.lblAramaSearchBar.Size = new System.Drawing.Size(64, 13);
+            this.lblAramaSearchBar.TabIndex = 9;
+            this.lblAramaSearchBar.Text = "Ürün Giriniz:";
+            // 
+            // txtAramaSearchbar
+            // 
+            this.txtAramaSearchbar.Location = new System.Drawing.Point(86, 99);
+            this.txtAramaSearchbar.Name = "txtAramaSearchbar";
+            this.txtAramaSearchbar.Size = new System.Drawing.Size(186, 20);
+            this.txtAramaSearchbar.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(291, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(60, 40);
+            this.button1.TabIndex = 7;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(75, 27);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // pcbUrun
+            // 
+            this.pcbUrun.Image = ((System.Drawing.Image)(resources.GetObject("pcbUrun.Image")));
+            this.pcbUrun.Location = new System.Drawing.Point(5, 85);
+            this.pcbUrun.Name = "pcbUrun";
+            this.pcbUrun.Size = new System.Drawing.Size(90, 115);
+            this.pcbUrun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbUrun.TabIndex = 9;
+            this.pcbUrun.TabStop = false;
+            // 
+            // lblAltKategori
+            // 
+            this.lblAltKategori.AutoSize = true;
+            this.lblAltKategori.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblAltKategori.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAltKategori.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lblAltKategori.Location = new System.Drawing.Point(115, 85);
+            this.lblAltKategori.Name = "lblAltKategori";
+            this.lblAltKategori.Size = new System.Drawing.Size(133, 19);
+            this.lblAltKategori.TabIndex = 10;
+            this.lblAltKategori.Text = "Bebek Şampuanları";
+            // 
+            // lblMarka
+            // 
+            this.lblMarka.AutoSize = true;
+            this.lblMarka.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMarka.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lblMarka.Location = new System.Drawing.Point(115, 115);
+            this.lblMarka.Name = "lblMarka";
+            this.lblMarka.Size = new System.Drawing.Size(72, 19);
+            this.lblMarka.TabIndex = 11;
+            this.lblMarka.Text = "Johnson\'s";
+            // 
+            // lblUrunAd
+            // 
+            this.lblUrunAd.AutoSize = true;
+            this.lblUrunAd.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUrunAd.ForeColor = System.Drawing.Color.Green;
+            this.lblUrunAd.Location = new System.Drawing.Point(115, 145);
+            this.lblUrunAd.Name = "lblUrunAd";
+            this.lblUrunAd.Size = new System.Drawing.Size(181, 19);
+            this.lblUrunAd.TabIndex = 12;
+            this.lblUrunAd.Text = "Bebek Şampuanı - 500 ml";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(105, 170);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblKaraMadde
+            // 
+            this.lblKaraMadde.AutoSize = true;
+            this.lblKaraMadde.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblKaraMadde.ForeColor = System.Drawing.Color.Black;
+            this.lblKaraMadde.Location = new System.Drawing.Point(140, 175);
+            this.lblKaraMadde.Name = "lblKaraMadde";
+            this.lblKaraMadde.Size = new System.Drawing.Size(146, 18);
+            this.lblKaraMadde.TabIndex = 14;
+            this.lblKaraMadde.Text = "Kara listedeki içerikler";
+            // 
+            // lblKaraMaddeNum
+            // 
+            this.lblKaraMaddeNum.AutoSize = true;
+            this.lblKaraMaddeNum.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblKaraMaddeNum.ForeColor = System.Drawing.Color.Black;
+            this.lblKaraMaddeNum.Location = new System.Drawing.Point(305, 175);
+            this.lblKaraMaddeNum.Name = "lblKaraMaddeNum";
+            this.lblKaraMaddeNum.Size = new System.Drawing.Size(17, 19);
+            this.lblKaraMaddeNum.TabIndex = 15;
+            this.lblKaraMaddeNum.Text = "1";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(105, 210);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(105, 250);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 17;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(105, 290);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 18;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(105, 330);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 19;
+            this.pictureBox5.TabStop = false;
+            // 
+            // lblCokRisk
+            // 
+            this.lblCokRisk.AutoSize = true;
+            this.lblCokRisk.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblCokRisk.ForeColor = System.Drawing.Color.Red;
+            this.lblCokRisk.Location = new System.Drawing.Point(140, 215);
+            this.lblCokRisk.Name = "lblCokRisk";
+            this.lblCokRisk.Size = new System.Drawing.Size(95, 18);
+            this.lblCokRisk.TabIndex = 20;
+            this.lblCokRisk.Text = "Riskli içerikler";
+            // 
+            // lblOrtaRisk
+            // 
+            this.lblOrtaRisk.AutoSize = true;
+            this.lblOrtaRisk.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblOrtaRisk.ForeColor = System.Drawing.Color.Orange;
+            this.lblOrtaRisk.Location = new System.Drawing.Point(140, 255);
+            this.lblOrtaRisk.Name = "lblOrtaRisk";
+            this.lblOrtaRisk.Size = new System.Drawing.Size(122, 18);
+            this.lblOrtaRisk.TabIndex = 21;
+            this.lblOrtaRisk.Text = "Orta riskli içerikler";
+            // 
+            // lblAzRisk
+            // 
+            this.lblAzRisk.AutoSize = true;
+            this.lblAzRisk.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAzRisk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            this.lblAzRisk.Location = new System.Drawing.Point(140, 295);
+            this.lblAzRisk.Name = "lblAzRisk";
+            this.lblAzRisk.Size = new System.Drawing.Size(110, 18);
+            this.lblAzRisk.TabIndex = 22;
+            this.lblAzRisk.Text = "Az riskli içerikler";
+            // 
+            // lblTemiz
+            // 
+            this.lblTemiz.AutoSize = true;
+            this.lblTemiz.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTemiz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblTemiz.Location = new System.Drawing.Point(140, 335);
+            this.lblTemiz.Name = "lblTemiz";
+            this.lblTemiz.Size = new System.Drawing.Size(98, 18);
+            this.lblTemiz.TabIndex = 23;
+            this.lblTemiz.Text = "Temiz içerikler";
+            // 
+            // lblCokRiskNum
+            // 
+            this.lblCokRiskNum.AutoSize = true;
+            this.lblCokRiskNum.ForeColor = System.Drawing.Color.Red;
+            this.lblCokRiskNum.Location = new System.Drawing.Point(305, 215);
+            this.lblCokRiskNum.Name = "lblCokRiskNum";
+            this.lblCokRiskNum.Size = new System.Drawing.Size(17, 19);
+            this.lblCokRiskNum.TabIndex = 24;
+            this.lblCokRiskNum.Text = "1";
+            // 
+            // lblOrtaRiskNum
+            // 
+            this.lblOrtaRiskNum.AutoSize = true;
+            this.lblOrtaRiskNum.ForeColor = System.Drawing.Color.Orange;
+            this.lblOrtaRiskNum.Location = new System.Drawing.Point(305, 255);
+            this.lblOrtaRiskNum.Name = "lblOrtaRiskNum";
+            this.lblOrtaRiskNum.Size = new System.Drawing.Size(17, 19);
+            this.lblOrtaRiskNum.TabIndex = 25;
+            this.lblOrtaRiskNum.Text = "2";
+            // 
+            // lblAzRiskNum
+            // 
+            this.lblAzRiskNum.AutoSize = true;
+            this.lblAzRiskNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            this.lblAzRiskNum.Location = new System.Drawing.Point(305, 295);
+            this.lblAzRiskNum.Name = "lblAzRiskNum";
+            this.lblAzRiskNum.Size = new System.Drawing.Size(17, 19);
+            this.lblAzRiskNum.TabIndex = 26;
+            this.lblAzRiskNum.Text = "3";
+            // 
+            // lblTemizNum
+            // 
+            this.lblTemizNum.AutoSize = true;
+            this.lblTemizNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblTemizNum.Location = new System.Drawing.Point(305, 335);
+            this.lblTemizNum.Name = "lblTemizNum";
+            this.lblTemizNum.Size = new System.Drawing.Size(17, 19);
+            this.lblTemizNum.TabIndex = 27;
+            this.lblTemizNum.Text = "1";
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.ForeColor = System.Drawing.Color.Green;
+            this.lblMessage.Location = new System.Drawing.Point(10, 383);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(301, 19);
+            this.lblMessage.TabIndex = 28;
+            this.lblMessage.Text = "User isimli üye tarafından oluşturulmuştur.";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(10, 420);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 19);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Ürün Bileşemi";
+            // 
+            // btnShowList
+            // 
+            this.btnShowList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnShowList.BackgroundImage")));
+            this.btnShowList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowList.FlatAppearance.BorderSize = 0;
+            this.btnShowList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowList.Location = new System.Drawing.Point(300, 416);
+            this.btnShowList.Name = "btnShowList";
+            this.btnShowList.Size = new System.Drawing.Size(30, 30);
+            this.btnShowList.TabIndex = 30;
+            this.btnShowList.UseVisualStyleBackColor = true;
+            this.btnShowList.Click += new System.EventHandler(this.btnShowList_Click);
+            // 
+            // pnlShowProducts
+            // 
+            this.pnlShowProducts.AutoScroll = true;
+            this.pnlShowProducts.Location = new System.Drawing.Point(9, 461);
+            this.pnlShowProducts.Name = "pnlShowProducts";
+            this.pnlShowProducts.Size = new System.Drawing.Size(341, 247);
+            this.pnlShowProducts.TabIndex = 31;
+            // 
             // UserSayfasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 511);
-            this.Controls.Add(this.UrunArama);
+            this.ClientSize = new System.Drawing.Size(364, 711);
             this.Controls.Add(this.UrunEkleDuzenle);
             this.Controls.Add(this.AramaGecmisi);
             this.Controls.Add(this.Anasayfa);
             this.Controls.Add(this.SideBar);
             this.Controls.Add(this.UserBilgileri);
-            this.MaximumSize = new System.Drawing.Size(380, 550);
+            this.Controls.Add(this.UrunArama);
+            this.MaximumSize = new System.Drawing.Size(380, 750);
             this.Name = "UserSayfasi";
             this.Text = "Form3";
             this.pnlHome.ResumeLayout(false);
@@ -1688,6 +2020,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserEposta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserPremium)).EndInit();
             this.UrunEkleDuzenle.ResumeLayout(false);
+            this.UrunDetay.ResumeLayout(false);
+            this.UrunDetay.PerformLayout();
             this.UrunEkle.ResumeLayout(false);
             this.UrunEkle.PerformLayout();
             this.UrunDuzenle.ResumeLayout(false);
@@ -1697,6 +2031,12 @@
             this.UrunArama.ResumeLayout(false);
             this.UrunArama.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbUrun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1827,5 +2167,31 @@
         private System.Windows.Forms.Label lblAramaSearchBar;
         private System.Windows.Forms.TextBox txtAramaSearchbar;
         private System.Windows.Forms.DataGridView dataGridViewProducts;
+        private System.Windows.Forms.Panel UrunDetay;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PictureBox pcbUrun;
+        private System.Windows.Forms.Label lblMarka;
+        private System.Windows.Forms.Label lblAltKategori;
+        private System.Windows.Forms.Label lblUrunAd;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblKaraMadde;
+        private System.Windows.Forms.Label lblKaraMaddeNum;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblCokRisk;
+        private System.Windows.Forms.Label lblTemiz;
+        private System.Windows.Forms.Label lblAzRisk;
+        private System.Windows.Forms.Label lblOrtaRisk;
+        private System.Windows.Forms.Label lblTemizNum;
+        private System.Windows.Forms.Label lblAzRiskNum;
+        private System.Windows.Forms.Label lblOrtaRiskNum;
+        private System.Windows.Forms.Label lblCokRiskNum;
+        private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnShowList;
+        private System.Windows.Forms.Panel pnlShowProducts;
     }
 }

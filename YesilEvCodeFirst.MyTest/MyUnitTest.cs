@@ -123,7 +123,7 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
-        
+
         [TestMethod]
         public void AddFavListTest()
         {
@@ -132,6 +132,7 @@ namespace YesilEvCodeFirst.MyTest
             {
                 UserID = 1,
             });
+        }
 
         [TestMethod]
         public void AddSearchHistoryTest()
@@ -319,7 +320,7 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
-        
+
         [TestMethod]
         public void GetSupplementBlackListDetailTest()
         {
@@ -333,7 +334,7 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
-        
+
         [TestMethod]
         public void GetFavListDetailTest()
         {
@@ -380,13 +381,13 @@ namespace YesilEvCodeFirst.MyTest
                 SupplementID = 1,
 
             });
-            if (result == null)
+            if (result == false)
             {
                 throw new Exception("test sirasinda hata olustu");
             }
         }
 
-        
+
         [TestMethod]
         public void Deneme1Test()
         {
@@ -398,7 +399,7 @@ namespace YesilEvCodeFirst.MyTest
                 SupplementID = 2,
 
             });
-           
+
             if (result == false)
             {
                 throw new Exception("test sirasinda hata olustu");
@@ -420,3 +421,4 @@ namespace YesilEvCodeFirst.MyTest
 
     }
 }
+

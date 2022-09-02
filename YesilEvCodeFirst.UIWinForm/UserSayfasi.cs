@@ -31,12 +31,15 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             InitializeComponent();
             sideBarKapa();
+            CreateProductsInLabel();
             UrunEkleDuzenle.Visible = false;
             UserBilgileri.Visible = false;
             AramaGecmisi.Visible = false;
             UrunArama.Visible = false;
             Anasayfa.Visible = true;
             SideBar.Visible = true;
+            UrunDetay.Visible = false;
+            pnlShowProducts.Visible = false;
         }
 
         private void Menu_Click(object sender, EventArgs e)
@@ -49,8 +52,8 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 sideBarAc();
             }
-           
-            
+
+
         }
         private void sideBarAc()
         {
@@ -73,7 +76,7 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             foreach (Panel item in SideBar.Controls)
             {
-                
+
                 if (item.Name == "pnlHome" || item.Name == "pnlMenu")
                 {
                     pnlYesilEv.Width = 10;
@@ -97,6 +100,7 @@ namespace YesilEvCodeFirst.UIWinForm
             Anasayfa.Visible = true;
             UserBilgileri.Visible = false;
             UrunArama.Visible = false;
+            UrunDetay.Visible = false;
         }
 
         private void UrunDuzenle_Click(object sender, EventArgs e)
@@ -123,16 +127,16 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void UrunEkleDuzenle_Click(object sender, EventArgs e)
         {
-            Anasayfa.Visible= false;
+            Anasayfa.Visible = false;
             UrunEkleDuzenle.Visible = true;
             List<SupplierDTO> suppliers = SupDAL.GetSupplierList();
             List<CategoryDTO> categories = CategoryDAL.GetCategoryList();
-            foreach(SupplierDTO item in suppliers)
+            foreach (SupplierDTO item in suppliers)
             {
                 cmbBoxUrunEkleUretici.Items.Add(item);
                 cmbBoxUretici.Items.Add(item);
             }
-            foreach(CategoryDTO item in categories)
+            foreach (CategoryDTO item in categories)
             {
                 cmbBoxUrunEkleKategori.Items.Add(item);
                 cmbBoxKategori.Items.Add(item);
@@ -149,14 +153,14 @@ namespace YesilEvCodeFirst.UIWinForm
             UserBilgileri.Visible = true;
             lblUyelikTarihiValue.Text = Kullanici.CreatedDate.ToString();
             lblUserName.Text = Kullanici.FirstName + " " + Kullanici.LastName;
-            lblEkledigiUrunSayisi.Text += " "+ProductDAL.GetProductListWithUserID(Kullanici.UserID).Count.ToString();
+            lblEkledigiUrunSayisi.Text += " " + ProductDAL.GetProductListWithUserID(Kullanici.UserID).Count.ToString();
         }
 
         private void btnGonder_Click(object sender, EventArgs e)
         {
             btnGonder.Enabled = false;
             UseProductDAL dal = new UseProductDAL();
-            if(isAddProduct)
+            if (isAddProduct)
             {
                 if (isAddProductFieldValidator())
                 {
@@ -189,7 +193,7 @@ namespace YesilEvCodeFirst.UIWinForm
             }
             else
             {
-                if(isUpdatable)
+                if (isUpdatable)
                 {
                     if (isUpdateProductFieldValidator())
                     {
@@ -214,7 +218,7 @@ namespace YesilEvCodeFirst.UIWinForm
                             cmbBoxKategori.Text = "";
                             cmbBoxUretici.Text = "";
                         }
-                    }  
+                    }
                 }
                 else
                 {
@@ -227,12 +231,12 @@ namespace YesilEvCodeFirst.UIWinForm
         private void btnUrunGetir_Click(object sender, EventArgs e)
         {
             txtBarkodNo.Enabled = false;
-            if(txtBarkodNo.Text != ""&& txtBarkodNo.Text.Length==7)
+            if (txtBarkodNo.Text != "" && txtBarkodNo.Text.Length == 7)
             {
                 dto = ProductDAL.GetProductDetailWithBarcode(txtBarkodNo.Text);
-                if(dto != null)
+                if (dto != null)
                 {
-                    if(dto.AddedBy == Kullanici.UserID)
+                    if (dto.AddedBy == Kullanici.UserID)
                     {
                         txtBarkodNo.Text = dto.Barcode;
                         cmbBoxUretici.SelectedIndex = cmbBoxUretici.FindString(dto.SupplierName);
@@ -242,12 +246,12 @@ namespace YesilEvCodeFirst.UIWinForm
                         openFileDialog1.FileName = dto.PictureFronthPath;
                         openFileDialog2.FileName = dto.PictureBackPath;
                         var item = dto.PictureFronthPath.Split('\\');
-                        btnOnYuz.Text = item[item.Length-1];
+                        btnOnYuz.Text = item[item.Length - 1];
                         item = dto.PictureBackPath.Split('\\');
-                        btnArkaYuz.Text = item[item.Length-1];
+                        btnArkaYuz.Text = item[item.Length - 1];
                         isUpdatable = true;
                     }
-                    else 
+                    else
                     {
                         MessageBox.Show("Bu Ürün size ait değil.Düzenleme yapılamaz");
                     }
@@ -257,7 +261,7 @@ namespace YesilEvCodeFirst.UIWinForm
                     MessageBox.Show("Girilen Barkodlu ürün bulunamadı");
                 }
             }
-            else if(txtBarkodNo.Text == "")
+            else if (txtBarkodNo.Text == "")
             {
                 MessageBox.Show("Ürün barkod no giriniz");
             }
@@ -265,7 +269,7 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 MessageBox.Show("Barkod No hatalı");
             }
-            
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -278,9 +282,9 @@ namespace YesilEvCodeFirst.UIWinForm
             GirisKayitForm f = new GirisKayitForm();
             f.Show();
             this.Close();
-            
+
         }
-        
+
         /// <summary>
         ///  Arama yapan kisinin ismini, aranan urunu ve arama tarihini gosteriyor.
         /// </summary>
@@ -298,7 +302,7 @@ namespace YesilEvCodeFirst.UIWinForm
             MessageBox.Show("Arama geçmişi temizlendi!");
             dataGridView1.DataSource = null;
         }
-        
+
         private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnOnYuz.Text = openFileDialog1.SafeFileName;
@@ -339,7 +343,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 MessageBox.Show("Ürün barcode boş olamaz.");
                 return false;
             }
-            else if(string.IsNullOrEmpty(txtUrunEkleUrunAdi.Text))
+            else if (string.IsNullOrEmpty(txtUrunEkleUrunAdi.Text))
             {
                 MessageBox.Show("Ürün adı boş olamaz");
                 return false;
@@ -354,7 +358,8 @@ namespace YesilEvCodeFirst.UIWinForm
                 MessageBox.Show("Ürün üretici secilmedi");
                 return false;
             }
-            else if(string.IsNullOrEmpty(txtUrunEkleUrunIcerik.Text)){
+            else if (string.IsNullOrEmpty(txtUrunEkleUrunIcerik.Text))
+            {
                 MessageBox.Show("Ürün İçeriği boş olamaz");
                 return false;
             }
@@ -367,8 +372,8 @@ namespace YesilEvCodeFirst.UIWinForm
 
             var backpicturepath = dto.PictureBackPath.Split('\\');
             var backpicture = backpicturepath[backpicturepath.Length - 1];
-            if (txtBarkodNo.Text == dto.Barcode && 
-                txtUrunAdi.Text == dto.ProductName && 
+            if (txtBarkodNo.Text == dto.Barcode &&
+                txtUrunAdi.Text == dto.ProductName &&
                 txtUrunIcerik.Text == dto.ProductContent &&
                 ((CategoryDTO)cmbBoxKategori.SelectedItem).CategoryID == dto.CategoryID &&
                 ((SupplierDTO)cmbBoxUretici.SelectedItem).SupplierID == dto.SupplierID &&
@@ -404,7 +409,7 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void btnSearchbarAra_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(txtAramaSearchbar.Text.Trim()))
+            if (!string.IsNullOrEmpty(txtAramaSearchbar.Text.Trim()))
             {
                 string aranacak = txtAramaSearchbar.Text;
                 var result = ProductDAL.GetProductListForSearchbar(aranacak);
@@ -415,7 +420,7 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 MessageBox.Show("Lütfen harf veya kelime giriniz!");
             }
-          
+
         }
 
         private void dataGridViewProducts_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -437,6 +442,48 @@ namespace YesilEvCodeFirst.UIWinForm
 
                 throw new Exception(ex.Message);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UrunDetay.Visible = true;
+        }
+
+        int count = 1;
+        int Y = 0;
+        private void CreateProductsInLabel()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Label lbl = new Label();
+                lbl.Text = count.ToString();
+                lbl.Name = count.ToString();
+                lbl.Size = new Size(330, 18);
+                lbl.BackColor = Color.White;
+                lbl.ForeColor = Color.Black;
+                lbl.Location = new Point(15, 25 * (Y + 1));
+                Y++;
+                count++;
+                pnlShowProducts.Controls.Add(lbl);
+            }
+
+        }
+
+        int sum = 0;
+        private void btnShowList_Click(object sender, EventArgs e)
+        {
+            if (sum % 2 == 0)
+            {
+                pnlShowProducts.Visible = true;
+                btnShowList.BackgroundImage = Image.FromFile(@"E:\repos\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\up.jpg");
+            }
+            else
+            {
+                pnlShowProducts.Visible = false;
+                btnShowList.BackgroundImage = Image.FromFile(@"E:\repos\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\drop.jpg");
+            }
+
+            sum++;
         }
     }
 }
