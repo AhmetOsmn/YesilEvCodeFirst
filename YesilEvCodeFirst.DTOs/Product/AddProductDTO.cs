@@ -11,5 +11,6 @@
         public string PictureFronthPath { get; set; }
         public string PictureBackPath { get; set; }
         public int AddedBy { get; set; }
+
     }
 }

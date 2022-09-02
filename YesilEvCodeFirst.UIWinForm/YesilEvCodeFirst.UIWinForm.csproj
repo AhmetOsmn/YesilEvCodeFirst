@@ -70,6 +70,12 @@
     <Compile Include="GirisKayitForm.Designer.cs">
       <DependentUpon>GirisKayitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\Form16.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Form16.Designer.cs">
+      <DependentUpon>Form16.cs</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\Rapor10Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,36 @@
     <Compile Include="Raporlar\Rapor11Form.Designer.cs">
       <DependentUpon>Rapor11Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Raporlar\Rapor12Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Rapor12Form.Designer.cs">
+      <DependentUpon>Rapor12Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Rapor13Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Rapor13Form.Designer.cs">
+      <DependentUpon>Rapor13Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Rapor14Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Rapor14Form.Designer.cs">
+      <DependentUpon>Rapor14Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Rapor15Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Rapor15Form.Designer.cs">
+      <DependentUpon>Rapor15Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar\Rapor16Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar\Rapor16Form.Designer.cs">
+      <DependentUpon>Rapor16Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserSayfasi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +236,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Raporlar\Rapor11Form.resx">
       <DependentUpon>Rapor11Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Rapor12Form.resx">
+      <DependentUpon>Rapor12Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Rapor13Form.resx">
+      <DependentUpon>Rapor13Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Rapor14Form.resx">
+      <DependentUpon>Rapor14Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Rapor15Form.resx">
+      <DependentUpon>Rapor15Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar\Rapor16Form.resx">
+      <DependentUpon>Rapor16Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserSayfasi.resx">
       <DependentUpon>UserSayfasi.cs</DependentUpon>

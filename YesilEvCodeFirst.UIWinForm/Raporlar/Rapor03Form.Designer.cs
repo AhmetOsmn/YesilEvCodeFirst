@@ -52,24 +52,26 @@
             this.buttonRaporuGetir.TabIndex = 3;
             this.buttonRaporuGetir.Text = "Raporu Getir";
             this.buttonRaporuGetir.UseVisualStyleBackColor = true;
+            this.buttonRaporuGetir.Click += new System.EventHandler(this.buttonRaporuGetir_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 63);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 93);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(391, 375);
+            this.dataGridView1.Size = new System.Drawing.Size(389, 387);
             this.dataGridView1.TabIndex = 5;
             // 
-            // Rapor3Form
+            // Rapor03Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 450);
+            this.ClientSize = new System.Drawing.Size(415, 491);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonRaporuGetir);
-            this.Name = "Rapor3Form";
+            this.Name = "Rapor03Form";
             this.Text = "Rapor3Form";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -81,6 +83,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonRaporuGetir;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

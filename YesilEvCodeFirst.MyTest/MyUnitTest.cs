@@ -55,13 +55,14 @@ namespace YesilEvCodeFirst.MyTest
             UseProductDAL dal = new UseProductDAL();
             bool result = dal.AddProduct(new AddProductDTO()
             {
-                ProductName = "bitter cikolata",
+                ProductName = "magnum beyaz çikolatalı",
                 Barcode = Guid.NewGuid().ToString().Substring(0, 7),
-                CategoryID = 4,
-                SupplierID = 2,
-                ProductContent = " PEG-150 Distearate, Madde B, Karbonat, madde ar",
+                CategoryID = 2,
+                SupplierID = 3,
+                ProductContent = " Şeker, Maltodekstrin,Aroma Vericiler, süt tozu, amonyak, klor, florür",
                 PictureBackPath = "backtest23",
-                PictureFronthPath = "fronttest23"
+                PictureFronthPath = "fronttest23",
+                AddedBy = 5
             });
 
             if (!result)
@@ -120,7 +121,8 @@ namespace YesilEvCodeFirst.MyTest
                 SupplierID = 4,
                 ProductContent = "Madde A, Madde B, Madde C, Madde D, Madde Sezgin, Madde Y",
                 PictureBackPath = "backtest2",
-                PictureFronthPath = "fronttest2"
+                PictureFronthPath = "fronttest2",
+                AddedBy = 4
             });
 
             if (!result)
