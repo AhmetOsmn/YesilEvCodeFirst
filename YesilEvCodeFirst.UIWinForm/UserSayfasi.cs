@@ -23,13 +23,16 @@ namespace YesilEvCodeFirst.UIWinForm
         UseSupplierDAL SupDAL = new UseSupplierDAL();
         UseCategoryDAL CategoryDAL = new UseCategoryDAL();
         UseProductDAL ProductDAL = new UseProductDAL();
+        UseSearchHistoryDAL searchHistoryDAL = new UseSearchHistoryDAL();
         GetProductDetailDTO dto = null;
+
         public UserSayfasi()
         {
             InitializeComponent();
             sideBarKapa();
             UrunEkleDuzenle.Visible = false;
             UserBilgileri.Visible = false;
+            AramaGecmisi.Visible = false;
             Anasayfa.Visible = true;
             SideBar.Visible = true;
         }
@@ -87,6 +90,7 @@ namespace YesilEvCodeFirst.UIWinForm
         private void Home_Click(object sender, EventArgs e)
         {
             UrunEkleDuzenle.Visible = false;
+            AramaGecmisi.Visible = false;
             sideBarKapa();
             Anasayfa.Visible = true;
             UserBilgileri.Visible = false;
@@ -137,6 +141,7 @@ namespace YesilEvCodeFirst.UIWinForm
             Anasayfa.Visible = false;
             sideBarKapa();
             UrunEkleDuzenle.Visible = false;
+            AramaGecmisi.Visible = false;
             UserBilgileri.Visible = true;
             lblUyelikTarihiValue.Text = Kullanici.CreatedDate.ToString();
             lblUserName.Text = Kullanici.FirstName + " " + Kullanici.LastName;
@@ -269,7 +274,25 @@ namespace YesilEvCodeFirst.UIWinForm
             this.Close();
             
         }
+        
+        /// <summary>
+        ///  Arama yapan kisinin ismini, aranan urunu ve arama tarihini gosteriyor.
+        /// </summary>
 
+        private void btnAramaGecmisiFavori_Click(object sender, EventArgs e)
+        {
+            AramaGecmisi.Visible = true;
+            Anasayfa.Visible = false;
+            dataGridView1.DataSource = searchHistoryDAL.GetSearchHistoryListWithUserID(Kullanici.UserID);
+        }
+
+        private void GecmisiTemizle(object sender, EventArgs e)
+        {
+            searchHistoryDAL.ClearSearchHistoryWithUserID(Kullanici.UserID);
+            MessageBox.Show("Arama geçmişi temizlendi!");
+            dataGridView1.DataSource = null;
+        }
+        
         private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnOnYuz.Text = openFileDialog1.SafeFileName;
