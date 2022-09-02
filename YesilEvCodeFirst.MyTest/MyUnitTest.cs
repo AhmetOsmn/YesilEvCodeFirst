@@ -8,6 +8,7 @@ using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.DTOs.SupplementBlackList;
 using YesilEvCodeFirst.DTOs.UserAdmin;
 using YesilEvCodeFirst.DTOs.UserBlackList;
+using YesilEvCodeFirst.DTOs.UserFavList;
 
 namespace YesilEvCodeFirst.MyTest
 {
@@ -111,7 +112,7 @@ namespace YesilEvCodeFirst.MyTest
         [TestMethod]
         public void AddBlackListTest()
         {
-            UseBlackListDAL dal = new UseBlackListDAL();
+            UseSupplementBlackListDAL dal = new UseSupplementBlackListDAL();
             bool result = dal.AddBlackList(new AddOrEditBlackListDTO()
             {
                 UserID = 1,
@@ -122,6 +123,15 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
+        
+        [TestMethod]
+        public void AddFavListTest()
+        {
+            UseFavListDAL dal = new UseFavListDAL();
+            bool result = dal.AddFavList(new AddOrEditFavListDTO()
+            {
+                UserID = 1,
+            });
 
         [TestMethod]
         public void AddSearchHistoryTest()
@@ -132,7 +142,6 @@ namespace YesilEvCodeFirst.MyTest
                 UserID = 1,
                 ProductID = 2,
             });
-
             if (!result)
             {
                 throw new Exception("test sirasinda hata olustu");
@@ -169,7 +178,7 @@ namespace YesilEvCodeFirst.MyTest
         public void DeleteBlackListTest()
         {
 
-            UseBlackListDAL dal = new UseBlackListDAL();
+            UseSupplementBlackListDAL dal = new UseSupplementBlackListDAL();
             bool result = dal.DeleteBlackList(new AddOrEditBlackListDTO
             {
                 UserID = 1,
@@ -180,6 +189,23 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
+
+        [TestMethod]
+        public void DeleteFavListTest()
+        {
+
+            UseFavListDAL dal = new UseFavListDAL();
+            bool result = dal.DeleteFavList(new AddOrEditFavListDTO
+            {
+                UserID = 1,
+            });
+
+            if (!result)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+
 
         #endregion
 
@@ -293,6 +319,34 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
+        
+        [TestMethod]
+        public void GetSupplementBlackListDetailTest()
+        {
+            SupplementBlackListDAL dal = new SupplementBlackListDAL();
+
+            var result = dal.GetDetailOfSupplementBlackList(1);
+
+
+            if (result == null)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+        
+        [TestMethod]
+        public void GetFavListDetailTest()
+        {
+            UseFavListDAL dal = new UseFavListDAL();
+
+            var result = dal.GetDetailOfFavList(1);
+
+
+            if (result == null)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
 
         #endregion
 
@@ -312,20 +366,39 @@ namespace YesilEvCodeFirst.MyTest
 
         #endregion
 
+
         #region BlackList Testleri
 
         [TestMethod]
         public void DenemeTest()
         {
             SupplementBlackListDAL dal = new SupplementBlackListDAL();
-
             var result = dal.AddSupplementBlackList(new AddSupplementBlackListDTO
             {
+
                 UserID = 1,
                 SupplementID = 1,
 
             });
+            if (result == null)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
 
+        
+        [TestMethod]
+        public void Deneme1Test()
+        {
+            SupplementBlackListDAL dal = new SupplementBlackListDAL();
+            var result = dal.DeleteSupplementBlackList(new AddSupplementBlackListDTO
+            {
+
+                BlackListID = 1,
+                SupplementID = 2,
+
+            });
+           
             if (result == false)
             {
                 throw new Exception("test sirasinda hata olustu");

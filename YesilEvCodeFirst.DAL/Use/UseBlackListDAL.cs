@@ -12,10 +12,11 @@ using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.Logs.Concrete;
 using YesilEvCodeFirst.Mapping;
 using NLog;
+using YesilEvCodeFirst.DTOs.Category;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
-    public class UseBlackListDAL : EfRepoBase<YesilEvDbContext, BlackList>
+    public class UseSupplementBlackListDAL : EfRepoBase<YesilEvDbContext, BlackList>
     {
         readonly Logger nLogger = LogManager.GetCurrentClassLogger();
 
@@ -77,6 +78,6 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             return false;
         }
-    }
 
+    }
 }

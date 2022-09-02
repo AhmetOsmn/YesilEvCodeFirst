@@ -9,6 +9,7 @@ using YesilEvCodeFirst.DTOs.SupplementBlackList;
 using YesilEvCodeFirst.DTOs.Supplier;
 using YesilEvCodeFirst.DTOs.UserAdmin;
 using YesilEvCodeFirst.DTOs.UserBlackList;
+using YesilEvCodeFirst.DTOs.UserFavList;
 
 namespace YesilEvCodeFirst.Mapping
 {
@@ -37,7 +38,7 @@ namespace YesilEvCodeFirst.Mapping
 
             return mapper.Map<List<ListProductDTO>>(productList);
         }
-       
+
         public static List<ListSupplementDTO> SupplementListToSupplementListDTOList(List<Supplement> supplementList)
         {
             var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<Supplement, ListSupplementDTO>());
@@ -47,6 +48,27 @@ namespace YesilEvCodeFirst.Mapping
             return mapper.Map<List<ListSupplementDTO>>(supplementList);
         }
 
+        public static List<ListToSupplementBlackListDTO> SupplementBlackListToGetListToSupplementBlackListDTO(List<SupplementBlackList> suppblackList)
+        {
+            var mapperConfig = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<SupplementBlackList, ListToSupplementBlackListDTO>()
+                   .ForMember(dest => dest.SupplementName, opt => opt.MapFrom(src => src.Supplement.SupplementName));         
+            });
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<List<ListToSupplementBlackListDTO>>(suppblackList);
+        }
+        public static ListToFavListDTO FavListToGetListToFavListDTO(FavList favList)
+        {
+            var mapperConfig = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<FavList, ListToFavListDTO>()
+                   .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.User.FirstName))
+                   .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.User.LastName));
+            });
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<ListToFavListDTO>(favList);
+        }
         public static GetProductDetailDTO ProductToGetProductDetailDTO(Product product)
         {
             var mapperConfig = new MapperConfiguration(cfg =>
@@ -119,6 +141,14 @@ namespace YesilEvCodeFirst.Mapping
 
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<BlackList>(dto);
+        }
+        
+        public static FavList AddFavListDTOToFavList(AddOrEditFavListDTO dto)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddOrEditFavListDTO, FavList>());
+
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<FavList>(dto);
         }
     
         public static SearchHistory AddSearchHistoryDTOToSearchHistory(AddSearchHistoryDTO dto)

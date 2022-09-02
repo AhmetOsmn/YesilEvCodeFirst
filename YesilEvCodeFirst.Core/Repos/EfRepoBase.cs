@@ -70,6 +70,11 @@ namespace YesilEvCodeFirst.Core.Repos
             var result = _context.Set<TEntity>().Include(table).Include(table2).Where(whereCondition).ToList();
             return result;
         }
+        public List<TEntity> GetByConditionWithInclude(Func<TEntity, bool> whereCondition, string table)
+        {
+            var result = _context.Set<TEntity>().Include(table).Where(whereCondition).ToList();
+            return result;
+        }
 
         public TEntity GetByID(object ID)
         {
