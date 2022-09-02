@@ -2,18 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
+using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.DTOs.SupplementBlackList;
-using YesilEvCodeFirst.DTOs.UserBlackList;
 using YesilEvCodeFirst.Mapping;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
-    public class SupplementBlackListDAL : EfRepoBase<YesilEvDbContext, SupplementBlackList>
+    public class UseSupplementBlackListDAL : EfRepoBase<YesilEvDbContext, SupplementBlackList>
     {
         readonly Logger nLogger = LogManager.GetCurrentClassLogger();
 
@@ -56,7 +54,7 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             catch (Exception ex)
             {
-
+                nLogger.Error("System - {}", ex.Message);
             }
 
             return false;
@@ -86,42 +84,32 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             catch (Exception ex)
             {
-
+                nLogger.Error("System - {}", ex.Message);
             }
             return false;
         }
-        public List<ListToSupplementBlackListDTO> GetDetailOfSupplementBlackList(int id)
+        public List<SupplementDTO> GetSupplementsWithBlackListID(int id)
         {
-            int blacklistid = 0;
-            using (YesilEvDbContext context = new YesilEvDbContext())
+            try
             {
-                var blacklist = context.BlackList.Where(u=>u.UserID.Equals(id)).FirstOrDefault();
-                if(blacklist != null)
+                List<SupplementBlackList> supplements = GetByConditionWithInclude(u => u.BlackListID.Equals(id), "Supplement").ToList();
+
+                if (supplements != null)
                 {
-                    blacklistid = blacklist.BlackListID;
+                    nLogger.Info("{} ID'li kullanicinin kara listedeki maddeleri getirildi.", id);
+                    return MappingProfile.SupplementBlackListListToSupplementDTOList(supplements);
                 }
                 else
                 {
-                    throw new Exception("Kara liste bulunamadı.");
+                    throw new Exception("Liste bulunamadı");
                 }
-                
             }
-               
-            var suppblacklist = GetByConditionWithInclude(u => u.BlackListID.Equals(blacklistid), "Supplement").ToList();
-            if (suppblacklist != null)
+            catch (Exception ex)
             {
-                return MappingProfile.SupplementBlackListToGetListToSupplementBlackListDTO(suppblacklist);
+                nLogger.Error("System - {}", ex.Message);
             }
-            else
-            {
-                //  Eşleşmezse, yeni ürün ekleme sayfası gelecek ve doldurulması gereken formda barkod no hazır olarak gözükecek.
-                throw new Exception("Kara Liste bulunamadı.");
-            }
-
-            nLogger.Info("Kara liste listeleme işlemi yapıldı.");
 
             return null;
-
         }
     }
 }

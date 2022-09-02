@@ -15,6 +15,8 @@ namespace YesilEvCodeFirst.Mapping
 {
     public static class MappingProfile
     {
+        #region Product
+
         public static Product AddProductDTOToProduct(AddProductDTO dto)
         {
             var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddProductDTO, Product>());
@@ -22,14 +24,7 @@ namespace YesilEvCodeFirst.Mapping
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<Product>(dto);
         }
-        
-        public static SupplementBlackList AddSupplementBlackListDTOToSupplementBlackList(AddSupplementBlackListDTO dto)
-        {
-            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddSupplementBlackListDTO, SupplementBlackList>());
 
-            var mapper = new Mapper(mapperConfig);
-            return mapper.Map<SupplementBlackList>(dto);
-        }
         public static List<ListProductDTO> ProductListToProductListDTO(List<Product> productList)
         {
             var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<Product, ListProductDTO>());
@@ -39,36 +34,6 @@ namespace YesilEvCodeFirst.Mapping
             return mapper.Map<List<ListProductDTO>>(productList);
         }
 
-        public static List<ListSupplementDTO> SupplementListToSupplementListDTOList(List<Supplement> supplementList)
-        {
-            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<Supplement, ListSupplementDTO>());
-
-            var mapper = new Mapper(mapperConfig);
-
-            return mapper.Map<List<ListSupplementDTO>>(supplementList);
-        }
-
-        public static List<ListToSupplementBlackListDTO> SupplementBlackListToGetListToSupplementBlackListDTO(List<SupplementBlackList> suppblackList)
-        {
-            var mapperConfig = new MapperConfiguration(cfg =>
-            {
-                cfg.CreateMap<SupplementBlackList, ListToSupplementBlackListDTO>()
-                   .ForMember(dest => dest.SupplementName, opt => opt.MapFrom(src => src.Supplement.SupplementName));         
-            });
-            var mapper = new Mapper(mapperConfig);
-            return mapper.Map<List<ListToSupplementBlackListDTO>>(suppblackList);
-        }
-        public static ListToFavListDTO FavListToGetListToFavListDTO(FavList favList)
-        {
-            var mapperConfig = new MapperConfiguration(cfg =>
-            {
-                cfg.CreateMap<FavList, ListToFavListDTO>()
-                   .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.User.FirstName))
-                   .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.User.LastName));
-            });
-            var mapper = new Mapper(mapperConfig);
-            return mapper.Map<ListToFavListDTO>(favList);
-        }
         public static GetProductDetailDTO ProductToGetProductDetailDTO(Product product)
         {
             var mapperConfig = new MapperConfiguration(cfg =>
@@ -80,18 +45,52 @@ namespace YesilEvCodeFirst.Mapping
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<GetProductDetailDTO>(product);
         }
-        public static List<SearchHistoryDTO> SearchHistoryListToSearchHistoryDTOListWithInclude(List<SearchHistory> searchHistoryList)
+
+        #endregion
+
+        #region Supplement
+
+        public static SupplementBlackList AddSupplementBlackListDTOToSupplementBlackList(AddSupplementBlackListDTO dto)
         {
-            var mapperConfig = new MapperConfiguration(cfg =>
-            {
-                cfg.CreateMap<SearchHistory, SearchHistoryDTO>()
-                   .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.ProductName))
-                   .ForMember(dest => dest.SearchDate, opt => opt.MapFrom(src => src.CreatedDate))
-                   .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.FirstName+ " " + src.User.LastName));
-            });
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddSupplementBlackListDTO, SupplementBlackList>());
+
             var mapper = new Mapper(mapperConfig);
-            return mapper.Map<List<SearchHistoryDTO>>(searchHistoryList);
+            return mapper.Map<SupplementBlackList>(dto);
         }
+
+        public static List<DTOs.Supplement.ListSupplementDTO> SupplementListToSupplementListDTOList(List<Supplement> supplementList)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<Supplement, DTOs.Supplement.ListSupplementDTO>());
+
+            var mapper = new Mapper(mapperConfig);
+
+            return mapper.Map<List<DTOs.Supplement.ListSupplementDTO>>(supplementList);
+        }
+
+        public static Supplement AddSupplementDTOToSupplement(AddSupplementDTO dto)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddSupplementDTO, Supplement>());
+
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<Supplement>(dto);
+        }
+
+        #endregion
+
+        #region Category
+
+        public static List<CategoryDTO> CategoryListToCategoryDTOList(List<Category> categoryList)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<Category, CategoryDTO>());
+
+            var mapper = new Mapper(mapperConfig);
+
+            return mapper.Map<List<CategoryDTO>>(categoryList);
+        }
+
+        #endregion
+
+        #region Supplier
 
         public static List<SupplierDTO> SupplierListToSupplierDTOList(List<Supplier> supplierList)
         {
@@ -102,14 +101,9 @@ namespace YesilEvCodeFirst.Mapping
             return mapper.Map<List<SupplierDTO>>(supplierList);
         }
 
-        public static List<CategoryDTO> CategoryListToCategoryDTOList(List<Category> categoryList)
-        {
-            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<Category, CategoryDTO>());
+        #endregion
 
-            var mapper = new Mapper(mapperConfig);
-
-            return mapper.Map<List<CategoryDTO>>(categoryList);
-        }
+        #region User
 
         public static User AddUserDTOtoUser(AddUserDTO dt)
         {
@@ -127,22 +121,19 @@ namespace YesilEvCodeFirst.Mapping
             return mapper.Map<UserDetailDTO>(user);
         }
 
-        public static Supplement AddSupplementDTOToSupplement(AddSupplementDTO dto)
+        #endregion
+
+        #region FavList
+
+        public static List<FavListDTO> FavListToFavListDTO(List<FavList> favLists)
         {
-            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddSupplementDTO, Supplement>());
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<FavList, FavListDTO>());
 
             var mapper = new Mapper(mapperConfig);
-            return mapper.Map<Supplement>(dto);
-        }
-        
-        public static BlackList AddBlackListDTOToBlackList(AddOrEditBlackListDTO dto)
-        {
-            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddOrEditBlackListDTO, BlackList>());
 
-            var mapper = new Mapper(mapperConfig);
-            return mapper.Map<BlackList>(dto);
+            return mapper.Map<List<FavListDTO>>(favLists);
         }
-        
+
         public static FavList AddFavListDTOToFavList(AddOrEditFavListDTO dto)
         {
             var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddOrEditFavListDTO, FavList>());
@@ -150,7 +141,82 @@ namespace YesilEvCodeFirst.Mapping
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<FavList>(dto);
         }
-    
+
+        public static List<ListProductDTO> ProductFavListListToListProductDTOList(List<ProductFavList> productFavLists)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<ProductFavList, ListProductDTO>()
+                .ForMember(dest => dest.ProductID, opt => opt.MapFrom(src => src.Product.ProductID))
+                .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.ProductName)));
+
+            var mapper = new Mapper(mapperConfig);
+
+            return mapper.Map<List<ListProductDTO>>(productFavLists);
+        }
+
+        #endregion
+
+        #region BlackList
+
+        public static BlackList AddBlackListDTOToBlackList(AddOrEditBlackListDTO dto)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddOrEditBlackListDTO, BlackList>());
+
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<BlackList>(dto);
+        }
+
+        public static BlackListDTO BlackListToBlackListDTO(BlackList blackList)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<BlackList, BlackListDTO>());
+
+            var mapper = new Mapper(mapperConfig);
+
+            return mapper.Map<BlackListDTO>(blackList);
+        }
+
+        public static List<SupplementDTO> SupplementBlackListListToSupplementDTOList(List<SupplementBlackList> supplementBlackLists)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<SupplementBlackList, SupplementDTO>()
+                .ForMember(dest => dest.SupplementID, opt => opt.MapFrom(src => src.Supplement.SupplementID))
+                .ForMember(dest => dest.SupplementName, opt => opt.MapFrom(src => src.Supplement.SupplementName)));
+
+            var mapper = new Mapper(mapperConfig);
+
+            return mapper.Map<List<SupplementDTO>>(supplementBlackLists);
+        }
+
+        #endregion
+
+        #region SupplementBlackList
+
+        //public static List<DTOs.UserBlackList.ListSupplementDTO> SupplementBlackListToGetListToSupplementBlackListDTO(List<SupplementBlackList> suppblackList)
+        //{
+        //    var mapperConfig = new MapperConfiguration(cfg =>
+        //    {
+        //        cfg.CreateMap<SupplementBlackList, DTOs.UserBlackList.ListSupplementDTO>()
+        //           .ForMember(dest => dest.SupplementName, opt => opt.MapFrom(src => src.Supplement.SupplementName));
+        //    });
+        //    var mapper = new Mapper(mapperConfig);
+        //    return mapper.Map<List<DTOs.UserBlackList.ListSupplementDTO>>(suppblackList);
+        //}
+
+        #endregion
+
+        #region Search History
+
+        public static List<SearchHistoryDTO> SearchHistoryListToSearchHistoryDTOListWithInclude(List<SearchHistory> searchHistoryList)
+        {
+            var mapperConfig = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<SearchHistory, SearchHistoryDTO>()
+                   .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.ProductName))
+                   .ForMember(dest => dest.SearchDate, opt => opt.MapFrom(src => src.CreatedDate))
+                   .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.FirstName + " " + src.User.LastName));
+            });
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<List<SearchHistoryDTO>>(searchHistoryList);
+        }
+
         public static SearchHistory AddSearchHistoryDTOToSearchHistory(AddSearchHistoryDTO dto)
         {
             var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddSearchHistoryDTO, SearchHistory>());
@@ -167,5 +233,8 @@ namespace YesilEvCodeFirst.Mapping
 
             return mapper.Map<List<SearchHistoryDTO>>(searchHistories);
         }
+
+        #endregion
+    
     }
 }

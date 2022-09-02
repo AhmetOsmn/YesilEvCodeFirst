@@ -2,12 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
-using YesilEvCodeFirst.DTOs.UserBlackList;
 using YesilEvCodeFirst.DTOs.UserFavList;
 using YesilEvCodeFirst.Mapping;
 
@@ -27,8 +24,6 @@ namespace YesilEvCodeFirst.DAL.Use
                     FavList addfavlist = MappingProfile.AddFavListDTOToFavList(dto);
                     context.FavList.Add(addfavlist);
                     context.SaveChanges();
-
-
                 }
 
                 nLogger.Info("Favori liste tablosuna ekleme işlemi yapıldı.");
@@ -37,7 +32,7 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             catch (Exception ex)
             {
-
+                nLogger.Error("System - {}", ex.Message);
             }
             return false;
         }
@@ -65,29 +60,31 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             catch (Exception ex)
             {
-
+                nLogger.Error("System - {}", ex.Message);
             }
             return false;
         }
-        public ListToFavListDTO GetDetailOfFavList(int id)
+        public List<FavListDTO> GetFavListsWithUserID(int id)
         {
-
-
-            var favlist = GetByConditionWithInclude(u => u.UserID.Equals(id), "User").FirstOrDefault();
-            if (favlist != null)
+            try
             {
-                return MappingProfile.FavListToGetListToFavListDTO(favlist);
+                var favlist = GetByCondition(u => u.UserID.Equals(id)).ToList();
+                if (favlist != null)
+                {
+                    nLogger.Info("{} ID'li kullanicinin favori listeleri getirildi.",id);
+                    return MappingProfile.FavListToFavListDTO(favlist);
+                }
+                else
+                {
+                    throw new Exception("Liste bulunamadı");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                //  Eşleşmezse, yeni ürün ekleme sayfası gelecek ve doldurulması gereken formda barkod no hazır olarak gözükecek.
-                throw new Exception("Kara Liste bulunamadı.");
+                nLogger.Error("System - {}", ex.Message);
             }
-
-            nLogger.Info("Kara liste listeleme işlemi yapıldı.");
-
+            
             return null;
-
         }
     }
 }
