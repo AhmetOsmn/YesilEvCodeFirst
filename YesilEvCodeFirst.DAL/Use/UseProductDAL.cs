@@ -217,6 +217,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
             return null;
         }
+        
         public List<ListProductDTO> GetProductListWithUserID(int userID)
         {
             try
@@ -246,6 +247,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
             return null;
         }
+       
         public List<ListProductDTO> GetProductListForSearchbar(string filter)
         {
             // todo: burada try-catch yapisi gereksiz degil mi?
@@ -272,6 +274,35 @@ namespace YesilEvCodeFirst.DAL.Use
                 {
                     // todo: burada this.getbycondition metodu mu kullanmaliyiz, context.products.. seklinde mi yapmaliyiz.
                     Product product = this.GetByConditionWithInclude(p => p.Barcode.Equals(barcode), "Supplier", "Category").FirstOrDefault();
+                    if (product != null)
+                    {
+                        nLogger.Info("{} urunun detaylari getirildi", product.ProductName);
+                        return MappingProfile.ProductToGetProductDetailDTO(product);
+                    }
+                    else
+                    {
+                        //  Eşleşmezse, yeni ürün ekleme sayfası gelecek ve doldurulması gereken formda barkod no hazır olarak gözükecek.
+                        throw new Exception("Urun bulunamadi");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                nLogger.Error("System - {}", ex.Message);
+            }
+
+            return null;
+        }
+
+        public GetProductDetailDTO GetProductDetailWithID(int id)
+        {
+            // barcode validator
+            try
+            {
+                using (YesilEvDbContext context = new YesilEvDbContext())
+                {
+                    // todo: burada this.getbycondition metodu mu kullanmaliyiz, context.products.. seklinde mi yapmaliyiz.
+                    Product product = this.GetByConditionWithInclude(p => p.ProductID.Equals(id), "Supplier", "Category").FirstOrDefault();
                     if (product != null)
                     {
                         nLogger.Info("{} urunun detaylari getirildi", product.ProductName);

@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs.Category;
 using YesilEvCodeFirst.DTOs.Product;
+using YesilEvCodeFirst.DTOs.SearchHistory;
 using YesilEvCodeFirst.DTOs.Supplier;
 using YesilEvCodeFirst.DTOs.UserAdmin;
 
@@ -33,6 +34,7 @@ namespace YesilEvCodeFirst.UIWinForm
             UrunEkleDuzenle.Visible = false;
             UserBilgileri.Visible = false;
             AramaGecmisi.Visible = false;
+            UrunArama.Visible = false;
             Anasayfa.Visible = true;
             SideBar.Visible = true;
         }
@@ -94,6 +96,7 @@ namespace YesilEvCodeFirst.UIWinForm
             sideBarKapa();
             Anasayfa.Visible = true;
             UserBilgileri.Visible = false;
+            UrunArama.Visible = false;
         }
 
         private void UrunDuzenle_Click(object sender, EventArgs e)
@@ -139,6 +142,7 @@ namespace YesilEvCodeFirst.UIWinForm
         private void UserButton_Click(object sender, EventArgs e)
         {
             Anasayfa.Visible = false;
+            UrunArama.Visible = false;
             sideBarKapa();
             UrunEkleDuzenle.Visible = false;
             AramaGecmisi.Visible = false;
@@ -389,6 +393,50 @@ namespace YesilEvCodeFirst.UIWinForm
             cmbBoxUrunEkleKategori.SelectedItem = null;
             cmbBoxUrunEkleUretici.SelectedItem = null;
             txtBarkodNo.Enabled = true;
+        }
+
+        private void btnArama_Click(object sender, EventArgs e)
+        {
+            UrunArama.Visible = true;
+            Anasayfa.Visible = false;
+
+        }
+
+        private void btnSearchbarAra_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(txtAramaSearchbar.Text.Trim()))
+            {
+                string aranacak = txtAramaSearchbar.Text;
+                var result = ProductDAL.GetProductListForSearchbar(aranacak);
+                dataGridViewProducts.DataSource = result;
+
+            }
+            else
+            {
+                MessageBox.Show("Lütfen harf veya kelime giriniz!");
+            }
+          
+        }
+
+        private void dataGridViewProducts_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int selectedProductID = Convert.ToInt32(dataGridViewProducts.Rows[e.RowIndex].Cells[0].Value);
+
+                searchHistoryDAL.AddSearchHistory(new AddSearchHistoryDTO
+                {
+                    UserID = Kullanici.UserID,
+                    ProductID = selectedProductID,
+                });
+
+                var result = ProductDAL.GetProductDetailWithID(selectedProductID);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

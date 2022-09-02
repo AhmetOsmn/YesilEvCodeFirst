@@ -6,6 +6,5 @@ namespace YesilEvCodeFirst.DTOs.SearchHistory
     {
         public int UserID { get; set; }
         public int ProductID{ get; set; }
-        public DateTime SearchTime { get; set; } = DateTime.Now;
     }
 }

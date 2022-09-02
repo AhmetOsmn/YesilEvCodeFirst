@@ -97,8 +97,8 @@
             this.lblUyelikTarihiValue = new System.Windows.Forms.Label();
             this.lblUyelikTarihi = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.btnUserPremium = new System.Windows.Forms.Button();
             this.btnUserSifreDegistir = new System.Windows.Forms.Button();
+            this.btnUserPremium = new System.Windows.Forms.Button();
             this.UrunEkleDuzenle = new System.Windows.Forms.Panel();
             this.btnUrunEkleUser = new System.Windows.Forms.Button();
             this.btnGonder = new System.Windows.Forms.Button();
@@ -145,6 +145,12 @@
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog4 = new System.Windows.Forms.OpenFileDialog();
+            this.UrunArama = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtAramaSearchbar = new System.Windows.Forms.TextBox();
+            this.lblAramaSearchBar = new System.Windows.Forms.Label();
+            this.btnSearchbarAra = new System.Windows.Forms.Button();
+            this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
             this.pnlHome.SuspendLayout();
             this.pnlUygulamaPuanVer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUygulamaPuanVer)).BeginInit();
@@ -189,6 +195,8 @@
             this.UrunDuzenle.SuspendLayout();
             this.AramaGecmisi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.UrunArama.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlHome
@@ -689,6 +697,7 @@
             this.btnArama.Text = "               Arama";
             this.btnArama.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnArama.UseVisualStyleBackColor = true;
+            this.btnArama.Click += new System.EventHandler(this.btnArama_Click);
             // 
             // btnUrunEkleDuzenle
             // 
@@ -1051,20 +1060,6 @@
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "UserName";
             // 
-            // btnUserPremium
-            // 
-            this.btnUserPremium.FlatAppearance.BorderSize = 0;
-            this.btnUserPremium.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserPremium.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUserPremium.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserPremium.Location = new System.Drawing.Point(46, 133);
-            this.btnUserPremium.Name = "btnUserPremium";
-            this.btnUserPremium.Size = new System.Drawing.Size(275, 32);
-            this.btnUserPremium.TabIndex = 3;
-            this.btnUserPremium.Text = "         Premium üye ol";
-            this.btnUserPremium.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserPremium.UseVisualStyleBackColor = true;
-            // 
             // btnUserSifreDegistir
             // 
             this.btnUserSifreDegistir.FlatAppearance.BorderSize = 0;
@@ -1078,6 +1073,20 @@
             this.btnUserSifreDegistir.Text = "         Şifre değiştir";
             this.btnUserSifreDegistir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserSifreDegistir.UseVisualStyleBackColor = true;
+            // 
+            // btnUserPremium
+            // 
+            this.btnUserPremium.FlatAppearance.BorderSize = 0;
+            this.btnUserPremium.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserPremium.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserPremium.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnUserPremium.Location = new System.Drawing.Point(46, 133);
+            this.btnUserPremium.Name = "btnUserPremium";
+            this.btnUserPremium.Size = new System.Drawing.Size(275, 32);
+            this.btnUserPremium.TabIndex = 3;
+            this.btnUserPremium.Text = "         Premium üye ol";
+            this.btnUserPremium.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserPremium.UseVisualStyleBackColor = true;
             // 
             // UrunEkleDuzenle
             // 
@@ -1559,16 +1568,82 @@
             this.openFileDialog4.Title = "Browse Text Files";
             this.openFileDialog4.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog4_FileOk);
             // 
+            // UrunArama
+            // 
+            this.UrunArama.Controls.Add(this.dataGridViewProducts);
+            this.UrunArama.Controls.Add(this.btnSearchbarAra);
+            this.UrunArama.Controls.Add(this.lblAramaSearchBar);
+            this.UrunArama.Controls.Add(this.txtAramaSearchbar);
+            this.UrunArama.Controls.Add(this.button1);
+            this.UrunArama.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UrunArama.Location = new System.Drawing.Point(1, 1);
+            this.UrunArama.Name = "UrunArama";
+            this.UrunArama.Size = new System.Drawing.Size(363, 510);
+            this.UrunArama.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(291, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(60, 40);
+            this.button1.TabIndex = 7;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // txtAramaSearchbar
+            // 
+            this.txtAramaSearchbar.Location = new System.Drawing.Point(86, 99);
+            this.txtAramaSearchbar.Name = "txtAramaSearchbar";
+            this.txtAramaSearchbar.Size = new System.Drawing.Size(186, 20);
+            this.txtAramaSearchbar.TabIndex = 8;
+            // 
+            // lblAramaSearchBar
+            // 
+            this.lblAramaSearchBar.AutoSize = true;
+            this.lblAramaSearchBar.Location = new System.Drawing.Point(16, 104);
+            this.lblAramaSearchBar.Name = "lblAramaSearchBar";
+            this.lblAramaSearchBar.Size = new System.Drawing.Size(64, 13);
+            this.lblAramaSearchBar.TabIndex = 9;
+            this.lblAramaSearchBar.Text = "Ürün Giriniz:";
+            // 
+            // btnSearchbarAra
+            // 
+            this.btnSearchbarAra.Location = new System.Drawing.Point(282, 99);
+            this.btnSearchbarAra.Name = "btnSearchbarAra";
+            this.btnSearchbarAra.Size = new System.Drawing.Size(54, 21);
+            this.btnSearchbarAra.TabIndex = 11;
+            this.btnSearchbarAra.Text = "Ara";
+            this.btnSearchbarAra.UseVisualStyleBackColor = true;
+            this.btnSearchbarAra.Click += new System.EventHandler(this.btnSearchbarAra_Click);
+            // 
+            // dataGridViewProducts
+            // 
+            this.dataGridViewProducts.AllowUserToAddRows = false;
+            this.dataGridViewProducts.AllowUserToDeleteRows = false;
+            this.dataGridViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProducts.Location = new System.Drawing.Point(6, 156);
+            this.dataGridViewProducts.Name = "dataGridViewProducts";
+            this.dataGridViewProducts.ReadOnly = true;
+            this.dataGridViewProducts.Size = new System.Drawing.Size(351, 348);
+            this.dataGridViewProducts.TabIndex = 12;
+            this.dataGridViewProducts.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProducts_CellContentDoubleClick);
+            // 
             // UserSayfasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 511);
-            this.Controls.Add(this.SideBar);
-            this.Controls.Add(this.Anasayfa);
-            this.Controls.Add(this.UserBilgileri);
+            this.Controls.Add(this.UrunArama);
             this.Controls.Add(this.UrunEkleDuzenle);
             this.Controls.Add(this.AramaGecmisi);
+            this.Controls.Add(this.Anasayfa);
+            this.Controls.Add(this.SideBar);
+            this.Controls.Add(this.UserBilgileri);
             this.MaximumSize = new System.Drawing.Size(380, 550);
             this.Name = "UserSayfasi";
             this.Text = "Form3";
@@ -1619,6 +1694,9 @@
             this.UrunDuzenle.PerformLayout();
             this.AramaGecmisi.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.UrunArama.ResumeLayout(false);
+            this.UrunArama.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1743,6 +1821,11 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.OpenFileDialog openFileDialog3;
         private System.Windows.Forms.OpenFileDialog openFileDialog4;
-
+        private System.Windows.Forms.Panel UrunArama;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearchbarAra;
+        private System.Windows.Forms.Label lblAramaSearchBar;
+        private System.Windows.Forms.TextBox txtAramaSearchbar;
+        private System.Windows.Forms.DataGridView dataGridViewProducts;
     }
 }
