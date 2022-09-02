@@ -56,10 +56,7 @@ namespace YesilEvCodeFirst.UIWinForm
                     }
                     else
                     {
-                        UserSayfasi f = new UserSayfasi();
-                        f.Kullanici = result;
-                        this.Visible = false;
-                        f.Show();
+                        UserSayfasiAc(result);
                     }
                 }
                 else
@@ -77,7 +74,13 @@ namespace YesilEvCodeFirst.UIWinForm
                 MessageBox.Show("Girilen Email Hatalıdır.");
             }
         }
-
+        private void UserSayfasiAc(UserDetailDTO result)
+        {
+            UserSayfasi f = new UserSayfasi();
+            f.Kullanici = result;
+            this.Hide();
+            f.ShowDialog();
+        }
         private void btnKayitOl_Click(object sender, EventArgs e)
         {
             btnKayitOl.Enabled = false;

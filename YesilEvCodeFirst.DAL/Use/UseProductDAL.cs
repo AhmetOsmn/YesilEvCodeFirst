@@ -107,11 +107,12 @@ namespace YesilEvCodeFirst.DAL.Use
                         try
                         {
                             var tempProduct = context.Product.Where(x => x.Barcode.Equals(dto.Barcode)).FirstOrDefault();
-                            if (tempProduct != null)
+                            if (tempProduct != null && tempProduct.AddedBy == dto.AddedBy)
                             {
                                 tempProduct.ProductName = dto.ProductName;
                                 tempProduct.CategoryID = dto.CategoryID;
                                 tempProduct.ProductContent = dto.ProductContent;
+                                tempProduct.AddedBy = dto.AddedBy;
                                 var supplements = tempProduct.ProductContent.Split(',');
                                 //refactor edilecek
                                 var temp = context.ProductSupplement.Where(x => x.ProductID == tempProduct.ProductID).ToList();
@@ -150,10 +151,15 @@ namespace YesilEvCodeFirst.DAL.Use
                                 trans.Commit();
                                 nLogger.Info("{} urunu guncellendi", tempProduct.ProductName);
                             }
+                            else if (tempProduct.AddedBy != dto.AddedBy)
+                            {
+                                throw new Exception("Urun Kullaniciya ait degil");
+                            }
                             else
                             {
                                 throw new Exception("Urun mevcut değil");
                             }
+                            
                         }
                         catch (Exception ex)
                         {
@@ -209,7 +215,35 @@ namespace YesilEvCodeFirst.DAL.Use
 
             return null;
         }
+        public List<ListProductDTO> GetProductListWithUserID(int userID)
+        {
+            try
+            {
+                List<Product> products = null;
+                using (YesilEvDbContext context = new YesilEvDbContext())
+                {
+                    List<Product> productList = context.Product.Where(x=>x.AddedBy == userID).ToList();
+                    products = productList;
+                }
+                if (products == null)
+                {
+                    throw new Exception("Listelenecek urun bulunamadi.");
+                }
+                else
+                {
+                    List<ListProductDTO> productDTOList = MappingProfile.ProductListToProductListDTO(products);
+                    nLogger.Info("Product tablosu listelendi.");
+                    return productDTOList;
+                }
 
+            }
+            catch (Exception ex)
+            {
+                nLogger.Error("System - {}", ex.Message);
+            }
+
+            return null;
+        }
         public List<ListProductDTO> GetProductListForSearchbar(string filter)
         {
             // todo: burada try-catch yapisi gereksiz degil mi?

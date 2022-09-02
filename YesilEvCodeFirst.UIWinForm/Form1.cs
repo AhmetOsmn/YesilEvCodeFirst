@@ -115,7 +115,7 @@ namespace YesilEvCodeFirst.UIWinForm
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             switch (comboBox1.SelectedItem)
@@ -187,7 +187,6 @@ namespace YesilEvCodeFirst.UIWinForm
                     break;
             }
         }
-
         private Form activeForm = null;
         private void OpenChildForm(Form childForm)
         {
@@ -202,7 +201,6 @@ namespace YesilEvCodeFirst.UIWinForm
             panel1.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-
         }
     }
 }
