@@ -37,6 +37,7 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             InitializeComponent();
             sideBarKapa();
+            CreateProductsInLabel();
             UrunEkleDuzenle.Visible = false;
             UserBilgileri.Visible = false;
             AramaGecmisi.Visible = false;
@@ -45,6 +46,8 @@ namespace YesilEvCodeFirst.UIWinForm
             UrunArama.Visible = false;
             Anasayfa.Visible = true;
             SideBar.Visible = true;
+            UrunDetay.Visible = false;
+            pnlShowProducts.Visible = false;
         }
 
         private void Menu_Click(object sender, EventArgs e)
@@ -107,6 +110,7 @@ namespace YesilEvCodeFirst.UIWinForm
             Anasayfa.Visible = true;
             UserBilgileri.Visible = false;
             UrunArama.Visible = false;
+            UrunDetay.Visible = false;
         }
 
         private void UrunDuzenle_Click(object sender, EventArgs e)
@@ -241,6 +245,7 @@ namespace YesilEvCodeFirst.UIWinForm
             txtBarkodNo.Enabled = false;
             if (txtBarkodNo.Text != "" && txtBarkodNo.Text.Length == 7)
             {
+
                 dto = useProductDAL.GetProductDetailWithBarcode(txtBarkodNo.Text);
                 if (dto != null)
                 {
@@ -292,7 +297,6 @@ namespace YesilEvCodeFirst.UIWinForm
             this.Close();
 
         }
-
         private void btnAramaGecmisiFavori_Click(object sender, EventArgs e)
         {
             AramaGecmisi.Visible = true;
@@ -451,7 +455,48 @@ namespace YesilEvCodeFirst.UIWinForm
             }
         }
 
-        private void btnDGVTemizle_Click(object sender, EventArgs e)
+private void button3_Click(object sender, EventArgs e)
+        {
+            UrunDetay.Visible = true;
+        }
+
+        int count = 1;
+        int Y = 0;
+        private void CreateProductsInLabel()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Label lbl = new Label();
+                lbl.Text = count.ToString();
+                lbl.Name = count.ToString();
+                lbl.Size = new Size(330, 18);
+                lbl.BackColor = Color.White;
+                lbl.ForeColor = Color.Black;
+                lbl.Location = new Point(15, 25 * (Y + 1));
+                Y++;
+                count++;
+                pnlShowProducts.Controls.Add(lbl);
+            }
+
+        }
+
+        int sum = 0;
+        private void btnShowList_Click(object sender, EventArgs e)
+        {
+            if (sum % 2 == 0)
+            {
+                pnlShowProducts.Visible = true;
+                btnShowList.BackgroundImage = Image.FromFile(@"E:\repos\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\up.jpg");
+            }
+            else
+            {
+                pnlShowProducts.Visible = false;
+                btnShowList.BackgroundImage = Image.FromFile(@"E:\repos\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\drop.jpg");
+            }
+
+            sum++;
+       }
+private void btnDGVTemizle_Click(object sender, EventArgs e)
         {
             dataGridViewProducts.DataSource = null;
             txtAramaSearchbar.Text = "";
@@ -518,7 +563,6 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 lblKaraListeUyari.Text = "Kara Liste bulunamadı";
             }
-
         }
     }
 }

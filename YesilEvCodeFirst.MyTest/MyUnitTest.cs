@@ -349,7 +349,7 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
-        
+
         [TestMethod]
         public void GetSupplementBlackListDetailTest()
         {
@@ -363,7 +363,7 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
-        
+
         [TestMethod]
         public void GetFavListsWithUserIDTest()
         {
@@ -432,7 +432,7 @@ namespace YesilEvCodeFirst.MyTest
             }
         }
 
-        
+
         [TestMethod]
         public void Deneme1Test()
         {
@@ -444,7 +444,7 @@ namespace YesilEvCodeFirst.MyTest
                 SupplementID = 2,
 
             });
-           
+
             if (result == false)
             {
                 throw new Exception("test sirasinda hata olustu");
@@ -466,3 +466,4 @@ namespace YesilEvCodeFirst.MyTest
 
     }
 }
+
