@@ -53,6 +53,7 @@
             // btnGroupBoxKayitOl
             // 
             this.btnGroupBoxKayitOl.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnGroupBoxKayitOl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGroupBoxKayitOl.FlatAppearance.BorderSize = 0;
             this.btnGroupBoxKayitOl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGroupBoxKayitOl.ForeColor = System.Drawing.Color.White;
@@ -67,6 +68,7 @@
             // btnGroupBoxGirisYap
             // 
             this.btnGroupBoxGirisYap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(187)))), ((int)(((byte)(146)))));
+            this.btnGroupBoxGirisYap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGroupBoxGirisYap.FlatAppearance.BorderSize = 0;
             this.btnGroupBoxGirisYap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGroupBoxGirisYap.ForeColor = System.Drawing.Color.White;
@@ -101,6 +103,7 @@
             // btnKayitOl
             // 
             this.btnKayitOl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.btnKayitOl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKayitOl.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
             this.btnKayitOl.FlatAppearance.BorderSize = 0;
             this.btnKayitOl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -216,6 +219,7 @@
             // btnGirisYap
             // 
             this.btnGirisYap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.btnGirisYap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGirisYap.FlatAppearance.BorderSize = 0;
             this.btnGirisYap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGirisYap.ForeColor = System.Drawing.Color.White;

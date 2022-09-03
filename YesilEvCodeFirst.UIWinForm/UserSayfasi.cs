@@ -166,8 +166,8 @@ namespace YesilEvCodeFirst.UIWinForm
                         CategoryID = ((CategoryDTO)cmbBoxUrunEkleKategori.SelectedItem).CategoryID,
                         ProductContent = txtUrunEkleUrunIcerik.Text,
                         //to do file dialog get path
-                        PictureFronthPath = openFileDialog3.FileName,
-                        PictureBackPath = openFileDialog4.FileName,
+                        PictureFronthPath = FileDialogUrunEkleOnYuz.FileName,
+                        PictureBackPath = FileDialogUrunEkleArkaYuz.FileName,
                     });
                     if (result)
                     {
@@ -197,8 +197,8 @@ namespace YesilEvCodeFirst.UIWinForm
                             CategoryID = ((CategoryDTO)cmbBoxKategori.SelectedItem).CategoryID,
                             ProductName = txtUrunAdi.Text,
                             SupplierID = ((SupplierDTO)cmbBoxUretici.SelectedItem).SupplierID,
-                            PictureBackPath = openFileDialog2.FileName,
-                            PictureFronthPath = openFileDialog1.FileName,
+                            PictureBackPath = FileDialogArkaYuz.FileName,
+                            PictureFronthPath = FileDialogOnYuz.FileName,
                             ProductContent = txtUrunIcerik.Text
                         };
                         bool result = dal.UpdateProduct(updateDto);
@@ -237,8 +237,8 @@ namespace YesilEvCodeFirst.UIWinForm
                         txtUrunAdi.Text = dto.ProductName;
                         txtUrunIcerik.Text = dto.ProductContent;
                         cmbBoxKategori.SelectedIndex = cmbBoxKategori.FindString(dto.CategoryName);
-                        openFileDialog1.FileName = dto.PictureFronthPath;
-                        openFileDialog2.FileName = dto.PictureBackPath;
+                        FileDialogOnYuz.FileName = dto.PictureFronthPath;
+                        FileDialogArkaYuz.FileName = dto.PictureBackPath;
                         var item = dto.PictureFronthPath.Split('\\');
                         btnOnYuz.Text = item[item.Length - 1];
                         item = dto.PictureBackPath.Split('\\');
@@ -281,7 +281,7 @@ namespace YesilEvCodeFirst.UIWinForm
         private void btnAramaGecmisiFavori_Click(object sender, EventArgs e)
         {
             CloseAllPages();
-            dataGridView1.DataSource = useSearchHistoryDAL.GetSearchHistoryListWithUserID(Kullanici.UserID).OrderByDescending(x => x.SearchDate).ToList();
+            dgvAramaGecmisi.DataSource = useSearchHistoryDAL.GetSearchHistoryListWithUserID(Kullanici.UserID).OrderByDescending(x => x.SearchDate).ToList();
             AramaGecmisi.Visible = true;
         }
 
@@ -289,40 +289,40 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             useSearchHistoryDAL.ClearSearchHistoryWithUserID(Kullanici.UserID);
             MessageBox.Show("Arama geçmişi temizlendi!");
-            dataGridView1.DataSource = null;
+            dgvAramaGecmisi.DataSource = null;
         }
 
         private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            btnOnYuz.Text = openFileDialog1.SafeFileName;
+            btnOnYuz.Text = FileDialogOnYuz.SafeFileName;
         }
         private void openFileDialog2_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            btnArkaYuz.Text = openFileDialog2.SafeFileName;
+            btnArkaYuz.Text = FileDialogArkaYuz.SafeFileName;
         }
         private void openFileDialog3_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            btnUrunEkleOnYuz.Text = openFileDialog3.SafeFileName;
+            btnUrunEkleOnYuz.Text = FileDialogUrunEkleOnYuz.SafeFileName;
         }
         private void openFileDialog4_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            btnUrunEkleArkaYuz.Text = openFileDialog4.SafeFileName;
+            btnUrunEkleArkaYuz.Text = FileDialogUrunEkleArkaYuz.SafeFileName;
         }
         private void btnOnYuz_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
+            FileDialogOnYuz.ShowDialog();
         }
         private void btnArkaYuz_Click(object sender, EventArgs e)
         {
-            openFileDialog2.ShowDialog();
+            FileDialogArkaYuz.ShowDialog();
         }
         private void btnUrunEkleOnYuz_Click(object sender, EventArgs e)
         {
-            openFileDialog3.ShowDialog();
+            FileDialogUrunEkleOnYuz.ShowDialog();
         }
         private void btnUrunEkleArkaYuz_Click(object sender, EventArgs e)
         {
-            openFileDialog4.ShowDialog();
+            FileDialogUrunEkleArkaYuz.ShowDialog();
         }
 
         private bool isAddProductFieldValidator()
@@ -438,7 +438,7 @@ namespace YesilEvCodeFirst.UIWinForm
 
                 CreateProductsInLabel(supplements);
 
-                UrunArama.Visible = false;
+                CloseAllPages();
                 UrunDetay.Visible = true;
             }
             catch (Exception ex)
@@ -448,11 +448,11 @@ namespace YesilEvCodeFirst.UIWinForm
             }
         }
 
-        int Y = 0;
+        
         private void CreateProductsInLabel(List<ListSupplementDTO> supplements)
         {
-
-           if(pnlShowProducts.Controls.Count != 0)
+            int Y = 0;
+            if (pnlShowProducts.Controls.Count != 0)
             {
                 Y = 0;
                 pnlShowProducts.Controls.Clear();
@@ -464,6 +464,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 lbl.Name = i.ToString();
                 lbl.Size = new Size(300, 18);
                 lbl.BackColor = Color.White;
+                lbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
                 lbl.ForeColor = Color.Black;
                 lbl.Location = new Point(15, 20 * (Y + 1));
                 Y++;
@@ -471,10 +472,9 @@ namespace YesilEvCodeFirst.UIWinForm
             }
         }
 
-       
         private void btnShowList_Click(object sender, EventArgs e)
         {
-            if (isProductSupplementOpen)
+            if (!isProductSupplementOpen)
             {
                 ProductSupplementDetailOpen();
             }
@@ -488,8 +488,6 @@ namespace YesilEvCodeFirst.UIWinForm
             dataGridViewProducts.DataSource = null;
             txtAramaSearchbar.Text = "";
         }
-
-
 
         private void cbFavLists_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -581,9 +579,10 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             isProductSupplementOpen = true;
             this.MaximumSize = new Size(380, 630);
+            this.MinimumSize = new Size(380, 630);
             this.Height = 630;
-            UrunDetay.Height = 690;
-            pnlShowProducts.Height = 190;
+            UrunDetay.Height = 630;
+            pnlShowProducts.Height = 400;
             pnlShowProducts.BackColor = Color.Red;
             pnlShowProducts.Visible = true;
             //btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\up.jpg");
@@ -591,8 +590,9 @@ namespace YesilEvCodeFirst.UIWinForm
         private void ProductSupplementDetailClose()
         {
             isProductSupplementOpen=false;
-            this.MaximumSize = new Size(380, 540);
-            this.Height = 540;
+            this.MaximumSize = new Size(380, 550);
+            this.MinimumSize = new Size(380, 550);
+            this.Height = 550;
             pnlShowProducts.Height = 35;
             pnlShowProducts.Visible = false;
             //btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\drop.jpg");
