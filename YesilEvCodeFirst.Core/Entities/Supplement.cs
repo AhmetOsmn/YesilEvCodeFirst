@@ -4,7 +4,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace YesilEvCodeFirst.Core.Entities
 {
-    //todo: risk orani eklenecek
+    
+    public enum Risk {
+        Temiz = 0,
+        AzRiskli = 1,
+        OrtaRiskli = 2,
+        Riskli = 3,
+    }
+
     public class Supplement : BaseEntity
     {
         [Key]
@@ -12,7 +19,7 @@ namespace YesilEvCodeFirst.Core.Entities
         [Column(TypeName = "NVARCHAR")]
         [StringLength(100)]
         public string SupplementName { get; set; }
-        public string RiskRatio { get; set; }
+        public Risk RiskRatio { get; set; }
         public List<ProductSupplement> ProductSupplements { get; set; }
         public List<SupplementBlackList> SupplementBlackLists { get; set; }
     }

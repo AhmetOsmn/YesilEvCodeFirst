@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs.Category;
 using YesilEvCodeFirst.DTOs.Product;
@@ -418,8 +419,8 @@ namespace YesilEvCodeFirst.UIWinForm
                     UserID = Kullanici.UserID,
                     ProductID = selectedProductID,
                 });
-                
-                GoProductDetails(selectedProductID);     
+
+                GoProductDetails(selectedProductID);
             }
             catch (Exception ex)
             {
@@ -428,7 +429,7 @@ namespace YesilEvCodeFirst.UIWinForm
             }
         }
 
-        
+
         private void CreateProductsInLabel(List<ListSupplementDTO> supplements)
         {
             int Y = 0;
@@ -437,19 +438,54 @@ namespace YesilEvCodeFirst.UIWinForm
                 Y = 0;
                 pnlShowProducts.Controls.Clear();
             }
+            int temizNum = 0;
+            int azriskNum = 0;
+            int ortariskNum = 0;
+            int riskNum = 0;
+
             for (int i = 0; i < supplements.Count; i++)
             {
                 Label lbl = new Label();
                 lbl.Text = supplements[i].SupplementName;
                 lbl.Name = i.ToString();
                 lbl.Size = new Size(300, 18);
+
+                switch (supplements[i].RiskRatio)
+                {
+                    case Risk.Temiz:
+                        lbl.ForeColor = Color.FromArgb(0, 64, 0);
+                        temizNum += 1;
+                        break;
+
+                    case Risk.AzRiskli:
+                        lbl.ForeColor = Color.FromArgb(241, 196, 15);
+                        azriskNum += 1;
+                        break;
+
+                    case Risk.OrtaRiskli:
+                        lbl.ForeColor = Color.Orange;
+                        ortariskNum += 1;
+                        break;
+
+                    case Risk.Riskli:
+                        lbl.ForeColor = Color.Red;
+                        riskNum += 1;
+                        break;
+
+                    default:
+                        break;
+                }
+
                 lbl.BackColor = Color.White;
                 lbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-                lbl.ForeColor = Color.Black;
-                lbl.Location = new Point(15, 20 * (Y + 1));
+                lbl.Location = new Point(15, 30 * (Y + 1));
                 Y++;
                 pnlShowProducts.Controls.Add(lbl);
             }
+            lblTemizNum.Text = temizNum.ToString();
+            lblAzRiskNum.Text = azriskNum.ToString();
+            lblOrtaRiskNum.Text = ortariskNum.ToString();
+            lblCokRiskNum.Text = riskNum.ToString();
         }
 
         private void btnShowList_Click(object sender, EventArgs e)
@@ -556,14 +592,14 @@ namespace YesilEvCodeFirst.UIWinForm
             this.MinimumSize = new Size(380, 630);
             this.Height = 630;
             UrunDetay.Height = 630;
-            pnlShowProducts.Height = 400;
-            pnlShowProducts.BackColor = Color.Red;
+            pnlShowProducts.Height = 550;
+            pnlShowProducts.BackColor = Color.Gray;
             pnlShowProducts.Visible = true;
             //btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\up.jpg");
         }
         private void ProductSupplementDetailClose()
         {
-            isProductSupplementOpen=false;
+            isProductSupplementOpen = false;
             this.MaximumSize = new Size(380, 550);
             this.MinimumSize = new Size(380, 550);
             this.Height = 550;
@@ -608,7 +644,7 @@ namespace YesilEvCodeFirst.UIWinForm
             CloseAllPages();
             BarkodArama.Visible = true;
         }
-    
+
         private void GoProductDetails(int productID)
         {
             // todo: urun duzenleme yapildigi zaman, bu metot cagirildiginda 612. satirda guncellemeden onceki verileri getiriliyor.
@@ -628,9 +664,9 @@ namespace YesilEvCodeFirst.UIWinForm
             pcbUrun.Image = Image.FromFile(selectedProduct.PictureFronthPath);
             pcbUrun.BackgroundImageLayout = ImageLayout.Tile;
             List<ListSupplementDTO> supplements = useProductSupplementDAL.GetSupplementsWithProductID(productID);
-
             CreateProductsInLabel(supplements);
         }
+
 
         private void btnBarkodAramaBarkodAra_Click(object sender, EventArgs e)
         {
@@ -658,5 +694,6 @@ namespace YesilEvCodeFirst.UIWinForm
                 }
             }
         }
+
     }
 }

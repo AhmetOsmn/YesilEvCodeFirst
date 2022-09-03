@@ -166,6 +166,8 @@
             this.lblMarka = new System.Windows.Forms.Label();
             this.lblAltKategori = new System.Windows.Forms.Label();
             this.AramaGecmisi = new System.Windows.Forms.Panel();
+            this.lblFavoriList = new System.Windows.Forms.Label();
+            this.btnFavList = new System.Windows.Forms.Button();
             this.btnGecmisiTemizle = new System.Windows.Forms.Button();
             this.btnAramaGecmisiUser = new System.Windows.Forms.Button();
             this.dgvAramaGecmisi = new System.Windows.Forms.DataGridView();
@@ -174,14 +176,12 @@
             this.FileDialogUrunEkleOnYuz = new System.Windows.Forms.OpenFileDialog();
             this.FileDialogUrunEkleArkaYuz = new System.Windows.Forms.OpenFileDialog();
             this.UrunArama = new System.Windows.Forms.Panel();
-            this.lblFavoriList = new System.Windows.Forms.Label();
             this.btnDGVTemizle = new System.Windows.Forms.Button();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.btnSearchbarAra = new System.Windows.Forms.Button();
             this.lblAramaSearchBar = new System.Windows.Forms.Label();
             this.txtAramaSearchbar = new System.Windows.Forms.TextBox();
             this.btnUrunAramaUser = new System.Windows.Forms.Button();
-            this.btnFavList = new System.Windows.Forms.Button();
             this.pnlFavLists = new System.Windows.Forms.Panel();
             this.btnUserBilgileri = new System.Windows.Forms.Button();
             this.dgvFavProducts = new System.Windows.Forms.DataGridView();
@@ -1926,6 +1926,8 @@
             // 
             // AramaGecmisi
             // 
+            this.AramaGecmisi.Controls.Add(this.lblFavoriList);
+            this.AramaGecmisi.Controls.Add(this.btnFavList);
             this.AramaGecmisi.Controls.Add(this.btnGecmisiTemizle);
             this.AramaGecmisi.Controls.Add(this.btnAramaGecmisiUser);
             this.AramaGecmisi.Controls.Add(this.dgvAramaGecmisi);
@@ -1935,6 +1937,28 @@
             this.AramaGecmisi.Name = "AramaGecmisi";
             this.AramaGecmisi.Size = new System.Drawing.Size(360, 510);
             this.AramaGecmisi.TabIndex = 7;
+            // 
+            // lblFavoriList
+            // 
+            this.lblFavoriList.AutoSize = true;
+            this.lblFavoriList.Location = new System.Drawing.Point(156, 83);
+            this.lblFavoriList.Name = "lblFavoriList";
+            this.lblFavoriList.Size = new System.Drawing.Size(47, 13);
+            this.lblFavoriList.TabIndex = 18;
+            this.lblFavoriList.Text = "Favoriler";
+            // 
+            // btnFavList
+            // 
+            this.btnFavList.BackgroundImage = global::YesilEvCodeFirst.UIWinForm.Properties.Resources.kalp2;
+            this.btnFavList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFavList.FlatAppearance.BorderSize = 0;
+            this.btnFavList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFavList.Location = new System.Drawing.Point(146, 11);
+            this.btnFavList.Name = "btnFavList";
+            this.btnFavList.Size = new System.Drawing.Size(65, 65);
+            this.btnFavList.TabIndex = 17;
+            this.btnFavList.UseVisualStyleBackColor = true;
+            this.btnFavList.Click += new System.EventHandler(this.FavoriListeleriniHazirla);
             // 
             // btnGecmisiTemizle
             // 
@@ -2004,14 +2028,12 @@
             // 
             // UrunArama
             // 
-            this.UrunArama.Controls.Add(this.lblFavoriList);
             this.UrunArama.Controls.Add(this.btnDGVTemizle);
             this.UrunArama.Controls.Add(this.dgvProducts);
             this.UrunArama.Controls.Add(this.btnSearchbarAra);
             this.UrunArama.Controls.Add(this.lblAramaSearchBar);
             this.UrunArama.Controls.Add(this.txtAramaSearchbar);
             this.UrunArama.Controls.Add(this.btnUrunAramaUser);
-            this.UrunArama.Controls.Add(this.btnFavList);
             this.UrunArama.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UrunArama.Location = new System.Drawing.Point(0, 0);
             this.UrunArama.MaximumSize = new System.Drawing.Size(360, 510);
@@ -2019,15 +2041,6 @@
             this.UrunArama.Name = "UrunArama";
             this.UrunArama.Size = new System.Drawing.Size(360, 510);
             this.UrunArama.TabIndex = 7;
-            // 
-            // lblFavoriList
-            // 
-            this.lblFavoriList.AutoSize = true;
-            this.lblFavoriList.Location = new System.Drawing.Point(146, 77);
-            this.lblFavoriList.Name = "lblFavoriList";
-            this.lblFavoriList.Size = new System.Drawing.Size(47, 13);
-            this.lblFavoriList.TabIndex = 16;
-            this.lblFavoriList.Text = "Favoriler";
             // 
             // btnDGVTemizle
             // 
@@ -2090,19 +2103,6 @@
             this.btnUrunAramaUser.TabIndex = 7;
             this.btnUrunAramaUser.UseVisualStyleBackColor = true;
             this.btnUrunAramaUser.Click += new System.EventHandler(this.UserButton_Click);
-            // 
-            // btnFavList
-            // 
-            this.btnFavList.BackgroundImage = global::YesilEvCodeFirst.UIWinForm.Properties.Resources.kalp2;
-            this.btnFavList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFavList.FlatAppearance.BorderSize = 0;
-            this.btnFavList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFavList.Location = new System.Drawing.Point(136, 5);
-            this.btnFavList.Name = "btnFavList";
-            this.btnFavList.Size = new System.Drawing.Size(65, 65);
-            this.btnFavList.TabIndex = 15;
-            this.btnFavList.UseVisualStyleBackColor = true;
-            this.btnFavList.Click += new System.EventHandler(this.FavoriListeleriniHazirla);
             // 
             // pnlFavLists
             // 
@@ -2340,6 +2340,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureUrunDetayRiskliIcerik)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUrunDetayKaraListeIcerik)).EndInit();
             this.AramaGecmisi.ResumeLayout(false);
+            this.AramaGecmisi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAramaGecmisi)).EndInit();
             this.UrunArama.ResumeLayout(false);
             this.UrunArama.PerformLayout();
@@ -2504,8 +2505,6 @@
         private System.Windows.Forms.Button btnShowList;
         private System.Windows.Forms.Panel pnlShowProducts;
         private System.Windows.Forms.Button btnDGVTemizle;
-        private System.Windows.Forms.Button btnFavList;
-        private System.Windows.Forms.Label lblFavoriList;
         private System.Windows.Forms.Panel pnlFavLists;
         private System.Windows.Forms.DataGridView dgvFavProducts;
         private System.Windows.Forms.Label lblFavoriListeSec;
@@ -2521,6 +2520,8 @@
         private System.Windows.Forms.Button btnUrunDetayUser;
         private System.Windows.Forms.Button UrunDetayResimDegistir;
         private System.Windows.Forms.PictureBox picturePremium;
+        private System.Windows.Forms.Label lblFavoriList;
+        private System.Windows.Forms.Button btnFavList;
         private System.Windows.Forms.Panel BarkodArama;
         private System.Windows.Forms.Button btnBarkodAramaUser;
         private System.Windows.Forms.Button btnBarkodAramaBarkodAra;

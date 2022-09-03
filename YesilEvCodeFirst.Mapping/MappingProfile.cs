@@ -241,6 +241,7 @@ namespace YesilEvCodeFirst.Mapping
         public static List<ListSupplementDTO> ProductSupplementListToListSupplementDTOList(List<ProductSupplement> productSupplements)
         {
             var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<ProductSupplement, ListSupplementDTO>()
+                .ForMember(dest => dest.RiskRatio, opt => opt.MapFrom(src => src.Supplement.RiskRatio))
                 .ForMember(dest => dest.SupplementName, opt => opt.MapFrom(src => src.Supplement.SupplementName)));
 
             var mapper = new Mapper(mapperConfig);

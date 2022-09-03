@@ -70,21 +70,7 @@ namespace YesilEvCodeFirst.Core.Context
                 .HasForeignKey(sb => sb.BlackListID);
 
             #endregion
-
-            //modelBuilder.Entity<FavList>()
-            //    .HasKey(t => new { t.UserID, t.FavorID });
-
-            //modelBuilder.Entity<FavList>()
-            //    .HasRequired(uf => uf.User)
-            //    .WithMany(u => u.UserFavList)
-            //    .HasForeignKey(uf => uf.UserID);
-
-            //modelBuilder.Entity<FavList>()
-            //    .HasRequired(uf => uf.FavList)
-            //    .WithMany(fl => fl.UserFavList)
-            //    .HasForeignKey(uf => uf.FavListID);
-
-            //#endregion
+            
         }
 
         public DbSet<BlackList> BlackList { get; set; }
