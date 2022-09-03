@@ -216,6 +216,19 @@ namespace YesilEvCodeFirst.MyTest
         #region Listeleme Testleri
 
         [TestMethod]
+        public void GetSupplementsWithProductIDTest()
+        {
+            UseProductSupplementDAL dal = new UseProductSupplementDAL();
+
+            var result = dal.GetSupplementsWithProductID(2);
+
+            if (result == null)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+
+        [TestMethod]
         public void GetSupplementsWithBlackListIDTest()
         {
             UseSupplementBlackListDAL dal = new UseSupplementBlackListDAL();
@@ -411,7 +424,6 @@ namespace YesilEvCodeFirst.MyTest
         }
 
         #endregion
-
 
         #region BlackList Testleri
 
