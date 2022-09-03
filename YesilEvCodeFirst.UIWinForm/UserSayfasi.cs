@@ -45,11 +45,11 @@ namespace YesilEvCodeFirst.UIWinForm
             AramaGecmisi.Visible = false;
             pnlFavLists.Visible = false;
             pnlKaraListe.Visible = false;
+            UrunDetay.Visible = false;
             UrunArama.Visible = false;
-            Anasayfa.Visible = false;
-            SideBar.Visible = true;
-            UrunDetay.Visible = true;
             pnlShowProducts.Visible = false;
+            Anasayfa.Visible = true;
+            SideBar.Visible = true;
         }
 
         private void Menu_Click(object sender, EventArgs e)
@@ -447,7 +447,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 GetProductDetailDTO selectedProduct = useProductDAL.GetProductDetailWithID(selectedProductID);
 
                 lblAltKategori.Text = selectedProduct.CategoryName;
-                lblMarka.Text = "buraya getirebilmek icin urune marka eklenecek.";
+                lblMarka.Text = selectedProduct.SupplierName;
                 lblUrunAd.Text = selectedProduct.ProductName;
                 lblMessage.Text = selectedProduct.AddedBy + " tarafından oluşturulmuştur.";
                 List<ListSupplementDTO> supplements = useProductSupplementDAL.GetSupplementsWithProductID(selectedProductID);
@@ -472,7 +472,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 Label lbl = new Label();
                 lbl.Text = supplements[i].SupplementName;
                 lbl.Name = i.ToString();
-                lbl.Size = new Size(330, 18);
+                lbl.Size = new Size(300, 18);
                 lbl.BackColor = Color.White;
                 lbl.ForeColor = Color.Black;
                 lbl.Location = new Point(15, 20 * (Y + 1));
@@ -488,7 +488,7 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 this.Height = 710;
                 UrunDetay.Height = 710;
-                pnlShowProducts.Height = 210;
+                pnlShowProducts.Height = 190;
                 pnlShowProducts.BackColor = Color.Red;
                 pnlShowProducts.Visible = true;
                 btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\up.jpg");
