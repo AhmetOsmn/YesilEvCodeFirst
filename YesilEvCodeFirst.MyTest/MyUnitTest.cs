@@ -233,7 +233,7 @@ namespace YesilEvCodeFirst.MyTest
         {
             UseBlackListDAL dal = new UseBlackListDAL();
 
-            var result = dal.GetBlackListWithUserID(1);
+            var result = dal.GetBlackListIDWithUserID(1);
 
             if (result == null)
             {
