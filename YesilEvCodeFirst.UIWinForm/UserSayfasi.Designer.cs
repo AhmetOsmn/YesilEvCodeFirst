@@ -139,6 +139,9 @@
             this.lblUretici = new System.Windows.Forms.Label();
             this.lblBarkodNo = new System.Windows.Forms.Label();
             this.UrunDetay = new System.Windows.Forms.Panel();
+            this.pcbUrun = new System.Windows.Forms.PictureBox();
+            this.UrunDetayResimDegistir = new System.Windows.Forms.Button();
+            this.btnUrunDetayUser = new System.Windows.Forms.Button();
             this.pnlShowProducts = new System.Windows.Forms.Panel();
             this.btnShowList = new System.Windows.Forms.Button();
             this.lblUrunDetayUrunBilesimi = new System.Windows.Forms.Label();
@@ -161,8 +164,6 @@
             this.lblUrunAd = new System.Windows.Forms.Label();
             this.lblMarka = new System.Windows.Forms.Label();
             this.lblAltKategori = new System.Windows.Forms.Label();
-            this.pcbUrun = new System.Windows.Forms.PictureBox();
-            this.btnUrunDetayUser = new System.Windows.Forms.Button();
             this.AramaGecmisi = new System.Windows.Forms.Panel();
             this.btnGecmisiTemizle = new System.Windows.Forms.Button();
             this.btnAramaGecmisiUser = new System.Windows.Forms.Button();
@@ -233,12 +234,12 @@
             this.UrunEkle.SuspendLayout();
             this.UrunDuzenle.SuspendLayout();
             this.UrunDetay.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbUrun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbUrun)).BeginInit();
             this.AramaGecmisi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.UrunArama.SuspendLayout();
@@ -677,10 +678,10 @@
             this.SideBar.Controls.Add(this.pnlUygulamaPuanVer);
             this.SideBar.Controls.Add(this.pnlHome);
             this.SideBar.Location = new System.Drawing.Point(1, 2);
-            this.SideBar.MaximumSize = new System.Drawing.Size(270, 712);
+            this.SideBar.MaximumSize = new System.Drawing.Size(270, 710);
             this.SideBar.MinimumSize = new System.Drawing.Size(60, 90);
             this.SideBar.Name = "SideBar";
-            this.SideBar.Size = new System.Drawing.Size(80, 710);
+            this.SideBar.Size = new System.Drawing.Size(80, 499);
             this.SideBar.TabIndex = 0;
             // 
             // pnlYesilEv
@@ -872,7 +873,7 @@
             this.UserBilgileri.Controls.Add(this.btnUserPremium);
             this.UserBilgileri.Location = new System.Drawing.Point(0, 0);
             this.UserBilgileri.Name = "UserBilgileri";
-            this.UserBilgileri.Size = new System.Drawing.Size(364, 712);
+            this.UserBilgileri.Size = new System.Drawing.Size(364, 499);
             this.UserBilgileri.TabIndex = 7;
             // 
             // labelUrunSayisi
@@ -980,7 +981,7 @@
             this.btnUserBilgileriCikisYap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserBilgileriCikisYap.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserBilgileriCikisYap.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserBilgileriCikisYap.Location = new System.Drawing.Point(46, 437);
+            this.btnUserBilgileriCikisYap.Location = new System.Drawing.Point(48, 437);
             this.btnUserBilgileriCikisYap.Name = "btnUserBilgileriCikisYap";
             this.btnUserBilgileriCikisYap.Size = new System.Drawing.Size(275, 32);
             this.btnUserBilgileriCikisYap.TabIndex = 3;
@@ -995,7 +996,7 @@
             this.btnAramaGeçmişiTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAramaGeçmişiTemizle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAramaGeçmişiTemizle.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnAramaGeçmişiTemizle.Location = new System.Drawing.Point(46, 399);
+            this.btnAramaGeçmişiTemizle.Location = new System.Drawing.Point(48, 399);
             this.btnAramaGeçmişiTemizle.Name = "btnAramaGeçmişiTemizle";
             this.btnAramaGeçmişiTemizle.Size = new System.Drawing.Size(275, 32);
             this.btnAramaGeçmişiTemizle.TabIndex = 3;
@@ -1010,7 +1011,7 @@
             this.btnKaraListe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKaraListe.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnKaraListe.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnKaraListe.Location = new System.Drawing.Point(47, 361);
+            this.btnKaraListe.Location = new System.Drawing.Point(49, 361);
             this.btnKaraListe.Name = "btnKaraListe";
             this.btnKaraListe.Size = new System.Drawing.Size(275, 32);
             this.btnKaraListe.TabIndex = 3;
@@ -1025,7 +1026,7 @@
             this.btnUserFavori.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserFavori.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserFavori.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserFavori.Location = new System.Drawing.Point(47, 323);
+            this.btnUserFavori.Location = new System.Drawing.Point(49, 323);
             this.btnUserFavori.Name = "btnUserFavori";
             this.btnUserFavori.Size = new System.Drawing.Size(275, 32);
             this.btnUserFavori.TabIndex = 3;
@@ -1040,7 +1041,7 @@
             this.btnUserBilgileriGüncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserBilgileriGüncelle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserBilgileriGüncelle.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserBilgileriGüncelle.Location = new System.Drawing.Point(47, 285);
+            this.btnUserBilgileriGüncelle.Location = new System.Drawing.Point(49, 285);
             this.btnUserBilgileriGüncelle.Name = "btnUserBilgileriGüncelle";
             this.btnUserBilgileriGüncelle.Size = new System.Drawing.Size(275, 32);
             this.btnUserBilgileriGüncelle.TabIndex = 3;
@@ -1054,7 +1055,7 @@
             this.btnUserSosyalMedyaBirlestir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserSosyalMedyaBirlestir.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserSosyalMedyaBirlestir.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserSosyalMedyaBirlestir.Location = new System.Drawing.Point(46, 247);
+            this.btnUserSosyalMedyaBirlestir.Location = new System.Drawing.Point(48, 247);
             this.btnUserSosyalMedyaBirlestir.Name = "btnUserSosyalMedyaBirlestir";
             this.btnUserSosyalMedyaBirlestir.Size = new System.Drawing.Size(275, 32);
             this.btnUserSosyalMedyaBirlestir.TabIndex = 3;
@@ -1068,7 +1069,7 @@
             this.btnUserEpostaDegistir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserEpostaDegistir.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserEpostaDegistir.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserEpostaDegistir.Location = new System.Drawing.Point(46, 171);
+            this.btnUserEpostaDegistir.Location = new System.Drawing.Point(48, 171);
             this.btnUserEpostaDegistir.Name = "btnUserEpostaDegistir";
             this.btnUserEpostaDegistir.Size = new System.Drawing.Size(275, 32);
             this.btnUserEpostaDegistir.TabIndex = 3;
@@ -1082,7 +1083,7 @@
             this.lblEkledigiUrunSayisi.BackColor = System.Drawing.Color.White;
             this.lblEkledigiUrunSayisi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblEkledigiUrunSayisi.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblEkledigiUrunSayisi.Location = new System.Drawing.Point(117, 104);
+            this.lblEkledigiUrunSayisi.Location = new System.Drawing.Point(119, 104);
             this.lblEkledigiUrunSayisi.Name = "lblEkledigiUrunSayisi";
             this.lblEkledigiUrunSayisi.Size = new System.Drawing.Size(116, 15);
             this.lblEkledigiUrunSayisi.TabIndex = 2;
@@ -1094,7 +1095,7 @@
             this.lblUyelikTarihiValue.BackColor = System.Drawing.Color.White;
             this.lblUyelikTarihiValue.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUyelikTarihiValue.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblUyelikTarihiValue.Location = new System.Drawing.Point(150, 76);
+            this.lblUyelikTarihiValue.Location = new System.Drawing.Point(152, 76);
             this.lblUyelikTarihiValue.Name = "lblUyelikTarihiValue";
             this.lblUyelikTarihiValue.Size = new System.Drawing.Size(0, 15);
             this.lblUyelikTarihiValue.TabIndex = 1;
@@ -1105,7 +1106,7 @@
             this.lblUyelikTarihi.BackColor = System.Drawing.Color.White;
             this.lblUyelikTarihi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUyelikTarihi.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblUyelikTarihi.Location = new System.Drawing.Point(64, 76);
+            this.lblUyelikTarihi.Location = new System.Drawing.Point(66, 76);
             this.lblUyelikTarihi.Name = "lblUyelikTarihi";
             this.lblUyelikTarihi.Size = new System.Drawing.Size(80, 15);
             this.lblUyelikTarihi.TabIndex = 1;
@@ -1116,7 +1117,7 @@
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUserName.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblUserName.Location = new System.Drawing.Point(116, 48);
+            this.lblUserName.Location = new System.Drawing.Point(118, 48);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(86, 21);
             this.lblUserName.TabIndex = 0;
@@ -1128,7 +1129,7 @@
             this.btnUserSifreDegistir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserSifreDegistir.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserSifreDegistir.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserSifreDegistir.Location = new System.Drawing.Point(47, 209);
+            this.btnUserSifreDegistir.Location = new System.Drawing.Point(49, 209);
             this.btnUserSifreDegistir.Name = "btnUserSifreDegistir";
             this.btnUserSifreDegistir.Size = new System.Drawing.Size(275, 32);
             this.btnUserSifreDegistir.TabIndex = 3;
@@ -1142,7 +1143,7 @@
             this.btnUserPremium.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserPremium.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserPremium.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserPremium.Location = new System.Drawing.Point(46, 133);
+            this.btnUserPremium.Location = new System.Drawing.Point(48, 133);
             this.btnUserPremium.Name = "btnUserPremium";
             this.btnUserPremium.Size = new System.Drawing.Size(275, 32);
             this.btnUserPremium.TabIndex = 3;
@@ -1160,7 +1161,7 @@
             this.UrunEkleDuzenle.Controls.Add(this.UrunDuzenle);
             this.UrunEkleDuzenle.Location = new System.Drawing.Point(0, 0);
             this.UrunEkleDuzenle.Name = "UrunEkleDuzenle";
-            this.UrunEkleDuzenle.Size = new System.Drawing.Size(364, 712);
+            this.UrunEkleDuzenle.Size = new System.Drawing.Size(364, 499);
             this.UrunEkleDuzenle.TabIndex = 6;
             // 
             // btnUrunEkleUser
@@ -1559,6 +1560,9 @@
             // UrunDetay
             // 
             this.UrunDetay.BackColor = System.Drawing.Color.White;
+            this.UrunDetay.Controls.Add(this.pcbUrun);
+            this.UrunDetay.Controls.Add(this.UrunDetayResimDegistir);
+            this.UrunDetay.Controls.Add(this.btnUrunDetayUser);
             this.UrunDetay.Controls.Add(this.pnlShowProducts);
             this.UrunDetay.Controls.Add(this.btnShowList);
             this.UrunDetay.Controls.Add(this.lblUrunDetayUrunBilesimi);
@@ -1581,21 +1585,56 @@
             this.UrunDetay.Controls.Add(this.lblUrunAd);
             this.UrunDetay.Controls.Add(this.lblMarka);
             this.UrunDetay.Controls.Add(this.lblAltKategori);
-            this.UrunDetay.Controls.Add(this.pcbUrun);
-            this.UrunDetay.Controls.Add(this.btnUrunDetayUser);
             this.UrunDetay.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UrunDetay.Location = new System.Drawing.Point(3, 1);
             this.UrunDetay.Name = "UrunDetay";
-            this.UrunDetay.Size = new System.Drawing.Size(362, 711);
+            this.UrunDetay.Size = new System.Drawing.Size(361, 499);
             this.UrunDetay.TabIndex = 8;
+            // 
+            // pcbUrun
+            // 
+            this.pcbUrun.Image = ((System.Drawing.Image)(resources.GetObject("pcbUrun.Image")));
+            this.pcbUrun.Location = new System.Drawing.Point(9, 165);
+            this.pcbUrun.Name = "pcbUrun";
+            this.pcbUrun.Size = new System.Drawing.Size(90, 115);
+            this.pcbUrun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbUrun.TabIndex = 9;
+            this.pcbUrun.TabStop = false;
+            // 
+            // UrunDetayResimDegistir
+            // 
+            this.UrunDetayResimDegistir.FlatAppearance.BorderSize = 0;
+            this.UrunDetayResimDegistir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UrunDetayResimDegistir.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UrunDetayResimDegistir.Location = new System.Drawing.Point(9, 279);
+            this.UrunDetayResimDegistir.Name = "UrunDetayResimDegistir";
+            this.UrunDetayResimDegistir.Size = new System.Drawing.Size(90, 36);
+            this.UrunDetayResimDegistir.TabIndex = 32;
+            this.UrunDetayResimDegistir.Text = "← →";
+            this.UrunDetayResimDegistir.UseVisualStyleBackColor = true;
+            this.UrunDetayResimDegistir.Click += new System.EventHandler(this.UrunDetayResimDegistir_Click);
+            // 
+            // btnUrunDetayUser
+            // 
+            this.btnUrunDetayUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUrunDetayUser.BackgroundImage")));
+            this.btnUrunDetayUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUrunDetayUser.FlatAppearance.BorderSize = 0;
+            this.btnUrunDetayUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUrunDetayUser.Location = new System.Drawing.Point(281, 17);
+            this.btnUrunDetayUser.Name = "btnUrunDetayUser";
+            this.btnUrunDetayUser.Size = new System.Drawing.Size(60, 40);
+            this.btnUrunDetayUser.TabIndex = 8;
+            this.btnUrunDetayUser.UseVisualStyleBackColor = true;
+            this.btnUrunDetayUser.Click += new System.EventHandler(this.UserButton_Click);
             // 
             // pnlShowProducts
             // 
             this.pnlShowProducts.AutoScroll = true;
-            this.pnlShowProducts.Location = new System.Drawing.Point(9, 461);
+            this.pnlShowProducts.Location = new System.Drawing.Point(9, 460);
             this.pnlShowProducts.Name = "pnlShowProducts";
-            this.pnlShowProducts.Size = new System.Drawing.Size(341, 247);
+            this.pnlShowProducts.Size = new System.Drawing.Size(341, 35);
             this.pnlShowProducts.TabIndex = 31;
+            this.pnlShowProducts.Visible = false;
             // 
             // btnShowList
             // 
@@ -1820,28 +1859,6 @@
             this.lblAltKategori.TabIndex = 10;
             this.lblAltKategori.Text = "Bebek Şampuanları";
             // 
-            // pcbUrun
-            // 
-            this.pcbUrun.Image = ((System.Drawing.Image)(resources.GetObject("pcbUrun.Image")));
-            this.pcbUrun.Location = new System.Drawing.Point(5, 85);
-            this.pcbUrun.Name = "pcbUrun";
-            this.pcbUrun.Size = new System.Drawing.Size(90, 115);
-            this.pcbUrun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbUrun.TabIndex = 9;
-            this.pcbUrun.TabStop = false;
-            // 
-            // btnUrunDetayUser
-            // 
-            this.btnUrunDetayUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUrunDetayUser.FlatAppearance.BorderSize = 0;
-            this.btnUrunDetayUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUrunDetayUser.Location = new System.Drawing.Point(290, 18);
-            this.btnUrunDetayUser.Name = "btnUrunDetayUser";
-            this.btnUrunDetayUser.Size = new System.Drawing.Size(60, 40);
-            this.btnUrunDetayUser.TabIndex = 8;
-            this.btnUrunDetayUser.UseVisualStyleBackColor = true;
-            this.btnUrunDetayUser.Click += new System.EventHandler(this.UserButton_Click);
-            // 
             // AramaGecmisi
             // 
             this.AramaGecmisi.Controls.Add(this.btnGecmisiTemizle);
@@ -1849,7 +1866,7 @@
             this.AramaGecmisi.Controls.Add(this.dataGridView1);
             this.AramaGecmisi.Location = new System.Drawing.Point(1, 1);
             this.AramaGecmisi.Name = "AramaGecmisi";
-            this.AramaGecmisi.Size = new System.Drawing.Size(360, 711);
+            this.AramaGecmisi.Size = new System.Drawing.Size(363, 498);
             this.AramaGecmisi.TabIndex = 7;
             // 
             // btnGecmisiTemizle
@@ -1929,7 +1946,7 @@
             this.UrunArama.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UrunArama.Location = new System.Drawing.Point(1, 1);
             this.UrunArama.Name = "UrunArama";
-            this.UrunArama.Size = new System.Drawing.Size(363, 510);
+            this.UrunArama.Size = new System.Drawing.Size(363, 498);
             this.UrunArama.TabIndex = 7;
             // 
             // lblFavoriList
@@ -1960,7 +1977,7 @@
             this.dataGridViewProducts.Location = new System.Drawing.Point(6, 156);
             this.dataGridViewProducts.Name = "dataGridViewProducts";
             this.dataGridViewProducts.ReadOnly = true;
-            this.dataGridViewProducts.Size = new System.Drawing.Size(351, 348);
+            this.dataGridViewProducts.Size = new System.Drawing.Size(351, 340);
             this.dataGridViewProducts.TabIndex = 12;
             this.dataGridViewProducts.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewProducts_CellMouseDoubleClick);
             // 
@@ -2024,7 +2041,7 @@
             this.pnlFavLists.Controls.Add(this.cbFavLists);
             this.pnlFavLists.Location = new System.Drawing.Point(0, 1);
             this.pnlFavLists.Name = "pnlFavLists";
-            this.pnlFavLists.Size = new System.Drawing.Size(363, 511);
+            this.pnlFavLists.Size = new System.Drawing.Size(363, 498);
             this.pnlFavLists.TabIndex = 17;
             // 
             // btnUserBilgileri
@@ -2046,7 +2063,7 @@
             this.dgvFavProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFavProducts.Location = new System.Drawing.Point(12, 156);
             this.dgvFavProducts.Name = "dgvFavProducts";
-            this.dgvFavProducts.Size = new System.Drawing.Size(338, 342);
+            this.dgvFavProducts.Size = new System.Drawing.Size(338, 336);
             this.dgvFavProducts.TabIndex = 2;
             this.dgvFavProducts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFavProducts_CellDoubleClick);
             // 
@@ -2076,7 +2093,7 @@
             this.pnlKaraListe.Controls.Add(this.btnKaralisteUser);
             this.pnlKaraListe.Location = new System.Drawing.Point(1, 1);
             this.pnlKaraListe.Name = "pnlKaraListe";
-            this.pnlKaraListe.Size = new System.Drawing.Size(363, 509);
+            this.pnlKaraListe.Size = new System.Drawing.Size(363, 499);
             this.pnlKaraListe.TabIndex = 9;
             // 
             // lblKaraListeUyari
@@ -2102,7 +2119,7 @@
             this.dgvBlackListSupplements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBlackListSupplements.Location = new System.Drawing.Point(11, 199);
             this.dgvBlackListSupplements.Name = "dgvBlackListSupplements";
-            this.dgvBlackListSupplements.Size = new System.Drawing.Size(340, 299);
+            this.dgvBlackListSupplements.Size = new System.Drawing.Size(340, 293);
             this.dgvBlackListSupplements.TabIndex = 18;
             // 
             // btnKaralisteUser
@@ -2122,17 +2139,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 711);
-            this.Controls.Add(this.UrunEkleDuzenle);
+            this.ClientSize = new System.Drawing.Size(364, 499);
+            this.Controls.Add(this.UrunDetay);
             this.Controls.Add(this.SideBar);
+            this.Controls.Add(this.UrunEkleDuzenle);
             this.Controls.Add(this.AramaGecmisi);
             this.Controls.Add(this.Anasayfa);
             this.Controls.Add(this.UserBilgileri);
             this.Controls.Add(this.UrunArama);
             this.Controls.Add(this.pnlKaraListe);
             this.Controls.Add(this.pnlFavLists);
-            this.Controls.Add(this.UrunDetay);
-            this.MaximumSize = new System.Drawing.Size(380, 750);
+            this.MaximumSize = new System.Drawing.Size(380, 711);
             this.Name = "UserSayfasi";
             this.Text = "Form3";
             this.pnlHome.ResumeLayout(false);
@@ -2182,12 +2199,12 @@
             this.UrunDuzenle.PerformLayout();
             this.UrunDetay.ResumeLayout(false);
             this.UrunDetay.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbUrun)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbUrun)).EndInit();
             this.AramaGecmisi.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.UrunArama.ResumeLayout(false);
@@ -2329,7 +2346,6 @@
         private System.Windows.Forms.TextBox txtAramaSearchbar;
         private System.Windows.Forms.DataGridView dataGridViewProducts;
         private System.Windows.Forms.Panel UrunDetay;
-        private System.Windows.Forms.Button btnUrunDetayUser;
         private System.Windows.Forms.PictureBox pcbUrun;
         private System.Windows.Forms.Label lblMarka;
         private System.Windows.Forms.Label lblAltKategori;
@@ -2368,6 +2384,7 @@
         private System.Windows.Forms.Label lblKaralisteOlanMaddeler;
         private System.Windows.Forms.DataGridView dgvBlackListSupplements;
         private System.Windows.Forms.Label lblKaraListeUyari;
-
+        private System.Windows.Forms.Button btnUrunDetayUser;
+        private System.Windows.Forms.Button UrunDetayResimDegistir;
     }
 }

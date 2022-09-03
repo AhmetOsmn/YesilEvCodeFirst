@@ -86,7 +86,6 @@
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\Supplier.cs" />
     <Compile Include="Entities\Product.cs" />
-    <Compile Include="Entities\UserFavList.cs" />
     <Compile Include="Interfaces\IDeletableRepo.cs" />
     <Compile Include="Interfaces\IInsertableRepo.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
