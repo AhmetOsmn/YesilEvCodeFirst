@@ -39,7 +39,6 @@ namespace YesilEvCodeFirst.UIWinForm
         public UserSayfasi()
         {
             InitializeComponent();
-            //CreateProductsInLabel();
             CloseAllPages();
             Anasayfa.Visible = true;
         }
@@ -425,7 +424,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 GetProductDetailDTO selectedProduct = useProductDAL.GetProductDetailWithID(selectedProductID);
 
                 lblAltKategori.Text = selectedProduct.CategoryName;
-                lblMarka.Text = "buraya getirebilmek icin urune marka eklenecek.";
+                lblMarka.Text = selectedProduct.SupplierName;
                 lblUrunAd.Text = selectedProduct.ProductName;
                 lblMessage.Text = selectedProduct.AddedBy + " tarafından oluşturulmuştur.";
                 List<ListSupplementDTO> supplements = useProductSupplementDAL.GetSupplementsWithProductID(selectedProductID);
