@@ -45,6 +45,7 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             InitializeComponent();
             CloseAllPages();
+            GetAddAndUpdateProductCategoriesAndSuppliers();
             Anasayfa.Visible = true;
         }
 
@@ -52,14 +53,14 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             if (sideBarExpand)
             {
-                sideBarKapa();
+                CloseSideBar();
             }
             else
             {
-                sideBarAc();
+                OpenSideBar();
             }
         }
-        private void sideBarAc()
+        private void OpenSideBar()
         {
             foreach (Panel item in SideBar.Controls)
             {
@@ -76,7 +77,7 @@ namespace YesilEvCodeFirst.UIWinForm
             SideBar.Width = SideBar.MaximumSize.Width;
             SideBar.Height = SideBar.MaximumSize.Height;
         }
-        private void sideBarKapa()
+        private void CloseSideBar()
         {
             foreach (Panel item in SideBar.Controls)
             {
@@ -126,19 +127,7 @@ namespace YesilEvCodeFirst.UIWinForm
         private void UrunEkleDuzenle_Click(object sender, EventArgs e)
         {
             CloseAllPages();
-            List<SupplierDTO> suppliers = useSupplierDAL.GetSupplierList();
-            List<CategoryDTO> categories = useCategoryDAL.GetCategoryList();
-            foreach (SupplierDTO item in suppliers)
-            {
-                cmbBoxUrunEkleUretici.Items.Add(item);
-                cmbBoxUretici.Items.Add(item);
-            }
-            foreach (CategoryDTO item in categories)
-            {
-                cmbBoxUrunEkleKategori.Items.Add(item);
-                cmbBoxKategori.Items.Add(item);
-            }
-            UrunEkleDuzenle.Visible = true;
+            
         }
 
         private void UserButton_Click(object sender, EventArgs e)
@@ -408,9 +397,9 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 string aranacak = txtAramaSearchbar.Text;
                 List<ListProductDTO> result = useProductDAL.GetProductListForSearchbar(aranacak);
-                dataGridViewProducts.DataSource = result;
-                dataGridViewProducts.Columns[0].Visible = false;
-                dataGridViewProducts.Columns[1].ReadOnly = true;
+                dgvProducts.DataSource = result;
+                dgvProducts.Columns[0].Visible = false;
+                dgvProducts.Columns[1].ReadOnly = true;
             }
             else
             {
@@ -422,7 +411,7 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             try
             {
-                int selectedProductID = Convert.ToInt32(dataGridViewProducts.Rows[e.RowIndex].Cells[0].Value);
+                int selectedProductID = Convert.ToInt32(dgvProducts.Rows[e.RowIndex].Cells[0].Value);
 
                 useSearchHistoryDAL.AddSearchHistory(new AddSearchHistoryDTO
                 {
@@ -476,7 +465,7 @@ namespace YesilEvCodeFirst.UIWinForm
         }
         private void btnDGVTemizle_Click(object sender, EventArgs e)
         {
-            dataGridViewProducts.DataSource = null;
+            dgvProducts.DataSource = null;
             txtAramaSearchbar.Text = "";
         }
 
@@ -594,13 +583,30 @@ namespace YesilEvCodeFirst.UIWinForm
             UrunArama.Visible = false;
             Anasayfa.Visible = false;
             UrunDetay.Visible = false;
-            sideBarKapa();
+            BarkodArama.Visible=false;
+            CloseSideBar();
             ProductSupplementDetailClose();
         }
-
+        private void GetAddAndUpdateProductCategoriesAndSuppliers()
+        {
+            List<SupplierDTO> suppliers = useSupplierDAL.GetSupplierList();
+            List<CategoryDTO> categories = useCategoryDAL.GetCategoryList();
+            foreach (SupplierDTO item in suppliers)
+            {
+                cmbBoxUrunEkleUretici.Items.Add(item);
+                cmbBoxUretici.Items.Add(item);
+            }
+            foreach (CategoryDTO item in categories)
+            {
+                cmbBoxUrunEkleKategori.Items.Add(item);
+                cmbBoxKategori.Items.Add(item);
+            }
+            UrunEkleDuzenle.Visible = true;
+        }
         private void btnBarkodOku_Click(object sender, EventArgs e)
         {
-            //to do barkod okuma sayfası eklenecek
+            CloseAllPages();
+            BarkodArama.Visible = true;
         }
     
         private void GoProductDetails(int productID)
@@ -625,6 +631,32 @@ namespace YesilEvCodeFirst.UIWinForm
 
             CreateProductsInLabel(supplements);
         }
-    
+
+        private void btnBarkodAramaBarkodAra_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtBarkodAramaBarkodNo.Text.Trim()))
+            {
+                MessageBox.Show("Barkod No boş olamaz.");
+            }
+            else if(txtBarkodAramaBarkodNo.Text.Length != 7)
+            {
+                MessageBox.Show("Barkod Hatalı tekrar giriş yapınız.");
+            }
+            else
+            {
+                CloseAllPages();
+                GetProductDetailDTO result = useProductDAL.GetProductDetailWithBarcode(txtBarkodAramaBarkodNo.Text);
+                if(result != null)
+                {
+                    UrunDetay.Visible = true;
+                    GoProductDetails(result.ProductID);
+                }
+                else
+                {
+                    UrunEkleDuzenle.Visible = true;
+                    txtUrunEkleBarkod.Text = txtBarkodAramaBarkodNo.Text;
+                }
+            }
+        }
     }
 }
