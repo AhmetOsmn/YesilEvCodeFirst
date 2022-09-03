@@ -177,7 +177,7 @@
             this.FileDialogUrunEkleArkaYuz = new System.Windows.Forms.OpenFileDialog();
             this.UrunArama = new System.Windows.Forms.Panel();
             this.btnDGVTemizle = new System.Windows.Forms.Button();
-            this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
+            this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.btnSearchbarAra = new System.Windows.Forms.Button();
             this.lblAramaSearchBar = new System.Windows.Forms.Label();
             this.txtAramaSearchbar = new System.Windows.Forms.TextBox();
@@ -192,6 +192,11 @@
             this.lblKaralisteOlanMaddeler = new System.Windows.Forms.Label();
             this.dgvBlackListSupplements = new System.Windows.Forms.DataGridView();
             this.btnKaralisteUser = new System.Windows.Forms.Button();
+            this.BarkodArama = new System.Windows.Forms.Panel();
+            this.btnBarkodAramaUser = new System.Windows.Forms.Button();
+            this.btnBarkodAramaBarkodAra = new System.Windows.Forms.Button();
+            this.lblBarkodAramaBarkodNo = new System.Windows.Forms.Label();
+            this.txtBarkodAramaBarkodNo = new System.Windows.Forms.TextBox();
             this.pnlHome.SuspendLayout();
             this.pnlUygulamaPuanVer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUygulamaPuanVer)).BeginInit();
@@ -245,11 +250,12 @@
             this.AramaGecmisi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAramaGecmisi)).BeginInit();
             this.UrunArama.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.pnlFavLists.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFavProducts)).BeginInit();
             this.pnlKaraListe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBlackListSupplements)).BeginInit();
+            this.BarkodArama.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHome
@@ -862,7 +868,7 @@
             this.btnAnasayfaUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnasayfaUser.FlatAppearance.BorderSize = 0;
             this.btnAnasayfaUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnasayfaUser.Location = new System.Drawing.Point(290, 12);
+            this.btnAnasayfaUser.Location = new System.Drawing.Point(285, 15);
             this.btnAnasayfaUser.Name = "btnAnasayfaUser";
             this.btnAnasayfaUser.Size = new System.Drawing.Size(60, 40);
             this.btnAnasayfaUser.TabIndex = 0;
@@ -1207,7 +1213,7 @@
             this.btnUrunEkleUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUrunEkleUser.FlatAppearance.BorderSize = 0;
             this.btnUrunEkleUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUrunEkleUser.Location = new System.Drawing.Point(290, 18);
+            this.btnUrunEkleUser.Location = new System.Drawing.Point(285, 15);
             this.btnUrunEkleUser.Name = "btnUrunEkleUser";
             this.btnUrunEkleUser.Size = new System.Drawing.Size(60, 40);
             this.btnUrunEkleUser.TabIndex = 7;
@@ -1673,7 +1679,7 @@
             this.btnUrunDetayUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUrunDetayUser.FlatAppearance.BorderSize = 0;
             this.btnUrunDetayUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUrunDetayUser.Location = new System.Drawing.Point(281, 17);
+            this.btnUrunDetayUser.Location = new System.Drawing.Point(285, 15);
             this.btnUrunDetayUser.Name = "btnUrunDetayUser";
             this.btnUrunDetayUser.Size = new System.Drawing.Size(60, 40);
             this.btnUrunDetayUser.TabIndex = 8;
@@ -1972,7 +1978,7 @@
             this.btnAramaGecmisiUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAramaGecmisiUser.FlatAppearance.BorderSize = 0;
             this.btnAramaGecmisiUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAramaGecmisiUser.Location = new System.Drawing.Point(289, 9);
+            this.btnAramaGecmisiUser.Location = new System.Drawing.Point(285, 15);
             this.btnAramaGecmisiUser.Name = "btnAramaGecmisiUser";
             this.btnAramaGecmisiUser.Size = new System.Drawing.Size(60, 40);
             this.btnAramaGecmisiUser.TabIndex = 7;
@@ -2023,7 +2029,7 @@
             // UrunArama
             // 
             this.UrunArama.Controls.Add(this.btnDGVTemizle);
-            this.UrunArama.Controls.Add(this.dataGridViewProducts);
+            this.UrunArama.Controls.Add(this.dgvProducts);
             this.UrunArama.Controls.Add(this.btnSearchbarAra);
             this.UrunArama.Controls.Add(this.lblAramaSearchBar);
             this.UrunArama.Controls.Add(this.txtAramaSearchbar);
@@ -2046,18 +2052,18 @@
             this.btnDGVTemizle.UseVisualStyleBackColor = true;
             this.btnDGVTemizle.Click += new System.EventHandler(this.btnDGVTemizle_Click);
             // 
-            // dataGridViewProducts
+            // dgvProducts
             // 
-            this.dataGridViewProducts.AllowUserToAddRows = false;
-            this.dataGridViewProducts.AllowUserToDeleteRows = false;
-            this.dataGridViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProducts.Location = new System.Drawing.Point(6, 156);
-            this.dataGridViewProducts.Name = "dataGridViewProducts";
-            this.dataGridViewProducts.ReadOnly = true;
-            this.dataGridViewProducts.Size = new System.Drawing.Size(351, 340);
-            this.dataGridViewProducts.TabIndex = 12;
-            this.dataGridViewProducts.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewProducts_CellMouseDoubleClick);
+            this.dgvProducts.AllowUserToAddRows = false;
+            this.dgvProducts.AllowUserToDeleteRows = false;
+            this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducts.Location = new System.Drawing.Point(10, 155);
+            this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ReadOnly = true;
+            this.dgvProducts.Size = new System.Drawing.Size(340, 340);
+            this.dgvProducts.TabIndex = 12;
+            this.dgvProducts.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewProducts_CellMouseDoubleClick);
             // 
             // btnSearchbarAra
             // 
@@ -2091,7 +2097,7 @@
             this.btnUrunAramaUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnUrunAramaUser.FlatAppearance.BorderSize = 0;
             this.btnUrunAramaUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUrunAramaUser.Location = new System.Drawing.Point(291, 5);
+            this.btnUrunAramaUser.Location = new System.Drawing.Point(285, 15);
             this.btnUrunAramaUser.Name = "btnUrunAramaUser";
             this.btnUrunAramaUser.Size = new System.Drawing.Size(60, 40);
             this.btnUrunAramaUser.TabIndex = 7;
@@ -2118,7 +2124,7 @@
             this.btnUserBilgileri.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUserBilgileri.FlatAppearance.BorderSize = 0;
             this.btnUserBilgileri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserBilgileri.Location = new System.Drawing.Point(292, 11);
+            this.btnUserBilgileri.Location = new System.Drawing.Point(285, 15);
             this.btnUserBilgileri.Name = "btnUserBilgileri";
             this.btnUserBilgileri.Size = new System.Drawing.Size(60, 40);
             this.btnUserBilgileri.TabIndex = 8;
@@ -2188,9 +2194,9 @@
             // 
             this.dgvBlackListSupplements.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBlackListSupplements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBlackListSupplements.Location = new System.Drawing.Point(11, 199);
+            this.dgvBlackListSupplements.Location = new System.Drawing.Point(10, 200);
             this.dgvBlackListSupplements.Name = "dgvBlackListSupplements";
-            this.dgvBlackListSupplements.Size = new System.Drawing.Size(340, 293);
+            this.dgvBlackListSupplements.Size = new System.Drawing.Size(340, 300);
             this.dgvBlackListSupplements.TabIndex = 18;
             // 
             // btnKaralisteUser
@@ -2200,12 +2206,65 @@
             this.btnKaralisteUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKaralisteUser.FlatAppearance.BorderSize = 0;
             this.btnKaralisteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKaralisteUser.Location = new System.Drawing.Point(289, 17);
+            this.btnKaralisteUser.Location = new System.Drawing.Point(285, 15);
             this.btnKaralisteUser.Name = "btnKaralisteUser";
             this.btnKaralisteUser.Size = new System.Drawing.Size(60, 40);
             this.btnKaralisteUser.TabIndex = 8;
             this.btnKaralisteUser.UseVisualStyleBackColor = true;
             this.btnKaralisteUser.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // BarkodArama
+            // 
+            this.BarkodArama.Controls.Add(this.btnBarkodAramaUser);
+            this.BarkodArama.Controls.Add(this.btnBarkodAramaBarkodAra);
+            this.BarkodArama.Controls.Add(this.lblBarkodAramaBarkodNo);
+            this.BarkodArama.Controls.Add(this.txtBarkodAramaBarkodNo);
+            this.BarkodArama.Location = new System.Drawing.Point(0, 0);
+            this.BarkodArama.MaximumSize = new System.Drawing.Size(360, 510);
+            this.BarkodArama.MinimumSize = new System.Drawing.Size(360, 510);
+            this.BarkodArama.Name = "BarkodArama";
+            this.BarkodArama.Size = new System.Drawing.Size(360, 510);
+            this.BarkodArama.TabIndex = 0;
+            // 
+            // btnBarkodAramaUser
+            // 
+            this.btnBarkodAramaUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBarkodAramaUser.BackgroundImage")));
+            this.btnBarkodAramaUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBarkodAramaUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBarkodAramaUser.FlatAppearance.BorderSize = 0;
+            this.btnBarkodAramaUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBarkodAramaUser.Location = new System.Drawing.Point(285, 15);
+            this.btnBarkodAramaUser.Name = "btnBarkodAramaUser";
+            this.btnBarkodAramaUser.Size = new System.Drawing.Size(60, 40);
+            this.btnBarkodAramaUser.TabIndex = 16;
+            this.btnBarkodAramaUser.UseVisualStyleBackColor = true;
+            // 
+            // btnBarkodAramaBarkodAra
+            // 
+            this.btnBarkodAramaBarkodAra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBarkodAramaBarkodAra.Location = new System.Drawing.Point(285, 98);
+            this.btnBarkodAramaBarkodAra.Name = "btnBarkodAramaBarkodAra";
+            this.btnBarkodAramaBarkodAra.Size = new System.Drawing.Size(54, 23);
+            this.btnBarkodAramaBarkodAra.TabIndex = 14;
+            this.btnBarkodAramaBarkodAra.Text = "Ara";
+            this.btnBarkodAramaBarkodAra.UseVisualStyleBackColor = true;
+            this.btnBarkodAramaBarkodAra.Click += new System.EventHandler(this.btnBarkodAramaBarkodAra_Click);
+            // 
+            // lblBarkodAramaBarkodNo
+            // 
+            this.lblBarkodAramaBarkodNo.AutoSize = true;
+            this.lblBarkodAramaBarkodNo.Location = new System.Drawing.Point(8, 103);
+            this.lblBarkodAramaBarkodNo.Name = "lblBarkodAramaBarkodNo";
+            this.lblBarkodAramaBarkodNo.Size = new System.Drawing.Size(98, 13);
+            this.lblBarkodAramaBarkodNo.TabIndex = 13;
+            this.lblBarkodAramaBarkodNo.Text = "Barkod No Giriniz : ";
+            // 
+            // txtBarkodAramaBarkodNo
+            // 
+            this.txtBarkodAramaBarkodNo.Location = new System.Drawing.Point(107, 100);
+            this.txtBarkodAramaBarkodNo.Name = "txtBarkodAramaBarkodNo";
+            this.txtBarkodAramaBarkodNo.Size = new System.Drawing.Size(169, 20);
+            this.txtBarkodAramaBarkodNo.TabIndex = 12;
             // 
             // UserSayfasi
             // 
@@ -2221,6 +2280,7 @@
             this.Controls.Add(this.UrunDetay);
             this.Controls.Add(this.UrunEkleDuzenle);
             this.Controls.Add(this.AramaGecmisi);
+            this.Controls.Add(this.BarkodArama);
             this.MaximumSize = new System.Drawing.Size(380, 550);
             this.MinimumSize = new System.Drawing.Size(380, 550);
             this.Name = "UserSayfasi";
@@ -2284,13 +2344,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAramaGecmisi)).EndInit();
             this.UrunArama.ResumeLayout(false);
             this.UrunArama.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.pnlFavLists.ResumeLayout(false);
             this.pnlFavLists.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFavProducts)).EndInit();
             this.pnlKaraListe.ResumeLayout(false);
             this.pnlKaraListe.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBlackListSupplements)).EndInit();
+            this.BarkodArama.ResumeLayout(false);
+            this.BarkodArama.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2417,7 +2479,7 @@
         private System.Windows.Forms.Button btnSearchbarAra;
         private System.Windows.Forms.Label lblAramaSearchBar;
         private System.Windows.Forms.TextBox txtAramaSearchbar;
-        private System.Windows.Forms.DataGridView dataGridViewProducts;
+        private System.Windows.Forms.DataGridView dgvProducts;
         private System.Windows.Forms.Panel UrunDetay;
         private System.Windows.Forms.PictureBox pcbUrun;
         private System.Windows.Forms.Label lblMarka;
@@ -2460,5 +2522,10 @@
         private System.Windows.Forms.PictureBox picturePremium;
         private System.Windows.Forms.Label lblFavoriList;
         private System.Windows.Forms.Button btnFavList;
+        private System.Windows.Forms.Panel BarkodArama;
+        private System.Windows.Forms.Button btnBarkodAramaUser;
+        private System.Windows.Forms.Button btnBarkodAramaBarkodAra;
+        private System.Windows.Forms.Label lblBarkodAramaBarkodNo;
+        private System.Windows.Forms.TextBox txtBarkodAramaBarkodNo;
     }
 }
