@@ -2,6 +2,7 @@
 {
     public class GetProductDetailDTO
     {
+        public int ProductID { get; set; }
         public string Barcode { get; set; }
         public string ProductName { get; set; }
         public int? SupplierID { get; set; }

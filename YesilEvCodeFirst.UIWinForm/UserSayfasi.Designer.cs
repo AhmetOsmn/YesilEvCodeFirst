@@ -1158,8 +1158,8 @@
             this.UrunEkleDuzenle.Controls.Add(this.btnGonder);
             this.UrunEkleDuzenle.Controls.Add(this.btnUrunEkle);
             this.UrunEkleDuzenle.Controls.Add(this.btnUrunDuzenle);
-            this.UrunEkleDuzenle.Controls.Add(this.UrunDuzenle);
             this.UrunEkleDuzenle.Controls.Add(this.UrunEkle);
+            this.UrunEkleDuzenle.Controls.Add(this.UrunDuzenle);
             this.UrunEkleDuzenle.Location = new System.Drawing.Point(0, 0);
             this.UrunEkleDuzenle.Name = "UrunEkleDuzenle";
             this.UrunEkleDuzenle.Size = new System.Drawing.Size(364, 499);
