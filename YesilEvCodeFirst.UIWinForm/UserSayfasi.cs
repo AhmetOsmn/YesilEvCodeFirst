@@ -46,9 +46,9 @@ namespace YesilEvCodeFirst.UIWinForm
             pnlFavLists.Visible = false;
             pnlKaraListe.Visible = false;
             UrunArama.Visible = false;
-            Anasayfa.Visible = true;
+            Anasayfa.Visible = false;
             SideBar.Visible = true;
-            UrunDetay.Visible = false;
+            UrunDetay.Visible = true;
             pnlShowProducts.Visible = false;
         }
 
@@ -62,8 +62,6 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 sideBarAc();
             }
-
-
         }
         private void sideBarAc()
         {
@@ -108,11 +106,11 @@ namespace YesilEvCodeFirst.UIWinForm
             AramaGecmisi.Visible = false;
             pnlFavLists.Visible = false;
             pnlKaraListe.Visible = false;
-            sideBarKapa();
-            Anasayfa.Visible = true;
             UserBilgileri.Visible = false;
             UrunArama.Visible = false;
             UrunDetay.Visible = false;
+            Anasayfa.Visible = true;
+            sideBarKapa();
         }
 
         private void UrunDuzenle_Click(object sender, EventArgs e)
@@ -466,9 +464,6 @@ namespace YesilEvCodeFirst.UIWinForm
             }
         }
 
-
-
-
         int Y = 0;
         private void CreateProductsInLabel(List<ListSupplementDTO> supplements)
         {
@@ -480,7 +475,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 lbl.Size = new Size(330, 18);
                 lbl.BackColor = Color.White;
                 lbl.ForeColor = Color.Black;
-                lbl.Location = new Point(15, 25 * (Y + 1));
+                lbl.Location = new Point(15, 20 * (Y + 1));
                 Y++;
                 pnlShowProducts.Controls.Add(lbl);
             }
@@ -491,15 +486,20 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             if (sum % 2 == 0)
             {
+                this.Height = 710;
+                UrunDetay.Height = 710;
+                pnlShowProducts.Height = 210;
+                pnlShowProducts.BackColor = Color.Red;
                 pnlShowProducts.Visible = true;
                 btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\up.jpg");
             }
             else
             {
+                this.Height = 499;
+                pnlShowProducts.Height = 35;
                 pnlShowProducts.Visible = false;
                 btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\drop.jpg");
             }
-
             sum++;
         }
         private void btnDGVTemizle_Click(object sender, EventArgs e)
@@ -582,6 +582,12 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 lblKaraListeUyari.Text = "Kara Liste bulunamadı";
             }
+        }
+
+        private void UrunDetayResimDegistir_Click(object sender, EventArgs e)
+        {
+            //to do ürün resmi eklenecek
+            //pcbUrun.Image = 
         }
     }
 }

@@ -76,9 +76,6 @@ namespace YesilEvCodeFirst.Core.Context
         public DbSet<BlackList> BlackList { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<FavList> FavList { get; set; }
-
-        //public DbSet<Picture> Picture { get; set; }
-
         public DbSet<Product> Product { get; set; }
         public DbSet<Role> Role { get; set; }
         public DbSet<Supplement> Supplement { get; set; }

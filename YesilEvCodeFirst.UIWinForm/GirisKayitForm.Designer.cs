@@ -236,7 +236,7 @@
             this.txtGirisYapSifre.PasswordChar = '*';
             this.txtGirisYapSifre.Size = new System.Drawing.Size(387, 20);
             this.txtGirisYapSifre.TabIndex = 2;
-            this.txtGirisYapSifre.Text = "sarp555";
+            this.txtGirisYapSifre.Text = "mert555";
             // 
             // lblGirisYapSifre
             // 
@@ -257,7 +257,7 @@
             this.txtGirisYapEmail.Name = "txtGirisYapEmail";
             this.txtGirisYapEmail.Size = new System.Drawing.Size(387, 20);
             this.txtGirisYapEmail.TabIndex = 1;
-            this.txtGirisYapEmail.Text = "sarp@gmail.com";
+            this.txtGirisYapEmail.Text = "mertdalkiran@gmail.com";
             // 
             // lblGirisYapEmail
             // 
@@ -278,8 +278,8 @@
             this.ClientSize = new System.Drawing.Size(456, 475);
             this.Controls.Add(this.btnGroupBoxGirisYap);
             this.Controls.Add(this.btnGroupBoxKayitOl);
-            this.Controls.Add(this.GroupBoxKayitOl);
             this.Controls.Add(this.GroupBoxGirisYap);
+            this.Controls.Add(this.GroupBoxKayitOl);
             this.Name = "GirisKayitForm";
             this.Text = "Form1";
             this.GroupBoxKayitOl.ResumeLayout(false);
