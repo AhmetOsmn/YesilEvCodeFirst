@@ -77,6 +77,7 @@
             this.Anasayfa = new System.Windows.Forms.Panel();
             this.btnAnasayfaUser = new System.Windows.Forms.Button();
             this.UserBilgileri = new System.Windows.Forms.Panel();
+            this.labelUrunSayisi = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureAramaGecmisi = new System.Windows.Forms.PictureBox();
             this.pictureKaraliste = new System.Windows.Forms.PictureBox();
@@ -86,7 +87,7 @@
             this.pictureUserSifreDegistir = new System.Windows.Forms.PictureBox();
             this.pictureUserEposta = new System.Windows.Forms.PictureBox();
             this.pictureUserPremium = new System.Windows.Forms.PictureBox();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnUserBilgileriCikisYap = new System.Windows.Forms.Button();
             this.btnAramaGeçmişiTemizle = new System.Windows.Forms.Button();
             this.btnKaraListe = new System.Windows.Forms.Button();
             this.btnUserFavori = new System.Windows.Forms.Button();
@@ -101,7 +102,7 @@
             this.btnUserPremium = new System.Windows.Forms.Button();
             this.UrunEkleDuzenle = new System.Windows.Forms.Panel();
             this.UrunDetay = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnUrunDetayUser = new System.Windows.Forms.Button();
             this.btnUrunEkleUser = new System.Windows.Forms.Button();
             this.btnGonder = new System.Windows.Forms.Button();
             this.btnUrunEkle = new System.Windows.Forms.Button();
@@ -148,12 +149,13 @@
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog4 = new System.Windows.Forms.OpenFileDialog();
             this.UrunArama = new System.Windows.Forms.Panel();
+            this.lblFavoriList = new System.Windows.Forms.Label();
+            this.btnDGVTemizle = new System.Windows.Forms.Button();
             this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
             this.btnSearchbarAra = new System.Windows.Forms.Button();
             this.lblAramaSearchBar = new System.Windows.Forms.Label();
             this.txtAramaSearchbar = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnUrunAramaUser = new System.Windows.Forms.Button();
             this.pcbUrun = new System.Windows.Forms.PictureBox();
             this.lblAltKategori = new System.Windows.Forms.Label();
             this.lblMarka = new System.Windows.Forms.Label();
@@ -174,9 +176,21 @@
             this.lblAzRiskNum = new System.Windows.Forms.Label();
             this.lblTemizNum = new System.Windows.Forms.Label();
             this.lblMessage = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUrunDetayUrunBilesimi = new System.Windows.Forms.Label();
             this.btnShowList = new System.Windows.Forms.Button();
             this.pnlShowProducts = new System.Windows.Forms.Panel();
+            this.btnUrunAramaUser = new System.Windows.Forms.Button();
+            this.btnFavList = new System.Windows.Forms.Button();
+            this.pnlFavLists = new System.Windows.Forms.Panel();
+            this.btnUserBilgileri = new System.Windows.Forms.Button();
+            this.dgvFavProducts = new System.Windows.Forms.DataGridView();
+            this.lblFavoriListeSec = new System.Windows.Forms.Label();
+            this.cbFavLists = new System.Windows.Forms.ComboBox();
+            this.pnlKaraListe = new System.Windows.Forms.Panel();
+            this.lblKaraListeUyari = new System.Windows.Forms.Label();
+            this.lblKaralisteOlanMaddeler = new System.Windows.Forms.Label();
+            this.dgvBlackListSupplements = new System.Windows.Forms.DataGridView();
+            this.btnKaralisteUser = new System.Windows.Forms.Button();
             this.pnlHome.SuspendLayout();
             this.pnlUygulamaPuanVer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUygulamaPuanVer)).BeginInit();
@@ -230,6 +244,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.pnlFavLists.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFavProducts)).BeginInit();
+            this.pnlKaraListe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBlackListSupplements)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlHome
@@ -821,7 +839,7 @@
             this.btnAnasayfaUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAnasayfaUser.FlatAppearance.BorderSize = 0;
             this.btnAnasayfaUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnasayfaUser.Location = new System.Drawing.Point(277, 10);
+            this.btnAnasayfaUser.Location = new System.Drawing.Point(290, 12);
             this.btnAnasayfaUser.Name = "btnAnasayfaUser";
             this.btnAnasayfaUser.Size = new System.Drawing.Size(60, 40);
             this.btnAnasayfaUser.TabIndex = 6;
@@ -830,6 +848,7 @@
             // 
             // UserBilgileri
             // 
+            this.UserBilgileri.Controls.Add(this.labelUrunSayisi);
             this.UserBilgileri.Controls.Add(this.pictureBox9);
             this.UserBilgileri.Controls.Add(this.pictureAramaGecmisi);
             this.UserBilgileri.Controls.Add(this.pictureKaraliste);
@@ -839,7 +858,7 @@
             this.UserBilgileri.Controls.Add(this.pictureUserSifreDegistir);
             this.UserBilgileri.Controls.Add(this.pictureUserEposta);
             this.UserBilgileri.Controls.Add(this.pictureUserPremium);
-            this.UserBilgileri.Controls.Add(this.button9);
+            this.UserBilgileri.Controls.Add(this.btnUserBilgileriCikisYap);
             this.UserBilgileri.Controls.Add(this.btnAramaGeçmişiTemizle);
             this.UserBilgileri.Controls.Add(this.btnKaraListe);
             this.UserBilgileri.Controls.Add(this.btnUserFavori);
@@ -856,6 +875,15 @@
             this.UserBilgileri.Name = "UserBilgileri";
             this.UserBilgileri.Size = new System.Drawing.Size(364, 712);
             this.UserBilgileri.TabIndex = 7;
+            // 
+            // labelUrunSayisi
+            // 
+            this.labelUrunSayisi.AutoSize = true;
+            this.labelUrunSayisi.Location = new System.Drawing.Point(239, 105);
+            this.labelUrunSayisi.Name = "labelUrunSayisi";
+            this.labelUrunSayisi.Size = new System.Drawing.Size(10, 13);
+            this.labelUrunSayisi.TabIndex = 5;
+            this.labelUrunSayisi.Text = "-";
             // 
             // pictureBox9
             // 
@@ -947,20 +975,20 @@
             this.pictureUserPremium.TabIndex = 4;
             this.pictureUserPremium.TabStop = false;
             // 
-            // button9
+            // btnUserBilgileriCikisYap
             // 
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button9.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.button9.Location = new System.Drawing.Point(46, 437);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(275, 32);
-            this.button9.TabIndex = 3;
-            this.button9.Text = "         Çıkış yap";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.btnUserBilgileriCikisYap.FlatAppearance.BorderSize = 0;
+            this.btnUserBilgileriCikisYap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserBilgileriCikisYap.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserBilgileriCikisYap.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnUserBilgileriCikisYap.Location = new System.Drawing.Point(46, 437);
+            this.btnUserBilgileriCikisYap.Name = "btnUserBilgileriCikisYap";
+            this.btnUserBilgileriCikisYap.Size = new System.Drawing.Size(275, 32);
+            this.btnUserBilgileriCikisYap.TabIndex = 3;
+            this.btnUserBilgileriCikisYap.Text = "         Çıkış yap";
+            this.btnUserBilgileriCikisYap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserBilgileriCikisYap.UseVisualStyleBackColor = true;
+            this.btnUserBilgileriCikisYap.Click += new System.EventHandler(this.button9_Click);
             // 
             // btnAramaGeçmişiTemizle
             // 
@@ -990,6 +1018,7 @@
             this.btnKaraListe.Text = "         Kara liste";
             this.btnKaraListe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKaraListe.UseVisualStyleBackColor = true;
+            this.btnKaraListe.Click += new System.EventHandler(this.KaraListeyiHazirla);
             // 
             // btnUserFavori
             // 
@@ -1004,6 +1033,7 @@
             this.btnUserFavori.Text = "         Favoriler";
             this.btnUserFavori.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserFavori.UseVisualStyleBackColor = true;
+            this.btnUserFavori.Click += new System.EventHandler(this.FavoriListeleriniHazirla);
             // 
             // btnUserBilgileriGüncelle
             // 
@@ -1124,7 +1154,6 @@
             // UrunEkleDuzenle
             // 
             this.UrunEkleDuzenle.Controls.Add(this.UrunDetay);
-            this.UrunEkleDuzenle.Controls.Add(this.button3);
             this.UrunEkleDuzenle.Controls.Add(this.btnUrunEkleUser);
             this.UrunEkleDuzenle.Controls.Add(this.btnGonder);
             this.UrunEkleDuzenle.Controls.Add(this.btnUrunEkle);
@@ -1141,7 +1170,7 @@
             this.UrunDetay.BackColor = System.Drawing.Color.White;
             this.UrunDetay.Controls.Add(this.pnlShowProducts);
             this.UrunDetay.Controls.Add(this.btnShowList);
-            this.UrunDetay.Controls.Add(this.label1);
+            this.UrunDetay.Controls.Add(this.lblUrunDetayUrunBilesimi);
             this.UrunDetay.Controls.Add(this.lblMessage);
             this.UrunDetay.Controls.Add(this.lblTemizNum);
             this.UrunDetay.Controls.Add(this.lblAzRiskNum);
@@ -1162,25 +1191,25 @@
             this.UrunDetay.Controls.Add(this.lblMarka);
             this.UrunDetay.Controls.Add(this.lblAltKategori);
             this.UrunDetay.Controls.Add(this.pcbUrun);
-            this.UrunDetay.Controls.Add(this.button2);
+            this.UrunDetay.Controls.Add(this.btnUrunDetayUser);
             this.UrunDetay.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UrunDetay.Location = new System.Drawing.Point(3, 1);
             this.UrunDetay.Name = "UrunDetay";
             this.UrunDetay.Size = new System.Drawing.Size(362, 711);
             this.UrunDetay.TabIndex = 8;
             // 
-            // button2
+            // btnUrunDetayUser
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(290, 18);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 40);
-            this.button2.TabIndex = 8;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.UserButton_Click);
+            this.btnUrunDetayUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUrunDetayUser.BackgroundImage")));
+            this.btnUrunDetayUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUrunDetayUser.FlatAppearance.BorderSize = 0;
+            this.btnUrunDetayUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUrunDetayUser.Location = new System.Drawing.Point(290, 18);
+            this.btnUrunDetayUser.Name = "btnUrunDetayUser";
+            this.btnUrunDetayUser.Size = new System.Drawing.Size(60, 40);
+            this.btnUrunDetayUser.TabIndex = 8;
+            this.btnUrunDetayUser.UseVisualStyleBackColor = true;
+            this.btnUrunDetayUser.Click += new System.EventHandler(this.UserButton_Click);
             // 
             // btnUrunEkleUser
             // 
@@ -1651,11 +1680,14 @@
             // 
             // UrunArama
             // 
+            this.UrunArama.Controls.Add(this.lblFavoriList);
+            this.UrunArama.Controls.Add(this.btnDGVTemizle);
             this.UrunArama.Controls.Add(this.dataGridViewProducts);
             this.UrunArama.Controls.Add(this.btnSearchbarAra);
             this.UrunArama.Controls.Add(this.lblAramaSearchBar);
             this.UrunArama.Controls.Add(this.txtAramaSearchbar);
-            this.UrunArama.Controls.Add(this.button1);
+            this.UrunArama.Controls.Add(this.btnUrunAramaUser);
+            this.UrunArama.Controls.Add(this.btnFavList);
             this.UrunArama.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UrunArama.Location = new System.Drawing.Point(1, 1);
             this.UrunArama.Name = "UrunArama";
@@ -1684,15 +1716,37 @@
             this.btnSearchbarAra.Text = "Ara";
             this.btnSearchbarAra.UseVisualStyleBackColor = true;
             this.btnSearchbarAra.Click += new System.EventHandler(this.btnSearchbarAra_Click);
+            // lblFavoriList
             // 
-            // lblAramaSearchBar
+            this.lblFavoriList.AutoSize = true;
+            this.lblFavoriList.Location = new System.Drawing.Point(146, 77);
+            this.lblFavoriList.Name = "lblFavoriList";
+            this.lblFavoriList.Size = new System.Drawing.Size(47, 13);
+            this.lblFavoriList.TabIndex = 16;
+            this.lblFavoriList.Text = "Favoriler";
             // 
-            this.lblAramaSearchBar.AutoSize = true;
-            this.lblAramaSearchBar.Location = new System.Drawing.Point(16, 104);
-            this.lblAramaSearchBar.Name = "lblAramaSearchBar";
-            this.lblAramaSearchBar.Size = new System.Drawing.Size(64, 13);
-            this.lblAramaSearchBar.TabIndex = 9;
-            this.lblAramaSearchBar.Text = "Ürün Giriniz:";
+            // btnDGVTemizle
+            // 
+            this.btnDGVTemizle.Location = new System.Drawing.Point(282, 128);
+            this.btnDGVTemizle.Name = "btnDGVTemizle";
+            this.btnDGVTemizle.Size = new System.Drawing.Size(54, 22);
+            this.btnDGVTemizle.TabIndex = 13;
+            this.btnDGVTemizle.Text = "Temizle";
+            this.btnDGVTemizle.UseVisualStyleBackColor = true;
+            this.btnDGVTemizle.Click += new System.EventHandler(this.btnDGVTemizle_Click);
+            // 
+            // dataGridViewProducts
+            // 
+            this.dataGridViewProducts.AllowUserToAddRows = false;
+            this.dataGridViewProducts.AllowUserToDeleteRows = false;
+            this.dataGridViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProducts.Location = new System.Drawing.Point(6, 156);
+            this.dataGridViewProducts.Name = "dataGridViewProducts";
+            this.dataGridViewProducts.ReadOnly = true;
+            this.dataGridViewProducts.Size = new System.Drawing.Size(351, 348);
+            this.dataGridViewProducts.TabIndex = 12;
+            this.dataGridViewProducts.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewProducts_CellMouseDoubleClick);
             // 
             // txtAramaSearchbar
             // 
@@ -1701,28 +1755,18 @@
             this.txtAramaSearchbar.Size = new System.Drawing.Size(186, 20);
             this.txtAramaSearchbar.TabIndex = 8;
             // 
-            // button1
+            // btnUrunAramaUser
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(291, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 40);
-            this.button1.TabIndex = 7;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.UserButton_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(75, 27);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnUrunAramaUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUrunAramaUser.BackgroundImage")));
+            this.btnUrunAramaUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUrunAramaUser.FlatAppearance.BorderSize = 0;
+            this.btnUrunAramaUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUrunAramaUser.Location = new System.Drawing.Point(291, 9);
+            this.btnUrunAramaUser.Name = "btnUrunAramaUser";
+            this.btnUrunAramaUser.Size = new System.Drawing.Size(60, 40);
+            this.btnUrunAramaUser.TabIndex = 7;
+            this.btnUrunAramaUser.UseVisualStyleBackColor = true;
+            this.btnUrunAramaUser.Click += new System.EventHandler(this.UserButton_Click);
             // 
             // pcbUrun
             // 
@@ -1934,15 +1978,110 @@
             this.lblMessage.TabIndex = 28;
             this.lblMessage.Text = "User isimli üye tarafından oluşturulmuştur.";
             // 
-            // label1
+            // btnSearchbarAra
+            //
+            this.btnSearchbarAra.Location = new System.Drawing.Point(282, 99);
+            this.btnSearchbarAra.Name = "btnSearchbarAra";
+            this.btnSearchbarAra.Size = new System.Drawing.Size(54, 23);
+            this.btnSearchbarAra.TabIndex = 11;
+            this.btnSearchbarAra.Text = "Ara";
+            this.btnSearchbarAra.UseVisualStyleBackColor = true;
+            this.btnSearchbarAra.Click += new System.EventHandler(this.btnSearchbarAra_Click);
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(10, 420);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 19);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Ürün Bileşemi";
+            // lblAramaSearchBar
+            // 
+            this.lblAramaSearchBar.AutoSize = true;
+            this.lblAramaSearchBar.Location = new System.Drawing.Point(16, 104);
+            this.lblAramaSearchBar.Name = "lblAramaSearchBar";
+            this.lblAramaSearchBar.Size = new System.Drawing.Size(64, 13);
+            this.lblAramaSearchBar.TabIndex = 9;
+            this.lblAramaSearchBar.Text = "Ürün Giriniz:";
+            // 
+            // txtAramaSearchbar
+            // 
+            this.txtAramaSearchbar.Location = new System.Drawing.Point(86, 99);
+            this.txtAramaSearchbar.Name = "txtAramaSearchbar";
+            this.txtAramaSearchbar.Size = new System.Drawing.Size(186, 20);
+            this.txtAramaSearchbar.TabIndex = 8;
+            // 
+            // btnUrunAramaUser
+            // 
+            this.btnUrunAramaUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUrunAramaUser.BackgroundImage")));
+            this.btnUrunAramaUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUrunAramaUser.FlatAppearance.BorderSize = 0;
+            this.btnUrunAramaUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUrunAramaUser.Location = new System.Drawing.Point(291, 5);
+            this.btnUrunAramaUser.Name = "btnUrunAramaUser";
+            this.btnUrunAramaUser.Size = new System.Drawing.Size(60, 40);
+            this.btnUrunAramaUser.TabIndex = 7;
+            this.btnUrunAramaUser.UseVisualStyleBackColor = true;
+            this.btnUrunAramaUser.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // btnFavList
+            // 
+            this.btnFavList.BackgroundImage = global::YesilEvCodeFirst.UIWinForm.Properties.Resources.kalp2;
+            this.btnFavList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFavList.FlatAppearance.BorderSize = 0;
+            this.btnFavList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFavList.Location = new System.Drawing.Point(136, 5);
+            this.btnFavList.Name = "btnFavList";
+            this.btnFavList.Size = new System.Drawing.Size(65, 65);
+            this.btnFavList.TabIndex = 15;
+            this.btnFavList.UseVisualStyleBackColor = true;
+            this.btnFavList.Click += new System.EventHandler(this.FavoriListeleriniHazirla);
+            // 
+            // pnlFavLists
+            // 
+            this.pnlFavLists.Controls.Add(this.btnUserBilgileri);
+            this.pnlFavLists.Controls.Add(this.dgvFavProducts);
+            this.pnlFavLists.Controls.Add(this.lblFavoriListeSec);
+            this.pnlFavLists.Controls.Add(this.cbFavLists);
+            this.pnlFavLists.Location = new System.Drawing.Point(0, 1);
+            this.pnlFavLists.Name = "pnlFavLists";
+            this.pnlFavLists.Size = new System.Drawing.Size(363, 511);
+            this.pnlFavLists.TabIndex = 17;
+            // 
+            // btnUserBilgileri
+            // 
+            this.btnUserBilgileri.BackgroundImage = global::YesilEvCodeFirst.UIWinForm.Properties.Resources.user;
+            this.btnUserBilgileri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUserBilgileri.FlatAppearance.BorderSize = 0;
+            this.btnUserBilgileri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserBilgileri.Location = new System.Drawing.Point(292, 11);
+            this.btnUserBilgileri.Name = "btnUserBilgileri";
+            this.btnUserBilgileri.Size = new System.Drawing.Size(60, 40);
+            this.btnUserBilgileri.TabIndex = 8;
+            this.btnUserBilgileri.UseVisualStyleBackColor = true;
+            this.btnUserBilgileri.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // dgvFavProducts
+            // 
+            this.dgvFavProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvFavProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFavProducts.Location = new System.Drawing.Point(12, 156);
+            this.dgvFavProducts.Name = "dgvFavProducts";
+            this.dgvFavProducts.Size = new System.Drawing.Size(338, 342);
+            this.dgvFavProducts.TabIndex = 2;
+            this.dgvFavProducts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFavProducts_CellDoubleClick);
+            // 
+            // lblFavoriListeSec
+            // 
+            this.lblFavoriListeSec.AutoSize = true;
+            this.lblFavoriListeSec.Location = new System.Drawing.Point(28, 118);
+            this.lblFavoriListeSec.Name = "lblFavoriListeSec";
+            this.lblFavoriListeSec.Size = new System.Drawing.Size(86, 13);
+            this.lblFavoriListeSec.TabIndex = 1;
+            this.lblFavoriListeSec.Text = "Favori Liste Seç:";
+            //
+            // lblUrunDetayUrunBilesimi
+            //
+            this.lblUrunDetayUrunBilesimi.AutoSize = true;
+            this.lblUrunDetayUrunBilesimi.ForeColor = System.Drawing.Color.Black;
+            this.lblUrunDetayUrunBilesimi.Location = new System.Drawing.Point(10, 420);
+            this.lblUrunDetayUrunBilesimi.Name = "lblUrunDetayUrunBilesimi";
+            this.lblUrunDetayUrunBilesimi.Size = new System.Drawing.Size(103, 19);
+            this.lblUrunDetayUrunBilesimi.TabIndex = 29;
+            this.lblUrunDetayUrunBilesimi.Text = "Ürün Bileşemi";
             // 
             // btnShowList
             // 
@@ -1965,6 +2104,65 @@
             this.pnlShowProducts.Size = new System.Drawing.Size(341, 247);
             this.pnlShowProducts.TabIndex = 31;
             // 
+            // cbFavLists
+            // 
+            this.cbFavLists.FormattingEnabled = true;
+            this.cbFavLists.Location = new System.Drawing.Point(120, 115);
+            this.cbFavLists.Name = "cbFavLists";
+            this.cbFavLists.Size = new System.Drawing.Size(178, 21);
+            this.cbFavLists.TabIndex = 0;
+            this.cbFavLists.SelectedIndexChanged += new System.EventHandler(this.cbFavLists_SelectedIndexChanged);
+            // 
+            // pnlKaraListe
+            // 
+            this.pnlKaraListe.Controls.Add(this.lblKaraListeUyari);
+            this.pnlKaraListe.Controls.Add(this.lblKaralisteOlanMaddeler);
+            this.pnlKaraListe.Controls.Add(this.dgvBlackListSupplements);
+            this.pnlKaraListe.Controls.Add(this.btnKaralisteUser);
+            this.pnlKaraListe.Location = new System.Drawing.Point(1, 1);
+            this.pnlKaraListe.Name = "pnlKaraListe";
+            this.pnlKaraListe.Size = new System.Drawing.Size(363, 509);
+            this.pnlKaraListe.TabIndex = 9;
+            // 
+            // lblKaraListeUyari
+            // 
+            this.lblKaraListeUyari.AutoSize = true;
+            this.lblKaraListeUyari.Location = new System.Drawing.Point(166, 176);
+            this.lblKaraListeUyari.Name = "lblKaraListeUyari";
+            this.lblKaraListeUyari.Size = new System.Drawing.Size(0, 13);
+            this.lblKaraListeUyari.TabIndex = 20;
+            // 
+            // lblKaralisteOlanMaddeler
+            // 
+            this.lblKaralisteOlanMaddeler.AutoSize = true;
+            this.lblKaralisteOlanMaddeler.Location = new System.Drawing.Point(11, 176);
+            this.lblKaralisteOlanMaddeler.Name = "lblKaralisteOlanMaddeler";
+            this.lblKaralisteOlanMaddeler.Size = new System.Drawing.Size(138, 13);
+            this.lblKaralisteOlanMaddeler.TabIndex = 19;
+            this.lblKaralisteOlanMaddeler.Text = "Kara Listede olan maddeler:";
+            // 
+            // dgvBlackListSupplements
+            // 
+            this.dgvBlackListSupplements.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBlackListSupplements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBlackListSupplements.Location = new System.Drawing.Point(11, 199);
+            this.dgvBlackListSupplements.Name = "dgvBlackListSupplements";
+            this.dgvBlackListSupplements.Size = new System.Drawing.Size(340, 299);
+            this.dgvBlackListSupplements.TabIndex = 18;
+            // 
+            // btnKaralisteUser
+            // 
+            this.btnKaralisteUser.BackgroundImage = global::YesilEvCodeFirst.UIWinForm.Properties.Resources.user;
+            this.btnKaralisteUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnKaralisteUser.FlatAppearance.BorderSize = 0;
+            this.btnKaralisteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKaralisteUser.Location = new System.Drawing.Point(289, 17);
+            this.btnKaralisteUser.Name = "btnKaralisteUser";
+            this.btnKaralisteUser.Size = new System.Drawing.Size(60, 40);
+            this.btnKaralisteUser.TabIndex = 8;
+            this.btnKaralisteUser.UseVisualStyleBackColor = true;
+            this.btnKaralisteUser.Click += new System.EventHandler(this.UserButton_Click);
+            // 
             // UserSayfasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1976,6 +2174,8 @@
             this.Controls.Add(this.SideBar);
             this.Controls.Add(this.UserBilgileri);
             this.Controls.Add(this.UrunArama);
+            this.Controls.Add(this.pnlKaraListe);
+            this.Controls.Add(this.pnlFavLists);
             this.MaximumSize = new System.Drawing.Size(380, 750);
             this.Name = "UserSayfasi";
             this.Text = "Form3";
@@ -2037,8 +2237,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.pnlFavLists.ResumeLayout(false);
+            this.pnlFavLists.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFavProducts)).EndInit();
+            this.pnlKaraListe.ResumeLayout(false);
+            this.pnlKaraListe.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBlackListSupplements)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -2126,7 +2331,7 @@
         private System.Windows.Forms.Label lblEkledigiUrunSayisi;
         private System.Windows.Forms.Label lblUyelikTarihi;
         private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnUserBilgileriCikisYap;
         private System.Windows.Forms.Button btnAramaGeçmişiTemizle;
         private System.Windows.Forms.Button btnKaraListe;
         private System.Windows.Forms.Button btnUserFavori;
@@ -2162,14 +2367,12 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog3;
         private System.Windows.Forms.OpenFileDialog openFileDialog4;
         private System.Windows.Forms.Panel UrunArama;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnSearchbarAra;
         private System.Windows.Forms.Label lblAramaSearchBar;
         private System.Windows.Forms.TextBox txtAramaSearchbar;
         private System.Windows.Forms.DataGridView dataGridViewProducts;
         private System.Windows.Forms.Panel UrunDetay;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnUrunDetayUser;
         private System.Windows.Forms.PictureBox pcbUrun;
         private System.Windows.Forms.Label lblMarka;
         private System.Windows.Forms.Label lblAltKategori;
@@ -2190,8 +2393,24 @@
         private System.Windows.Forms.Label lblOrtaRiskNum;
         private System.Windows.Forms.Label lblCokRiskNum;
         private System.Windows.Forms.Label lblMessage;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUrunDetayUrunBilesimi;
         private System.Windows.Forms.Button btnShowList;
         private System.Windows.Forms.Panel pnlShowProducts;
+        private System.Windows.Forms.Button btnDGVTemizle;
+        private System.Windows.Forms.Button btnFavList;
+        private System.Windows.Forms.Label lblFavoriList;
+        private System.Windows.Forms.Panel pnlFavLists;
+        private System.Windows.Forms.DataGridView dgvFavProducts;
+        private System.Windows.Forms.Label lblFavoriListeSec;
+        private System.Windows.Forms.ComboBox cbFavLists;
+        private System.Windows.Forms.Button btnUrunAramaUser;
+        private System.Windows.Forms.Button btnUserBilgileri;
+        private System.Windows.Forms.Label labelUrunSayisi;
+        private System.Windows.Forms.Panel pnlKaraListe;
+        private System.Windows.Forms.Button btnKaralisteUser;
+        private System.Windows.Forms.Label lblKaralisteOlanMaddeler;
+        private System.Windows.Forms.DataGridView dgvBlackListSupplements;
+        private System.Windows.Forms.Label lblKaraListeUyari;
+
     }
 }

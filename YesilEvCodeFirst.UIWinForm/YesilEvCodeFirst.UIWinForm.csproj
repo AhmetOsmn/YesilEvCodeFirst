@@ -70,6 +70,11 @@
     <Compile Include="GirisKayitForm.Designer.cs">
       <DependentUpon>GirisKayitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Raporlar\Form16.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,13 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -297,6 +298,8 @@
     <Content Include="ContextLtst\Image\hakkinda.png" />
     <Content Include="ContextLtst\Image\home.png" />
     <Content Include="ContextLtst\Image\instagram.png" />
+    <Content Include="ContextLtst\Image\kalp.jpg" />
+    <Content Include="ContextLtst\Image\kalp2.png" />
     <Content Include="ContextLtst\Image\karaliste.png" />
     <Content Include="ContextLtst\Image\kullanimkosullari.png" />
     <Content Include="ContextLtst\Image\menu.png" />

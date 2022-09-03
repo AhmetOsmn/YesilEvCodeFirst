@@ -73,13 +73,14 @@
     <Compile Include="Rapor\Rapor15DTO.cs" />
     <Compile Include="Supplement\AddSupplementDTO.cs" />
     <Compile Include="Supplement\ListSupplementDTO.cs" />
+    <Compile Include="Supplement\SupplementDTO.cs" />
     <Compile Include="Supplier\SupplierDTO.cs" />
     <Compile Include="UserAdmin\AddUserDTO.cs" />
     <Compile Include="UserAdmin\UserDetailDTO.cs" />
     <Compile Include="UserBlackList\AddOrEditBlackListDTO.cs" />
-    <Compile Include="SupplementBlackList\ListToSupplementBlackListDTO.cs" />
+    <Compile Include="UserBlackList\BlackListDTO.cs" />
     <Compile Include="UserFavList\AddOrEditFavListDTO.cs" />
-    <Compile Include="UserFavList\ListToFavListDTO.cs" />
+    <Compile Include="UserFavList\FavListDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YesilEvCodeFirst.Core\YesilEvCodeFirst.Core.csproj">

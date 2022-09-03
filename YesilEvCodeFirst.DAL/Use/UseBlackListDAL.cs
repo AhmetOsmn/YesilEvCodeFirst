@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using NLog;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
 using YesilEvCodeFirst.DTOs.UserBlackList;
-using YesilEvCodeFirst.DTOs;
-using YesilEvCodeFirst.Logs.Concrete;
 using YesilEvCodeFirst.Mapping;
-using NLog;
-using YesilEvCodeFirst.DTOs.Category;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
-    public class UseSupplementBlackListDAL : EfRepoBase<YesilEvDbContext, BlackList>
+    public class UseBlackListDAL : EfRepoBase<YesilEvDbContext, BlackList>
     {
         readonly Logger nLogger = LogManager.GetCurrentClassLogger();
 
@@ -45,7 +38,7 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             catch (Exception ex)
             {
-
+                nLogger.Error("System - {}", ex.Message);
             }
             return false;
         }
@@ -74,9 +67,32 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             catch (Exception ex)
             {
-
+                nLogger.Error("System - {}", ex.Message);
             }
             return false;
+        }
+
+        public int GetBlackListIDWithUserID(int id)
+        {
+            try
+            {
+                BlackList blackList = GetByCondition(u => u.UserID.Equals(id)).FirstOrDefault();
+                if (blackList != null)
+                {
+                    nLogger.Info("{} ID'li kullanicinin kara liste ID'si getirildi.", id);
+                    return blackList.BlackListID;
+                }
+                else
+                {
+                    throw new Exception("Liste bulunamadı");
+                }
+            }
+            catch (Exception ex)
+            {
+                nLogger.Error("System - {}", ex.Message);
+            }
+
+            return 0;
         }
 
     }
