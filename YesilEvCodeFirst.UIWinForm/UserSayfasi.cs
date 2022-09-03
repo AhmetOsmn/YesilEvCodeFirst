@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs.Category;
@@ -172,11 +173,11 @@ namespace YesilEvCodeFirst.UIWinForm
                     if (result)
                     {
                         MessageBox.Show("Ürün Eklendi");
-                        txtUrunEkleBarkod.Text = "";
-                        txtUrunEkleUrunAdi.Text = "";
-                        txtUrunEkleUrunIcerik.Text = "";
-                        cmbBoxUrunEkleKategori.Text = "";
-                        cmbBoxUrunEkleUretici.Text = "";
+                        CloseAllPages();
+                        int lastAddedProductID = useProductDAL.GetProductDetailWithBarcode(txtUrunEkleBarkod.Text).ProductID;
+                        GoProductDetails(lastAddedProductID);
+                        // todo: eklenen ürüne ait olan detay sayfasında yonlendirilecek
+                        Clean();
                     }
                     else
                     {
@@ -205,11 +206,10 @@ namespace YesilEvCodeFirst.UIWinForm
                         if (result)
                         {
                             MessageBox.Show("Ürün Güncellendi");
-                            txtBarkodNo.Text = "";
-                            txtUrunAdi.Text = "";
-                            txtUrunIcerik.Text = "";
-                            cmbBoxKategori.Text = "";
-                            cmbBoxUretici.Text = "";
+                            // todo: eklenen ürüne ait olan detay sayfasında yonlendirilecek
+                            int lastUpdatedProductID = useProductDAL.GetProductDetailWithBarcode(txtBarkodNo.Text).ProductID;
+                            GoProductDetails(lastUpdatedProductID);
+                            Clean();
                         }
                     }
                 }
@@ -292,6 +292,8 @@ namespace YesilEvCodeFirst.UIWinForm
             dataGridView1.DataSource = null;
         }
 
+        #region FileDialogs
+
         private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnOnYuz.Text = openFileDialog1.SafeFileName;
@@ -308,6 +310,9 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             btnUrunEkleArkaYuz.Text = openFileDialog4.SafeFileName;
         }
+
+        #endregion
+
         private void btnOnYuz_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
@@ -425,26 +430,13 @@ namespace YesilEvCodeFirst.UIWinForm
                     ProductID = selectedProductID,
                 });
 
-                selectedProduct = useProductDAL.GetProductDetailWithID(selectedProductID);
-                UserDetailDTO adder = useUserDAL.GetUserDetailWithID(selectedProduct.AddedBy);
-
-                lblAltKategori.Text = selectedProduct.CategoryName;
-                lblMarka.Text = selectedProduct.SupplierName;
-                lblUrunAd.Text = selectedProduct.ProductName;
-                lblMessage.Text = adder.FirstName + " " + adder.LastName + " tarafından oluşturulmuştur.";
-                pcbUrun.Image = Image.FromFile(selectedProduct.PictureFronthPath);
-                pcbUrun.BackgroundImageLayout = ImageLayout.Tile;
-                List<ListSupplementDTO> supplements = useProductSupplementDAL.GetSupplementsWithProductID(selectedProductID);
-
-                CreateProductsInLabel(supplements);
-
-                UrunArama.Visible = false;
-                UrunDetay.Visible = true;
+                GoProductDetails(selectedProductID);
+                
             }
             catch (Exception ex)
             {
 
-                throw new Exception(ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -470,11 +462,10 @@ namespace YesilEvCodeFirst.UIWinForm
                 pnlShowProducts.Controls.Add(lbl);
             }
         }
-
        
         private void btnShowList_Click(object sender, EventArgs e)
         {
-            if (isProductSupplementOpen)
+            if (!isProductSupplementOpen)
             {
                 ProductSupplementDetailOpen();
             }
@@ -489,8 +480,6 @@ namespace YesilEvCodeFirst.UIWinForm
             txtAramaSearchbar.Text = "";
         }
 
-
-
         private void cbFavLists_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgvFavProducts.DataSource = null;
@@ -503,23 +492,17 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void dgvFavProducts_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int selectedProductID = Convert.ToInt32(dgvFavProducts.Rows[e.RowIndex].Cells[0].Value);
-            selectedProduct = useProductDAL.GetProductDetailWithID(selectedProductID);
-            UserDetailDTO adder = useUserDAL.GetUserDetailWithID(selectedProduct.AddedBy);
+            try
+            {
+                int selectedProductID = Convert.ToInt32(dgvFavProducts.Rows[e.RowIndex].Cells[0].Value);
 
-            lblAltKategori.Text = selectedProduct.CategoryName;
-            lblMarka.Text = selectedProduct.SupplierName;
-            lblUrunAd.Text = selectedProduct.ProductName;
-            lblMessage.Text = adder.FirstName + " " + adder.LastName + " tarafından oluşturulmuştur.";
-            pcbUrun.Image = Image.FromFile(selectedProduct.PictureFronthPath);
-            pcbUrun.BackgroundImageLayout = ImageLayout.Tile;
+                GoProductDetails(selectedProductID);
+            }
+            catch (Exception ex)
+            {
 
-            List<ListSupplementDTO> supplements = useProductSupplementDAL.GetSupplementsWithProductID(selectedProductID);
-
-            CreateProductsInLabel(supplements);
-
-            pnlFavLists.Visible = false;
-            UrunDetay.Visible = true;
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FavoriListeleriniHazirla(object sender, EventArgs e)
@@ -617,5 +600,29 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             //to do barkod okuma sayfası eklenecek
         }
+    
+        private void GoProductDetails(int productID)
+        {
+            // todo: urun duzenleme yapildigi zaman, bu metot cagirildiginda 612. satirda guncellemeden onceki verileri getiriliyor.
+            // hocaya sorulacak
+
+            CloseAllPages();
+
+            UrunDetay.Visible = true;
+
+            selectedProduct = useProductDAL.GetProductDetailWithID(productID);
+            UserDetailDTO adder = useUserDAL.GetUserDetailWithID(selectedProduct.AddedBy);
+
+            lblAltKategori.Text = selectedProduct.CategoryName;
+            lblMarka.Text = selectedProduct.SupplierName;
+            lblUrunAd.Text = selectedProduct.ProductName;
+            lblMessage.Text = adder.FirstName + " " + adder.LastName + " tarafından oluşturulmuştur.";
+            pcbUrun.Image = Image.FromFile(selectedProduct.PictureFronthPath);
+            pcbUrun.BackgroundImageLayout = ImageLayout.Tile;
+            List<ListSupplementDTO> supplements = useProductSupplementDAL.GetSupplementsWithProductID(productID);
+
+            CreateProductsInLabel(supplements);
+        }
+    
     }
 }
