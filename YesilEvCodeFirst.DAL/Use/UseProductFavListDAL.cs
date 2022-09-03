@@ -15,7 +15,7 @@ namespace YesilEvCodeFirst.DAL.Use
     public class UseProductFavListDAL : EfRepoBase<YesilEvDbContext, ProductFavList>
     {
         readonly Logger nLogger = LogManager.GetCurrentClassLogger();
-        public bool AddProductFavList(AddProductFavListDTO dto)
+        public bool AddProductToFavList(AddProductFavListDTO dto)
         {
             try
             {
@@ -26,7 +26,7 @@ namespace YesilEvCodeFirst.DAL.Use
                         var favlist = context.FavList.Where(u => u.FavorID.Equals(dto.FavorID)).FirstOrDefault();
                         if (favlist == null)
                         {
-
+                            
                             context.FavList.Add(new FavList
                             {
                                 FavorID = dto.FavorID

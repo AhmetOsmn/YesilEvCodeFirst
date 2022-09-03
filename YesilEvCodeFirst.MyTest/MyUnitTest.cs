@@ -510,7 +510,7 @@ namespace YesilEvCodeFirst.MyTest
         public void Deneme2Test()
         {
             UseProductFavListDAL dal = new UseProductFavListDAL();
-            var result = dal.AddProductFavList(new AddProductFavListDTO
+            var result = dal.AddProductToFavList(new AddProductFavListDTO
             {
 
                 FavorID = 1,
