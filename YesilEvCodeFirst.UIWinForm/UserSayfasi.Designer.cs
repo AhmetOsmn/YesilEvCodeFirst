@@ -2123,15 +2123,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 711);
+            this.Controls.Add(this.UrunDetay);
             this.Controls.Add(this.UrunEkleDuzenle);
-            this.Controls.Add(this.SideBar);
             this.Controls.Add(this.AramaGecmisi);
             this.Controls.Add(this.Anasayfa);
             this.Controls.Add(this.UserBilgileri);
             this.Controls.Add(this.UrunArama);
             this.Controls.Add(this.pnlKaraListe);
             this.Controls.Add(this.pnlFavLists);
-            this.Controls.Add(this.UrunDetay);
+            this.Controls.Add(this.SideBar);
             this.MaximumSize = new System.Drawing.Size(380, 750);
             this.Name = "UserSayfasi";
             this.Text = "Form3";

@@ -14,6 +14,5 @@ namespace YesilEvCodeFirst.Core.Entities
         public User User{ get; set; }
 
         public List<ProductFavList> ProductFavList { get; set; }
-        public List<UserFavList> UserFavList { get; set; }
     }
 }

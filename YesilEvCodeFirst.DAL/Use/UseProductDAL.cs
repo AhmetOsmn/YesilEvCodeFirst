@@ -103,78 +103,147 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    using (DbContextTransaction trans = context.Database.BeginTransaction())
+                    try
                     {
-                        try
+                        var tempProduct = context.Product.Where(x => x.Barcode.Equals(dto.Barcode)).FirstOrDefault();
+                        if (tempProduct != null && tempProduct.AddedBy == dto.AddedBy)
                         {
-                            var tempProduct = context.Product.Where(x => x.Barcode.Equals(dto.Barcode)).FirstOrDefault();
-                            if (tempProduct != null && tempProduct.AddedBy == dto.AddedBy)
-                            {
-                                tempProduct.ProductName = dto.ProductName;
-                                tempProduct.CategoryID = dto.CategoryID;
-                                tempProduct.ProductContent = dto.ProductContent;
-                                tempProduct.AddedBy = dto.AddedBy;
-                                var supplements = tempProduct.ProductContent.Split(',');
-                                //refactor edilecek
-                                var temp = context.ProductSupplement.Where(x => x.ProductID == tempProduct.ProductID).ToList();
-                                context.ProductSupplement.RemoveRange(temp);
-                                MySaveChanges();
-                                nLogger.Info("Urunun eski icerikleri silindi"); ;
-                                for (int i = 0; i < supplements.Length; i++)
-                                {
-                                    string sup = supplements[i].Trim();
-                                    var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
-                                    if (result == null)
-                                    {
-                                        UseSupplementDAL supplementDAL = new UseSupplementDAL();
-                                        supplementDAL.AddSupplement(new AddSupplementDTO { SupplementName = sup });
-                                        context.ProductSupplement.Add(new ProductSupplement()
-                                        {
-                                            ProductID = tempProduct.ProductID,
-                                            SupplementID = context.Supplement.ToList().LastOrDefault().SupplementID
-                                        });
-                                        nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", tempProduct.ProductName, sup);
-                                    }
-                                    else
-                                    {
-                                        context.ProductSupplement.Add(new ProductSupplement()
-                                        {
-                                            ProductID = tempProduct.ProductID,
-                                            SupplementID = result.SupplementID
-                                        });
-                                        nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", tempProduct.ProductName, sup);
-                                    }
-                                }
-                                tempProduct.PictureBackPath = dto.PictureBackPath;
-                                tempProduct.PictureFronthPath = dto.PictureFronthPath;
-                                tempProduct.SupplierID = dto.SupplierID;
-                                context.SaveChanges();
-                                trans.Commit();
-                                nLogger.Info("{} urunu guncellendi", tempProduct.ProductName);
-                            }
-                            else if (tempProduct.AddedBy != dto.AddedBy)
-                            {
+                            tempProduct.ProductName = dto.ProductName;
+                            tempProduct.CategoryID = dto.CategoryID;
+                            tempProduct.ProductContent = dto.ProductContent;
+                            tempProduct.AddedBy = dto.AddedBy;
+                            tempProduct.PictureBackPath = dto.PictureBackPath;
+                            tempProduct.PictureFronthPath = dto.PictureFronthPath;
+                            tempProduct.SupplierID = dto.SupplierID;
 
-                                throw new Exception("Urun Kullaniciya ait degil");
-                            }
-                            else
+                            var supplements = tempProduct.ProductContent.Split(',');
+                            //refactor edilecek
+                            var temp = context.ProductSupplement.Where(x => x.ProductID == tempProduct.ProductID).ToList();
+                            context.ProductSupplement.RemoveRange(temp);
+                            MySaveChanges();
+                            nLogger.Info("Urunun eski icerikleri silindi"); ;
+                            for (int i = 0; i < supplements.Length; i++)
                             {
-                                throw new Exception("Urun mevcut değil");
+                                string sup = supplements[i].Trim();
+                                var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
+                                if (result == null)
+                                {
+                                    UseSupplementDAL supplementDAL = new UseSupplementDAL();
+                                    supplementDAL.AddSupplement(new AddSupplementDTO { SupplementName = sup });
+                                    context.ProductSupplement.Add(new ProductSupplement()
+                                    {
+                                        ProductID = tempProduct.ProductID,
+                                        SupplementID = context.Supplement.ToList().LastOrDefault().SupplementID
+                                    });
+                                    nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", tempProduct.ProductName, sup);
+                                }
+                                else
+                                {
+                                    context.ProductSupplement.Add(new ProductSupplement()
+                                    {
+                                        ProductID = tempProduct.ProductID,
+                                        SupplementID = result.SupplementID
+                                    });
+                                    nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", tempProduct.ProductName, sup);
+                                }
                             }
-                            
+
+                            context.SaveChanges();
+                            nLogger.Info("{} urunu guncellendi", tempProduct.ProductName);
+                            return true;
                         }
-                        catch (Exception ex)
+                        else if (tempProduct.AddedBy != dto.AddedBy)
                         {
-                            trans.Rollback();
-                            throw new Exception(ex.Message);
+
+                            throw new Exception("Urun Kullaniciya ait degil");
                         }
-                        finally
+                        else
                         {
-                            trans.Dispose();
+                            throw new Exception("Urun mevcut değil");
                         }
-                       
-                        return true;
+
                     }
+                    catch (Exception ex)
+                    {
+                        nLogger.Error("System - {}", ex.Message);
+                    }
+
+                    return false;
+
+                    //using (DbContextTransaction trans = context.Database.BeginTransaction())
+                    //{
+                    //    //try
+                    //    //{
+                    //    //    var tempProduct = context.Product.Where(x => x.Barcode.Equals(dto.Barcode)).FirstOrDefault();
+                    //    //    if (tempProduct != null && tempProduct.AddedBy == dto.AddedBy)
+                    //    //    {
+                    //    //        tempProduct.ProductName = dto.ProductName;
+                    //    //        tempProduct.CategoryID = dto.CategoryID;
+                    //    //        tempProduct.ProductContent = dto.ProductContent;
+                    //    //        tempProduct.AddedBy = dto.AddedBy;
+                    //    //        tempProduct.PictureBackPath = dto.PictureBackPath;
+                    //    //        tempProduct.PictureFronthPath = dto.PictureFronthPath;
+                    //    //        tempProduct.SupplierID = dto.SupplierID;
+
+                    //    //        var supplements = tempProduct.ProductContent.Split(',');
+                    //    //        //refactor edilecek
+                    //    //        var temp = context.ProductSupplement.Where(x => x.ProductID == tempProduct.ProductID).ToList();
+                    //    //        context.ProductSupplement.RemoveRange(temp);
+                    //    //        MySaveChanges();
+                    //    //        nLogger.Info("Urunun eski icerikleri silindi"); ;
+                    //    //        for (int i = 0; i < supplements.Length; i++)
+                    //    //        {
+                    //    //            string sup = supplements[i].Trim();
+                    //    //            var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
+                    //    //            if (result == null)
+                    //    //            {
+                    //    //                UseSupplementDAL supplementDAL = new UseSupplementDAL();
+                    //    //                supplementDAL.AddSupplement(new AddSupplementDTO { SupplementName = sup });
+                    //    //                context.ProductSupplement.Add(new ProductSupplement()
+                    //    //                {
+                    //    //                    ProductID = tempProduct.ProductID,
+                    //    //                    SupplementID = context.Supplement.ToList().LastOrDefault().SupplementID
+                    //    //                });
+                    //    //                nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", tempProduct.ProductName, sup);
+                    //    //            }
+                    //    //            else
+                    //    //            {
+                    //    //                context.ProductSupplement.Add(new ProductSupplement()
+                    //    //                {
+                    //    //                    ProductID = tempProduct.ProductID,
+                    //    //                    SupplementID = result.SupplementID
+                    //    //                });
+                    //    //                nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", tempProduct.ProductName, sup);
+                    //    //            }
+                    //    //        }
+
+                    //    //        context.SaveChanges();
+                    //    //        trans.Commit();
+                    //    //        nLogger.Info("{} urunu guncellendi", tempProduct.ProductName);
+                    //    //    }
+                    //    //    else if (tempProduct.AddedBy != dto.AddedBy)
+                    //    //    {
+
+                    //    //        throw new Exception("Urun Kullaniciya ait degil");
+                    //    //    }
+                    //    //    else
+                    //    //    {
+                    //    //        throw new Exception("Urun mevcut değil");
+                    //    //    }
+
+                    //    //}
+                    //    //catch (Exception ex)
+                    //    //{
+                    //    //    trans.Rollback();
+                    //    //    throw new Exception(ex.Message);
+                    //    //}
+                    //    //finally
+                    //    //{
+                    //    //    trans.Dispose();
+                    //    //}
+
+                    //    //return true;
+                    //}
                 }
             }
             catch (ModelNotValidException ex)

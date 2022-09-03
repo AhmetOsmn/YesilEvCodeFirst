@@ -71,23 +71,6 @@ namespace YesilEvCodeFirst.Core.Context
 
             #endregion
 
-            #region UserFavList
-
-            modelBuilder.Entity<UserFavList>()
-                .HasKey(t => new { t.UserID, t.FavListID });
-
-            modelBuilder.Entity<UserFavList>()
-                .HasRequired(uf => uf.User)
-                .WithMany(u => u.UserFavList)
-                .HasForeignKey(uf => uf.UserID);
-
-            modelBuilder.Entity<UserFavList>()
-                .HasRequired(uf => uf.FavList)
-                .WithMany(fl => fl.UserFavList)
-                .HasForeignKey(uf => uf.FavListID);
-
-            #endregion
-
         }
 
         public DbSet<BlackList> BlackList { get; set; }
@@ -103,7 +86,6 @@ namespace YesilEvCodeFirst.Core.Context
         public DbSet<User> User { get; set; }
         public DbSet<ProductSupplement> ProductSupplement { get; set; }
         public DbSet<SupplementBlackList> SupplementBlackList { get; set; }
-        public DbSet<UserFavList> UserFavList { get; set; }
         public DbSet<ProductFavList> ProductFavList { get; set; }
         public DbSet<SearchHistory> SearchHistory { get; set; }
     }

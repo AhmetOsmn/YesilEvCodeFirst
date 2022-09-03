@@ -8,6 +8,7 @@ using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs.Category;
 using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.SearchHistory;
+using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.DTOs.Supplier;
 using YesilEvCodeFirst.DTOs.UserAdmin;
 using YesilEvCodeFirst.DTOs.UserFavList;
@@ -32,12 +33,13 @@ namespace YesilEvCodeFirst.UIWinForm
         readonly UseProductFavListDAL useProductFavListDAL = new UseProductFavListDAL();
         readonly UseBlackListDAL useBlackListDAL = new UseBlackListDAL();
         readonly UseSupplementBlackListDAL useSupplementBlackListDAL = new UseSupplementBlackListDAL();
+        readonly UseProductSupplementDAL useProductSupplementDAL = new UseProductSupplementDAL();
 
         public UserSayfasi()
         {
             InitializeComponent();
             sideBarKapa();
-            CreateProductsInLabel();
+            //CreateProductsInLabel();
             UrunEkleDuzenle.Visible = false;
             UserBilgileri.Visible = false;
             AramaGecmisi.Visible = false;
@@ -138,7 +140,6 @@ namespace YesilEvCodeFirst.UIWinForm
         private void UrunEkleDuzenle_Click(object sender, EventArgs e)
         {
             Anasayfa.Visible = false;
-            UrunEkleDuzenle.Visible = true;
             List<SupplierDTO> suppliers = useSupplierDAL.GetSupplierList();
             List<CategoryDTO> categories = useCategoryDAL.GetCategoryList();
             foreach (SupplierDTO item in suppliers)
@@ -151,6 +152,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 cmbBoxUrunEkleKategori.Items.Add(item);
                 cmbBoxKategori.Items.Add(item);
             }
+            UrunEkleDuzenle.Visible = true;
         }
 
         private void UserButton_Click(object sender, EventArgs e)
@@ -213,9 +215,9 @@ namespace YesilEvCodeFirst.UIWinForm
                         {
                             AddedBy = Kullanici.UserID,
                             Barcode = txtBarkodNo.Text,
-                            SupplierID = ((CategoryDTO)cmbBoxKategori.SelectedItem).CategoryID,
+                            CategoryID = ((CategoryDTO)cmbBoxKategori.SelectedItem).CategoryID,
                             ProductName = txtUrunAdi.Text,
-                            CategoryID = ((SupplierDTO)cmbBoxUretici.SelectedItem).SupplierID,
+                            SupplierID = ((SupplierDTO)cmbBoxUretici.SelectedItem).SupplierID,
                             PictureBackPath = openFileDialog2.FileName,
                             PictureFronthPath = openFileDialog1.FileName,
                             ProductContent = txtUrunIcerik.Text
@@ -444,9 +446,18 @@ namespace YesilEvCodeFirst.UIWinForm
                     ProductID = selectedProductID,
                 });
 
-                var result = useProductDAL.GetProductDetailWithID(selectedProductID);
+                GetProductDetailDTO selectedProduct = useProductDAL.GetProductDetailWithID(selectedProductID);
 
-                MessageBox.Show("arama gecmisine kayit edildi");
+                lblAltKategori.Text = selectedProduct.CategoryName;
+                lblMarka.Text = "buraya getirebilmek icin urune marka eklenecek.";
+                lblUrunAd.Text = selectedProduct.ProductName;
+                lblMessage.Text = selectedProduct.AddedBy + " tarafından oluşturulmuştur.";
+                List<ListSupplementDTO> supplements = useProductSupplementDAL.GetSupplementsWithProductID(selectedProductID);
+
+                CreateProductsInLabel(supplements);
+
+                UrunArama.Visible = false;
+                UrunDetay.Visible = true;
             }
             catch (Exception ex)
             {
@@ -455,29 +466,24 @@ namespace YesilEvCodeFirst.UIWinForm
             }
         }
 
-private void button3_Click(object sender, EventArgs e)
-        {
-            UrunDetay.Visible = true;
-        }
 
-        int count = 1;
+
+
         int Y = 0;
-        private void CreateProductsInLabel()
+        private void CreateProductsInLabel(List<ListSupplementDTO> supplements)
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < supplements.Count; i++)
             {
                 Label lbl = new Label();
-                lbl.Text = count.ToString();
-                lbl.Name = count.ToString();
+                lbl.Text = supplements[i].SupplementName;
+                lbl.Name = i.ToString();
                 lbl.Size = new Size(330, 18);
                 lbl.BackColor = Color.White;
                 lbl.ForeColor = Color.Black;
                 lbl.Location = new Point(15, 25 * (Y + 1));
                 Y++;
-                count++;
                 pnlShowProducts.Controls.Add(lbl);
             }
-
         }
 
         int sum = 0;
@@ -486,17 +492,17 @@ private void button3_Click(object sender, EventArgs e)
             if (sum % 2 == 0)
             {
                 pnlShowProducts.Visible = true;
-                btnShowList.BackgroundImage = Image.FromFile(@"E:\repos\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\up.jpg");
+                btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\up.jpg");
             }
             else
             {
                 pnlShowProducts.Visible = false;
-                btnShowList.BackgroundImage = Image.FromFile(@"E:\repos\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\drop.jpg");
+                btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\drop.jpg");
             }
 
             sum++;
-       }
-private void btnDGVTemizle_Click(object sender, EventArgs e)
+        }
+        private void btnDGVTemizle_Click(object sender, EventArgs e)
         {
             dataGridViewProducts.DataSource = null;
             txtAramaSearchbar.Text = "";
@@ -517,8 +523,21 @@ private void btnDGVTemizle_Click(object sender, EventArgs e)
         private void dgvFavProducts_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int selectedProductID = Convert.ToInt32(dgvFavProducts.Rows[e.RowIndex].Cells[0].Value);
-            GetProductDetailDTO productDetailDTO = useProductDAL.GetProductDetailWithID(selectedProductID);
-            MessageBox.Show(productDetailDTO.Barcode + " lu, " + productDetailDTO.ProductName + " isimli ürün seçildi.");
+            GetProductDetailDTO selectedProduct = useProductDAL.GetProductDetailWithID(selectedProductID);
+
+            lblAltKategori.Text = selectedProduct.CategoryName;
+            lblMarka.Text = "buraya getirebilmek icin urune marka eklenecek.";
+            lblUrunAd.Text = selectedProduct.ProductName;
+            lblMessage.Text = selectedProduct.AddedBy + " tarafından oluşturulmuştur.";
+            pcbUrun.Image = Image.FromFile(selectedProduct.PictureFronthPath);
+            pcbUrun.BackgroundImageLayout = ImageLayout.Tile;
+
+            List<ListSupplementDTO> supplements = useProductSupplementDAL.GetSupplementsWithProductID(selectedProductID);
+
+            CreateProductsInLabel(supplements);
+
+            pnlFavLists.Visible = false;
+            UrunDetay.Visible = true;
         }
 
         private void FavoriListeleriniHazirla(object sender, EventArgs e)
