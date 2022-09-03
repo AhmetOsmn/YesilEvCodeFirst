@@ -39,12 +39,11 @@ namespace YesilEvCodeFirst.Core.Entities
 
         public int? ApprovedBy { get; set; }
         [ForeignKey("ApprovedBy")]
-        public User Admin { get; set; } 
+        public User User { get; set; }
 
-        public List<ProductSupplement> ProductSupplements{ get; set; }
+        public List<ProductSupplement> ProductSupplements { get; set; }
         public List<ProductFavList> ProductFavList { get; set; }
         public List<SearchHistory> ProductSearchHistories { get; set; }
-
         #endregion
     }
 }

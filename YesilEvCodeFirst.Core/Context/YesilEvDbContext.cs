@@ -23,7 +23,7 @@ namespace YesilEvCodeFirst.Core.Context
             #region ProductFavList
 
             modelBuilder.Entity<ProductFavList>()
-               .HasKey(t => new { t.ProductID, t.FavListID });
+               .HasKey(t => new { t.ProductID, t.FavorID });
 
             modelBuilder.Entity<ProductFavList>()
                .HasRequired(pf => pf.Product)
@@ -33,7 +33,7 @@ namespace YesilEvCodeFirst.Core.Context
             modelBuilder.Entity<ProductFavList>()
                 .HasRequired(pf => pf.FavList)
                 .WithMany(fl => fl.ProductFavList)
-                .HasForeignKey(pf => pf.FavListID);
+                .HasForeignKey(pf => pf.FavorID);
 
             #endregion
 
@@ -71,31 +71,27 @@ namespace YesilEvCodeFirst.Core.Context
 
             #endregion
 
-            #region UserFavList
 
-            modelBuilder.Entity<UserFavList>()
-                .HasKey(t => new { t.UserID, t.FavListID });
+            //modelBuilder.Entity<FavList>()
+            //    .HasKey(t => new { t.UserID, t.FavorID });
 
-            modelBuilder.Entity<UserFavList>()
-                .HasRequired(uf => uf.User)
-                .WithMany(u => u.UserFavList)
-                .HasForeignKey(uf => uf.UserID);
+            //modelBuilder.Entity<FavList>()
+            //    .HasRequired(uf => uf.User)
+            //    .WithMany(u => u.UserFavList)
+            //    .HasForeignKey(uf => uf.UserID);
 
-            modelBuilder.Entity<UserFavList>()
-                .HasRequired(uf => uf.FavList)
-                .WithMany(fl => fl.UserFavList)
-                .HasForeignKey(uf => uf.FavListID);
+            //modelBuilder.Entity<FavList>()
+            //    .HasRequired(uf => uf.FavList)
+            //    .WithMany(fl => fl.UserFavList)
+            //    .HasForeignKey(uf => uf.FavListID);
 
-            #endregion
+            //#endregion
 
         }
 
         public DbSet<BlackList> BlackList { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<FavList> FavList { get; set; }
-
-        //public DbSet<Picture> Picture { get; set; }
-
         public DbSet<Product> Product { get; set; }
         public DbSet<Role> Role { get; set; }
         public DbSet<Supplement> Supplement { get; set; }
@@ -103,7 +99,6 @@ namespace YesilEvCodeFirst.Core.Context
         public DbSet<User> User { get; set; }
         public DbSet<ProductSupplement> ProductSupplement { get; set; }
         public DbSet<SupplementBlackList> SupplementBlackList { get; set; }
-        public DbSet<UserFavList> UserFavList { get; set; }
         public DbSet<ProductFavList> ProductFavList { get; set; }
         public DbSet<SearchHistory> SearchHistory { get; set; }
     }

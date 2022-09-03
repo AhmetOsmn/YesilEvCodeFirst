@@ -3,6 +3,7 @@ using System;
 using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Product;
+using YesilEvCodeFirst.DTOs.ProductFavList;
 using YesilEvCodeFirst.DTOs.SearchHistory;
 using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.DTOs.SupplementBlackList;
@@ -131,8 +132,9 @@ namespace YesilEvCodeFirst.MyTest
             bool result = dal.AddFavList(new AddOrEditFavListDTO()
             {
                 UserID = 1,
+                FavoriListName = "Sarp Sinema",
             });
-            if(!result)
+            if (!result)
             {
                 throw new Exception("test sirasinda hata olustu");
             }
@@ -193,6 +195,23 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
+        
+        [TestMethod]
+        public void DeleteProFavListTest()
+        {
+
+            UseProductFavListDAL dal = new UseProductFavListDAL();
+            bool result = dal.DeleteProductFavList(new AddProductFavListDTO
+            {
+                ProductID = 1,
+                FavorID = 1,
+            });
+
+            if (!result)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
 
         [TestMethod]
         public void DeleteFavListTest()
@@ -202,6 +221,7 @@ namespace YesilEvCodeFirst.MyTest
             bool result = dal.DeleteFavList(new AddOrEditFavListDTO
             {
                 UserID = 1,
+                FavorID = 2,
             });
 
             if (!result)
@@ -209,6 +229,25 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
+
+        [TestMethod]
+        public void UpdateFavListTest()
+        {
+
+            UseFavListDAL dal = new UseFavListDAL();
+            bool result = dal.UpdateFavList(new AddOrEditFavListDTO
+            {
+                UserID = 1,
+                FavorID = 1,
+                FavoriListName = "Deneme",
+            });
+
+            if (!result)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+
 
 
         #endregion
@@ -375,8 +414,8 @@ namespace YesilEvCodeFirst.MyTest
             {
                 throw new Exception("test sirasinda hata olustu");
             }
-        }       
-        
+        }
+
         [TestMethod]
         public void GetProductsWithFavListIDTest()
         {
@@ -411,7 +450,6 @@ namespace YesilEvCodeFirst.MyTest
         }
 
         #endregion
-
 
         #region BlackList Testleri
 
@@ -451,6 +489,30 @@ namespace YesilEvCodeFirst.MyTest
             }
 
         }
+        #endregion
+
+        #region FavTestleri
+
+        [TestMethod]
+        public void Deneme2Test()
+        {
+            UseProductFavListDAL dal = new UseProductFavListDAL();
+            var result = dal.AddProductFavList(new AddProductFavListDTO
+            {
+
+                FavorID = 1,
+                ProductID = 2,
+
+            });
+
+            if (result == false)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+
+        }
+
+
         #endregion
 
         #region Rapor Testleri 
