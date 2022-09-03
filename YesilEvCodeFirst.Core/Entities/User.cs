@@ -18,7 +18,7 @@ namespace YesilEvCodeFirst.Core.Entities
         public string LastName { get; set; }
 
         [Column(TypeName = "NVARCHAR")]
-        [StringLength(25)]
+        [StringLength(50)]
         public string Email { get; set; }
 
         [Column(TypeName = "NVARCHAR")]

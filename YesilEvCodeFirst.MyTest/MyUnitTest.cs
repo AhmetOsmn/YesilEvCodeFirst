@@ -513,8 +513,8 @@ namespace YesilEvCodeFirst.MyTest
             var result = dal.AddProductToFavList(new AddProductFavListDTO
             {
 
-                FavorID = 1,
-                ProductID = 2,
+                FavorID = 2,
+                ProductID = 1,
 
             });
 

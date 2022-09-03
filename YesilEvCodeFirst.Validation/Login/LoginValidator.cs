@@ -21,10 +21,10 @@ namespace YesilEvCodeFirst.Validation.Login
                 IsValid = false;
                 ValidationMessages.Add("Email boş bırakılamaz.");
             }  
-            else if (Model.Email.Length > 25)
+            else if (Model.Email.Length > 50)
             {
                 IsValid = false;
-                ValidationMessages.Add("Email 25 karakterden fazla olamaz.");
+                ValidationMessages.Add("Email 50 karakterden fazla olamaz.");
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -10,6 +11,8 @@ using System.Windows.Forms;
 using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.UserAdmin;
+using YesilEvCodeFirst.Validation;
+using YesilEvCodeFirst.Validation.Deneme;
 
 namespace YesilEvCodeFirst.UIWinForm
 {
@@ -40,39 +43,40 @@ namespace YesilEvCodeFirst.UIWinForm
         private void SignInButton_Click(object sender, EventArgs e)
         {
             // todo: buradaki if'ler validatorler ile yapilabilir mi?
-            if (txtGirisYapEmail.Text.Contains('@'))
-            {
-                if(!string.IsNullOrEmpty(txtGirisYapSifre.Text))
-                {
-                    LoginDTO dto = new LoginDTO()
-                    {
-                        Email = txtGirisYapEmail.Text,
-                        Password = txtGirisYapSifre.Text,
-                    };
-                    var result = userDAL.UserLogin(dto);
-                    if (result == null)
-                    {
-                        MessageBox.Show("Giriş Bilgileri Yanlış");
-                    }
-                    else
-                    {
-                        UserSayfasiAc(result);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Lütfen şifre giriniz.");
-                }
-                
-            }
-            else if (string.IsNullOrEmpty(txtGirisYapEmail.Text))
-            {
-                MessageBox.Show("Lütfen email giriniz.");
-            }
-            else
-            {
-                MessageBox.Show("Girilen Email Hatalıdır.");
-            }
+            //if (txtGirisYapEmail.Text.Contains('@'))
+            //{
+            //    if(!string.IsNullOrEmpty(txtGirisYapSifre.Text))
+            //    {
+            //        LoginDTO dto = new LoginDTO()
+            //        {
+            //            Email = txtGirisYapEmail.Text,
+            //            Password = txtGirisYapSifre.Text,
+            //        };
+            //        var result = userDAL.UserLogin(dto);
+            //        if (result == null)
+            //        {
+            //            MessageBox.Show("Giriş Bilgileri Yanlış");
+            //        }
+            //        else
+            //        {
+            //            UserSayfasiAc(result);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Lütfen şifre giriniz.");
+            //    }
+
+            //}
+            //else if (string.IsNullOrEmpty(txtGirisYapEmail.Text))
+            //{
+            //    MessageBox.Show("Lütfen email giriniz.");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Girilen Email Hatalıdır.");
+            //}
+
         }
         private void UserSayfasiAc(UserDetailDTO result)
         {
