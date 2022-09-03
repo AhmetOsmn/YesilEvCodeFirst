@@ -8,6 +8,7 @@ namespace YesilEvCodeFirst.Core.Entities
     {
         [Key]
         public int FavorID { get; set; }
+        public string FavoriListName{ get; set; }
 
         public int UserID { get; set; }
         public User User{ get; set; }

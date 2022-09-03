@@ -166,7 +166,7 @@ namespace YesilEvCodeFirst.DAL.Use
                         catch (Exception ex)
                         {
                             trans.Rollback();
-                            throw new Exception("Urun Eklerken hata olustu");
+                            throw new Exception(ex.Message);
                         }
                         finally
                         {

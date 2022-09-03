@@ -112,7 +112,7 @@ namespace YesilEvCodeFirst.MyTest
         [TestMethod]
         public void AddBlackListTest()
         {
-            UseSupplementBlackListDAL dal = new UseSupplementBlackListDAL();
+            UseBlackListDAL dal = new UseBlackListDAL();
             bool result = dal.AddBlackList(new AddOrEditBlackListDTO()
             {
                 UserID = 1,
@@ -123,7 +123,7 @@ namespace YesilEvCodeFirst.MyTest
                 throw new Exception("test sirasinda hata olustu");
             }
         }
-        
+
         [TestMethod]
         public void AddFavListTest()
         {
@@ -132,7 +132,11 @@ namespace YesilEvCodeFirst.MyTest
             {
                 UserID = 1,
             });
-
+            if(!result)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
         [TestMethod]
         public void AddSearchHistoryTest()
         {
@@ -178,7 +182,7 @@ namespace YesilEvCodeFirst.MyTest
         public void DeleteBlackListTest()
         {
 
-            UseSupplementBlackListDAL dal = new UseSupplementBlackListDAL();
+            UseBlackListDAL dal = new UseBlackListDAL();
             bool result = dal.DeleteBlackList(new AddOrEditBlackListDTO
             {
                 UserID = 1,
@@ -210,6 +214,32 @@ namespace YesilEvCodeFirst.MyTest
         #endregion
 
         #region Listeleme Testleri
+
+        [TestMethod]
+        public void GetSupplementsWithBlackListIDTest()
+        {
+            UseSupplementBlackListDAL dal = new UseSupplementBlackListDAL();
+
+            var result = dal.GetSupplementsWithBlackListID(1);
+
+            if (result == null)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
+
+        [TestMethod]
+        public void GetBlackListWithUserIDTest()
+        {
+            UseBlackListDAL dal = new UseBlackListDAL();
+
+            var result = dal.GetBlackListWithUserID(1);
+
+            if (result == null)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }
 
         [TestMethod]
         public void GetSearchHistoryListTest()
@@ -323,30 +353,46 @@ namespace YesilEvCodeFirst.MyTest
         [TestMethod]
         public void GetSupplementBlackListDetailTest()
         {
-            SupplementBlackListDAL dal = new SupplementBlackListDAL();
+            UseSupplementBlackListDAL dal = new UseSupplementBlackListDAL();
 
-            var result = dal.GetDetailOfSupplementBlackList(1);
+            bool result = false;
 
 
-            if (result == null)
+            if (result == false)
             {
                 throw new Exception("test sirasinda hata olustu");
             }
         }
         
         [TestMethod]
-        public void GetFavListDetailTest()
+        public void GetFavListsWithUserIDTest()
         {
             UseFavListDAL dal = new UseFavListDAL();
 
-            var result = dal.GetDetailOfFavList(1);
+            var result = dal.GetFavListsWithUserID(1);
 
+            if (result == null)
+            {
+                throw new Exception("test sirasinda hata olustu");
+            }
+        }       
+        
+        [TestMethod]
+        public void GetProductsWithFavListIDTest()
+        {
+            UseProductFavListDAL dal = new UseProductFavListDAL();
+
+            var result = dal.GetProductsWithFavListID(3);
 
             if (result == null)
             {
                 throw new Exception("test sirasinda hata olustu");
             }
         }
+
+
+
+
 
         #endregion
 
@@ -372,7 +418,7 @@ namespace YesilEvCodeFirst.MyTest
         [TestMethod]
         public void DenemeTest()
         {
-            SupplementBlackListDAL dal = new SupplementBlackListDAL();
+            UseSupplementBlackListDAL dal = new UseSupplementBlackListDAL();
             var result = dal.AddSupplementBlackList(new AddSupplementBlackListDTO
             {
 
@@ -380,7 +426,7 @@ namespace YesilEvCodeFirst.MyTest
                 SupplementID = 1,
 
             });
-            if (result == null)
+            if (!result)
             {
                 throw new Exception("test sirasinda hata olustu");
             }
@@ -390,7 +436,7 @@ namespace YesilEvCodeFirst.MyTest
         [TestMethod]
         public void Deneme1Test()
         {
-            SupplementBlackListDAL dal = new SupplementBlackListDAL();
+            UseSupplementBlackListDAL dal = new UseSupplementBlackListDAL();
             var result = dal.DeleteSupplementBlackList(new AddSupplementBlackListDTO
             {
 
