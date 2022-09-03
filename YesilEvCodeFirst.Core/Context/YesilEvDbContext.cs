@@ -71,7 +71,6 @@ namespace YesilEvCodeFirst.Core.Context
 
             #endregion
 
-
             //modelBuilder.Entity<FavList>()
             //    .HasKey(t => new { t.UserID, t.FavorID });
 
@@ -86,7 +85,6 @@ namespace YesilEvCodeFirst.Core.Context
             //    .HasForeignKey(uf => uf.FavListID);
 
             //#endregion
-
         }
 
         public DbSet<BlackList> BlackList { get; set; }

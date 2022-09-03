@@ -8,6 +8,7 @@ using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs.Category;
 using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.SearchHistory;
+using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.DTOs.Supplier;
 using YesilEvCodeFirst.DTOs.UserAdmin;
 using YesilEvCodeFirst.DTOs.UserFavList;
@@ -17,12 +18,16 @@ namespace YesilEvCodeFirst.UIWinForm
 
     public partial class UserSayfasi : Form
     {
-        bool isAddProduct = false;
+
+        bool isProductSupplementOpen = false;
+        bool isAddProduct = true;
         bool isUpdatable = false;
         bool sideBarExpand = false;
-        //string frontPic = "";
-        //string backPic = "";
+
         GetProductDetailDTO dto = null;
+        GetProductDetailDTO selectedProduct = null;
+        FavListDTO selectedFavList = null;
+
         public UserDetailDTO Kullanici;
         readonly UseSupplierDAL useSupplierDAL = new UseSupplierDAL();
         readonly UseCategoryDAL useCategoryDAL = new UseCategoryDAL();
@@ -32,22 +37,14 @@ namespace YesilEvCodeFirst.UIWinForm
         readonly UseProductFavListDAL useProductFavListDAL = new UseProductFavListDAL();
         readonly UseBlackListDAL useBlackListDAL = new UseBlackListDAL();
         readonly UseSupplementBlackListDAL useSupplementBlackListDAL = new UseSupplementBlackListDAL();
+        readonly UseProductSupplementDAL useProductSupplementDAL = new UseProductSupplementDAL();
+        readonly UseUserDAL useUserDAL = new UseUserDAL();
 
         public UserSayfasi()
         {
             InitializeComponent();
-            sideBarKapa();
-            CreateProductsInLabel();
-            UrunEkleDuzenle.Visible = false;
-            UserBilgileri.Visible = false;
-            AramaGecmisi.Visible = false;
-            pnlFavLists.Visible = false;
-            pnlKaraListe.Visible = false;
-            UrunArama.Visible = false;
+            CloseAllPages();
             Anasayfa.Visible = true;
-            SideBar.Visible = true;
-            UrunDetay.Visible = false;
-            pnlShowProducts.Visible = false;
         }
 
         private void Menu_Click(object sender, EventArgs e)
@@ -60,8 +57,6 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 sideBarAc();
             }
-
-
         }
         private void sideBarAc()
         {
@@ -102,15 +97,8 @@ namespace YesilEvCodeFirst.UIWinForm
         }
         private void Home_Click(object sender, EventArgs e)
         {
-            UrunEkleDuzenle.Visible = false;
-            AramaGecmisi.Visible = false;
-            pnlFavLists.Visible = false;
-            pnlKaraListe.Visible = false;
-            sideBarKapa();
+            CloseAllPages();
             Anasayfa.Visible = true;
-            UserBilgileri.Visible = false;
-            UrunArama.Visible = false;
-            UrunDetay.Visible = false;
         }
 
         private void UrunDuzenle_Click(object sender, EventArgs e)
@@ -120,7 +108,6 @@ namespace YesilEvCodeFirst.UIWinForm
             btnUrunDuzenle.BackColor = Color.DarkGreen;
             UrunDuzenle.Visible = true;
             btnUrunEkle.BackColor = Color.Green;
-            isAddProduct = false;
             Clean();
         }
 
@@ -128,17 +115,16 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             UrunDuzenle.Visible = false;
             isAddProduct = true;
+            isUpdatable = false;
             btnUrunEkle.BackColor = Color.DarkGreen;
             UrunEkle.Visible = true;
             btnUrunDuzenle.BackColor = Color.Green;
-            isAddProduct = true;
             Clean();
         }
 
         private void UrunEkleDuzenle_Click(object sender, EventArgs e)
         {
-            Anasayfa.Visible = false;
-            UrunEkleDuzenle.Visible = true;
+            CloseAllPages();
             List<SupplierDTO> suppliers = useSupplierDAL.GetSupplierList();
             List<CategoryDTO> categories = useCategoryDAL.GetCategoryList();
             foreach (SupplierDTO item in suppliers)
@@ -151,17 +137,12 @@ namespace YesilEvCodeFirst.UIWinForm
                 cmbBoxUrunEkleKategori.Items.Add(item);
                 cmbBoxKategori.Items.Add(item);
             }
+            UrunEkleDuzenle.Visible = true;
         }
 
         private void UserButton_Click(object sender, EventArgs e)
         {
-            Anasayfa.Visible = false;
-            UrunArama.Visible = false;
-            pnlFavLists.Visible = false;
-            pnlKaraListe.Visible = false;
-            sideBarKapa();
-            UrunEkleDuzenle.Visible = false;
-            AramaGecmisi.Visible = false;
+            CloseAllPages();
             UserBilgileri.Visible = true;
             lblUyelikTarihiValue.Text = Kullanici.CreatedDate.ToString();
             lblUserName.Text = Kullanici.FirstName + " " + Kullanici.LastName;
@@ -213,9 +194,9 @@ namespace YesilEvCodeFirst.UIWinForm
                         {
                             AddedBy = Kullanici.UserID,
                             Barcode = txtBarkodNo.Text,
-                            SupplierID = ((CategoryDTO)cmbBoxKategori.SelectedItem).CategoryID,
+                            CategoryID = ((CategoryDTO)cmbBoxKategori.SelectedItem).CategoryID,
                             ProductName = txtUrunAdi.Text,
-                            CategoryID = ((SupplierDTO)cmbBoxUretici.SelectedItem).SupplierID,
+                            SupplierID = ((SupplierDTO)cmbBoxUretici.SelectedItem).SupplierID,
                             PictureBackPath = openFileDialog2.FileName,
                             PictureFronthPath = openFileDialog1.FileName,
                             ProductContent = txtUrunIcerik.Text
@@ -299,9 +280,9 @@ namespace YesilEvCodeFirst.UIWinForm
         }
         private void btnAramaGecmisiFavori_Click(object sender, EventArgs e)
         {
-            AramaGecmisi.Visible = true;
-            Anasayfa.Visible = false;
+            CloseAllPages();
             dataGridView1.DataSource = useSearchHistoryDAL.GetSearchHistoryListWithUserID(Kullanici.UserID).OrderByDescending(x => x.SearchDate).ToList();
+            AramaGecmisi.Visible = true;
         }
 
         private void GecmisiTemizle(object sender, EventArgs e)
@@ -412,8 +393,8 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void btnArama_Click(object sender, EventArgs e)
         {
+            CloseAllPages();
             UrunArama.Visible = true;
-            Anasayfa.Visible = false;
         }
 
         private void btnSearchbarAra_Click(object sender, EventArgs e)
@@ -444,9 +425,21 @@ namespace YesilEvCodeFirst.UIWinForm
                     ProductID = selectedProductID,
                 });
 
-                var result = useProductDAL.GetProductDetailWithID(selectedProductID);
+                selectedProduct = useProductDAL.GetProductDetailWithID(selectedProductID);
+                UserDetailDTO adder = useUserDAL.GetUserDetailWithID(selectedProduct.AddedBy);
 
-                MessageBox.Show("arama gecmisine kayit edildi");
+                lblAltKategori.Text = selectedProduct.CategoryName;
+                lblMarka.Text = selectedProduct.SupplierName;
+                lblUrunAd.Text = selectedProduct.ProductName;
+                lblMessage.Text = adder.FirstName + " " + adder.LastName + " tarafından oluşturulmuştur.";
+                pcbUrun.Image = Image.FromFile(selectedProduct.PictureFronthPath);
+                pcbUrun.BackgroundImageLayout = ImageLayout.Tile;
+                List<ListSupplementDTO> supplements = useProductSupplementDAL.GetSupplementsWithProductID(selectedProductID);
+
+                CreateProductsInLabel(supplements);
+
+                UrunArama.Visible = false;
+                UrunDetay.Visible = true;
             }
             catch (Exception ex)
             {
@@ -455,60 +448,54 @@ namespace YesilEvCodeFirst.UIWinForm
             }
         }
 
-private void button3_Click(object sender, EventArgs e)
-        {
-            UrunDetay.Visible = true;
-        }
-
-        int count = 1;
         int Y = 0;
-        private void CreateProductsInLabel()
+        private void CreateProductsInLabel(List<ListSupplementDTO> supplements)
         {
-            for (int i = 0; i < 10; i++)
+
+           if(pnlShowProducts.Controls.Count != 0)
+            {
+                Y = 0;
+                pnlShowProducts.Controls.Clear();
+            }
+            for (int i = 0; i < supplements.Count; i++)
             {
                 Label lbl = new Label();
-                lbl.Text = count.ToString();
-                lbl.Name = count.ToString();
-                lbl.Size = new Size(330, 18);
+                lbl.Text = supplements[i].SupplementName;
+                lbl.Name = i.ToString();
+                lbl.Size = new Size(300, 18);
                 lbl.BackColor = Color.White;
                 lbl.ForeColor = Color.Black;
-                lbl.Location = new Point(15, 25 * (Y + 1));
+                lbl.Location = new Point(15, 20 * (Y + 1));
                 Y++;
-                count++;
                 pnlShowProducts.Controls.Add(lbl);
             }
-
         }
 
-        int sum = 0;
+       
         private void btnShowList_Click(object sender, EventArgs e)
         {
-            if (sum % 2 == 0)
+            if (isProductSupplementOpen)
             {
-                pnlShowProducts.Visible = true;
-                btnShowList.BackgroundImage = Image.FromFile(@"E:\repos\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\up.jpg");
+                ProductSupplementDetailOpen();
             }
             else
             {
-                pnlShowProducts.Visible = false;
-                btnShowList.BackgroundImage = Image.FromFile(@"E:\repos\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\drop.jpg");
+                ProductSupplementDetailClose();
             }
-
-            sum++;
-       }
-private void btnDGVTemizle_Click(object sender, EventArgs e)
+        }
+        private void btnDGVTemizle_Click(object sender, EventArgs e)
         {
             dataGridViewProducts.DataSource = null;
             txtAramaSearchbar.Text = "";
         }
 
-        FavListDTO SeciliOlanList = null;
+
 
         private void cbFavLists_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgvFavProducts.DataSource = null;
-            SeciliOlanList = (FavListDTO)cbFavLists.SelectedItem;
-            dgvFavProducts.DataSource = useProductFavListDAL.GetProductsWithFavListID(SeciliOlanList.FavorID);
+            selectedFavList = (FavListDTO)cbFavLists.SelectedItem;
+            dgvFavProducts.DataSource = useProductFavListDAL.GetProductsWithFavListID(selectedFavList.FavorID);
             dgvFavProducts.Columns[0].Visible = false;
             dgvFavProducts.Columns[1].ReadOnly = true;
             dgvFavProducts.Columns[1].HeaderText = "Ürün";
@@ -517,16 +504,28 @@ private void btnDGVTemizle_Click(object sender, EventArgs e)
         private void dgvFavProducts_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int selectedProductID = Convert.ToInt32(dgvFavProducts.Rows[e.RowIndex].Cells[0].Value);
-            GetProductDetailDTO productDetailDTO = useProductDAL.GetProductDetailWithID(selectedProductID);
-            MessageBox.Show(productDetailDTO.Barcode + " lu, " + productDetailDTO.ProductName + " isimli ürün seçildi.");
+            selectedProduct = useProductDAL.GetProductDetailWithID(selectedProductID);
+            UserDetailDTO adder = useUserDAL.GetUserDetailWithID(selectedProduct.AddedBy);
+
+            lblAltKategori.Text = selectedProduct.CategoryName;
+            lblMarka.Text = selectedProduct.SupplierName;
+            lblUrunAd.Text = selectedProduct.ProductName;
+            lblMessage.Text = adder.FirstName + " " + adder.LastName + " tarafından oluşturulmuştur.";
+            pcbUrun.Image = Image.FromFile(selectedProduct.PictureFronthPath);
+            pcbUrun.BackgroundImageLayout = ImageLayout.Tile;
+
+            List<ListSupplementDTO> supplements = useProductSupplementDAL.GetSupplementsWithProductID(selectedProductID);
+
+            CreateProductsInLabel(supplements);
+
+            pnlFavLists.Visible = false;
+            UrunDetay.Visible = true;
         }
 
         private void FavoriListeleriniHazirla(object sender, EventArgs e)
         {
+            CloseAllPages();
             cbFavLists.Items.Clear();
-            UrunArama.Visible = false;
-            UserBilgileri.Visible = false;
-            pnlFavLists.Visible = true;
             List<FavListDTO> favLists = useFavListDAL.GetFavListsWithUserID(Kullanici.UserID);
             if (favLists.Count != 0)
             {
@@ -535,22 +534,22 @@ private void btnDGVTemizle_Click(object sender, EventArgs e)
                     cbFavLists.Items.Add(item);
                 }
                 cbFavLists.SelectedIndex = 0;
-                SeciliOlanList = (FavListDTO)cbFavLists.SelectedItem;
-                dgvFavProducts.DataSource = useProductFavListDAL.GetProductsWithFavListID(SeciliOlanList.FavorID);
+                selectedFavList = (FavListDTO)cbFavLists.SelectedItem;
+                dgvFavProducts.DataSource = useProductFavListDAL.GetProductsWithFavListID(selectedFavList.FavorID);
                 dgvFavProducts.Columns[0].Visible = false;
                 dgvFavProducts.Columns[1].ReadOnly = true;
                 dgvFavProducts.Columns[1].HeaderText = "Ürün";
             }
             else
             {
-                cbFavLists.Text = "Fovori listesi bulunamadı";
+                cbFavLists.Text = "Favori listesi bulunamadı";
             }
+            pnlFavLists.Visible = true;
         }
 
         private void KaraListeyiHazirla(object sender, EventArgs e)
         {
-            UserBilgileri.Visible = false;
-            pnlKaraListe.Visible = true;
+            CloseAllPages();
             int blacklistID = useBlackListDAL.GetBlackListIDWithUserID(Kullanici.UserID);
             if (blacklistID != 0)
             {
@@ -563,6 +562,60 @@ private void btnDGVTemizle_Click(object sender, EventArgs e)
             {
                 lblKaraListeUyari.Text = "Kara Liste bulunamadı";
             }
+            pnlKaraListe.Visible = true;
+        }
+        bool isBackPicture = false;
+        private void UrunDetayResimDegistir_Click(object sender, EventArgs e)
+        {
+            isBackPicture = !isBackPicture;
+            if (isBackPicture)
+            {
+                pcbUrun.Image = Image.FromFile(selectedProduct.PictureBackPath);
+            }
+            else
+            {
+                pcbUrun.Image = Image.FromFile(selectedProduct.PictureFronthPath);
+            }
+        }
+        private void ProductSupplementDetailOpen()
+        {
+            isProductSupplementOpen = true;
+            this.MaximumSize = new Size(380, 630);
+            this.Height = 630;
+            UrunDetay.Height = 690;
+            pnlShowProducts.Height = 190;
+            pnlShowProducts.BackColor = Color.Red;
+            pnlShowProducts.Visible = true;
+            //btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\up.jpg");
+        }
+        private void ProductSupplementDetailClose()
+        {
+            isProductSupplementOpen=false;
+            this.MaximumSize = new Size(380, 540);
+            this.Height = 540;
+            pnlShowProducts.Height = 35;
+            pnlShowProducts.Visible = false;
+            //btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\drop.jpg");
+        }
+
+        private void CloseAllPages()
+        {
+            Anasayfa.Visible = false;
+            UrunEkleDuzenle.Visible = false;
+            UserBilgileri.Visible = false;
+            AramaGecmisi.Visible = false;
+            pnlFavLists.Visible = false;
+            pnlKaraListe.Visible = false;
+            UrunArama.Visible = false;
+            Anasayfa.Visible = false;
+            UrunDetay.Visible = false;
+            sideBarKapa();
+            ProductSupplementDetailClose();
+        }
+
+        private void btnBarkodOku_Click(object sender, EventArgs e)
+        {
+            //to do barkod okuma sayfası eklenecek
         }
     }
 }
