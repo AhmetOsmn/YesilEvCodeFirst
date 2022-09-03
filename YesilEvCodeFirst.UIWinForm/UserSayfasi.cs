@@ -18,12 +18,14 @@ namespace YesilEvCodeFirst.UIWinForm
 
     public partial class UserSayfasi : Form
     {
-        bool isAddProduct = false;
+        bool isAddProduct = true;
         bool isUpdatable = false;
         bool sideBarExpand = false;
-        //string frontPic = "";
-        //string backPic = "";
+
         GetProductDetailDTO dto = null;
+        GetProductDetailDTO selectedProduct = null;
+        FavListDTO selectedFavList = null;
+
         public UserDetailDTO Kullanici;
         readonly UseSupplierDAL useSupplierDAL = new UseSupplierDAL();
         readonly UseCategoryDAL useCategoryDAL = new UseCategoryDAL();
@@ -34,6 +36,7 @@ namespace YesilEvCodeFirst.UIWinForm
         readonly UseBlackListDAL useBlackListDAL = new UseBlackListDAL();
         readonly UseSupplementBlackListDAL useSupplementBlackListDAL = new UseSupplementBlackListDAL();
         readonly UseProductSupplementDAL useProductSupplementDAL = new UseProductSupplementDAL();
+        readonly UseUserDAL useUserDAL = new UseUserDAL();
 
         public UserSayfasi()
         {
@@ -120,7 +123,6 @@ namespace YesilEvCodeFirst.UIWinForm
             btnUrunDuzenle.BackColor = Color.DarkGreen;
             UrunDuzenle.Visible = true;
             btnUrunEkle.BackColor = Color.Green;
-            isAddProduct = false;
             Clean();
         }
 
@@ -131,7 +133,7 @@ namespace YesilEvCodeFirst.UIWinForm
             btnUrunEkle.BackColor = Color.DarkGreen;
             UrunEkle.Visible = true;
             btnUrunDuzenle.BackColor = Color.Green;
-            isAddProduct = true;
+            isUpdatable = false;
             Clean();
         }
 
@@ -444,12 +446,15 @@ namespace YesilEvCodeFirst.UIWinForm
                     ProductID = selectedProductID,
                 });
 
-                GetProductDetailDTO selectedProduct = useProductDAL.GetProductDetailWithID(selectedProductID);
+                selectedProduct = useProductDAL.GetProductDetailWithID(selectedProductID);
+                UserDetailDTO adder = useUserDAL.GetUserDetailWithID(selectedProduct.AddedBy);
 
                 lblAltKategori.Text = selectedProduct.CategoryName;
                 lblMarka.Text = selectedProduct.SupplierName;
                 lblUrunAd.Text = selectedProduct.ProductName;
-                lblMessage.Text = selectedProduct.AddedBy + " tarafından oluşturulmuştur.";
+                lblMessage.Text = adder.FirstName + " " + adder.LastName + " tarafından oluşturulmuştur.";
+                pcbUrun.Image = Image.FromFile(selectedProduct.PictureFronthPath);
+                pcbUrun.BackgroundImageLayout = ImageLayout.Tile;
                 List<ListSupplementDTO> supplements = useProductSupplementDAL.GetSupplementsWithProductID(selectedProductID);
 
                 CreateProductsInLabel(supplements);
@@ -467,6 +472,12 @@ namespace YesilEvCodeFirst.UIWinForm
         int Y = 0;
         private void CreateProductsInLabel(List<ListSupplementDTO> supplements)
         {
+            if (pnlShowProducts.Controls.Count != 0)
+            {
+                Y = 0;
+                pnlShowProducts.Controls.Clear();
+            }
+
             for (int i = 0; i < supplements.Count; i++)
             {
                 Label lbl = new Label();
@@ -508,13 +519,13 @@ namespace YesilEvCodeFirst.UIWinForm
             txtAramaSearchbar.Text = "";
         }
 
-        FavListDTO SeciliOlanList = null;
+
 
         private void cbFavLists_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgvFavProducts.DataSource = null;
-            SeciliOlanList = (FavListDTO)cbFavLists.SelectedItem;
-            dgvFavProducts.DataSource = useProductFavListDAL.GetProductsWithFavListID(SeciliOlanList.FavorID);
+            selectedFavList = (FavListDTO)cbFavLists.SelectedItem;
+            dgvFavProducts.DataSource = useProductFavListDAL.GetProductsWithFavListID(selectedFavList.FavorID);
             dgvFavProducts.Columns[0].Visible = false;
             dgvFavProducts.Columns[1].ReadOnly = true;
             dgvFavProducts.Columns[1].HeaderText = "Ürün";
@@ -523,12 +534,13 @@ namespace YesilEvCodeFirst.UIWinForm
         private void dgvFavProducts_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int selectedProductID = Convert.ToInt32(dgvFavProducts.Rows[e.RowIndex].Cells[0].Value);
-            GetProductDetailDTO selectedProduct = useProductDAL.GetProductDetailWithID(selectedProductID);
+            selectedProduct = useProductDAL.GetProductDetailWithID(selectedProductID);
+            UserDetailDTO adder = useUserDAL.GetUserDetailWithID(selectedProduct.AddedBy);
 
             lblAltKategori.Text = selectedProduct.CategoryName;
-            lblMarka.Text = "buraya getirebilmek icin urune marka eklenecek.";
+            lblMarka.Text = selectedProduct.SupplierName;
             lblUrunAd.Text = selectedProduct.ProductName;
-            lblMessage.Text = selectedProduct.AddedBy + " tarafından oluşturulmuştur.";
+            lblMessage.Text = adder.FirstName + " " + adder.LastName + " tarafından oluşturulmuştur.";
             pcbUrun.Image = Image.FromFile(selectedProduct.PictureFronthPath);
             pcbUrun.BackgroundImageLayout = ImageLayout.Tile;
 
@@ -554,8 +566,8 @@ namespace YesilEvCodeFirst.UIWinForm
                     cbFavLists.Items.Add(item);
                 }
                 cbFavLists.SelectedIndex = 0;
-                SeciliOlanList = (FavListDTO)cbFavLists.SelectedItem;
-                dgvFavProducts.DataSource = useProductFavListDAL.GetProductsWithFavListID(SeciliOlanList.FavorID);
+                selectedFavList = (FavListDTO)cbFavLists.SelectedItem;
+                dgvFavProducts.DataSource = useProductFavListDAL.GetProductsWithFavListID(selectedFavList.FavorID);
                 dgvFavProducts.Columns[0].Visible = false;
                 dgvFavProducts.Columns[1].ReadOnly = true;
                 dgvFavProducts.Columns[1].HeaderText = "Ürün";
@@ -583,11 +595,18 @@ namespace YesilEvCodeFirst.UIWinForm
                 lblKaraListeUyari.Text = "Kara Liste bulunamadı";
             }
         }
-
+        bool isBackPicture = false;
         private void UrunDetayResimDegistir_Click(object sender, EventArgs e)
         {
-            //to do ürün resmi eklenecek
-            //pcbUrun.Image = 
+            isBackPicture = !isBackPicture;
+            if (isBackPicture)
+            {
+                pcbUrun.Image = Image.FromFile(selectedProduct.PictureBackPath);
+            }
+            else
+            {
+                pcbUrun.Image = Image.FromFile(selectedProduct.PictureFronthPath);
+            }
         }
     }
 }

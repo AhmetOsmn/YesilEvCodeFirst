@@ -115,5 +115,28 @@ namespace YesilEvCodeFirst.DAL.Use
 
             return null;
         }
+
+        public UserDetailDTO GetUserDetailWithID(int id)
+        {
+            try
+            {
+                User tempUser = GetByCondition(x => x.UserID.Equals(id)).FirstOrDefault();
+                if (tempUser != null)
+                {
+                    nLogger.Info("{} - kullanicisinin bilgileri getirildi", tempUser.FirstName + " " + tempUser.LastName);
+                    return MappingProfile.UserToGetUserDetailDTO(tempUser);
+                }
+                else
+                {
+                    throw new Exception("Kullanici bulunamadi.");
+                }
+            }
+            catch (Exception ex)
+            {
+                nLogger.Error("System - {}", ex.Message);
+            }
+
+            return null;
+        }
     }
 }
