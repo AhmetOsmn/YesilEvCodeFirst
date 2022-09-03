@@ -24,6 +24,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     try
                     {
                         var favlist = context.FavList.Where(u => u.FavorID.Equals(dto.FavorID)).FirstOrDefault();
+                        var list = context.ProductFavList.Where(u => u.FavorID.Equals(dto.FavorID) && u.ProductID.Equals(dto.ProductID)).FirstOrDefault();
                         if (favlist == null)
                         {
 
@@ -39,7 +40,7 @@ namespace YesilEvCodeFirst.DAL.Use
                             });
                             context.SaveChanges();
                         }
-                        else
+                        else if (list == null)
                         {
                             context.ProductFavList.Add(new ProductFavList
                             {
@@ -48,12 +49,16 @@ namespace YesilEvCodeFirst.DAL.Use
                             });
                             context.SaveChanges();
                         }
+                        else
+                        {
+                            throw new Exception("Listeden bulunan ürün tekrar listeye eklenemez.");
+                        }
 
                     }
                     catch (Exception ex)
                     {
 
-                        throw new Exception("Listeden bulunan ürün tekrar listeye eklenemez.");
+                        
                     }
 
                 }
