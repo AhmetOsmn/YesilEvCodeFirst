@@ -53,6 +53,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     if (blacklist != null)
                     {
                         blacklist.IsActive = false;
+                        blacklist.CreatedDate = DateTime.Now;
                         context.SaveChanges();
                     }
                     else

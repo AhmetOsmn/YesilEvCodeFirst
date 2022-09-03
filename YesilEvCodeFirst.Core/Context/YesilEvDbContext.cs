@@ -23,7 +23,7 @@ namespace YesilEvCodeFirst.Core.Context
             #region ProductFavList
 
             modelBuilder.Entity<ProductFavList>()
-               .HasKey(t => new { t.ProductID, t.FavListID });
+               .HasKey(t => new { t.ProductID, t.FavorID });
 
             modelBuilder.Entity<ProductFavList>()
                .HasRequired(pf => pf.Product)
@@ -33,7 +33,7 @@ namespace YesilEvCodeFirst.Core.Context
             modelBuilder.Entity<ProductFavList>()
                 .HasRequired(pf => pf.FavList)
                 .WithMany(fl => fl.ProductFavList)
-                .HasForeignKey(pf => pf.FavListID);
+                .HasForeignKey(pf => pf.FavorID);
 
             #endregion
 
@@ -71,6 +71,20 @@ namespace YesilEvCodeFirst.Core.Context
 
             #endregion
 
+            //modelBuilder.Entity<FavList>()
+            //    .HasKey(t => new { t.UserID, t.FavorID });
+
+            //modelBuilder.Entity<FavList>()
+            //    .HasRequired(uf => uf.User)
+            //    .WithMany(u => u.UserFavList)
+            //    .HasForeignKey(uf => uf.UserID);
+
+            //modelBuilder.Entity<FavList>()
+            //    .HasRequired(uf => uf.FavList)
+            //    .WithMany(fl => fl.UserFavList)
+            //    .HasForeignKey(uf => uf.FavListID);
+
+            //#endregion
         }
 
         public DbSet<BlackList> BlackList { get; set; }

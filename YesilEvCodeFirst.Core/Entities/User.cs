@@ -23,10 +23,6 @@ namespace YesilEvCodeFirst.Core.Entities
 
         [Column(TypeName = "NVARCHAR")]
         [StringLength(25)]
-        public string UserName { get; set; }
-
-        [Column(TypeName = "NVARCHAR")]
-        [StringLength(25)]
         public string Phone { get; set; }
 
         [Column(TypeName = "NVARCHAR")]
@@ -36,7 +32,6 @@ namespace YesilEvCodeFirst.Core.Entities
         public int RolID { get; set; }
         [ForeignKey("RolID")]
         public Role Rol { get; set; }
-
         public List<Product> Products { get; set; }
         public List<SearchHistory> UserSearchHistories { get; set; }
     }

@@ -40,7 +40,7 @@ namespace YesilEvCodeFirst.DAL.Use
                                     FavorID = y.FavorID
                                 }).Join(context.ProductFavList,
                                  onceki => onceki.FavorID,
-                                 pf => pf.FavListID,
+                                 pf => pf.FavorID,
                                  (x1, y1) => new
                                  {
                                      user = x1.user,

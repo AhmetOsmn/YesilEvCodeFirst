@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YesilEvCodeFirst.DTOs.UserFavList
+namespace YesilEvCodeFirst.DTOs.ProductFavList
 {
-    public class AddOrEditFavListDTO
+    public class AddProductFavListDTO
     {
-        public int UserID { get; set; }
+        public int ProductID { get; set; }
         public int FavorID { get; set; }
-        public string FavoriListName { get; set; }
+        public int UserID { get; set; }
     }
 }

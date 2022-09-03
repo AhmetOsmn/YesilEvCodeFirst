@@ -42,10 +42,40 @@ namespace YesilEvCodeFirst.DAL.Use
             {
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    var favlist = context.FavList.Where(u => u.UserID.Equals(dto.UserID)).FirstOrDefault();
+                    var favlist = context.FavList.Where(u => u.UserID.Equals(dto.UserID) && u.FavorID.Equals(dto.FavorID)).FirstOrDefault();
                     if (favlist != null)
                     {
                         favlist.IsActive = false;
+                        favlist.CreatedDate = DateTime.Now;
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        throw new Exception("Silme işlemi yapılamadı.");
+                    }
+                }
+
+                nLogger.Info("Favori liste tablosundan silme işlemi yapıldı.");
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                nLogger.Error("System - {}", ex.Message);
+            }
+            return false;
+        }
+        public bool UpdateFavList(AddOrEditFavListDTO dto)
+        {
+            try
+            {
+                using (YesilEvDbContext context = new YesilEvDbContext())
+                {
+                    var favlist = context.FavList.Where(u => u.UserID.Equals(dto.UserID) && u.FavorID.Equals(dto.FavorID)).FirstOrDefault();
+                    if (favlist != null)
+                    {
+                        favlist.FavoriListName = dto.FavoriListName;
+                        favlist.CreatedDate = DateTime.Now;
                         context.SaveChanges();
                     }
                     else
@@ -71,7 +101,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 var favlist = GetByCondition(u => u.UserID.Equals(id)).ToList();
                 if (favlist != null)
                 {
-                    nLogger.Info("{} ID'li kullanicinin favori listeleri getirildi.",id);
+                    nLogger.Info("{} ID'li kullanicinin favori listeleri getirildi.", id);
                     return MappingProfile.FavListToFavListDTO(favlist);
                 }
                 else
@@ -83,7 +113,7 @@ namespace YesilEvCodeFirst.DAL.Use
             {
                 nLogger.Error("System - {}", ex.Message);
             }
-            
+
             return null;
         }
     }

@@ -10,7 +10,7 @@ namespace YesilEvCodeFirst.Core.Entities
         public virtual Product Product { get; set; }
 
         [Key, Column(Order = 1)]
-        public int FavListID { get; set; }
+        public int FavorID { get; set; }
         public virtual FavList FavList { get; set; }
     }
 }

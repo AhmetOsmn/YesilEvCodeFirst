@@ -69,6 +69,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     if (suppblacklist != null)
                     {
                         suppblacklist.IsActive = false;
+                        suppblacklist.CreatedDate = DateTime.Now;
                         context.SaveChanges();
                     }
                     else
