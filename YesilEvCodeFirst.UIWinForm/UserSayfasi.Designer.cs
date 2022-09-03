@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSayfasi));
             this.pnlHome = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
@@ -197,6 +198,8 @@
             this.btnBarkodAramaBarkodAra = new System.Windows.Forms.Button();
             this.lblBarkodAramaBarkodNo = new System.Windows.Forms.Label();
             this.txtBarkodAramaBarkodNo = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pnlHome.SuspendLayout();
             this.pnlUygulamaPuanVer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUygulamaPuanVer)).BeginInit();
@@ -2034,6 +2037,7 @@
             this.UrunArama.Controls.Add(this.lblAramaSearchBar);
             this.UrunArama.Controls.Add(this.txtAramaSearchbar);
             this.UrunArama.Controls.Add(this.btnUrunAramaUser);
+            this.UrunArama.Controls.Add(this.menuStrip1);
             this.UrunArama.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UrunArama.Location = new System.Drawing.Point(0, 0);
             this.UrunArama.MaximumSize = new System.Drawing.Size(360, 510);
@@ -2064,6 +2068,7 @@
             this.dgvProducts.Size = new System.Drawing.Size(340, 340);
             this.dgvProducts.TabIndex = 12;
             this.dgvProducts.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewProducts_CellMouseDoubleClick);
+            this.dgvProducts.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvProducts_MouseClick);
             // 
             // btnSearchbarAra
             // 
@@ -2266,6 +2271,19 @@
             this.txtBarkodAramaBarkodNo.Size = new System.Drawing.Size(169, 20);
             this.txtBarkodAramaBarkodNo.TabIndex = 12;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(360, 24);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // UserSayfasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2281,6 +2299,7 @@
             this.Controls.Add(this.UrunEkleDuzenle);
             this.Controls.Add(this.AramaGecmisi);
             this.Controls.Add(this.BarkodArama);
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(380, 550);
             this.MinimumSize = new System.Drawing.Size(380, 550);
             this.Name = "UserSayfasi";
@@ -2527,5 +2546,7 @@
         private System.Windows.Forms.Button btnBarkodAramaBarkodAra;
         private System.Windows.Forms.Label lblBarkodAramaBarkodNo;
         private System.Windows.Forms.TextBox txtBarkodAramaBarkodNo;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

@@ -9,6 +9,7 @@ using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs.Category;
 using YesilEvCodeFirst.DTOs.Product;
+using YesilEvCodeFirst.DTOs.ProductFavList;
 using YesilEvCodeFirst.DTOs.SearchHistory;
 using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.DTOs.Supplier;
@@ -29,6 +30,7 @@ namespace YesilEvCodeFirst.UIWinForm
         GetProductDetailDTO dto = null;
         GetProductDetailDTO selectedProduct = null;
         FavListDTO selectedFavList = null;
+        AddProductFavListDTO addProductFavListDTO = null;
 
         public UserDetailDTO Kullanici;
         readonly UseSupplierDAL useSupplierDAL = new UseSupplierDAL();
@@ -128,7 +130,7 @@ namespace YesilEvCodeFirst.UIWinForm
         private void UrunEkleDuzenle_Click(object sender, EventArgs e)
         {
             CloseAllPages();
-            
+            UrunEkleDuzenle.Visible = true;
         }
 
         private void UserButton_Click(object sender, EventArgs e)
@@ -619,7 +621,7 @@ namespace YesilEvCodeFirst.UIWinForm
             UrunArama.Visible = false;
             Anasayfa.Visible = false;
             UrunDetay.Visible = false;
-            BarkodArama.Visible=false;
+            BarkodArama.Visible = false;
             CloseSideBar();
             ProductSupplementDetailClose();
         }
@@ -637,7 +639,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 cmbBoxUrunEkleKategori.Items.Add(item);
                 cmbBoxKategori.Items.Add(item);
             }
-            UrunEkleDuzenle.Visible = true;
+
         }
         private void btnBarkodOku_Click(object sender, EventArgs e)
         {
@@ -670,11 +672,11 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void btnBarkodAramaBarkodAra_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(txtBarkodAramaBarkodNo.Text.Trim()))
+            if (string.IsNullOrEmpty(txtBarkodAramaBarkodNo.Text.Trim()))
             {
                 MessageBox.Show("Barkod No boş olamaz.");
             }
-            else if(txtBarkodAramaBarkodNo.Text.Length != 7)
+            else if (txtBarkodAramaBarkodNo.Text.Length != 7)
             {
                 MessageBox.Show("Barkod Hatalı tekrar giriş yapınız.");
             }
@@ -682,7 +684,7 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 CloseAllPages();
                 GetProductDetailDTO result = useProductDAL.GetProductDetailWithBarcode(txtBarkodAramaBarkodNo.Text);
-                if(result != null)
+                if (result != null)
                 {
                     UrunDetay.Visible = true;
                     GoProductDetails(result.ProductID);
@@ -695,5 +697,50 @@ namespace YesilEvCodeFirst.UIWinForm
             }
         }
 
+        private void dgvProducts_MouseClick(object sender, MouseEventArgs e)
+        {
+            var favLists = useFavListDAL.GetFavListsWithUserID(Kullanici.UserID);
+
+            if (e.Button == MouseButtons.Right)
+            {
+                ContextMenu cm = new ContextMenu();
+                MenuItem favEkle = new MenuItem();
+                favEkle.Text = "Favori Ekle";
+                if(favLists.Count > 0)
+                {
+                    favLists.ForEach(x => favEkle.MenuItems.Add(new MenuItem(x.FavoriListName, new EventHandler(AddFav))));
+                }
+                else
+                {
+                    //todo: favlist yoksa ne yapilacak?
+                }
+
+                cm.MenuItems.Add(favEkle);
+
+                cm.Show(dgvProducts, new Point(e.X, e.Y));
+
+                int selectedRow = dgvProducts.HitTest(e.X, e.Y).RowIndex;
+
+                if (selectedRow >= 0)
+                {
+                    addProductFavListDTO.ProductID = Convert.ToInt32(dgvProducts.Rows[selectedRow].Cells[0].Value);
+                    addProductFavListDTO.UserID = Kullanici.UserID;
+                }
+                else
+                {
+                    MessageBox.Show("Yanlış yere tıkladınız.");
+                }
+
+            }
+        }
+
+        private void AddFav(object sender, EventArgs e)
+        {
+            var clikMenuItem = sender as MenuItem;
+            var MenuText = clikMenuItem.Text;
+            addProductFavListDTO.FavorID = useFavListDAL.GetFavListIDWithFavListNameAndUserID(Kullanici.UserID, MenuText);
+            useProductFavListDAL.AddProductToFavList(addProductFavListDTO);
+            addProductFavListDTO = null;
+        }
     }
 }

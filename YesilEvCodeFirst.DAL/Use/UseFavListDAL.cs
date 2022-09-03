@@ -116,5 +116,28 @@ namespace YesilEvCodeFirst.DAL.Use
 
             return null;
         }
+
+        public int GetFavListIDWithFavListNameAndUserID(int id, string favlistName)
+        {
+            try
+            {
+                var favlist = GetByCondition(u => u.UserID.Equals(id) && u.FavoriListName.Equals(favlistName)).FirstOrDefault();
+                if (favlist != null)
+                {
+                    nLogger.Info("{} ID'li kullanicinin {} listesinin ID'si getirildi.", id, favlistName);
+                    return favlist.FavorID;
+                }
+                else
+                {
+                    throw new Exception("Liste bulunamadı");
+                }
+            }
+            catch (Exception ex)
+            {
+                nLogger.Error("System - {}", ex.Message);
+            }
+
+            return 0;
+        }
     }
 }
