@@ -129,7 +129,7 @@ namespace YesilEvCodeFirst.MyTest
         public void AddFavListTest()
         {
             UseFavListDAL dal = new UseFavListDAL();
-            bool result = dal.AddFavList(new AddOrEditFavListDTO()
+            bool result = dal.AddFavList(new AddFavListDTO()
             {
                 UserID = 1,
                 FavoriListName = "Sarp Sinema",
@@ -218,7 +218,7 @@ namespace YesilEvCodeFirst.MyTest
         {
 
             UseFavListDAL dal = new UseFavListDAL();
-            bool result = dal.DeleteFavList(new AddOrEditFavListDTO
+            bool result = dal.DeleteFavList(new EditFavListDTO
             {
                 UserID = 1,
                 FavorID = 2,
@@ -235,7 +235,7 @@ namespace YesilEvCodeFirst.MyTest
         {
 
             UseFavListDAL dal = new UseFavListDAL();
-            bool result = dal.UpdateFavList(new AddOrEditFavListDTO
+            bool result = dal.UpdateFavList(new EditFavListDTO
             {
                 UserID = 1,
                 FavorID = 1,

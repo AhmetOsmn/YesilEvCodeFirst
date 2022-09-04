@@ -134,9 +134,9 @@ namespace YesilEvCodeFirst.Mapping
             return mapper.Map<List<FavListDTO>>(favLists);
         }
 
-        public static FavList AddFavListDTOToFavList(AddOrEditFavListDTO dto)
+        public static FavList AddFavListDTOToFavList(AddFavListDTO dto)
         {
-            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddOrEditFavListDTO, FavList>());
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddFavListDTO, FavList>());
 
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<FavList>(dto);

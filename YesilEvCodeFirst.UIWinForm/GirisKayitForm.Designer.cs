@@ -1,6 +1,6 @@
 ﻿namespace YesilEvCodeFirst.UIWinForm
 {
-    partial class GirisKayitForm
+    partial class SignInSignUpForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,124 +28,124 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnGroupBoxKayitOl = new System.Windows.Forms.Button();
-            this.btnGroupBoxGirisYap = new System.Windows.Forms.Button();
-            this.GroupBoxKayitOl = new System.Windows.Forms.GroupBox();
-            this.btnKayitOl = new System.Windows.Forms.Button();
-            this.txtIsim = new System.Windows.Forms.TextBox();
-            this.txtSoyisim = new System.Windows.Forms.TextBox();
-            this.txtSifre = new System.Windows.Forms.TextBox();
+            this.btnGrpBoxSignUp = new System.Windows.Forms.Button();
+            this.btnGrpBoxSignIn = new System.Windows.Forms.Button();
+            this.GrpBoxSignUp = new System.Windows.Forms.GroupBox();
+            this.btnSignUp = new System.Windows.Forms.Button();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblSifre = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.lblSoyisim = new System.Windows.Forms.Label();
-            this.lblIsim = new System.Windows.Forms.Label();
-            this.GroupBoxGirisYap = new System.Windows.Forms.GroupBox();
-            this.btnGirisYap = new System.Windows.Forms.Button();
-            this.txtGirisYapSifre = new System.Windows.Forms.TextBox();
-            this.lblGirisYapSifre = new System.Windows.Forms.Label();
-            this.txtGirisYapEmail = new System.Windows.Forms.TextBox();
-            this.lblGirisYapEmail = new System.Windows.Forms.Label();
-            this.GroupBoxKayitOl.SuspendLayout();
-            this.GroupBoxGirisYap.SuspendLayout();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.GrpBoxSignIn = new System.Windows.Forms.GroupBox();
+            this.btnSignIn = new System.Windows.Forms.Button();
+            this.txtSignInPassword = new System.Windows.Forms.TextBox();
+            this.lblSignInPassword = new System.Windows.Forms.Label();
+            this.txtSignInEmail = new System.Windows.Forms.TextBox();
+            this.lblSignInEmail = new System.Windows.Forms.Label();
+            this.GrpBoxSignUp.SuspendLayout();
+            this.GrpBoxSignIn.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGroupBoxKayitOl
             // 
-            this.btnGroupBoxKayitOl.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnGroupBoxKayitOl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGroupBoxKayitOl.FlatAppearance.BorderSize = 0;
-            this.btnGroupBoxKayitOl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGroupBoxKayitOl.ForeColor = System.Drawing.Color.White;
-            this.btnGroupBoxKayitOl.Location = new System.Drawing.Point(12, 42);
-            this.btnGroupBoxKayitOl.Name = "btnGroupBoxKayitOl";
-            this.btnGroupBoxKayitOl.Size = new System.Drawing.Size(215, 37);
-            this.btnGroupBoxKayitOl.TabIndex = 0;
-            this.btnGroupBoxKayitOl.Text = "Kayıt Ol";
-            this.btnGroupBoxKayitOl.UseVisualStyleBackColor = false;
-            this.btnGroupBoxKayitOl.Click += new System.EventHandler(this.button1_Click);
+            this.btnGrpBoxSignUp.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnGrpBoxSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGrpBoxSignUp.FlatAppearance.BorderSize = 0;
+            this.btnGrpBoxSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrpBoxSignUp.ForeColor = System.Drawing.Color.White;
+            this.btnGrpBoxSignUp.Location = new System.Drawing.Point(12, 42);
+            this.btnGrpBoxSignUp.Name = "btnGroupBoxKayitOl";
+            this.btnGrpBoxSignUp.Size = new System.Drawing.Size(215, 37);
+            this.btnGrpBoxSignUp.TabIndex = 0;
+            this.btnGrpBoxSignUp.Text = "Kayıt Ol";
+            this.btnGrpBoxSignUp.UseVisualStyleBackColor = false;
+            this.btnGrpBoxSignUp.Click += new System.EventHandler(this.OpenSignUpDetails);
             // 
             // btnGroupBoxGirisYap
             // 
-            this.btnGroupBoxGirisYap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(187)))), ((int)(((byte)(146)))));
-            this.btnGroupBoxGirisYap.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGroupBoxGirisYap.FlatAppearance.BorderSize = 0;
-            this.btnGroupBoxGirisYap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGroupBoxGirisYap.ForeColor = System.Drawing.Color.White;
-            this.btnGroupBoxGirisYap.Location = new System.Drawing.Point(229, 42);
-            this.btnGroupBoxGirisYap.Name = "btnGroupBoxGirisYap";
-            this.btnGroupBoxGirisYap.Size = new System.Drawing.Size(215, 37);
-            this.btnGroupBoxGirisYap.TabIndex = 0;
-            this.btnGroupBoxGirisYap.Text = "Giriş Yap";
-            this.btnGroupBoxGirisYap.UseVisualStyleBackColor = false;
-            this.btnGroupBoxGirisYap.Click += new System.EventHandler(this.button2_Click);
+            this.btnGrpBoxSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(187)))), ((int)(((byte)(146)))));
+            this.btnGrpBoxSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGrpBoxSignIn.FlatAppearance.BorderSize = 0;
+            this.btnGrpBoxSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrpBoxSignIn.ForeColor = System.Drawing.Color.White;
+            this.btnGrpBoxSignIn.Location = new System.Drawing.Point(229, 42);
+            this.btnGrpBoxSignIn.Name = "btnGroupBoxGirisYap";
+            this.btnGrpBoxSignIn.Size = new System.Drawing.Size(215, 37);
+            this.btnGrpBoxSignIn.TabIndex = 0;
+            this.btnGrpBoxSignIn.Text = "Giriş Yap";
+            this.btnGrpBoxSignIn.UseVisualStyleBackColor = false;
+            this.btnGrpBoxSignIn.Click += new System.EventHandler(this.OpenSignInDetails);
             // 
             // GroupBoxKayitOl
             // 
-            this.GroupBoxKayitOl.Controls.Add(this.btnKayitOl);
-            this.GroupBoxKayitOl.Controls.Add(this.txtIsim);
-            this.GroupBoxKayitOl.Controls.Add(this.txtSoyisim);
-            this.GroupBoxKayitOl.Controls.Add(this.txtSifre);
-            this.GroupBoxKayitOl.Controls.Add(this.txtEmail);
-            this.GroupBoxKayitOl.Controls.Add(this.lblSifre);
-            this.GroupBoxKayitOl.Controls.Add(this.lblEmail);
-            this.GroupBoxKayitOl.Controls.Add(this.lblSoyisim);
-            this.GroupBoxKayitOl.Controls.Add(this.lblIsim);
-            this.GroupBoxKayitOl.ForeColor = System.Drawing.Color.White;
-            this.GroupBoxKayitOl.Location = new System.Drawing.Point(12, 102);
-            this.GroupBoxKayitOl.Name = "GroupBoxKayitOl";
-            this.GroupBoxKayitOl.Size = new System.Drawing.Size(432, 299);
-            this.GroupBoxKayitOl.TabIndex = 1;
-            this.GroupBoxKayitOl.TabStop = false;
-            this.GroupBoxKayitOl.Text = "Ücretsiz Kayıt Ol";
-            this.GroupBoxKayitOl.Visible = false;
+            this.GrpBoxSignUp.Controls.Add(this.btnSignUp);
+            this.GrpBoxSignUp.Controls.Add(this.txtFirstName);
+            this.GrpBoxSignUp.Controls.Add(this.txtLastName);
+            this.GrpBoxSignUp.Controls.Add(this.txtPassword);
+            this.GrpBoxSignUp.Controls.Add(this.txtEmail);
+            this.GrpBoxSignUp.Controls.Add(this.lblPassword);
+            this.GrpBoxSignUp.Controls.Add(this.lblEmail);
+            this.GrpBoxSignUp.Controls.Add(this.lblLastName);
+            this.GrpBoxSignUp.Controls.Add(this.lblFirstName);
+            this.GrpBoxSignUp.ForeColor = System.Drawing.Color.White;
+            this.GrpBoxSignUp.Location = new System.Drawing.Point(12, 102);
+            this.GrpBoxSignUp.Name = "GroupBoxKayitOl";
+            this.GrpBoxSignUp.Size = new System.Drawing.Size(432, 299);
+            this.GrpBoxSignUp.TabIndex = 1;
+            this.GrpBoxSignUp.TabStop = false;
+            this.GrpBoxSignUp.Text = "Ücretsiz Kayıt Ol";
+            this.GrpBoxSignUp.Visible = false;
             // 
             // btnKayitOl
             // 
-            this.btnKayitOl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
-            this.btnKayitOl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKayitOl.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
-            this.btnKayitOl.FlatAppearance.BorderSize = 0;
-            this.btnKayitOl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKayitOl.ForeColor = System.Drawing.Color.White;
-            this.btnKayitOl.Location = new System.Drawing.Point(69, 230);
-            this.btnKayitOl.Name = "btnKayitOl";
-            this.btnKayitOl.Size = new System.Drawing.Size(289, 41);
-            this.btnKayitOl.TabIndex = 5;
-            this.btnKayitOl.Text = "Kayıt Ol";
-            this.btnKayitOl.UseVisualStyleBackColor = false;
-            this.btnKayitOl.Click += new System.EventHandler(this.btnKayitOl_Click);
+            this.btnSignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.btnSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSignUp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.btnSignUp.FlatAppearance.BorderSize = 0;
+            this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignUp.ForeColor = System.Drawing.Color.White;
+            this.btnSignUp.Location = new System.Drawing.Point(69, 230);
+            this.btnSignUp.Name = "btnKayitOl";
+            this.btnSignUp.Size = new System.Drawing.Size(289, 41);
+            this.btnSignUp.TabIndex = 5;
+            this.btnSignUp.Text = "Kayıt Ol";
+            this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // txtIsim
             // 
-            this.txtIsim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.txtIsim.ForeColor = System.Drawing.Color.White;
-            this.txtIsim.Location = new System.Drawing.Point(20, 54);
-            this.txtIsim.Multiline = true;
-            this.txtIsim.Name = "txtIsim";
-            this.txtIsim.Size = new System.Drawing.Size(179, 26);
-            this.txtIsim.TabIndex = 1;
+            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.txtFirstName.ForeColor = System.Drawing.Color.White;
+            this.txtFirstName.Location = new System.Drawing.Point(20, 54);
+            this.txtFirstName.Multiline = true;
+            this.txtFirstName.Name = "txtIsim";
+            this.txtFirstName.Size = new System.Drawing.Size(179, 26);
+            this.txtFirstName.TabIndex = 1;
             // 
             // txtSoyisim
             // 
-            this.txtSoyisim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.txtSoyisim.ForeColor = System.Drawing.Color.White;
-            this.txtSoyisim.Location = new System.Drawing.Point(230, 53);
-            this.txtSoyisim.Multiline = true;
-            this.txtSoyisim.Name = "txtSoyisim";
-            this.txtSoyisim.Size = new System.Drawing.Size(179, 26);
-            this.txtSoyisim.TabIndex = 2;
+            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.txtLastName.ForeColor = System.Drawing.Color.White;
+            this.txtLastName.Location = new System.Drawing.Point(230, 53);
+            this.txtLastName.Multiline = true;
+            this.txtLastName.Name = "txtSoyisim";
+            this.txtLastName.Size = new System.Drawing.Size(179, 26);
+            this.txtLastName.TabIndex = 2;
             // 
             // txtSifre
             // 
-            this.txtSifre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.txtSifre.ForeColor = System.Drawing.Color.White;
-            this.txtSifre.Location = new System.Drawing.Point(22, 181);
-            this.txtSifre.Multiline = true;
-            this.txtSifre.Name = "txtSifre";
-            this.txtSifre.PasswordChar = '*';
-            this.txtSifre.Size = new System.Drawing.Size(387, 26);
-            this.txtSifre.TabIndex = 4;
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.txtPassword.ForeColor = System.Drawing.Color.White;
+            this.txtPassword.Location = new System.Drawing.Point(22, 181);
+            this.txtPassword.Multiline = true;
+            this.txtPassword.Name = "txtSifre";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(387, 26);
+            this.txtPassword.TabIndex = 4;
             // 
             // txtEmail
             // 
@@ -159,14 +159,14 @@
             // 
             // lblSifre
             // 
-            this.lblSifre.AutoSize = true;
-            this.lblSifre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.lblSifre.ForeColor = System.Drawing.Color.White;
-            this.lblSifre.Location = new System.Drawing.Point(19, 165);
-            this.lblSifre.Name = "lblSifre";
-            this.lblSifre.Size = new System.Drawing.Size(28, 13);
-            this.lblSifre.TabIndex = 2;
-            this.lblSifre.Text = "Şifre";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.lblPassword.ForeColor = System.Drawing.Color.White;
+            this.lblPassword.Location = new System.Drawing.Point(19, 165);
+            this.lblPassword.Name = "lblSifre";
+            this.lblPassword.Size = new System.Drawing.Size(28, 13);
+            this.lblPassword.TabIndex = 2;
+            this.lblPassword.Text = "Şifre";
             // 
             // lblEmail
             // 
@@ -181,98 +181,98 @@
             // 
             // lblSoyisim
             // 
-            this.lblSoyisim.AutoSize = true;
-            this.lblSoyisim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.lblSoyisim.ForeColor = System.Drawing.Color.White;
-            this.lblSoyisim.Location = new System.Drawing.Point(230, 38);
-            this.lblSoyisim.Name = "lblSoyisim";
-            this.lblSoyisim.Size = new System.Drawing.Size(42, 13);
-            this.lblSoyisim.TabIndex = 0;
-            this.lblSoyisim.Text = "Soyisim";
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.lblLastName.ForeColor = System.Drawing.Color.White;
+            this.lblLastName.Location = new System.Drawing.Point(230, 38);
+            this.lblLastName.Name = "lblSoyisim";
+            this.lblLastName.Size = new System.Drawing.Size(42, 13);
+            this.lblLastName.TabIndex = 0;
+            this.lblLastName.Text = "Soyisim";
             // 
             // lblIsim
             // 
-            this.lblIsim.AutoSize = true;
-            this.lblIsim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.lblIsim.ForeColor = System.Drawing.Color.White;
-            this.lblIsim.Location = new System.Drawing.Point(19, 38);
-            this.lblIsim.Name = "lblIsim";
-            this.lblIsim.Size = new System.Drawing.Size(25, 13);
-            this.lblIsim.TabIndex = 0;
-            this.lblIsim.Text = "İsim";
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.lblFirstName.ForeColor = System.Drawing.Color.White;
+            this.lblFirstName.Location = new System.Drawing.Point(19, 38);
+            this.lblFirstName.Name = "lblIsim";
+            this.lblFirstName.Size = new System.Drawing.Size(25, 13);
+            this.lblFirstName.TabIndex = 0;
+            this.lblFirstName.Text = "İsim";
             // 
             // GroupBoxGirisYap
             // 
-            this.GroupBoxGirisYap.Controls.Add(this.btnGirisYap);
-            this.GroupBoxGirisYap.Controls.Add(this.txtGirisYapSifre);
-            this.GroupBoxGirisYap.Controls.Add(this.lblGirisYapSifre);
-            this.GroupBoxGirisYap.Controls.Add(this.txtGirisYapEmail);
-            this.GroupBoxGirisYap.Controls.Add(this.lblGirisYapEmail);
-            this.GroupBoxGirisYap.ForeColor = System.Drawing.Color.White;
-            this.GroupBoxGirisYap.Location = new System.Drawing.Point(12, 102);
-            this.GroupBoxGirisYap.Name = "GroupBoxGirisYap";
-            this.GroupBoxGirisYap.Size = new System.Drawing.Size(432, 277);
-            this.GroupBoxGirisYap.TabIndex = 2;
-            this.GroupBoxGirisYap.TabStop = false;
-            this.GroupBoxGirisYap.Text = "Giriş Yap";
+            this.GrpBoxSignIn.Controls.Add(this.btnSignIn);
+            this.GrpBoxSignIn.Controls.Add(this.txtSignInPassword);
+            this.GrpBoxSignIn.Controls.Add(this.lblSignInPassword);
+            this.GrpBoxSignIn.Controls.Add(this.txtSignInEmail);
+            this.GrpBoxSignIn.Controls.Add(this.lblSignInEmail);
+            this.GrpBoxSignIn.ForeColor = System.Drawing.Color.White;
+            this.GrpBoxSignIn.Location = new System.Drawing.Point(12, 102);
+            this.GrpBoxSignIn.Name = "GroupBoxGirisYap";
+            this.GrpBoxSignIn.Size = new System.Drawing.Size(432, 277);
+            this.GrpBoxSignIn.TabIndex = 2;
+            this.GrpBoxSignIn.TabStop = false;
+            this.GrpBoxSignIn.Text = "Giriş Yap";
             // 
             // btnGirisYap
             // 
-            this.btnGirisYap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
-            this.btnGirisYap.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGirisYap.FlatAppearance.BorderSize = 0;
-            this.btnGirisYap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGirisYap.ForeColor = System.Drawing.Color.White;
-            this.btnGirisYap.Location = new System.Drawing.Point(69, 197);
-            this.btnGirisYap.Name = "btnGirisYap";
-            this.btnGirisYap.Size = new System.Drawing.Size(289, 41);
-            this.btnGirisYap.TabIndex = 3;
-            this.btnGirisYap.Text = "Giriş Yap";
-            this.btnGirisYap.UseVisualStyleBackColor = false;
-            this.btnGirisYap.Click += new System.EventHandler(this.SignInButton_Click);
+            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(51)))));
+            this.btnSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSignIn.FlatAppearance.BorderSize = 0;
+            this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignIn.ForeColor = System.Drawing.Color.White;
+            this.btnSignIn.Location = new System.Drawing.Point(69, 197);
+            this.btnSignIn.Name = "btnGirisYap";
+            this.btnSignIn.Size = new System.Drawing.Size(289, 41);
+            this.btnSignIn.TabIndex = 3;
+            this.btnSignIn.Text = "Giriş Yap";
+            this.btnSignIn.UseVisualStyleBackColor = false;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // txtGirisYapSifre
             // 
-            this.txtGirisYapSifre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.txtGirisYapSifre.ForeColor = System.Drawing.Color.White;
-            this.txtGirisYapSifre.Location = new System.Drawing.Point(17, 135);
-            this.txtGirisYapSifre.Name = "txtGirisYapSifre";
-            this.txtGirisYapSifre.PasswordChar = '*';
-            this.txtGirisYapSifre.Size = new System.Drawing.Size(387, 20);
-            this.txtGirisYapSifre.TabIndex = 2;
-            this.txtGirisYapSifre.Text = "mert555";
+            this.txtSignInPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.txtSignInPassword.ForeColor = System.Drawing.Color.White;
+            this.txtSignInPassword.Location = new System.Drawing.Point(17, 135);
+            this.txtSignInPassword.Name = "txtGirisYapSifre";
+            this.txtSignInPassword.PasswordChar = '*';
+            this.txtSignInPassword.Size = new System.Drawing.Size(387, 20);
+            this.txtSignInPassword.TabIndex = 2;
+            this.txtSignInPassword.Text = "mert555";
             // 
             // lblGirisYapSifre
             // 
-            this.lblGirisYapSifre.AutoSize = true;
-            this.lblGirisYapSifre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.lblGirisYapSifre.ForeColor = System.Drawing.Color.White;
-            this.lblGirisYapSifre.Location = new System.Drawing.Point(17, 119);
-            this.lblGirisYapSifre.Name = "lblGirisYapSifre";
-            this.lblGirisYapSifre.Size = new System.Drawing.Size(28, 13);
-            this.lblGirisYapSifre.TabIndex = 1;
-            this.lblGirisYapSifre.Text = "Şifre";
+            this.lblSignInPassword.AutoSize = true;
+            this.lblSignInPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.lblSignInPassword.ForeColor = System.Drawing.Color.White;
+            this.lblSignInPassword.Location = new System.Drawing.Point(17, 119);
+            this.lblSignInPassword.Name = "lblGirisYapSifre";
+            this.lblSignInPassword.Size = new System.Drawing.Size(28, 13);
+            this.lblSignInPassword.TabIndex = 1;
+            this.lblSignInPassword.Text = "Şifre";
             // 
             // txtGirisYapEmail
             // 
-            this.txtGirisYapEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.txtGirisYapEmail.ForeColor = System.Drawing.Color.White;
-            this.txtGirisYapEmail.Location = new System.Drawing.Point(17, 83);
-            this.txtGirisYapEmail.Name = "txtGirisYapEmail";
-            this.txtGirisYapEmail.Size = new System.Drawing.Size(387, 20);
-            this.txtGirisYapEmail.TabIndex = 1;
-            this.txtGirisYapEmail.Text = "mertdalkiran@gmail.com";
+            this.txtSignInEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.txtSignInEmail.ForeColor = System.Drawing.Color.White;
+            this.txtSignInEmail.Location = new System.Drawing.Point(17, 83);
+            this.txtSignInEmail.Name = "txtGirisYapEmail";
+            this.txtSignInEmail.Size = new System.Drawing.Size(387, 20);
+            this.txtSignInEmail.TabIndex = 1;
+            this.txtSignInEmail.Text = "mertdalkiran@gmail.com";
             // 
             // lblGirisYapEmail
             // 
-            this.lblGirisYapEmail.AutoSize = true;
-            this.lblGirisYapEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.lblGirisYapEmail.ForeColor = System.Drawing.Color.White;
-            this.lblGirisYapEmail.Location = new System.Drawing.Point(17, 67);
-            this.lblGirisYapEmail.Name = "lblGirisYapEmail";
-            this.lblGirisYapEmail.Size = new System.Drawing.Size(32, 13);
-            this.lblGirisYapEmail.TabIndex = 1;
-            this.lblGirisYapEmail.Text = "Email";
+            this.lblSignInEmail.AutoSize = true;
+            this.lblSignInEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
+            this.lblSignInEmail.ForeColor = System.Drawing.Color.White;
+            this.lblSignInEmail.Location = new System.Drawing.Point(17, 67);
+            this.lblSignInEmail.Name = "lblGirisYapEmail";
+            this.lblSignInEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblSignInEmail.TabIndex = 1;
+            this.lblSignInEmail.Text = "Email";
             // 
             // GirisKayitForm
             // 
@@ -280,40 +280,40 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(456, 475);
-            this.Controls.Add(this.btnGroupBoxGirisYap);
-            this.Controls.Add(this.btnGroupBoxKayitOl);
-            this.Controls.Add(this.GroupBoxGirisYap);
-            this.Controls.Add(this.GroupBoxKayitOl);
+            this.Controls.Add(this.btnGrpBoxSignIn);
+            this.Controls.Add(this.btnGrpBoxSignUp);
+            this.Controls.Add(this.GrpBoxSignIn);
+            this.Controls.Add(this.GrpBoxSignUp);
             this.Name = "GirisKayitForm";
             this.Text = "Form1";
-            this.GroupBoxKayitOl.ResumeLayout(false);
-            this.GroupBoxKayitOl.PerformLayout();
-            this.GroupBoxGirisYap.ResumeLayout(false);
-            this.GroupBoxGirisYap.PerformLayout();
+            this.GrpBoxSignUp.ResumeLayout(false);
+            this.GrpBoxSignUp.PerformLayout();
+            this.GrpBoxSignIn.ResumeLayout(false);
+            this.GrpBoxSignIn.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnGroupBoxKayitOl;
-        private System.Windows.Forms.Button btnGroupBoxGirisYap;
-        private System.Windows.Forms.GroupBox GroupBoxKayitOl;
-        private System.Windows.Forms.Label lblSoyisim;
-        private System.Windows.Forms.Label lblIsim;
-        private System.Windows.Forms.Button btnKayitOl;
-        private System.Windows.Forms.TextBox txtIsim;
-        private System.Windows.Forms.TextBox txtSoyisim;
-        private System.Windows.Forms.TextBox txtSifre;
+        private System.Windows.Forms.Button btnGrpBoxSignUp;
+        private System.Windows.Forms.Button btnGrpBoxSignIn;
+        private System.Windows.Forms.GroupBox GrpBoxSignUp;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Button btnSignUp;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label lblSifre;
+        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.GroupBox GroupBoxGirisYap;
-        private System.Windows.Forms.Label lblGirisYapEmail;
-        private System.Windows.Forms.TextBox txtGirisYapEmail;
-        private System.Windows.Forms.Button btnGirisYap;
-        private System.Windows.Forms.TextBox txtGirisYapSifre;
-        private System.Windows.Forms.Label lblGirisYapSifre;
+        private System.Windows.Forms.GroupBox GrpBoxSignIn;
+        private System.Windows.Forms.Label lblSignInEmail;
+        private System.Windows.Forms.TextBox txtSignInEmail;
+        private System.Windows.Forms.Button btnSignIn;
+        private System.Windows.Forms.TextBox txtSignInPassword;
+        private System.Windows.Forms.Label lblSignInPassword;
     }
 }
 
