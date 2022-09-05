@@ -1,9 +1,11 @@
-﻿using System;
+﻿using FluentValidation.Results;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.UserAdmin;
+using YesilEvCodeFirst.Validation.FluentValidator;
 
 namespace YesilEvCodeFirst.UIWinForm
 {
@@ -33,41 +35,30 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            // todo: buradaki if'ler validatorler ile yapilabilir mi?
-            if (txtSignInEmail.Text.Contains('@'))
+            LoginDTO dto = new LoginDTO()
             {
-                if(!string.IsNullOrEmpty(txtSignInPassword.Text))
+                Email = txtSignInEmail.Text,
+                Password = txtSignInPassword.Text,
+            };
+
+            LoginValidator validations = new LoginValidator();
+            ValidationResult validationResult = validations.Validate(dto);
+            if (validationResult.IsValid)
+            {
+                var result = userDAL.UserLogin(dto);
+                if (result == null)
                 {
-                    LoginDTO dto = new LoginDTO()
-                    {
-                        Email = txtSignInEmail.Text,
-                        Password = txtSignInPassword.Text,
-                    };
-                    var result = userDAL.UserLogin(dto);
-                    if (result == null)
-                    {
-                        MessageBox.Show("Giriş Bilgileri Yanlış");
-                    }
-                    else
-                    {
-                        OpenUserPage(result);
-                    }
+                    MessageBox.Show("Giriş Bilgileri Yanlış");
                 }
                 else
                 {
-                    MessageBox.Show("Lütfen şifre giriniz.");
+                    OpenUserPage(result);
                 }
-
-            }
-            else if (string.IsNullOrEmpty(txtSignInEmail.Text))
-            {
-                MessageBox.Show("Lütfen email giriniz.");
             }
             else
             {
-                MessageBox.Show("Girilen Email Hatalıdır.");
+                MessageBox.Show(validationResult.Errors[0].ErrorMessage);
             }
-
         }
         private void OpenUserPage(UserDetailDTO result)
         {
@@ -79,16 +70,20 @@ namespace YesilEvCodeFirst.UIWinForm
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             btnSignUp.Enabled = false;
-            if (txtEmail.Text.Contains('@'))
+            //if (txtEmail.Text.Contains('@'))
+            //{
+            AddUserDTO dto = new AddUserDTO()
             {
-                AddUserDTO dto = new AddUserDTO()
-                {
-                    Email = txtEmail.Text,
-                    FirstName = txtFirstName.Text,
-                    LastName = txtLastName.Text,
-                    Password = txtPassword.Text,
-                    Phone = "1234567891"
-                };
+                Email = txtEmail.Text,
+                FirstName = txtFirstName.Text,
+                LastName = txtLastName.Text,
+                Password = txtPassword.Text,
+                Phone = "1234567891"
+            };
+            SignUpValidator validations = new SignUpValidator();
+            ValidationResult validationResult = validations.Validate(dto);
+            if (validationResult.IsValid)
+            {
                 var result = userDAL.AddUser(dto);
                 if (result)
                 {
@@ -97,6 +92,12 @@ namespace YesilEvCodeFirst.UIWinForm
                     GrpBoxSignIn.Visible = true;
                 }
             }
+            else
+            {
+                MessageBox.Show(validationResult.Errors[0].ErrorMessage);
+            }
+
+            //}
         }
     }
 }
