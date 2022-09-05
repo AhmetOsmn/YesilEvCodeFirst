@@ -33,11 +33,39 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            LoginDTO dto = new LoginDTO() { Email = txtSignInEmail.Text, Password=txtSignInPassword.Text};
-
-            //todo: buradaki if'ler validatorler ile yapilabilir mi?
-            
-
+            // todo: buradaki if'ler validatorler ile yapilabilir mi?
+            if (txtSignInEmail.Text.Contains('@'))
+            {
+                if (!string.IsNullOrEmpty(txtSignInPassword.Text))
+                {
+                    LoginDTO dto = new LoginDTO()
+                    {
+                        Email = txtSignInEmail.Text,
+                        Password = txtSignInPassword.Text,
+                    };
+                    var result = userDAL.UserLogin(dto);
+                    if (result == null)
+                    {
+                        MessageBox.Show("Giriş Bilgileri Yanlış");
+                    }
+                    else
+                    {
+                        OpenUserPage(result);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Lütfen şifre giriniz.");
+                }
+            }
+            else if (string.IsNullOrEmpty(txtSignInEmail.Text))
+            {
+                MessageBox.Show("Lütfen email giriniz.");
+            }
+            else
+            {
+                MessageBox.Show("Girilen Email Hatalıdır.");
+            }
         }
         private void OpenUserPage(UserDetailDTO result)
         {
