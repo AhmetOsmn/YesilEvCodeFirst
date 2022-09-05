@@ -15,7 +15,6 @@ using YesilEvCodeFirst.Validation.Urun;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
-    // todo: risk seviyesi duzenlenecek
 
     public class UseProductDAL : EfRepoBase<YesilEvDbContext, Product>
     {
@@ -350,7 +349,6 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        //  Eşleşmezse, yeni ürün ekleme sayfası gelecek ve doldurulması gereken formda barkod no hazır olarak gözükecek.
                         throw new Exception("Urun bulunamadi");
                     }
                 }

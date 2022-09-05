@@ -10,8 +10,7 @@ using YesilEvCodeFirst.Mapping;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
-    // todo: metotlarin ustlerinde summary, icerisinde aciklamalar olmali.
-    // todo: loglar giris yapan kisiye gore yapilacak
+
     public class UseCategoryDAL : EfRepoBase<YesilEvDbContext, Category>
     {
         readonly Logger nLogger = LogManager.GetCurrentClassLogger();

@@ -166,7 +166,6 @@ namespace YesilEvCodeFirst.UIWinForm
                         CloseAllPages();
                         int lastAddedProductID = useProductDAL.GetProductDetailWithBarcode(txtAddAndUpdateProductAddProductBarcodeNo.Text).ProductID;
                         GoProductDetails(lastAddedProductID);
-                        // todo: eklenen ürüne ait olan detay sayfasında yonlendirilecek
                         Clean();
                     }
                     else
@@ -645,6 +644,7 @@ namespace YesilEvCodeFirst.UIWinForm
         }
         private void btnReadBarcode_Click(object sender, EventArgs e)
         {
+            // todo: bir urun barkod numarasi ile arandığında da bu işlem arama geçmişine eklenecek mi?
             CloseAllPages();
             SearchBarcode.Visible = true;
         }
@@ -670,7 +670,6 @@ namespace YesilEvCodeFirst.UIWinForm
             List<ListSupplementDTO> supplements = useProductSupplementDAL.GetSupplementsWithProductID(productID);
             CreateProductsInLabel(supplements);
         }
-
 
         private void btnSearchProductWithBarcodeNo_Click(object sender, EventArgs e)
         {

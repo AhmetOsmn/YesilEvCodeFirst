@@ -36,7 +36,7 @@ namespace YesilEvCodeFirst.UIWinForm
             // todo: buradaki if'ler validatorler ile yapilabilir mi?
             if (txtSignInEmail.Text.Contains('@'))
             {
-                if(!string.IsNullOrEmpty(txtSignInPassword.Text))
+                if (!string.IsNullOrEmpty(txtSignInPassword.Text))
                 {
                     LoginDTO dto = new LoginDTO()
                     {
@@ -57,7 +57,6 @@ namespace YesilEvCodeFirst.UIWinForm
                 {
                     MessageBox.Show("Lütfen şifre giriniz.");
                 }
-
             }
             else if (string.IsNullOrEmpty(txtSignInEmail.Text))
             {
@@ -67,7 +66,6 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 MessageBox.Show("Girilen Email Hatalıdır.");
             }
-
         }
         private void OpenUserPage(UserDetailDTO result)
         {
