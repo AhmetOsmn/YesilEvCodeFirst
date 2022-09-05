@@ -1,11 +1,14 @@
-﻿using NLog;
+﻿using FluentValidation.Results;
+using NLog;
 using System;
 using System.Linq;
+using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
-using YesilEvCodeFirst.DTOs.UserBlackList;
+using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.Mapping;
+using YesilEvCodeFirst.Validation.FluentValidator;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
@@ -13,13 +16,21 @@ namespace YesilEvCodeFirst.DAL.Use
     {
         readonly Logger nLogger = LogManager.GetCurrentClassLogger();
 
-        public bool AddBlackList(AddOrEditBlackListDTO dto)
+        public bool AddBlackList(IDDTO dto)
         {
+            AddBlackListValidator validator = new AddBlackListValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
+                if (!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    var blacklist = context.BlackList.Where(u => u.UserID.Equals(dto.UserID)).FirstOrDefault();
+                    var blacklist = context.BlackList.Where(u => u.UserID.Equals(dto.ID)).FirstOrDefault();
                     if (blacklist == null)
                     {
                         BlackList addblacklist = MappingProfile.AddBlackListDTOToBlackList(dto);
@@ -28,7 +39,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception("Kara liste zaten mevcut.");
+                        throw new Exception(Messages.BlackListAlreadyExist);
                     }
                 }
 
@@ -36,20 +47,33 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 return true;
             }
+            catch (FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
+            }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-            return false;
         }
 
-        public bool DeleteBlackList(AddOrEditBlackListDTO dto)
+        public bool DeleteBlackListWithUserID(IDDTO dto)
         {
+            DeleteBlackListValidator validator = new DeleteBlackListValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
+                if (!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    var blacklist = context.BlackList.Where(u => u.UserID.Equals(dto.UserID)).FirstOrDefault();
+                    var blacklist = context.BlackList.Where(u => u.UserID.Equals(dto.ID)).FirstOrDefault();
                     if (blacklist != null)
                     {
                         blacklist.IsActive = false;
@@ -58,7 +82,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception("Silme işlemi yapılamadı.");
+                        throw new Exception(Messages.BlackListNotFound);
                     }
                 }
 
@@ -66,35 +90,51 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 return true;
             }
+            catch (FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
+            }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-            return false;
         }
 
-        public int GetBlackListIDWithUserID(int id)
+        public int GetBlackListIDWithUserID(IDDTO dto)
         {
+            GetBlackListIDWithUserIDValidator validator = new GetBlackListIDWithUserIDValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
-                BlackList blackList = GetByCondition(u => u.UserID.Equals(id)).FirstOrDefault();
+                if (!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
+                BlackList blackList = GetByCondition(u => u.UserID.Equals(dto.ID)).FirstOrDefault();
                 if (blackList != null)
                 {
-                    nLogger.Info("{} ID'li kullanicinin kara liste ID'si getirildi.", id);
+                    nLogger.Info("{} ID'li kullanicinin kara liste ID'si getirildi.", dto.ID);
                     return blackList.BlackListID;
                 }
                 else
                 {
-                    throw new Exception("Liste bulunamadı");
+                    throw new Exception(Messages.BlackListNotFound);
                 }
+            }
+            catch (FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return 0;
         }
-
     }
 }

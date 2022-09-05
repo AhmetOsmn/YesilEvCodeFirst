@@ -62,6 +62,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FluentValidator\AddBlackListValidator.cs" />
+    <Compile Include="FluentValidator\AddFavListValidator.cs" />
+    <Compile Include="FluentValidator\AddProductValidator.cs" />
+    <Compile Include="FluentValidator\DeleteBlackListValidator.cs" />
+    <Compile Include="FluentValidator\DeleteFavListValidator.cs" />
+    <Compile Include="FluentValidator\GetFavListIDWithFavListNameAndUserIDValidator.cs" />
+    <Compile Include="FluentValidator\GetFavListsWithUserIDValidator.cs" />
+    <Compile Include="FluentValidator\GetProductDetailWithBarcodeValidator.cs" />
+    <Compile Include="FluentValidator\GetProductDetailWithProductIDValidator.cs" />
+    <Compile Include="FluentValidator\GetProductListWithUserIDValidator.cs" />
+    <Compile Include="FluentValidator\UpdateFavListValidator.cs" />
+    <Compile Include="FluentValidator\GetBlackListIDWithUserIDValidator.cs" />
     <Compile Include="FluentValidator\LoginValidator.cs" />
     <Compile Include="FluentValidator\ProductFavListValidator.cs" />
     <Compile Include="FluentValidator\SearchHistoryValidator.cs" />
@@ -69,6 +81,8 @@
     <Compile Include="FluentValidator\SupplementBlackListValidator.cs" />
     <Compile Include="FluentValidator\SupplementValidator.cs" />
     <Compile Include="Login\LoginValidator.cs" />
+    <Compile Include="FluentValidator\UpdateProductValidator.cs" />
+    <Compile Include="LoginValidator.cs" />
     <Compile Include="Product\AddProductValidator.cs" />
     <Compile Include="Product\UpdateProductValidator.cs" />
     <Compile Include="Supplement\AddSupplementValidator.cs" />
@@ -77,6 +91,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\YesilEvCodeFirst.Common\YesilEvCodeFirst.Common.csproj">
+      <Project>{A226C8BB-85FB-4330-9E98-37F32E2AB732}</Project>
+      <Name>YesilEvCodeFirst.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\YesilEvCodeFirst.Core\YesilEvCodeFirst.Core.csproj">
       <Project>{A4183C9B-69C0-441D-8258-D0677FA06E86}</Project>
       <Name>YesilEvCodeFirst.Core</Name>

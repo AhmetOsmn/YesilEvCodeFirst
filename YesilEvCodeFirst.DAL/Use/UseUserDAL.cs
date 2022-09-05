@@ -137,5 +137,81 @@ namespace YesilEvCodeFirst.DAL.Use
                 throw new Exception(ex.Message);
             }
         }
+
+        public bool UpdateUserDetails(UpdateUserDetailsDTO dto)
+        {
+            try
+            {
+                User tempUser = GetByCondition(x => x.UserID.Equals(dto)).FirstOrDefault();
+                if (tempUser != null)
+                {
+                    tempUser.FirstName = dto.FirstName;
+                    tempUser.LastName = dto.LastName;
+                    tempUser.Phone = dto.Phone;
+                    MySaveChanges();
+                    nLogger.Info("{} - kullanicisinin bilgileri güncellendi.", tempUser.FirstName + " " + tempUser.LastName);
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Kullanici Bulunamadi.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                nLogger.Error("System - {}", ex.Message);
+            }
+            
+            return false;
+        }
+        public bool UpdateUserEmail(UpdateUserEmailDTO dto)
+        {
+            try
+            {
+                User tempUser = GetByCondition(x => x.UserID.Equals(dto)).FirstOrDefault();
+                if (tempUser != null)
+                {
+                    tempUser.Email = dto.NewEmail;
+                    MySaveChanges();
+                    nLogger.Info("{} - kullanicisinin email bilgisi güncellendi.", tempUser.FirstName + " " + tempUser.LastName);
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Kullanici Bulunamadi.");
+                }
+            }
+            catch (Exception ex)
+            {
+                nLogger.Error("System - {}", ex.Message);
+            }
+
+            return false;
+        }
+        public bool UpdateUserPassword(UpdateUserPasswordDTO dto)
+        {
+            try
+            {
+                User tempUser = GetByCondition(x => x.UserID.Equals(dto)).FirstOrDefault();
+                if (tempUser != null)
+                {
+                    tempUser.Password = dto.NewPassword;
+                    MySaveChanges();
+                    nLogger.Info("{} - kullanicisinin sifre bilgisi güncellendi.", tempUser.FirstName + " " + tempUser.LastName);
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Kullanici Bulunamadi.");
+                }
+            }
+            catch (Exception ex)
+            {
+                nLogger.Error("System - {}", ex.Message);
+            }
+
+            return false;
+        }
     }
 }

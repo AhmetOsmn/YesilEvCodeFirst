@@ -1,6 +1,6 @@
 ﻿using YesilEvCodeFirst.DTOs;
 
-namespace YesilEvCodeFirst.Validation.Login
+namespace YesilEvCodeFirst.Validation
 {
     public class LoginValidator : ValidatorBase<LoginDTO>
     {
@@ -20,7 +20,7 @@ namespace YesilEvCodeFirst.Validation.Login
             {
                 IsValid = false;
                 ValidationMessages.Add("Email boş bırakılamaz.");
-            }  
+            }
             else if (Model.Email.Length > 50)
             {
                 IsValid = false;

@@ -1,12 +1,16 @@
-﻿using NLog;
+﻿using FluentValidation.Results;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
+using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.UserFavList;
 using YesilEvCodeFirst.Mapping;
+using YesilEvCodeFirst.Validation.FluentValidator;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
@@ -16,8 +20,15 @@ namespace YesilEvCodeFirst.DAL.Use
 
         public bool AddFavList(AddFavListDTO dto)
         {
+            AddFavListValidator validator = new AddFavListValidator();
+            ValidationResult validationResult = validator.Validate(dto);
             try
             {
+                if (!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
                     var favlist = context.FavList.Where(u => u.UserID.Equals(dto.UserID)).FirstOrDefault();
@@ -30,28 +41,37 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 return true;
             }
-            catch (Exception ex)
+            catch (FormatException fex)
             {
-                nLogger.Error("System - {}", ex.Message);
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
             }
-            return false;
         }
         public bool DeleteFavList(EditFavListDTO dto)
         {
+            DeleteFavListValidator validator = new DeleteFavListValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
+                if (!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
                     var favlist = context.FavList.Where(u => u.UserID.Equals(dto.UserID) && u.FavorID.Equals(dto.FavorID)).FirstOrDefault();
                     if (favlist != null)
                     {
                         favlist.IsActive = false;
+                        // todo: modified date olması gerekmiyor mu?
                         favlist.CreatedDate = DateTime.Now;
                         context.SaveChanges();
                     }
                     else
                     {
-                        throw new Exception("Silme işlemi yapılamadı.");
+                        throw new Exception(Messages.FavListNotFound);
                     }
                 }
 
@@ -59,16 +79,29 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 return true;
             }
+            catch (FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
+            }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-            return false;
         }
         public bool UpdateFavList(EditFavListDTO dto)
         {
+            UpdateFavListValidator validator = new UpdateFavListValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
+                if (!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
                     var favlist = context.FavList.Where(u => u.UserID.Equals(dto.UserID) && u.FavorID.Equals(dto.FavorID)).FirstOrDefault();
@@ -80,7 +113,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception("Silme işlemi yapılamadı.");
+                        throw new Exception(Messages.FavListNotFound);
                     }
                 }
 
@@ -88,56 +121,84 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 return true;
             }
+            catch (FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
+            }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-            return false;
         }
-        public List<FavListDTO> GetFavListsWithUserID(int id)
+        public List<FavListDTO> GetFavListsWithUserID(IDDTO dto)
         {
+            GetFavListsWithUserIDValidator validator = new GetFavListsWithUserIDValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
-                var favlist = GetByCondition(u => u.UserID.Equals(id)).ToList();
+                if (!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
+                var favlist = GetByCondition(u => u.UserID.Equals(dto.ID)).ToList();
                 if (favlist != null)
                 {
-                    nLogger.Info("{} ID'li kullanicinin favori listeleri getirildi.", id);
+                    nLogger.Info("{} ID'li kullanicinin favori listeleri getirildi.", dto.ID);
                     return MappingProfile.FavListToFavListDTO(favlist);
                 }
                 else
                 {
-                    throw new Exception("Liste bulunamadı");
+                    throw new Exception(Messages.FavListNotFound);
                 }
+            }
+            catch (FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return null;
         }
-
-        public int GetFavListIDWithFavListNameAndUserID(int id, string favlistName)
+        public int GetFavListIDWithFavListNameAndUserID(GetFavListIDWithFavListNameAndUserIDDTO dto)
         {
+            GetFavListIDWithFavListNameAndUserIDValidator validator = new GetFavListIDWithFavListNameAndUserIDValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
-                var favlist = GetByCondition(u => u.UserID.Equals(id) && u.FavoriListName.Equals(favlistName)).FirstOrDefault();
+                if (!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
+                var favlist = GetByCondition(u => u.UserID.Equals(dto.UserID) && u.FavoriListName.Equals(dto.FavListName)).FirstOrDefault();
                 if (favlist != null)
                 {
-                    nLogger.Info("{} ID'li kullanicinin {} listesinin ID'si getirildi.", id, favlistName);
+                    nLogger.Info("{} ID'li kullanicinin {} listesinin ID'si getirildi.", dto.UserID, dto.FavListName);
                     return favlist.FavorID;
                 }
                 else
                 {
-                    throw new Exception("Liste bulunamadı");
+                    throw new Exception(Messages.FavListNotFound);
                 }
+            }
+            catch (FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return 0;
         }
     }
 }
