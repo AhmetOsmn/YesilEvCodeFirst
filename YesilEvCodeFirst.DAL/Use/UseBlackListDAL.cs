@@ -18,7 +18,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
         public bool AddBlackList(IDDTO dto)
         {
-            AddBlackListValidator validator = new AddBlackListValidator();
+            IDDTOValidator  validator = new IDDTOValidator();
             ValidationResult validationResult = validator.Validate(dto);
 
             try
@@ -61,7 +61,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
         public bool DeleteBlackListWithUserID(IDDTO dto)
         {
-            DeleteBlackListValidator validator = new DeleteBlackListValidator();
+            IDDTOValidator validator = new IDDTOValidator();
             ValidationResult validationResult = validator.Validate(dto);
 
             try
@@ -104,7 +104,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
         public int GetBlackListIDWithUserID(IDDTO dto)
         {
-            GetBlackListIDWithUserIDValidator validator = new GetBlackListIDWithUserIDValidator();
+            IDDTOValidator validator = new IDDTOValidator();
             ValidationResult validationResult = validator.Validate(dto);
 
             try

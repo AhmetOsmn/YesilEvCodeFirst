@@ -3,6 +3,7 @@ using NLog;
 using System;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Linq;
+using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
@@ -10,6 +11,7 @@ using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.UserAdmin;
 using YesilEvCodeFirst.Mapping;
 using YesilEvCodeFirst.Validation.FluentValidator;
+using YesilEvCodeFirst.Validation.FluentValidator.Const;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
@@ -22,17 +24,18 @@ namespace YesilEvCodeFirst.DAL.Use
 
             LoginValidator validator = new LoginValidator();
             ValidationResult validationResult = validator.Validate(dto);
-            
+
             try
             {
                 if (!validationResult.IsValid)
                 {
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
+
                 var user = GetByCondition(u => u.Email.Equals(dto.Email) && u.Password.Equals(dto.Password)).FirstOrDefault();
                 if (user == null)
                 {
-                    throw new Exception("Kullanıcı bulunamadı.");
+                    throw new Exception(Messages.UserNotFound);
                 }
                 else
                 {
@@ -51,7 +54,6 @@ namespace YesilEvCodeFirst.DAL.Use
                 throw new Exception(ex.Message);
             }
         }
-
         public bool AddUser(AddUserDTO dto)
         {
             SignUpValidator validator = new SignUpValidator();
@@ -63,6 +65,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 {
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
+
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
                     var tempUser = context.User.Where(u => u.Email.Equals(dto.Email)).FirstOrDefault();
@@ -77,7 +80,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception("Email ile kayitli kullanici mevcut.");
+                        throw new Exception(Messages.EmailAlreadyExist);
                     }
                 }
 
@@ -94,11 +97,18 @@ namespace YesilEvCodeFirst.DAL.Use
                 throw new Exception(ex.Message);
             }
         }
-        public UserDetailDTO GetUserDetailWithEmail(string email)
+        public UserDetailDTO GetUserDetailWithEmail(EmailDTO dto)
         {
+            EmailDTOValidator validator = new EmailDTOValidator();
+            ValidationResult validationResult = validator.Validate(dto);
             try
             {
-                User tempUser = GetByCondition(x => x.Email.Equals(email)).FirstOrDefault();
+                if(!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
+                User tempUser = GetByCondition(x => x.Email.Equals(dto.Email)).FirstOrDefault();
                 if (tempUser != null)
                 {
                     nLogger.Info("{} - kullanicisinin bilgileri getirildi", tempUser.FirstName + " " + tempUser.LastName);
@@ -106,8 +116,13 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception("Kullanici bulunamadi.");
+                    throw new Exception(Messages.UserNotFound);
                 }
+            }
+            catch(FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new Exception(fex.Message);
             }
             catch (Exception ex)
             {
@@ -115,12 +130,19 @@ namespace YesilEvCodeFirst.DAL.Use
                 throw new Exception(ex.Message);
             }
         }
-
-        public UserDetailDTO GetUserDetailWithID(int id)
+        public UserDetailDTO GetUserDetailWithID(IDDTO dto)
         {
+            IDDTOValidator validator = new IDDTOValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
-                User tempUser = GetByCondition(x => x.UserID.Equals(id)).FirstOrDefault();
+                if(!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
+                User tempUser = GetByCondition(x => x.UserID.Equals(dto.ID)).FirstOrDefault();
                 if (tempUser != null)
                 {
                     nLogger.Info("{} - kullanicisinin bilgileri getirildi", tempUser.FirstName + " " + tempUser.LastName);
@@ -128,8 +150,13 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception("Kullanici bulunamadi.");
+                    throw new Exception(Messages.UserNotFound);
                 }
+            }
+            catch(FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {
@@ -137,12 +164,19 @@ namespace YesilEvCodeFirst.DAL.Use
                 throw new Exception(ex.Message);
             }
         }
-
         public bool UpdateUserDetails(UpdateUserDetailsDTO dto)
         {
+            UpdateUserDetailsValidator validator = new UpdateUserDetailsValidator();
+            ValidationResult validationResult = validator.Validate(dto); 
+
             try
             {
-                User tempUser = GetByCondition(x => x.UserID.Equals(dto)).FirstOrDefault();
+                if(!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
+                User tempUser = GetByCondition(x => x.UserID.Equals(dto.UserID)).FirstOrDefault();
                 if (tempUser != null)
                 {
                     tempUser.FirstName = dto.FirstName;
@@ -154,22 +188,33 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception("Kullanici Bulunamadi.");
+                    throw new Exception(Messages.UserNotFound);
                 }
-
+            }
+            catch(FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-            
-            return false;
         }
         public bool UpdateUserEmail(UpdateUserEmailDTO dto)
         {
+            UpdateUserMailValidator validator = new UpdateUserMailValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
-                User tempUser = GetByCondition(x => x.UserID.Equals(dto)).FirstOrDefault();
+                if(!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
+                User tempUser = GetByCondition(x => x.UserID.Equals(dto.UserID)).FirstOrDefault();
                 if (tempUser != null)
                 {
                     tempUser.Email = dto.NewEmail;
@@ -179,21 +224,33 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception("Kullanici Bulunamadi.");
+                    throw new Exception(Messages.UserNotFound);
                 }
+            }
+            catch(FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return false;
         }
         public bool UpdateUserPassword(UpdateUserPasswordDTO dto)
         {
+            UpdateUserPasswordValidator validator = new UpdateUserPasswordValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
-                User tempUser = GetByCondition(x => x.UserID.Equals(dto)).FirstOrDefault();
+                if(!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
+                User tempUser = GetByCondition(x => x.UserID.Equals(dto.UserID)).FirstOrDefault();
                 if (tempUser != null)
                 {
                     tempUser.Password = dto.NewPassword;
@@ -203,15 +260,19 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception("Kullanici Bulunamadi.");
+                    throw new Exception(Messages.UserNotFound);
                 }
+            }
+            catch(FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return false;
         }
     }
 }

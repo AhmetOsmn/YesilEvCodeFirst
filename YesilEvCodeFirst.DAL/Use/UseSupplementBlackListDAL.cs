@@ -3,9 +3,11 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
+using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.DTOs.SupplementBlackList;
 using YesilEvCodeFirst.Mapping;
@@ -68,11 +70,6 @@ namespace YesilEvCodeFirst.DAL.Use
                 nLogger.Error("System - {}", fex.Message);
                 throw new FormatException(fex.Message);
             }
-            catch (Exception ex)
-            {
-                nLogger.Error("System - {}", ex.Message);
-                throw new Exception(ex.Message);
-            }
         }
         public bool DeleteSupplementBlackList(AddSupplementBlackListDTO dto)
         {
@@ -95,7 +92,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception("Silme işlemi yapılamadı.");
+                        throw new Exception(Messages.BlackListNotFound);
                     }
 
                 }            
@@ -114,22 +111,34 @@ namespace YesilEvCodeFirst.DAL.Use
                 throw new Exception(ex.Message);
             }
         }
-        public List<SupplementDTO> GetSupplementsWithBlackListID(int id)
+        public List<SupplementDTO> GetSupplementsWithBlackListID(IDDTO dto)
         {
+            IDDTOValidator validator = new IDDTOValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
-                List<SupplementBlackList> supplements = GetByConditionWithInclude(u => u.BlackListID.Equals(id), "Supplement").ToList();
+                if(!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
+                List<SupplementBlackList> supplements = GetByConditionWithInclude(u => u.BlackListID.Equals(dto.ID), "Supplement").ToList();
 
                 if (supplements != null)
                 {
-                    nLogger.Info("{} ID'li kullanicinin kara listedeki maddeleri getirildi.", id);
+                    nLogger.Info("{} ID'li kullanicinin kara listedeki maddeleri getirildi.", dto.ID);
                     return MappingProfile.SupplementBlackListListToSupplementDTOList(supplements);
-                    throw new Exception("{} ID'li kullanicinin kara listedeki maddeleri getirildi.");
                 }
                 else
                 {
-                    throw new Exception("Liste bulunamadı");
+                    throw new Exception(Messages.SupplementNotFoundForList);
                 }
+            }
+            catch(FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {

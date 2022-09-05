@@ -134,7 +134,7 @@ namespace YesilEvCodeFirst.DAL.Use
         }
         public List<FavListDTO> GetFavListsWithUserID(IDDTO dto)
         {
-            GetFavListsWithUserIDValidator validator = new GetFavListsWithUserIDValidator();
+            IDDTOValidator validator = new IDDTOValidator();
             ValidationResult validationResult = validator.Validate(dto);
 
             try

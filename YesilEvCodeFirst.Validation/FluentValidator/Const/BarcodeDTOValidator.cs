@@ -2,11 +2,11 @@
 using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.DTOs;
 
-namespace YesilEvCodeFirst.Validation.FluentValidator
+namespace YesilEvCodeFirst.Validation.FluentValidator.Const
 {
-    public class GetProductDetailWithBarcodeValidator : AbstractValidator<BarcodeDTO>
+    public class BarcodeDTOValidator : AbstractValidator<BarcodeDTO>
     {
-        public GetProductDetailWithBarcodeValidator()
+        public BarcodeDTOValidator()
         {
             RuleFor(x => x.Barcode).NotEmpty().WithMessage(Messages.BarcodeIsEmpty);
             RuleFor(x => x.Barcode).MinimumLength(7).WithMessage(Messages.BarcodeMinLength);

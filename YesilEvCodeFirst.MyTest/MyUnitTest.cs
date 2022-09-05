@@ -259,7 +259,7 @@ namespace YesilEvCodeFirst.MyTest
         {
             UseProductSupplementDAL dal = new UseProductSupplementDAL();
 
-            var result = dal.GetSupplementsWithProductID(2);
+            var result = dal.GetSupplementsWithProductID(new IDDTO { ID = 2});
 
             if (result == null)
             {
@@ -272,7 +272,7 @@ namespace YesilEvCodeFirst.MyTest
         {
             UseSupplementBlackListDAL dal = new UseSupplementBlackListDAL();
 
-            var result = dal.GetSupplementsWithBlackListID(1);
+            var result = dal.GetSupplementsWithBlackListID(new IDDTO { ID = 1 });
 
             if (result == null)
             {
@@ -312,7 +312,7 @@ namespace YesilEvCodeFirst.MyTest
         public void GetSearchHistoryListWithUserIDTest()
         {
             UseSearchHistoryDAL dal = new UseSearchHistoryDAL();
-            var result = dal.GetSearchHistoryListWithUserID(1);
+            var result = dal.GetSearchHistoryListWithUserID(new IDDTO { ID = 1});
 
             if (result == null)
             {
@@ -398,7 +398,7 @@ namespace YesilEvCodeFirst.MyTest
         {
             UseUserDAL dal = new UseUserDAL();
 
-            var result = dal.GetUserDetailWithEmail("utku@gmail.com");
+            var result = dal.GetUserDetailWithEmail(new EmailDTO { Email = "utku@gmail.com" });
 
 
             if (result == null)
@@ -442,7 +442,7 @@ namespace YesilEvCodeFirst.MyTest
         {
             UseProductFavListDAL dal = new UseProductFavListDAL();
 
-            var result = dal.GetProductsWithFavListID(3);
+            var result = dal.GetProductsWithFavListID(new IDDTO { ID = 3 });
 
             if (result == null)
             {
@@ -462,7 +462,7 @@ namespace YesilEvCodeFirst.MyTest
         public void ClearSearchHistoryWithUserIDTest()
         {
             UseSearchHistoryDAL dal = new UseSearchHistoryDAL();
-            var result = dal.ClearSearchHistoryWithUserID(1);
+            var result = dal.ClearSearchHistoryWithUserID(new IDDTO { ID = 1 });
 
             if (result == false)
             {

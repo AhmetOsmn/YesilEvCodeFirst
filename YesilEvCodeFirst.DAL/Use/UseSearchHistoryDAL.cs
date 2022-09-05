@@ -3,9 +3,11 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
+using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.SearchHistory;
 using YesilEvCodeFirst.Mapping;
 using YesilEvCodeFirst.Validation.FluentValidator;
@@ -27,8 +29,10 @@ namespace YesilEvCodeFirst.DAL.Use
                 {
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
-                this.Add(MappingProfile.AddSearchHistoryDTOToSearchHistory(dto));
-                this.MySaveChanges();
+
+                Add(MappingProfile.AddSearchHistoryDTOToSearchHistory(dto));
+                MySaveChanges();
+
                 nLogger.Info("{} Kullanicisi {} urununu aradi.", dto.UserID, dto.ProductID);
                 return true;
             }
@@ -37,12 +41,6 @@ namespace YesilEvCodeFirst.DAL.Use
                 nLogger.Error("System - {}", fex.Message);
                 throw new FormatException(fex.Message);
             }
-            catch (Exception ex)
-            {
-                nLogger.Error("System - {}", ex.Message);
-            }
-
-            return false;
         }
 
         public List<SearchHistoryDTO> GetSearchHistoryList()
@@ -53,7 +51,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 if (searchHistoryList == null)
                 {
-                    throw new Exception("Listelenecek kategori bulunamadi.");
+                    throw new Exception(Messages.SearchHistoryNotFoundForList);
                 }
                 else
                 {
@@ -72,15 +70,23 @@ namespace YesilEvCodeFirst.DAL.Use
 
         }
 
-        public List<SearchHistoryDTO> GetSearchHistoryListWithUserID(int id)
+        public List<SearchHistoryDTO> GetSearchHistoryListWithUserID(IDDTO dto)
         {
+            IDDTOValidator validator = new IDDTOValidator();  
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
-                List<SearchHistory> searchHistoryList = GetByConditionWithInclude(x => x.UserID == id, "User", "Product");
+                if(!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
+                List<SearchHistory> searchHistoryList = GetByConditionWithInclude(x => x.UserID == dto.ID, "User", "Product");
 
                 if (searchHistoryList == null)
                 {
-                    throw new Exception("Listelenecek kategori bulunamadi.");
+                    throw new Exception(Messages.SearchHistoryNotFoundForList);
                 }
                 else
                 {
@@ -91,29 +97,40 @@ namespace YesilEvCodeFirst.DAL.Use
                     return searchHistoryDTOList;
                 }
             }
+            catch(FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new Exception(fex.Message);
+            }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
                 throw new Exception(ex.Message);
             }
-
         }
 
-        public bool ClearSearchHistoryWithUserID(int id)
+        public bool ClearSearchHistoryWithUserID(IDDTO dto)
         {
+            IDDTOValidator validator = new IDDTOValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
-                var histories = GetByCondition(x => x.UserID == id).ToList();
+                if(!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
+                var histories = GetByCondition(x => x.UserID == dto.ID).ToList();
                 DeleteRange(histories);
                 MySaveChanges();
                 return true;
             }
-            catch (Exception ex)
+            catch (FormatException fex)
             {
-                return false;
-                throw new Exception(ex.Message);
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
             }
-
         }
     }
 }
