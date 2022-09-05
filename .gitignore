@@ -361,3 +361,15 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+.\YesilEvCodeFirst.Common\App.config
+.\YesilEvCodeFirst.Core\App.config
+.\YesilEvCodeFirst.DAL\App.config
+.\YesilEvCodeFirst.DTOs\App.config
+.\YesilEvCodeFirst.ExceptionHandling\App.config
+.\YesilEvCodeFirst.Logs\App.config
+.\YesilEvCodeFirst.Mapping\App.config
+.\YesilEvCodeFirst.MyTest\App.config
+.\YesilEvCodeFirst.UIConsoleApp\App.config
+.\YesilEvCodeFirst.UIWinForm\App.config
+.\YesilEvCodeFirst.Validation\App.config
