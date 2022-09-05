@@ -54,9 +54,11 @@
   <ItemGroup>
     <Compile Include="BarcodeDTO.cs" />
     <Compile Include="Category\CategoryDTO.cs" />
+    <Compile Include="EmailDTO.cs" />
     <Compile Include="IDDTO.cs" />
     <Compile Include="LoginDTO.cs" />
     <Compile Include="ProductFavList\AddProductFavListDTO.cs" />
+    <Compile Include="ProductFavList\FavListProductDTO.cs" />
     <Compile Include="Product\AddProductDTO.cs" />
     <Compile Include="Product\GetProductDetailDTO.cs" />
     <Compile Include="Product\ListProductDTO.cs" />

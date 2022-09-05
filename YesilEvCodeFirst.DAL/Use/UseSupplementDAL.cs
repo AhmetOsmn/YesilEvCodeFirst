@@ -3,6 +3,7 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
@@ -38,7 +39,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception("Madde zaten mevcut.");
+                    throw new Exception(Messages.SupplementAlreadyExist);
                 }
 
                 return true;
@@ -69,7 +70,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 if (supplements == null)
                 {
-                    throw new Exception("Listelenecek supplement bulunamadı.");
+                    throw new Exception(Messages.SupplementNotFoundForList);
                 }
                 else
                 {

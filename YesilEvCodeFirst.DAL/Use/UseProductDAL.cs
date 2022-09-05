@@ -12,6 +12,7 @@ using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.Mapping;
 using YesilEvCodeFirst.Validation.FluentValidator;
+using YesilEvCodeFirst.Validation.FluentValidator.Const;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
@@ -153,7 +154,6 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else if (tempProduct.AddedBy != dto.AddedBy)
                     {
-
                         throw new Exception(Messages.DoesNotBelongUser);
                     }
                     else
@@ -165,7 +165,7 @@ namespace YesilEvCodeFirst.DAL.Use
             catch (FormatException fex)
             {
                 nLogger.Error("System - {}", fex.Message);
-                throw new Exception(fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {
@@ -204,7 +204,7 @@ namespace YesilEvCodeFirst.DAL.Use
         
         public List<ListProductDTO> GetProductListWithUserID(IDDTO dto)
         {
-            GetProductListWithUserIDValidator validator = new GetProductListWithUserIDValidator();
+            IDDTOValidator validator = new IDDTOValidator();
             ValidationResult validationResult = validator.Validate(dto);
 
             try
@@ -235,7 +235,7 @@ namespace YesilEvCodeFirst.DAL.Use
             catch(FormatException fex)
             {
                 nLogger.Error("System - {}", fex.Message);
-                throw new Exception(fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {
@@ -252,7 +252,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
         public GetProductDetailDTO GetProductDetailWithBarcode(BarcodeDTO dto)
         {
-            GetProductDetailWithBarcodeValidator validator = new GetProductDetailWithBarcodeValidator();
+            BarcodeDTOValidator validator = new BarcodeDTOValidator();
             ValidationResult validationResult = validator.Validate(dto);
             try
             {
@@ -263,7 +263,6 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    // todo: burada this.getbycondition metodu mu kullanmaliyiz, context.products.. seklinde mi yapmaliyiz.
                     Product product = this.GetByConditionWithInclude(p => p.Barcode.Equals(dto.Barcode), "Supplier", "Category").FirstOrDefault();
                     if (product != null)
                     {
@@ -279,7 +278,7 @@ namespace YesilEvCodeFirst.DAL.Use
             catch(FormatException fex)
             {
                 nLogger.Error("System - {}", fex.Message);
-                throw new Exception(fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {
@@ -290,8 +289,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
         public GetProductDetailDTO GetProductDetailWithProductID(IDDTO dto)
         {
-            // barcode validator
-            GetProductDetailWithProductIDValidator validator = new GetProductDetailWithProductIDValidator();
+            IDDTOValidator validator = new IDDTOValidator();
             ValidationResult validationResult = validator.Validate(dto);
 
             try
@@ -303,7 +301,6 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    // todo: burada this.getbycondition metodu mu kullanmaliyiz, context.products.. seklinde mi yapmaliyiz.
                     Product product = this.GetByConditionWithInclude(p => p.ProductID.Equals(dto.ID), "Supplier", "Category").FirstOrDefault();
                     if (product != null)
                     {
@@ -319,7 +316,7 @@ namespace YesilEvCodeFirst.DAL.Use
             catch(FormatException fex)
             {
                 nLogger.Error("System - {}", fex.Message);
-                throw new Exception(fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {

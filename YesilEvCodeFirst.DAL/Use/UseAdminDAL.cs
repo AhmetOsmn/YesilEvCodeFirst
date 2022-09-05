@@ -14,6 +14,7 @@ namespace YesilEvCodeFirst.DAL.Use
     public class UseAdminDAL : EfRepoBase<YesilEvDbContext, User>
     {
         readonly Logger nLogger = LogManager.GetCurrentClassLogger();
+
         public bool AdminLogin(LoginDTO dto)
         {
             LoginValidator validator = new LoginValidator();

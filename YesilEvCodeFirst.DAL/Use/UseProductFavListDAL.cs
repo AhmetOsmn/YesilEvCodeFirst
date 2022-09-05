@@ -3,9 +3,11 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
+using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.ProductFavList;
 using YesilEvCodeFirst.Mapping;
@@ -23,12 +25,13 @@ namespace YesilEvCodeFirst.DAL.Use
 
             try
             {
+                if (!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    if (!validationResult.IsValid)
-                    {
-                        throw new FormatException(validationResult.Errors[0].ErrorMessage);
-                    }
                     var list = context.ProductFavList.Where(u => u.FavorID.Equals(dto.FavorID) && u.ProductID.Equals(dto.ProductID)).FirstOrDefault();
                     if (list == null)
                     {
@@ -46,56 +49,13 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception("Listeden bulunan ürün tekrar listeye eklenemez.");
+                        throw new Exception(Messages.ProductAlreadyExistInList);
                     }
-                    //to do bu ne 
-                    //throw new Exception("Ürün Ve Favori tablosuna ekleme işlemi yapılamadı.");
                 }
                 nLogger.Info("Ürün Ve Favori liste tablosuna ekleme işlemi yapıldı.");
                 return true;
             }
             catch (FormatException fex)
-            {
-                nLogger.Error("System - {}", fex.Message);
-                throw new Exception(fex.Message);
-            }
-            catch (Exception ex)
-            {
-                nLogger.Error("System - {}", ex.Message);
-                throw new Exception(ex.Message);
-            }
-        }                
-        public bool DeleteProductFavList(AddProductFavListDTO dto)
-        {
-            ProductFavListValidator validator = new ProductFavListValidator();
-            ValidationResult validationResult = validator.Validate(dto);
-
-            try
-            {
-                using (YesilEvDbContext context = new YesilEvDbContext())
-                {
-                    if (!validationResult.IsValid)
-                    {
-                        throw new FormatException(validationResult.Errors[0].ErrorMessage);
-                    }
-                    var profavlist = context.ProductFavList.Where(u => u.FavorID.Equals(dto.FavorID) && u.ProductID.Equals(dto.ProductID)).FirstOrDefault();
-                    if (profavlist != null)
-                    {
-                        profavlist.IsActive = false;
-                        profavlist.CreatedDate = DateTime.Now;
-                        context.SaveChanges();
-                    }
-                    else
-                    {
-                        throw new Exception("Silme işlemi yapılamadı.");
-                    }
-                }
-
-                nLogger.Info("Ürün ve Favori tablosundan silme işlemi yapıldı.");
-
-                return true;
-            }
-            catch(FormatException fex)
             {
                 nLogger.Error("System - {}", fex.Message);
                 throw new FormatException(fex.Message);
@@ -106,20 +66,41 @@ namespace YesilEvCodeFirst.DAL.Use
                 throw new Exception(ex.Message);
             }
         }
-        public List<ListProductDTO> GetProductsWithFavListID(int id)
+        public bool DeleteProductFavList(AddProductFavListDTO dto)
         {
+            ProductFavListValidator validator = new ProductFavListValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
-                List<ProductFavList> products = GetByConditionWithInclude(u => u.FavorID.Equals(id) && u.IsActive, "Product").ToList();
-                if (products != null)
+                if (!validationResult.IsValid)
                 {
-                    nLogger.Info("{} ID'li kullanicinin favori listeleri getirildi.", id);
-                    return MappingProfile.ProductFavListListToListProductDTOList(products);
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
-                else
+
+                using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    throw new Exception("Liste bulunamadı");
+                    var profavlist = context.ProductFavList.Where(u => u.FavorID.Equals(dto.FavorID) && u.ProductID.Equals(dto.ProductID)).FirstOrDefault();
+                    if (profavlist != null)
+                    {
+                        profavlist.IsActive = false;
+                        profavlist.CreatedDate = DateTime.Now;
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        throw new Exception(Messages.ProductNotFoundForList);
+                    }
                 }
+
+                nLogger.Info("Ürün ve Favori tablosundan silme işlemi yapıldı.");
+
+                return true;
+            }
+            catch (FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {
@@ -127,13 +108,55 @@ namespace YesilEvCodeFirst.DAL.Use
                 throw new Exception(ex.Message);
             }
         }
-        public bool IsFavoriListHaveTheProduct(int favoriId,int productId)
+        public List<ListProductDTO> GetProductsWithFavListID(IDDTO dto)
         {
+            IDDTOValidator validator = new IDDTOValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
-                var result = GetByCondition(u=> u.FavorID == favoriId && u.ProductID == productId && u.IsActive == true).FirstOrDefault();
-                nLogger.Error("{} ID'li favori listenin {} Id'li ürün var mı kontrol edildi.", favoriId,productId);
-                if(result != null)
+                if (!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
+                List<ProductFavList> products = GetByConditionWithInclude(u => u.FavorID.Equals(dto.ID) && u.IsActive, "Product").ToList();
+                if (products != null)
+                {
+                    nLogger.Info("{} ID'li kullanicinin favori listeleri getirildi.", dto.ID);
+                    return MappingProfile.ProductFavListListToListProductDTOList(products);
+                }
+                else
+                {
+                    throw new Exception(Messages.ProductNotFoundForList);
+                }
+            }
+            catch (FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
+            }
+            catch (Exception ex)
+            {
+                nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
+            }
+        }
+        public bool IsFavoriListHaveTheProduct(FavListProductDTO dto)
+        {
+            FavListProductDTOValidator validator = new FavListProductDTOValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
+            try
+            {
+                if (!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
+                var result = GetByCondition(u => u.FavorID == dto.FavListID && u.ProductID == dto.ProductID && u.IsActive == true).FirstOrDefault();
+                nLogger.Error("{} ID'li favori listenin {} Id'li ürün var mı kontrol edildi.", dto.FavListID, dto.ProductID);
+                if (result != null)
                 {
                     return true;
                 }
@@ -142,11 +165,11 @@ namespace YesilEvCodeFirst.DAL.Use
                     return false;
                 }
             }
-            catch(Exception ex)
+            catch (FormatException fex)
             {
-                nLogger.Error("System - {}", ex.Message);
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
             }
-            return false;
         }
     }
 }
