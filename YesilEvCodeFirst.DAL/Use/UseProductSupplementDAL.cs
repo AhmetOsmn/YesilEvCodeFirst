@@ -26,15 +26,14 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception("maddeler bulunamadı");
+                    throw new Exception("Maddeler bulunamadı.");
                 }
             }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return null;
         }
     }
 }

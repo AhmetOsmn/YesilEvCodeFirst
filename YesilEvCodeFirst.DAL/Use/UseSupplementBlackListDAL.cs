@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using FluentValidation.Results;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using YesilEvCodeFirst.Core.Repos;
 using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.DTOs.SupplementBlackList;
 using YesilEvCodeFirst.Mapping;
+using YesilEvCodeFirst.Validation.FluentValidator;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
@@ -17,8 +19,16 @@ namespace YesilEvCodeFirst.DAL.Use
 
         public bool AddSupplementBlackList(AddSupplementBlackListDTO dto)
         {
+            SupplementBlackListValidator validator = new SupplementBlackListValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
+                if (!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
                     var blacklist = context.BlackList.Where(u => u.UserID.Equals(dto.UserID)).FirstOrDefault();
@@ -45,6 +55,7 @@ namespace YesilEvCodeFirst.DAL.Use
                             BlackListID = blacklist.BlackListID
                         });
                         context.SaveChanges();
+                        
                     }
                 }
 
@@ -52,17 +63,27 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 return true;
             }
+            catch(FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
+            }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return false;
         }
         public bool DeleteSupplementBlackList(AddSupplementBlackListDTO dto)
         {
+            SupplementBlackListValidator validator = new SupplementBlackListValidator();
+            ValidationResult validationResult = validator.Validate(dto);
             try
             {
+                if (!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
                     var suppblacklist = context.SupplementBlackList.Where(u => u.BlackListID.Equals(dto.BlackListID) && u.SupplementID.Equals(dto.SupplementID)).FirstOrDefault();
@@ -77,17 +98,21 @@ namespace YesilEvCodeFirst.DAL.Use
                         throw new Exception("Silme işlemi yapılamadı.");
                     }
 
-                }
-
+                }            
                 nLogger.Info("Kara liste tablosundan silme işlemi yapıldı.");
 
                 return true;
             }
+            catch(FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
+            }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-            return false;
         }
         public List<SupplementDTO> GetSupplementsWithBlackListID(int id)
         {
@@ -99,6 +124,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 {
                     nLogger.Info("{} ID'li kullanicinin kara listedeki maddeleri getirildi.", id);
                     return MappingProfile.SupplementBlackListListToSupplementDTOList(supplements);
+                    throw new Exception("{} ID'li kullanicinin kara listedeki maddeleri getirildi.");
                 }
                 else
                 {
@@ -108,9 +134,8 @@ namespace YesilEvCodeFirst.DAL.Use
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return null;
         }
     }
 }

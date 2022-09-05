@@ -63,7 +63,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FluentValidator\LoginValidator.cs" />
+    <Compile Include="FluentValidator\ProductFavListValidator.cs" />
+    <Compile Include="FluentValidator\SearchHistoryValidator.cs" />
     <Compile Include="FluentValidator\SignUpValidator.cs" />
+    <Compile Include="FluentValidator\SupplementBlackListValidator.cs" />
+    <Compile Include="FluentValidator\SupplementValidator.cs" />
     <Compile Include="Login\LoginValidator.cs" />
     <Compile Include="Product\AddProductValidator.cs" />
     <Compile Include="Product\UpdateProductValidator.cs" />

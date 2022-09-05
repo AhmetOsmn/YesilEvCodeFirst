@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using FluentValidation.Results;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,22 +8,34 @@ using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
 using YesilEvCodeFirst.DTOs.SearchHistory;
 using YesilEvCodeFirst.Mapping;
+using YesilEvCodeFirst.Validation.FluentValidator;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
-    public class UseSearchHistoryDAL : EfRepoBase<YesilEvDbContext, SearchHistory> 
+    public class UseSearchHistoryDAL : EfRepoBase<YesilEvDbContext, SearchHistory>
     {
         readonly Logger nLogger = LogManager.GetCurrentClassLogger();
 
         public bool AddSearchHistory(AddSearchHistoryDTO dto)
         {
+            SearchHistoryValidator validator = new SearchHistoryValidator();
+            ValidationResult validationResult = validator.Validate(dto);
 
             try
             {
+                if (!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
                 this.Add(MappingProfile.AddSearchHistoryDTOToSearchHistory(dto));
                 this.MySaveChanges();
-                nLogger.Info("{} Kullanicisi {} urununu aradi.",dto.UserID, dto.ProductID);
+                nLogger.Info("{} Kullanicisi {} urununu aradi.", dto.UserID, dto.ProductID);
                 return true;
+            }
+            catch (FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {
@@ -31,7 +44,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
             return false;
         }
-    
+
         public List<SearchHistoryDTO> GetSearchHistoryList()
         {
             try
@@ -54,15 +67,16 @@ namespace YesilEvCodeFirst.DAL.Use
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-            return null;
-        }   
+
+        }
 
         public List<SearchHistoryDTO> GetSearchHistoryListWithUserID(int id)
         {
             try
             {
-                List<SearchHistory> searchHistoryList = GetByConditionWithInclude(x => x.UserID == id,"User","Product");
+                List<SearchHistory> searchHistoryList = GetByConditionWithInclude(x => x.UserID == id, "User", "Product");
 
                 if (searchHistoryList == null)
                 {
@@ -80,8 +94,9 @@ namespace YesilEvCodeFirst.DAL.Use
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-            return null;
+
         }
 
         public bool ClearSearchHistoryWithUserID(int id)
@@ -98,7 +113,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 return false;
                 throw new Exception(ex.Message);
             }
-            
+
         }
     }
 }
