@@ -80,14 +80,7 @@
     <Compile Include="FluentValidator\SignUpValidator.cs" />
     <Compile Include="FluentValidator\SupplementBlackListValidator.cs" />
     <Compile Include="FluentValidator\SupplementValidator.cs" />
-    <Compile Include="Login\LoginValidator.cs" />
     <Compile Include="FluentValidator\UpdateProductValidator.cs" />
-    <Compile Include="LoginValidator.cs" />
-    <Compile Include="Product\AddProductValidator.cs" />
-    <Compile Include="Product\UpdateProductValidator.cs" />
-    <Compile Include="Supplement\AddSupplementValidator.cs" />
-    <Compile Include="User\AddUserValidator.cs" />
-    <Compile Include="ValidatorBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

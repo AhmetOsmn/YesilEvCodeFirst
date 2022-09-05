@@ -114,9 +114,9 @@ namespace YesilEvCodeFirst.MyTest
         public void AddBlackListTest()
         {
             UseBlackListDAL dal = new UseBlackListDAL();
-            bool result = dal.AddBlackList(new AddOrEditBlackListDTO()
+            bool result = dal.AddBlackList(new IDDTO()
             {
-                UserID = 1,
+                ID = 1
             });
 
             if (!result)
@@ -185,9 +185,9 @@ namespace YesilEvCodeFirst.MyTest
         {
 
             UseBlackListDAL dal = new UseBlackListDAL();
-            bool result = dal.DeleteBlackList(new AddOrEditBlackListDTO
+            bool result = dal.DeleteBlackListWithUserID (new IDDTO
             {
-                UserID = 1,
+                ID = 1,
             });
 
             if (!result)
@@ -285,7 +285,10 @@ namespace YesilEvCodeFirst.MyTest
         {
             UseBlackListDAL dal = new UseBlackListDAL();
 
-            var result = dal.GetBlackListIDWithUserID(1);
+            var result = dal.GetBlackListIDWithUserID(new IDDTO
+            {
+                ID = 1,
+            });
 
             if (result == null)
             {
@@ -368,7 +371,9 @@ namespace YesilEvCodeFirst.MyTest
         public void GetProductDetailTest()
         {
             UseProductDAL dal = new UseProductDAL();
-            var result = dal.GetProductDetailWithBarcode("477a0e0");
+            var result = dal.GetProductDetailWithBarcode(new BarcodeDTO{
+                Barcode="477a0e0"
+            });
 
             if (result == null)
             {
@@ -421,7 +426,10 @@ namespace YesilEvCodeFirst.MyTest
         {
             UseFavListDAL dal = new UseFavListDAL();
 
-            var result = dal.GetFavListsWithUserID(1);
+            var result = dal.GetFavListsWithUserID(new IDDTO
+            {
+                ID = 1,
+            });
 
             if (result == null)
             {

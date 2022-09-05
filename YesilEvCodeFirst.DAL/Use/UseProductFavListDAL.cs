@@ -29,40 +29,19 @@ namespace YesilEvCodeFirst.DAL.Use
                     {
                         throw new FormatException(validationResult.Errors[0].ErrorMessage);
                     }
-                    var favlist = context.FavList.Where(u => u.FavorID.Equals(dto.FavorID)).FirstOrDefault();
                     var list = context.ProductFavList.Where(u => u.FavorID.Equals(dto.FavorID) && u.ProductID.Equals(dto.ProductID)).FirstOrDefault();
-                    if (favlist == null)
+                    if (list == null)
                     {
-                            /*context.FavList.Add(new FavList
-                            {
-                                FavorID = dto.FavorID
-                            });
-                            context.SaveChanges();
-                            context.ProductFavList.Add(new ProductFavList
-                            {
-                                ProductID = dto.ProductID,
-                                FavorID = context.FavList.LastOrDefault().FavorID
-                            });
-                            context.SaveChanges();*/
-                    }  
-                    else if (list == null)
-                        {
-                            context.ProductFavList.Add(new ProductFavList
-                            {
-                                ProductID = dto.ProductID,
-                                FavorID = dto.FavorID
-                            });
-                            context.SaveChanges();
-                        }
-                        else if(list != null){
-                            list.IsActive = true;
-                            context.SaveChanges();
-                        }
-                        else
+                        context.ProductFavList.Add(new ProductFavList
                         {
                             ProductID = dto.ProductID,
-                            FavorID = favlist.FavorID
+                            FavorID = dto.FavorID
                         });
+                        context.SaveChanges();
+                    }
+                    else if (list != null)
+                    {
+                        list.IsActive = true;
                         context.SaveChanges();
                     }
                     else
@@ -72,9 +51,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     //to do bu ne 
                     //throw new Exception("Ürün Ve Favori tablosuna ekleme işlemi yapılamadı.");
                 }
-
                 nLogger.Info("Ürün Ve Favori liste tablosuna ekleme işlemi yapıldı.");
-
                 return true;
             }
             catch (FormatException fex)

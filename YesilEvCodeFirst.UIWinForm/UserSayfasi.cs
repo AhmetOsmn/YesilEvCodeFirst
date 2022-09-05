@@ -729,7 +729,8 @@ namespace YesilEvCodeFirst.UIWinForm
             }
         }
         private void GetFavoriListsAddProductAndDeleteProduct(int selectedRow, int Eventx , int Eventy){
-            var favLists = useFavListDAL.GetFavListsWithUserID(User.UserID);
+            IDDTO userIDDTO = new IDDTO() { ID = User.UserID };
+            var favLists = useFavListDAL.GetFavListsWithUserID(userIDDTO);
             ContextMenu cm = new ContextMenu();
             MenuItem favEkle = new MenuItem();
             MenuItem favSil = new MenuItem();
@@ -788,7 +789,8 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             var clickMenuItem = sender as MenuItem;
             var MenuText = clickMenuItem.Text;
-            addProductFavListDTO.FavorID = useFavListDAL.GetFavListIDWithFavListNameAndUserID(User.UserID, MenuText);
+            GetFavListIDWithFavListNameAndUserIDDTO userIDAndListNameDTO = new GetFavListIDWithFavListNameAndUserIDDTO() { UserID = User.UserID, FavListName = MenuText };
+            addProductFavListDTO.FavorID = useFavListDAL.GetFavListIDWithFavListNameAndUserID(userIDAndListNameDTO);
             bool result = useProductFavListDAL.DeleteProductFavList(addProductFavListDTO);
             if (result)
             {
