@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using FluentValidation.Results;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +7,8 @@ using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
 using YesilEvCodeFirst.DTOs.Supplement;
-using YesilEvCodeFirst.ExceptionHandling;
 using YesilEvCodeFirst.Mapping;
-using YesilEvCodeFirst.Validation.Supplement;
+using YesilEvCodeFirst.Validation.FluentValidator;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
@@ -17,13 +17,14 @@ namespace YesilEvCodeFirst.DAL.Use
         readonly Logger nLogger = LogManager.GetCurrentClassLogger();
         public bool AddSupplement(AddSupplementDTO dto)
         {
-            AddSupplementValidator validator = new AddSupplementValidator(dto);
+            SupplementValidator validator = new SupplementValidator();
+            ValidationResult validationResult = validator.Validate(dto);
 
             try
             {
-                if (!validator.IsValid)
+                if (!validationResult.IsValid)
                 {
-                    throw new ModelNotValidException(validator.ValidationMessages);
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
                 //todo: tolower kullanilacak mi karar verilecek
@@ -37,18 +38,21 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception("Madde zaten mevcut");
+                    throw new Exception("Madde zaten mevcut.");
                 }
 
                 return true;
             }
+            catch (FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
+            }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return false;
-
         }
 
         public List<ListSupplementDTO> GetSupplementList()
@@ -63,26 +67,22 @@ namespace YesilEvCodeFirst.DAL.Use
 
                     supplements = result;
                 }
-                if(supplements == null)
+                if (supplements == null)
                 {
-                    throw new Exception("Listelenecek supplement bulunamadi");
+                    throw new Exception("Listelenecek supplement bulunamadı.");
                 }
                 else
                 {
                     List<ListSupplementDTO> supplementDTOList = MappingProfile.SupplementListToSupplementListDTOList(supplements);
-
                     nLogger.Info("Supplement tablosu listelendi.");
-
                     return supplementDTOList;
                 }
-                
             }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return null;
         }
     }
 }

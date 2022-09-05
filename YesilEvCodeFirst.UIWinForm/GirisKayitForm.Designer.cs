@@ -280,8 +280,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(456, 475);
-            this.Controls.Add(this.btnGrpBoxSignIn);
             this.Controls.Add(this.btnGrpBoxSignUp);
+            this.Controls.Add(this.btnGrpBoxSignIn);
             this.Controls.Add(this.GrpBoxSignIn);
             this.Controls.Add(this.GrpBoxSignUp);
             this.Name = "SignInSignUpForm";

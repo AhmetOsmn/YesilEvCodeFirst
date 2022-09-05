@@ -40,9 +40,8 @@ namespace YesilEvCodeFirst.DAL.Use
             catch (Exception ex)
             {
                 nLogger.Error("System- {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return null;
         }
     }
 }

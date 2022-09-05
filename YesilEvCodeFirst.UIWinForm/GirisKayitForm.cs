@@ -40,27 +40,22 @@ namespace YesilEvCodeFirst.UIWinForm
                 Email = txtSignInEmail.Text,
                 Password = txtSignInPassword.Text,
             };
-
-            LoginValidator validations = new LoginValidator();
-            ValidationResult validationResult = validations.Validate(dto);
-            if (validationResult.IsValid)
+            try
             {
                 var result = userDAL.UserLogin(dto);
-                if (result == null)
-                {
-                    MessageBox.Show("Giriş Bilgileri Yanlış");
-                }
-                else
-                {
-                    OpenUserPage(result);
-                }
+                OpenUserPage(result);
             }
-            else
+            catch (FormatException fex)
             {
-                MessageBox.Show(validationResult.Errors[0].ErrorMessage);
+                MessageBox.Show(fex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
-        
+
         private void OpenUserPage(UserDetailDTO result)
         {
             UserSayfasi f = new UserSayfasi();
@@ -70,9 +65,8 @@ namespace YesilEvCodeFirst.UIWinForm
         }
         private void btnSignUp_Click(object sender, EventArgs e)
         {
+            //to do dialog result kullanıcı mevcut giriş sayfasına gitmek ister misin?
             btnSignUp.Enabled = false;
-            //if (txtEmail.Text.Contains('@'))
-            //{
             AddUserDTO dto = new AddUserDTO()
             {
                 Email = txtEmail.Text,
@@ -81,24 +75,26 @@ namespace YesilEvCodeFirst.UIWinForm
                 Password = txtPassword.Text,
                 Phone = "1234567891"
             };
-            SignUpValidator validations = new SignUpValidator();
-            ValidationResult validationResult = validations.Validate(dto);
-            if (validationResult.IsValid)
+            try
             {
                 var result = userDAL.AddUser(dto);
                 if (result)
                 {
-                    MessageBox.Show("Başarıyla Kayıt Oldunuz. Giriş Yapabilirsiniz");
+                    MessageBox.Show("Başarıyla Kayıt Oldunuz. Giriş Yapabilirsiniz.");
                     GrpBoxSignUp.Visible = false;
                     GrpBoxSignIn.Visible = true;
                 }
             }
-            else
+            catch (FormatException fex)
             {
-                MessageBox.Show(validationResult.Errors[0].ErrorMessage);
+                MessageBox.Show(fex.Message);
+                btnSignUp.Enabled = true;
             }
-
-            //}
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                btnSignUp.Enabled = true;
+            }
         }
     }
 }

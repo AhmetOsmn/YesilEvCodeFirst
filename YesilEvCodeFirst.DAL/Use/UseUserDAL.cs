@@ -1,15 +1,15 @@
-﻿using NLog;
+﻿using FluentValidation.Results;
+using NLog;
 using System;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Linq;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
 using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.UserAdmin;
-using YesilEvCodeFirst.ExceptionHandling;
 using YesilEvCodeFirst.Mapping;
-using YesilEvCodeFirst.Validation;
-using YesilEvCodeFirst.Validation.User;
+using YesilEvCodeFirst.Validation.FluentValidator;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
@@ -19,19 +19,16 @@ namespace YesilEvCodeFirst.DAL.Use
 
         public UserDetailDTO UserLogin(LoginDTO dto)
         {
-            LoginValidator validator = new LoginValidator(dto);
 
+            LoginValidator validator = new LoginValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+            
             try
             {
-                if (!validator.IsValid)
+                if (!validationResult.IsValid)
                 {
-                    throw new ModelNotValidException(validator.ValidationMessages);
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
-                //using (YesilEvDbContext context = new YesilEvDbContext())
-                //{
-                //    var result = context.User.Where(u => u.Email.Equals(dto.Email) && u.Password.Equals(dto.Password)).FirstOrDefault();
-                //    user = result;
-                //}
                 var user = GetByCondition(u => u.Email.Equals(dto.Email) && u.Password.Equals(dto.Password)).FirstOrDefault();
                 if (user == null)
                 {
@@ -43,26 +40,28 @@ namespace YesilEvCodeFirst.DAL.Use
                     return MappingProfile.UserToGetUserDetailDTO(user);
                 }
             }
-            catch (ModelNotValidException ex)
+            catch (FormatException fex)
             {
-                nLogger.Error("System - {}", ex.Message);
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-            return null;
         }
 
         public bool AddUser(AddUserDTO dto)
         {
-            AddUserValidator validator = new AddUserValidator(dto);
+            SignUpValidator validator = new SignUpValidator();
+            ValidationResult validationResult = validator.Validate(dto);
 
             try
             {
-                if (!validator.IsValid)
+                if (!validationResult.IsValid)
                 {
-                    throw new ModelNotValidException(validator.ValidationMessages);
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
@@ -84,15 +83,16 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 return true;
             }
-            catch (ModelNotValidException ex)
+            catch (FormatException fex)
             {
-                nLogger.Error("System - {}", ex.Message);
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-            return false;
         }
         public UserDetailDTO GetUserDetailWithEmail(string email)
         {
@@ -112,9 +112,8 @@ namespace YesilEvCodeFirst.DAL.Use
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return null;
         }
 
         public UserDetailDTO GetUserDetailWithID(int id)
@@ -135,9 +134,8 @@ namespace YesilEvCodeFirst.DAL.Use
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return null;
         }
 
         public bool UpdateUserDetails(UpdateUserDetailsDTO dto)
