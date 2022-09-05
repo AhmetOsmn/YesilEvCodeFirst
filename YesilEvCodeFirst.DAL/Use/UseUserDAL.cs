@@ -8,7 +8,7 @@ using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.UserAdmin;
 using YesilEvCodeFirst.ExceptionHandling;
 using YesilEvCodeFirst.Mapping;
-using YesilEvCodeFirst.Validation.Login;
+using YesilEvCodeFirst.Validation;
 using YesilEvCodeFirst.Validation.User;
 
 namespace YesilEvCodeFirst.DAL.Use
@@ -37,7 +37,8 @@ namespace YesilEvCodeFirst.DAL.Use
                 {
                     throw new Exception("Kullanıcı bulunamadı.");
                 }
-                else{
+                else
+                {
                     nLogger.Info("{} - sisteme giris yapti.", user.FirstName + " " + user.LastName);
                     return MappingProfile.UserToGetUserDetailDTO(user);
                 }

@@ -1,34 +1,35 @@
-﻿using NLog;
+﻿using FluentValidation.Results;
+using NLog;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
+using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
+using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.Supplement;
-using YesilEvCodeFirst.ExceptionHandling;
 using YesilEvCodeFirst.Mapping;
-using YesilEvCodeFirst.Validation.Product;
-using YesilEvCodeFirst.Validation.Urun;
+using YesilEvCodeFirst.Validation.FluentValidator;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
-
+    // todo: transaction eklenecek mi?
     public class UseProductDAL : EfRepoBase<YesilEvDbContext, Product>
     {
         readonly Logger nLogger = LogManager.GetCurrentClassLogger();
         public bool AddProduct(AddProductDTO dto)
         {
-            AddProductValidator validator = new AddProductValidator(dto);
+            AddProductValidator validator = new AddProductValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
-                if (!validator.IsValid)
+                if(!validationResult.IsValid)
                 {
-                    throw new ModelNotValidException(validator.ValidationMessages);
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
-
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
@@ -37,7 +38,6 @@ namespace YesilEvCodeFirst.DAL.Use
                     {
                         Product eklenecekUrun = MappingProfile.AddProductDTOToProduct(dto);
                         context.Product.Add(eklenecekUrun);
-                        // todo: refactor edilecek
                         context.SaveChanges();
 
                         var supplements = eklenecekUrun.ProductContent.Split(',');
@@ -47,8 +47,6 @@ namespace YesilEvCodeFirst.DAL.Use
                             var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
                             if (result == null)
                             {
-                                //context.Supplement.Add(new Supplement { SupplementName = supplements[i] });
-                                // todo: UseSupplementDal'ı burada kullanmaya gerek var mi? Yukaridaki kullanim da var.
                                 UseSupplementDAL supplementDAL = new UseSupplementDAL();
                                 supplementDAL.AddSupplement(new AddSupplementDTO { SupplementName = sup });
                                 context.ProductSupplement.Add(new ProductSupplement()
@@ -73,187 +71,107 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception("Urun zaten mevcut");
+                        throw new Exception(Messages.ProductAlreadyExist);
                     }
                 }
 
                 return true;
             }
-            catch (ModelNotValidException ex)
+            catch (FormatException fex)
             {
-                nLogger.Error("Sytem - {}", ex.Message);
+                nLogger.Error("Sytem - {}", fex.Message);
+                throw new FormatException(fex.Message);
             }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-            return false;
         }
-        //to do throw exception bastırma yapılacak
 
         public bool UpdateProduct(UpdateProductDTO dto)
         {
-            UpdateProductValidator validator = new UpdateProductValidator(dto);
+            UpdateProductValidator validator = new UpdateProductValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
-                if (!validator.IsValid)
+                if (!validationResult.IsValid)
                 {
-                    throw new ModelNotValidException(validator.ValidationMessages);
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
+
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    try
+                    var tempProduct = context.Product.Where(x => x.Barcode.Equals(dto.Barcode)).FirstOrDefault();
+                    
+                    if (tempProduct != null && tempProduct.AddedBy == dto.AddedBy)
                     {
-                        var tempProduct = context.Product.Where(x => x.Barcode.Equals(dto.Barcode)).FirstOrDefault();
-                        if (tempProduct != null && tempProduct.AddedBy == dto.AddedBy)
-                        {
-                            tempProduct.ProductName = dto.ProductName;
-                            tempProduct.CategoryID = dto.CategoryID;
-                            tempProduct.ProductContent = dto.ProductContent;
-                            tempProduct.AddedBy = dto.AddedBy;
-                            tempProduct.PictureBackPath = dto.PictureBackPath;
-                            tempProduct.PictureFronthPath = dto.PictureFronthPath;
-                            tempProduct.SupplierID = dto.SupplierID;
+                        tempProduct.ProductName = dto.ProductName;
+                        tempProduct.CategoryID = dto.CategoryID;
+                        tempProduct.ProductContent = dto.ProductContent;
+                        tempProduct.AddedBy = dto.AddedBy;
+                        tempProduct.PictureBackPath = dto.PictureBackPath;
+                        tempProduct.PictureFronthPath = dto.PictureFronthPath;
+                        tempProduct.SupplierID = dto.SupplierID;
 
-                            var supplements = tempProduct.ProductContent.Split(',');
-                            //refactor edilecek
-                            var temp = context.ProductSupplement.Where(x => x.ProductID == tempProduct.ProductID).ToList();
-                            context.ProductSupplement.RemoveRange(temp);
-                            MySaveChanges();
-                            nLogger.Info("Urunun eski icerikleri silindi"); ;
-                            for (int i = 0; i < supplements.Length; i++)
+                        var supplements = tempProduct.ProductContent.Split(',');
+                        //refactor edilecek
+                        var temp = context.ProductSupplement.Where(x => x.ProductID == tempProduct.ProductID).ToList();
+                        context.ProductSupplement.RemoveRange(temp);
+                        MySaveChanges();
+                        nLogger.Info("Urunun eski icerikleri silindi"); ;
+                        for (int i = 0; i < supplements.Length; i++)
+                        {
+                            string sup = supplements[i].Trim();
+                            var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
+                            if (result == null)
                             {
-                                string sup = supplements[i].Trim();
-                                var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
-                                if (result == null)
+                                UseSupplementDAL supplementDAL = new UseSupplementDAL();
+                                supplementDAL.AddSupplement(new AddSupplementDTO { SupplementName = sup });
+                                context.ProductSupplement.Add(new ProductSupplement()
                                 {
-                                    UseSupplementDAL supplementDAL = new UseSupplementDAL();
-                                    supplementDAL.AddSupplement(new AddSupplementDTO { SupplementName = sup });
-                                    context.ProductSupplement.Add(new ProductSupplement()
-                                    {
-                                        ProductID = tempProduct.ProductID,
-                                        SupplementID = context.Supplement.ToList().LastOrDefault().SupplementID
-                                    });
-                                    nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", tempProduct.ProductName, sup);
-                                }
-                                else
-                                {
-                                    context.ProductSupplement.Add(new ProductSupplement()
-                                    {
-                                        ProductID = tempProduct.ProductID,
-                                        SupplementID = result.SupplementID
-                                    });
-                                    nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", tempProduct.ProductName, sup);
-                                }
+                                    ProductID = tempProduct.ProductID,
+                                    SupplementID = context.Supplement.ToList().LastOrDefault().SupplementID
+                                });
+                                nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", tempProduct.ProductName, sup);
                             }
-
-                            context.SaveChanges();
-                            nLogger.Info("{} urunu guncellendi", tempProduct.ProductName);
-                            return true;
-                        }
-                        else if (tempProduct.AddedBy != dto.AddedBy)
-                        {
-
-                            throw new Exception("Urun Kullaniciya ait degil");
-                        }
-                        else
-                        {
-                            throw new Exception("Urun mevcut değil");
+                            else
+                            {
+                                context.ProductSupplement.Add(new ProductSupplement()
+                                {
+                                    ProductID = tempProduct.ProductID,
+                                    SupplementID = result.SupplementID
+                                });
+                                nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", tempProduct.ProductName, sup);
+                            }
                         }
 
+                        context.SaveChanges();
+                        nLogger.Info("{} urunu guncellendi", tempProduct.ProductName);
+                        return true;
                     }
-                    catch (Exception ex)
+                    else if (tempProduct.AddedBy != dto.AddedBy)
                     {
-                        nLogger.Error("System - {}", ex.Message);
+
+                        throw new Exception(Messages.DoesNotBelongUser);
                     }
-
-                    return false;
-
-                    //using (DbContextTransaction trans = context.Database.BeginTransaction())
-                    //{
-                    //    //try
-                    //    //{
-                    //    //    var tempProduct = context.Product.Where(x => x.Barcode.Equals(dto.Barcode)).FirstOrDefault();
-                    //    //    if (tempProduct != null && tempProduct.AddedBy == dto.AddedBy)
-                    //    //    {
-                    //    //        tempProduct.ProductName = dto.ProductName;
-                    //    //        tempProduct.CategoryID = dto.CategoryID;
-                    //    //        tempProduct.ProductContent = dto.ProductContent;
-                    //    //        tempProduct.AddedBy = dto.AddedBy;
-                    //    //        tempProduct.PictureBackPath = dto.PictureBackPath;
-                    //    //        tempProduct.PictureFronthPath = dto.PictureFronthPath;
-                    //    //        tempProduct.SupplierID = dto.SupplierID;
-
-                    //    //        var supplements = tempProduct.ProductContent.Split(',');
-                    //    //        //refactor edilecek
-                    //    //        var temp = context.ProductSupplement.Where(x => x.ProductID == tempProduct.ProductID).ToList();
-                    //    //        context.ProductSupplement.RemoveRange(temp);
-                    //    //        MySaveChanges();
-                    //    //        nLogger.Info("Urunun eski icerikleri silindi"); ;
-                    //    //        for (int i = 0; i < supplements.Length; i++)
-                    //    //        {
-                    //    //            string sup = supplements[i].Trim();
-                    //    //            var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
-                    //    //            if (result == null)
-                    //    //            {
-                    //    //                UseSupplementDAL supplementDAL = new UseSupplementDAL();
-                    //    //                supplementDAL.AddSupplement(new AddSupplementDTO { SupplementName = sup });
-                    //    //                context.ProductSupplement.Add(new ProductSupplement()
-                    //    //                {
-                    //    //                    ProductID = tempProduct.ProductID,
-                    //    //                    SupplementID = context.Supplement.ToList().LastOrDefault().SupplementID
-                    //    //                });
-                    //    //                nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", tempProduct.ProductName, sup);
-                    //    //            }
-                    //    //            else
-                    //    //            {
-                    //    //                context.ProductSupplement.Add(new ProductSupplement()
-                    //    //                {
-                    //    //                    ProductID = tempProduct.ProductID,
-                    //    //                    SupplementID = result.SupplementID
-                    //    //                });
-                    //    //                nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", tempProduct.ProductName, sup);
-                    //    //            }
-                    //    //        }
-
-                    //    //        context.SaveChanges();
-                    //    //        trans.Commit();
-                    //    //        nLogger.Info("{} urunu guncellendi", tempProduct.ProductName);
-                    //    //    }
-                    //    //    else if (tempProduct.AddedBy != dto.AddedBy)
-                    //    //    {
-
-                    //    //        throw new Exception("Urun Kullaniciya ait degil");
-                    //    //    }
-                    //    //    else
-                    //    //    {
-                    //    //        throw new Exception("Urun mevcut değil");
-                    //    //    }
-
-                    //    //}
-                    //    //catch (Exception ex)
-                    //    //{
-                    //    //    trans.Rollback();
-                    //    //    throw new Exception(ex.Message);
-                    //    //}
-                    //    //finally
-                    //    //{
-                    //    //    trans.Dispose();
-                    //    //}
-
-                    //    //return true;
-                    //}
+                    else
+                    {
+                        throw new Exception(Messages.ProductNotFound);
+                    } 
                 }
             }
-            catch (ModelNotValidException ex)
+            catch (FormatException fex)
             {
-                nLogger.Error("System - {}", ex.Message);
+                nLogger.Error("System - {}", fex.Message);
+                throw new Exception(fex.Message);
             }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-            return false;
         }
 
         public List<ListProductDTO> GetProductList()
@@ -268,7 +186,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 if(products == null)
                 {
-                    throw new Exception("Listelenecek urun bulunamadi.");
+                    throw new Exception(Messages.ProductListIsEmpty);
                 }
                 else
                 {
@@ -276,29 +194,35 @@ namespace YesilEvCodeFirst.DAL.Use
                     nLogger.Info("Product tablosu listelendi.");
                     return productDTOList;
                 }
-
             }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return null;
         }
         
-        public List<ListProductDTO> GetProductListWithUserID(int userID)
+        public List<ListProductDTO> GetProductListWithUserID(IDDTO dto)
         {
+            GetProductListWithUserIDValidator validator = new GetProductListWithUserIDValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
+                if(!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
                 List<Product> products = null;
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    List<Product> productList = context.Product.Where(x=>x.AddedBy == userID).ToList();
+                    List<Product> productList = context.Product.Where(x=>x.AddedBy == dto.ID).ToList();
                     products = productList;
                 }
                 if (products == null)
                 {
-                    throw new Exception("Listelenecek urun bulunamadi.");
+                    throw new Exception(Messages.ProductListIsEmpty);
                 }
                 else
                 {
@@ -308,40 +232,39 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
 
             }
+            catch(FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new Exception(fex.Message);
+            }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return null;
         }
        
         public List<ListProductDTO> GetProductListForSearchbar(string filter)
         {
-            // todo: burada try-catch yapisi gereksiz degil mi?
-            try
-            {
-                List<ListProductDTO> listProductDTOList = MappingProfile.ProductListToProductListDTO(GetByCondition(x => x.ProductName.ToLower().Contains(filter.ToLower())));
-                //log alinacak mi? her harf girildiginde log almak saglikli olmaz.
-                return listProductDTOList;
-            }
-            catch (Exception ex)
-            {
-                nLogger.Error("System - {}", ex.Message);
-            }
-
-            return null;
+            List<ListProductDTO> listProductDTOList = MappingProfile.ProductListToProductListDTO(GetByCondition(x => x.ProductName.ToLower().Contains(filter.ToLower())));
+            return listProductDTOList;
         }
 
-        public GetProductDetailDTO GetProductDetailWithBarcode(string barcode)
+        public GetProductDetailDTO GetProductDetailWithBarcode(BarcodeDTO dto)
         {
-            // barcode validator
+            GetProductDetailWithBarcodeValidator validator = new GetProductDetailWithBarcodeValidator();
+            ValidationResult validationResult = validator.Validate(dto);
             try
             {
+                if(!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
                     // todo: burada this.getbycondition metodu mu kullanmaliyiz, context.products.. seklinde mi yapmaliyiz.
-                    Product product = this.GetByConditionWithInclude(p => p.Barcode.Equals(barcode), "Supplier", "Category").FirstOrDefault();
+                    Product product = this.GetByConditionWithInclude(p => p.Barcode.Equals(dto.Barcode), "Supplier", "Category").FirstOrDefault();
                     if (product != null)
                     {
                         nLogger.Info("{} urunun detaylari getirildi", product.ProductName);
@@ -349,27 +272,39 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception("Urun bulunamadi");
+                        throw new Exception(Messages.ProductNotFound);
                     }
                 }
+            }
+            catch(FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new Exception(fex.Message);
             }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return null;
         }
 
-        public GetProductDetailDTO GetProductDetailWithID(int id)
+        public GetProductDetailDTO GetProductDetailWithProductID(IDDTO dto)
         {
             // barcode validator
+            GetProductDetailWithProductIDValidator validator = new GetProductDetailWithProductIDValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
             try
             {
+                if(!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
                     // todo: burada this.getbycondition metodu mu kullanmaliyiz, context.products.. seklinde mi yapmaliyiz.
-                    Product product = this.GetByConditionWithInclude(p => p.ProductID.Equals(id), "Supplier", "Category").FirstOrDefault();
+                    Product product = this.GetByConditionWithInclude(p => p.ProductID.Equals(dto.ID), "Supplier", "Category").FirstOrDefault();
                     if (product != null)
                     {
                         nLogger.Info("{} urunun detaylari getirildi", product.ProductName);
@@ -377,17 +312,20 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        //  Eşleşmezse, yeni ürün ekleme sayfası gelecek ve doldurulması gereken formda barkod no hazır olarak gözükecek.
-                        throw new Exception("Urun bulunamadi");
+                        throw new Exception(Messages.ProductNotFound);
                     }
                 }
+            }
+            catch(FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new Exception(fex.Message);
             }
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return null;
         }
     }
 }
