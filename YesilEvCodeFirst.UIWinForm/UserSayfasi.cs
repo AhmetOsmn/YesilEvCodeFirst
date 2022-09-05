@@ -111,7 +111,7 @@ namespace YesilEvCodeFirst.UIWinForm
             btnAddAndUpdateProductUpdateProduct.BackColor = Color.DarkGreen;
             grpBoxAddAndUpdateProductUpdateProduct.Visible = true;
             btnAddAndUpdateProductAddProduct.BackColor = Color.Green;
-            Clean();
+            CleanAddAndUpdateProduct();
         }
 
         private void AddProduct_Click(object sender, EventArgs e)
@@ -122,7 +122,7 @@ namespace YesilEvCodeFirst.UIWinForm
             btnAddAndUpdateProductAddProduct.BackColor = Color.DarkGreen;
             grpBoxAddAndUpdateProductAddProduct.Visible = true;
             btnAddAndUpdateProductUpdateProduct.BackColor = Color.Green;
-            Clean();
+            CleanAddAndUpdateProduct();
         }
 
         private void AddAndUpdateProduct_Click(object sender, EventArgs e)
@@ -167,7 +167,7 @@ namespace YesilEvCodeFirst.UIWinForm
                         int lastAddedProductID = useProductDAL.GetProductDetailWithBarcode(txtAddAndUpdateProductAddProductBarcodeNo.Text).ProductID;
                         GoProductDetails(lastAddedProductID);
                         // todo: eklenen ürüne ait olan detay sayfasında yonlendirilecek
-                        Clean();
+                        CleanAddAndUpdateProduct();
                     }
                     else
                     {
@@ -199,7 +199,7 @@ namespace YesilEvCodeFirst.UIWinForm
                             // todo: eklenen ürüne ait olan detay sayfasında yonlendirilecek
                             int lastUpdatedProductID = useProductDAL.GetProductDetailWithBarcode(txtAddAndUpdateProductUpdateProductBarcodeNo.Text).ProductID;
                             GoProductDetails(lastUpdatedProductID);
-                            Clean();
+                            CleanAddAndUpdateProduct();
                         }
                     }
                 }
@@ -365,7 +365,7 @@ namespace YesilEvCodeFirst.UIWinForm
             return true;
         }
 
-        private void Clean()
+        private void CleanAddAndUpdateProduct()
         {
             txtAddAndUpdateProductUpdateProductBarcodeNo.Text = "";
             txtAddAndUpdateProductUpdateProductProductName.Text = "";
@@ -624,6 +624,9 @@ namespace YesilEvCodeFirst.UIWinForm
             ProductDetails.Visible = false;
             SearchBarcode.Visible = false;
             AddFavoriList.Visible = false;
+            ChangeEmail.Visible = false;
+            ChangePassword.Visible = false;
+            ChangeUserDetails.Visible = false;
             CloseSideBar();
             ProductSupplementDetailClose();
         }
@@ -701,50 +704,90 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void dgvProducts_MouseClick(object sender, MouseEventArgs e)
         {
-            var favLists = useFavListDAL.GetFavListsWithUserID(User.UserID);
+            
+            int selectedRow = -1;
+            selectedRow = dgvSearchProductProducts.HitTest(e.X, e.Y).RowIndex;
 
             if (e.Button == MouseButtons.Right)
             {
-                
-                ContextMenu cm = new ContextMenu();
-                MenuItem favEkle = new MenuItem();
-                favEkle.Text = "Favori Ekle";
-                if(favLists.Count > 0)
+                if (selectedRow >= 0)
                 {
-                    favLists.ForEach(x => favEkle.MenuItems.Add(new MenuItem(x.FavoriListName, new EventHandler(AddFav))));
-                }
-                else
-                {
-                    favEkle.MenuItems.Add(new MenuItem("Yeni Liste Ekle", new EventHandler(AddFavoriListPage)));
-                }
-
-                cm.MenuItems.Add(favEkle);
-
-                cm.Show(dgvSearchProductProducts, new Point(e.X, e.Y));
-
-                int selectedRow = -1;
-                selectedRow = dgvSearchProductProducts.HitTest(e.X, e.Y).RowIndex;
-
-                if (selectedRow >= 0 && favLists.Count > 0)
-                {
-                    addProductFavListDTO = new AddProductFavListDTO();
-                    addProductFavListDTO.ProductID = Convert.ToInt32(dgvSearchProductProducts.Rows[selectedRow].Cells[0].Value);
-                    addProductFavListDTO.UserID = User.UserID;
+                    GetFavoriListsAddProductAndDeleteProduct(selectedRow, e.X, e.Y);
                 }
                 else if (selectedRow != dgvSearchProductProducts.RowCount - 1)
                 {
                     MessageBox.Show("Yanlış yere tıkladınız.");
                 }
-
             }
         }
-
+        private void GetFavoriListsAddProductAndDeleteProduct(int selectedRow, int Eventx , int Eventy){
+            var favLists = useFavListDAL.GetFavListsWithUserID(User.UserID);
+            ContextMenu cm = new ContextMenu();
+            MenuItem favEkle = new MenuItem();
+            MenuItem favSil = new MenuItem();
+            favEkle.Text = "Favori Ekle";
+            favSil.Text = "Favori'den Kaldır";
+            if (favLists.Count > 0)
+            {
+                addProductFavListDTO = new AddProductFavListDTO();
+                addProductFavListDTO.ProductID = Convert.ToInt32(dgvSearchProductProducts.Rows[selectedRow].Cells[0].Value);
+                addProductFavListDTO.UserID = User.UserID;
+                favLists.ForEach(x => {
+                    if (!useProductFavListDAL.IsFavoriListHaveTheProduct(x.FavorID, addProductFavListDTO.ProductID))
+                    {
+                        favEkle.MenuItems.Add(new MenuItem(x.FavoriListName, new EventHandler(AddFav)));
+                    }
+                    else
+                    {
+                        favSil.MenuItems.Add(new MenuItem(x.FavoriListName, new EventHandler(DeleteFav)));
+                    }
+                });
+                if (favEkle.MenuItems.Count > 0)
+                {
+                    cm.MenuItems.Add(favEkle);
+                }
+                if (favSil.MenuItems.Count > 0)
+                {
+                    cm.MenuItems.Add(favSil);
+                }
+            }
+            else
+            {
+                favEkle.MenuItems.Add(new MenuItem("Yeni Liste Ekle", new EventHandler(AddFavoriListPage)));
+                cm.MenuItems.Add(favEkle);
+            }
+            cm.Show(dgvSearchProductProducts, new Point(Eventx, Eventy));
+        }
         private void AddFav(object sender, EventArgs e)
         {
             var clikMenuItem = sender as MenuItem;
             var MenuText = clikMenuItem.Text;
             addProductFavListDTO.FavorID = useFavListDAL.GetFavListIDWithFavListNameAndUserID(User.UserID, MenuText);
-            useProductFavListDAL.AddProductToFavList(addProductFavListDTO);
+            bool result = useProductFavListDAL.AddProductToFavList(addProductFavListDTO);
+            if (result)
+            {
+                MessageBox.Show("Ürün Favori'ye Eklendi.");
+            }
+            else
+            {
+                MessageBox.Show("Ürün Favoriye Eklenirken Hata Oluştu.");
+            }
+            addProductFavListDTO = null;
+        }
+        private void DeleteFav(object sender, EventArgs e)
+        {
+            var clickMenuItem = sender as MenuItem;
+            var MenuText = clickMenuItem.Text;
+            addProductFavListDTO.FavorID = useFavListDAL.GetFavListIDWithFavListNameAndUserID(User.UserID, MenuText);
+            bool result = useProductFavListDAL.DeleteProductFavList(addProductFavListDTO);
+            if (result)
+            {
+                MessageBox.Show("Ürün Favori'den Silindi.");
+            }
+            else
+            {
+                MessageBox.Show("Ürün Favori'den Silinirken Hata Oluştu.");
+            }
             addProductFavListDTO = null;
         }
         private void AddFavoriListPage(object sender , EventArgs e)
@@ -777,6 +820,140 @@ namespace YesilEvCodeFirst.UIWinForm
                     GetFavoriLists();
                     Favlists.Visible = true;
                 }
+            }
+        }
+
+        private void btnUserDetailsMergeSocialMedia_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Yapım Aşamasında ...");
+        }
+
+        private void btnUserDetailsPremium_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Yapım Aşamasında ...");
+        }
+
+        private void btnUserDetailsChangeEmail_Click(object sender, EventArgs e)
+        {
+            CloseAllPages();
+            txtChangeEmailUserEmail.Text = User.Email;
+            ChangeEmail.Visible = true;
+        }
+
+        private void btnUserDetailsChangePassword_Click(object sender, EventArgs e)
+        {
+            CloseAllPages();
+            ChangePassword.Visible = true;
+        }
+
+        private void btnUserDetailsUpdateUserDetails_Click(object sender, EventArgs e)
+        {
+            CloseAllPages();
+            ChangeUserDetails.Visible = true;
+            txtChangeUserDetailsFirstName.Text = User.FirstName;
+            txtChangeUserDetailsFirstName.Tag = "0";
+            txtChangeUserDetailsLastName.Text = User.LastName;
+            txtChangeUserDetailsLastName.Tag = "0";
+            txtChangeUserDetailsPhone.Text = User.Phone;
+            txtChangeUserDetailsPhone.Tag = "0";
+        }
+
+        private void btnChangeUserDetailsSend_Click(object sender, EventArgs e)
+        {
+            UpdateUserDetailsDTO userDetails = new UpdateUserDetailsDTO()
+            {
+                UserID = User.UserID,
+                FirstName = txtChangeUserDetailsFirstName.Text,
+                LastName = txtChangeUserDetailsLastName.Text,
+                Phone = txtChangeUserDetailsPhone.Text
+            };
+            bool result = useUserDAL.UpdateUserDetails(userDetails);
+            if (result)
+            {
+                MessageBox.Show("Kullanıcı Bilgileri Güncellendi.");
+                User.FirstName = txtChangeUserDetailsFirstName.Text;
+                User.LastName = txtChangeUserDetailsLastName.Text;
+                User.Phone = txtChangeUserDetailsPhone.Text;
+            }
+            else
+            {
+                MessageBox.Show("Kullanıcı Bilgileri Güncellenirken Hata Oluştu.Sonra tekrar deneyiniz.");
+            }
+        }
+
+        private void txtFirstClickClear(object sender, EventArgs e)
+        {
+            TextBox clicked = sender as TextBox;
+            if (clicked.Tag == (object)"0")
+            {
+                clicked.Text = "";
+                clicked.Tag = null;
+            }
+        }
+
+        private void btnChangeEmailSend_Click(object sender, EventArgs e)
+        {
+            if(txtChangeEmailUserEmail.Text == User.Email)
+            {
+                if(txtChangeEmailNewEmail.Text == txtChangeEmaiReNewEmail.Text)
+                {
+                    UpdateUserEmailDTO userDetails = new UpdateUserEmailDTO()
+                    {
+                        UserID = User.UserID,
+                        NewEmail = txtChangeEmailNewEmail.Text,
+                    };
+                    bool result = useUserDAL.UpdateUserEmail(userDetails);
+                    if (result)
+                    {
+                        MessageBox.Show("Email Bilgisi Güncellendi.");
+                        User.Email = txtChangeEmailNewEmail.Text;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kullanıcı Bilgileri Güncellenirken Hata Oluştu.Sonra tekrar deneyiniz.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Yeni Email ve Yeni Email Tekrar Alanları aynı değil.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Kullanıcı Email doğru değil.");
+            }
+        }
+
+        private void btnChangePasswordSend_Click(object sender, EventArgs e)
+        {
+            if (txtChangePasswordPassword.Text == User.Password)
+            {
+                if (txtChangePasswordNewPassword == txtChangePasswordReNewPassword)
+                {
+                    UpdateUserPasswordDTO userDetails = new UpdateUserPasswordDTO()
+                    {
+                        UserID = User.UserID,
+                        NewPassword = txtChangePasswordNewPassword.Text,
+                    };
+                    bool result = useUserDAL.UpdateUserPassword(userDetails);
+                    if (result)
+                    {
+                        MessageBox.Show("Şifre Bilgisi Güncellendi.");
+                        User.Password = txtChangePasswordNewPassword.Text;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kullanıcı Bilgileri Güncellenirken Hata Oluştu.Sonra tekrar deneyiniz.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Yeni Şifre ve Yeni Şifre Tekrar Alanları aynı değil.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Kullanıcı Şifresi doğru değil.");
             }
         }
     }
