@@ -27,7 +27,7 @@ namespace YesilEvCodeFirst.DAL.Use
                         var list = context.ProductFavList.Where(u => u.FavorID.Equals(dto.FavorID) && u.ProductID.Equals(dto.ProductID)).FirstOrDefault();
                         if (favlist == null)
                         {
-                            
+                            /*
                             context.FavList.Add(new FavList
                             {
                                 FavorID = dto.FavorID
@@ -38,15 +38,19 @@ namespace YesilEvCodeFirst.DAL.Use
                                 ProductID = dto.ProductID,
                                 FavorID = context.FavList.LastOrDefault().FavorID
                             });
-                            context.SaveChanges();
+                            context.SaveChanges();*/
                         }
                         else if (list == null)
                         {
                             context.ProductFavList.Add(new ProductFavList
                             {
                                 ProductID = dto.ProductID,
-                                FavorID = favlist.FavorID
+                                FavorID = dto.FavorID
                             });
+                            context.SaveChanges();
+                        }
+                        else if(list != null){
+                            list.IsActive = true;
                             context.SaveChanges();
                         }
                         else
@@ -108,7 +112,7 @@ namespace YesilEvCodeFirst.DAL.Use
         {
             try
             {
-                List<ProductFavList> products = GetByConditionWithInclude(u => u.FavorID.Equals(id), "Product").ToList();
+                List<ProductFavList> products = GetByConditionWithInclude(u => u.FavorID.Equals(id) && u.IsActive, "Product").ToList();
                 if (products != null)
                 {
                     nLogger.Info("{} ID'li kullanicinin favori listeleri getirildi.", id);
@@ -125,6 +129,27 @@ namespace YesilEvCodeFirst.DAL.Use
             }
 
             return null;
+        }
+        public bool IsFavoriListHaveTheProduct(int favoriId,int productId)
+        {
+            try
+            {
+                var result = GetByCondition(u=> u.FavorID == favoriId && u.ProductID == productId && u.IsActive == true).FirstOrDefault();
+                nLogger.Error("{} ID'li favori listenin {} Id'li ürün var mı kontrol edildi.", favoriId,productId);
+                if(result != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch(Exception ex)
+            {
+                nLogger.Error("System - {}", ex.Message);
+            }
+            return false;
         }
     }
 }
