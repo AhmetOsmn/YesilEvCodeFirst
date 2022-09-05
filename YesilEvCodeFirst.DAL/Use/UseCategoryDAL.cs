@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
@@ -29,7 +30,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 if (categories == null)
                 {
-                    throw new Exception("Listelenecek kategori bulunamadi.");
+                    throw new Exception(Messages.CategoryNotFound);
                 }
                 else
                 {
@@ -43,9 +44,8 @@ namespace YesilEvCodeFirst.DAL.Use
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
             }
-
-            return null;
         }
     }
 }

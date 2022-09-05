@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using System.Collections.Generic;
 using YesilEvCodeFirst.Core.Entities;
+using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Category;
 using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.SearchHistory;
@@ -157,9 +158,10 @@ namespace YesilEvCodeFirst.Mapping
 
         #region BlackList
 
-        public static BlackList AddBlackListDTOToBlackList(AddOrEditBlackListDTO dto)
+        public static BlackList AddBlackListDTOToBlackList(IDDTO dto)
         {
-            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddOrEditBlackListDTO, BlackList>());
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<IDDTO, BlackList>()
+            .ForMember(dest => dest.UserID, opt => opt.MapFrom(src => src.ID)));
 
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<BlackList>(dto);

@@ -282,6 +282,7 @@
             this.ClientSize = new System.Drawing.Size(456, 475);
             this.Controls.Add(this.btnGrpBoxSignIn);
             this.Controls.Add(this.btnGrpBoxSignUp);
+            this.Controls.Add(this.GrpBoxSignIn);
             this.Controls.Add(this.GrpBoxSignUp);
             this.Name = "SignInSignUpForm";
             this.Text = "Green Home";

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.DAL.Use;
+using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Category;
 using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.ProductFavList;
@@ -137,7 +138,8 @@ namespace YesilEvCodeFirst.UIWinForm
             UserDetails.Visible = true;
             lblUserDetailsSignUpDateValue.Text = User.CreatedDate.ToString();
             lblUserDetailsUserName.Text = User.FirstName + " " + User.LastName;
-            lblUserDetailsAddProductCount.Text = useProductDAL.GetProductListWithUserID(User.UserID).Count.ToString();
+            IDDTO userIDDTO = new IDDTO() { ID = User.UserID};
+            lblUserDetailsAddProductCount.Text = useProductDAL.GetProductListWithUserID(userIDDTO).Count.ToString();
         }
 
         private void AddAndUpdateProductBtnSend_Click(object sender, EventArgs e)
@@ -164,7 +166,8 @@ namespace YesilEvCodeFirst.UIWinForm
                     {
                         MessageBox.Show("Ürün Eklendi");
                         CloseAllPages();
-                        int lastAddedProductID = useProductDAL.GetProductDetailWithBarcode(txtAddAndUpdateProductAddProductBarcodeNo.Text).ProductID;
+                        BarcodeDTO barcodeDTO = new BarcodeDTO() { Barcode = txtAddAndUpdateProductAddProductBarcodeNo.Text};
+                        int lastAddedProductID = useProductDAL.GetProductDetailWithBarcode(barcodeDTO).ProductID;
                         GoProductDetails(lastAddedProductID);
                         // todo: eklenen ürüne ait olan detay sayfasında yonlendirilecek
                         CleanAddAndUpdateProduct();
@@ -198,7 +201,8 @@ namespace YesilEvCodeFirst.UIWinForm
                         {
                             MessageBox.Show("Ürün Güncellendi");
                             // todo: eklenen ürüne ait olan detay sayfasında yonlendirilecek
-                            int lastUpdatedProductID = useProductDAL.GetProductDetailWithBarcode(txtAddAndUpdateProductUpdateProductBarcodeNo.Text).ProductID;
+                            BarcodeDTO barcodeDTO = new BarcodeDTO() { Barcode = txtAddAndUpdateProductUpdateProductBarcodeNo.Text };
+                            int lastUpdatedProductID = useProductDAL.GetProductDetailWithBarcode(barcodeDTO).ProductID;
                             GoProductDetails(lastUpdatedProductID);
                             CleanAddAndUpdateProduct();
                         }
@@ -217,8 +221,8 @@ namespace YesilEvCodeFirst.UIWinForm
             txtAddAndUpdateProductUpdateProductBarcodeNo.Enabled = false;
             if (txtAddAndUpdateProductUpdateProductBarcodeNo.Text != "" && txtAddAndUpdateProductUpdateProductBarcodeNo.Text.Length == 7)
             {
-
-                dto = useProductDAL.GetProductDetailWithBarcode(txtAddAndUpdateProductUpdateProductBarcodeNo.Text);
+                BarcodeDTO barcodeDTO = new BarcodeDTO() { Barcode = txtAddAndUpdateProductUpdateProductBarcodeNo.Text };
+                dto = useProductDAL.GetProductDetailWithBarcode(barcodeDTO);
                 if (dto != null)
                 {
                     if (dto.AddedBy == User.UserID)
@@ -534,7 +538,8 @@ namespace YesilEvCodeFirst.UIWinForm
         private void GetFavoriLists()
         {
             cmbBoxFavoriListFavoriLists.Items.Clear();
-            List<FavListDTO> favLists = useFavListDAL.GetFavListsWithUserID(User.UserID);
+            IDDTO userIDDTO = new IDDTO() { ID = User.UserID };
+            List<FavListDTO> favLists = useFavListDAL.GetFavListsWithUserID(userIDDTO);
             if (favLists.Count != 0)
             {
                 foreach (FavListDTO item in favLists)
@@ -562,7 +567,8 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void GetBlackList()
         {
-            int blacklistID = useBlackListDAL.GetBlackListIDWithUserID(User.UserID);
+            IDDTO userIDDTO = new IDDTO() { ID = User.UserID };
+            int blacklistID = useBlackListDAL.GetBlackListIDWithUserID(userIDDTO);
             if (blacklistID != 0)
             {
                 dgvBlackListSupplements.DataSource = useSupplementBlackListDAL.GetSupplementsWithBlackListID(blacklistID);
@@ -662,8 +668,8 @@ namespace YesilEvCodeFirst.UIWinForm
             CloseAllPages();
 
             ProductDetails.Visible = true;
-
-            selectedProduct = useProductDAL.GetProductDetailWithID(productID);
+            IDDTO productIDDTO = new IDDTO() { ID = productID};
+            selectedProduct = useProductDAL.GetProductDetailWithProductID(productIDDTO);
             UserDetailDTO adder = useUserDAL.GetUserDetailWithID(selectedProduct.AddedBy);
 
             lblProductDetailsLowerCategory.Text = selectedProduct.CategoryName;
@@ -689,7 +695,8 @@ namespace YesilEvCodeFirst.UIWinForm
             else
             {
                 CloseAllPages();
-                GetProductDetailDTO result = useProductDAL.GetProductDetailWithBarcode(txtSearchBarcodeBarcodeNo.Text);
+                BarcodeDTO barcodeDTO = new BarcodeDTO() { Barcode = txtSearchBarcodeBarcodeNo .Text};
+                GetProductDetailDTO result = useProductDAL.GetProductDetailWithBarcode(barcodeDTO);
                 if (result != null)
                 {
                     ProductDetails.Visible = true;
@@ -705,10 +712,10 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void dgvProducts_MouseClick(object sender, MouseEventArgs e)
         {
-            
+            IDDTO userIDDTO = new IDDTO() { ID = User.UserID };
+            var favLists = useFavListDAL.GetFavListsWithUserID(userIDDTO);
             int selectedRow = -1;
             selectedRow = dgvSearchProductProducts.HitTest(e.X, e.Y).RowIndex;
-
             if (e.Button == MouseButtons.Right)
             {
                 if (selectedRow >= 0)
@@ -763,7 +770,9 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             var clikMenuItem = sender as MenuItem;
             var MenuText = clikMenuItem.Text;
-            addProductFavListDTO.FavorID = useFavListDAL.GetFavListIDWithFavListNameAndUserID(User.UserID, MenuText);
+            //BarcodeDTO barcodeDTO = new BarcodeDTO() { Barcode = txtSearchBarcodeBarcodeNo.Text };
+            GetFavListIDWithFavListNameAndUserIDDTO userIDAndListNameDTO = new GetFavListIDWithFavListNameAndUserIDDTO() { UserID = User.UserID, FavListName = MenuText};
+            addProductFavListDTO.FavorID = useFavListDAL.GetFavListIDWithFavListNameAndUserID(userIDAndListNameDTO);
             bool result = useProductFavListDAL.AddProductToFavList(addProductFavListDTO);
             if (result)
             {

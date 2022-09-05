@@ -52,8 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BarcodeDTO.cs" />
     <Compile Include="Category\CategoryDTO.cs" />
-    <Compile Include="LogDTO.cs" />
+    <Compile Include="IDDTO.cs" />
     <Compile Include="LoginDTO.cs" />
     <Compile Include="ProductFavList\AddProductFavListDTO.cs" />
     <Compile Include="Product\AddProductDTO.cs" />
@@ -83,9 +84,12 @@
     <Compile Include="UserAdmin\UserDetailDTO.cs" />
     <Compile Include="UserBlackList\AddOrEditBlackListDTO.cs" />
     <Compile Include="UserBlackList\BlackListDTO.cs" />
+    <Compile Include="UserBlackList\GetBlackListIDWithUserIDDTO.cs" />
     <Compile Include="UserFavList\AddFavListDTO.cs" />
     <Compile Include="UserFavList\EditFavListDTO.cs" />
     <Compile Include="UserFavList\FavListDTO.cs" />
+    <Compile Include="UserFavList\GetFavListIDWithFavListNameAndUserIDDTO.cs" />
+    <Compile Include="UserFavList\GetFavListsWithUserIDDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YesilEvCodeFirst.Core\YesilEvCodeFirst.Core.csproj">
