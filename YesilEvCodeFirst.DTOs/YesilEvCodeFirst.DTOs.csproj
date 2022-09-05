@@ -80,7 +80,8 @@
     <Compile Include="UserAdmin\UserDetailDTO.cs" />
     <Compile Include="UserBlackList\AddOrEditBlackListDTO.cs" />
     <Compile Include="UserBlackList\BlackListDTO.cs" />
-    <Compile Include="UserFavList\AddOrEditFavListDTO.cs" />
+    <Compile Include="UserFavList\AddFavListDTO.cs" />
+    <Compile Include="UserFavList\EditFavListDTO.cs" />
     <Compile Include="UserFavList\FavListDTO.cs" />
   </ItemGroup>
   <ItemGroup>

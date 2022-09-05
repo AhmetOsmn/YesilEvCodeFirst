@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace YesilEvCodeFirst.DTOs.UserFavList
 {
-    public class AddOrEditFavListDTO
+    public class AddFavListDTO
     {
         public int UserID { get; set; }
-        public int FavorID { get; set; }
         public string FavoriListName { get; set; }
     }
 }

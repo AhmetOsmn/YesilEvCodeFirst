@@ -30,677 +30,687 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSayfasi));
-            this.pnlHome = new System.Windows.Forms.Panel();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnMenu = new System.Windows.Forms.Button();
-            this.pnlUygulamaPuanVer = new System.Windows.Forms.Panel();
-            this.pictureUygulamaPuanVer = new System.Windows.Forms.PictureBox();
-            this.btnUygulamaPuanVer = new System.Windows.Forms.Button();
-            this.pnlUygulamaPaylas = new System.Windows.Forms.Panel();
-            this.pictureUygulamayiPaylas = new System.Windows.Forms.PictureBox();
-            this.btnUygulamayiPaylas = new System.Windows.Forms.Button();
-            this.pnlFacebook = new System.Windows.Forms.Panel();
-            this.pictureFacebook = new System.Windows.Forms.PictureBox();
-            this.btnFacebook = new System.Windows.Forms.Button();
-            this.pnlTwitter = new System.Windows.Forms.Panel();
-            this.pictureTwitter = new System.Windows.Forms.PictureBox();
-            this.btnTwitter = new System.Windows.Forms.Button();
-            this.pnlInstagram = new System.Windows.Forms.Panel();
-            this.pictureInstagram = new System.Windows.Forms.PictureBox();
-            this.btnInstagram = new System.Windows.Forms.Button();
-            this.pnlBildirim = new System.Windows.Forms.Panel();
-            this.pictureBildirim = new System.Windows.Forms.PictureBox();
-            this.btnBildirim = new System.Windows.Forms.Button();
-            this.pnlKullanimKosullari = new System.Windows.Forms.Panel();
-            this.pictureKullanimKosullari = new System.Windows.Forms.PictureBox();
-            this.btnKullanimKosullari = new System.Windows.Forms.Button();
-            this.pnlBizeUlasin = new System.Windows.Forms.Panel();
-            this.pictureBizeUlasin = new System.Windows.Forms.PictureBox();
-            this.btnBizeUlasin = new System.Windows.Forms.Button();
-            this.pnlHakkinda = new System.Windows.Forms.Panel();
-            this.pictureHakkinda = new System.Windows.Forms.PictureBox();
-            this.btnHakkinda = new System.Windows.Forms.Button();
-            this.pnlPremium = new System.Windows.Forms.Panel();
-            this.picturePremium = new System.Windows.Forms.PictureBox();
-            this.btnPremium = new System.Windows.Forms.Button();
-            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.pnlSideBarHome = new System.Windows.Forms.Panel();
+            this.btnSideBarHome = new System.Windows.Forms.Button();
+            this.btnSideBarMenu = new System.Windows.Forms.Button();
+            this.pnlSideBarGiveStarApplication = new System.Windows.Forms.Panel();
+            this.pictureSideBarGiveStarApplication = new System.Windows.Forms.PictureBox();
+            this.btnSideBarGiveStarApplication = new System.Windows.Forms.Button();
+            this.pnlSideBarShareApplication = new System.Windows.Forms.Panel();
+            this.pictureSideBarShareApplication = new System.Windows.Forms.PictureBox();
+            this.btnSideBarShareApplication = new System.Windows.Forms.Button();
+            this.pnlSideBarFacebook = new System.Windows.Forms.Panel();
+            this.pictureSideBarFacebook = new System.Windows.Forms.PictureBox();
+            this.btnSideBarFacebook = new System.Windows.Forms.Button();
+            this.pnlSideBarTwitter = new System.Windows.Forms.Panel();
+            this.pictureSideBarTwitter = new System.Windows.Forms.PictureBox();
+            this.btnSideBarTwitter = new System.Windows.Forms.Button();
+            this.pnlSideBarInstagram = new System.Windows.Forms.Panel();
+            this.pictureSideBarInstagram = new System.Windows.Forms.PictureBox();
+            this.btnSideBarInstagram = new System.Windows.Forms.Button();
+            this.pnlSideBarNotifications = new System.Windows.Forms.Panel();
+            this.pictureSideBarNotifications = new System.Windows.Forms.PictureBox();
+            this.btnSideBarNotifications = new System.Windows.Forms.Button();
+            this.pnlSideBarTermsofUse = new System.Windows.Forms.Panel();
+            this.pictureSideBarTermofUse = new System.Windows.Forms.PictureBox();
+            this.btnSideBarTermsofUse = new System.Windows.Forms.Button();
+            this.pnlSideBarContactUs = new System.Windows.Forms.Panel();
+            this.pictureSideBarContactUs = new System.Windows.Forms.PictureBox();
+            this.btnSideBarContactUs = new System.Windows.Forms.Button();
+            this.pnlSideBarAbout = new System.Windows.Forms.Panel();
+            this.pictureSideBarAbout = new System.Windows.Forms.PictureBox();
+            this.btnSideBarAbout = new System.Windows.Forms.Button();
+            this.pnlSideBarPremium = new System.Windows.Forms.Panel();
+            this.pictureSideBarPremium = new System.Windows.Forms.PictureBox();
+            this.btnSideBarPremium = new System.Windows.Forms.Button();
+            this.pnlSideBarMenu = new System.Windows.Forms.Panel();
             this.SideBar = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnlYesilEv = new System.Windows.Forms.Panel();
-            this.pictureYesilEv = new System.Windows.Forms.PictureBox();
-            this.btnYesilEv = new System.Windows.Forms.Button();
-            this.btnBarkodOku = new System.Windows.Forms.Button();
-            this.btnArama = new System.Windows.Forms.Button();
-            this.btnUrunEkleDuzenle = new System.Windows.Forms.Button();
-            this.btnAramaGecmisiFavori = new System.Windows.Forms.Button();
-            this.pictureBarkod = new System.Windows.Forms.PictureBox();
-            this.pictureArama = new System.Windows.Forms.PictureBox();
-            this.pictureUrunEkleDuzenle = new System.Windows.Forms.PictureBox();
-            this.pictureAramaGecmisiFavori = new System.Windows.Forms.PictureBox();
-            this.Anasayfa = new System.Windows.Forms.Panel();
-            this.btnAnasayfaUser = new System.Windows.Forms.Button();
-            this.UserBilgileri = new System.Windows.Forms.Panel();
-            this.labelUrunSayisi = new System.Windows.Forms.Label();
-            this.pictureCikisYap = new System.Windows.Forms.PictureBox();
-            this.pictureAramaGecmisi = new System.Windows.Forms.PictureBox();
-            this.pictureKaraliste = new System.Windows.Forms.PictureBox();
-            this.pictureFavori = new System.Windows.Forms.PictureBox();
-            this.pictureUserBilgileriGüncelle = new System.Windows.Forms.PictureBox();
-            this.pictureUserSosyalMedyaBirlestir = new System.Windows.Forms.PictureBox();
-            this.pictureUserSifreDegistir = new System.Windows.Forms.PictureBox();
-            this.pictureUserEposta = new System.Windows.Forms.PictureBox();
-            this.pictureUserPremium = new System.Windows.Forms.PictureBox();
-            this.btnUserBilgileriCikisYap = new System.Windows.Forms.Button();
-            this.btnAramaGeçmişiTemizle = new System.Windows.Forms.Button();
-            this.btnKaraListe = new System.Windows.Forms.Button();
-            this.btnUserFavori = new System.Windows.Forms.Button();
-            this.btnUserBilgileriGüncelle = new System.Windows.Forms.Button();
-            this.btnUserSosyalMedyaBirlestir = new System.Windows.Forms.Button();
-            this.btnUserEpostaDegistir = new System.Windows.Forms.Button();
-            this.lblEkledigiUrunSayisi = new System.Windows.Forms.Label();
-            this.lblUyelikTarihiValue = new System.Windows.Forms.Label();
-            this.lblUyelikTarihi = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.btnUserSifreDegistir = new System.Windows.Forms.Button();
-            this.btnUserPremium = new System.Windows.Forms.Button();
-            this.UrunEkleDuzenle = new System.Windows.Forms.Panel();
-            this.btnUrunEkleUser = new System.Windows.Forms.Button();
-            this.btnGonder = new System.Windows.Forms.Button();
-            this.btnUrunEkle = new System.Windows.Forms.Button();
-            this.btnUrunDuzenle = new System.Windows.Forms.Button();
-            this.UrunEkle = new System.Windows.Forms.GroupBox();
-            this.cmbBoxUrunEkleKategori = new System.Windows.Forms.ComboBox();
-            this.cmbBoxUrunEkleUretici = new System.Windows.Forms.ComboBox();
-            this.btnUrunEkleOnYuz = new System.Windows.Forms.Button();
-            this.btnUrunEkleArkaYuz = new System.Windows.Forms.Button();
-            this.btnUrunEkleUrunIcerik = new System.Windows.Forms.Button();
-            this.txtUrunEkleUrunIcerik = new System.Windows.Forms.TextBox();
-            this.lblUrunEkleArkaYuz = new System.Windows.Forms.Label();
-            this.lblUrunEkleOnYuz = new System.Windows.Forms.Label();
-            this.lblUrunEkleUrunIcerik = new System.Windows.Forms.Label();
-            this.txtUrunEkleUrunAdi = new System.Windows.Forms.TextBox();
-            this.txtUrunEkleBarkod = new System.Windows.Forms.TextBox();
-            this.lblUrunEkleKategori = new System.Windows.Forms.Label();
-            this.lblUrunEkleUrunAdi = new System.Windows.Forms.Label();
-            this.lblUrunEkleUretici = new System.Windows.Forms.Label();
-            this.lblUrunEkleBarkodNo = new System.Windows.Forms.Label();
-            this.UrunDuzenle = new System.Windows.Forms.GroupBox();
-            this.cmbBoxKategori = new System.Windows.Forms.ComboBox();
-            this.cmbBoxUretici = new System.Windows.Forms.ComboBox();
-            this.btnUrunGetir = new System.Windows.Forms.Button();
-            this.btnOnYuz = new System.Windows.Forms.Button();
-            this.btnArkaYuz = new System.Windows.Forms.Button();
-            this.btnUrunIcerik = new System.Windows.Forms.Button();
-            this.txtUrunIcerik = new System.Windows.Forms.TextBox();
-            this.lblUrunArkaYuz = new System.Windows.Forms.Label();
-            this.lblUrunOnYuz = new System.Windows.Forms.Label();
-            this.lblUrunIcerik = new System.Windows.Forms.Label();
-            this.txtUrunAdi = new System.Windows.Forms.TextBox();
-            this.txtBarkodNo = new System.Windows.Forms.TextBox();
-            this.txtKategori = new System.Windows.Forms.Label();
-            this.lblUrunAdi = new System.Windows.Forms.Label();
-            this.lblUretici = new System.Windows.Forms.Label();
-            this.lblBarkodNo = new System.Windows.Forms.Label();
-            this.UrunDetay = new System.Windows.Forms.Panel();
-            this.pcbUrun = new System.Windows.Forms.PictureBox();
-            this.UrunDetayResimDegistir = new System.Windows.Forms.Button();
-            this.btnUrunDetayUser = new System.Windows.Forms.Button();
-            this.pnlShowProducts = new System.Windows.Forms.Panel();
-            this.btnShowList = new System.Windows.Forms.Button();
-            this.lblUrunDetayUrunBilesimi = new System.Windows.Forms.Label();
-            this.lblMessage = new System.Windows.Forms.Label();
-            this.lblTemizNum = new System.Windows.Forms.Label();
-            this.lblAzRiskNum = new System.Windows.Forms.Label();
-            this.lblOrtaRiskNum = new System.Windows.Forms.Label();
-            this.lblCokRiskNum = new System.Windows.Forms.Label();
-            this.lblTemiz = new System.Windows.Forms.Label();
-            this.lblAzRisk = new System.Windows.Forms.Label();
-            this.lblOrtaRisk = new System.Windows.Forms.Label();
-            this.lblCokRisk = new System.Windows.Forms.Label();
-            this.pictureUrunDetayTemizIcerik = new System.Windows.Forms.PictureBox();
-            this.pictureUrunDetayAzRiskliIcerik = new System.Windows.Forms.PictureBox();
-            this.pictureUrunDetayOrtaRiskliIcerik = new System.Windows.Forms.PictureBox();
-            this.pictureUrunDetayRiskliIcerik = new System.Windows.Forms.PictureBox();
-            this.lblKaraMaddeNum = new System.Windows.Forms.Label();
-            this.lblKaraMadde = new System.Windows.Forms.Label();
-            this.pictureUrunDetayKaraListeIcerik = new System.Windows.Forms.PictureBox();
-            this.lblUrunAd = new System.Windows.Forms.Label();
-            this.lblMarka = new System.Windows.Forms.Label();
-            this.lblAltKategori = new System.Windows.Forms.Label();
-            this.AramaGecmisi = new System.Windows.Forms.Panel();
-            this.lblFavoriList = new System.Windows.Forms.Label();
-            this.btnFavList = new System.Windows.Forms.Button();
-            this.btnGecmisiTemizle = new System.Windows.Forms.Button();
-            this.btnAramaGecmisiUser = new System.Windows.Forms.Button();
-            this.dgvAramaGecmisi = new System.Windows.Forms.DataGridView();
-            this.FileDialogOnYuz = new System.Windows.Forms.OpenFileDialog();
-            this.FileDialogArkaYuz = new System.Windows.Forms.OpenFileDialog();
-            this.FileDialogUrunEkleOnYuz = new System.Windows.Forms.OpenFileDialog();
-            this.FileDialogUrunEkleArkaYuz = new System.Windows.Forms.OpenFileDialog();
-            this.UrunArama = new System.Windows.Forms.Panel();
-            this.btnDGVTemizle = new System.Windows.Forms.Button();
-            this.dgvProducts = new System.Windows.Forms.DataGridView();
-            this.btnSearchbarAra = new System.Windows.Forms.Button();
-            this.lblAramaSearchBar = new System.Windows.Forms.Label();
-            this.txtAramaSearchbar = new System.Windows.Forms.TextBox();
-            this.btnUrunAramaUser = new System.Windows.Forms.Button();
-            this.pnlFavLists = new System.Windows.Forms.Panel();
-            this.btnUserBilgileri = new System.Windows.Forms.Button();
-            this.dgvFavProducts = new System.Windows.Forms.DataGridView();
-            this.lblFavoriListeSec = new System.Windows.Forms.Label();
-            this.cbFavLists = new System.Windows.Forms.ComboBox();
-            this.pnlKaraListe = new System.Windows.Forms.Panel();
-            this.lblKaraListeUyari = new System.Windows.Forms.Label();
-            this.lblKaralisteOlanMaddeler = new System.Windows.Forms.Label();
-            this.dgvBlackListSupplements = new System.Windows.Forms.DataGridView();
-            this.btnKaralisteUser = new System.Windows.Forms.Button();
-            this.BarkodArama = new System.Windows.Forms.Panel();
-            this.btnBarkodAramaUser = new System.Windows.Forms.Button();
-            this.btnBarkodAramaBarkodAra = new System.Windows.Forms.Button();
-            this.lblBarkodAramaBarkodNo = new System.Windows.Forms.Label();
-            this.txtBarkodAramaBarkodNo = new System.Windows.Forms.TextBox();
+            this.pnlSideBarYesilEv = new System.Windows.Forms.Panel();
+            this.pictureSideBarYesilEv = new System.Windows.Forms.PictureBox();
+            this.btnSideBarYesilEv = new System.Windows.Forms.Button();
+            this.btnHomeSearchProductWithBarcode = new System.Windows.Forms.Button();
+            this.btnHomeSearchProduct = new System.Windows.Forms.Button();
+            this.btnHomeAddAndUpdateProduct = new System.Windows.Forms.Button();
+            this.btnHomeSearchHistoryAndFavoriLists = new System.Windows.Forms.Button();
+            this.pictureHomeSearchProductWithBarcode = new System.Windows.Forms.PictureBox();
+            this.pictureHomeSearchProduct = new System.Windows.Forms.PictureBox();
+            this.pictureHomeAddAndUpdateProduct = new System.Windows.Forms.PictureBox();
+            this.pictureHomeSearchHistoryAndFavoriLists = new System.Windows.Forms.PictureBox();
+            this.Home = new System.Windows.Forms.Panel();
+            this.btnHomeUser = new System.Windows.Forms.Button();
+            this.UserDetails = new System.Windows.Forms.Panel();
+            this.lblUserDetailsAddProductCount = new System.Windows.Forms.Label();
+            this.pictureUserDetailsLogout = new System.Windows.Forms.PictureBox();
+            this.pictureUserDetailsSearchHistory = new System.Windows.Forms.PictureBox();
+            this.pictureUserDetailsBlackList = new System.Windows.Forms.PictureBox();
+            this.pictureUserDetailsFavoriLists = new System.Windows.Forms.PictureBox();
+            this.pictureUserDetailsUpdateUserDetails = new System.Windows.Forms.PictureBox();
+            this.pictureUserDetailsMergeSocialMedia = new System.Windows.Forms.PictureBox();
+            this.pictureUserDetailsChangePassword = new System.Windows.Forms.PictureBox();
+            this.pictureUserDetailsChangeEmail = new System.Windows.Forms.PictureBox();
+            this.pictureUserDetailsPremium = new System.Windows.Forms.PictureBox();
+            this.btnUserDetailsLogout = new System.Windows.Forms.Button();
+            this.btnUserDetailsClearSearchHistory = new System.Windows.Forms.Button();
+            this.btnUserDetailsBlacklist = new System.Windows.Forms.Button();
+            this.btnUserDetailsFavoriLists = new System.Windows.Forms.Button();
+            this.btnUserDetailsUpdateUserDetails = new System.Windows.Forms.Button();
+            this.btnUserDetailsMergeSocialMedia = new System.Windows.Forms.Button();
+            this.btnUserDetailsChangeEmail = new System.Windows.Forms.Button();
+            this.lblUserDetailsAddProduct = new System.Windows.Forms.Label();
+            this.lblUserDetailsSignUpDateValue = new System.Windows.Forms.Label();
+            this.lblUserDetailsSignUpDate = new System.Windows.Forms.Label();
+            this.lblUserDetailsUserName = new System.Windows.Forms.Label();
+            this.btnUserDetailsChangePassword = new System.Windows.Forms.Button();
+            this.btnUserDetailsPremium = new System.Windows.Forms.Button();
+            this.AddAndUpdateProduct = new System.Windows.Forms.Panel();
+            this.btnAddAndUpdateProductUser = new System.Windows.Forms.Button();
+            this.btnAddAndUpdateProductSend = new System.Windows.Forms.Button();
+            this.btnAddAndUpdateProductAddProduct = new System.Windows.Forms.Button();
+            this.btnAddAndUpdateProductUpdateProduct = new System.Windows.Forms.Button();
+            this.grpBoxAddAndUpdateProductAddProduct = new System.Windows.Forms.GroupBox();
+            this.cmbBoxAddAndUpdateProductAddProductCategory = new System.Windows.Forms.ComboBox();
+            this.cmbBoxAddAndUpdateProductAddProductSupplier = new System.Windows.Forms.ComboBox();
+            this.btnAddAndUpdateProductAddProductFront = new System.Windows.Forms.Button();
+            this.btnAddAndUpdateProductAddProductBack = new System.Windows.Forms.Button();
+            this.btnAddAndUpdateProductAddProductProductContext = new System.Windows.Forms.Button();
+            this.txtAddAndUpdateProductAddProductProductContext = new System.Windows.Forms.TextBox();
+            this.lblAddAndUpdateProductAddProductBack = new System.Windows.Forms.Label();
+            this.lblAddAndUpdateProductAddProductFront = new System.Windows.Forms.Label();
+            this.lblAddAndUpdateProductAddProductProductContext = new System.Windows.Forms.Label();
+            this.txtAddAndUpdateProductAddProductProductName = new System.Windows.Forms.TextBox();
+            this.txtAddAndUpdateProductAddProductBarcodeNo = new System.Windows.Forms.TextBox();
+            this.lblAddAndUpdateProductAddProductCategory = new System.Windows.Forms.Label();
+            this.lblAddAndUpdateProductAddProductProductName = new System.Windows.Forms.Label();
+            this.lblAddAndUpdateProductAddProductSupplier = new System.Windows.Forms.Label();
+            this.lblAddAndUpdateProductAddProductBarcodeNo = new System.Windows.Forms.Label();
+            this.grpBoxAddAndUpdateProductUpdateProduct = new System.Windows.Forms.GroupBox();
+            this.cmbBoxAddAndUpdateProductUpdateProductCategory = new System.Windows.Forms.ComboBox();
+            this.cmbBoxAddAndUpdateProductUpdateProductSupplier = new System.Windows.Forms.ComboBox();
+            this.btnAddAndUpdateProductUpdateProductGetProductDetail = new System.Windows.Forms.Button();
+            this.btnAddAndUpdateProductUpdateProductFront = new System.Windows.Forms.Button();
+            this.btnAddAndUpdateProductUpdateProductBack = new System.Windows.Forms.Button();
+            this.btnAddAndUpdateProductUpdateProductProductContext = new System.Windows.Forms.Button();
+            this.txtAddAndUpdateProductUpdateProductProductContext = new System.Windows.Forms.TextBox();
+            this.lblAddAndUpdateProductUpdateProductBack = new System.Windows.Forms.Label();
+            this.lblAddAndUpdateProductUpdateProductFront = new System.Windows.Forms.Label();
+            this.lblAddAndUpdateProductUpdateProductProductContext = new System.Windows.Forms.Label();
+            this.txtAddAndUpdateProductUpdateProductProductName = new System.Windows.Forms.TextBox();
+            this.txtAddAndUpdateProductUpdateProductBarcodeNo = new System.Windows.Forms.TextBox();
+            this.lblAddAndUpdateProductUpdateProductCategory = new System.Windows.Forms.Label();
+            this.lblAddAndUpdateProductUpdateProductProductName = new System.Windows.Forms.Label();
+            this.lblAddAndUpdateProductUpdateProductSupplier = new System.Windows.Forms.Label();
+            this.lblAddAndUpdateProductUpdateProductBarcodeNo = new System.Windows.Forms.Label();
+            this.ProductDetails = new System.Windows.Forms.Panel();
+            this.pictureProductDetailsProductImage = new System.Windows.Forms.PictureBox();
+            this.btnProductDetailChangePicture = new System.Windows.Forms.Button();
+            this.btnProductDetailUser = new System.Windows.Forms.Button();
+            this.pnlProductDetailsShowProducts = new System.Windows.Forms.Panel();
+            this.btnProductDetailsShowList = new System.Windows.Forms.Button();
+            this.lblProductDetailsProductContext = new System.Windows.Forms.Label();
+            this.lblProductDetailsMessage = new System.Windows.Forms.Label();
+            this.lblProductDetailsCleanCount = new System.Windows.Forms.Label();
+            this.lblProductDetailsLowerRiskCount = new System.Windows.Forms.Label();
+            this.lblProductDetailsMidRiskCount = new System.Windows.Forms.Label();
+            this.lblProductDetailsHighRiskCount = new System.Windows.Forms.Label();
+            this.lblProductDetailsClean = new System.Windows.Forms.Label();
+            this.lblProductDetailsLowerRisk = new System.Windows.Forms.Label();
+            this.lblProductDetailsMidRisk = new System.Windows.Forms.Label();
+            this.lblProductDetailsHighRisk = new System.Windows.Forms.Label();
+            this.pictureProductDetailsCleanContext = new System.Windows.Forms.PictureBox();
+            this.pictureProductDetailsLowerRiskContext = new System.Windows.Forms.PictureBox();
+            this.pictureProductDetailsMidRiskContext = new System.Windows.Forms.PictureBox();
+            this.pictureProductDetailsHighRiskContext = new System.Windows.Forms.PictureBox();
+            this.lblProductDetailsBlackListSupplementCount = new System.Windows.Forms.Label();
+            this.lblProductDetailsBlackListSupplement = new System.Windows.Forms.Label();
+            this.pictureProductDetailsBlacklistContext = new System.Windows.Forms.PictureBox();
+            this.lblProductDetailsProductName = new System.Windows.Forms.Label();
+            this.lblProductDetailsSupplier = new System.Windows.Forms.Label();
+            this.lblProductDetailsLowerCategory = new System.Windows.Forms.Label();
+            this.SearchHistory = new System.Windows.Forms.Panel();
+            this.lblSearchHistoryFavlists = new System.Windows.Forms.Label();
+            this.btnSearchHistoryGoFavLists = new System.Windows.Forms.Button();
+            this.btnSearchHistoryClearHistory = new System.Windows.Forms.Button();
+            this.btnSearchHistoryUser = new System.Windows.Forms.Button();
+            this.dgvSearchHistory = new System.Windows.Forms.DataGridView();
+            this.FileDialogUpdateProductFront = new System.Windows.Forms.OpenFileDialog();
+            this.FileDialogUpdateProductBack = new System.Windows.Forms.OpenFileDialog();
+            this.FileDialogAddProductFront = new System.Windows.Forms.OpenFileDialog();
+            this.FileDialogAddProductBack = new System.Windows.Forms.OpenFileDialog();
+            this.SearchProduct = new System.Windows.Forms.Panel();
+            this.btnSearchProductClearDGV = new System.Windows.Forms.Button();
+            this.dgvSearchProductProducts = new System.Windows.Forms.DataGridView();
+            this.btnSearchProductSearchSearchBar = new System.Windows.Forms.Button();
+            this.lblSearchProductSearchSearchBar = new System.Windows.Forms.Label();
+            this.txtSearchProductSearchSearchbar = new System.Windows.Forms.TextBox();
+            this.btnSearchProductUser = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.Favlists = new System.Windows.Forms.Panel();
+            this.lblFavoriListsAddFavori = new System.Windows.Forms.Label();
+            this.btnFavoriListsAddFavori = new System.Windows.Forms.Button();
+            this.btnFavoriListsUser = new System.Windows.Forms.Button();
+            this.dgvFavoriListFavProducts = new System.Windows.Forms.DataGridView();
+            this.lblFavoriListSelectFavoriLists = new System.Windows.Forms.Label();
+            this.cmbBoxFavoriListFavoriLists = new System.Windows.Forms.ComboBox();
+            this.BlackList = new System.Windows.Forms.Panel();
+            this.lblBlackListWarning = new System.Windows.Forms.Label();
+            this.lblBlacklistProductsInBlacklist = new System.Windows.Forms.Label();
+            this.dgvBlackListSupplements = new System.Windows.Forms.DataGridView();
+            this.btnBlackListUser = new System.Windows.Forms.Button();
+            this.SearchBarcode = new System.Windows.Forms.Panel();
+            this.btnSearchBarcodeUser = new System.Windows.Forms.Button();
+            this.btnSearchBarcodeSearchBarcode = new System.Windows.Forms.Button();
+            this.lblSearchBarcodeBarcodeNo = new System.Windows.Forms.Label();
+            this.txtSearchBarcodeBarcodeNo = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.pnlHome.SuspendLayout();
-            this.pnlUygulamaPuanVer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUygulamaPuanVer)).BeginInit();
-            this.pnlUygulamaPaylas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUygulamayiPaylas)).BeginInit();
-            this.pnlFacebook.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFacebook)).BeginInit();
-            this.pnlTwitter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureTwitter)).BeginInit();
-            this.pnlInstagram.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureInstagram)).BeginInit();
-            this.pnlBildirim.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBildirim)).BeginInit();
-            this.pnlKullanimKosullari.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureKullanimKosullari)).BeginInit();
-            this.pnlBizeUlasin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBizeUlasin)).BeginInit();
-            this.pnlHakkinda.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureHakkinda)).BeginInit();
-            this.pnlPremium.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePremium)).BeginInit();
-            this.pnlMenu.SuspendLayout();
+            this.AddFavoriList = new System.Windows.Forms.Panel();
+            this.btnAddFavoriList = new System.Windows.Forms.Button();
+            this.btnAddFavoriUser = new System.Windows.Forms.Button();
+            this.lblAddFavoriFavoris = new System.Windows.Forms.Label();
+            this.btnAddFavoriGoFavoriLists = new System.Windows.Forms.Button();
+            this.txtAddFavoriFavoriName = new System.Windows.Forms.TextBox();
+            this.lblAddFavoriFavoriName = new System.Windows.Forms.Label();
+            this.pnlSideBarHome.SuspendLayout();
+            this.pnlSideBarGiveStarApplication.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarGiveStarApplication)).BeginInit();
+            this.pnlSideBarShareApplication.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarShareApplication)).BeginInit();
+            this.pnlSideBarFacebook.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarFacebook)).BeginInit();
+            this.pnlSideBarTwitter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarTwitter)).BeginInit();
+            this.pnlSideBarInstagram.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarInstagram)).BeginInit();
+            this.pnlSideBarNotifications.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarNotifications)).BeginInit();
+            this.pnlSideBarTermsofUse.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarTermofUse)).BeginInit();
+            this.pnlSideBarContactUs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarContactUs)).BeginInit();
+            this.pnlSideBarAbout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarAbout)).BeginInit();
+            this.pnlSideBarPremium.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarPremium)).BeginInit();
+            this.pnlSideBarMenu.SuspendLayout();
             this.SideBar.SuspendLayout();
-            this.pnlYesilEv.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureYesilEv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBarkod)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureArama)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUrunEkleDuzenle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAramaGecmisiFavori)).BeginInit();
-            this.Anasayfa.SuspendLayout();
-            this.UserBilgileri.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCikisYap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAramaGecmisi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureKaraliste)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFavori)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserBilgileriGüncelle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserSosyalMedyaBirlestir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserSifreDegistir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserEposta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserPremium)).BeginInit();
-            this.UrunEkleDuzenle.SuspendLayout();
-            this.UrunEkle.SuspendLayout();
-            this.UrunDuzenle.SuspendLayout();
-            this.UrunDetay.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbUrun)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUrunDetayTemizIcerik)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUrunDetayAzRiskliIcerik)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUrunDetayOrtaRiskliIcerik)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUrunDetayRiskliIcerik)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUrunDetayKaraListeIcerik)).BeginInit();
-            this.AramaGecmisi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAramaGecmisi)).BeginInit();
-            this.UrunArama.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
-            this.pnlFavLists.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFavProducts)).BeginInit();
-            this.pnlKaraListe.SuspendLayout();
+            this.pnlSideBarYesilEv.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarYesilEv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHomeSearchProductWithBarcode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHomeSearchProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHomeAddAndUpdateProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHomeSearchHistoryAndFavoriLists)).BeginInit();
+            this.Home.SuspendLayout();
+            this.UserDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsLogout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsSearchHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsBlackList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsFavoriLists)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsUpdateUserDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsMergeSocialMedia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsChangePassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsChangeEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsPremium)).BeginInit();
+            this.AddAndUpdateProduct.SuspendLayout();
+            this.grpBoxAddAndUpdateProductAddProduct.SuspendLayout();
+            this.grpBoxAddAndUpdateProductUpdateProduct.SuspendLayout();
+            this.ProductDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProductDetailsProductImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProductDetailsCleanContext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProductDetailsLowerRiskContext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProductDetailsMidRiskContext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProductDetailsHighRiskContext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProductDetailsBlacklistContext)).BeginInit();
+            this.SearchHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchHistory)).BeginInit();
+            this.SearchProduct.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProductProducts)).BeginInit();
+            this.Favlists.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFavoriListFavProducts)).BeginInit();
+            this.BlackList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBlackListSupplements)).BeginInit();
-            this.BarkodArama.SuspendLayout();
+            this.SearchBarcode.SuspendLayout();
+            this.AddFavoriList.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlHome
-            // 
-            this.pnlHome.BackColor = System.Drawing.Color.PapayaWhip;
-            this.pnlHome.Controls.Add(this.btnHome);
-            this.pnlHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlHome.Location = new System.Drawing.Point(199, 463);
-            this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(60, 40);
-            this.pnlHome.TabIndex = 1;
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackColor = System.Drawing.Color.White;
-            this.btnHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHome.BackgroundImage")));
-            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Location = new System.Drawing.Point(0, 0);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(60, 40);
-            this.btnHome.TabIndex = 0;
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.Home_Click);
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMenu.BackgroundImage")));
-            this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMenu.FlatAppearance.BorderSize = 0;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Location = new System.Drawing.Point(0, 0);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(60, 40);
-            this.btnMenu.TabIndex = 0;
-            this.btnMenu.UseVisualStyleBackColor = true;
-            this.btnMenu.Click += new System.EventHandler(this.Menu_Click);
-            // 
-            // pnlUygulamaPuanVer
-            // 
-            this.pnlUygulamaPuanVer.BackColor = System.Drawing.Color.PapayaWhip;
-            this.pnlUygulamaPuanVer.Controls.Add(this.pictureUygulamaPuanVer);
-            this.pnlUygulamaPuanVer.Controls.Add(this.btnUygulamaPuanVer);
-            this.pnlUygulamaPuanVer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlUygulamaPuanVer.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.pnlUygulamaPuanVer.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlUygulamaPuanVer.Location = new System.Drawing.Point(3, 463);
-            this.pnlUygulamaPuanVer.Name = "pnlUygulamaPuanVer";
-            this.pnlUygulamaPuanVer.Size = new System.Drawing.Size(190, 40);
-            this.pnlUygulamaPuanVer.TabIndex = 0;
-            // 
-            // pictureUygulamaPuanVer
-            // 
-            this.pictureUygulamaPuanVer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUygulamaPuanVer.BackgroundImage")));
-            this.pictureUygulamaPuanVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUygulamaPuanVer.Location = new System.Drawing.Point(152, -1);
-            this.pictureUygulamaPuanVer.Name = "pictureUygulamaPuanVer";
-            this.pictureUygulamaPuanVer.Size = new System.Drawing.Size(40, 42);
-            this.pictureUygulamaPuanVer.TabIndex = 4;
-            this.pictureUygulamaPuanVer.TabStop = false;
-            // 
-            // btnUygulamaPuanVer
-            // 
-            this.btnUygulamaPuanVer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUygulamaPuanVer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnUygulamaPuanVer.FlatAppearance.BorderSize = 0;
-            this.btnUygulamaPuanVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUygulamaPuanVer.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUygulamaPuanVer.Location = new System.Drawing.Point(0, 0);
-            this.btnUygulamaPuanVer.Name = "btnUygulamaPuanVer";
-            this.btnUygulamaPuanVer.Size = new System.Drawing.Size(190, 40);
-            this.btnUygulamaPuanVer.TabIndex = 0;
-            this.btnUygulamaPuanVer.Text = "Uygulama\'ya Puan Ver";
-            this.btnUygulamaPuanVer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUygulamaPuanVer.UseVisualStyleBackColor = true;
-            // 
-            // pnlUygulamaPaylas
-            // 
-            this.pnlUygulamaPaylas.BackColor = System.Drawing.Color.PapayaWhip;
-            this.pnlUygulamaPaylas.Controls.Add(this.pictureUygulamayiPaylas);
-            this.pnlUygulamaPaylas.Controls.Add(this.btnUygulamayiPaylas);
-            this.pnlUygulamaPaylas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlUygulamaPaylas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlUygulamaPaylas.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.pnlUygulamaPaylas.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlUygulamaPaylas.Location = new System.Drawing.Point(3, 417);
-            this.pnlUygulamaPaylas.Name = "pnlUygulamaPaylas";
-            this.pnlUygulamaPaylas.Size = new System.Drawing.Size(190, 40);
-            this.pnlUygulamaPaylas.TabIndex = 0;
-            // 
-            // pictureUygulamayiPaylas
-            // 
-            this.pictureUygulamayiPaylas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUygulamayiPaylas.BackgroundImage")));
-            this.pictureUygulamayiPaylas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUygulamayiPaylas.Location = new System.Drawing.Point(152, -1);
-            this.pictureUygulamayiPaylas.Name = "pictureUygulamayiPaylas";
-            this.pictureUygulamayiPaylas.Size = new System.Drawing.Size(40, 42);
-            this.pictureUygulamayiPaylas.TabIndex = 4;
-            this.pictureUygulamayiPaylas.TabStop = false;
-            // 
-            // btnUygulamayiPaylas
-            // 
-            this.btnUygulamayiPaylas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnUygulamayiPaylas.FlatAppearance.BorderSize = 0;
-            this.btnUygulamayiPaylas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUygulamayiPaylas.Location = new System.Drawing.Point(0, 0);
-            this.btnUygulamayiPaylas.Name = "btnUygulamayiPaylas";
-            this.btnUygulamayiPaylas.Size = new System.Drawing.Size(190, 40);
-            this.btnUygulamayiPaylas.TabIndex = 0;
-            this.btnUygulamayiPaylas.Text = "Uygulama\'yı Paylaş";
-            this.btnUygulamayiPaylas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUygulamayiPaylas.UseVisualStyleBackColor = true;
-            // 
-            // pnlFacebook
-            // 
-            this.pnlFacebook.BackColor = System.Drawing.Color.PapayaWhip;
-            this.pnlFacebook.Controls.Add(this.pictureFacebook);
-            this.pnlFacebook.Controls.Add(this.btnFacebook);
-            this.pnlFacebook.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlFacebook.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFacebook.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.pnlFacebook.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlFacebook.Location = new System.Drawing.Point(3, 371);
-            this.pnlFacebook.Name = "pnlFacebook";
-            this.pnlFacebook.Size = new System.Drawing.Size(190, 40);
-            this.pnlFacebook.TabIndex = 0;
-            // 
-            // pictureFacebook
-            // 
-            this.pictureFacebook.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureFacebook.BackgroundImage")));
-            this.pictureFacebook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureFacebook.Location = new System.Drawing.Point(152, -1);
-            this.pictureFacebook.Name = "pictureFacebook";
-            this.pictureFacebook.Size = new System.Drawing.Size(40, 42);
-            this.pictureFacebook.TabIndex = 4;
-            this.pictureFacebook.TabStop = false;
-            // 
-            // btnFacebook
-            // 
-            this.btnFacebook.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFacebook.FlatAppearance.BorderSize = 0;
-            this.btnFacebook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFacebook.Location = new System.Drawing.Point(0, 0);
-            this.btnFacebook.Name = "btnFacebook";
-            this.btnFacebook.Size = new System.Drawing.Size(190, 40);
-            this.btnFacebook.TabIndex = 0;
-            this.btnFacebook.Text = "Facebook";
-            this.btnFacebook.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFacebook.UseVisualStyleBackColor = true;
-            // 
-            // pnlTwitter
-            // 
-            this.pnlTwitter.BackColor = System.Drawing.Color.PapayaWhip;
-            this.pnlTwitter.Controls.Add(this.pictureTwitter);
-            this.pnlTwitter.Controls.Add(this.btnTwitter);
-            this.pnlTwitter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlTwitter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTwitter.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.pnlTwitter.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlTwitter.Location = new System.Drawing.Point(3, 325);
-            this.pnlTwitter.Name = "pnlTwitter";
-            this.pnlTwitter.Size = new System.Drawing.Size(190, 40);
-            this.pnlTwitter.TabIndex = 0;
-            // 
-            // pictureTwitter
-            // 
-            this.pictureTwitter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureTwitter.BackgroundImage")));
-            this.pictureTwitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureTwitter.Location = new System.Drawing.Point(152, -1);
-            this.pictureTwitter.Name = "pictureTwitter";
-            this.pictureTwitter.Size = new System.Drawing.Size(40, 42);
-            this.pictureTwitter.TabIndex = 4;
-            this.pictureTwitter.TabStop = false;
-            // 
-            // btnTwitter
-            // 
-            this.btnTwitter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTwitter.FlatAppearance.BorderSize = 0;
-            this.btnTwitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTwitter.Location = new System.Drawing.Point(0, 0);
-            this.btnTwitter.Name = "btnTwitter";
-            this.btnTwitter.Size = new System.Drawing.Size(190, 40);
-            this.btnTwitter.TabIndex = 0;
-            this.btnTwitter.Text = "Twitter";
-            this.btnTwitter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTwitter.UseVisualStyleBackColor = true;
-            // 
-            // pnlInstagram
-            // 
-            this.pnlInstagram.BackColor = System.Drawing.Color.PapayaWhip;
-            this.pnlInstagram.Controls.Add(this.pictureInstagram);
-            this.pnlInstagram.Controls.Add(this.btnInstagram);
-            this.pnlInstagram.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlInstagram.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlInstagram.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.pnlInstagram.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlInstagram.Location = new System.Drawing.Point(3, 279);
-            this.pnlInstagram.Name = "pnlInstagram";
-            this.pnlInstagram.Size = new System.Drawing.Size(190, 40);
-            this.pnlInstagram.TabIndex = 0;
-            // 
-            // pictureInstagram
-            // 
-            this.pictureInstagram.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureInstagram.BackgroundImage")));
-            this.pictureInstagram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureInstagram.Location = new System.Drawing.Point(152, -1);
-            this.pictureInstagram.Name = "pictureInstagram";
-            this.pictureInstagram.Size = new System.Drawing.Size(40, 42);
-            this.pictureInstagram.TabIndex = 4;
-            this.pictureInstagram.TabStop = false;
-            // 
-            // btnInstagram
-            // 
-            this.btnInstagram.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnInstagram.FlatAppearance.BorderSize = 0;
-            this.btnInstagram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInstagram.Location = new System.Drawing.Point(0, 0);
-            this.btnInstagram.Name = "btnInstagram";
-            this.btnInstagram.Size = new System.Drawing.Size(190, 40);
-            this.btnInstagram.TabIndex = 0;
-            this.btnInstagram.Text = "Instagram";
-            this.btnInstagram.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInstagram.UseVisualStyleBackColor = true;
-            // 
-            // pnlBildirim
-            // 
-            this.pnlBildirim.BackColor = System.Drawing.Color.PapayaWhip;
-            this.pnlBildirim.Controls.Add(this.pictureBildirim);
-            this.pnlBildirim.Controls.Add(this.btnBildirim);
-            this.pnlBildirim.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlBildirim.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBildirim.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.pnlBildirim.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlBildirim.Location = new System.Drawing.Point(3, 233);
-            this.pnlBildirim.Name = "pnlBildirim";
-            this.pnlBildirim.Size = new System.Drawing.Size(190, 40);
-            this.pnlBildirim.TabIndex = 0;
-            // 
-            // pictureBildirim
-            // 
-            this.pictureBildirim.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBildirim.BackgroundImage")));
-            this.pictureBildirim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBildirim.Location = new System.Drawing.Point(152, -1);
-            this.pictureBildirim.Name = "pictureBildirim";
-            this.pictureBildirim.Size = new System.Drawing.Size(40, 42);
-            this.pictureBildirim.TabIndex = 4;
-            this.pictureBildirim.TabStop = false;
-            // 
-            // btnBildirim
-            // 
-            this.btnBildirim.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBildirim.FlatAppearance.BorderSize = 0;
-            this.btnBildirim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBildirim.Location = new System.Drawing.Point(0, 0);
-            this.btnBildirim.Name = "btnBildirim";
-            this.btnBildirim.Size = new System.Drawing.Size(190, 40);
-            this.btnBildirim.TabIndex = 0;
-            this.btnBildirim.Text = "Bildirim";
-            this.btnBildirim.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBildirim.UseVisualStyleBackColor = true;
-            // 
-            // pnlKullanimKosullari
-            // 
-            this.pnlKullanimKosullari.BackColor = System.Drawing.Color.PapayaWhip;
-            this.pnlKullanimKosullari.Controls.Add(this.pictureKullanimKosullari);
-            this.pnlKullanimKosullari.Controls.Add(this.btnKullanimKosullari);
-            this.pnlKullanimKosullari.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlKullanimKosullari.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlKullanimKosullari.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.pnlKullanimKosullari.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlKullanimKosullari.Location = new System.Drawing.Point(3, 187);
-            this.pnlKullanimKosullari.Name = "pnlKullanimKosullari";
-            this.pnlKullanimKosullari.Size = new System.Drawing.Size(190, 40);
-            this.pnlKullanimKosullari.TabIndex = 0;
-            // 
-            // pictureKullanimKosullari
-            // 
-            this.pictureKullanimKosullari.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureKullanimKosullari.BackgroundImage")));
-            this.pictureKullanimKosullari.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureKullanimKosullari.Location = new System.Drawing.Point(152, -1);
-            this.pictureKullanimKosullari.Name = "pictureKullanimKosullari";
-            this.pictureKullanimKosullari.Size = new System.Drawing.Size(40, 42);
-            this.pictureKullanimKosullari.TabIndex = 4;
-            this.pictureKullanimKosullari.TabStop = false;
-            // 
-            // btnKullanimKosullari
-            // 
-            this.btnKullanimKosullari.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnKullanimKosullari.FlatAppearance.BorderSize = 0;
-            this.btnKullanimKosullari.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKullanimKosullari.Location = new System.Drawing.Point(0, 0);
-            this.btnKullanimKosullari.Name = "btnKullanimKosullari";
-            this.btnKullanimKosullari.Size = new System.Drawing.Size(190, 40);
-            this.btnKullanimKosullari.TabIndex = 0;
-            this.btnKullanimKosullari.Text = "Kullanım Koşulları";
-            this.btnKullanimKosullari.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKullanimKosullari.UseVisualStyleBackColor = true;
-            // 
-            // pnlBizeUlasin
-            // 
-            this.pnlBizeUlasin.BackColor = System.Drawing.Color.PapayaWhip;
-            this.pnlBizeUlasin.Controls.Add(this.pictureBizeUlasin);
-            this.pnlBizeUlasin.Controls.Add(this.btnBizeUlasin);
-            this.pnlBizeUlasin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlBizeUlasin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBizeUlasin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.pnlBizeUlasin.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlBizeUlasin.Location = new System.Drawing.Point(3, 141);
-            this.pnlBizeUlasin.Name = "pnlBizeUlasin";
-            this.pnlBizeUlasin.Size = new System.Drawing.Size(190, 40);
-            this.pnlBizeUlasin.TabIndex = 0;
-            // 
-            // pictureBizeUlasin
-            // 
-            this.pictureBizeUlasin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBizeUlasin.BackgroundImage")));
-            this.pictureBizeUlasin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBizeUlasin.Location = new System.Drawing.Point(152, -1);
-            this.pictureBizeUlasin.Name = "pictureBizeUlasin";
-            this.pictureBizeUlasin.Size = new System.Drawing.Size(40, 42);
-            this.pictureBizeUlasin.TabIndex = 4;
-            this.pictureBizeUlasin.TabStop = false;
-            // 
-            // btnBizeUlasin
-            // 
-            this.btnBizeUlasin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBizeUlasin.FlatAppearance.BorderSize = 0;
-            this.btnBizeUlasin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBizeUlasin.Location = new System.Drawing.Point(0, 0);
-            this.btnBizeUlasin.Name = "btnBizeUlasin";
-            this.btnBizeUlasin.Size = new System.Drawing.Size(190, 40);
-            this.btnBizeUlasin.TabIndex = 0;
-            this.btnBizeUlasin.Text = "Bize Ulaşın";
-            this.btnBizeUlasin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBizeUlasin.UseVisualStyleBackColor = true;
-            // 
-            // pnlHakkinda
-            // 
-            this.pnlHakkinda.BackColor = System.Drawing.Color.PapayaWhip;
-            this.pnlHakkinda.Controls.Add(this.pictureHakkinda);
-            this.pnlHakkinda.Controls.Add(this.btnHakkinda);
-            this.pnlHakkinda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlHakkinda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHakkinda.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.pnlHakkinda.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlHakkinda.Location = new System.Drawing.Point(3, 95);
-            this.pnlHakkinda.Name = "pnlHakkinda";
-            this.pnlHakkinda.Size = new System.Drawing.Size(190, 40);
-            this.pnlHakkinda.TabIndex = 0;
-            // 
-            // pictureHakkinda
-            // 
-            this.pictureHakkinda.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureHakkinda.BackgroundImage")));
-            this.pictureHakkinda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureHakkinda.Location = new System.Drawing.Point(152, -1);
-            this.pictureHakkinda.Name = "pictureHakkinda";
-            this.pictureHakkinda.Size = new System.Drawing.Size(40, 42);
-            this.pictureHakkinda.TabIndex = 4;
-            this.pictureHakkinda.TabStop = false;
-            // 
-            // btnHakkinda
-            // 
-            this.btnHakkinda.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHakkinda.FlatAppearance.BorderSize = 0;
-            this.btnHakkinda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHakkinda.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnHakkinda.Location = new System.Drawing.Point(0, 0);
-            this.btnHakkinda.Name = "btnHakkinda";
-            this.btnHakkinda.Size = new System.Drawing.Size(190, 40);
-            this.btnHakkinda.TabIndex = 0;
-            this.btnHakkinda.Text = "Hakkında";
-            this.btnHakkinda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHakkinda.UseVisualStyleBackColor = true;
-            // 
-            // pnlPremium
-            // 
-            this.pnlPremium.BackColor = System.Drawing.Color.PapayaWhip;
-            this.pnlPremium.Controls.Add(this.picturePremium);
-            this.pnlPremium.Controls.Add(this.btnPremium);
-            this.pnlPremium.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlPremium.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlPremium.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.pnlPremium.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlPremium.Location = new System.Drawing.Point(3, 49);
-            this.pnlPremium.Name = "pnlPremium";
-            this.pnlPremium.Size = new System.Drawing.Size(190, 40);
-            this.pnlPremium.TabIndex = 0;
-            // 
-            // picturePremium
-            // 
-            this.picturePremium.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picturePremium.BackgroundImage")));
-            this.picturePremium.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picturePremium.Location = new System.Drawing.Point(152, -1);
-            this.picturePremium.Name = "picturePremium";
-            this.picturePremium.Size = new System.Drawing.Size(40, 42);
-            this.picturePremium.TabIndex = 4;
-            this.picturePremium.TabStop = false;
-            // 
-            // btnPremium
-            // 
-            this.btnPremium.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPremium.FlatAppearance.BorderSize = 0;
-            this.btnPremium.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPremium.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnPremium.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnPremium.Location = new System.Drawing.Point(0, 0);
-            this.btnPremium.Name = "btnPremium";
-            this.btnPremium.Size = new System.Drawing.Size(190, 40);
-            this.btnPremium.TabIndex = 0;
-            this.btnPremium.Text = "Premium Üyelik";
-            this.btnPremium.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPremium.UseVisualStyleBackColor = true;
-            // 
-            // pnlMenu
-            // 
-            this.pnlMenu.Controls.Add(this.btnMenu);
-            this.pnlMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMenu.Location = new System.Drawing.Point(199, 3);
-            this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(60, 40);
-            this.pnlMenu.TabIndex = 1;
+            // pnlSideBarHome
+            // 
+            this.pnlSideBarHome.BackColor = System.Drawing.Color.PapayaWhip;
+            this.pnlSideBarHome.Controls.Add(this.btnSideBarHome);
+            this.pnlSideBarHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlSideBarHome.Location = new System.Drawing.Point(199, 463);
+            this.pnlSideBarHome.Name = "pnlSideBarHome";
+            this.pnlSideBarHome.Size = new System.Drawing.Size(60, 40);
+            this.pnlSideBarHome.TabIndex = 1;
+            // 
+            // btnSideBarHome
+            // 
+            this.btnSideBarHome.BackColor = System.Drawing.Color.White;
+            this.btnSideBarHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSideBarHome.BackgroundImage")));
+            this.btnSideBarHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSideBarHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSideBarHome.FlatAppearance.BorderSize = 0;
+            this.btnSideBarHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSideBarHome.ForeColor = System.Drawing.Color.White;
+            this.btnSideBarHome.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarHome.Name = "btnSideBarHome";
+            this.btnSideBarHome.Size = new System.Drawing.Size(60, 40);
+            this.btnSideBarHome.TabIndex = 0;
+            this.btnSideBarHome.UseVisualStyleBackColor = false;
+            this.btnSideBarHome.Click += new System.EventHandler(this.Home_Click);
+            // 
+            // btnSideBarMenu
+            // 
+            this.btnSideBarMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSideBarMenu.BackgroundImage")));
+            this.btnSideBarMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSideBarMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSideBarMenu.FlatAppearance.BorderSize = 0;
+            this.btnSideBarMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSideBarMenu.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarMenu.Name = "btnSideBarMenu";
+            this.btnSideBarMenu.Size = new System.Drawing.Size(60, 40);
+            this.btnSideBarMenu.TabIndex = 0;
+            this.btnSideBarMenu.UseVisualStyleBackColor = true;
+            this.btnSideBarMenu.Click += new System.EventHandler(this.Menu_Click);
+            // 
+            // pnlSideBarGiveStarApplication
+            // 
+            this.pnlSideBarGiveStarApplication.BackColor = System.Drawing.Color.PapayaWhip;
+            this.pnlSideBarGiveStarApplication.Controls.Add(this.pictureSideBarGiveStarApplication);
+            this.pnlSideBarGiveStarApplication.Controls.Add(this.btnSideBarGiveStarApplication);
+            this.pnlSideBarGiveStarApplication.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSideBarGiveStarApplication.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.pnlSideBarGiveStarApplication.ForeColor = System.Drawing.Color.DarkGreen;
+            this.pnlSideBarGiveStarApplication.Location = new System.Drawing.Point(3, 463);
+            this.pnlSideBarGiveStarApplication.Name = "pnlSideBarGiveStarApplication";
+            this.pnlSideBarGiveStarApplication.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarGiveStarApplication.TabIndex = 0;
+            // 
+            // pictureSideBarGiveStarApplication
+            // 
+            this.pictureSideBarGiveStarApplication.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarGiveStarApplication.BackgroundImage")));
+            this.pictureSideBarGiveStarApplication.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureSideBarGiveStarApplication.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarGiveStarApplication.Name = "pictureSideBarGiveStarApplication";
+            this.pictureSideBarGiveStarApplication.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarGiveStarApplication.TabIndex = 4;
+            this.pictureSideBarGiveStarApplication.TabStop = false;
+            // 
+            // btnSideBarGiveStarApplication
+            // 
+            this.btnSideBarGiveStarApplication.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSideBarGiveStarApplication.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSideBarGiveStarApplication.FlatAppearance.BorderSize = 0;
+            this.btnSideBarGiveStarApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSideBarGiveStarApplication.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSideBarGiveStarApplication.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarGiveStarApplication.Name = "btnSideBarGiveStarApplication";
+            this.btnSideBarGiveStarApplication.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarGiveStarApplication.TabIndex = 0;
+            this.btnSideBarGiveStarApplication.Text = "Uygulama\'ya Puan Ver";
+            this.btnSideBarGiveStarApplication.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSideBarGiveStarApplication.UseVisualStyleBackColor = true;
+            // 
+            // pnlSideBarShareApplication
+            // 
+            this.pnlSideBarShareApplication.BackColor = System.Drawing.Color.PapayaWhip;
+            this.pnlSideBarShareApplication.Controls.Add(this.pictureSideBarShareApplication);
+            this.pnlSideBarShareApplication.Controls.Add(this.btnSideBarShareApplication);
+            this.pnlSideBarShareApplication.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlSideBarShareApplication.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSideBarShareApplication.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.pnlSideBarShareApplication.ForeColor = System.Drawing.Color.DarkGreen;
+            this.pnlSideBarShareApplication.Location = new System.Drawing.Point(3, 417);
+            this.pnlSideBarShareApplication.Name = "pnlSideBarShareApplication";
+            this.pnlSideBarShareApplication.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarShareApplication.TabIndex = 0;
+            // 
+            // pictureSideBarShareApplication
+            // 
+            this.pictureSideBarShareApplication.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarShareApplication.BackgroundImage")));
+            this.pictureSideBarShareApplication.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureSideBarShareApplication.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarShareApplication.Name = "pictureSideBarShareApplication";
+            this.pictureSideBarShareApplication.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarShareApplication.TabIndex = 4;
+            this.pictureSideBarShareApplication.TabStop = false;
+            // 
+            // btnSideBarShareApplication
+            // 
+            this.btnSideBarShareApplication.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSideBarShareApplication.FlatAppearance.BorderSize = 0;
+            this.btnSideBarShareApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSideBarShareApplication.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarShareApplication.Name = "btnSideBarShareApplication";
+            this.btnSideBarShareApplication.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarShareApplication.TabIndex = 0;
+            this.btnSideBarShareApplication.Text = "Uygulama\'yı Paylaş";
+            this.btnSideBarShareApplication.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSideBarShareApplication.UseVisualStyleBackColor = true;
+            // 
+            // pnlSideBarFacebook
+            // 
+            this.pnlSideBarFacebook.BackColor = System.Drawing.Color.PapayaWhip;
+            this.pnlSideBarFacebook.Controls.Add(this.pictureSideBarFacebook);
+            this.pnlSideBarFacebook.Controls.Add(this.btnSideBarFacebook);
+            this.pnlSideBarFacebook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlSideBarFacebook.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSideBarFacebook.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.pnlSideBarFacebook.ForeColor = System.Drawing.Color.DarkGreen;
+            this.pnlSideBarFacebook.Location = new System.Drawing.Point(3, 371);
+            this.pnlSideBarFacebook.Name = "pnlSideBarFacebook";
+            this.pnlSideBarFacebook.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarFacebook.TabIndex = 0;
+            // 
+            // pictureSideBarFacebook
+            // 
+            this.pictureSideBarFacebook.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarFacebook.BackgroundImage")));
+            this.pictureSideBarFacebook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureSideBarFacebook.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarFacebook.Name = "pictureSideBarFacebook";
+            this.pictureSideBarFacebook.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarFacebook.TabIndex = 4;
+            this.pictureSideBarFacebook.TabStop = false;
+            // 
+            // btnSideBarFacebook
+            // 
+            this.btnSideBarFacebook.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSideBarFacebook.FlatAppearance.BorderSize = 0;
+            this.btnSideBarFacebook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSideBarFacebook.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarFacebook.Name = "btnSideBarFacebook";
+            this.btnSideBarFacebook.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarFacebook.TabIndex = 0;
+            this.btnSideBarFacebook.Text = "Facebook";
+            this.btnSideBarFacebook.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSideBarFacebook.UseVisualStyleBackColor = true;
+            // 
+            // pnlSideBarTwitter
+            // 
+            this.pnlSideBarTwitter.BackColor = System.Drawing.Color.PapayaWhip;
+            this.pnlSideBarTwitter.Controls.Add(this.pictureSideBarTwitter);
+            this.pnlSideBarTwitter.Controls.Add(this.btnSideBarTwitter);
+            this.pnlSideBarTwitter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlSideBarTwitter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSideBarTwitter.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.pnlSideBarTwitter.ForeColor = System.Drawing.Color.DarkGreen;
+            this.pnlSideBarTwitter.Location = new System.Drawing.Point(3, 325);
+            this.pnlSideBarTwitter.Name = "pnlSideBarTwitter";
+            this.pnlSideBarTwitter.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarTwitter.TabIndex = 0;
+            // 
+            // pictureSideBarTwitter
+            // 
+            this.pictureSideBarTwitter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarTwitter.BackgroundImage")));
+            this.pictureSideBarTwitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureSideBarTwitter.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarTwitter.Name = "pictureSideBarTwitter";
+            this.pictureSideBarTwitter.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarTwitter.TabIndex = 4;
+            this.pictureSideBarTwitter.TabStop = false;
+            // 
+            // btnSideBarTwitter
+            // 
+            this.btnSideBarTwitter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSideBarTwitter.FlatAppearance.BorderSize = 0;
+            this.btnSideBarTwitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSideBarTwitter.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarTwitter.Name = "btnSideBarTwitter";
+            this.btnSideBarTwitter.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarTwitter.TabIndex = 0;
+            this.btnSideBarTwitter.Text = "Twitter";
+            this.btnSideBarTwitter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSideBarTwitter.UseVisualStyleBackColor = true;
+            // 
+            // pnlSideBarInstagram
+            // 
+            this.pnlSideBarInstagram.BackColor = System.Drawing.Color.PapayaWhip;
+            this.pnlSideBarInstagram.Controls.Add(this.pictureSideBarInstagram);
+            this.pnlSideBarInstagram.Controls.Add(this.btnSideBarInstagram);
+            this.pnlSideBarInstagram.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlSideBarInstagram.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSideBarInstagram.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.pnlSideBarInstagram.ForeColor = System.Drawing.Color.DarkGreen;
+            this.pnlSideBarInstagram.Location = new System.Drawing.Point(3, 279);
+            this.pnlSideBarInstagram.Name = "pnlSideBarInstagram";
+            this.pnlSideBarInstagram.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarInstagram.TabIndex = 0;
+            // 
+            // pictureSideBarInstagram
+            // 
+            this.pictureSideBarInstagram.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarInstagram.BackgroundImage")));
+            this.pictureSideBarInstagram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureSideBarInstagram.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarInstagram.Name = "pictureSideBarInstagram";
+            this.pictureSideBarInstagram.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarInstagram.TabIndex = 4;
+            this.pictureSideBarInstagram.TabStop = false;
+            // 
+            // btnSideBarInstagram
+            // 
+            this.btnSideBarInstagram.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSideBarInstagram.FlatAppearance.BorderSize = 0;
+            this.btnSideBarInstagram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSideBarInstagram.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarInstagram.Name = "btnSideBarInstagram";
+            this.btnSideBarInstagram.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarInstagram.TabIndex = 0;
+            this.btnSideBarInstagram.Text = "Instagram";
+            this.btnSideBarInstagram.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSideBarInstagram.UseVisualStyleBackColor = true;
+            // 
+            // pnlSideBarNotifications
+            // 
+            this.pnlSideBarNotifications.BackColor = System.Drawing.Color.PapayaWhip;
+            this.pnlSideBarNotifications.Controls.Add(this.pictureSideBarNotifications);
+            this.pnlSideBarNotifications.Controls.Add(this.btnSideBarNotifications);
+            this.pnlSideBarNotifications.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlSideBarNotifications.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSideBarNotifications.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.pnlSideBarNotifications.ForeColor = System.Drawing.Color.DarkGreen;
+            this.pnlSideBarNotifications.Location = new System.Drawing.Point(3, 233);
+            this.pnlSideBarNotifications.Name = "pnlSideBarNotifications";
+            this.pnlSideBarNotifications.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarNotifications.TabIndex = 0;
+            // 
+            // pictureSideBarNotifications
+            // 
+            this.pictureSideBarNotifications.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarNotifications.BackgroundImage")));
+            this.pictureSideBarNotifications.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureSideBarNotifications.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarNotifications.Name = "pictureSideBarNotifications";
+            this.pictureSideBarNotifications.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarNotifications.TabIndex = 4;
+            this.pictureSideBarNotifications.TabStop = false;
+            // 
+            // btnSideBarNotifications
+            // 
+            this.btnSideBarNotifications.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSideBarNotifications.FlatAppearance.BorderSize = 0;
+            this.btnSideBarNotifications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSideBarNotifications.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarNotifications.Name = "btnSideBarNotifications";
+            this.btnSideBarNotifications.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarNotifications.TabIndex = 0;
+            this.btnSideBarNotifications.Text = "Bildirim";
+            this.btnSideBarNotifications.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSideBarNotifications.UseVisualStyleBackColor = true;
+            // 
+            // pnlSideBarTermsofUse
+            // 
+            this.pnlSideBarTermsofUse.BackColor = System.Drawing.Color.PapayaWhip;
+            this.pnlSideBarTermsofUse.Controls.Add(this.pictureSideBarTermofUse);
+            this.pnlSideBarTermsofUse.Controls.Add(this.btnSideBarTermsofUse);
+            this.pnlSideBarTermsofUse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlSideBarTermsofUse.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSideBarTermsofUse.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.pnlSideBarTermsofUse.ForeColor = System.Drawing.Color.DarkGreen;
+            this.pnlSideBarTermsofUse.Location = new System.Drawing.Point(3, 187);
+            this.pnlSideBarTermsofUse.Name = "pnlSideBarTermsofUse";
+            this.pnlSideBarTermsofUse.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarTermsofUse.TabIndex = 0;
+            // 
+            // pictureSideBarTermofUse
+            // 
+            this.pictureSideBarTermofUse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarTermofUse.BackgroundImage")));
+            this.pictureSideBarTermofUse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureSideBarTermofUse.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarTermofUse.Name = "pictureSideBarTermofUse";
+            this.pictureSideBarTermofUse.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarTermofUse.TabIndex = 4;
+            this.pictureSideBarTermofUse.TabStop = false;
+            // 
+            // btnSideBarTermsofUse
+            // 
+            this.btnSideBarTermsofUse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSideBarTermsofUse.FlatAppearance.BorderSize = 0;
+            this.btnSideBarTermsofUse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSideBarTermsofUse.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarTermsofUse.Name = "btnSideBarTermsofUse";
+            this.btnSideBarTermsofUse.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarTermsofUse.TabIndex = 0;
+            this.btnSideBarTermsofUse.Text = "Kullanım Koşulları";
+            this.btnSideBarTermsofUse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSideBarTermsofUse.UseVisualStyleBackColor = true;
+            // 
+            // pnlSideBarContactUs
+            // 
+            this.pnlSideBarContactUs.BackColor = System.Drawing.Color.PapayaWhip;
+            this.pnlSideBarContactUs.Controls.Add(this.pictureSideBarContactUs);
+            this.pnlSideBarContactUs.Controls.Add(this.btnSideBarContactUs);
+            this.pnlSideBarContactUs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlSideBarContactUs.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSideBarContactUs.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.pnlSideBarContactUs.ForeColor = System.Drawing.Color.DarkGreen;
+            this.pnlSideBarContactUs.Location = new System.Drawing.Point(3, 141);
+            this.pnlSideBarContactUs.Name = "pnlSideBarContactUs";
+            this.pnlSideBarContactUs.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarContactUs.TabIndex = 0;
+            // 
+            // pictureSideBarContactUs
+            // 
+            this.pictureSideBarContactUs.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarContactUs.BackgroundImage")));
+            this.pictureSideBarContactUs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureSideBarContactUs.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarContactUs.Name = "pictureSideBarContactUs";
+            this.pictureSideBarContactUs.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarContactUs.TabIndex = 4;
+            this.pictureSideBarContactUs.TabStop = false;
+            // 
+            // btnSideBarContactUs
+            // 
+            this.btnSideBarContactUs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSideBarContactUs.FlatAppearance.BorderSize = 0;
+            this.btnSideBarContactUs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSideBarContactUs.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarContactUs.Name = "btnSideBarContactUs";
+            this.btnSideBarContactUs.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarContactUs.TabIndex = 0;
+            this.btnSideBarContactUs.Text = "Bize Ulaşın";
+            this.btnSideBarContactUs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSideBarContactUs.UseVisualStyleBackColor = true;
+            // 
+            // pnlSideBarAbout
+            // 
+            this.pnlSideBarAbout.BackColor = System.Drawing.Color.PapayaWhip;
+            this.pnlSideBarAbout.Controls.Add(this.pictureSideBarAbout);
+            this.pnlSideBarAbout.Controls.Add(this.btnSideBarAbout);
+            this.pnlSideBarAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlSideBarAbout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSideBarAbout.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.pnlSideBarAbout.ForeColor = System.Drawing.Color.DarkGreen;
+            this.pnlSideBarAbout.Location = new System.Drawing.Point(3, 95);
+            this.pnlSideBarAbout.Name = "pnlSideBarAbout";
+            this.pnlSideBarAbout.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarAbout.TabIndex = 0;
+            // 
+            // pictureSideBarAbout
+            // 
+            this.pictureSideBarAbout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarAbout.BackgroundImage")));
+            this.pictureSideBarAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureSideBarAbout.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarAbout.Name = "pictureSideBarAbout";
+            this.pictureSideBarAbout.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarAbout.TabIndex = 4;
+            this.pictureSideBarAbout.TabStop = false;
+            // 
+            // btnSideBarAbout
+            // 
+            this.btnSideBarAbout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSideBarAbout.FlatAppearance.BorderSize = 0;
+            this.btnSideBarAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSideBarAbout.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnSideBarAbout.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarAbout.Name = "btnSideBarAbout";
+            this.btnSideBarAbout.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarAbout.TabIndex = 0;
+            this.btnSideBarAbout.Text = "Hakkında";
+            this.btnSideBarAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSideBarAbout.UseVisualStyleBackColor = true;
+            // 
+            // pnlSideBarPremium
+            // 
+            this.pnlSideBarPremium.BackColor = System.Drawing.Color.PapayaWhip;
+            this.pnlSideBarPremium.Controls.Add(this.pictureSideBarPremium);
+            this.pnlSideBarPremium.Controls.Add(this.btnSideBarPremium);
+            this.pnlSideBarPremium.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlSideBarPremium.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSideBarPremium.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.pnlSideBarPremium.ForeColor = System.Drawing.Color.DarkGreen;
+            this.pnlSideBarPremium.Location = new System.Drawing.Point(3, 49);
+            this.pnlSideBarPremium.Name = "pnlSideBarPremium";
+            this.pnlSideBarPremium.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarPremium.TabIndex = 0;
+            // 
+            // pictureSideBarPremium
+            // 
+            this.pictureSideBarPremium.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarPremium.BackgroundImage")));
+            this.pictureSideBarPremium.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureSideBarPremium.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarPremium.Name = "pictureSideBarPremium";
+            this.pictureSideBarPremium.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarPremium.TabIndex = 4;
+            this.pictureSideBarPremium.TabStop = false;
+            // 
+            // btnSideBarPremium
+            // 
+            this.btnSideBarPremium.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSideBarPremium.FlatAppearance.BorderSize = 0;
+            this.btnSideBarPremium.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSideBarPremium.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSideBarPremium.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnSideBarPremium.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarPremium.Name = "btnSideBarPremium";
+            this.btnSideBarPremium.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarPremium.TabIndex = 0;
+            this.btnSideBarPremium.Text = "Premium Üyelik";
+            this.btnSideBarPremium.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSideBarPremium.UseVisualStyleBackColor = true;
+            // 
+            // pnlSideBarMenu
+            // 
+            this.pnlSideBarMenu.Controls.Add(this.btnSideBarMenu);
+            this.pnlSideBarMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlSideBarMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSideBarMenu.Location = new System.Drawing.Point(199, 3);
+            this.pnlSideBarMenu.Name = "pnlSideBarMenu";
+            this.pnlSideBarMenu.Size = new System.Drawing.Size(60, 40);
+            this.pnlSideBarMenu.TabIndex = 1;
             // 
             // SideBar
             // 
             this.SideBar.BackColor = System.Drawing.Color.White;
-            this.SideBar.Controls.Add(this.pnlYesilEv);
-            this.SideBar.Controls.Add(this.pnlMenu);
-            this.SideBar.Controls.Add(this.pnlPremium);
-            this.SideBar.Controls.Add(this.pnlHakkinda);
-            this.SideBar.Controls.Add(this.pnlBizeUlasin);
-            this.SideBar.Controls.Add(this.pnlKullanimKosullari);
-            this.SideBar.Controls.Add(this.pnlBildirim);
-            this.SideBar.Controls.Add(this.pnlInstagram);
-            this.SideBar.Controls.Add(this.pnlTwitter);
-            this.SideBar.Controls.Add(this.pnlFacebook);
-            this.SideBar.Controls.Add(this.pnlUygulamaPaylas);
-            this.SideBar.Controls.Add(this.pnlUygulamaPuanVer);
-            this.SideBar.Controls.Add(this.pnlHome);
+            this.SideBar.Controls.Add(this.pnlSideBarYesilEv);
+            this.SideBar.Controls.Add(this.pnlSideBarMenu);
+            this.SideBar.Controls.Add(this.pnlSideBarPremium);
+            this.SideBar.Controls.Add(this.pnlSideBarAbout);
+            this.SideBar.Controls.Add(this.pnlSideBarContactUs);
+            this.SideBar.Controls.Add(this.pnlSideBarTermsofUse);
+            this.SideBar.Controls.Add(this.pnlSideBarNotifications);
+            this.SideBar.Controls.Add(this.pnlSideBarInstagram);
+            this.SideBar.Controls.Add(this.pnlSideBarTwitter);
+            this.SideBar.Controls.Add(this.pnlSideBarFacebook);
+            this.SideBar.Controls.Add(this.pnlSideBarShareApplication);
+            this.SideBar.Controls.Add(this.pnlSideBarGiveStarApplication);
+            this.SideBar.Controls.Add(this.pnlSideBarHome);
             this.SideBar.Location = new System.Drawing.Point(0, 0);
             this.SideBar.MaximumSize = new System.Drawing.Size(270, 510);
             this.SideBar.MinimumSize = new System.Drawing.Size(60, 90);
@@ -708,1845 +718,1970 @@
             this.SideBar.Size = new System.Drawing.Size(270, 510);
             this.SideBar.TabIndex = 0;
             // 
-            // pnlYesilEv
-            // 
-            this.pnlYesilEv.BackColor = System.Drawing.Color.Lime;
-            this.pnlYesilEv.Controls.Add(this.pictureYesilEv);
-            this.pnlYesilEv.Controls.Add(this.btnYesilEv);
-            this.pnlYesilEv.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlYesilEv.Location = new System.Drawing.Point(3, 3);
-            this.pnlYesilEv.Name = "pnlYesilEv";
-            this.pnlYesilEv.Size = new System.Drawing.Size(190, 40);
-            this.pnlYesilEv.TabIndex = 0;
-            // 
-            // pictureYesilEv
-            // 
-            this.pictureYesilEv.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureYesilEv.BackgroundImage")));
-            this.pictureYesilEv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureYesilEv.Enabled = false;
-            this.pictureYesilEv.Location = new System.Drawing.Point(-3, -12);
-            this.pictureYesilEv.Name = "pictureYesilEv";
-            this.pictureYesilEv.Size = new System.Drawing.Size(38, 63);
-            this.pictureYesilEv.TabIndex = 1;
-            this.pictureYesilEv.TabStop = false;
-            // 
-            // btnYesilEv
-            // 
-            this.btnYesilEv.BackColor = System.Drawing.Color.Lime;
-            this.btnYesilEv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnYesilEv.Enabled = false;
-            this.btnYesilEv.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.btnYesilEv.FlatAppearance.BorderSize = 0;
-            this.btnYesilEv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnYesilEv.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnYesilEv.ForeColor = System.Drawing.Color.White;
-            this.btnYesilEv.Location = new System.Drawing.Point(0, 0);
-            this.btnYesilEv.Name = "btnYesilEv";
-            this.btnYesilEv.Size = new System.Drawing.Size(190, 40);
-            this.btnYesilEv.TabIndex = 0;
-            this.btnYesilEv.Text = "    Yeşil Ev";
-            this.btnYesilEv.UseVisualStyleBackColor = false;
-            // 
-            // btnBarkodOku
-            // 
-            this.btnBarkodOku.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBarkodOku.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBarkodOku.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnBarkodOku.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnBarkodOku.Location = new System.Drawing.Point(68, 138);
-            this.btnBarkodOku.Name = "btnBarkodOku";
-            this.btnBarkodOku.Size = new System.Drawing.Size(226, 38);
-            this.btnBarkodOku.TabIndex = 1;
-            this.btnBarkodOku.Text = "               Barkod Okuma";
-            this.btnBarkodOku.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBarkodOku.UseVisualStyleBackColor = true;
-            this.btnBarkodOku.Click += new System.EventHandler(this.btnBarkodOku_Click);
-            // 
-            // btnArama
-            // 
-            this.btnArama.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnArama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnArama.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnArama.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnArama.Location = new System.Drawing.Point(68, 182);
-            this.btnArama.Name = "btnArama";
-            this.btnArama.Size = new System.Drawing.Size(226, 38);
-            this.btnArama.TabIndex = 2;
-            this.btnArama.Text = "               Arama";
-            this.btnArama.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnArama.UseVisualStyleBackColor = true;
-            this.btnArama.Click += new System.EventHandler(this.btnArama_Click);
-            // 
-            // btnUrunEkleDuzenle
-            // 
-            this.btnUrunEkleDuzenle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUrunEkleDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUrunEkleDuzenle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUrunEkleDuzenle.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnUrunEkleDuzenle.Location = new System.Drawing.Point(68, 226);
-            this.btnUrunEkleDuzenle.Name = "btnUrunEkleDuzenle";
-            this.btnUrunEkleDuzenle.Size = new System.Drawing.Size(226, 38);
-            this.btnUrunEkleDuzenle.TabIndex = 3;
-            this.btnUrunEkleDuzenle.Text = "               Ürün Ekleme / Düzeltme";
-            this.btnUrunEkleDuzenle.UseVisualStyleBackColor = true;
-            this.btnUrunEkleDuzenle.Click += new System.EventHandler(this.UrunEkleDuzenle_Click);
-            // 
-            // btnAramaGecmisiFavori
-            // 
-            this.btnAramaGecmisiFavori.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAramaGecmisiFavori.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAramaGecmisiFavori.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAramaGecmisiFavori.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnAramaGecmisiFavori.Location = new System.Drawing.Point(68, 269);
-            this.btnAramaGecmisiFavori.Name = "btnAramaGecmisiFavori";
-            this.btnAramaGecmisiFavori.Size = new System.Drawing.Size(226, 38);
-            this.btnAramaGecmisiFavori.TabIndex = 4;
-            this.btnAramaGecmisiFavori.Text = "               Arama Geçmişi / Favori";
-            this.btnAramaGecmisiFavori.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAramaGecmisiFavori.UseVisualStyleBackColor = true;
-            this.btnAramaGecmisiFavori.Click += new System.EventHandler(this.btnAramaGecmisiFavori_Click);
-            // 
-            // pictureBarkod
-            // 
-            this.pictureBarkod.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBarkod.BackgroundImage")));
-            this.pictureBarkod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBarkod.Location = new System.Drawing.Point(83, 141);
-            this.pictureBarkod.Name = "pictureBarkod";
-            this.pictureBarkod.Size = new System.Drawing.Size(36, 32);
-            this.pictureBarkod.TabIndex = 5;
-            this.pictureBarkod.TabStop = false;
-            // 
-            // pictureArama
-            // 
-            this.pictureArama.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureArama.BackgroundImage")));
-            this.pictureArama.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureArama.Location = new System.Drawing.Point(83, 185);
-            this.pictureArama.Name = "pictureArama";
-            this.pictureArama.Size = new System.Drawing.Size(36, 32);
-            this.pictureArama.TabIndex = 5;
-            this.pictureArama.TabStop = false;
-            // 
-            // pictureUrunEkleDuzenle
-            // 
-            this.pictureUrunEkleDuzenle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUrunEkleDuzenle.BackgroundImage")));
-            this.pictureUrunEkleDuzenle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUrunEkleDuzenle.Location = new System.Drawing.Point(83, 229);
-            this.pictureUrunEkleDuzenle.Name = "pictureUrunEkleDuzenle";
-            this.pictureUrunEkleDuzenle.Size = new System.Drawing.Size(36, 32);
-            this.pictureUrunEkleDuzenle.TabIndex = 5;
-            this.pictureUrunEkleDuzenle.TabStop = false;
-            // 
-            // pictureAramaGecmisiFavori
-            // 
-            this.pictureAramaGecmisiFavori.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureAramaGecmisiFavori.BackgroundImage")));
-            this.pictureAramaGecmisiFavori.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureAramaGecmisiFavori.Location = new System.Drawing.Point(83, 273);
-            this.pictureAramaGecmisiFavori.Name = "pictureAramaGecmisiFavori";
-            this.pictureAramaGecmisiFavori.Size = new System.Drawing.Size(36, 32);
-            this.pictureAramaGecmisiFavori.TabIndex = 5;
-            this.pictureAramaGecmisiFavori.TabStop = false;
-            // 
-            // Anasayfa
-            // 
-            this.Anasayfa.Controls.Add(this.btnAnasayfaUser);
-            this.Anasayfa.Controls.Add(this.pictureAramaGecmisiFavori);
-            this.Anasayfa.Controls.Add(this.pictureUrunEkleDuzenle);
-            this.Anasayfa.Controls.Add(this.pictureArama);
-            this.Anasayfa.Controls.Add(this.pictureBarkod);
-            this.Anasayfa.Controls.Add(this.btnAramaGecmisiFavori);
-            this.Anasayfa.Controls.Add(this.btnUrunEkleDuzenle);
-            this.Anasayfa.Controls.Add(this.btnArama);
-            this.Anasayfa.Controls.Add(this.btnBarkodOku);
-            this.Anasayfa.Location = new System.Drawing.Point(0, 0);
-            this.Anasayfa.MaximumSize = new System.Drawing.Size(360, 510);
-            this.Anasayfa.MinimumSize = new System.Drawing.Size(360, 510);
-            this.Anasayfa.Name = "Anasayfa";
-            this.Anasayfa.Size = new System.Drawing.Size(360, 510);
-            this.Anasayfa.TabIndex = 6;
-            // 
-            // btnAnasayfaUser
-            // 
-            this.btnAnasayfaUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAnasayfaUser.BackgroundImage")));
-            this.btnAnasayfaUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAnasayfaUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAnasayfaUser.FlatAppearance.BorderSize = 0;
-            this.btnAnasayfaUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnasayfaUser.Location = new System.Drawing.Point(285, 15);
-            this.btnAnasayfaUser.Name = "btnAnasayfaUser";
-            this.btnAnasayfaUser.Size = new System.Drawing.Size(60, 40);
-            this.btnAnasayfaUser.TabIndex = 0;
-            this.btnAnasayfaUser.UseVisualStyleBackColor = true;
-            this.btnAnasayfaUser.Click += new System.EventHandler(this.UserButton_Click);
-            // 
-            // UserBilgileri
-            // 
-            this.UserBilgileri.Controls.Add(this.labelUrunSayisi);
-            this.UserBilgileri.Controls.Add(this.pictureCikisYap);
-            this.UserBilgileri.Controls.Add(this.pictureAramaGecmisi);
-            this.UserBilgileri.Controls.Add(this.pictureKaraliste);
-            this.UserBilgileri.Controls.Add(this.pictureFavori);
-            this.UserBilgileri.Controls.Add(this.pictureUserBilgileriGüncelle);
-            this.UserBilgileri.Controls.Add(this.pictureUserSosyalMedyaBirlestir);
-            this.UserBilgileri.Controls.Add(this.pictureUserSifreDegistir);
-            this.UserBilgileri.Controls.Add(this.pictureUserEposta);
-            this.UserBilgileri.Controls.Add(this.pictureUserPremium);
-            this.UserBilgileri.Controls.Add(this.btnUserBilgileriCikisYap);
-            this.UserBilgileri.Controls.Add(this.btnAramaGeçmişiTemizle);
-            this.UserBilgileri.Controls.Add(this.btnKaraListe);
-            this.UserBilgileri.Controls.Add(this.btnUserFavori);
-            this.UserBilgileri.Controls.Add(this.btnUserBilgileriGüncelle);
-            this.UserBilgileri.Controls.Add(this.btnUserSosyalMedyaBirlestir);
-            this.UserBilgileri.Controls.Add(this.btnUserEpostaDegistir);
-            this.UserBilgileri.Controls.Add(this.lblEkledigiUrunSayisi);
-            this.UserBilgileri.Controls.Add(this.lblUyelikTarihiValue);
-            this.UserBilgileri.Controls.Add(this.lblUyelikTarihi);
-            this.UserBilgileri.Controls.Add(this.lblUserName);
-            this.UserBilgileri.Controls.Add(this.btnUserSifreDegistir);
-            this.UserBilgileri.Controls.Add(this.btnUserPremium);
-            this.UserBilgileri.Location = new System.Drawing.Point(0, 0);
-            this.UserBilgileri.MaximumSize = new System.Drawing.Size(360, 510);
-            this.UserBilgileri.MinimumSize = new System.Drawing.Size(360, 510);
-            this.UserBilgileri.Name = "UserBilgileri";
-            this.UserBilgileri.Size = new System.Drawing.Size(360, 510);
-            this.UserBilgileri.TabIndex = 7;
-            // 
-            // labelUrunSayisi
-            // 
-            this.labelUrunSayisi.AutoSize = true;
-            this.labelUrunSayisi.Location = new System.Drawing.Point(239, 105);
-            this.labelUrunSayisi.Name = "labelUrunSayisi";
-            this.labelUrunSayisi.Size = new System.Drawing.Size(10, 13);
-            this.labelUrunSayisi.TabIndex = 5;
-            this.labelUrunSayisi.Text = "-";
-            // 
-            // pictureCikisYap
-            // 
-            this.pictureCikisYap.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureCikisYap.BackgroundImage")));
-            this.pictureCikisYap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureCikisYap.Location = new System.Drawing.Point(46, 437);
-            this.pictureCikisYap.Name = "pictureCikisYap";
-            this.pictureCikisYap.Size = new System.Drawing.Size(37, 32);
-            this.pictureCikisYap.TabIndex = 4;
-            this.pictureCikisYap.TabStop = false;
-            // 
-            // pictureAramaGecmisi
-            // 
-            this.pictureAramaGecmisi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureAramaGecmisi.BackgroundImage")));
-            this.pictureAramaGecmisi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureAramaGecmisi.Location = new System.Drawing.Point(46, 399);
-            this.pictureAramaGecmisi.Name = "pictureAramaGecmisi";
-            this.pictureAramaGecmisi.Size = new System.Drawing.Size(37, 32);
-            this.pictureAramaGecmisi.TabIndex = 4;
-            this.pictureAramaGecmisi.TabStop = false;
-            // 
-            // pictureKaraliste
-            // 
-            this.pictureKaraliste.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureKaraliste.BackgroundImage")));
-            this.pictureKaraliste.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureKaraliste.Location = new System.Drawing.Point(46, 361);
-            this.pictureKaraliste.Name = "pictureKaraliste";
-            this.pictureKaraliste.Size = new System.Drawing.Size(37, 32);
-            this.pictureKaraliste.TabIndex = 4;
-            this.pictureKaraliste.TabStop = false;
-            // 
-            // pictureFavori
-            // 
-            this.pictureFavori.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureFavori.BackgroundImage")));
-            this.pictureFavori.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureFavori.Location = new System.Drawing.Point(46, 323);
-            this.pictureFavori.Name = "pictureFavori";
-            this.pictureFavori.Size = new System.Drawing.Size(37, 32);
-            this.pictureFavori.TabIndex = 4;
-            this.pictureFavori.TabStop = false;
-            // 
-            // pictureUserBilgileriGüncelle
-            // 
-            this.pictureUserBilgileriGüncelle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserBilgileriGüncelle.BackgroundImage")));
-            this.pictureUserBilgileriGüncelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserBilgileriGüncelle.Location = new System.Drawing.Point(46, 285);
-            this.pictureUserBilgileriGüncelle.Name = "pictureUserBilgileriGüncelle";
-            this.pictureUserBilgileriGüncelle.Size = new System.Drawing.Size(37, 32);
-            this.pictureUserBilgileriGüncelle.TabIndex = 4;
-            this.pictureUserBilgileriGüncelle.TabStop = false;
-            // 
-            // pictureUserSosyalMedyaBirlestir
-            // 
-            this.pictureUserSosyalMedyaBirlestir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserSosyalMedyaBirlestir.BackgroundImage")));
-            this.pictureUserSosyalMedyaBirlestir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserSosyalMedyaBirlestir.Location = new System.Drawing.Point(46, 247);
-            this.pictureUserSosyalMedyaBirlestir.Name = "pictureUserSosyalMedyaBirlestir";
-            this.pictureUserSosyalMedyaBirlestir.Size = new System.Drawing.Size(37, 32);
-            this.pictureUserSosyalMedyaBirlestir.TabIndex = 4;
-            this.pictureUserSosyalMedyaBirlestir.TabStop = false;
-            // 
-            // pictureUserSifreDegistir
-            // 
-            this.pictureUserSifreDegistir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserSifreDegistir.BackgroundImage")));
-            this.pictureUserSifreDegistir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserSifreDegistir.Location = new System.Drawing.Point(46, 209);
-            this.pictureUserSifreDegistir.Name = "pictureUserSifreDegistir";
-            this.pictureUserSifreDegistir.Size = new System.Drawing.Size(37, 32);
-            this.pictureUserSifreDegistir.TabIndex = 4;
-            this.pictureUserSifreDegistir.TabStop = false;
-            // 
-            // pictureUserEposta
-            // 
-            this.pictureUserEposta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserEposta.BackgroundImage")));
-            this.pictureUserEposta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserEposta.Location = new System.Drawing.Point(46, 171);
-            this.pictureUserEposta.Name = "pictureUserEposta";
-            this.pictureUserEposta.Size = new System.Drawing.Size(37, 32);
-            this.pictureUserEposta.TabIndex = 4;
-            this.pictureUserEposta.TabStop = false;
-            // 
-            // pictureUserPremium
-            // 
-            this.pictureUserPremium.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserPremium.BackgroundImage")));
-            this.pictureUserPremium.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserPremium.Location = new System.Drawing.Point(46, 133);
-            this.pictureUserPremium.Name = "pictureUserPremium";
-            this.pictureUserPremium.Size = new System.Drawing.Size(37, 32);
-            this.pictureUserPremium.TabIndex = 4;
-            this.pictureUserPremium.TabStop = false;
-            // 
-            // btnUserBilgileriCikisYap
-            // 
-            this.btnUserBilgileriCikisYap.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserBilgileriCikisYap.FlatAppearance.BorderSize = 0;
-            this.btnUserBilgileriCikisYap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserBilgileriCikisYap.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUserBilgileriCikisYap.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserBilgileriCikisYap.Location = new System.Drawing.Point(48, 437);
-            this.btnUserBilgileriCikisYap.Name = "btnUserBilgileriCikisYap";
-            this.btnUserBilgileriCikisYap.Size = new System.Drawing.Size(275, 32);
-            this.btnUserBilgileriCikisYap.TabIndex = 3;
-            this.btnUserBilgileriCikisYap.Text = "         Çıkış yap";
-            this.btnUserBilgileriCikisYap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserBilgileriCikisYap.UseVisualStyleBackColor = true;
-            this.btnUserBilgileriCikisYap.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // btnAramaGeçmişiTemizle
-            // 
-            this.btnAramaGeçmişiTemizle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAramaGeçmişiTemizle.FlatAppearance.BorderSize = 0;
-            this.btnAramaGeçmişiTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAramaGeçmişiTemizle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAramaGeçmişiTemizle.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnAramaGeçmişiTemizle.Location = new System.Drawing.Point(48, 399);
-            this.btnAramaGeçmişiTemizle.Name = "btnAramaGeçmişiTemizle";
-            this.btnAramaGeçmişiTemizle.Size = new System.Drawing.Size(275, 32);
-            this.btnAramaGeçmişiTemizle.TabIndex = 3;
-            this.btnAramaGeçmişiTemizle.Text = "         Arama geçmişini temizle";
-            this.btnAramaGeçmişiTemizle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAramaGeçmişiTemizle.UseVisualStyleBackColor = true;
-            this.btnAramaGeçmişiTemizle.Click += new System.EventHandler(this.GecmisiTemizle);
-            // 
-            // btnKaraListe
-            // 
-            this.btnKaraListe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKaraListe.FlatAppearance.BorderSize = 0;
-            this.btnKaraListe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKaraListe.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKaraListe.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnKaraListe.Location = new System.Drawing.Point(49, 361);
-            this.btnKaraListe.Name = "btnKaraListe";
-            this.btnKaraListe.Size = new System.Drawing.Size(275, 32);
-            this.btnKaraListe.TabIndex = 3;
-            this.btnKaraListe.Text = "         Kara liste";
-            this.btnKaraListe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKaraListe.UseVisualStyleBackColor = true;
-            this.btnKaraListe.Click += new System.EventHandler(this.KaraListeyiHazirla);
-            // 
-            // btnUserFavori
-            // 
-            this.btnUserFavori.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserFavori.FlatAppearance.BorderSize = 0;
-            this.btnUserFavori.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserFavori.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUserFavori.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserFavori.Location = new System.Drawing.Point(49, 323);
-            this.btnUserFavori.Name = "btnUserFavori";
-            this.btnUserFavori.Size = new System.Drawing.Size(275, 32);
-            this.btnUserFavori.TabIndex = 3;
-            this.btnUserFavori.Text = "         Favoriler";
-            this.btnUserFavori.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserFavori.UseVisualStyleBackColor = true;
-            this.btnUserFavori.Click += new System.EventHandler(this.FavoriListeleriniHazirla);
-            // 
-            // btnUserBilgileriGüncelle
-            // 
-            this.btnUserBilgileriGüncelle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserBilgileriGüncelle.FlatAppearance.BorderSize = 0;
-            this.btnUserBilgileriGüncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserBilgileriGüncelle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUserBilgileriGüncelle.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserBilgileriGüncelle.Location = new System.Drawing.Point(49, 285);
-            this.btnUserBilgileriGüncelle.Name = "btnUserBilgileriGüncelle";
-            this.btnUserBilgileriGüncelle.Size = new System.Drawing.Size(275, 32);
-            this.btnUserBilgileriGüncelle.TabIndex = 3;
-            this.btnUserBilgileriGüncelle.Text = "         Profil bilgileri güncelle";
-            this.btnUserBilgileriGüncelle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserBilgileriGüncelle.UseVisualStyleBackColor = true;
-            // 
-            // btnUserSosyalMedyaBirlestir
-            // 
-            this.btnUserSosyalMedyaBirlestir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserSosyalMedyaBirlestir.FlatAppearance.BorderSize = 0;
-            this.btnUserSosyalMedyaBirlestir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserSosyalMedyaBirlestir.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUserSosyalMedyaBirlestir.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserSosyalMedyaBirlestir.Location = new System.Drawing.Point(48, 247);
-            this.btnUserSosyalMedyaBirlestir.Name = "btnUserSosyalMedyaBirlestir";
-            this.btnUserSosyalMedyaBirlestir.Size = new System.Drawing.Size(275, 32);
-            this.btnUserSosyalMedyaBirlestir.TabIndex = 3;
-            this.btnUserSosyalMedyaBirlestir.Text = "         Sosyal medya hesabı ile birleştir";
-            this.btnUserSosyalMedyaBirlestir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserSosyalMedyaBirlestir.UseVisualStyleBackColor = true;
-            // 
-            // btnUserEpostaDegistir
-            // 
-            this.btnUserEpostaDegistir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserEpostaDegistir.FlatAppearance.BorderSize = 0;
-            this.btnUserEpostaDegistir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserEpostaDegistir.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUserEpostaDegistir.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserEpostaDegistir.Location = new System.Drawing.Point(48, 171);
-            this.btnUserEpostaDegistir.Name = "btnUserEpostaDegistir";
-            this.btnUserEpostaDegistir.Size = new System.Drawing.Size(275, 32);
-            this.btnUserEpostaDegistir.TabIndex = 3;
-            this.btnUserEpostaDegistir.Text = "         E-Posta Adresini değiştir";
-            this.btnUserEpostaDegistir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserEpostaDegistir.UseVisualStyleBackColor = true;
-            // 
-            // lblEkledigiUrunSayisi
-            // 
-            this.lblEkledigiUrunSayisi.AutoSize = true;
-            this.lblEkledigiUrunSayisi.BackColor = System.Drawing.Color.White;
-            this.lblEkledigiUrunSayisi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblEkledigiUrunSayisi.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblEkledigiUrunSayisi.Location = new System.Drawing.Point(119, 104);
-            this.lblEkledigiUrunSayisi.Name = "lblEkledigiUrunSayisi";
-            this.lblEkledigiUrunSayisi.Size = new System.Drawing.Size(116, 15);
-            this.lblEkledigiUrunSayisi.TabIndex = 2;
-            this.lblEkledigiUrunSayisi.Text = "Eklediği Ürün Sayısı :";
-            // 
-            // lblUyelikTarihiValue
-            // 
-            this.lblUyelikTarihiValue.AutoSize = true;
-            this.lblUyelikTarihiValue.BackColor = System.Drawing.Color.White;
-            this.lblUyelikTarihiValue.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUyelikTarihiValue.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblUyelikTarihiValue.Location = new System.Drawing.Point(152, 76);
-            this.lblUyelikTarihiValue.Name = "lblUyelikTarihiValue";
-            this.lblUyelikTarihiValue.Size = new System.Drawing.Size(0, 15);
-            this.lblUyelikTarihiValue.TabIndex = 1;
-            // 
-            // lblUyelikTarihi
-            // 
-            this.lblUyelikTarihi.AutoSize = true;
-            this.lblUyelikTarihi.BackColor = System.Drawing.Color.White;
-            this.lblUyelikTarihi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUyelikTarihi.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblUyelikTarihi.Location = new System.Drawing.Point(66, 76);
-            this.lblUyelikTarihi.Name = "lblUyelikTarihi";
-            this.lblUyelikTarihi.Size = new System.Drawing.Size(80, 15);
-            this.lblUyelikTarihi.TabIndex = 1;
-            this.lblUyelikTarihi.Text = "Üyelik Tarihi : ";
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUserName.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblUserName.Location = new System.Drawing.Point(118, 48);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(86, 21);
-            this.lblUserName.TabIndex = 0;
-            this.lblUserName.Text = "UserName";
-            // 
-            // btnUserSifreDegistir
-            // 
-            this.btnUserSifreDegistir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserSifreDegistir.FlatAppearance.BorderSize = 0;
-            this.btnUserSifreDegistir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserSifreDegistir.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUserSifreDegistir.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserSifreDegistir.Location = new System.Drawing.Point(49, 209);
-            this.btnUserSifreDegistir.Name = "btnUserSifreDegistir";
-            this.btnUserSifreDegistir.Size = new System.Drawing.Size(275, 32);
-            this.btnUserSifreDegistir.TabIndex = 3;
-            this.btnUserSifreDegistir.Text = "         Şifre değiştir";
-            this.btnUserSifreDegistir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserSifreDegistir.UseVisualStyleBackColor = true;
-            // 
-            // btnUserPremium
-            // 
-            this.btnUserPremium.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserPremium.FlatAppearance.BorderSize = 0;
-            this.btnUserPremium.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserPremium.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUserPremium.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserPremium.Location = new System.Drawing.Point(48, 133);
-            this.btnUserPremium.Name = "btnUserPremium";
-            this.btnUserPremium.Size = new System.Drawing.Size(275, 32);
-            this.btnUserPremium.TabIndex = 3;
-            this.btnUserPremium.Text = "         Premium üye ol";
-            this.btnUserPremium.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserPremium.UseVisualStyleBackColor = true;
-            // 
-            // UrunEkleDuzenle
-            // 
-            this.UrunEkleDuzenle.Controls.Add(this.btnUrunEkleUser);
-            this.UrunEkleDuzenle.Controls.Add(this.btnGonder);
-            this.UrunEkleDuzenle.Controls.Add(this.btnUrunEkle);
-            this.UrunEkleDuzenle.Controls.Add(this.btnUrunDuzenle);
-            this.UrunEkleDuzenle.Controls.Add(this.UrunEkle);
-            this.UrunEkleDuzenle.Controls.Add(this.UrunDuzenle);
-            this.UrunEkleDuzenle.Location = new System.Drawing.Point(0, 0);
-            this.UrunEkleDuzenle.MaximumSize = new System.Drawing.Size(360, 510);
-            this.UrunEkleDuzenle.MinimumSize = new System.Drawing.Size(360, 510);
-            this.UrunEkleDuzenle.Name = "UrunEkleDuzenle";
-            this.UrunEkleDuzenle.Size = new System.Drawing.Size(360, 510);
-            this.UrunEkleDuzenle.TabIndex = 6;
-            // 
-            // btnUrunEkleUser
-            // 
-            this.btnUrunEkleUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUrunEkleUser.BackgroundImage")));
-            this.btnUrunEkleUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUrunEkleUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUrunEkleUser.FlatAppearance.BorderSize = 0;
-            this.btnUrunEkleUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUrunEkleUser.Location = new System.Drawing.Point(285, 15);
-            this.btnUrunEkleUser.Name = "btnUrunEkleUser";
-            this.btnUrunEkleUser.Size = new System.Drawing.Size(60, 40);
-            this.btnUrunEkleUser.TabIndex = 7;
-            this.btnUrunEkleUser.UseVisualStyleBackColor = true;
-            this.btnUrunEkleUser.Click += new System.EventHandler(this.UserButton_Click);
-            // 
-            // btnGonder
-            // 
-            this.btnGonder.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnGonder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGonder.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGonder.ForeColor = System.Drawing.Color.White;
-            this.btnGonder.Location = new System.Drawing.Point(69, 416);
-            this.btnGonder.Name = "btnGonder";
-            this.btnGonder.Size = new System.Drawing.Size(246, 40);
-            this.btnGonder.TabIndex = 9;
-            this.btnGonder.Text = "Gönder";
-            this.btnGonder.UseVisualStyleBackColor = false;
-            this.btnGonder.Click += new System.EventHandler(this.btnGonder_Click);
-            // 
-            // btnUrunEkle
-            // 
-            this.btnUrunEkle.BackColor = System.Drawing.Color.DarkGreen;
-            this.btnUrunEkle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUrunEkle.FlatAppearance.BorderSize = 0;
-            this.btnUrunEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUrunEkle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUrunEkle.ForeColor = System.Drawing.Color.White;
-            this.btnUrunEkle.Location = new System.Drawing.Point(213, 87);
-            this.btnUrunEkle.Name = "btnUrunEkle";
-            this.btnUrunEkle.Size = new System.Drawing.Size(112, 40);
-            this.btnUrunEkle.TabIndex = 1;
-            this.btnUrunEkle.Text = "Ürün Ekle";
-            this.btnUrunEkle.UseVisualStyleBackColor = false;
-            this.btnUrunEkle.Click += new System.EventHandler(this.UrunEkle_Click);
-            // 
-            // btnUrunDuzenle
-            // 
-            this.btnUrunDuzenle.BackColor = System.Drawing.Color.Green;
-            this.btnUrunDuzenle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUrunDuzenle.FlatAppearance.BorderSize = 0;
-            this.btnUrunDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUrunDuzenle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUrunDuzenle.ForeColor = System.Drawing.Color.White;
-            this.btnUrunDuzenle.Location = new System.Drawing.Point(68, 87);
-            this.btnUrunDuzenle.Name = "btnUrunDuzenle";
-            this.btnUrunDuzenle.Size = new System.Drawing.Size(114, 40);
-            this.btnUrunDuzenle.TabIndex = 1;
-            this.btnUrunDuzenle.Text = "Ürün Düzenle";
-            this.btnUrunDuzenle.UseVisualStyleBackColor = false;
-            this.btnUrunDuzenle.Click += new System.EventHandler(this.UrunDuzenle_Click);
-            // 
-            // UrunEkle
-            // 
-            this.UrunEkle.Controls.Add(this.cmbBoxUrunEkleKategori);
-            this.UrunEkle.Controls.Add(this.cmbBoxUrunEkleUretici);
-            this.UrunEkle.Controls.Add(this.btnUrunEkleOnYuz);
-            this.UrunEkle.Controls.Add(this.btnUrunEkleArkaYuz);
-            this.UrunEkle.Controls.Add(this.btnUrunEkleUrunIcerik);
-            this.UrunEkle.Controls.Add(this.txtUrunEkleUrunIcerik);
-            this.UrunEkle.Controls.Add(this.lblUrunEkleArkaYuz);
-            this.UrunEkle.Controls.Add(this.lblUrunEkleOnYuz);
-            this.UrunEkle.Controls.Add(this.lblUrunEkleUrunIcerik);
-            this.UrunEkle.Controls.Add(this.txtUrunEkleUrunAdi);
-            this.UrunEkle.Controls.Add(this.txtUrunEkleBarkod);
-            this.UrunEkle.Controls.Add(this.lblUrunEkleKategori);
-            this.UrunEkle.Controls.Add(this.lblUrunEkleUrunAdi);
-            this.UrunEkle.Controls.Add(this.lblUrunEkleUretici);
-            this.UrunEkle.Controls.Add(this.lblUrunEkleBarkodNo);
-            this.UrunEkle.Location = new System.Drawing.Point(26, 133);
-            this.UrunEkle.Name = "UrunEkle";
-            this.UrunEkle.Size = new System.Drawing.Size(318, 277);
-            this.UrunEkle.TabIndex = 0;
-            this.UrunEkle.TabStop = false;
-            this.UrunEkle.Text = "Ürün Ekle";
-            // 
-            // cmbBoxUrunEkleKategori
-            // 
-            this.cmbBoxUrunEkleKategori.FormattingEnabled = true;
-            this.cmbBoxUrunEkleKategori.Location = new System.Drawing.Point(89, 125);
-            this.cmbBoxUrunEkleKategori.Name = "cmbBoxUrunEkleKategori";
-            this.cmbBoxUrunEkleKategori.Size = new System.Drawing.Size(210, 21);
-            this.cmbBoxUrunEkleKategori.TabIndex = 4;
-            // 
-            // cmbBoxUrunEkleUretici
-            // 
-            this.cmbBoxUrunEkleUretici.FormattingEnabled = true;
-            this.cmbBoxUrunEkleUretici.Location = new System.Drawing.Point(89, 64);
-            this.cmbBoxUrunEkleUretici.Name = "cmbBoxUrunEkleUretici";
-            this.cmbBoxUrunEkleUretici.Size = new System.Drawing.Size(210, 21);
-            this.cmbBoxUrunEkleUretici.TabIndex = 2;
-            // 
-            // btnUrunEkleOnYuz
-            // 
-            this.btnUrunEkleOnYuz.Location = new System.Drawing.Point(43, 207);
-            this.btnUrunEkleOnYuz.Name = "btnUrunEkleOnYuz";
-            this.btnUrunEkleOnYuz.Size = new System.Drawing.Size(75, 45);
-            this.btnUrunEkleOnYuz.TabIndex = 6;
-            this.btnUrunEkleOnYuz.Text = "+";
-            this.btnUrunEkleOnYuz.UseVisualStyleBackColor = true;
-            this.btnUrunEkleOnYuz.Click += new System.EventHandler(this.btnUrunEkleOnYuz_Click);
-            // 
-            // btnUrunEkleArkaYuz
-            // 
-            this.btnUrunEkleArkaYuz.Location = new System.Drawing.Point(203, 207);
-            this.btnUrunEkleArkaYuz.Name = "btnUrunEkleArkaYuz";
-            this.btnUrunEkleArkaYuz.Size = new System.Drawing.Size(75, 45);
-            this.btnUrunEkleArkaYuz.TabIndex = 7;
-            this.btnUrunEkleArkaYuz.Text = "+";
-            this.btnUrunEkleArkaYuz.UseVisualStyleBackColor = true;
-            this.btnUrunEkleArkaYuz.Click += new System.EventHandler(this.btnUrunEkleArkaYuz_Click);
-            // 
-            // btnUrunEkleUrunIcerik
-            // 
-            this.btnUrunEkleUrunIcerik.Location = new System.Drawing.Point(266, 156);
-            this.btnUrunEkleUrunIcerik.Name = "btnUrunEkleUrunIcerik";
-            this.btnUrunEkleUrunIcerik.Size = new System.Drawing.Size(33, 23);
-            this.btnUrunEkleUrunIcerik.TabIndex = 4;
-            this.btnUrunEkleUrunIcerik.Text = "+";
-            this.btnUrunEkleUrunIcerik.UseVisualStyleBackColor = true;
-            // 
-            // txtUrunEkleUrunIcerik
-            // 
-            this.txtUrunEkleUrunIcerik.Location = new System.Drawing.Point(89, 156);
-            this.txtUrunEkleUrunIcerik.Multiline = true;
-            this.txtUrunEkleUrunIcerik.Name = "txtUrunEkleUrunIcerik";
-            this.txtUrunEkleUrunIcerik.Size = new System.Drawing.Size(171, 23);
-            this.txtUrunEkleUrunIcerik.TabIndex = 5;
-            // 
-            // lblUrunEkleArkaYuz
-            // 
-            this.lblUrunEkleArkaYuz.AutoSize = true;
-            this.lblUrunEkleArkaYuz.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunEkleArkaYuz.Location = new System.Drawing.Point(193, 191);
-            this.lblUrunEkleArkaYuz.Name = "lblUrunEkleArkaYuz";
-            this.lblUrunEkleArkaYuz.Size = new System.Drawing.Size(96, 13);
-            this.lblUrunEkleArkaYuz.TabIndex = 2;
-            this.lblUrunEkleArkaYuz.Text = "Ürün\'ün Arka Yüzü";
-            // 
-            // lblUrunEkleOnYuz
-            // 
-            this.lblUrunEkleOnYuz.AutoSize = true;
-            this.lblUrunEkleOnYuz.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunEkleOnYuz.Location = new System.Drawing.Point(40, 191);
-            this.lblUrunEkleOnYuz.Name = "lblUrunEkleOnYuz";
-            this.lblUrunEkleOnYuz.Size = new System.Drawing.Size(87, 13);
-            this.lblUrunEkleOnYuz.TabIndex = 2;
-            this.lblUrunEkleOnYuz.Text = "Ürün\'ün Ön Yüzü";
-            // 
-            // lblUrunEkleUrunIcerik
-            // 
-            this.lblUrunEkleUrunIcerik.AutoSize = true;
-            this.lblUrunEkleUrunIcerik.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunEkleUrunIcerik.Location = new System.Drawing.Point(22, 159);
-            this.lblUrunEkleUrunIcerik.Name = "lblUrunEkleUrunIcerik";
-            this.lblUrunEkleUrunIcerik.Size = new System.Drawing.Size(61, 13);
-            this.lblUrunEkleUrunIcerik.TabIndex = 2;
-            this.lblUrunEkleUrunIcerik.Text = "Ürün İçerik";
-            // 
-            // txtUrunEkleUrunAdi
-            // 
-            this.txtUrunEkleUrunAdi.Location = new System.Drawing.Point(89, 94);
-            this.txtUrunEkleUrunAdi.Multiline = true;
-            this.txtUrunEkleUrunAdi.Name = "txtUrunEkleUrunAdi";
-            this.txtUrunEkleUrunAdi.Size = new System.Drawing.Size(210, 23);
-            this.txtUrunEkleUrunAdi.TabIndex = 3;
-            // 
-            // txtUrunEkleBarkod
-            // 
-            this.txtUrunEkleBarkod.Location = new System.Drawing.Point(89, 34);
-            this.txtUrunEkleBarkod.Multiline = true;
-            this.txtUrunEkleBarkod.Name = "txtUrunEkleBarkod";
-            this.txtUrunEkleBarkod.Size = new System.Drawing.Size(210, 23);
-            this.txtUrunEkleBarkod.TabIndex = 1;
-            // 
-            // lblUrunEkleKategori
-            // 
-            this.lblUrunEkleKategori.AutoSize = true;
-            this.lblUrunEkleKategori.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunEkleKategori.Location = new System.Drawing.Point(21, 128);
-            this.lblUrunEkleKategori.Name = "lblUrunEkleKategori";
-            this.lblUrunEkleKategori.Size = new System.Drawing.Size(51, 13);
-            this.lblUrunEkleKategori.TabIndex = 0;
-            this.lblUrunEkleKategori.Text = "Kategori";
-            // 
-            // lblUrunEkleUrunAdi
-            // 
-            this.lblUrunEkleUrunAdi.AutoSize = true;
-            this.lblUrunEkleUrunAdi.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunEkleUrunAdi.Location = new System.Drawing.Point(21, 97);
-            this.lblUrunEkleUrunAdi.Name = "lblUrunEkleUrunAdi";
-            this.lblUrunEkleUrunAdi.Size = new System.Drawing.Size(51, 13);
-            this.lblUrunEkleUrunAdi.TabIndex = 0;
-            this.lblUrunEkleUrunAdi.Text = "Ürün Adı";
-            // 
-            // lblUrunEkleUretici
-            // 
-            this.lblUrunEkleUretici.AutoSize = true;
-            this.lblUrunEkleUretici.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunEkleUretici.Location = new System.Drawing.Point(21, 67);
-            this.lblUrunEkleUretici.Name = "lblUrunEkleUretici";
-            this.lblUrunEkleUretici.Size = new System.Drawing.Size(40, 13);
-            this.lblUrunEkleUretici.TabIndex = 0;
-            this.lblUrunEkleUretici.Text = "Üretici";
-            // 
-            // lblUrunEkleBarkodNo
-            // 
-            this.lblUrunEkleBarkodNo.AutoSize = true;
-            this.lblUrunEkleBarkodNo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunEkleBarkodNo.Location = new System.Drawing.Point(21, 41);
-            this.lblUrunEkleBarkodNo.Name = "lblUrunEkleBarkodNo";
-            this.lblUrunEkleBarkodNo.Size = new System.Drawing.Size(62, 13);
-            this.lblUrunEkleBarkodNo.TabIndex = 0;
-            this.lblUrunEkleBarkodNo.Text = "Barkod No";
-            // 
-            // UrunDuzenle
-            // 
-            this.UrunDuzenle.Controls.Add(this.cmbBoxKategori);
-            this.UrunDuzenle.Controls.Add(this.cmbBoxUretici);
-            this.UrunDuzenle.Controls.Add(this.btnUrunGetir);
-            this.UrunDuzenle.Controls.Add(this.btnOnYuz);
-            this.UrunDuzenle.Controls.Add(this.btnArkaYuz);
-            this.UrunDuzenle.Controls.Add(this.btnUrunIcerik);
-            this.UrunDuzenle.Controls.Add(this.txtUrunIcerik);
-            this.UrunDuzenle.Controls.Add(this.lblUrunArkaYuz);
-            this.UrunDuzenle.Controls.Add(this.lblUrunOnYuz);
-            this.UrunDuzenle.Controls.Add(this.lblUrunIcerik);
-            this.UrunDuzenle.Controls.Add(this.txtUrunAdi);
-            this.UrunDuzenle.Controls.Add(this.txtBarkodNo);
-            this.UrunDuzenle.Controls.Add(this.txtKategori);
-            this.UrunDuzenle.Controls.Add(this.lblUrunAdi);
-            this.UrunDuzenle.Controls.Add(this.lblUretici);
-            this.UrunDuzenle.Controls.Add(this.lblBarkodNo);
-            this.UrunDuzenle.Location = new System.Drawing.Point(26, 133);
-            this.UrunDuzenle.Name = "UrunDuzenle";
-            this.UrunDuzenle.Size = new System.Drawing.Size(318, 277);
-            this.UrunDuzenle.TabIndex = 0;
-            this.UrunDuzenle.TabStop = false;
-            this.UrunDuzenle.Text = "Ürün Düzenle";
-            // 
-            // cmbBoxKategori
-            // 
-            this.cmbBoxKategori.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.cmbBoxKategori.FormattingEnabled = true;
-            this.cmbBoxKategori.Location = new System.Drawing.Point(89, 93);
-            this.cmbBoxKategori.Name = "cmbBoxKategori";
-            this.cmbBoxKategori.Size = new System.Drawing.Size(210, 21);
-            this.cmbBoxKategori.TabIndex = 4;
-            // 
-            // cmbBoxUretici
-            // 
-            this.cmbBoxUretici.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.cmbBoxUretici.FormattingEnabled = true;
-            this.cmbBoxUretici.Location = new System.Drawing.Point(89, 64);
-            this.cmbBoxUretici.Name = "cmbBoxUretici";
-            this.cmbBoxUretici.Size = new System.Drawing.Size(210, 21);
-            this.cmbBoxUretici.TabIndex = 3;
-            // 
-            // btnUrunGetir
-            // 
-            this.btnUrunGetir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUrunGetir.Location = new System.Drawing.Point(227, 33);
-            this.btnUrunGetir.Name = "btnUrunGetir";
-            this.btnUrunGetir.Size = new System.Drawing.Size(72, 24);
-            this.btnUrunGetir.TabIndex = 2;
-            this.btnUrunGetir.Text = "Ürün\'ü Getir";
-            this.btnUrunGetir.UseVisualStyleBackColor = true;
-            this.btnUrunGetir.Click += new System.EventHandler(this.btnUrunGetir_Click);
-            // 
-            // btnOnYuz
-            // 
-            this.btnOnYuz.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOnYuz.Location = new System.Drawing.Point(43, 202);
-            this.btnOnYuz.Name = "btnOnYuz";
-            this.btnOnYuz.Size = new System.Drawing.Size(75, 45);
-            this.btnOnYuz.TabIndex = 7;
-            this.btnOnYuz.Text = "+";
-            this.btnOnYuz.UseVisualStyleBackColor = true;
-            this.btnOnYuz.Click += new System.EventHandler(this.btnOnYuz_Click);
-            // 
-            // btnArkaYuz
-            // 
-            this.btnArkaYuz.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnArkaYuz.Location = new System.Drawing.Point(203, 202);
-            this.btnArkaYuz.Name = "btnArkaYuz";
-            this.btnArkaYuz.Size = new System.Drawing.Size(75, 45);
-            this.btnArkaYuz.TabIndex = 8;
-            this.btnArkaYuz.Text = "+";
-            this.btnArkaYuz.UseVisualStyleBackColor = true;
-            this.btnArkaYuz.Click += new System.EventHandler(this.btnArkaYuz_Click);
-            // 
-            // btnUrunIcerik
-            // 
-            this.btnUrunIcerik.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUrunIcerik.Location = new System.Drawing.Point(266, 151);
-            this.btnUrunIcerik.Name = "btnUrunIcerik";
-            this.btnUrunIcerik.Size = new System.Drawing.Size(33, 23);
-            this.btnUrunIcerik.TabIndex = 4;
-            this.btnUrunIcerik.Text = "+";
-            this.btnUrunIcerik.UseVisualStyleBackColor = true;
-            // 
-            // txtUrunIcerik
-            // 
-            this.txtUrunIcerik.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUrunIcerik.Location = new System.Drawing.Point(89, 151);
-            this.txtUrunIcerik.Multiline = true;
-            this.txtUrunIcerik.Name = "txtUrunIcerik";
-            this.txtUrunIcerik.Size = new System.Drawing.Size(171, 23);
-            this.txtUrunIcerik.TabIndex = 6;
-            // 
-            // lblUrunArkaYuz
-            // 
-            this.lblUrunArkaYuz.AutoSize = true;
-            this.lblUrunArkaYuz.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunArkaYuz.Location = new System.Drawing.Point(193, 186);
-            this.lblUrunArkaYuz.Name = "lblUrunArkaYuz";
-            this.lblUrunArkaYuz.Size = new System.Drawing.Size(96, 13);
-            this.lblUrunArkaYuz.TabIndex = 2;
-            this.lblUrunArkaYuz.Text = "Ürün\'ün Arka Yüzü";
-            // 
-            // lblUrunOnYuz
-            // 
-            this.lblUrunOnYuz.AutoSize = true;
-            this.lblUrunOnYuz.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunOnYuz.Location = new System.Drawing.Point(40, 186);
-            this.lblUrunOnYuz.Name = "lblUrunOnYuz";
-            this.lblUrunOnYuz.Size = new System.Drawing.Size(87, 13);
-            this.lblUrunOnYuz.TabIndex = 2;
-            this.lblUrunOnYuz.Text = "Ürün\'ün Ön Yüzü";
-            // 
-            // lblUrunIcerik
-            // 
-            this.lblUrunIcerik.AutoSize = true;
-            this.lblUrunIcerik.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunIcerik.Location = new System.Drawing.Point(21, 156);
-            this.lblUrunIcerik.Name = "lblUrunIcerik";
-            this.lblUrunIcerik.Size = new System.Drawing.Size(61, 13);
-            this.lblUrunIcerik.TabIndex = 2;
-            this.lblUrunIcerik.Text = "Ürün İçerik";
-            // 
-            // txtUrunAdi
-            // 
-            this.txtUrunAdi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUrunAdi.Location = new System.Drawing.Point(89, 122);
-            this.txtUrunAdi.Multiline = true;
-            this.txtUrunAdi.Name = "txtUrunAdi";
-            this.txtUrunAdi.Size = new System.Drawing.Size(210, 23);
-            this.txtUrunAdi.TabIndex = 5;
-            // 
-            // txtBarkodNo
-            // 
-            this.txtBarkodNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBarkodNo.Location = new System.Drawing.Point(89, 34);
-            this.txtBarkodNo.Multiline = true;
-            this.txtBarkodNo.Name = "txtBarkodNo";
-            this.txtBarkodNo.Size = new System.Drawing.Size(132, 23);
-            this.txtBarkodNo.TabIndex = 1;
-            // 
-            // txtKategori
-            // 
-            this.txtKategori.AutoSize = true;
-            this.txtKategori.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtKategori.Location = new System.Drawing.Point(21, 96);
-            this.txtKategori.Name = "txtKategori";
-            this.txtKategori.Size = new System.Drawing.Size(51, 13);
-            this.txtKategori.TabIndex = 0;
-            this.txtKategori.Text = "Kategori";
-            // 
-            // lblUrunAdi
-            // 
-            this.lblUrunAdi.AutoSize = true;
-            this.lblUrunAdi.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunAdi.Location = new System.Drawing.Point(21, 125);
-            this.lblUrunAdi.Name = "lblUrunAdi";
-            this.lblUrunAdi.Size = new System.Drawing.Size(51, 13);
-            this.lblUrunAdi.TabIndex = 0;
-            this.lblUrunAdi.Text = "Ürün Adı";
-            // 
-            // lblUretici
-            // 
-            this.lblUretici.AutoSize = true;
-            this.lblUretici.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUretici.Location = new System.Drawing.Point(21, 67);
-            this.lblUretici.Name = "lblUretici";
-            this.lblUretici.Size = new System.Drawing.Size(40, 13);
-            this.lblUretici.TabIndex = 0;
-            this.lblUretici.Text = "Üretici";
-            // 
-            // lblBarkodNo
-            // 
-            this.lblBarkodNo.AutoSize = true;
-            this.lblBarkodNo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBarkodNo.Location = new System.Drawing.Point(21, 41);
-            this.lblBarkodNo.Name = "lblBarkodNo";
-            this.lblBarkodNo.Size = new System.Drawing.Size(62, 13);
-            this.lblBarkodNo.TabIndex = 0;
-            this.lblBarkodNo.Text = "Barkod No";
-            // 
-            // UrunDetay
-            // 
-            this.UrunDetay.BackColor = System.Drawing.Color.White;
-            this.UrunDetay.Controls.Add(this.pcbUrun);
-            this.UrunDetay.Controls.Add(this.UrunDetayResimDegistir);
-            this.UrunDetay.Controls.Add(this.btnUrunDetayUser);
-            this.UrunDetay.Controls.Add(this.pnlShowProducts);
-            this.UrunDetay.Controls.Add(this.btnShowList);
-            this.UrunDetay.Controls.Add(this.lblUrunDetayUrunBilesimi);
-            this.UrunDetay.Controls.Add(this.lblMessage);
-            this.UrunDetay.Controls.Add(this.lblTemizNum);
-            this.UrunDetay.Controls.Add(this.lblAzRiskNum);
-            this.UrunDetay.Controls.Add(this.lblOrtaRiskNum);
-            this.UrunDetay.Controls.Add(this.lblCokRiskNum);
-            this.UrunDetay.Controls.Add(this.lblTemiz);
-            this.UrunDetay.Controls.Add(this.lblAzRisk);
-            this.UrunDetay.Controls.Add(this.lblOrtaRisk);
-            this.UrunDetay.Controls.Add(this.lblCokRisk);
-            this.UrunDetay.Controls.Add(this.pictureUrunDetayTemizIcerik);
-            this.UrunDetay.Controls.Add(this.pictureUrunDetayAzRiskliIcerik);
-            this.UrunDetay.Controls.Add(this.pictureUrunDetayOrtaRiskliIcerik);
-            this.UrunDetay.Controls.Add(this.pictureUrunDetayRiskliIcerik);
-            this.UrunDetay.Controls.Add(this.lblKaraMaddeNum);
-            this.UrunDetay.Controls.Add(this.lblKaraMadde);
-            this.UrunDetay.Controls.Add(this.pictureUrunDetayKaraListeIcerik);
-            this.UrunDetay.Controls.Add(this.lblUrunAd);
-            this.UrunDetay.Controls.Add(this.lblMarka);
-            this.UrunDetay.Controls.Add(this.lblAltKategori);
-            this.UrunDetay.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UrunDetay.Location = new System.Drawing.Point(0, 0);
-            this.UrunDetay.MaximumSize = new System.Drawing.Size(360, 510);
-            this.UrunDetay.MinimumSize = new System.Drawing.Size(360, 510);
-            this.UrunDetay.Name = "UrunDetay";
-            this.UrunDetay.Size = new System.Drawing.Size(360, 510);
-            this.UrunDetay.TabIndex = 8;
-            // 
-            // pcbUrun
-            // 
-            this.pcbUrun.Image = ((System.Drawing.Image)(resources.GetObject("pcbUrun.Image")));
-            this.pcbUrun.Location = new System.Drawing.Point(259, 118);
-            this.pcbUrun.Name = "pcbUrun";
-            this.pcbUrun.Size = new System.Drawing.Size(90, 115);
-            this.pcbUrun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbUrun.TabIndex = 9;
-            this.pcbUrun.TabStop = false;
-            // 
-            // UrunDetayResimDegistir
-            // 
-            this.UrunDetayResimDegistir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UrunDetayResimDegistir.FlatAppearance.BorderSize = 0;
-            this.UrunDetayResimDegistir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UrunDetayResimDegistir.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UrunDetayResimDegistir.Location = new System.Drawing.Point(259, 238);
-            this.UrunDetayResimDegistir.Name = "UrunDetayResimDegistir";
-            this.UrunDetayResimDegistir.Size = new System.Drawing.Size(90, 36);
-            this.UrunDetayResimDegistir.TabIndex = 32;
-            this.UrunDetayResimDegistir.Text = " ← →";
-            this.UrunDetayResimDegistir.UseVisualStyleBackColor = true;
-            this.UrunDetayResimDegistir.Click += new System.EventHandler(this.UrunDetayResimDegistir_Click);
-            // 
-            // btnUrunDetayUser
-            // 
-            this.btnUrunDetayUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUrunDetayUser.BackgroundImage")));
-            this.btnUrunDetayUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUrunDetayUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUrunDetayUser.FlatAppearance.BorderSize = 0;
-            this.btnUrunDetayUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUrunDetayUser.Location = new System.Drawing.Point(285, 15);
-            this.btnUrunDetayUser.Name = "btnUrunDetayUser";
-            this.btnUrunDetayUser.Size = new System.Drawing.Size(60, 40);
-            this.btnUrunDetayUser.TabIndex = 8;
-            this.btnUrunDetayUser.UseVisualStyleBackColor = true;
-            this.btnUrunDetayUser.Click += new System.EventHandler(this.UserButton_Click);
-            // 
-            // pnlShowProducts
-            // 
-            this.pnlShowProducts.AutoScroll = true;
-            this.pnlShowProducts.Location = new System.Drawing.Point(10, 380);
-            this.pnlShowProducts.Name = "pnlShowProducts";
-            this.pnlShowProducts.Size = new System.Drawing.Size(340, 120);
-            this.pnlShowProducts.TabIndex = 31;
-            this.pnlShowProducts.Visible = false;
-            // 
-            // btnShowList
-            // 
-            this.btnShowList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnShowList.BackgroundImage")));
-            this.btnShowList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShowList.FlatAppearance.BorderSize = 0;
-            this.btnShowList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowList.Location = new System.Drawing.Point(303, 342);
-            this.btnShowList.Name = "btnShowList";
-            this.btnShowList.Size = new System.Drawing.Size(30, 30);
-            this.btnShowList.TabIndex = 30;
-            this.btnShowList.UseVisualStyleBackColor = true;
-            this.btnShowList.Click += new System.EventHandler(this.btnShowList_Click);
-            // 
-            // lblUrunDetayUrunBilesimi
-            // 
-            this.lblUrunDetayUrunBilesimi.AutoSize = true;
-            this.lblUrunDetayUrunBilesimi.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunDetayUrunBilesimi.ForeColor = System.Drawing.Color.Black;
-            this.lblUrunDetayUrunBilesimi.Location = new System.Drawing.Point(13, 346);
-            this.lblUrunDetayUrunBilesimi.Name = "lblUrunDetayUrunBilesimi";
-            this.lblUrunDetayUrunBilesimi.Size = new System.Drawing.Size(91, 17);
-            this.lblUrunDetayUrunBilesimi.TabIndex = 29;
-            this.lblUrunDetayUrunBilesimi.Text = "Ürün Bileşemi";
-            // 
-            // lblMessage
-            // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblMessage.ForeColor = System.Drawing.Color.Green;
-            this.lblMessage.Location = new System.Drawing.Point(29, 315);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(265, 17);
-            this.lblMessage.TabIndex = 28;
-            this.lblMessage.Text = "User isimli üye tarafından oluşturulmuştur.";
-            // 
-            // lblTemizNum
-            // 
-            this.lblTemizNum.AutoSize = true;
-            this.lblTemizNum.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTemizNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblTemizNum.Location = new System.Drawing.Point(219, 268);
-            this.lblTemizNum.Name = "lblTemizNum";
-            this.lblTemizNum.Size = new System.Drawing.Size(13, 17);
-            this.lblTemizNum.TabIndex = 27;
-            this.lblTemizNum.Text = "1";
-            // 
-            // lblAzRiskNum
-            // 
-            this.lblAzRiskNum.AutoSize = true;
-            this.lblAzRiskNum.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAzRiskNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
-            this.lblAzRiskNum.Location = new System.Drawing.Point(219, 228);
-            this.lblAzRiskNum.Name = "lblAzRiskNum";
-            this.lblAzRiskNum.Size = new System.Drawing.Size(15, 17);
-            this.lblAzRiskNum.TabIndex = 26;
-            this.lblAzRiskNum.Text = "3";
-            // 
-            // lblOrtaRiskNum
-            // 
-            this.lblOrtaRiskNum.AutoSize = true;
-            this.lblOrtaRiskNum.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrtaRiskNum.ForeColor = System.Drawing.Color.Orange;
-            this.lblOrtaRiskNum.Location = new System.Drawing.Point(219, 188);
-            this.lblOrtaRiskNum.Name = "lblOrtaRiskNum";
-            this.lblOrtaRiskNum.Size = new System.Drawing.Size(15, 17);
-            this.lblOrtaRiskNum.TabIndex = 25;
-            this.lblOrtaRiskNum.Text = "2";
-            // 
-            // lblCokRiskNum
-            // 
-            this.lblCokRiskNum.AutoSize = true;
-            this.lblCokRiskNum.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCokRiskNum.ForeColor = System.Drawing.Color.Red;
-            this.lblCokRiskNum.Location = new System.Drawing.Point(219, 148);
-            this.lblCokRiskNum.Name = "lblCokRiskNum";
-            this.lblCokRiskNum.Size = new System.Drawing.Size(13, 17);
-            this.lblCokRiskNum.TabIndex = 24;
-            this.lblCokRiskNum.Text = "1";
-            // 
-            // lblTemiz
-            // 
-            this.lblTemiz.AutoSize = true;
-            this.lblTemiz.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTemiz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblTemiz.Location = new System.Drawing.Point(67, 268);
-            this.lblTemiz.Name = "lblTemiz";
-            this.lblTemiz.Size = new System.Drawing.Size(92, 17);
-            this.lblTemiz.TabIndex = 23;
-            this.lblTemiz.Text = "Temiz içerikler";
-            // 
-            // lblAzRisk
-            // 
-            this.lblAzRisk.AutoSize = true;
-            this.lblAzRisk.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAzRisk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
-            this.lblAzRisk.Location = new System.Drawing.Point(67, 228);
-            this.lblAzRisk.Name = "lblAzRisk";
-            this.lblAzRisk.Size = new System.Drawing.Size(104, 17);
-            this.lblAzRisk.TabIndex = 22;
-            this.lblAzRisk.Text = "Az riskli içerikler";
-            // 
-            // lblOrtaRisk
-            // 
-            this.lblOrtaRisk.AutoSize = true;
-            this.lblOrtaRisk.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblOrtaRisk.ForeColor = System.Drawing.Color.Orange;
-            this.lblOrtaRisk.Location = new System.Drawing.Point(67, 188);
-            this.lblOrtaRisk.Name = "lblOrtaRisk";
-            this.lblOrtaRisk.Size = new System.Drawing.Size(116, 17);
-            this.lblOrtaRisk.TabIndex = 21;
-            this.lblOrtaRisk.Text = "Orta riskli içerikler";
-            // 
-            // lblCokRisk
-            // 
-            this.lblCokRisk.AutoSize = true;
-            this.lblCokRisk.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCokRisk.ForeColor = System.Drawing.Color.Red;
-            this.lblCokRisk.Location = new System.Drawing.Point(67, 148);
-            this.lblCokRisk.Name = "lblCokRisk";
-            this.lblCokRisk.Size = new System.Drawing.Size(88, 17);
-            this.lblCokRisk.TabIndex = 20;
-            this.lblCokRisk.Text = "Riskli içerikler";
-            // 
-            // pictureUrunDetayTemizIcerik
-            // 
-            this.pictureUrunDetayTemizIcerik.Image = ((System.Drawing.Image)(resources.GetObject("pictureUrunDetayTemizIcerik.Image")));
-            this.pictureUrunDetayTemizIcerik.Location = new System.Drawing.Point(32, 263);
-            this.pictureUrunDetayTemizIcerik.Name = "pictureUrunDetayTemizIcerik";
-            this.pictureUrunDetayTemizIcerik.Size = new System.Drawing.Size(30, 30);
-            this.pictureUrunDetayTemizIcerik.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureUrunDetayTemizIcerik.TabIndex = 19;
-            this.pictureUrunDetayTemizIcerik.TabStop = false;
-            // 
-            // pictureUrunDetayAzRiskliIcerik
-            // 
-            this.pictureUrunDetayAzRiskliIcerik.Image = ((System.Drawing.Image)(resources.GetObject("pictureUrunDetayAzRiskliIcerik.Image")));
-            this.pictureUrunDetayAzRiskliIcerik.Location = new System.Drawing.Point(32, 223);
-            this.pictureUrunDetayAzRiskliIcerik.Name = "pictureUrunDetayAzRiskliIcerik";
-            this.pictureUrunDetayAzRiskliIcerik.Size = new System.Drawing.Size(30, 30);
-            this.pictureUrunDetayAzRiskliIcerik.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureUrunDetayAzRiskliIcerik.TabIndex = 18;
-            this.pictureUrunDetayAzRiskliIcerik.TabStop = false;
-            // 
-            // pictureUrunDetayOrtaRiskliIcerik
-            // 
-            this.pictureUrunDetayOrtaRiskliIcerik.Image = ((System.Drawing.Image)(resources.GetObject("pictureUrunDetayOrtaRiskliIcerik.Image")));
-            this.pictureUrunDetayOrtaRiskliIcerik.Location = new System.Drawing.Point(32, 183);
-            this.pictureUrunDetayOrtaRiskliIcerik.Name = "pictureUrunDetayOrtaRiskliIcerik";
-            this.pictureUrunDetayOrtaRiskliIcerik.Size = new System.Drawing.Size(30, 30);
-            this.pictureUrunDetayOrtaRiskliIcerik.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureUrunDetayOrtaRiskliIcerik.TabIndex = 17;
-            this.pictureUrunDetayOrtaRiskliIcerik.TabStop = false;
-            // 
-            // pictureUrunDetayRiskliIcerik
-            // 
-            this.pictureUrunDetayRiskliIcerik.Image = ((System.Drawing.Image)(resources.GetObject("pictureUrunDetayRiskliIcerik.Image")));
-            this.pictureUrunDetayRiskliIcerik.Location = new System.Drawing.Point(32, 143);
-            this.pictureUrunDetayRiskliIcerik.Name = "pictureUrunDetayRiskliIcerik";
-            this.pictureUrunDetayRiskliIcerik.Size = new System.Drawing.Size(30, 30);
-            this.pictureUrunDetayRiskliIcerik.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureUrunDetayRiskliIcerik.TabIndex = 16;
-            this.pictureUrunDetayRiskliIcerik.TabStop = false;
-            // 
-            // lblKaraMaddeNum
-            // 
-            this.lblKaraMaddeNum.AutoSize = true;
-            this.lblKaraMaddeNum.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblKaraMaddeNum.ForeColor = System.Drawing.Color.Black;
-            this.lblKaraMaddeNum.Location = new System.Drawing.Point(219, 108);
-            this.lblKaraMaddeNum.Name = "lblKaraMaddeNum";
-            this.lblKaraMaddeNum.Size = new System.Drawing.Size(13, 17);
-            this.lblKaraMaddeNum.TabIndex = 15;
-            this.lblKaraMaddeNum.Text = "1";
-            // 
-            // lblKaraMadde
-            // 
-            this.lblKaraMadde.AutoSize = true;
-            this.lblKaraMadde.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblKaraMadde.ForeColor = System.Drawing.Color.Black;
-            this.lblKaraMadde.Location = new System.Drawing.Point(67, 108);
-            this.lblKaraMadde.Name = "lblKaraMadde";
-            this.lblKaraMadde.Size = new System.Drawing.Size(138, 17);
-            this.lblKaraMadde.TabIndex = 14;
-            this.lblKaraMadde.Text = "Kara listedeki içerikler";
-            // 
-            // pictureUrunDetayKaraListeIcerik
-            // 
-            this.pictureUrunDetayKaraListeIcerik.Image = ((System.Drawing.Image)(resources.GetObject("pictureUrunDetayKaraListeIcerik.Image")));
-            this.pictureUrunDetayKaraListeIcerik.Location = new System.Drawing.Point(32, 103);
-            this.pictureUrunDetayKaraListeIcerik.Name = "pictureUrunDetayKaraListeIcerik";
-            this.pictureUrunDetayKaraListeIcerik.Size = new System.Drawing.Size(30, 30);
-            this.pictureUrunDetayKaraListeIcerik.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureUrunDetayKaraListeIcerik.TabIndex = 13;
-            this.pictureUrunDetayKaraListeIcerik.TabStop = false;
-            // 
-            // lblUrunAd
-            // 
-            this.lblUrunAd.AutoSize = true;
-            this.lblUrunAd.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunAd.ForeColor = System.Drawing.Color.Green;
-            this.lblUrunAd.Location = new System.Drawing.Point(77, 18);
-            this.lblUrunAd.Name = "lblUrunAd";
-            this.lblUrunAd.Size = new System.Drawing.Size(188, 20);
-            this.lblUrunAd.TabIndex = 12;
-            this.lblUrunAd.Text = "Bebek Şampuanı - 500 ml";
-            // 
-            // lblMarka
-            // 
-            this.lblMarka.AutoSize = true;
-            this.lblMarka.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblMarka.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lblMarka.Location = new System.Drawing.Point(84, 41);
-            this.lblMarka.Name = "lblMarka";
-            this.lblMarka.Size = new System.Drawing.Size(66, 17);
-            this.lblMarka.TabIndex = 11;
-            this.lblMarka.Text = "Johnson\'s";
-            // 
-            // lblAltKategori
-            // 
-            this.lblAltKategori.AutoSize = true;
-            this.lblAltKategori.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblAltKategori.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAltKategori.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lblAltKategori.Location = new System.Drawing.Point(84, 64);
-            this.lblAltKategori.Name = "lblAltKategori";
-            this.lblAltKategori.Size = new System.Drawing.Size(124, 17);
-            this.lblAltKategori.TabIndex = 10;
-            this.lblAltKategori.Text = "Bebek Şampuanları";
-            // 
-            // AramaGecmisi
-            // 
-            this.AramaGecmisi.Controls.Add(this.lblFavoriList);
-            this.AramaGecmisi.Controls.Add(this.btnFavList);
-            this.AramaGecmisi.Controls.Add(this.btnGecmisiTemizle);
-            this.AramaGecmisi.Controls.Add(this.btnAramaGecmisiUser);
-            this.AramaGecmisi.Controls.Add(this.dgvAramaGecmisi);
-            this.AramaGecmisi.Location = new System.Drawing.Point(0, 0);
-            this.AramaGecmisi.MaximumSize = new System.Drawing.Size(360, 510);
-            this.AramaGecmisi.MinimumSize = new System.Drawing.Size(360, 510);
-            this.AramaGecmisi.Name = "AramaGecmisi";
-            this.AramaGecmisi.Size = new System.Drawing.Size(360, 510);
-            this.AramaGecmisi.TabIndex = 7;
-            // 
-            // lblFavoriList
-            // 
-            this.lblFavoriList.AutoSize = true;
-            this.lblFavoriList.Location = new System.Drawing.Point(156, 83);
-            this.lblFavoriList.Name = "lblFavoriList";
-            this.lblFavoriList.Size = new System.Drawing.Size(47, 13);
-            this.lblFavoriList.TabIndex = 18;
-            this.lblFavoriList.Text = "Favoriler";
-            // 
-            // btnFavList
-            // 
-            this.btnFavList.BackgroundImage = global::YesilEvCodeFirst.UIWinForm.Properties.Resources.kalp2;
-            this.btnFavList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFavList.FlatAppearance.BorderSize = 0;
-            this.btnFavList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFavList.Location = new System.Drawing.Point(146, 11);
-            this.btnFavList.Name = "btnFavList";
-            this.btnFavList.Size = new System.Drawing.Size(65, 65);
-            this.btnFavList.TabIndex = 17;
-            this.btnFavList.UseVisualStyleBackColor = true;
-            this.btnFavList.Click += new System.EventHandler(this.FavoriListeleriniHazirla);
-            // 
-            // btnGecmisiTemizle
-            // 
-            this.btnGecmisiTemizle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGecmisiTemizle.Location = new System.Drawing.Point(258, 75);
-            this.btnGecmisiTemizle.Name = "btnGecmisiTemizle";
-            this.btnGecmisiTemizle.Size = new System.Drawing.Size(91, 26);
-            this.btnGecmisiTemizle.TabIndex = 8;
-            this.btnGecmisiTemizle.Text = "Geçmişi Temizle";
-            this.btnGecmisiTemizle.UseVisualStyleBackColor = true;
-            this.btnGecmisiTemizle.Click += new System.EventHandler(this.GecmisiTemizle);
-            // 
-            // btnAramaGecmisiUser
-            // 
-            this.btnAramaGecmisiUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAramaGecmisiUser.BackgroundImage")));
-            this.btnAramaGecmisiUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAramaGecmisiUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAramaGecmisiUser.FlatAppearance.BorderSize = 0;
-            this.btnAramaGecmisiUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAramaGecmisiUser.Location = new System.Drawing.Point(285, 15);
-            this.btnAramaGecmisiUser.Name = "btnAramaGecmisiUser";
-            this.btnAramaGecmisiUser.Size = new System.Drawing.Size(60, 40);
-            this.btnAramaGecmisiUser.TabIndex = 7;
-            this.btnAramaGecmisiUser.UseVisualStyleBackColor = true;
-            this.btnAramaGecmisiUser.Click += new System.EventHandler(this.UserButton_Click);
-            // 
-            // dgvAramaGecmisi
-            // 
-            this.dgvAramaGecmisi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAramaGecmisi.Location = new System.Drawing.Point(11, 107);
-            this.dgvAramaGecmisi.Name = "dgvAramaGecmisi";
-            this.dgvAramaGecmisi.Size = new System.Drawing.Size(338, 373);
-            this.dgvAramaGecmisi.TabIndex = 0;
-            // 
-            // FileDialogOnYuz
-            // 
-            this.FileDialogOnYuz.FileName = "FileDialogOnYuz";
-            this.FileDialogOnYuz.Filter = "JPG Files (*.jpg)| *.jpg | PNG Files (*.png) | *.png";
-            this.FileDialogOnYuz.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
-            this.FileDialogOnYuz.RestoreDirectory = true;
-            this.FileDialogOnYuz.Title = "Browse Text Files";
-            this.FileDialogOnYuz.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
-            // FileDialogArkaYuz
-            // 
-            this.FileDialogArkaYuz.FileName = "FileDialogArkaYuz";
-            this.FileDialogArkaYuz.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
-            this.FileDialogArkaYuz.RestoreDirectory = true;
-            this.FileDialogArkaYuz.Title = "Browse Text Files";
-            this.FileDialogArkaYuz.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
-            // 
-            // FileDialogUrunEkleOnYuz
-            // 
-            this.FileDialogUrunEkleOnYuz.FileName = "FileDialogUrunEkleOnYuz";
-            this.FileDialogUrunEkleOnYuz.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
-            this.FileDialogUrunEkleOnYuz.RestoreDirectory = true;
-            this.FileDialogUrunEkleOnYuz.Title = "Browse Text Files";
-            this.FileDialogUrunEkleOnYuz.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog3_FileOk);
-            // 
-            // FileDialogUrunEkleArkaYuz
-            // 
-            this.FileDialogUrunEkleArkaYuz.FileName = "FileDialogUrunEkleArkaYuz";
-            this.FileDialogUrunEkleArkaYuz.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
-            this.FileDialogUrunEkleArkaYuz.RestoreDirectory = true;
-            this.FileDialogUrunEkleArkaYuz.Title = "Browse Text Files";
-            this.FileDialogUrunEkleArkaYuz.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog4_FileOk);
-            // 
-            // UrunArama
-            // 
-            this.UrunArama.Controls.Add(this.btnDGVTemizle);
-            this.UrunArama.Controls.Add(this.dgvProducts);
-            this.UrunArama.Controls.Add(this.btnSearchbarAra);
-            this.UrunArama.Controls.Add(this.lblAramaSearchBar);
-            this.UrunArama.Controls.Add(this.txtAramaSearchbar);
-            this.UrunArama.Controls.Add(this.btnUrunAramaUser);
-            this.UrunArama.Controls.Add(this.menuStrip1);
-            this.UrunArama.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UrunArama.Location = new System.Drawing.Point(0, 0);
-            this.UrunArama.MaximumSize = new System.Drawing.Size(360, 510);
-            this.UrunArama.MinimumSize = new System.Drawing.Size(360, 510);
-            this.UrunArama.Name = "UrunArama";
-            this.UrunArama.Size = new System.Drawing.Size(360, 510);
-            this.UrunArama.TabIndex = 7;
-            // 
-            // btnDGVTemizle
-            // 
-            this.btnDGVTemizle.Location = new System.Drawing.Point(282, 128);
-            this.btnDGVTemizle.Name = "btnDGVTemizle";
-            this.btnDGVTemizle.Size = new System.Drawing.Size(54, 22);
-            this.btnDGVTemizle.TabIndex = 13;
-            this.btnDGVTemizle.Text = "Temizle";
-            this.btnDGVTemizle.UseVisualStyleBackColor = true;
-            this.btnDGVTemizle.Click += new System.EventHandler(this.btnDGVTemizle_Click);
-            // 
-            // dgvProducts
-            // 
-            this.dgvProducts.AllowUserToAddRows = false;
-            this.dgvProducts.AllowUserToDeleteRows = false;
-            this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Location = new System.Drawing.Point(10, 155);
-            this.dgvProducts.Name = "dgvProducts";
-            this.dgvProducts.ReadOnly = true;
-            this.dgvProducts.Size = new System.Drawing.Size(340, 340);
-            this.dgvProducts.TabIndex = 12;
-            this.dgvProducts.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewProducts_CellMouseDoubleClick);
-            this.dgvProducts.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvProducts_MouseClick);
-            // 
-            // btnSearchbarAra
-            // 
-            this.btnSearchbarAra.Location = new System.Drawing.Point(282, 99);
-            this.btnSearchbarAra.Name = "btnSearchbarAra";
-            this.btnSearchbarAra.Size = new System.Drawing.Size(54, 23);
-            this.btnSearchbarAra.TabIndex = 11;
-            this.btnSearchbarAra.Text = "Ara";
-            this.btnSearchbarAra.UseVisualStyleBackColor = true;
-            this.btnSearchbarAra.Click += new System.EventHandler(this.btnSearchbarAra_Click);
-            // 
-            // lblAramaSearchBar
-            // 
-            this.lblAramaSearchBar.AutoSize = true;
-            this.lblAramaSearchBar.Location = new System.Drawing.Point(16, 104);
-            this.lblAramaSearchBar.Name = "lblAramaSearchBar";
-            this.lblAramaSearchBar.Size = new System.Drawing.Size(64, 13);
-            this.lblAramaSearchBar.TabIndex = 9;
-            this.lblAramaSearchBar.Text = "Ürün Giriniz:";
-            // 
-            // txtAramaSearchbar
-            // 
-            this.txtAramaSearchbar.Location = new System.Drawing.Point(86, 99);
-            this.txtAramaSearchbar.Name = "txtAramaSearchbar";
-            this.txtAramaSearchbar.Size = new System.Drawing.Size(186, 20);
-            this.txtAramaSearchbar.TabIndex = 8;
-            // 
-            // btnUrunAramaUser
-            // 
-            this.btnUrunAramaUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUrunAramaUser.BackgroundImage")));
-            this.btnUrunAramaUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUrunAramaUser.FlatAppearance.BorderSize = 0;
-            this.btnUrunAramaUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUrunAramaUser.Location = new System.Drawing.Point(285, 15);
-            this.btnUrunAramaUser.Name = "btnUrunAramaUser";
-            this.btnUrunAramaUser.Size = new System.Drawing.Size(60, 40);
-            this.btnUrunAramaUser.TabIndex = 7;
-            this.btnUrunAramaUser.UseVisualStyleBackColor = true;
-            this.btnUrunAramaUser.Click += new System.EventHandler(this.UserButton_Click);
-            // 
-            // pnlFavLists
-            // 
-            this.pnlFavLists.Controls.Add(this.btnUserBilgileri);
-            this.pnlFavLists.Controls.Add(this.dgvFavProducts);
-            this.pnlFavLists.Controls.Add(this.lblFavoriListeSec);
-            this.pnlFavLists.Controls.Add(this.cbFavLists);
-            this.pnlFavLists.Location = new System.Drawing.Point(0, 0);
-            this.pnlFavLists.MaximumSize = new System.Drawing.Size(360, 510);
-            this.pnlFavLists.MinimumSize = new System.Drawing.Size(360, 510);
-            this.pnlFavLists.Name = "pnlFavLists";
-            this.pnlFavLists.Size = new System.Drawing.Size(360, 510);
-            this.pnlFavLists.TabIndex = 17;
-            // 
-            // btnUserBilgileri
-            // 
-            this.btnUserBilgileri.BackgroundImage = global::YesilEvCodeFirst.UIWinForm.Properties.Resources.user;
-            this.btnUserBilgileri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUserBilgileri.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserBilgileri.FlatAppearance.BorderSize = 0;
-            this.btnUserBilgileri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserBilgileri.Location = new System.Drawing.Point(285, 15);
-            this.btnUserBilgileri.Name = "btnUserBilgileri";
-            this.btnUserBilgileri.Size = new System.Drawing.Size(60, 40);
-            this.btnUserBilgileri.TabIndex = 8;
-            this.btnUserBilgileri.UseVisualStyleBackColor = true;
-            this.btnUserBilgileri.Click += new System.EventHandler(this.UserButton_Click);
-            // 
-            // dgvFavProducts
-            // 
-            this.dgvFavProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvFavProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFavProducts.Location = new System.Drawing.Point(12, 156);
-            this.dgvFavProducts.Name = "dgvFavProducts";
-            this.dgvFavProducts.Size = new System.Drawing.Size(338, 336);
-            this.dgvFavProducts.TabIndex = 2;
-            this.dgvFavProducts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFavProducts_CellDoubleClick);
-            // 
-            // lblFavoriListeSec
-            // 
-            this.lblFavoriListeSec.AutoSize = true;
-            this.lblFavoriListeSec.Location = new System.Drawing.Point(28, 118);
-            this.lblFavoriListeSec.Name = "lblFavoriListeSec";
-            this.lblFavoriListeSec.Size = new System.Drawing.Size(86, 13);
-            this.lblFavoriListeSec.TabIndex = 1;
-            this.lblFavoriListeSec.Text = "Favori Liste Seç:";
-            // 
-            // cbFavLists
-            // 
-            this.cbFavLists.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbFavLists.FormattingEnabled = true;
-            this.cbFavLists.Location = new System.Drawing.Point(120, 115);
-            this.cbFavLists.Name = "cbFavLists";
-            this.cbFavLists.Size = new System.Drawing.Size(178, 21);
-            this.cbFavLists.TabIndex = 0;
-            this.cbFavLists.SelectedIndexChanged += new System.EventHandler(this.cbFavLists_SelectedIndexChanged);
-            // 
-            // pnlKaraListe
-            // 
-            this.pnlKaraListe.Controls.Add(this.lblKaraListeUyari);
-            this.pnlKaraListe.Controls.Add(this.lblKaralisteOlanMaddeler);
-            this.pnlKaraListe.Controls.Add(this.dgvBlackListSupplements);
-            this.pnlKaraListe.Controls.Add(this.btnKaralisteUser);
-            this.pnlKaraListe.Location = new System.Drawing.Point(0, 0);
-            this.pnlKaraListe.MaximumSize = new System.Drawing.Size(360, 510);
-            this.pnlKaraListe.MinimumSize = new System.Drawing.Size(360, 510);
-            this.pnlKaraListe.Name = "pnlKaraListe";
-            this.pnlKaraListe.Size = new System.Drawing.Size(360, 510);
-            this.pnlKaraListe.TabIndex = 9;
-            // 
-            // lblKaraListeUyari
-            // 
-            this.lblKaraListeUyari.AutoSize = true;
-            this.lblKaraListeUyari.Location = new System.Drawing.Point(166, 176);
-            this.lblKaraListeUyari.Name = "lblKaraListeUyari";
-            this.lblKaraListeUyari.Size = new System.Drawing.Size(0, 13);
-            this.lblKaraListeUyari.TabIndex = 20;
-            // 
-            // lblKaralisteOlanMaddeler
-            // 
-            this.lblKaralisteOlanMaddeler.AutoSize = true;
-            this.lblKaralisteOlanMaddeler.Location = new System.Drawing.Point(11, 176);
-            this.lblKaralisteOlanMaddeler.Name = "lblKaralisteOlanMaddeler";
-            this.lblKaralisteOlanMaddeler.Size = new System.Drawing.Size(138, 13);
-            this.lblKaralisteOlanMaddeler.TabIndex = 19;
-            this.lblKaralisteOlanMaddeler.Text = "Kara Listede olan maddeler:";
+            // pnlSideBarYesilEv
+            // 
+            this.pnlSideBarYesilEv.BackColor = System.Drawing.Color.Lime;
+            this.pnlSideBarYesilEv.Controls.Add(this.pictureSideBarYesilEv);
+            this.pnlSideBarYesilEv.Controls.Add(this.btnSideBarYesilEv);
+            this.pnlSideBarYesilEv.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSideBarYesilEv.Location = new System.Drawing.Point(3, 3);
+            this.pnlSideBarYesilEv.Name = "pnlSideBarYesilEv";
+            this.pnlSideBarYesilEv.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarYesilEv.TabIndex = 0;
+            // 
+            // pictureSideBarYesilEv
+            // 
+            this.pictureSideBarYesilEv.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarYesilEv.BackgroundImage")));
+            this.pictureSideBarYesilEv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureSideBarYesilEv.Enabled = false;
+            this.pictureSideBarYesilEv.Location = new System.Drawing.Point(-3, -12);
+            this.pictureSideBarYesilEv.Name = "pictureSideBarYesilEv";
+            this.pictureSideBarYesilEv.Size = new System.Drawing.Size(38, 63);
+            this.pictureSideBarYesilEv.TabIndex = 1;
+            this.pictureSideBarYesilEv.TabStop = false;
+            // 
+            // btnSideBarYesilEv
+            // 
+            this.btnSideBarYesilEv.BackColor = System.Drawing.Color.Lime;
+            this.btnSideBarYesilEv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSideBarYesilEv.Enabled = false;
+            this.btnSideBarYesilEv.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnSideBarYesilEv.FlatAppearance.BorderSize = 0;
+            this.btnSideBarYesilEv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSideBarYesilEv.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSideBarYesilEv.ForeColor = System.Drawing.Color.White;
+            this.btnSideBarYesilEv.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarYesilEv.Name = "btnSideBarYesilEv";
+            this.btnSideBarYesilEv.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarYesilEv.TabIndex = 0;
+            this.btnSideBarYesilEv.Text = "    Yeşil Ev";
+            this.btnSideBarYesilEv.UseVisualStyleBackColor = false;
+            // 
+            // btnHomeSearchProductWithBarcode
+            // 
+            this.btnHomeSearchProductWithBarcode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomeSearchProductWithBarcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHomeSearchProductWithBarcode.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnHomeSearchProductWithBarcode.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnHomeSearchProductWithBarcode.Location = new System.Drawing.Point(68, 138);
+            this.btnHomeSearchProductWithBarcode.Name = "btnHomeSearchProductWithBarcode";
+            this.btnHomeSearchProductWithBarcode.Size = new System.Drawing.Size(226, 38);
+            this.btnHomeSearchProductWithBarcode.TabIndex = 1;
+            this.btnHomeSearchProductWithBarcode.Text = "               Barkod Okuma";
+            this.btnHomeSearchProductWithBarcode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHomeSearchProductWithBarcode.UseVisualStyleBackColor = true;
+            this.btnHomeSearchProductWithBarcode.Click += new System.EventHandler(this.btnReadBarcode_Click);
+            // 
+            // btnHomeSearchProduct
+            // 
+            this.btnHomeSearchProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomeSearchProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHomeSearchProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnHomeSearchProduct.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnHomeSearchProduct.Location = new System.Drawing.Point(68, 182);
+            this.btnHomeSearchProduct.Name = "btnHomeSearchProduct";
+            this.btnHomeSearchProduct.Size = new System.Drawing.Size(226, 38);
+            this.btnHomeSearchProduct.TabIndex = 2;
+            this.btnHomeSearchProduct.Text = "               Arama";
+            this.btnHomeSearchProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHomeSearchProduct.UseVisualStyleBackColor = true;
+            this.btnHomeSearchProduct.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnHomeAddAndUpdateProduct
+            // 
+            this.btnHomeAddAndUpdateProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomeAddAndUpdateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHomeAddAndUpdateProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnHomeAddAndUpdateProduct.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnHomeAddAndUpdateProduct.Location = new System.Drawing.Point(68, 226);
+            this.btnHomeAddAndUpdateProduct.Name = "btnHomeAddAndUpdateProduct";
+            this.btnHomeAddAndUpdateProduct.Size = new System.Drawing.Size(226, 38);
+            this.btnHomeAddAndUpdateProduct.TabIndex = 3;
+            this.btnHomeAddAndUpdateProduct.Text = "               Ürün Ekleme / Düzeltme";
+            this.btnHomeAddAndUpdateProduct.UseVisualStyleBackColor = true;
+            this.btnHomeAddAndUpdateProduct.Click += new System.EventHandler(this.AddAndUpdateProduct_Click);
+            // 
+            // btnHomeSearchHistoryAndFavoriLists
+            // 
+            this.btnHomeSearchHistoryAndFavoriLists.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomeSearchHistoryAndFavoriLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHomeSearchHistoryAndFavoriLists.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnHomeSearchHistoryAndFavoriLists.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnHomeSearchHistoryAndFavoriLists.Location = new System.Drawing.Point(68, 269);
+            this.btnHomeSearchHistoryAndFavoriLists.Name = "btnHomeSearchHistoryAndFavoriLists";
+            this.btnHomeSearchHistoryAndFavoriLists.Size = new System.Drawing.Size(226, 38);
+            this.btnHomeSearchHistoryAndFavoriLists.TabIndex = 4;
+            this.btnHomeSearchHistoryAndFavoriLists.Text = "               Arama Geçmişi / Favori";
+            this.btnHomeSearchHistoryAndFavoriLists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHomeSearchHistoryAndFavoriLists.UseVisualStyleBackColor = true;
+            this.btnHomeSearchHistoryAndFavoriLists.Click += new System.EventHandler(this.btnSearchHistoryAndFavoriList_Click);
+            // 
+            // pictureHomeSearchProductWithBarcode
+            // 
+            this.pictureHomeSearchProductWithBarcode.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureHomeSearchProductWithBarcode.BackgroundImage")));
+            this.pictureHomeSearchProductWithBarcode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureHomeSearchProductWithBarcode.Location = new System.Drawing.Point(83, 141);
+            this.pictureHomeSearchProductWithBarcode.Name = "pictureHomeSearchProductWithBarcode";
+            this.pictureHomeSearchProductWithBarcode.Size = new System.Drawing.Size(36, 32);
+            this.pictureHomeSearchProductWithBarcode.TabIndex = 5;
+            this.pictureHomeSearchProductWithBarcode.TabStop = false;
+            // 
+            // pictureHomeSearchProduct
+            // 
+            this.pictureHomeSearchProduct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureHomeSearchProduct.BackgroundImage")));
+            this.pictureHomeSearchProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureHomeSearchProduct.Location = new System.Drawing.Point(83, 185);
+            this.pictureHomeSearchProduct.Name = "pictureHomeSearchProduct";
+            this.pictureHomeSearchProduct.Size = new System.Drawing.Size(36, 32);
+            this.pictureHomeSearchProduct.TabIndex = 5;
+            this.pictureHomeSearchProduct.TabStop = false;
+            // 
+            // pictureHomeAddAndUpdateProduct
+            // 
+            this.pictureHomeAddAndUpdateProduct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureHomeAddAndUpdateProduct.BackgroundImage")));
+            this.pictureHomeAddAndUpdateProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureHomeAddAndUpdateProduct.Location = new System.Drawing.Point(83, 229);
+            this.pictureHomeAddAndUpdateProduct.Name = "pictureHomeAddAndUpdateProduct";
+            this.pictureHomeAddAndUpdateProduct.Size = new System.Drawing.Size(36, 32);
+            this.pictureHomeAddAndUpdateProduct.TabIndex = 5;
+            this.pictureHomeAddAndUpdateProduct.TabStop = false;
+            // 
+            // pictureHomeSearchHistoryAndFavoriLists
+            // 
+            this.pictureHomeSearchHistoryAndFavoriLists.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureHomeSearchHistoryAndFavoriLists.BackgroundImage")));
+            this.pictureHomeSearchHistoryAndFavoriLists.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureHomeSearchHistoryAndFavoriLists.Location = new System.Drawing.Point(83, 273);
+            this.pictureHomeSearchHistoryAndFavoriLists.Name = "pictureHomeSearchHistoryAndFavoriLists";
+            this.pictureHomeSearchHistoryAndFavoriLists.Size = new System.Drawing.Size(36, 32);
+            this.pictureHomeSearchHistoryAndFavoriLists.TabIndex = 5;
+            this.pictureHomeSearchHistoryAndFavoriLists.TabStop = false;
+            // 
+            // Home
+            // 
+            this.Home.Controls.Add(this.btnHomeUser);
+            this.Home.Controls.Add(this.pictureHomeSearchHistoryAndFavoriLists);
+            this.Home.Controls.Add(this.pictureHomeAddAndUpdateProduct);
+            this.Home.Controls.Add(this.pictureHomeSearchProduct);
+            this.Home.Controls.Add(this.pictureHomeSearchProductWithBarcode);
+            this.Home.Controls.Add(this.btnHomeSearchHistoryAndFavoriLists);
+            this.Home.Controls.Add(this.btnHomeAddAndUpdateProduct);
+            this.Home.Controls.Add(this.btnHomeSearchProduct);
+            this.Home.Controls.Add(this.btnHomeSearchProductWithBarcode);
+            this.Home.Location = new System.Drawing.Point(0, 0);
+            this.Home.MaximumSize = new System.Drawing.Size(360, 510);
+            this.Home.MinimumSize = new System.Drawing.Size(360, 510);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(360, 510);
+            this.Home.TabIndex = 6;
+            // 
+            // btnHomeUser
+            // 
+            this.btnHomeUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHomeUser.BackgroundImage")));
+            this.btnHomeUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHomeUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomeUser.FlatAppearance.BorderSize = 0;
+            this.btnHomeUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHomeUser.Location = new System.Drawing.Point(285, 15);
+            this.btnHomeUser.Name = "btnHomeUser";
+            this.btnHomeUser.Size = new System.Drawing.Size(60, 40);
+            this.btnHomeUser.TabIndex = 0;
+            this.btnHomeUser.UseVisualStyleBackColor = true;
+            this.btnHomeUser.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // UserDetails
+            // 
+            this.UserDetails.Controls.Add(this.lblUserDetailsAddProductCount);
+            this.UserDetails.Controls.Add(this.pictureUserDetailsLogout);
+            this.UserDetails.Controls.Add(this.pictureUserDetailsSearchHistory);
+            this.UserDetails.Controls.Add(this.pictureUserDetailsBlackList);
+            this.UserDetails.Controls.Add(this.pictureUserDetailsFavoriLists);
+            this.UserDetails.Controls.Add(this.pictureUserDetailsUpdateUserDetails);
+            this.UserDetails.Controls.Add(this.pictureUserDetailsMergeSocialMedia);
+            this.UserDetails.Controls.Add(this.pictureUserDetailsChangePassword);
+            this.UserDetails.Controls.Add(this.pictureUserDetailsChangeEmail);
+            this.UserDetails.Controls.Add(this.pictureUserDetailsPremium);
+            this.UserDetails.Controls.Add(this.btnUserDetailsLogout);
+            this.UserDetails.Controls.Add(this.btnUserDetailsClearSearchHistory);
+            this.UserDetails.Controls.Add(this.btnUserDetailsBlacklist);
+            this.UserDetails.Controls.Add(this.btnUserDetailsFavoriLists);
+            this.UserDetails.Controls.Add(this.btnUserDetailsUpdateUserDetails);
+            this.UserDetails.Controls.Add(this.btnUserDetailsMergeSocialMedia);
+            this.UserDetails.Controls.Add(this.btnUserDetailsChangeEmail);
+            this.UserDetails.Controls.Add(this.lblUserDetailsAddProduct);
+            this.UserDetails.Controls.Add(this.lblUserDetailsSignUpDateValue);
+            this.UserDetails.Controls.Add(this.lblUserDetailsSignUpDate);
+            this.UserDetails.Controls.Add(this.lblUserDetailsUserName);
+            this.UserDetails.Controls.Add(this.btnUserDetailsChangePassword);
+            this.UserDetails.Controls.Add(this.btnUserDetailsPremium);
+            this.UserDetails.Location = new System.Drawing.Point(0, 0);
+            this.UserDetails.MaximumSize = new System.Drawing.Size(360, 510);
+            this.UserDetails.MinimumSize = new System.Drawing.Size(360, 510);
+            this.UserDetails.Name = "UserDetails";
+            this.UserDetails.Size = new System.Drawing.Size(360, 510);
+            this.UserDetails.TabIndex = 7;
+            // 
+            // lblUserDetailsAddProductCount
+            // 
+            this.lblUserDetailsAddProductCount.AutoSize = true;
+            this.lblUserDetailsAddProductCount.Location = new System.Drawing.Point(239, 105);
+            this.lblUserDetailsAddProductCount.Name = "lblUserDetailsAddProductCount";
+            this.lblUserDetailsAddProductCount.Size = new System.Drawing.Size(10, 13);
+            this.lblUserDetailsAddProductCount.TabIndex = 5;
+            this.lblUserDetailsAddProductCount.Text = "-";
+            // 
+            // pictureUserDetailsLogout
+            // 
+            this.pictureUserDetailsLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsLogout.BackgroundImage")));
+            this.pictureUserDetailsLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureUserDetailsLogout.Location = new System.Drawing.Point(46, 437);
+            this.pictureUserDetailsLogout.Name = "pictureUserDetailsLogout";
+            this.pictureUserDetailsLogout.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsLogout.TabIndex = 4;
+            this.pictureUserDetailsLogout.TabStop = false;
+            // 
+            // pictureUserDetailsSearchHistory
+            // 
+            this.pictureUserDetailsSearchHistory.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsSearchHistory.BackgroundImage")));
+            this.pictureUserDetailsSearchHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureUserDetailsSearchHistory.Location = new System.Drawing.Point(46, 399);
+            this.pictureUserDetailsSearchHistory.Name = "pictureUserDetailsSearchHistory";
+            this.pictureUserDetailsSearchHistory.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsSearchHistory.TabIndex = 4;
+            this.pictureUserDetailsSearchHistory.TabStop = false;
+            // 
+            // pictureUserDetailsBlackList
+            // 
+            this.pictureUserDetailsBlackList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsBlackList.BackgroundImage")));
+            this.pictureUserDetailsBlackList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureUserDetailsBlackList.Location = new System.Drawing.Point(46, 361);
+            this.pictureUserDetailsBlackList.Name = "pictureUserDetailsBlackList";
+            this.pictureUserDetailsBlackList.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsBlackList.TabIndex = 4;
+            this.pictureUserDetailsBlackList.TabStop = false;
+            // 
+            // pictureUserDetailsFavoriLists
+            // 
+            this.pictureUserDetailsFavoriLists.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsFavoriLists.BackgroundImage")));
+            this.pictureUserDetailsFavoriLists.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureUserDetailsFavoriLists.Location = new System.Drawing.Point(46, 323);
+            this.pictureUserDetailsFavoriLists.Name = "pictureUserDetailsFavoriLists";
+            this.pictureUserDetailsFavoriLists.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsFavoriLists.TabIndex = 4;
+            this.pictureUserDetailsFavoriLists.TabStop = false;
+            // 
+            // pictureUserDetailsUpdateUserDetails
+            // 
+            this.pictureUserDetailsUpdateUserDetails.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsUpdateUserDetails.BackgroundImage")));
+            this.pictureUserDetailsUpdateUserDetails.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureUserDetailsUpdateUserDetails.Location = new System.Drawing.Point(46, 285);
+            this.pictureUserDetailsUpdateUserDetails.Name = "pictureUserDetailsUpdateUserDetails";
+            this.pictureUserDetailsUpdateUserDetails.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsUpdateUserDetails.TabIndex = 4;
+            this.pictureUserDetailsUpdateUserDetails.TabStop = false;
+            // 
+            // pictureUserDetailsMergeSocialMedia
+            // 
+            this.pictureUserDetailsMergeSocialMedia.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsMergeSocialMedia.BackgroundImage")));
+            this.pictureUserDetailsMergeSocialMedia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureUserDetailsMergeSocialMedia.Location = new System.Drawing.Point(46, 247);
+            this.pictureUserDetailsMergeSocialMedia.Name = "pictureUserDetailsMergeSocialMedia";
+            this.pictureUserDetailsMergeSocialMedia.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsMergeSocialMedia.TabIndex = 4;
+            this.pictureUserDetailsMergeSocialMedia.TabStop = false;
+            // 
+            // pictureUserDetailsChangePassword
+            // 
+            this.pictureUserDetailsChangePassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsChangePassword.BackgroundImage")));
+            this.pictureUserDetailsChangePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureUserDetailsChangePassword.Location = new System.Drawing.Point(46, 209);
+            this.pictureUserDetailsChangePassword.Name = "pictureUserDetailsChangePassword";
+            this.pictureUserDetailsChangePassword.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsChangePassword.TabIndex = 4;
+            this.pictureUserDetailsChangePassword.TabStop = false;
+            // 
+            // pictureUserDetailsChangeEmail
+            // 
+            this.pictureUserDetailsChangeEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsChangeEmail.BackgroundImage")));
+            this.pictureUserDetailsChangeEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureUserDetailsChangeEmail.Location = new System.Drawing.Point(46, 171);
+            this.pictureUserDetailsChangeEmail.Name = "pictureUserDetailsChangeEmail";
+            this.pictureUserDetailsChangeEmail.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsChangeEmail.TabIndex = 4;
+            this.pictureUserDetailsChangeEmail.TabStop = false;
+            // 
+            // pictureUserDetailsPremium
+            // 
+            this.pictureUserDetailsPremium.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsPremium.BackgroundImage")));
+            this.pictureUserDetailsPremium.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureUserDetailsPremium.Location = new System.Drawing.Point(46, 133);
+            this.pictureUserDetailsPremium.Name = "pictureUserDetailsPremium";
+            this.pictureUserDetailsPremium.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsPremium.TabIndex = 4;
+            this.pictureUserDetailsPremium.TabStop = false;
+            // 
+            // btnUserDetailsLogout
+            // 
+            this.btnUserDetailsLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserDetailsLogout.FlatAppearance.BorderSize = 0;
+            this.btnUserDetailsLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserDetailsLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserDetailsLogout.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnUserDetailsLogout.Location = new System.Drawing.Point(48, 437);
+            this.btnUserDetailsLogout.Name = "btnUserDetailsLogout";
+            this.btnUserDetailsLogout.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsLogout.TabIndex = 3;
+            this.btnUserDetailsLogout.Text = "         Çıkış yap";
+            this.btnUserDetailsLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserDetailsLogout.UseVisualStyleBackColor = true;
+            this.btnUserDetailsLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnUserDetailsClearSearchHistory
+            // 
+            this.btnUserDetailsClearSearchHistory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserDetailsClearSearchHistory.FlatAppearance.BorderSize = 0;
+            this.btnUserDetailsClearSearchHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserDetailsClearSearchHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserDetailsClearSearchHistory.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnUserDetailsClearSearchHistory.Location = new System.Drawing.Point(48, 399);
+            this.btnUserDetailsClearSearchHistory.Name = "btnUserDetailsClearSearchHistory";
+            this.btnUserDetailsClearSearchHistory.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsClearSearchHistory.TabIndex = 3;
+            this.btnUserDetailsClearSearchHistory.Text = "         Arama geçmişini temizle";
+            this.btnUserDetailsClearSearchHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserDetailsClearSearchHistory.UseVisualStyleBackColor = true;
+            this.btnUserDetailsClearSearchHistory.Click += new System.EventHandler(this.ClearHistory);
+            // 
+            // btnUserDetailsBlacklist
+            // 
+            this.btnUserDetailsBlacklist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserDetailsBlacklist.FlatAppearance.BorderSize = 0;
+            this.btnUserDetailsBlacklist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserDetailsBlacklist.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserDetailsBlacklist.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnUserDetailsBlacklist.Location = new System.Drawing.Point(49, 361);
+            this.btnUserDetailsBlacklist.Name = "btnUserDetailsBlacklist";
+            this.btnUserDetailsBlacklist.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsBlacklist.TabIndex = 3;
+            this.btnUserDetailsBlacklist.Text = "         Kara liste";
+            this.btnUserDetailsBlacklist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserDetailsBlacklist.UseVisualStyleBackColor = true;
+            this.btnUserDetailsBlacklist.Click += new System.EventHandler(this.GoBlackListPage);
+            // 
+            // btnUserDetailsFavoriLists
+            // 
+            this.btnUserDetailsFavoriLists.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserDetailsFavoriLists.FlatAppearance.BorderSize = 0;
+            this.btnUserDetailsFavoriLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserDetailsFavoriLists.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserDetailsFavoriLists.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnUserDetailsFavoriLists.Location = new System.Drawing.Point(49, 323);
+            this.btnUserDetailsFavoriLists.Name = "btnUserDetailsFavoriLists";
+            this.btnUserDetailsFavoriLists.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsFavoriLists.TabIndex = 3;
+            this.btnUserDetailsFavoriLists.Text = "         Favoriler";
+            this.btnUserDetailsFavoriLists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserDetailsFavoriLists.UseVisualStyleBackColor = true;
+            this.btnUserDetailsFavoriLists.Click += new System.EventHandler(this.GoFavoriListPage);
+            // 
+            // btnUserDetailsUpdateUserDetails
+            // 
+            this.btnUserDetailsUpdateUserDetails.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserDetailsUpdateUserDetails.FlatAppearance.BorderSize = 0;
+            this.btnUserDetailsUpdateUserDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserDetailsUpdateUserDetails.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserDetailsUpdateUserDetails.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnUserDetailsUpdateUserDetails.Location = new System.Drawing.Point(49, 285);
+            this.btnUserDetailsUpdateUserDetails.Name = "btnUserDetailsUpdateUserDetails";
+            this.btnUserDetailsUpdateUserDetails.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsUpdateUserDetails.TabIndex = 3;
+            this.btnUserDetailsUpdateUserDetails.Text = "         Profil bilgileri güncelle";
+            this.btnUserDetailsUpdateUserDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserDetailsUpdateUserDetails.UseVisualStyleBackColor = true;
+            // 
+            // btnUserDetailsMergeSocialMedia
+            // 
+            this.btnUserDetailsMergeSocialMedia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserDetailsMergeSocialMedia.FlatAppearance.BorderSize = 0;
+            this.btnUserDetailsMergeSocialMedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserDetailsMergeSocialMedia.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserDetailsMergeSocialMedia.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnUserDetailsMergeSocialMedia.Location = new System.Drawing.Point(48, 247);
+            this.btnUserDetailsMergeSocialMedia.Name = "btnUserDetailsMergeSocialMedia";
+            this.btnUserDetailsMergeSocialMedia.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsMergeSocialMedia.TabIndex = 3;
+            this.btnUserDetailsMergeSocialMedia.Text = "         Sosyal medya hesabı ile birleştir";
+            this.btnUserDetailsMergeSocialMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserDetailsMergeSocialMedia.UseVisualStyleBackColor = true;
+            // 
+            // btnUserDetailsChangeEmail
+            // 
+            this.btnUserDetailsChangeEmail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserDetailsChangeEmail.FlatAppearance.BorderSize = 0;
+            this.btnUserDetailsChangeEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserDetailsChangeEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserDetailsChangeEmail.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnUserDetailsChangeEmail.Location = new System.Drawing.Point(48, 171);
+            this.btnUserDetailsChangeEmail.Name = "btnUserDetailsChangeEmail";
+            this.btnUserDetailsChangeEmail.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsChangeEmail.TabIndex = 3;
+            this.btnUserDetailsChangeEmail.Text = "         E-Posta Adresini değiştir";
+            this.btnUserDetailsChangeEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserDetailsChangeEmail.UseVisualStyleBackColor = true;
+            // 
+            // lblUserDetailsAddProduct
+            // 
+            this.lblUserDetailsAddProduct.AutoSize = true;
+            this.lblUserDetailsAddProduct.BackColor = System.Drawing.Color.White;
+            this.lblUserDetailsAddProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUserDetailsAddProduct.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblUserDetailsAddProduct.Location = new System.Drawing.Point(119, 104);
+            this.lblUserDetailsAddProduct.Name = "lblUserDetailsAddProduct";
+            this.lblUserDetailsAddProduct.Size = new System.Drawing.Size(116, 15);
+            this.lblUserDetailsAddProduct.TabIndex = 2;
+            this.lblUserDetailsAddProduct.Text = "Eklediği Ürün Sayısı :";
+            // 
+            // lblUserDetailsSignUpDateValue
+            // 
+            this.lblUserDetailsSignUpDateValue.AutoSize = true;
+            this.lblUserDetailsSignUpDateValue.BackColor = System.Drawing.Color.White;
+            this.lblUserDetailsSignUpDateValue.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUserDetailsSignUpDateValue.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblUserDetailsSignUpDateValue.Location = new System.Drawing.Point(152, 76);
+            this.lblUserDetailsSignUpDateValue.Name = "lblUserDetailsSignUpDateValue";
+            this.lblUserDetailsSignUpDateValue.Size = new System.Drawing.Size(0, 15);
+            this.lblUserDetailsSignUpDateValue.TabIndex = 1;
+            // 
+            // lblUserDetailsSignUpDate
+            // 
+            this.lblUserDetailsSignUpDate.AutoSize = true;
+            this.lblUserDetailsSignUpDate.BackColor = System.Drawing.Color.White;
+            this.lblUserDetailsSignUpDate.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUserDetailsSignUpDate.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblUserDetailsSignUpDate.Location = new System.Drawing.Point(66, 76);
+            this.lblUserDetailsSignUpDate.Name = "lblUserDetailsSignUpDate";
+            this.lblUserDetailsSignUpDate.Size = new System.Drawing.Size(80, 15);
+            this.lblUserDetailsSignUpDate.TabIndex = 1;
+            this.lblUserDetailsSignUpDate.Text = "Üyelik Tarihi : ";
+            // 
+            // lblUserDetailsUserName
+            // 
+            this.lblUserDetailsUserName.AutoSize = true;
+            this.lblUserDetailsUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUserDetailsUserName.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblUserDetailsUserName.Location = new System.Drawing.Point(118, 48);
+            this.lblUserDetailsUserName.Name = "lblUserDetailsUserName";
+            this.lblUserDetailsUserName.Size = new System.Drawing.Size(86, 21);
+            this.lblUserDetailsUserName.TabIndex = 0;
+            this.lblUserDetailsUserName.Text = "UserName";
+            // 
+            // btnUserDetailsChangePassword
+            // 
+            this.btnUserDetailsChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserDetailsChangePassword.FlatAppearance.BorderSize = 0;
+            this.btnUserDetailsChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserDetailsChangePassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserDetailsChangePassword.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnUserDetailsChangePassword.Location = new System.Drawing.Point(49, 209);
+            this.btnUserDetailsChangePassword.Name = "btnUserDetailsChangePassword";
+            this.btnUserDetailsChangePassword.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsChangePassword.TabIndex = 3;
+            this.btnUserDetailsChangePassword.Text = "         Şifre değiştir";
+            this.btnUserDetailsChangePassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserDetailsChangePassword.UseVisualStyleBackColor = true;
+            // 
+            // btnUserDetailsPremium
+            // 
+            this.btnUserDetailsPremium.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserDetailsPremium.FlatAppearance.BorderSize = 0;
+            this.btnUserDetailsPremium.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserDetailsPremium.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserDetailsPremium.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnUserDetailsPremium.Location = new System.Drawing.Point(48, 133);
+            this.btnUserDetailsPremium.Name = "btnUserDetailsPremium";
+            this.btnUserDetailsPremium.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsPremium.TabIndex = 3;
+            this.btnUserDetailsPremium.Text = "         Premium üye ol";
+            this.btnUserDetailsPremium.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserDetailsPremium.UseVisualStyleBackColor = true;
+            // 
+            // AddAndUpdateProduct
+            // 
+            this.AddAndUpdateProduct.Controls.Add(this.btnAddAndUpdateProductUser);
+            this.AddAndUpdateProduct.Controls.Add(this.btnAddAndUpdateProductSend);
+            this.AddAndUpdateProduct.Controls.Add(this.btnAddAndUpdateProductAddProduct);
+            this.AddAndUpdateProduct.Controls.Add(this.btnAddAndUpdateProductUpdateProduct);
+            this.AddAndUpdateProduct.Controls.Add(this.grpBoxAddAndUpdateProductAddProduct);
+            this.AddAndUpdateProduct.Controls.Add(this.grpBoxAddAndUpdateProductUpdateProduct);
+            this.AddAndUpdateProduct.Location = new System.Drawing.Point(0, 0);
+            this.AddAndUpdateProduct.MaximumSize = new System.Drawing.Size(360, 510);
+            this.AddAndUpdateProduct.MinimumSize = new System.Drawing.Size(360, 510);
+            this.AddAndUpdateProduct.Name = "AddAndUpdateProduct";
+            this.AddAndUpdateProduct.Size = new System.Drawing.Size(360, 510);
+            this.AddAndUpdateProduct.TabIndex = 6;
+            // 
+            // btnAddAndUpdateProductUser
+            // 
+            this.btnAddAndUpdateProductUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddAndUpdateProductUser.BackgroundImage")));
+            this.btnAddAndUpdateProductUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddAndUpdateProductUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAndUpdateProductUser.FlatAppearance.BorderSize = 0;
+            this.btnAddAndUpdateProductUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddAndUpdateProductUser.Location = new System.Drawing.Point(285, 15);
+            this.btnAddAndUpdateProductUser.Name = "btnAddAndUpdateProductUser";
+            this.btnAddAndUpdateProductUser.Size = new System.Drawing.Size(60, 40);
+            this.btnAddAndUpdateProductUser.TabIndex = 7;
+            this.btnAddAndUpdateProductUser.UseVisualStyleBackColor = true;
+            this.btnAddAndUpdateProductUser.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // btnAddAndUpdateProductSend
+            // 
+            this.btnAddAndUpdateProductSend.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnAddAndUpdateProductSend.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAndUpdateProductSend.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAddAndUpdateProductSend.ForeColor = System.Drawing.Color.White;
+            this.btnAddAndUpdateProductSend.Location = new System.Drawing.Point(69, 416);
+            this.btnAddAndUpdateProductSend.Name = "btnAddAndUpdateProductSend";
+            this.btnAddAndUpdateProductSend.Size = new System.Drawing.Size(246, 40);
+            this.btnAddAndUpdateProductSend.TabIndex = 9;
+            this.btnAddAndUpdateProductSend.Text = "Gönder";
+            this.btnAddAndUpdateProductSend.UseVisualStyleBackColor = false;
+            this.btnAddAndUpdateProductSend.Click += new System.EventHandler(this.AddAndUpdateProductBtnSend_Click);
+            // 
+            // btnAddAndUpdateProductAddProduct
+            // 
+            this.btnAddAndUpdateProductAddProduct.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnAddAndUpdateProductAddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAndUpdateProductAddProduct.FlatAppearance.BorderSize = 0;
+            this.btnAddAndUpdateProductAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddAndUpdateProductAddProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAddAndUpdateProductAddProduct.ForeColor = System.Drawing.Color.White;
+            this.btnAddAndUpdateProductAddProduct.Location = new System.Drawing.Point(213, 87);
+            this.btnAddAndUpdateProductAddProduct.Name = "btnAddAndUpdateProductAddProduct";
+            this.btnAddAndUpdateProductAddProduct.Size = new System.Drawing.Size(112, 40);
+            this.btnAddAndUpdateProductAddProduct.TabIndex = 1;
+            this.btnAddAndUpdateProductAddProduct.Text = "Ürün Ekle";
+            this.btnAddAndUpdateProductAddProduct.UseVisualStyleBackColor = false;
+            this.btnAddAndUpdateProductAddProduct.Click += new System.EventHandler(this.AddProduct_Click);
+            // 
+            // btnAddAndUpdateProductUpdateProduct
+            // 
+            this.btnAddAndUpdateProductUpdateProduct.BackColor = System.Drawing.Color.Green;
+            this.btnAddAndUpdateProductUpdateProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAndUpdateProductUpdateProduct.FlatAppearance.BorderSize = 0;
+            this.btnAddAndUpdateProductUpdateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddAndUpdateProductUpdateProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAddAndUpdateProductUpdateProduct.ForeColor = System.Drawing.Color.White;
+            this.btnAddAndUpdateProductUpdateProduct.Location = new System.Drawing.Point(68, 87);
+            this.btnAddAndUpdateProductUpdateProduct.Name = "btnAddAndUpdateProductUpdateProduct";
+            this.btnAddAndUpdateProductUpdateProduct.Size = new System.Drawing.Size(114, 40);
+            this.btnAddAndUpdateProductUpdateProduct.TabIndex = 1;
+            this.btnAddAndUpdateProductUpdateProduct.Text = "Ürün Düzenle";
+            this.btnAddAndUpdateProductUpdateProduct.UseVisualStyleBackColor = false;
+            this.btnAddAndUpdateProductUpdateProduct.Click += new System.EventHandler(this.UpdateProduct_Click);
+            // 
+            // grpBoxAddAndUpdateProductAddProduct
+            // 
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.cmbBoxAddAndUpdateProductAddProductCategory);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.cmbBoxAddAndUpdateProductAddProductSupplier);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.btnAddAndUpdateProductAddProductFront);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.btnAddAndUpdateProductAddProductBack);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.btnAddAndUpdateProductAddProductProductContext);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.txtAddAndUpdateProductAddProductProductContext);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductBack);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductFront);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductProductContext);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.txtAddAndUpdateProductAddProductProductName);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.txtAddAndUpdateProductAddProductBarcodeNo);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductCategory);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductProductName);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductSupplier);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductBarcodeNo);
+            this.grpBoxAddAndUpdateProductAddProduct.Location = new System.Drawing.Point(26, 133);
+            this.grpBoxAddAndUpdateProductAddProduct.Name = "grpBoxAddAndUpdateProductAddProduct";
+            this.grpBoxAddAndUpdateProductAddProduct.Size = new System.Drawing.Size(318, 277);
+            this.grpBoxAddAndUpdateProductAddProduct.TabIndex = 0;
+            this.grpBoxAddAndUpdateProductAddProduct.TabStop = false;
+            this.grpBoxAddAndUpdateProductAddProduct.Text = "Ürün Ekle";
+            // 
+            // cmbBoxAddAndUpdateProductAddProductCategory
+            // 
+            this.cmbBoxAddAndUpdateProductAddProductCategory.FormattingEnabled = true;
+            this.cmbBoxAddAndUpdateProductAddProductCategory.Location = new System.Drawing.Point(89, 125);
+            this.cmbBoxAddAndUpdateProductAddProductCategory.Name = "cmbBoxAddAndUpdateProductAddProductCategory";
+            this.cmbBoxAddAndUpdateProductAddProductCategory.Size = new System.Drawing.Size(210, 21);
+            this.cmbBoxAddAndUpdateProductAddProductCategory.TabIndex = 4;
+            // 
+            // cmbBoxAddAndUpdateProductAddProductSupplier
+            // 
+            this.cmbBoxAddAndUpdateProductAddProductSupplier.FormattingEnabled = true;
+            this.cmbBoxAddAndUpdateProductAddProductSupplier.Location = new System.Drawing.Point(89, 64);
+            this.cmbBoxAddAndUpdateProductAddProductSupplier.Name = "cmbBoxAddAndUpdateProductAddProductSupplier";
+            this.cmbBoxAddAndUpdateProductAddProductSupplier.Size = new System.Drawing.Size(210, 21);
+            this.cmbBoxAddAndUpdateProductAddProductSupplier.TabIndex = 2;
+            // 
+            // btnAddAndUpdateProductAddProductFront
+            // 
+            this.btnAddAndUpdateProductAddProductFront.Location = new System.Drawing.Point(43, 207);
+            this.btnAddAndUpdateProductAddProductFront.Name = "btnAddAndUpdateProductAddProductFront";
+            this.btnAddAndUpdateProductAddProductFront.Size = new System.Drawing.Size(75, 45);
+            this.btnAddAndUpdateProductAddProductFront.TabIndex = 6;
+            this.btnAddAndUpdateProductAddProductFront.Text = "+";
+            this.btnAddAndUpdateProductAddProductFront.UseVisualStyleBackColor = true;
+            this.btnAddAndUpdateProductAddProductFront.Click += new System.EventHandler(this.AddProductFrontImageDialogShow);
+            // 
+            // btnAddAndUpdateProductAddProductBack
+            // 
+            this.btnAddAndUpdateProductAddProductBack.Location = new System.Drawing.Point(203, 207);
+            this.btnAddAndUpdateProductAddProductBack.Name = "btnAddAndUpdateProductAddProductBack";
+            this.btnAddAndUpdateProductAddProductBack.Size = new System.Drawing.Size(75, 45);
+            this.btnAddAndUpdateProductAddProductBack.TabIndex = 7;
+            this.btnAddAndUpdateProductAddProductBack.Text = "+";
+            this.btnAddAndUpdateProductAddProductBack.UseVisualStyleBackColor = true;
+            this.btnAddAndUpdateProductAddProductBack.Click += new System.EventHandler(this.AddProductBackImageDialogShow);
+            // 
+            // btnAddAndUpdateProductAddProductProductContext
+            // 
+            this.btnAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(266, 156);
+            this.btnAddAndUpdateProductAddProductProductContext.Name = "btnAddAndUpdateProductAddProductProductContext";
+            this.btnAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(33, 23);
+            this.btnAddAndUpdateProductAddProductProductContext.TabIndex = 4;
+            this.btnAddAndUpdateProductAddProductProductContext.Text = "+";
+            this.btnAddAndUpdateProductAddProductProductContext.UseVisualStyleBackColor = true;
+            // 
+            // txtAddAndUpdateProductAddProductProductContext
+            // 
+            this.txtAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(89, 156);
+            this.txtAddAndUpdateProductAddProductProductContext.Multiline = true;
+            this.txtAddAndUpdateProductAddProductProductContext.Name = "txtAddAndUpdateProductAddProductProductContext";
+            this.txtAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(171, 23);
+            this.txtAddAndUpdateProductAddProductProductContext.TabIndex = 5;
+            // 
+            // lblAddAndUpdateProductAddProductBack
+            // 
+            this.lblAddAndUpdateProductAddProductBack.AutoSize = true;
+            this.lblAddAndUpdateProductAddProductBack.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductAddProductBack.Location = new System.Drawing.Point(193, 191);
+            this.lblAddAndUpdateProductAddProductBack.Name = "lblAddAndUpdateProductAddProductBack";
+            this.lblAddAndUpdateProductAddProductBack.Size = new System.Drawing.Size(96, 13);
+            this.lblAddAndUpdateProductAddProductBack.TabIndex = 2;
+            this.lblAddAndUpdateProductAddProductBack.Text = "Ürün\'ün Arka Yüzü";
+            // 
+            // lblAddAndUpdateProductAddProductFront
+            // 
+            this.lblAddAndUpdateProductAddProductFront.AutoSize = true;
+            this.lblAddAndUpdateProductAddProductFront.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductAddProductFront.Location = new System.Drawing.Point(40, 191);
+            this.lblAddAndUpdateProductAddProductFront.Name = "lblAddAndUpdateProductAddProductFront";
+            this.lblAddAndUpdateProductAddProductFront.Size = new System.Drawing.Size(87, 13);
+            this.lblAddAndUpdateProductAddProductFront.TabIndex = 2;
+            this.lblAddAndUpdateProductAddProductFront.Text = "Ürün\'ün Ön Yüzü";
+            // 
+            // lblAddAndUpdateProductAddProductProductContext
+            // 
+            this.lblAddAndUpdateProductAddProductProductContext.AutoSize = true;
+            this.lblAddAndUpdateProductAddProductProductContext.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(22, 159);
+            this.lblAddAndUpdateProductAddProductProductContext.Name = "lblAddAndUpdateProductAddProductProductContext";
+            this.lblAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(61, 13);
+            this.lblAddAndUpdateProductAddProductProductContext.TabIndex = 2;
+            this.lblAddAndUpdateProductAddProductProductContext.Text = "Ürün İçerik";
+            // 
+            // txtAddAndUpdateProductAddProductProductName
+            // 
+            this.txtAddAndUpdateProductAddProductProductName.Location = new System.Drawing.Point(89, 94);
+            this.txtAddAndUpdateProductAddProductProductName.Multiline = true;
+            this.txtAddAndUpdateProductAddProductProductName.Name = "txtAddAndUpdateProductAddProductProductName";
+            this.txtAddAndUpdateProductAddProductProductName.Size = new System.Drawing.Size(210, 23);
+            this.txtAddAndUpdateProductAddProductProductName.TabIndex = 3;
+            // 
+            // txtAddAndUpdateProductAddProductBarcodeNo
+            // 
+            this.txtAddAndUpdateProductAddProductBarcodeNo.Location = new System.Drawing.Point(89, 34);
+            this.txtAddAndUpdateProductAddProductBarcodeNo.Multiline = true;
+            this.txtAddAndUpdateProductAddProductBarcodeNo.Name = "txtAddAndUpdateProductAddProductBarcodeNo";
+            this.txtAddAndUpdateProductAddProductBarcodeNo.Size = new System.Drawing.Size(210, 23);
+            this.txtAddAndUpdateProductAddProductBarcodeNo.TabIndex = 1;
+            // 
+            // lblAddAndUpdateProductAddProductCategory
+            // 
+            this.lblAddAndUpdateProductAddProductCategory.AutoSize = true;
+            this.lblAddAndUpdateProductAddProductCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductAddProductCategory.Location = new System.Drawing.Point(21, 128);
+            this.lblAddAndUpdateProductAddProductCategory.Name = "lblAddAndUpdateProductAddProductCategory";
+            this.lblAddAndUpdateProductAddProductCategory.Size = new System.Drawing.Size(51, 13);
+            this.lblAddAndUpdateProductAddProductCategory.TabIndex = 0;
+            this.lblAddAndUpdateProductAddProductCategory.Text = "Kategori";
+            // 
+            // lblAddAndUpdateProductAddProductProductName
+            // 
+            this.lblAddAndUpdateProductAddProductProductName.AutoSize = true;
+            this.lblAddAndUpdateProductAddProductProductName.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductAddProductProductName.Location = new System.Drawing.Point(21, 97);
+            this.lblAddAndUpdateProductAddProductProductName.Name = "lblAddAndUpdateProductAddProductProductName";
+            this.lblAddAndUpdateProductAddProductProductName.Size = new System.Drawing.Size(51, 13);
+            this.lblAddAndUpdateProductAddProductProductName.TabIndex = 0;
+            this.lblAddAndUpdateProductAddProductProductName.Text = "Ürün Adı";
+            // 
+            // lblAddAndUpdateProductAddProductSupplier
+            // 
+            this.lblAddAndUpdateProductAddProductSupplier.AutoSize = true;
+            this.lblAddAndUpdateProductAddProductSupplier.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductAddProductSupplier.Location = new System.Drawing.Point(21, 67);
+            this.lblAddAndUpdateProductAddProductSupplier.Name = "lblAddAndUpdateProductAddProductSupplier";
+            this.lblAddAndUpdateProductAddProductSupplier.Size = new System.Drawing.Size(40, 13);
+            this.lblAddAndUpdateProductAddProductSupplier.TabIndex = 0;
+            this.lblAddAndUpdateProductAddProductSupplier.Text = "Üretici";
+            // 
+            // lblAddAndUpdateProductAddProductBarcodeNo
+            // 
+            this.lblAddAndUpdateProductAddProductBarcodeNo.AutoSize = true;
+            this.lblAddAndUpdateProductAddProductBarcodeNo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductAddProductBarcodeNo.Location = new System.Drawing.Point(21, 41);
+            this.lblAddAndUpdateProductAddProductBarcodeNo.Name = "lblAddAndUpdateProductAddProductBarcodeNo";
+            this.lblAddAndUpdateProductAddProductBarcodeNo.Size = new System.Drawing.Size(62, 13);
+            this.lblAddAndUpdateProductAddProductBarcodeNo.TabIndex = 0;
+            this.lblAddAndUpdateProductAddProductBarcodeNo.Text = "Barkod No";
+            // 
+            // grpBoxAddAndUpdateProductUpdateProduct
+            // 
+            this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.cmbBoxAddAndUpdateProductUpdateProductCategory);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.cmbBoxAddAndUpdateProductUpdateProductSupplier);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.btnAddAndUpdateProductUpdateProductGetProductDetail);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.btnAddAndUpdateProductUpdateProductFront);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.btnAddAndUpdateProductUpdateProductBack);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.btnAddAndUpdateProductUpdateProductProductContext);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.txtAddAndUpdateProductUpdateProductProductContext);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.lblAddAndUpdateProductUpdateProductBack);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.lblAddAndUpdateProductUpdateProductFront);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.lblAddAndUpdateProductUpdateProductProductContext);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.txtAddAndUpdateProductUpdateProductProductName);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.txtAddAndUpdateProductUpdateProductBarcodeNo);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.lblAddAndUpdateProductUpdateProductCategory);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.lblAddAndUpdateProductUpdateProductProductName);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.lblAddAndUpdateProductUpdateProductSupplier);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.lblAddAndUpdateProductUpdateProductBarcodeNo);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Location = new System.Drawing.Point(26, 133);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Name = "grpBoxAddAndUpdateProductUpdateProduct";
+            this.grpBoxAddAndUpdateProductUpdateProduct.Size = new System.Drawing.Size(318, 277);
+            this.grpBoxAddAndUpdateProductUpdateProduct.TabIndex = 0;
+            this.grpBoxAddAndUpdateProductUpdateProduct.TabStop = false;
+            this.grpBoxAddAndUpdateProductUpdateProduct.Text = "Ürün Düzenle";
+            // 
+            // cmbBoxAddAndUpdateProductUpdateProductCategory
+            // 
+            this.cmbBoxAddAndUpdateProductUpdateProductCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.cmbBoxAddAndUpdateProductUpdateProductCategory.FormattingEnabled = true;
+            this.cmbBoxAddAndUpdateProductUpdateProductCategory.Location = new System.Drawing.Point(89, 93);
+            this.cmbBoxAddAndUpdateProductUpdateProductCategory.Name = "cmbBoxAddAndUpdateProductUpdateProductCategory";
+            this.cmbBoxAddAndUpdateProductUpdateProductCategory.Size = new System.Drawing.Size(210, 21);
+            this.cmbBoxAddAndUpdateProductUpdateProductCategory.TabIndex = 4;
+            // 
+            // cmbBoxAddAndUpdateProductUpdateProductSupplier
+            // 
+            this.cmbBoxAddAndUpdateProductUpdateProductSupplier.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.cmbBoxAddAndUpdateProductUpdateProductSupplier.FormattingEnabled = true;
+            this.cmbBoxAddAndUpdateProductUpdateProductSupplier.Location = new System.Drawing.Point(89, 64);
+            this.cmbBoxAddAndUpdateProductUpdateProductSupplier.Name = "cmbBoxAddAndUpdateProductUpdateProductSupplier";
+            this.cmbBoxAddAndUpdateProductUpdateProductSupplier.Size = new System.Drawing.Size(210, 21);
+            this.cmbBoxAddAndUpdateProductUpdateProductSupplier.TabIndex = 3;
+            // 
+            // btnAddAndUpdateProductUpdateProductGetProductDetail
+            // 
+            this.btnAddAndUpdateProductUpdateProductGetProductDetail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAndUpdateProductUpdateProductGetProductDetail.Location = new System.Drawing.Point(227, 33);
+            this.btnAddAndUpdateProductUpdateProductGetProductDetail.Name = "btnAddAndUpdateProductUpdateProductGetProductDetail";
+            this.btnAddAndUpdateProductUpdateProductGetProductDetail.Size = new System.Drawing.Size(72, 24);
+            this.btnAddAndUpdateProductUpdateProductGetProductDetail.TabIndex = 2;
+            this.btnAddAndUpdateProductUpdateProductGetProductDetail.Text = "Ürün\'ü Getir";
+            this.btnAddAndUpdateProductUpdateProductGetProductDetail.UseVisualStyleBackColor = true;
+            this.btnAddAndUpdateProductUpdateProductGetProductDetail.Click += new System.EventHandler(this.AddAndUpdateProductBtnGetProductDetail_Click);
+            // 
+            // btnAddAndUpdateProductUpdateProductFront
+            // 
+            this.btnAddAndUpdateProductUpdateProductFront.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAndUpdateProductUpdateProductFront.Location = new System.Drawing.Point(43, 202);
+            this.btnAddAndUpdateProductUpdateProductFront.Name = "btnAddAndUpdateProductUpdateProductFront";
+            this.btnAddAndUpdateProductUpdateProductFront.Size = new System.Drawing.Size(75, 45);
+            this.btnAddAndUpdateProductUpdateProductFront.TabIndex = 7;
+            this.btnAddAndUpdateProductUpdateProductFront.Text = "+";
+            this.btnAddAndUpdateProductUpdateProductFront.UseVisualStyleBackColor = true;
+            this.btnAddAndUpdateProductUpdateProductFront.Click += new System.EventHandler(this.UpdateProductFrontImageDialogShow);
+            // 
+            // btnAddAndUpdateProductUpdateProductBack
+            // 
+            this.btnAddAndUpdateProductUpdateProductBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAndUpdateProductUpdateProductBack.Location = new System.Drawing.Point(203, 202);
+            this.btnAddAndUpdateProductUpdateProductBack.Name = "btnAddAndUpdateProductUpdateProductBack";
+            this.btnAddAndUpdateProductUpdateProductBack.Size = new System.Drawing.Size(75, 45);
+            this.btnAddAndUpdateProductUpdateProductBack.TabIndex = 8;
+            this.btnAddAndUpdateProductUpdateProductBack.Text = "+";
+            this.btnAddAndUpdateProductUpdateProductBack.UseVisualStyleBackColor = true;
+            this.btnAddAndUpdateProductUpdateProductBack.Click += new System.EventHandler(this.UpdateProductBackImageDialogShow);
+            // 
+            // btnAddAndUpdateProductUpdateProductProductContext
+            // 
+            this.btnAddAndUpdateProductUpdateProductProductContext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddAndUpdateProductUpdateProductProductContext.Location = new System.Drawing.Point(266, 151);
+            this.btnAddAndUpdateProductUpdateProductProductContext.Name = "btnAddAndUpdateProductUpdateProductProductContext";
+            this.btnAddAndUpdateProductUpdateProductProductContext.Size = new System.Drawing.Size(33, 23);
+            this.btnAddAndUpdateProductUpdateProductProductContext.TabIndex = 4;
+            this.btnAddAndUpdateProductUpdateProductProductContext.Text = "+";
+            this.btnAddAndUpdateProductUpdateProductProductContext.UseVisualStyleBackColor = true;
+            // 
+            // txtAddAndUpdateProductUpdateProductProductContext
+            // 
+            this.txtAddAndUpdateProductUpdateProductProductContext.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAddAndUpdateProductUpdateProductProductContext.Location = new System.Drawing.Point(89, 151);
+            this.txtAddAndUpdateProductUpdateProductProductContext.Multiline = true;
+            this.txtAddAndUpdateProductUpdateProductProductContext.Name = "txtAddAndUpdateProductUpdateProductProductContext";
+            this.txtAddAndUpdateProductUpdateProductProductContext.Size = new System.Drawing.Size(171, 23);
+            this.txtAddAndUpdateProductUpdateProductProductContext.TabIndex = 6;
+            // 
+            // lblAddAndUpdateProductUpdateProductBack
+            // 
+            this.lblAddAndUpdateProductUpdateProductBack.AutoSize = true;
+            this.lblAddAndUpdateProductUpdateProductBack.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductUpdateProductBack.Location = new System.Drawing.Point(193, 186);
+            this.lblAddAndUpdateProductUpdateProductBack.Name = "lblAddAndUpdateProductUpdateProductBack";
+            this.lblAddAndUpdateProductUpdateProductBack.Size = new System.Drawing.Size(96, 13);
+            this.lblAddAndUpdateProductUpdateProductBack.TabIndex = 2;
+            this.lblAddAndUpdateProductUpdateProductBack.Text = "Ürün\'ün Arka Yüzü";
+            // 
+            // lblAddAndUpdateProductUpdateProductFront
+            // 
+            this.lblAddAndUpdateProductUpdateProductFront.AutoSize = true;
+            this.lblAddAndUpdateProductUpdateProductFront.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductUpdateProductFront.Location = new System.Drawing.Point(40, 186);
+            this.lblAddAndUpdateProductUpdateProductFront.Name = "lblAddAndUpdateProductUpdateProductFront";
+            this.lblAddAndUpdateProductUpdateProductFront.Size = new System.Drawing.Size(87, 13);
+            this.lblAddAndUpdateProductUpdateProductFront.TabIndex = 2;
+            this.lblAddAndUpdateProductUpdateProductFront.Text = "Ürün\'ün Ön Yüzü";
+            // 
+            // lblAddAndUpdateProductUpdateProductProductContext
+            // 
+            this.lblAddAndUpdateProductUpdateProductProductContext.AutoSize = true;
+            this.lblAddAndUpdateProductUpdateProductProductContext.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductUpdateProductProductContext.Location = new System.Drawing.Point(21, 156);
+            this.lblAddAndUpdateProductUpdateProductProductContext.Name = "lblAddAndUpdateProductUpdateProductProductContext";
+            this.lblAddAndUpdateProductUpdateProductProductContext.Size = new System.Drawing.Size(61, 13);
+            this.lblAddAndUpdateProductUpdateProductProductContext.TabIndex = 2;
+            this.lblAddAndUpdateProductUpdateProductProductContext.Text = "Ürün İçerik";
+            // 
+            // txtAddAndUpdateProductUpdateProductProductName
+            // 
+            this.txtAddAndUpdateProductUpdateProductProductName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAddAndUpdateProductUpdateProductProductName.Location = new System.Drawing.Point(89, 122);
+            this.txtAddAndUpdateProductUpdateProductProductName.Multiline = true;
+            this.txtAddAndUpdateProductUpdateProductProductName.Name = "txtAddAndUpdateProductUpdateProductProductName";
+            this.txtAddAndUpdateProductUpdateProductProductName.Size = new System.Drawing.Size(210, 23);
+            this.txtAddAndUpdateProductUpdateProductProductName.TabIndex = 5;
+            // 
+            // txtAddAndUpdateProductUpdateProductBarcodeNo
+            // 
+            this.txtAddAndUpdateProductUpdateProductBarcodeNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAddAndUpdateProductUpdateProductBarcodeNo.Location = new System.Drawing.Point(89, 34);
+            this.txtAddAndUpdateProductUpdateProductBarcodeNo.Multiline = true;
+            this.txtAddAndUpdateProductUpdateProductBarcodeNo.Name = "txtAddAndUpdateProductUpdateProductBarcodeNo";
+            this.txtAddAndUpdateProductUpdateProductBarcodeNo.Size = new System.Drawing.Size(132, 23);
+            this.txtAddAndUpdateProductUpdateProductBarcodeNo.TabIndex = 1;
+            // 
+            // lblAddAndUpdateProductUpdateProductCategory
+            // 
+            this.lblAddAndUpdateProductUpdateProductCategory.AutoSize = true;
+            this.lblAddAndUpdateProductUpdateProductCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductUpdateProductCategory.Location = new System.Drawing.Point(21, 96);
+            this.lblAddAndUpdateProductUpdateProductCategory.Name = "lblAddAndUpdateProductUpdateProductCategory";
+            this.lblAddAndUpdateProductUpdateProductCategory.Size = new System.Drawing.Size(51, 13);
+            this.lblAddAndUpdateProductUpdateProductCategory.TabIndex = 0;
+            this.lblAddAndUpdateProductUpdateProductCategory.Text = "Kategori";
+            // 
+            // lblAddAndUpdateProductUpdateProductProductName
+            // 
+            this.lblAddAndUpdateProductUpdateProductProductName.AutoSize = true;
+            this.lblAddAndUpdateProductUpdateProductProductName.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductUpdateProductProductName.Location = new System.Drawing.Point(21, 125);
+            this.lblAddAndUpdateProductUpdateProductProductName.Name = "lblAddAndUpdateProductUpdateProductProductName";
+            this.lblAddAndUpdateProductUpdateProductProductName.Size = new System.Drawing.Size(51, 13);
+            this.lblAddAndUpdateProductUpdateProductProductName.TabIndex = 0;
+            this.lblAddAndUpdateProductUpdateProductProductName.Text = "Ürün Adı";
+            // 
+            // lblAddAndUpdateProductUpdateProductSupplier
+            // 
+            this.lblAddAndUpdateProductUpdateProductSupplier.AutoSize = true;
+            this.lblAddAndUpdateProductUpdateProductSupplier.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductUpdateProductSupplier.Location = new System.Drawing.Point(21, 67);
+            this.lblAddAndUpdateProductUpdateProductSupplier.Name = "lblAddAndUpdateProductUpdateProductSupplier";
+            this.lblAddAndUpdateProductUpdateProductSupplier.Size = new System.Drawing.Size(40, 13);
+            this.lblAddAndUpdateProductUpdateProductSupplier.TabIndex = 0;
+            this.lblAddAndUpdateProductUpdateProductSupplier.Text = "Üretici";
+            // 
+            // lblAddAndUpdateProductUpdateProductBarcodeNo
+            // 
+            this.lblAddAndUpdateProductUpdateProductBarcodeNo.AutoSize = true;
+            this.lblAddAndUpdateProductUpdateProductBarcodeNo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductUpdateProductBarcodeNo.Location = new System.Drawing.Point(21, 41);
+            this.lblAddAndUpdateProductUpdateProductBarcodeNo.Name = "lblAddAndUpdateProductUpdateProductBarcodeNo";
+            this.lblAddAndUpdateProductUpdateProductBarcodeNo.Size = new System.Drawing.Size(62, 13);
+            this.lblAddAndUpdateProductUpdateProductBarcodeNo.TabIndex = 0;
+            this.lblAddAndUpdateProductUpdateProductBarcodeNo.Text = "Barkod No";
+            // 
+            // ProductDetails
+            // 
+            this.ProductDetails.BackColor = System.Drawing.Color.White;
+            this.ProductDetails.Controls.Add(this.pictureProductDetailsProductImage);
+            this.ProductDetails.Controls.Add(this.btnProductDetailChangePicture);
+            this.ProductDetails.Controls.Add(this.btnProductDetailUser);
+            this.ProductDetails.Controls.Add(this.pnlProductDetailsShowProducts);
+            this.ProductDetails.Controls.Add(this.btnProductDetailsShowList);
+            this.ProductDetails.Controls.Add(this.lblProductDetailsProductContext);
+            this.ProductDetails.Controls.Add(this.lblProductDetailsMessage);
+            this.ProductDetails.Controls.Add(this.lblProductDetailsCleanCount);
+            this.ProductDetails.Controls.Add(this.lblProductDetailsLowerRiskCount);
+            this.ProductDetails.Controls.Add(this.lblProductDetailsMidRiskCount);
+            this.ProductDetails.Controls.Add(this.lblProductDetailsHighRiskCount);
+            this.ProductDetails.Controls.Add(this.lblProductDetailsClean);
+            this.ProductDetails.Controls.Add(this.lblProductDetailsLowerRisk);
+            this.ProductDetails.Controls.Add(this.lblProductDetailsMidRisk);
+            this.ProductDetails.Controls.Add(this.lblProductDetailsHighRisk);
+            this.ProductDetails.Controls.Add(this.pictureProductDetailsCleanContext);
+            this.ProductDetails.Controls.Add(this.pictureProductDetailsLowerRiskContext);
+            this.ProductDetails.Controls.Add(this.pictureProductDetailsMidRiskContext);
+            this.ProductDetails.Controls.Add(this.pictureProductDetailsHighRiskContext);
+            this.ProductDetails.Controls.Add(this.lblProductDetailsBlackListSupplementCount);
+            this.ProductDetails.Controls.Add(this.lblProductDetailsBlackListSupplement);
+            this.ProductDetails.Controls.Add(this.pictureProductDetailsBlacklistContext);
+            this.ProductDetails.Controls.Add(this.lblProductDetailsProductName);
+            this.ProductDetails.Controls.Add(this.lblProductDetailsSupplier);
+            this.ProductDetails.Controls.Add(this.lblProductDetailsLowerCategory);
+            this.ProductDetails.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ProductDetails.Location = new System.Drawing.Point(0, 0);
+            this.ProductDetails.MaximumSize = new System.Drawing.Size(360, 510);
+            this.ProductDetails.MinimumSize = new System.Drawing.Size(360, 510);
+            this.ProductDetails.Name = "ProductDetails";
+            this.ProductDetails.Size = new System.Drawing.Size(360, 510);
+            this.ProductDetails.TabIndex = 8;
+            // 
+            // pictureProductDetailsProductImage
+            // 
+            this.pictureProductDetailsProductImage.Image = ((System.Drawing.Image)(resources.GetObject("pictureProductDetailsProductImage.Image")));
+            this.pictureProductDetailsProductImage.Location = new System.Drawing.Point(259, 118);
+            this.pictureProductDetailsProductImage.Name = "pictureProductDetailsProductImage";
+            this.pictureProductDetailsProductImage.Size = new System.Drawing.Size(90, 115);
+            this.pictureProductDetailsProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureProductDetailsProductImage.TabIndex = 9;
+            this.pictureProductDetailsProductImage.TabStop = false;
+            // 
+            // btnProductDetailChangePicture
+            // 
+            this.btnProductDetailChangePicture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProductDetailChangePicture.FlatAppearance.BorderSize = 0;
+            this.btnProductDetailChangePicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductDetailChangePicture.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnProductDetailChangePicture.Location = new System.Drawing.Point(259, 238);
+            this.btnProductDetailChangePicture.Name = "btnProductDetailChangePicture";
+            this.btnProductDetailChangePicture.Size = new System.Drawing.Size(90, 36);
+            this.btnProductDetailChangePicture.TabIndex = 32;
+            this.btnProductDetailChangePicture.Text = " ← →";
+            this.btnProductDetailChangePicture.UseVisualStyleBackColor = true;
+            this.btnProductDetailChangePicture.Click += new System.EventHandler(this.ProductDetailsChangeProductImage);
+            // 
+            // btnProductDetailUser
+            // 
+            this.btnProductDetailUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProductDetailUser.BackgroundImage")));
+            this.btnProductDetailUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnProductDetailUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProductDetailUser.FlatAppearance.BorderSize = 0;
+            this.btnProductDetailUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductDetailUser.Location = new System.Drawing.Point(285, 15);
+            this.btnProductDetailUser.Name = "btnProductDetailUser";
+            this.btnProductDetailUser.Size = new System.Drawing.Size(60, 40);
+            this.btnProductDetailUser.TabIndex = 8;
+            this.btnProductDetailUser.UseVisualStyleBackColor = true;
+            this.btnProductDetailUser.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // pnlProductDetailsShowProducts
+            // 
+            this.pnlProductDetailsShowProducts.AutoScroll = true;
+            this.pnlProductDetailsShowProducts.Location = new System.Drawing.Point(10, 380);
+            this.pnlProductDetailsShowProducts.Name = "pnlProductDetailsShowProducts";
+            this.pnlProductDetailsShowProducts.Size = new System.Drawing.Size(340, 120);
+            this.pnlProductDetailsShowProducts.TabIndex = 31;
+            this.pnlProductDetailsShowProducts.Visible = false;
+            // 
+            // btnProductDetailsShowList
+            // 
+            this.btnProductDetailsShowList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProductDetailsShowList.BackgroundImage")));
+            this.btnProductDetailsShowList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProductDetailsShowList.FlatAppearance.BorderSize = 0;
+            this.btnProductDetailsShowList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductDetailsShowList.Location = new System.Drawing.Point(303, 342);
+            this.btnProductDetailsShowList.Name = "btnProductDetailsShowList";
+            this.btnProductDetailsShowList.Size = new System.Drawing.Size(30, 30);
+            this.btnProductDetailsShowList.TabIndex = 30;
+            this.btnProductDetailsShowList.UseVisualStyleBackColor = true;
+            this.btnProductDetailsShowList.Click += new System.EventHandler(this.btnShowList_Click);
+            // 
+            // lblProductDetailsProductContext
+            // 
+            this.lblProductDetailsProductContext.AutoSize = true;
+            this.lblProductDetailsProductContext.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblProductDetailsProductContext.ForeColor = System.Drawing.Color.Black;
+            this.lblProductDetailsProductContext.Location = new System.Drawing.Point(13, 346);
+            this.lblProductDetailsProductContext.Name = "lblProductDetailsProductContext";
+            this.lblProductDetailsProductContext.Size = new System.Drawing.Size(91, 17);
+            this.lblProductDetailsProductContext.TabIndex = 29;
+            this.lblProductDetailsProductContext.Text = "Ürün Bileşemi";
+            // 
+            // lblProductDetailsMessage
+            // 
+            this.lblProductDetailsMessage.AutoSize = true;
+            this.lblProductDetailsMessage.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblProductDetailsMessage.ForeColor = System.Drawing.Color.Green;
+            this.lblProductDetailsMessage.Location = new System.Drawing.Point(29, 315);
+            this.lblProductDetailsMessage.Name = "lblProductDetailsMessage";
+            this.lblProductDetailsMessage.Size = new System.Drawing.Size(265, 17);
+            this.lblProductDetailsMessage.TabIndex = 28;
+            this.lblProductDetailsMessage.Text = "User isimli üye tarafından oluşturulmuştur.";
+            // 
+            // lblProductDetailsCleanCount
+            // 
+            this.lblProductDetailsCleanCount.AutoSize = true;
+            this.lblProductDetailsCleanCount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblProductDetailsCleanCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblProductDetailsCleanCount.Location = new System.Drawing.Point(219, 268);
+            this.lblProductDetailsCleanCount.Name = "lblProductDetailsCleanCount";
+            this.lblProductDetailsCleanCount.Size = new System.Drawing.Size(13, 17);
+            this.lblProductDetailsCleanCount.TabIndex = 27;
+            this.lblProductDetailsCleanCount.Text = "1";
+            // 
+            // lblProductDetailsLowerRiskCount
+            // 
+            this.lblProductDetailsLowerRiskCount.AutoSize = true;
+            this.lblProductDetailsLowerRiskCount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblProductDetailsLowerRiskCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            this.lblProductDetailsLowerRiskCount.Location = new System.Drawing.Point(219, 228);
+            this.lblProductDetailsLowerRiskCount.Name = "lblProductDetailsLowerRiskCount";
+            this.lblProductDetailsLowerRiskCount.Size = new System.Drawing.Size(15, 17);
+            this.lblProductDetailsLowerRiskCount.TabIndex = 26;
+            this.lblProductDetailsLowerRiskCount.Text = "3";
+            // 
+            // lblProductDetailsMidRiskCount
+            // 
+            this.lblProductDetailsMidRiskCount.AutoSize = true;
+            this.lblProductDetailsMidRiskCount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblProductDetailsMidRiskCount.ForeColor = System.Drawing.Color.Orange;
+            this.lblProductDetailsMidRiskCount.Location = new System.Drawing.Point(219, 188);
+            this.lblProductDetailsMidRiskCount.Name = "lblProductDetailsMidRiskCount";
+            this.lblProductDetailsMidRiskCount.Size = new System.Drawing.Size(15, 17);
+            this.lblProductDetailsMidRiskCount.TabIndex = 25;
+            this.lblProductDetailsMidRiskCount.Text = "2";
+            // 
+            // lblProductDetailsHighRiskCount
+            // 
+            this.lblProductDetailsHighRiskCount.AutoSize = true;
+            this.lblProductDetailsHighRiskCount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblProductDetailsHighRiskCount.ForeColor = System.Drawing.Color.Red;
+            this.lblProductDetailsHighRiskCount.Location = new System.Drawing.Point(219, 148);
+            this.lblProductDetailsHighRiskCount.Name = "lblProductDetailsHighRiskCount";
+            this.lblProductDetailsHighRiskCount.Size = new System.Drawing.Size(13, 17);
+            this.lblProductDetailsHighRiskCount.TabIndex = 24;
+            this.lblProductDetailsHighRiskCount.Text = "1";
+            // 
+            // lblProductDetailsClean
+            // 
+            this.lblProductDetailsClean.AutoSize = true;
+            this.lblProductDetailsClean.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblProductDetailsClean.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblProductDetailsClean.Location = new System.Drawing.Point(67, 268);
+            this.lblProductDetailsClean.Name = "lblProductDetailsClean";
+            this.lblProductDetailsClean.Size = new System.Drawing.Size(92, 17);
+            this.lblProductDetailsClean.TabIndex = 23;
+            this.lblProductDetailsClean.Text = "Temiz içerikler";
+            // 
+            // lblProductDetailsLowerRisk
+            // 
+            this.lblProductDetailsLowerRisk.AutoSize = true;
+            this.lblProductDetailsLowerRisk.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblProductDetailsLowerRisk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            this.lblProductDetailsLowerRisk.Location = new System.Drawing.Point(67, 228);
+            this.lblProductDetailsLowerRisk.Name = "lblProductDetailsLowerRisk";
+            this.lblProductDetailsLowerRisk.Size = new System.Drawing.Size(104, 17);
+            this.lblProductDetailsLowerRisk.TabIndex = 22;
+            this.lblProductDetailsLowerRisk.Text = "Az riskli içerikler";
+            // 
+            // lblProductDetailsMidRisk
+            // 
+            this.lblProductDetailsMidRisk.AutoSize = true;
+            this.lblProductDetailsMidRisk.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblProductDetailsMidRisk.ForeColor = System.Drawing.Color.Orange;
+            this.lblProductDetailsMidRisk.Location = new System.Drawing.Point(67, 188);
+            this.lblProductDetailsMidRisk.Name = "lblProductDetailsMidRisk";
+            this.lblProductDetailsMidRisk.Size = new System.Drawing.Size(116, 17);
+            this.lblProductDetailsMidRisk.TabIndex = 21;
+            this.lblProductDetailsMidRisk.Text = "Orta riskli içerikler";
+            // 
+            // lblProductDetailsHighRisk
+            // 
+            this.lblProductDetailsHighRisk.AutoSize = true;
+            this.lblProductDetailsHighRisk.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblProductDetailsHighRisk.ForeColor = System.Drawing.Color.Red;
+            this.lblProductDetailsHighRisk.Location = new System.Drawing.Point(67, 148);
+            this.lblProductDetailsHighRisk.Name = "lblProductDetailsHighRisk";
+            this.lblProductDetailsHighRisk.Size = new System.Drawing.Size(88, 17);
+            this.lblProductDetailsHighRisk.TabIndex = 20;
+            this.lblProductDetailsHighRisk.Text = "Riskli içerikler";
+            // 
+            // pictureProductDetailsCleanContext
+            // 
+            this.pictureProductDetailsCleanContext.Image = ((System.Drawing.Image)(resources.GetObject("pictureProductDetailsCleanContext.Image")));
+            this.pictureProductDetailsCleanContext.Location = new System.Drawing.Point(32, 263);
+            this.pictureProductDetailsCleanContext.Name = "pictureProductDetailsCleanContext";
+            this.pictureProductDetailsCleanContext.Size = new System.Drawing.Size(30, 30);
+            this.pictureProductDetailsCleanContext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureProductDetailsCleanContext.TabIndex = 19;
+            this.pictureProductDetailsCleanContext.TabStop = false;
+            // 
+            // pictureProductDetailsLowerRiskContext
+            // 
+            this.pictureProductDetailsLowerRiskContext.Image = ((System.Drawing.Image)(resources.GetObject("pictureProductDetailsLowerRiskContext.Image")));
+            this.pictureProductDetailsLowerRiskContext.Location = new System.Drawing.Point(32, 223);
+            this.pictureProductDetailsLowerRiskContext.Name = "pictureProductDetailsLowerRiskContext";
+            this.pictureProductDetailsLowerRiskContext.Size = new System.Drawing.Size(30, 30);
+            this.pictureProductDetailsLowerRiskContext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureProductDetailsLowerRiskContext.TabIndex = 18;
+            this.pictureProductDetailsLowerRiskContext.TabStop = false;
+            // 
+            // pictureProductDetailsMidRiskContext
+            // 
+            this.pictureProductDetailsMidRiskContext.Image = ((System.Drawing.Image)(resources.GetObject("pictureProductDetailsMidRiskContext.Image")));
+            this.pictureProductDetailsMidRiskContext.Location = new System.Drawing.Point(32, 183);
+            this.pictureProductDetailsMidRiskContext.Name = "pictureProductDetailsMidRiskContext";
+            this.pictureProductDetailsMidRiskContext.Size = new System.Drawing.Size(30, 30);
+            this.pictureProductDetailsMidRiskContext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureProductDetailsMidRiskContext.TabIndex = 17;
+            this.pictureProductDetailsMidRiskContext.TabStop = false;
+            // 
+            // pictureProductDetailsHighRiskContext
+            // 
+            this.pictureProductDetailsHighRiskContext.Image = ((System.Drawing.Image)(resources.GetObject("pictureProductDetailsHighRiskContext.Image")));
+            this.pictureProductDetailsHighRiskContext.Location = new System.Drawing.Point(32, 143);
+            this.pictureProductDetailsHighRiskContext.Name = "pictureProductDetailsHighRiskContext";
+            this.pictureProductDetailsHighRiskContext.Size = new System.Drawing.Size(30, 30);
+            this.pictureProductDetailsHighRiskContext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureProductDetailsHighRiskContext.TabIndex = 16;
+            this.pictureProductDetailsHighRiskContext.TabStop = false;
+            // 
+            // lblProductDetailsBlackListSupplementCount
+            // 
+            this.lblProductDetailsBlackListSupplementCount.AutoSize = true;
+            this.lblProductDetailsBlackListSupplementCount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblProductDetailsBlackListSupplementCount.ForeColor = System.Drawing.Color.Black;
+            this.lblProductDetailsBlackListSupplementCount.Location = new System.Drawing.Point(219, 108);
+            this.lblProductDetailsBlackListSupplementCount.Name = "lblProductDetailsBlackListSupplementCount";
+            this.lblProductDetailsBlackListSupplementCount.Size = new System.Drawing.Size(13, 17);
+            this.lblProductDetailsBlackListSupplementCount.TabIndex = 15;
+            this.lblProductDetailsBlackListSupplementCount.Text = "1";
+            // 
+            // lblProductDetailsBlackListSupplement
+            // 
+            this.lblProductDetailsBlackListSupplement.AutoSize = true;
+            this.lblProductDetailsBlackListSupplement.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblProductDetailsBlackListSupplement.ForeColor = System.Drawing.Color.Black;
+            this.lblProductDetailsBlackListSupplement.Location = new System.Drawing.Point(67, 108);
+            this.lblProductDetailsBlackListSupplement.Name = "lblProductDetailsBlackListSupplement";
+            this.lblProductDetailsBlackListSupplement.Size = new System.Drawing.Size(138, 17);
+            this.lblProductDetailsBlackListSupplement.TabIndex = 14;
+            this.lblProductDetailsBlackListSupplement.Text = "Kara listedeki içerikler";
+            // 
+            // pictureProductDetailsBlacklistContext
+            // 
+            this.pictureProductDetailsBlacklistContext.Image = ((System.Drawing.Image)(resources.GetObject("pictureProductDetailsBlacklistContext.Image")));
+            this.pictureProductDetailsBlacklistContext.Location = new System.Drawing.Point(32, 103);
+            this.pictureProductDetailsBlacklistContext.Name = "pictureProductDetailsBlacklistContext";
+            this.pictureProductDetailsBlacklistContext.Size = new System.Drawing.Size(30, 30);
+            this.pictureProductDetailsBlacklistContext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureProductDetailsBlacklistContext.TabIndex = 13;
+            this.pictureProductDetailsBlacklistContext.TabStop = false;
+            // 
+            // lblProductDetailsProductName
+            // 
+            this.lblProductDetailsProductName.AutoSize = true;
+            this.lblProductDetailsProductName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblProductDetailsProductName.ForeColor = System.Drawing.Color.Green;
+            this.lblProductDetailsProductName.Location = new System.Drawing.Point(77, 18);
+            this.lblProductDetailsProductName.Name = "lblProductDetailsProductName";
+            this.lblProductDetailsProductName.Size = new System.Drawing.Size(188, 20);
+            this.lblProductDetailsProductName.TabIndex = 12;
+            this.lblProductDetailsProductName.Text = "Bebek Şampuanı - 500 ml";
+            // 
+            // lblProductDetailsSupplier
+            // 
+            this.lblProductDetailsSupplier.AutoSize = true;
+            this.lblProductDetailsSupplier.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblProductDetailsSupplier.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lblProductDetailsSupplier.Location = new System.Drawing.Point(84, 41);
+            this.lblProductDetailsSupplier.Name = "lblProductDetailsSupplier";
+            this.lblProductDetailsSupplier.Size = new System.Drawing.Size(66, 17);
+            this.lblProductDetailsSupplier.TabIndex = 11;
+            this.lblProductDetailsSupplier.Text = "Johnson\'s";
+            // 
+            // lblProductDetailsLowerCategory
+            // 
+            this.lblProductDetailsLowerCategory.AutoSize = true;
+            this.lblProductDetailsLowerCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblProductDetailsLowerCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblProductDetailsLowerCategory.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lblProductDetailsLowerCategory.Location = new System.Drawing.Point(84, 64);
+            this.lblProductDetailsLowerCategory.Name = "lblProductDetailsLowerCategory";
+            this.lblProductDetailsLowerCategory.Size = new System.Drawing.Size(124, 17);
+            this.lblProductDetailsLowerCategory.TabIndex = 10;
+            this.lblProductDetailsLowerCategory.Text = "Bebek Şampuanları";
+            // 
+            // SearchHistory
+            // 
+            this.SearchHistory.Controls.Add(this.lblSearchHistoryFavlists);
+            this.SearchHistory.Controls.Add(this.btnSearchHistoryGoFavLists);
+            this.SearchHistory.Controls.Add(this.btnSearchHistoryClearHistory);
+            this.SearchHistory.Controls.Add(this.btnSearchHistoryUser);
+            this.SearchHistory.Controls.Add(this.dgvSearchHistory);
+            this.SearchHistory.Location = new System.Drawing.Point(0, 0);
+            this.SearchHistory.MaximumSize = new System.Drawing.Size(360, 510);
+            this.SearchHistory.MinimumSize = new System.Drawing.Size(360, 510);
+            this.SearchHistory.Name = "SearchHistory";
+            this.SearchHistory.Size = new System.Drawing.Size(360, 510);
+            this.SearchHistory.TabIndex = 7;
+            // 
+            // lblSearchHistoryFavlists
+            // 
+            this.lblSearchHistoryFavlists.AutoSize = true;
+            this.lblSearchHistoryFavlists.Location = new System.Drawing.Point(156, 83);
+            this.lblSearchHistoryFavlists.Name = "lblSearchHistoryFavlists";
+            this.lblSearchHistoryFavlists.Size = new System.Drawing.Size(47, 13);
+            this.lblSearchHistoryFavlists.TabIndex = 18;
+            this.lblSearchHistoryFavlists.Text = "Favoriler";
+            // 
+            // btnSearchHistoryGoFavLists
+            // 
+            this.btnSearchHistoryGoFavLists.BackgroundImage = global::YesilEvCodeFirst.UIWinForm.Properties.Resources.kalp2;
+            this.btnSearchHistoryGoFavLists.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearchHistoryGoFavLists.FlatAppearance.BorderSize = 0;
+            this.btnSearchHistoryGoFavLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchHistoryGoFavLists.Location = new System.Drawing.Point(146, 11);
+            this.btnSearchHistoryGoFavLists.Name = "btnSearchHistoryGoFavLists";
+            this.btnSearchHistoryGoFavLists.Size = new System.Drawing.Size(65, 65);
+            this.btnSearchHistoryGoFavLists.TabIndex = 17;
+            this.btnSearchHistoryGoFavLists.UseVisualStyleBackColor = true;
+            this.btnSearchHistoryGoFavLists.Click += new System.EventHandler(this.GoFavoriListPage);
+            // 
+            // btnSearchHistoryClearHistory
+            // 
+            this.btnSearchHistoryClearHistory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchHistoryClearHistory.Location = new System.Drawing.Point(258, 75);
+            this.btnSearchHistoryClearHistory.Name = "btnSearchHistoryClearHistory";
+            this.btnSearchHistoryClearHistory.Size = new System.Drawing.Size(91, 26);
+            this.btnSearchHistoryClearHistory.TabIndex = 8;
+            this.btnSearchHistoryClearHistory.Text = "Geçmişi Temizle";
+            this.btnSearchHistoryClearHistory.UseVisualStyleBackColor = true;
+            this.btnSearchHistoryClearHistory.Click += new System.EventHandler(this.ClearHistory);
+            // 
+            // btnSearchHistoryUser
+            // 
+            this.btnSearchHistoryUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearchHistoryUser.BackgroundImage")));
+            this.btnSearchHistoryUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearchHistoryUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchHistoryUser.FlatAppearance.BorderSize = 0;
+            this.btnSearchHistoryUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchHistoryUser.Location = new System.Drawing.Point(285, 15);
+            this.btnSearchHistoryUser.Name = "btnSearchHistoryUser";
+            this.btnSearchHistoryUser.Size = new System.Drawing.Size(60, 40);
+            this.btnSearchHistoryUser.TabIndex = 7;
+            this.btnSearchHistoryUser.UseVisualStyleBackColor = true;
+            this.btnSearchHistoryUser.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // dgvSearchHistory
+            // 
+            this.dgvSearchHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSearchHistory.Location = new System.Drawing.Point(11, 107);
+            this.dgvSearchHistory.Name = "dgvSearchHistory";
+            this.dgvSearchHistory.RowHeadersWidth = 51;
+            this.dgvSearchHistory.Size = new System.Drawing.Size(338, 373);
+            this.dgvSearchHistory.TabIndex = 0;
+            // 
+            // FileDialogUpdateProductFront
+            // 
+            this.FileDialogUpdateProductFront.FileName = "FileDialogOnYuz";
+            this.FileDialogUpdateProductFront.Filter = "JPG Files (*.jpg)| *.jpg | PNG Files (*.png) | *.png";
+            this.FileDialogUpdateProductFront.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
+            this.FileDialogUpdateProductFront.RestoreDirectory = true;
+            this.FileDialogUpdateProductFront.Title = "Browse Text Files";
+            this.FileDialogUpdateProductFront.FileOk += new System.ComponentModel.CancelEventHandler(this.UpdateProductFrontImageName);
+            // 
+            // FileDialogUpdateProductBack
+            // 
+            this.FileDialogUpdateProductBack.FileName = "FileDialogArkaYuz";
+            this.FileDialogUpdateProductBack.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
+            this.FileDialogUpdateProductBack.RestoreDirectory = true;
+            this.FileDialogUpdateProductBack.Title = "Browse Text Files";
+            this.FileDialogUpdateProductBack.FileOk += new System.ComponentModel.CancelEventHandler(this.UpdateProductBackImageName);
+            // 
+            // FileDialogAddProductFront
+            // 
+            this.FileDialogAddProductFront.FileName = "FileDialogUrunEkleOnYuz";
+            this.FileDialogAddProductFront.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
+            this.FileDialogAddProductFront.RestoreDirectory = true;
+            this.FileDialogAddProductFront.Title = "Browse Text Files";
+            this.FileDialogAddProductFront.FileOk += new System.ComponentModel.CancelEventHandler(this.AddProductFrontImageName);
+            // 
+            // FileDialogAddProductBack
+            // 
+            this.FileDialogAddProductBack.FileName = "FileDialogUrunEkleArkaYuz";
+            this.FileDialogAddProductBack.InitialDirectory = "C:\\Users\\Mert\\OneDrive\\Resimler\\";
+            this.FileDialogAddProductBack.RestoreDirectory = true;
+            this.FileDialogAddProductBack.Title = "Browse Text Files";
+            this.FileDialogAddProductBack.FileOk += new System.ComponentModel.CancelEventHandler(this.addProductBackImageName);
+            // 
+            // SearchProduct
+            // 
+            this.SearchProduct.Controls.Add(this.btnSearchProductClearDGV);
+            this.SearchProduct.Controls.Add(this.dgvSearchProductProducts);
+            this.SearchProduct.Controls.Add(this.btnSearchProductSearchSearchBar);
+            this.SearchProduct.Controls.Add(this.lblSearchProductSearchSearchBar);
+            this.SearchProduct.Controls.Add(this.txtSearchProductSearchSearchbar);
+            this.SearchProduct.Controls.Add(this.btnSearchProductUser);
+            this.SearchProduct.Controls.Add(this.menuStrip1);
+            this.SearchProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchProduct.Location = new System.Drawing.Point(0, 0);
+            this.SearchProduct.MaximumSize = new System.Drawing.Size(360, 510);
+            this.SearchProduct.MinimumSize = new System.Drawing.Size(360, 510);
+            this.SearchProduct.Name = "SearchProduct";
+            this.SearchProduct.Size = new System.Drawing.Size(360, 510);
+            this.SearchProduct.TabIndex = 7;
+            // 
+            // btnSearchProductClearDGV
+            // 
+            this.btnSearchProductClearDGV.Location = new System.Drawing.Point(282, 128);
+            this.btnSearchProductClearDGV.Name = "btnSearchProductClearDGV";
+            this.btnSearchProductClearDGV.Size = new System.Drawing.Size(54, 22);
+            this.btnSearchProductClearDGV.TabIndex = 13;
+            this.btnSearchProductClearDGV.Text = "Temizle";
+            this.btnSearchProductClearDGV.UseVisualStyleBackColor = true;
+            this.btnSearchProductClearDGV.Click += new System.EventHandler(this.btnClearDGV_Click);
+            // 
+            // dgvSearchProductProducts
+            // 
+            this.dgvSearchProductProducts.AllowUserToAddRows = false;
+            this.dgvSearchProductProducts.AllowUserToDeleteRows = false;
+            this.dgvSearchProductProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSearchProductProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSearchProductProducts.Location = new System.Drawing.Point(10, 155);
+            this.dgvSearchProductProducts.Name = "dgvSearchProductProducts";
+            this.dgvSearchProductProducts.ReadOnly = true;
+            this.dgvSearchProductProducts.RowHeadersWidth = 51;
+            this.dgvSearchProductProducts.Size = new System.Drawing.Size(340, 340);
+            this.dgvSearchProductProducts.TabIndex = 12;
+            this.dgvSearchProductProducts.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewProducts_CellMouseDoubleClick);
+            this.dgvSearchProductProducts.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvProducts_MouseClick);
+            // 
+            // btnSearchProductSearchSearchBar
+            // 
+            this.btnSearchProductSearchSearchBar.Location = new System.Drawing.Point(282, 99);
+            this.btnSearchProductSearchSearchBar.Name = "btnSearchProductSearchSearchBar";
+            this.btnSearchProductSearchSearchBar.Size = new System.Drawing.Size(54, 23);
+            this.btnSearchProductSearchSearchBar.TabIndex = 11;
+            this.btnSearchProductSearchSearchBar.Text = "Ara";
+            this.btnSearchProductSearchSearchBar.UseVisualStyleBackColor = true;
+            this.btnSearchProductSearchSearchBar.Click += new System.EventHandler(this.btnSearchSearchbar_Click);
+            // 
+            // lblSearchProductSearchSearchBar
+            // 
+            this.lblSearchProductSearchSearchBar.AutoSize = true;
+            this.lblSearchProductSearchSearchBar.Location = new System.Drawing.Point(16, 104);
+            this.lblSearchProductSearchSearchBar.Name = "lblSearchProductSearchSearchBar";
+            this.lblSearchProductSearchSearchBar.Size = new System.Drawing.Size(64, 13);
+            this.lblSearchProductSearchSearchBar.TabIndex = 9;
+            this.lblSearchProductSearchSearchBar.Text = "Ürün Giriniz:";
+            // 
+            // txtSearchProductSearchSearchbar
+            // 
+            this.txtSearchProductSearchSearchbar.Location = new System.Drawing.Point(86, 99);
+            this.txtSearchProductSearchSearchbar.Name = "txtSearchProductSearchSearchbar";
+            this.txtSearchProductSearchSearchbar.Size = new System.Drawing.Size(186, 20);
+            this.txtSearchProductSearchSearchbar.TabIndex = 8;
+            // 
+            // btnSearchProductUser
+            // 
+            this.btnSearchProductUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearchProductUser.BackgroundImage")));
+            this.btnSearchProductUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearchProductUser.FlatAppearance.BorderSize = 0;
+            this.btnSearchProductUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchProductUser.Location = new System.Drawing.Point(285, 15);
+            this.btnSearchProductUser.Name = "btnSearchProductUser";
+            this.btnSearchProductUser.Size = new System.Drawing.Size(60, 40);
+            this.btnSearchProductUser.TabIndex = 7;
+            this.btnSearchProductUser.UseVisualStyleBackColor = true;
+            this.btnSearchProductUser.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(360, 24);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // Favlists
+            // 
+            this.Favlists.Controls.Add(this.lblFavoriListsAddFavori);
+            this.Favlists.Controls.Add(this.btnFavoriListsAddFavori);
+            this.Favlists.Controls.Add(this.btnFavoriListsUser);
+            this.Favlists.Controls.Add(this.dgvFavoriListFavProducts);
+            this.Favlists.Controls.Add(this.lblFavoriListSelectFavoriLists);
+            this.Favlists.Controls.Add(this.cmbBoxFavoriListFavoriLists);
+            this.Favlists.Location = new System.Drawing.Point(0, 0);
+            this.Favlists.MaximumSize = new System.Drawing.Size(360, 510);
+            this.Favlists.MinimumSize = new System.Drawing.Size(360, 510);
+            this.Favlists.Name = "Favlists";
+            this.Favlists.Size = new System.Drawing.Size(360, 510);
+            this.Favlists.TabIndex = 17;
+            // 
+            // lblFavoriListsAddFavori
+            // 
+            this.lblFavoriListsAddFavori.AutoSize = true;
+            this.lblFavoriListsAddFavori.Location = new System.Drawing.Point(126, 85);
+            this.lblFavoriListsAddFavori.Name = "lblFavoriListsAddFavori";
+            this.lblFavoriListsAddFavori.Size = new System.Drawing.Size(116, 13);
+            this.lblFavoriListsAddFavori.TabIndex = 10;
+            this.lblFavoriListsAddFavori.Text = "Yeni Favori Listesi Ekle";
+            // 
+            // btnFavoriListsAddFavori
+            // 
+            this.btnFavoriListsAddFavori.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFavoriListsAddFavori.BackgroundImage")));
+            this.btnFavoriListsAddFavori.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFavoriListsAddFavori.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFavoriListsAddFavori.FlatAppearance.BorderSize = 0;
+            this.btnFavoriListsAddFavori.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFavoriListsAddFavori.Location = new System.Drawing.Point(141, 9);
+            this.btnFavoriListsAddFavori.Name = "btnFavoriListsAddFavori";
+            this.btnFavoriListsAddFavori.Size = new System.Drawing.Size(84, 71);
+            this.btnFavoriListsAddFavori.TabIndex = 9;
+            this.btnFavoriListsAddFavori.UseVisualStyleBackColor = true;
+            this.btnFavoriListsAddFavori.Click += new System.EventHandler(this.AddFavoriListPage);
+            // 
+            // btnFavoriListsUser
+            // 
+            this.btnFavoriListsUser.BackgroundImage = global::YesilEvCodeFirst.UIWinForm.Properties.Resources.user;
+            this.btnFavoriListsUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFavoriListsUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFavoriListsUser.FlatAppearance.BorderSize = 0;
+            this.btnFavoriListsUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFavoriListsUser.Location = new System.Drawing.Point(285, 15);
+            this.btnFavoriListsUser.Name = "btnFavoriListsUser";
+            this.btnFavoriListsUser.Size = new System.Drawing.Size(60, 40);
+            this.btnFavoriListsUser.TabIndex = 8;
+            this.btnFavoriListsUser.UseVisualStyleBackColor = true;
+            this.btnFavoriListsUser.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // dgvFavoriListFavProducts
+            // 
+            this.dgvFavoriListFavProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvFavoriListFavProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFavoriListFavProducts.Location = new System.Drawing.Point(12, 133);
+            this.dgvFavoriListFavProducts.Name = "dgvFavoriListFavProducts";
+            this.dgvFavoriListFavProducts.RowHeadersWidth = 51;
+            this.dgvFavoriListFavProducts.Size = new System.Drawing.Size(338, 367);
+            this.dgvFavoriListFavProducts.TabIndex = 2;
+            this.dgvFavoriListFavProducts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFavProducts_CellDoubleClick);
+            // 
+            // lblFavoriListSelectFavoriLists
+            // 
+            this.lblFavoriListSelectFavoriLists.AutoSize = true;
+            this.lblFavoriListSelectFavoriLists.Location = new System.Drawing.Point(43, 106);
+            this.lblFavoriListSelectFavoriLists.Name = "lblFavoriListSelectFavoriLists";
+            this.lblFavoriListSelectFavoriLists.Size = new System.Drawing.Size(86, 13);
+            this.lblFavoriListSelectFavoriLists.TabIndex = 1;
+            this.lblFavoriListSelectFavoriLists.Text = "Favori Liste Seç:";
+            // 
+            // cmbBoxFavoriListFavoriLists
+            // 
+            this.cmbBoxFavoriListFavoriLists.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbBoxFavoriListFavoriLists.FormattingEnabled = true;
+            this.cmbBoxFavoriListFavoriLists.Location = new System.Drawing.Point(135, 103);
+            this.cmbBoxFavoriListFavoriLists.Name = "cmbBoxFavoriListFavoriLists";
+            this.cmbBoxFavoriListFavoriLists.Size = new System.Drawing.Size(178, 21);
+            this.cmbBoxFavoriListFavoriLists.TabIndex = 0;
+            this.cmbBoxFavoriListFavoriLists.SelectedIndexChanged += new System.EventHandler(this.cbFavLists_SelectedIndexChanged);
+            // 
+            // BlackList
+            // 
+            this.BlackList.Controls.Add(this.lblBlackListWarning);
+            this.BlackList.Controls.Add(this.lblBlacklistProductsInBlacklist);
+            this.BlackList.Controls.Add(this.dgvBlackListSupplements);
+            this.BlackList.Controls.Add(this.btnBlackListUser);
+            this.BlackList.Location = new System.Drawing.Point(0, 0);
+            this.BlackList.MaximumSize = new System.Drawing.Size(360, 510);
+            this.BlackList.MinimumSize = new System.Drawing.Size(360, 510);
+            this.BlackList.Name = "BlackList";
+            this.BlackList.Size = new System.Drawing.Size(360, 510);
+            this.BlackList.TabIndex = 9;
+            // 
+            // lblBlackListWarning
+            // 
+            this.lblBlackListWarning.AutoSize = true;
+            this.lblBlackListWarning.Location = new System.Drawing.Point(165, 100);
+            this.lblBlackListWarning.Name = "lblBlackListWarning";
+            this.lblBlackListWarning.Size = new System.Drawing.Size(0, 13);
+            this.lblBlackListWarning.TabIndex = 20;
+            // 
+            // lblBlacklistProductsInBlacklist
+            // 
+            this.lblBlacklistProductsInBlacklist.AutoSize = true;
+            this.lblBlacklistProductsInBlacklist.Location = new System.Drawing.Point(10, 100);
+            this.lblBlacklistProductsInBlacklist.Name = "lblBlacklistProductsInBlacklist";
+            this.lblBlacklistProductsInBlacklist.Size = new System.Drawing.Size(138, 13);
+            this.lblBlacklistProductsInBlacklist.TabIndex = 19;
+            this.lblBlacklistProductsInBlacklist.Text = "Kara Listede olan maddeler:";
             // 
             // dgvBlackListSupplements
             // 
             this.dgvBlackListSupplements.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBlackListSupplements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBlackListSupplements.Location = new System.Drawing.Point(10, 200);
+            this.dgvBlackListSupplements.Location = new System.Drawing.Point(10, 118);
             this.dgvBlackListSupplements.Name = "dgvBlackListSupplements";
-            this.dgvBlackListSupplements.Size = new System.Drawing.Size(340, 300);
+            this.dgvBlackListSupplements.RowHeadersWidth = 51;
+            this.dgvBlackListSupplements.Size = new System.Drawing.Size(340, 382);
             this.dgvBlackListSupplements.TabIndex = 18;
             // 
-            // btnKaralisteUser
+            // btnBlackListUser
             // 
-            this.btnKaralisteUser.BackgroundImage = global::YesilEvCodeFirst.UIWinForm.Properties.Resources.user;
-            this.btnKaralisteUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnKaralisteUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKaralisteUser.FlatAppearance.BorderSize = 0;
-            this.btnKaralisteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKaralisteUser.Location = new System.Drawing.Point(285, 15);
-            this.btnKaralisteUser.Name = "btnKaralisteUser";
-            this.btnKaralisteUser.Size = new System.Drawing.Size(60, 40);
-            this.btnKaralisteUser.TabIndex = 8;
-            this.btnKaralisteUser.UseVisualStyleBackColor = true;
-            this.btnKaralisteUser.Click += new System.EventHandler(this.UserButton_Click);
+            this.btnBlackListUser.BackgroundImage = global::YesilEvCodeFirst.UIWinForm.Properties.Resources.user;
+            this.btnBlackListUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBlackListUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBlackListUser.FlatAppearance.BorderSize = 0;
+            this.btnBlackListUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBlackListUser.Location = new System.Drawing.Point(285, 15);
+            this.btnBlackListUser.Name = "btnBlackListUser";
+            this.btnBlackListUser.Size = new System.Drawing.Size(60, 40);
+            this.btnBlackListUser.TabIndex = 8;
+            this.btnBlackListUser.UseVisualStyleBackColor = true;
+            this.btnBlackListUser.Click += new System.EventHandler(this.UserButton_Click);
             // 
-            // BarkodArama
+            // SearchBarcode
             // 
-            this.BarkodArama.Controls.Add(this.btnBarkodAramaUser);
-            this.BarkodArama.Controls.Add(this.btnBarkodAramaBarkodAra);
-            this.BarkodArama.Controls.Add(this.lblBarkodAramaBarkodNo);
-            this.BarkodArama.Controls.Add(this.txtBarkodAramaBarkodNo);
-            this.BarkodArama.Location = new System.Drawing.Point(0, 0);
-            this.BarkodArama.MaximumSize = new System.Drawing.Size(360, 510);
-            this.BarkodArama.MinimumSize = new System.Drawing.Size(360, 510);
-            this.BarkodArama.Name = "BarkodArama";
-            this.BarkodArama.Size = new System.Drawing.Size(360, 510);
-            this.BarkodArama.TabIndex = 0;
+            this.SearchBarcode.Controls.Add(this.btnSearchBarcodeUser);
+            this.SearchBarcode.Controls.Add(this.btnSearchBarcodeSearchBarcode);
+            this.SearchBarcode.Controls.Add(this.lblSearchBarcodeBarcodeNo);
+            this.SearchBarcode.Controls.Add(this.txtSearchBarcodeBarcodeNo);
+            this.SearchBarcode.Location = new System.Drawing.Point(0, 0);
+            this.SearchBarcode.MaximumSize = new System.Drawing.Size(360, 510);
+            this.SearchBarcode.MinimumSize = new System.Drawing.Size(360, 510);
+            this.SearchBarcode.Name = "SearchBarcode";
+            this.SearchBarcode.Size = new System.Drawing.Size(360, 510);
+            this.SearchBarcode.TabIndex = 0;
             // 
-            // btnBarkodAramaUser
+            // btnSearchBarcodeUser
             // 
-            this.btnBarkodAramaUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBarkodAramaUser.BackgroundImage")));
-            this.btnBarkodAramaUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBarkodAramaUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBarkodAramaUser.FlatAppearance.BorderSize = 0;
-            this.btnBarkodAramaUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBarkodAramaUser.Location = new System.Drawing.Point(285, 15);
-            this.btnBarkodAramaUser.Name = "btnBarkodAramaUser";
-            this.btnBarkodAramaUser.Size = new System.Drawing.Size(60, 40);
-            this.btnBarkodAramaUser.TabIndex = 16;
-            this.btnBarkodAramaUser.UseVisualStyleBackColor = true;
+            this.btnSearchBarcodeUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearchBarcodeUser.BackgroundImage")));
+            this.btnSearchBarcodeUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearchBarcodeUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchBarcodeUser.FlatAppearance.BorderSize = 0;
+            this.btnSearchBarcodeUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchBarcodeUser.Location = new System.Drawing.Point(285, 15);
+            this.btnSearchBarcodeUser.Name = "btnSearchBarcodeUser";
+            this.btnSearchBarcodeUser.Size = new System.Drawing.Size(60, 40);
+            this.btnSearchBarcodeUser.TabIndex = 16;
+            this.btnSearchBarcodeUser.UseVisualStyleBackColor = true;
             // 
-            // btnBarkodAramaBarkodAra
+            // btnSearchBarcodeSearchBarcode
             // 
-            this.btnBarkodAramaBarkodAra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBarkodAramaBarkodAra.Location = new System.Drawing.Point(285, 98);
-            this.btnBarkodAramaBarkodAra.Name = "btnBarkodAramaBarkodAra";
-            this.btnBarkodAramaBarkodAra.Size = new System.Drawing.Size(54, 23);
-            this.btnBarkodAramaBarkodAra.TabIndex = 14;
-            this.btnBarkodAramaBarkodAra.Text = "Ara";
-            this.btnBarkodAramaBarkodAra.UseVisualStyleBackColor = true;
-            this.btnBarkodAramaBarkodAra.Click += new System.EventHandler(this.btnBarkodAramaBarkodAra_Click);
+            this.btnSearchBarcodeSearchBarcode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchBarcodeSearchBarcode.Location = new System.Drawing.Point(285, 98);
+            this.btnSearchBarcodeSearchBarcode.Name = "btnSearchBarcodeSearchBarcode";
+            this.btnSearchBarcodeSearchBarcode.Size = new System.Drawing.Size(54, 23);
+            this.btnSearchBarcodeSearchBarcode.TabIndex = 14;
+            this.btnSearchBarcodeSearchBarcode.Text = "Ara";
+            this.btnSearchBarcodeSearchBarcode.UseVisualStyleBackColor = true;
+            this.btnSearchBarcodeSearchBarcode.Click += new System.EventHandler(this.btnSearchProductWithBarcodeNo_Click);
             // 
-            // lblBarkodAramaBarkodNo
+            // lblSearchBarcodeBarcodeNo
             // 
-            this.lblBarkodAramaBarkodNo.AutoSize = true;
-            this.lblBarkodAramaBarkodNo.Location = new System.Drawing.Point(8, 103);
-            this.lblBarkodAramaBarkodNo.Name = "lblBarkodAramaBarkodNo";
-            this.lblBarkodAramaBarkodNo.Size = new System.Drawing.Size(98, 13);
-            this.lblBarkodAramaBarkodNo.TabIndex = 13;
-            this.lblBarkodAramaBarkodNo.Text = "Barkod No Giriniz : ";
+            this.lblSearchBarcodeBarcodeNo.AutoSize = true;
+            this.lblSearchBarcodeBarcodeNo.Location = new System.Drawing.Point(8, 103);
+            this.lblSearchBarcodeBarcodeNo.Name = "lblSearchBarcodeBarcodeNo";
+            this.lblSearchBarcodeBarcodeNo.Size = new System.Drawing.Size(98, 13);
+            this.lblSearchBarcodeBarcodeNo.TabIndex = 13;
+            this.lblSearchBarcodeBarcodeNo.Text = "Barkod No Giriniz : ";
             // 
-            // txtBarkodAramaBarkodNo
+            // txtSearchBarcodeBarcodeNo
             // 
-            this.txtBarkodAramaBarkodNo.Location = new System.Drawing.Point(107, 100);
-            this.txtBarkodAramaBarkodNo.Name = "txtBarkodAramaBarkodNo";
-            this.txtBarkodAramaBarkodNo.Size = new System.Drawing.Size(169, 20);
-            this.txtBarkodAramaBarkodNo.TabIndex = 12;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(360, 24);
-            this.menuStrip1.TabIndex = 14;
-            this.menuStrip1.Text = "menuStrip1";
+            this.txtSearchBarcodeBarcodeNo.Location = new System.Drawing.Point(107, 100);
+            this.txtSearchBarcodeBarcodeNo.Name = "txtSearchBarcodeBarcodeNo";
+            this.txtSearchBarcodeBarcodeNo.Size = new System.Drawing.Size(169, 20);
+            this.txtSearchBarcodeBarcodeNo.TabIndex = 12;
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // AddFavoriList
+            // 
+            this.AddFavoriList.Controls.Add(this.btnAddFavoriList);
+            this.AddFavoriList.Controls.Add(this.btnAddFavoriUser);
+            this.AddFavoriList.Controls.Add(this.lblAddFavoriFavoris);
+            this.AddFavoriList.Controls.Add(this.btnAddFavoriGoFavoriLists);
+            this.AddFavoriList.Controls.Add(this.txtAddFavoriFavoriName);
+            this.AddFavoriList.Controls.Add(this.lblAddFavoriFavoriName);
+            this.AddFavoriList.Location = new System.Drawing.Point(0, 0);
+            this.AddFavoriList.MaximumSize = new System.Drawing.Size(360, 510);
+            this.AddFavoriList.MinimumSize = new System.Drawing.Size(360, 510);
+            this.AddFavoriList.Name = "AddFavoriList";
+            this.AddFavoriList.Size = new System.Drawing.Size(360, 510);
+            this.AddFavoriList.TabIndex = 6;
+            // 
+            // btnAddFavoriList
+            // 
+            this.btnAddFavoriList.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.btnAddFavoriList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddFavoriList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddFavoriList.Location = new System.Drawing.Point(119, 149);
+            this.btnAddFavoriList.Name = "btnAddFavoriList";
+            this.btnAddFavoriList.Size = new System.Drawing.Size(140, 30);
+            this.btnAddFavoriList.TabIndex = 22;
+            this.btnAddFavoriList.Text = "Favori Listesi Oluştur";
+            this.btnAddFavoriList.UseVisualStyleBackColor = true;
+            this.btnAddFavoriList.Click += new System.EventHandler(this.btnAddFavoriList_Click);
+            // 
+            // btnAddFavoriUser
+            // 
+            this.btnAddFavoriUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddFavoriUser.BackgroundImage")));
+            this.btnAddFavoriUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddFavoriUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddFavoriUser.FlatAppearance.BorderSize = 0;
+            this.btnAddFavoriUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddFavoriUser.Location = new System.Drawing.Point(285, 15);
+            this.btnAddFavoriUser.Name = "btnAddFavoriUser";
+            this.btnAddFavoriUser.Size = new System.Drawing.Size(60, 40);
+            this.btnAddFavoriUser.TabIndex = 21;
+            this.btnAddFavoriUser.UseVisualStyleBackColor = true;
+            this.btnAddFavoriUser.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // lblAddFavoriFavoris
+            // 
+            this.lblAddFavoriFavoris.AutoSize = true;
+            this.lblAddFavoriFavoris.Location = new System.Drawing.Point(162, 82);
+            this.lblAddFavoriFavoris.Name = "lblAddFavoriFavoris";
+            this.lblAddFavoriFavoris.Size = new System.Drawing.Size(47, 13);
+            this.lblAddFavoriFavoris.TabIndex = 20;
+            this.lblAddFavoriFavoris.Text = "Favoriler";
+            // 
+            // btnAddFavoriGoFavoriLists
+            // 
+            this.btnAddFavoriGoFavoriLists.BackgroundImage = global::YesilEvCodeFirst.UIWinForm.Properties.Resources.kalp2;
+            this.btnAddFavoriGoFavoriLists.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddFavoriGoFavoriLists.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddFavoriGoFavoriLists.FlatAppearance.BorderSize = 0;
+            this.btnAddFavoriGoFavoriLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddFavoriGoFavoriLists.Location = new System.Drawing.Point(152, 10);
+            this.btnAddFavoriGoFavoriLists.Name = "btnAddFavoriGoFavoriLists";
+            this.btnAddFavoriGoFavoriLists.Size = new System.Drawing.Size(65, 65);
+            this.btnAddFavoriGoFavoriLists.TabIndex = 19;
+            this.btnAddFavoriGoFavoriLists.UseVisualStyleBackColor = true;
+            this.btnAddFavoriGoFavoriLists.Click += new System.EventHandler(this.GoFavoriListPage);
+            // 
+            // txtAddFavoriFavoriName
+            // 
+            this.txtAddFavoriFavoriName.Location = new System.Drawing.Point(141, 103);
+            this.txtAddFavoriFavoriName.Name = "txtAddFavoriFavoriName";
+            this.txtAddFavoriFavoriName.Size = new System.Drawing.Size(203, 20);
+            this.txtAddFavoriFavoriName.TabIndex = 1;
+            // 
+            // lblAddFavoriFavoriName
+            // 
+            this.lblAddFavoriFavoriName.AutoSize = true;
+            this.lblAddFavoriFavoriName.Location = new System.Drawing.Point(13, 106);
+            this.lblAddFavoriFavoriName.Name = "lblAddFavoriFavoriName";
+            this.lblAddFavoriFavoriName.Size = new System.Drawing.Size(122, 13);
+            this.lblAddFavoriFavoriName.TabIndex = 0;
+            this.lblAddFavoriFavoriName.Text = "Favori Liste Adını giriniz :";
             // 
             // UserSayfasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 511);
+            this.ClientSize = new System.Drawing.Size(364, 509);
             this.Controls.Add(this.SideBar);
-            this.Controls.Add(this.Anasayfa);
-            this.Controls.Add(this.UserBilgileri);
-            this.Controls.Add(this.UrunArama);
-            this.Controls.Add(this.pnlKaraListe);
-            this.Controls.Add(this.pnlFavLists);
-            this.Controls.Add(this.UrunDetay);
-            this.Controls.Add(this.UrunEkleDuzenle);
-            this.Controls.Add(this.AramaGecmisi);
-            this.Controls.Add(this.BarkodArama);
+            this.Controls.Add(this.Home);
+            this.Controls.Add(this.UserDetails);
+            this.Controls.Add(this.SearchProduct);
+            this.Controls.Add(this.BlackList);
+            this.Controls.Add(this.Favlists);
+            this.Controls.Add(this.ProductDetails);
+            this.Controls.Add(this.AddAndUpdateProduct);
+            this.Controls.Add(this.SearchHistory);
+            this.Controls.Add(this.SearchBarcode);
+            this.Controls.Add(this.AddFavoriList);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(380, 550);
-            this.MinimumSize = new System.Drawing.Size(380, 550);
+            this.MaximumSize = new System.Drawing.Size(380, 548);
+            this.MinimumSize = new System.Drawing.Size(380, 548);
             this.Name = "UserSayfasi";
             this.Text = "Form3";
-            this.pnlHome.ResumeLayout(false);
-            this.pnlUygulamaPuanVer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUygulamaPuanVer)).EndInit();
-            this.pnlUygulamaPaylas.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUygulamayiPaylas)).EndInit();
-            this.pnlFacebook.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFacebook)).EndInit();
-            this.pnlTwitter.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureTwitter)).EndInit();
-            this.pnlInstagram.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureInstagram)).EndInit();
-            this.pnlBildirim.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBildirim)).EndInit();
-            this.pnlKullanimKosullari.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureKullanimKosullari)).EndInit();
-            this.pnlBizeUlasin.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBizeUlasin)).EndInit();
-            this.pnlHakkinda.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureHakkinda)).EndInit();
-            this.pnlPremium.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picturePremium)).EndInit();
-            this.pnlMenu.ResumeLayout(false);
+            this.pnlSideBarHome.ResumeLayout(false);
+            this.pnlSideBarGiveStarApplication.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarGiveStarApplication)).EndInit();
+            this.pnlSideBarShareApplication.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarShareApplication)).EndInit();
+            this.pnlSideBarFacebook.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarFacebook)).EndInit();
+            this.pnlSideBarTwitter.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarTwitter)).EndInit();
+            this.pnlSideBarInstagram.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarInstagram)).EndInit();
+            this.pnlSideBarNotifications.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarNotifications)).EndInit();
+            this.pnlSideBarTermsofUse.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarTermofUse)).EndInit();
+            this.pnlSideBarContactUs.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarContactUs)).EndInit();
+            this.pnlSideBarAbout.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarAbout)).EndInit();
+            this.pnlSideBarPremium.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarPremium)).EndInit();
+            this.pnlSideBarMenu.ResumeLayout(false);
             this.SideBar.ResumeLayout(false);
-            this.pnlYesilEv.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureYesilEv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBarkod)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureArama)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUrunEkleDuzenle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAramaGecmisiFavori)).EndInit();
-            this.Anasayfa.ResumeLayout(false);
-            this.UserBilgileri.ResumeLayout(false);
-            this.UserBilgileri.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCikisYap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAramaGecmisi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureKaraliste)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFavori)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserBilgileriGüncelle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserSosyalMedyaBirlestir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserSifreDegistir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserEposta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUserPremium)).EndInit();
-            this.UrunEkleDuzenle.ResumeLayout(false);
-            this.UrunEkle.ResumeLayout(false);
-            this.UrunEkle.PerformLayout();
-            this.UrunDuzenle.ResumeLayout(false);
-            this.UrunDuzenle.PerformLayout();
-            this.UrunDetay.ResumeLayout(false);
-            this.UrunDetay.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbUrun)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUrunDetayTemizIcerik)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUrunDetayAzRiskliIcerik)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUrunDetayOrtaRiskliIcerik)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUrunDetayRiskliIcerik)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUrunDetayKaraListeIcerik)).EndInit();
-            this.AramaGecmisi.ResumeLayout(false);
-            this.AramaGecmisi.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAramaGecmisi)).EndInit();
-            this.UrunArama.ResumeLayout(false);
-            this.UrunArama.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
-            this.pnlFavLists.ResumeLayout(false);
-            this.pnlFavLists.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFavProducts)).EndInit();
-            this.pnlKaraListe.ResumeLayout(false);
-            this.pnlKaraListe.PerformLayout();
+            this.pnlSideBarYesilEv.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarYesilEv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHomeSearchProductWithBarcode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHomeSearchProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHomeAddAndUpdateProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHomeSearchHistoryAndFavoriLists)).EndInit();
+            this.Home.ResumeLayout(false);
+            this.UserDetails.ResumeLayout(false);
+            this.UserDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsLogout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsSearchHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsBlackList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsFavoriLists)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsUpdateUserDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsMergeSocialMedia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsChangePassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsChangeEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsPremium)).EndInit();
+            this.AddAndUpdateProduct.ResumeLayout(false);
+            this.grpBoxAddAndUpdateProductAddProduct.ResumeLayout(false);
+            this.grpBoxAddAndUpdateProductAddProduct.PerformLayout();
+            this.grpBoxAddAndUpdateProductUpdateProduct.ResumeLayout(false);
+            this.grpBoxAddAndUpdateProductUpdateProduct.PerformLayout();
+            this.ProductDetails.ResumeLayout(false);
+            this.ProductDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProductDetailsProductImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProductDetailsCleanContext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProductDetailsLowerRiskContext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProductDetailsMidRiskContext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProductDetailsHighRiskContext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProductDetailsBlacklistContext)).EndInit();
+            this.SearchHistory.ResumeLayout(false);
+            this.SearchHistory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchHistory)).EndInit();
+            this.SearchProduct.ResumeLayout(false);
+            this.SearchProduct.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProductProducts)).EndInit();
+            this.Favlists.ResumeLayout(false);
+            this.Favlists.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFavoriListFavProducts)).EndInit();
+            this.BlackList.ResumeLayout(false);
+            this.BlackList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBlackListSupplements)).EndInit();
-            this.BarkodArama.ResumeLayout(false);
-            this.BarkodArama.PerformLayout();
+            this.SearchBarcode.ResumeLayout(false);
+            this.SearchBarcode.PerformLayout();
+            this.AddFavoriList.ResumeLayout(false);
+            this.AddFavoriList.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlHome;
-        private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.Panel pnlUygulamaPuanVer;
-        private System.Windows.Forms.Button btnUygulamaPuanVer;
-        private System.Windows.Forms.Panel pnlUygulamaPaylas;
-        private System.Windows.Forms.Button btnUygulamayiPaylas;
-        private System.Windows.Forms.Panel pnlFacebook;
-        private System.Windows.Forms.Button btnFacebook;
-        private System.Windows.Forms.Panel pnlTwitter;
-        private System.Windows.Forms.Button btnTwitter;
-        private System.Windows.Forms.Panel pnlInstagram;
-        private System.Windows.Forms.Button btnInstagram;
-        private System.Windows.Forms.Panel pnlBildirim;
-        private System.Windows.Forms.Button btnBildirim;
-        private System.Windows.Forms.Panel pnlKullanimKosullari;
-        private System.Windows.Forms.Button btnKullanimKosullari;
-        private System.Windows.Forms.Panel pnlBizeUlasin;
-        private System.Windows.Forms.Button btnBizeUlasin;
-        private System.Windows.Forms.Panel pnlHakkinda;
-        private System.Windows.Forms.Button btnHakkinda;
-        private System.Windows.Forms.Panel pnlPremium;
-        private System.Windows.Forms.Button btnPremium;
-        private System.Windows.Forms.Panel pnlMenu;
+        private System.Windows.Forms.Panel pnlSideBarHome;
+        private System.Windows.Forms.Button btnSideBarHome;
+        private System.Windows.Forms.Button btnSideBarMenu;
+        private System.Windows.Forms.Panel pnlSideBarGiveStarApplication;
+        private System.Windows.Forms.Button btnSideBarGiveStarApplication;
+        private System.Windows.Forms.Panel pnlSideBarShareApplication;
+        private System.Windows.Forms.Button btnSideBarShareApplication;
+        private System.Windows.Forms.Panel pnlSideBarFacebook;
+        private System.Windows.Forms.Button btnSideBarFacebook;
+        private System.Windows.Forms.Panel pnlSideBarTwitter;
+        private System.Windows.Forms.Button btnSideBarTwitter;
+        private System.Windows.Forms.Panel pnlSideBarInstagram;
+        private System.Windows.Forms.Button btnSideBarInstagram;
+        private System.Windows.Forms.Panel pnlSideBarNotifications;
+        private System.Windows.Forms.Button btnSideBarNotifications;
+        private System.Windows.Forms.Panel pnlSideBarTermsofUse;
+        private System.Windows.Forms.Button btnSideBarTermsofUse;
+        private System.Windows.Forms.Panel pnlSideBarContactUs;
+        private System.Windows.Forms.Button btnSideBarContactUs;
+        private System.Windows.Forms.Panel pnlSideBarAbout;
+        private System.Windows.Forms.Button btnSideBarAbout;
+        private System.Windows.Forms.Panel pnlSideBarPremium;
+        private System.Windows.Forms.Button btnSideBarPremium;
+        private System.Windows.Forms.Panel pnlSideBarMenu;
         private System.Windows.Forms.FlowLayoutPanel SideBar;
-        private System.Windows.Forms.Panel pnlYesilEv;
-        private System.Windows.Forms.Button btnYesilEv;
-        private System.Windows.Forms.PictureBox pictureYesilEv;
-        private System.Windows.Forms.PictureBox pictureUygulamaPuanVer;
-        private System.Windows.Forms.PictureBox pictureUygulamayiPaylas;
-        private System.Windows.Forms.PictureBox pictureFacebook;
-        private System.Windows.Forms.PictureBox pictureTwitter;
-        private System.Windows.Forms.PictureBox pictureInstagram;
-        private System.Windows.Forms.PictureBox pictureBildirim;
-        private System.Windows.Forms.PictureBox pictureKullanimKosullari;
-        private System.Windows.Forms.PictureBox pictureBizeUlasin;
-        private System.Windows.Forms.PictureBox pictureHakkinda;
-        private System.Windows.Forms.Button btnBarkodOku;
-        private System.Windows.Forms.Button btnArama;
-        private System.Windows.Forms.Button btnUrunEkleDuzenle;
-        private System.Windows.Forms.Button btnAramaGecmisiFavori;
-        private System.Windows.Forms.PictureBox pictureBarkod;
-        private System.Windows.Forms.PictureBox pictureArama;
-        private System.Windows.Forms.PictureBox pictureUrunEkleDuzenle;
-        private System.Windows.Forms.PictureBox pictureAramaGecmisiFavori;
-        private System.Windows.Forms.Panel Anasayfa;
-        private System.Windows.Forms.Panel UrunEkleDuzenle;
-        private System.Windows.Forms.Button btnGonder;
-        private System.Windows.Forms.Button btnUrunEkle;
-        private System.Windows.Forms.Button btnUrunDuzenle;
-        private System.Windows.Forms.GroupBox UrunEkle;
-        private System.Windows.Forms.TextBox txtUrunEkleUrunAdi;
-        private System.Windows.Forms.TextBox txtUrunEkleBarkod;
-        private System.Windows.Forms.Label lblUrunEkleUrunAdi;
-        private System.Windows.Forms.Label lblUrunEkleUretici;
-        private System.Windows.Forms.Label lblUrunEkleBarkodNo;
-        private System.Windows.Forms.Button btnUrunEkleUrunIcerik;
-        private System.Windows.Forms.TextBox txtUrunEkleUrunIcerik;
-        private System.Windows.Forms.Label lblUrunEkleUrunIcerik;
-        private System.Windows.Forms.Button btnUrunEkleOnYuz;
-        private System.Windows.Forms.Button btnUrunEkleArkaYuz;
-        private System.Windows.Forms.Label lblUrunEkleArkaYuz;
-        private System.Windows.Forms.Label lblUrunEkleOnYuz;
-        private System.Windows.Forms.GroupBox UrunDuzenle;
-        private System.Windows.Forms.Button btnUrunGetir;
-        private System.Windows.Forms.Button btnOnYuz;
-        private System.Windows.Forms.Button btnArkaYuz;
-        private System.Windows.Forms.Button btnUrunIcerik;
-        private System.Windows.Forms.TextBox txtUrunIcerik;
-        private System.Windows.Forms.Label lblUrunArkaYuz;
-        private System.Windows.Forms.Label lblUrunOnYuz;
-        private System.Windows.Forms.Label lblUrunIcerik;
-        private System.Windows.Forms.TextBox txtUrunAdi;
-        private System.Windows.Forms.TextBox txtBarkodNo;
-        private System.Windows.Forms.Label lblUrunAdi;
-        private System.Windows.Forms.Label lblUretici;
-        private System.Windows.Forms.Label lblBarkodNo;
-        private System.Windows.Forms.Button btnAnasayfaUser;
-        private System.Windows.Forms.Button btnUrunEkleUser;
-        private System.Windows.Forms.Panel UserBilgileri;
-        private System.Windows.Forms.Label lblEkledigiUrunSayisi;
-        private System.Windows.Forms.Label lblUyelikTarihi;
-        private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.Button btnUserBilgileriCikisYap;
-        private System.Windows.Forms.Button btnAramaGeçmişiTemizle;
-        private System.Windows.Forms.Button btnKaraListe;
-        private System.Windows.Forms.Button btnUserFavori;
-        private System.Windows.Forms.Button btnUserBilgileriGüncelle;
-        private System.Windows.Forms.Button btnUserSosyalMedyaBirlestir;
-        private System.Windows.Forms.Button btnUserSifreDegistir;
-        private System.Windows.Forms.Button btnUserEpostaDegistir;
-        private System.Windows.Forms.Button btnUserPremium;
-        private System.Windows.Forms.PictureBox pictureUserPremium;
-        private System.Windows.Forms.PictureBox pictureCikisYap;
-        private System.Windows.Forms.PictureBox pictureAramaGecmisi;
-        private System.Windows.Forms.PictureBox pictureKaraliste;
-        private System.Windows.Forms.PictureBox pictureFavori;
-        private System.Windows.Forms.PictureBox pictureUserBilgileriGüncelle;
-        private System.Windows.Forms.PictureBox pictureUserSosyalMedyaBirlestir;
-        private System.Windows.Forms.PictureBox pictureUserSifreDegistir;
-        private System.Windows.Forms.PictureBox pictureUserEposta;
-        private System.Windows.Forms.ComboBox cmbBoxUrunEkleKategori;
-        private System.Windows.Forms.ComboBox cmbBoxUrunEkleUretici;
-        private System.Windows.Forms.Label lblUrunEkleKategori;
-        private System.Windows.Forms.Label txtKategori;
-        private System.Windows.Forms.ComboBox cmbBoxKategori;
-        private System.Windows.Forms.ComboBox cmbBoxUretici;
-        private System.Windows.Forms.Label lblUyelikTarihiValue;
-        private System.Windows.Forms.Panel AramaGecmisi;
-        private System.Windows.Forms.DataGridView dgvAramaGecmisi;
-        private System.Windows.Forms.Button btnAramaGecmisiUser;
-        private System.Windows.Forms.Button btnGecmisiTemizle;
-        private System.Windows.Forms.OpenFileDialog FileDialogOnYuz;
-        private System.Windows.Forms.OpenFileDialog FileDialogArkaYuz;
-        private System.Windows.Forms.OpenFileDialog FileDialogUrunEkleOnYuz;
-        private System.Windows.Forms.OpenFileDialog FileDialogUrunEkleArkaYuz;
-        private System.Windows.Forms.Panel UrunArama;
-        private System.Windows.Forms.Button btnSearchbarAra;
-        private System.Windows.Forms.Label lblAramaSearchBar;
-        private System.Windows.Forms.TextBox txtAramaSearchbar;
-        private System.Windows.Forms.DataGridView dgvProducts;
-        private System.Windows.Forms.Panel UrunDetay;
-        private System.Windows.Forms.PictureBox pcbUrun;
-        private System.Windows.Forms.Label lblMarka;
-        private System.Windows.Forms.Label lblAltKategori;
-        private System.Windows.Forms.Label lblUrunAd;
-        private System.Windows.Forms.PictureBox pictureUrunDetayKaraListeIcerik;
-        private System.Windows.Forms.Label lblKaraMadde;
-        private System.Windows.Forms.Label lblKaraMaddeNum;
-        private System.Windows.Forms.PictureBox pictureUrunDetayTemizIcerik;
-        private System.Windows.Forms.PictureBox pictureUrunDetayAzRiskliIcerik;
-        private System.Windows.Forms.PictureBox pictureUrunDetayOrtaRiskliIcerik;
-        private System.Windows.Forms.PictureBox pictureUrunDetayRiskliIcerik;
-        private System.Windows.Forms.Label lblCokRisk;
-        private System.Windows.Forms.Label lblTemiz;
-        private System.Windows.Forms.Label lblAzRisk;
-        private System.Windows.Forms.Label lblOrtaRisk;
-        private System.Windows.Forms.Label lblTemizNum;
-        private System.Windows.Forms.Label lblAzRiskNum;
-        private System.Windows.Forms.Label lblOrtaRiskNum;
-        private System.Windows.Forms.Label lblCokRiskNum;
-        private System.Windows.Forms.Label lblMessage;
-        private System.Windows.Forms.Label lblUrunDetayUrunBilesimi;
-        private System.Windows.Forms.Button btnShowList;
-        private System.Windows.Forms.Panel pnlShowProducts;
-        private System.Windows.Forms.Button btnDGVTemizle;
-        private System.Windows.Forms.Panel pnlFavLists;
-        private System.Windows.Forms.DataGridView dgvFavProducts;
-        private System.Windows.Forms.Label lblFavoriListeSec;
-        private System.Windows.Forms.ComboBox cbFavLists;
-        private System.Windows.Forms.Button btnUrunAramaUser;
-        private System.Windows.Forms.Button btnUserBilgileri;
-        private System.Windows.Forms.Label labelUrunSayisi;
-        private System.Windows.Forms.Panel pnlKaraListe;
-        private System.Windows.Forms.Button btnKaralisteUser;
-        private System.Windows.Forms.Label lblKaralisteOlanMaddeler;
+        private System.Windows.Forms.Panel pnlSideBarYesilEv;
+        private System.Windows.Forms.Button btnSideBarYesilEv;
+        private System.Windows.Forms.PictureBox pictureSideBarYesilEv;
+        private System.Windows.Forms.PictureBox pictureSideBarGiveStarApplication;
+        private System.Windows.Forms.PictureBox pictureSideBarShareApplication;
+        private System.Windows.Forms.PictureBox pictureSideBarFacebook;
+        private System.Windows.Forms.PictureBox pictureSideBarTwitter;
+        private System.Windows.Forms.PictureBox pictureSideBarInstagram;
+        private System.Windows.Forms.PictureBox pictureSideBarNotifications;
+        private System.Windows.Forms.PictureBox pictureSideBarTermofUse;
+        private System.Windows.Forms.PictureBox pictureSideBarContactUs;
+        private System.Windows.Forms.PictureBox pictureSideBarAbout;
+        private System.Windows.Forms.Button btnHomeSearchProductWithBarcode;
+        private System.Windows.Forms.Button btnHomeSearchProduct;
+        private System.Windows.Forms.Button btnHomeAddAndUpdateProduct;
+        private System.Windows.Forms.Button btnHomeSearchHistoryAndFavoriLists;
+        private System.Windows.Forms.PictureBox pictureHomeSearchProductWithBarcode;
+        private System.Windows.Forms.PictureBox pictureHomeSearchProduct;
+        private System.Windows.Forms.PictureBox pictureHomeAddAndUpdateProduct;
+        private System.Windows.Forms.PictureBox pictureHomeSearchHistoryAndFavoriLists;
+        private System.Windows.Forms.Panel Home;
+        private System.Windows.Forms.Panel AddAndUpdateProduct;
+        private System.Windows.Forms.Button btnAddAndUpdateProductSend;
+        private System.Windows.Forms.Button btnAddAndUpdateProductAddProduct;
+        private System.Windows.Forms.Button btnAddAndUpdateProductUpdateProduct;
+        private System.Windows.Forms.GroupBox grpBoxAddAndUpdateProductAddProduct;
+        private System.Windows.Forms.TextBox txtAddAndUpdateProductAddProductProductName;
+        private System.Windows.Forms.TextBox txtAddAndUpdateProductAddProductBarcodeNo;
+        private System.Windows.Forms.Label lblAddAndUpdateProductAddProductProductName;
+        private System.Windows.Forms.Label lblAddAndUpdateProductAddProductSupplier;
+        private System.Windows.Forms.Label lblAddAndUpdateProductAddProductBarcodeNo;
+        private System.Windows.Forms.Button btnAddAndUpdateProductAddProductProductContext;
+        private System.Windows.Forms.TextBox txtAddAndUpdateProductAddProductProductContext;
+        private System.Windows.Forms.Label lblAddAndUpdateProductAddProductProductContext;
+        private System.Windows.Forms.Button btnAddAndUpdateProductAddProductFront;
+        private System.Windows.Forms.Button btnAddAndUpdateProductAddProductBack;
+        private System.Windows.Forms.Label lblAddAndUpdateProductAddProductBack;
+        private System.Windows.Forms.Label lblAddAndUpdateProductAddProductFront;
+        private System.Windows.Forms.GroupBox grpBoxAddAndUpdateProductUpdateProduct;
+        private System.Windows.Forms.Button btnAddAndUpdateProductUpdateProductGetProductDetail;
+        private System.Windows.Forms.Button btnAddAndUpdateProductUpdateProductFront;
+        private System.Windows.Forms.Button btnAddAndUpdateProductUpdateProductBack;
+        private System.Windows.Forms.Button btnAddAndUpdateProductUpdateProductProductContext;
+        private System.Windows.Forms.TextBox txtAddAndUpdateProductUpdateProductProductContext;
+        private System.Windows.Forms.Label lblAddAndUpdateProductUpdateProductBack;
+        private System.Windows.Forms.Label lblAddAndUpdateProductUpdateProductFront;
+        private System.Windows.Forms.Label lblAddAndUpdateProductUpdateProductProductContext;
+        private System.Windows.Forms.TextBox txtAddAndUpdateProductUpdateProductProductName;
+        private System.Windows.Forms.TextBox txtAddAndUpdateProductUpdateProductBarcodeNo;
+        private System.Windows.Forms.Label lblAddAndUpdateProductUpdateProductProductName;
+        private System.Windows.Forms.Label lblAddAndUpdateProductUpdateProductSupplier;
+        private System.Windows.Forms.Label lblAddAndUpdateProductUpdateProductBarcodeNo;
+        private System.Windows.Forms.Button btnHomeUser;
+        private System.Windows.Forms.Button btnAddAndUpdateProductUser;
+        private System.Windows.Forms.Panel UserDetails;
+        private System.Windows.Forms.Label lblUserDetailsAddProduct;
+        private System.Windows.Forms.Label lblUserDetailsSignUpDate;
+        private System.Windows.Forms.Label lblUserDetailsUserName;
+        private System.Windows.Forms.Button btnUserDetailsLogout;
+        private System.Windows.Forms.Button btnUserDetailsClearSearchHistory;
+        private System.Windows.Forms.Button btnUserDetailsBlacklist;
+        private System.Windows.Forms.Button btnUserDetailsFavoriLists;
+        private System.Windows.Forms.Button btnUserDetailsUpdateUserDetails;
+        private System.Windows.Forms.Button btnUserDetailsMergeSocialMedia;
+        private System.Windows.Forms.Button btnUserDetailsChangePassword;
+        private System.Windows.Forms.Button btnUserDetailsChangeEmail;
+        private System.Windows.Forms.Button btnUserDetailsPremium;
+        private System.Windows.Forms.PictureBox pictureUserDetailsPremium;
+        private System.Windows.Forms.PictureBox pictureUserDetailsLogout;
+        private System.Windows.Forms.PictureBox pictureUserDetailsSearchHistory;
+        private System.Windows.Forms.PictureBox pictureUserDetailsBlackList;
+        private System.Windows.Forms.PictureBox pictureUserDetailsFavoriLists;
+        private System.Windows.Forms.PictureBox pictureUserDetailsUpdateUserDetails;
+        private System.Windows.Forms.PictureBox pictureUserDetailsMergeSocialMedia;
+        private System.Windows.Forms.PictureBox pictureUserDetailsChangePassword;
+        private System.Windows.Forms.PictureBox pictureUserDetailsChangeEmail;
+        private System.Windows.Forms.ComboBox cmbBoxAddAndUpdateProductAddProductCategory;
+        private System.Windows.Forms.ComboBox cmbBoxAddAndUpdateProductAddProductSupplier;
+        private System.Windows.Forms.Label lblAddAndUpdateProductAddProductCategory;
+        private System.Windows.Forms.Label lblAddAndUpdateProductUpdateProductCategory;
+        private System.Windows.Forms.ComboBox cmbBoxAddAndUpdateProductUpdateProductCategory;
+        private System.Windows.Forms.ComboBox cmbBoxAddAndUpdateProductUpdateProductSupplier;
+        private System.Windows.Forms.Label lblUserDetailsSignUpDateValue;
+        private System.Windows.Forms.Panel SearchHistory;
+        private System.Windows.Forms.DataGridView dgvSearchHistory;
+        private System.Windows.Forms.Button btnSearchHistoryUser;
+        private System.Windows.Forms.Button btnSearchHistoryClearHistory;
+        private System.Windows.Forms.OpenFileDialog FileDialogUpdateProductFront;
+        private System.Windows.Forms.OpenFileDialog FileDialogUpdateProductBack;
+        private System.Windows.Forms.OpenFileDialog FileDialogAddProductFront;
+        private System.Windows.Forms.OpenFileDialog FileDialogAddProductBack;
+        private System.Windows.Forms.Panel SearchProduct;
+        private System.Windows.Forms.Button btnSearchProductSearchSearchBar;
+        private System.Windows.Forms.Label lblSearchProductSearchSearchBar;
+        private System.Windows.Forms.TextBox txtSearchProductSearchSearchbar;
+        private System.Windows.Forms.DataGridView dgvSearchProductProducts;
+        private System.Windows.Forms.Panel ProductDetails;
+        private System.Windows.Forms.PictureBox pictureProductDetailsProductImage;
+        private System.Windows.Forms.Label lblProductDetailsSupplier;
+        private System.Windows.Forms.Label lblProductDetailsLowerCategory;
+        private System.Windows.Forms.Label lblProductDetailsProductName;
+        private System.Windows.Forms.PictureBox pictureProductDetailsBlacklistContext;
+        private System.Windows.Forms.Label lblProductDetailsBlackListSupplement;
+        private System.Windows.Forms.Label lblProductDetailsBlackListSupplementCount;
+        private System.Windows.Forms.PictureBox pictureProductDetailsCleanContext;
+        private System.Windows.Forms.PictureBox pictureProductDetailsLowerRiskContext;
+        private System.Windows.Forms.PictureBox pictureProductDetailsMidRiskContext;
+        private System.Windows.Forms.PictureBox pictureProductDetailsHighRiskContext;
+        private System.Windows.Forms.Label lblProductDetailsHighRisk;
+        private System.Windows.Forms.Label lblProductDetailsClean;
+        private System.Windows.Forms.Label lblProductDetailsLowerRisk;
+        private System.Windows.Forms.Label lblProductDetailsMidRisk;
+        private System.Windows.Forms.Label lblProductDetailsCleanCount;
+        private System.Windows.Forms.Label lblProductDetailsLowerRiskCount;
+        private System.Windows.Forms.Label lblProductDetailsMidRiskCount;
+        private System.Windows.Forms.Label lblProductDetailsHighRiskCount;
+        private System.Windows.Forms.Label lblProductDetailsMessage;
+        private System.Windows.Forms.Label lblProductDetailsProductContext;
+        private System.Windows.Forms.Button btnProductDetailsShowList;
+        private System.Windows.Forms.Panel pnlProductDetailsShowProducts;
+        private System.Windows.Forms.Button btnSearchProductClearDGV;
+        private System.Windows.Forms.Panel Favlists;
+        private System.Windows.Forms.DataGridView dgvFavoriListFavProducts;
+        private System.Windows.Forms.Label lblFavoriListSelectFavoriLists;
+        private System.Windows.Forms.ComboBox cmbBoxFavoriListFavoriLists;
+        private System.Windows.Forms.Button btnSearchProductUser;
+        private System.Windows.Forms.Button btnFavoriListsUser;
+        private System.Windows.Forms.Label lblUserDetailsAddProductCount;
+        private System.Windows.Forms.Panel BlackList;
+        private System.Windows.Forms.Button btnBlackListUser;
+        private System.Windows.Forms.Label lblBlacklistProductsInBlacklist;
         private System.Windows.Forms.DataGridView dgvBlackListSupplements;
-        private System.Windows.Forms.Label lblKaraListeUyari;
-        private System.Windows.Forms.Button btnUrunDetayUser;
-        private System.Windows.Forms.Button UrunDetayResimDegistir;
-        private System.Windows.Forms.PictureBox picturePremium;
-        private System.Windows.Forms.Label lblFavoriList;
-        private System.Windows.Forms.Button btnFavList;
-        private System.Windows.Forms.Panel BarkodArama;
-        private System.Windows.Forms.Button btnBarkodAramaUser;
-        private System.Windows.Forms.Button btnBarkodAramaBarkodAra;
-        private System.Windows.Forms.Label lblBarkodAramaBarkodNo;
-        private System.Windows.Forms.TextBox txtBarkodAramaBarkodNo;
+        private System.Windows.Forms.Label lblBlackListWarning;
+        private System.Windows.Forms.Button btnProductDetailUser;
+        private System.Windows.Forms.Button btnProductDetailChangePicture;
+        private System.Windows.Forms.PictureBox pictureSideBarPremium;
+        private System.Windows.Forms.Label lblSearchHistoryFavlists;
+        private System.Windows.Forms.Button btnSearchHistoryGoFavLists;
+        private System.Windows.Forms.Panel SearchBarcode;
+        private System.Windows.Forms.Button btnSearchBarcodeUser;
+        private System.Windows.Forms.Button btnSearchBarcodeSearchBarcode;
+        private System.Windows.Forms.Label lblSearchBarcodeBarcodeNo;
+        private System.Windows.Forms.TextBox txtSearchBarcodeBarcodeNo;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Panel AddFavoriList;
+        private System.Windows.Forms.Label lblAddFavoriFavoriName;
+        private System.Windows.Forms.TextBox txtAddFavoriFavoriName;
+        private System.Windows.Forms.Button btnAddFavoriUser;
+        private System.Windows.Forms.Label lblAddFavoriFavoris;
+        private System.Windows.Forms.Button btnAddFavoriGoFavoriLists;
+        private System.Windows.Forms.Button btnAddFavoriList;
+        private System.Windows.Forms.Label lblFavoriListsAddFavori;
+        private System.Windows.Forms.Button btnFavoriListsAddFavori;
     }
 }

@@ -14,7 +14,7 @@ namespace YesilEvCodeFirst.DAL.Use
     {
         readonly Logger nLogger = LogManager.GetCurrentClassLogger();
 
-        public bool AddFavList(AddOrEditFavListDTO dto)
+        public bool AddFavList(AddFavListDTO dto)
         {
             try
             {
@@ -36,7 +36,7 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             return false;
         }
-        public bool DeleteFavList(AddOrEditFavListDTO dto)
+        public bool DeleteFavList(EditFavListDTO dto)
         {
             try
             {
@@ -65,7 +65,7 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             return false;
         }
-        public bool UpdateFavList(AddOrEditFavListDTO dto)
+        public bool UpdateFavList(EditFavListDTO dto)
         {
             try
             {
