@@ -60,6 +60,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 MessageBox.Show(validationResult.Errors[0].ErrorMessage);
             }
         }
+        
         private void OpenUserPage(UserDetailDTO result)
         {
             UserSayfasi f = new UserSayfasi();

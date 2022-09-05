@@ -283,9 +283,8 @@
             this.Controls.Add(this.btnGrpBoxSignIn);
             this.Controls.Add(this.btnGrpBoxSignUp);
             this.Controls.Add(this.GrpBoxSignUp);
-            this.Controls.Add(this.GrpBoxSignIn);
             this.Name = "SignInSignUpForm";
-            this.Text = "Form1";
+            this.Text = "Green Home";
             this.GrpBoxSignUp.ResumeLayout(false);
             this.GrpBoxSignUp.PerformLayout();
             this.GrpBoxSignIn.ResumeLayout(false);
