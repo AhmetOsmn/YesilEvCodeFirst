@@ -209,6 +209,34 @@
             this.btnAddFavoriGoFavoriLists = new System.Windows.Forms.Button();
             this.txtAddFavoriFavoriName = new System.Windows.Forms.TextBox();
             this.lblAddFavoriFavoriName = new System.Windows.Forms.Label();
+            this.ChangeEmail = new System.Windows.Forms.Panel();
+            this.btnChangeEmailUser = new System.Windows.Forms.Button();
+            this.btnChangeEmailSend = new System.Windows.Forms.Button();
+            this.txtChangeEmaiReNewEmail = new System.Windows.Forms.TextBox();
+            this.txtChangeEmailNewEmail = new System.Windows.Forms.TextBox();
+            this.lblChangeEmailReNewEmail = new System.Windows.Forms.Label();
+            this.txtChangeEmailUserEmail = new System.Windows.Forms.TextBox();
+            this.lblChangeEmailNewEmail = new System.Windows.Forms.Label();
+            this.lblChangeEmailUserEmail = new System.Windows.Forms.Label();
+            this.ChangePassword = new System.Windows.Forms.Panel();
+            this.btnChangePasswordUser = new System.Windows.Forms.Button();
+            this.btnChangePasswordSend = new System.Windows.Forms.Button();
+            this.txtChangePasswordReNewPassword = new System.Windows.Forms.TextBox();
+            this.txtChangePasswordNewPassword = new System.Windows.Forms.TextBox();
+            this.lblChangePasswordReNewPassword = new System.Windows.Forms.Label();
+            this.txtChangePasswordPassword = new System.Windows.Forms.TextBox();
+            this.lblChangePasswordNewPassword = new System.Windows.Forms.Label();
+            this.lblChangePasswordPassword = new System.Windows.Forms.Label();
+            this.ChangeUserDetails = new System.Windows.Forms.Panel();
+            this.btnChangeUserDetailsSend = new System.Windows.Forms.Button();
+            this.txtChangeUserDetailsFirstName = new System.Windows.Forms.TextBox();
+            this.txtChangeUserDetailsLastName = new System.Windows.Forms.TextBox();
+            this.txtChangeUserDetailsPhone = new System.Windows.Forms.TextBox();
+            this.lblChangeUserDetailsPhone = new System.Windows.Forms.Label();
+            this.lblChangeUserDetailsLastName = new System.Windows.Forms.Label();
+            this.lblChangeUserDetailsFirstName = new System.Windows.Forms.Label();
+            this.btnChangeUserDetailsUser = new System.Windows.Forms.Button();
+            this.AddSupplementInBlackList = new System.Windows.Forms.Panel();
             this.pnlSideBarHome.SuspendLayout();
             this.pnlSideBarGiveStarApplication.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarGiveStarApplication)).BeginInit();
@@ -269,6 +297,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBlackListSupplements)).BeginInit();
             this.SearchBarcode.SuspendLayout();
             this.AddFavoriList.SuspendLayout();
+            this.ChangeEmail.SuspendLayout();
+            this.ChangePassword.SuspendLayout();
+            this.ChangeUserDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSideBarHome
@@ -1097,6 +1128,7 @@
             this.btnUserDetailsUpdateUserDetails.Text = "         Profil bilgileri güncelle";
             this.btnUserDetailsUpdateUserDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserDetailsUpdateUserDetails.UseVisualStyleBackColor = true;
+            this.btnUserDetailsUpdateUserDetails.Click += new System.EventHandler(this.btnUserDetailsUpdateUserDetails_Click);
             // 
             // btnUserDetailsMergeSocialMedia
             // 
@@ -1112,6 +1144,7 @@
             this.btnUserDetailsMergeSocialMedia.Text = "         Sosyal medya hesabı ile birleştir";
             this.btnUserDetailsMergeSocialMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserDetailsMergeSocialMedia.UseVisualStyleBackColor = true;
+            this.btnUserDetailsMergeSocialMedia.Click += new System.EventHandler(this.btnUserDetailsMergeSocialMedia_Click);
             // 
             // btnUserDetailsChangeEmail
             // 
@@ -1127,6 +1160,7 @@
             this.btnUserDetailsChangeEmail.Text = "         E-Posta Adresini değiştir";
             this.btnUserDetailsChangeEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserDetailsChangeEmail.UseVisualStyleBackColor = true;
+            this.btnUserDetailsChangeEmail.Click += new System.EventHandler(this.btnUserDetailsChangeEmail_Click);
             // 
             // lblUserDetailsAddProduct
             // 
@@ -1188,6 +1222,7 @@
             this.btnUserDetailsChangePassword.Text = "         Şifre değiştir";
             this.btnUserDetailsChangePassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserDetailsChangePassword.UseVisualStyleBackColor = true;
+            this.btnUserDetailsChangePassword.Click += new System.EventHandler(this.btnUserDetailsChangePassword_Click);
             // 
             // btnUserDetailsPremium
             // 
@@ -1203,6 +1238,7 @@
             this.btnUserDetailsPremium.Text = "         Premium üye ol";
             this.btnUserDetailsPremium.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserDetailsPremium.UseVisualStyleBackColor = true;
+            this.btnUserDetailsPremium.Click += new System.EventHandler(this.btnUserDetailsPremium_Click);
             // 
             // AddAndUpdateProduct
             // 
@@ -2292,6 +2328,7 @@
             this.btnSearchBarcodeUser.Size = new System.Drawing.Size(60, 40);
             this.btnSearchBarcodeUser.TabIndex = 16;
             this.btnSearchBarcodeUser.UseVisualStyleBackColor = true;
+            this.btnSearchBarcodeUser.Click += new System.EventHandler(this.UserButton_Click);
             // 
             // btnSearchBarcodeSearchBarcode
             // 
@@ -2407,6 +2444,323 @@
             this.lblAddFavoriFavoriName.TabIndex = 0;
             this.lblAddFavoriFavoriName.Text = "Favori Liste Adını giriniz :";
             // 
+            // ChangeEmail
+            // 
+            this.ChangeEmail.Controls.Add(this.btnChangeEmailUser);
+            this.ChangeEmail.Controls.Add(this.btnChangeEmailSend);
+            this.ChangeEmail.Controls.Add(this.txtChangeEmaiReNewEmail);
+            this.ChangeEmail.Controls.Add(this.txtChangeEmailNewEmail);
+            this.ChangeEmail.Controls.Add(this.lblChangeEmailReNewEmail);
+            this.ChangeEmail.Controls.Add(this.txtChangeEmailUserEmail);
+            this.ChangeEmail.Controls.Add(this.lblChangeEmailNewEmail);
+            this.ChangeEmail.Controls.Add(this.lblChangeEmailUserEmail);
+            this.ChangeEmail.Location = new System.Drawing.Point(0, 0);
+            this.ChangeEmail.MaximumSize = new System.Drawing.Size(360, 510);
+            this.ChangeEmail.MinimumSize = new System.Drawing.Size(360, 510);
+            this.ChangeEmail.Name = "ChangeEmail";
+            this.ChangeEmail.Size = new System.Drawing.Size(360, 510);
+            this.ChangeEmail.TabIndex = 6;
+            // 
+            // btnChangeEmailUser
+            // 
+            this.btnChangeEmailUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnChangeEmailUser.BackgroundImage")));
+            this.btnChangeEmailUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChangeEmailUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeEmailUser.FlatAppearance.BorderSize = 0;
+            this.btnChangeEmailUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeEmailUser.Location = new System.Drawing.Point(285, 15);
+            this.btnChangeEmailUser.Name = "btnChangeEmailUser";
+            this.btnChangeEmailUser.Size = new System.Drawing.Size(60, 40);
+            this.btnChangeEmailUser.TabIndex = 22;
+            this.btnChangeEmailUser.UseVisualStyleBackColor = true;
+            this.btnChangeEmailUser.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // btnChangeEmailSend
+            // 
+            this.btnChangeEmailSend.BackColor = System.Drawing.Color.Green;
+            this.btnChangeEmailSend.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeEmailSend.FlatAppearance.BorderSize = 0;
+            this.btnChangeEmailSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeEmailSend.ForeColor = System.Drawing.Color.White;
+            this.btnChangeEmailSend.Location = new System.Drawing.Point(90, 250);
+            this.btnChangeEmailSend.Name = "btnChangeEmailSend";
+            this.btnChangeEmailSend.Size = new System.Drawing.Size(180, 40);
+            this.btnChangeEmailSend.TabIndex = 2;
+            this.btnChangeEmailSend.Text = "Onayla";
+            this.btnChangeEmailSend.UseVisualStyleBackColor = false;
+            this.btnChangeEmailSend.Click += new System.EventHandler(this.btnChangeEmailSend_Click);
+            // 
+            // txtChangeEmaiReNewEmail
+            // 
+            this.txtChangeEmaiReNewEmail.Location = new System.Drawing.Point(140, 205);
+            this.txtChangeEmaiReNewEmail.Name = "txtChangeEmaiReNewEmail";
+            this.txtChangeEmaiReNewEmail.Size = new System.Drawing.Size(198, 20);
+            this.txtChangeEmaiReNewEmail.TabIndex = 1;
+            // 
+            // txtChangeEmailNewEmail
+            // 
+            this.txtChangeEmailNewEmail.Location = new System.Drawing.Point(140, 176);
+            this.txtChangeEmailNewEmail.Name = "txtChangeEmailNewEmail";
+            this.txtChangeEmailNewEmail.Size = new System.Drawing.Size(198, 20);
+            this.txtChangeEmailNewEmail.TabIndex = 1;
+            // 
+            // lblChangeEmailReNewEmail
+            // 
+            this.lblChangeEmailReNewEmail.AutoSize = true;
+            this.lblChangeEmailReNewEmail.Location = new System.Drawing.Point(27, 208);
+            this.lblChangeEmailReNewEmail.Name = "lblChangeEmailReNewEmail";
+            this.lblChangeEmailReNewEmail.Size = new System.Drawing.Size(111, 13);
+            this.lblChangeEmailReNewEmail.TabIndex = 0;
+            this.lblChangeEmailReNewEmail.Text = "Yeni E-Posta Tekrar : ";
+            // 
+            // txtChangeEmailUserEmail
+            // 
+            this.txtChangeEmailUserEmail.Location = new System.Drawing.Point(140, 149);
+            this.txtChangeEmailUserEmail.Name = "txtChangeEmailUserEmail";
+            this.txtChangeEmailUserEmail.Size = new System.Drawing.Size(198, 20);
+            this.txtChangeEmailUserEmail.TabIndex = 1;
+            this.txtChangeEmailUserEmail.Click += new System.EventHandler(this.txtFirstClickClear);
+            // 
+            // lblChangeEmailNewEmail
+            // 
+            this.lblChangeEmailNewEmail.AutoSize = true;
+            this.lblChangeEmailNewEmail.Location = new System.Drawing.Point(19, 180);
+            this.lblChangeEmailNewEmail.Name = "lblChangeEmailNewEmail";
+            this.lblChangeEmailNewEmail.Size = new System.Drawing.Size(119, 13);
+            this.lblChangeEmailNewEmail.TabIndex = 0;
+            this.lblChangeEmailNewEmail.Text = "Kullanıcı Yeni E-Posta : ";
+            // 
+            // lblChangeEmailUserEmail
+            // 
+            this.lblChangeEmailUserEmail.AutoSize = true;
+            this.lblChangeEmailUserEmail.Location = new System.Drawing.Point(43, 152);
+            this.lblChangeEmailUserEmail.Name = "lblChangeEmailUserEmail";
+            this.lblChangeEmailUserEmail.Size = new System.Drawing.Size(95, 13);
+            this.lblChangeEmailUserEmail.TabIndex = 0;
+            this.lblChangeEmailUserEmail.Text = "Kullanıcı E-Posta : ";
+            // 
+            // ChangePassword
+            // 
+            this.ChangePassword.Controls.Add(this.btnChangePasswordUser);
+            this.ChangePassword.Controls.Add(this.btnChangePasswordSend);
+            this.ChangePassword.Controls.Add(this.txtChangePasswordReNewPassword);
+            this.ChangePassword.Controls.Add(this.txtChangePasswordNewPassword);
+            this.ChangePassword.Controls.Add(this.lblChangePasswordReNewPassword);
+            this.ChangePassword.Controls.Add(this.txtChangePasswordPassword);
+            this.ChangePassword.Controls.Add(this.lblChangePasswordNewPassword);
+            this.ChangePassword.Controls.Add(this.lblChangePasswordPassword);
+            this.ChangePassword.Location = new System.Drawing.Point(0, 0);
+            this.ChangePassword.MaximumSize = new System.Drawing.Size(360, 510);
+            this.ChangePassword.MinimumSize = new System.Drawing.Size(360, 510);
+            this.ChangePassword.Name = "ChangePassword";
+            this.ChangePassword.Size = new System.Drawing.Size(360, 510);
+            this.ChangePassword.TabIndex = 18;
+            this.ChangePassword.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // btnChangePasswordUser
+            // 
+            this.btnChangePasswordUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnChangePasswordUser.BackgroundImage")));
+            this.btnChangePasswordUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChangePasswordUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangePasswordUser.FlatAppearance.BorderSize = 0;
+            this.btnChangePasswordUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePasswordUser.Location = new System.Drawing.Point(285, 15);
+            this.btnChangePasswordUser.Name = "btnChangePasswordUser";
+            this.btnChangePasswordUser.Size = new System.Drawing.Size(60, 40);
+            this.btnChangePasswordUser.TabIndex = 23;
+            this.btnChangePasswordUser.UseVisualStyleBackColor = true;
+            this.btnChangePasswordUser.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // btnChangePasswordSend
+            // 
+            this.btnChangePasswordSend.BackColor = System.Drawing.Color.Green;
+            this.btnChangePasswordSend.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangePasswordSend.FlatAppearance.BorderSize = 0;
+            this.btnChangePasswordSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePasswordSend.ForeColor = System.Drawing.Color.White;
+            this.btnChangePasswordSend.Location = new System.Drawing.Point(90, 250);
+            this.btnChangePasswordSend.Name = "btnChangePasswordSend";
+            this.btnChangePasswordSend.Size = new System.Drawing.Size(180, 40);
+            this.btnChangePasswordSend.TabIndex = 9;
+            this.btnChangePasswordSend.Text = "Onayla";
+            this.btnChangePasswordSend.UseVisualStyleBackColor = false;
+            this.btnChangePasswordSend.Click += new System.EventHandler(this.btnChangePasswordSend_Click);
+            // 
+            // txtChangePasswordReNewPassword
+            // 
+            this.txtChangePasswordReNewPassword.Location = new System.Drawing.Point(138, 205);
+            this.txtChangePasswordReNewPassword.Name = "txtChangePasswordReNewPassword";
+            this.txtChangePasswordReNewPassword.PasswordChar = '*';
+            this.txtChangePasswordReNewPassword.Size = new System.Drawing.Size(198, 20);
+            this.txtChangePasswordReNewPassword.TabIndex = 6;
+            // 
+            // txtChangePasswordNewPassword
+            // 
+            this.txtChangePasswordNewPassword.Location = new System.Drawing.Point(138, 176);
+            this.txtChangePasswordNewPassword.Name = "txtChangePasswordNewPassword";
+            this.txtChangePasswordNewPassword.PasswordChar = '*';
+            this.txtChangePasswordNewPassword.Size = new System.Drawing.Size(198, 20);
+            this.txtChangePasswordNewPassword.TabIndex = 7;
+            // 
+            // lblChangePasswordReNewPassword
+            // 
+            this.lblChangePasswordReNewPassword.AutoSize = true;
+            this.lblChangePasswordReNewPassword.Location = new System.Drawing.Point(34, 208);
+            this.lblChangePasswordReNewPassword.Name = "lblChangePasswordReNewPassword";
+            this.lblChangePasswordReNewPassword.Size = new System.Drawing.Size(95, 13);
+            this.lblChangePasswordReNewPassword.TabIndex = 3;
+            this.lblChangePasswordReNewPassword.Text = "Yeni Şifre Tekrar : ";
+            // 
+            // txtChangePasswordPassword
+            // 
+            this.txtChangePasswordPassword.Location = new System.Drawing.Point(138, 149);
+            this.txtChangePasswordPassword.Name = "txtChangePasswordPassword";
+            this.txtChangePasswordPassword.PasswordChar = '*';
+            this.txtChangePasswordPassword.Size = new System.Drawing.Size(198, 20);
+            this.txtChangePasswordPassword.TabIndex = 8;
+            // 
+            // lblChangePasswordNewPassword
+            // 
+            this.lblChangePasswordNewPassword.AutoSize = true;
+            this.lblChangePasswordNewPassword.Location = new System.Drawing.Point(26, 180);
+            this.lblChangePasswordNewPassword.Name = "lblChangePasswordNewPassword";
+            this.lblChangePasswordNewPassword.Size = new System.Drawing.Size(103, 13);
+            this.lblChangePasswordNewPassword.TabIndex = 4;
+            this.lblChangePasswordNewPassword.Text = "Kullanıcı Yeni Şifre : ";
+            // 
+            // lblChangePasswordPassword
+            // 
+            this.lblChangePasswordPassword.AutoSize = true;
+            this.lblChangePasswordPassword.Location = new System.Drawing.Point(50, 152);
+            this.lblChangePasswordPassword.Name = "lblChangePasswordPassword";
+            this.lblChangePasswordPassword.Size = new System.Drawing.Size(76, 13);
+            this.lblChangePasswordPassword.TabIndex = 5;
+            this.lblChangePasswordPassword.Text = "Kullanıcı Şifre :";
+            // 
+            // ChangeUserDetails
+            // 
+            this.ChangeUserDetails.Controls.Add(this.btnChangeUserDetailsSend);
+            this.ChangeUserDetails.Controls.Add(this.txtChangeUserDetailsFirstName);
+            this.ChangeUserDetails.Controls.Add(this.txtChangeUserDetailsLastName);
+            this.ChangeUserDetails.Controls.Add(this.txtChangeUserDetailsPhone);
+            this.ChangeUserDetails.Controls.Add(this.lblChangeUserDetailsPhone);
+            this.ChangeUserDetails.Controls.Add(this.lblChangeUserDetailsLastName);
+            this.ChangeUserDetails.Controls.Add(this.lblChangeUserDetailsFirstName);
+            this.ChangeUserDetails.Controls.Add(this.btnChangeUserDetailsUser);
+            this.ChangeUserDetails.Location = new System.Drawing.Point(0, 0);
+            this.ChangeUserDetails.MaximumSize = new System.Drawing.Size(360, 510);
+            this.ChangeUserDetails.MinimumSize = new System.Drawing.Size(360, 510);
+            this.ChangeUserDetails.Name = "ChangeUserDetails";
+            this.ChangeUserDetails.Size = new System.Drawing.Size(360, 510);
+            this.ChangeUserDetails.TabIndex = 19;
+            // 
+            // btnChangeUserDetailsSend
+            // 
+            this.btnChangeUserDetailsSend.BackColor = System.Drawing.Color.Green;
+            this.btnChangeUserDetailsSend.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeUserDetailsSend.FlatAppearance.BorderSize = 0;
+            this.btnChangeUserDetailsSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeUserDetailsSend.ForeColor = System.Drawing.Color.White;
+            this.btnChangeUserDetailsSend.Location = new System.Drawing.Point(90, 250);
+            this.btnChangeUserDetailsSend.Name = "btnChangeUserDetailsSend";
+            this.btnChangeUserDetailsSend.Size = new System.Drawing.Size(180, 40);
+            this.btnChangeUserDetailsSend.TabIndex = 33;
+            this.btnChangeUserDetailsSend.Text = "Onayla";
+            this.btnChangeUserDetailsSend.UseVisualStyleBackColor = false;
+            this.btnChangeUserDetailsSend.Click += new System.EventHandler(this.btnChangeUserDetailsSend_Click);
+            // 
+            // txtChangeUserDetailsFirstName
+            // 
+            this.txtChangeUserDetailsFirstName.BackColor = System.Drawing.Color.White;
+            this.txtChangeUserDetailsFirstName.ForeColor = System.Drawing.Color.Black;
+            this.txtChangeUserDetailsFirstName.Location = new System.Drawing.Point(25, 163);
+            this.txtChangeUserDetailsFirstName.Multiline = true;
+            this.txtChangeUserDetailsFirstName.Name = "txtChangeUserDetailsFirstName";
+            this.txtChangeUserDetailsFirstName.Size = new System.Drawing.Size(145, 20);
+            this.txtChangeUserDetailsFirstName.TabIndex = 27;
+            this.txtChangeUserDetailsFirstName.Tag = "0";
+            this.txtChangeUserDetailsFirstName.Click += new System.EventHandler(this.txtFirstClickClear);
+            // 
+            // txtChangeUserDetailsLastName
+            // 
+            this.txtChangeUserDetailsLastName.BackColor = System.Drawing.Color.White;
+            this.txtChangeUserDetailsLastName.ForeColor = System.Drawing.Color.Black;
+            this.txtChangeUserDetailsLastName.Location = new System.Drawing.Point(191, 163);
+            this.txtChangeUserDetailsLastName.Multiline = true;
+            this.txtChangeUserDetailsLastName.Name = "txtChangeUserDetailsLastName";
+            this.txtChangeUserDetailsLastName.Size = new System.Drawing.Size(145, 20);
+            this.txtChangeUserDetailsLastName.TabIndex = 29;
+            this.txtChangeUserDetailsLastName.Tag = "0";
+            this.txtChangeUserDetailsLastName.Click += new System.EventHandler(this.txtFirstClickClear);
+            // 
+            // txtChangeUserDetailsPhone
+            // 
+            this.txtChangeUserDetailsPhone.BackColor = System.Drawing.Color.White;
+            this.txtChangeUserDetailsPhone.ForeColor = System.Drawing.Color.Black;
+            this.txtChangeUserDetailsPhone.Location = new System.Drawing.Point(26, 211);
+            this.txtChangeUserDetailsPhone.Multiline = true;
+            this.txtChangeUserDetailsPhone.Name = "txtChangeUserDetailsPhone";
+            this.txtChangeUserDetailsPhone.Size = new System.Drawing.Size(310, 20);
+            this.txtChangeUserDetailsPhone.TabIndex = 32;
+            this.txtChangeUserDetailsPhone.Tag = "0";
+            this.txtChangeUserDetailsPhone.Click += new System.EventHandler(this.txtFirstClickClear);
+            // 
+            // lblChangeUserDetailsPhone
+            // 
+            this.lblChangeUserDetailsPhone.AutoSize = true;
+            this.lblChangeUserDetailsPhone.BackColor = System.Drawing.Color.White;
+            this.lblChangeUserDetailsPhone.ForeColor = System.Drawing.Color.Black;
+            this.lblChangeUserDetailsPhone.Location = new System.Drawing.Point(23, 195);
+            this.lblChangeUserDetailsPhone.Name = "lblChangeUserDetailsPhone";
+            this.lblChangeUserDetailsPhone.Size = new System.Drawing.Size(90, 13);
+            this.lblChangeUserDetailsPhone.TabIndex = 30;
+            this.lblChangeUserDetailsPhone.Text = "Telefon Numarası";
+            // 
+            // lblChangeUserDetailsLastName
+            // 
+            this.lblChangeUserDetailsLastName.AutoSize = true;
+            this.lblChangeUserDetailsLastName.BackColor = System.Drawing.Color.White;
+            this.lblChangeUserDetailsLastName.ForeColor = System.Drawing.Color.Black;
+            this.lblChangeUserDetailsLastName.Location = new System.Drawing.Point(189, 148);
+            this.lblChangeUserDetailsLastName.Name = "lblChangeUserDetailsLastName";
+            this.lblChangeUserDetailsLastName.Size = new System.Drawing.Size(42, 13);
+            this.lblChangeUserDetailsLastName.TabIndex = 25;
+            this.lblChangeUserDetailsLastName.Text = "Soyisim";
+            // 
+            // lblChangeUserDetailsFirstName
+            // 
+            this.lblChangeUserDetailsFirstName.AutoSize = true;
+            this.lblChangeUserDetailsFirstName.BackColor = System.Drawing.Color.White;
+            this.lblChangeUserDetailsFirstName.ForeColor = System.Drawing.Color.Black;
+            this.lblChangeUserDetailsFirstName.Location = new System.Drawing.Point(23, 147);
+            this.lblChangeUserDetailsFirstName.Name = "lblChangeUserDetailsFirstName";
+            this.lblChangeUserDetailsFirstName.Size = new System.Drawing.Size(25, 13);
+            this.lblChangeUserDetailsFirstName.TabIndex = 26;
+            this.lblChangeUserDetailsFirstName.Text = "İsim";
+            // 
+            // btnChangeUserDetailsUser
+            // 
+            this.btnChangeUserDetailsUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnChangeUserDetailsUser.BackgroundImage")));
+            this.btnChangeUserDetailsUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChangeUserDetailsUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeUserDetailsUser.FlatAppearance.BorderSize = 0;
+            this.btnChangeUserDetailsUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeUserDetailsUser.Location = new System.Drawing.Point(285, 15);
+            this.btnChangeUserDetailsUser.Name = "btnChangeUserDetailsUser";
+            this.btnChangeUserDetailsUser.Size = new System.Drawing.Size(60, 40);
+            this.btnChangeUserDetailsUser.TabIndex = 24;
+            this.btnChangeUserDetailsUser.UseVisualStyleBackColor = true;
+            this.btnChangeUserDetailsUser.Click += new System.EventHandler(this.UserButton_Click);
+            // 
+            // AddSupplementInBlackList
+            // 
+            this.AddSupplementInBlackList.Location = new System.Drawing.Point(0, 0);
+            this.AddSupplementInBlackList.MaximumSize = new System.Drawing.Size(360, 510);
+            this.AddSupplementInBlackList.MinimumSize = new System.Drawing.Size(360, 510);
+            this.AddSupplementInBlackList.Name = "AddSupplementInBlackList";
+            this.AddSupplementInBlackList.Size = new System.Drawing.Size(360, 510);
+            this.AddSupplementInBlackList.TabIndex = 20;
+            // 
             // UserSayfasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2423,6 +2777,10 @@
             this.Controls.Add(this.SearchHistory);
             this.Controls.Add(this.SearchBarcode);
             this.Controls.Add(this.AddFavoriList);
+            this.Controls.Add(this.ChangeEmail);
+            this.Controls.Add(this.ChangePassword);
+            this.Controls.Add(this.ChangeUserDetails);
+            this.Controls.Add(this.AddSupplementInBlackList);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(380, 548);
             this.MinimumSize = new System.Drawing.Size(380, 548);
@@ -2498,6 +2856,12 @@
             this.SearchBarcode.PerformLayout();
             this.AddFavoriList.ResumeLayout(false);
             this.AddFavoriList.PerformLayout();
+            this.ChangeEmail.ResumeLayout(false);
+            this.ChangeEmail.PerformLayout();
+            this.ChangePassword.ResumeLayout(false);
+            this.ChangePassword.PerformLayout();
+            this.ChangeUserDetails.ResumeLayout(false);
+            this.ChangeUserDetails.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2683,5 +3047,33 @@
         private System.Windows.Forms.Button btnAddFavoriList;
         private System.Windows.Forms.Label lblFavoriListsAddFavori;
         private System.Windows.Forms.Button btnFavoriListsAddFavori;
+        private System.Windows.Forms.Panel ChangeEmail;
+        private System.Windows.Forms.Panel ChangePassword;
+        private System.Windows.Forms.Panel ChangeUserDetails;
+        private System.Windows.Forms.TextBox txtChangeEmailUserEmail;
+        private System.Windows.Forms.Label lblChangeEmailUserEmail;
+        private System.Windows.Forms.TextBox txtChangeEmailNewEmail;
+        private System.Windows.Forms.Label lblChangeEmailNewEmail;
+        private System.Windows.Forms.TextBox txtChangeEmaiReNewEmail;
+        private System.Windows.Forms.Label lblChangeEmailReNewEmail;
+        private System.Windows.Forms.Button btnChangeEmailSend;
+        private System.Windows.Forms.Button btnChangePasswordSend;
+        private System.Windows.Forms.TextBox txtChangePasswordReNewPassword;
+        private System.Windows.Forms.TextBox txtChangePasswordNewPassword;
+        private System.Windows.Forms.Label lblChangePasswordReNewPassword;
+        private System.Windows.Forms.TextBox txtChangePasswordPassword;
+        private System.Windows.Forms.Label lblChangePasswordNewPassword;
+        private System.Windows.Forms.Label lblChangePasswordPassword;
+        private System.Windows.Forms.Button btnChangeEmailUser;
+        private System.Windows.Forms.Button btnChangePasswordUser;
+        private System.Windows.Forms.Button btnChangeUserDetailsUser;
+        private System.Windows.Forms.TextBox txtChangeUserDetailsFirstName;
+        private System.Windows.Forms.TextBox txtChangeUserDetailsLastName;
+        private System.Windows.Forms.TextBox txtChangeUserDetailsPhone;
+        private System.Windows.Forms.Label lblChangeUserDetailsPhone;
+        private System.Windows.Forms.Label lblChangeUserDetailsLastName;
+        private System.Windows.Forms.Label lblChangeUserDetailsFirstName;
+        private System.Windows.Forms.Button btnChangeUserDetailsSend;
+        private System.Windows.Forms.Panel AddSupplementInBlackList;
     }
 }
