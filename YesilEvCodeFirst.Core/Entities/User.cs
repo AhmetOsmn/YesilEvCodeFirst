@@ -26,7 +26,7 @@ namespace YesilEvCodeFirst.Core.Entities
         public string Phone { get; set; }
 
         [Column(TypeName = "NVARCHAR")]
-        [StringLength(10)]
+        [StringLength(30)]
         public string Password { get; set; }
 
         public int RolID { get; set; }

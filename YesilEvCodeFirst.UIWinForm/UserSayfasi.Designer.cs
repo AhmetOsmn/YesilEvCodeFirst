@@ -2785,7 +2785,7 @@
             this.MaximumSize = new System.Drawing.Size(380, 548);
             this.MinimumSize = new System.Drawing.Size(380, 548);
             this.Name = "UserSayfasi";
-            this.Text = "Form3";
+            this.Text = "Green Home";
             this.pnlSideBarHome.ResumeLayout(false);
             this.pnlSideBarGiveStarApplication.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarGiveStarApplication)).EndInit();

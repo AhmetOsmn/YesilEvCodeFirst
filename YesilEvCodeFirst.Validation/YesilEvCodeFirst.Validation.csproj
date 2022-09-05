@@ -62,7 +62,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Deneme\LoginValidator.cs" />
+    <Compile Include="FluentValidator\LoginValidator.cs" />
+    <Compile Include="FluentValidator\SignUpValidator.cs" />
     <Compile Include="Login\LoginValidator.cs" />
     <Compile Include="Product\AddProductValidator.cs" />
     <Compile Include="Product\UpdateProductValidator.cs" />
