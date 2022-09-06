@@ -28,7 +28,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    User tempUser = context.User.Where(u => u.Email.Equals(dto.Email) && u.Password.Equals(dto.Password) && u.RolID.Equals(1)).FirstOrDefault();
+                    User tempUser = context.User.Where(u => u.Email.Equals(dto.Email) && u.Password.Equals(dto.Password) && u.RolID.Equals(1) && u.IsActive).FirstOrDefault();
                     if (tempUser == null)
                     {
                         throw new Exception(Messages.AdminNotFound);

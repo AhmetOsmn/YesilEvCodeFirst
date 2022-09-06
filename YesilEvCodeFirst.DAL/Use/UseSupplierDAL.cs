@@ -23,7 +23,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    var result = context.Supplier.ToList();
+                    var result = context.Supplier.Where(x => x.IsActive).ToList();
 
                     suppliers = result;
                 }

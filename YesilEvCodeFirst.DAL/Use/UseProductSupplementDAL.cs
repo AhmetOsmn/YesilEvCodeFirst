@@ -29,7 +29,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                List<ProductSupplement> productSupplements = GetByConditionWithInclude(u => u.ProductID.Equals(dto.ID),"Supplement").ToList();
+                List<ProductSupplement> productSupplements = GetByConditionWithInclude(u => u.ProductID.Equals(dto.ID) && u.IsActive,"Supplement").ToList();
                 if (productSupplements != null)
                 {
                     nLogger.Info("{} ID'li urune ait olan maddeler getirildi.", dto.ID);

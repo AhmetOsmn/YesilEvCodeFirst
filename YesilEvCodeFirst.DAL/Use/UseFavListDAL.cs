@@ -61,12 +61,15 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    var favlist = context.FavList.Where(u => u.UserID.Equals(dto.UserID) && u.FavorID.Equals(dto.FavorID)).FirstOrDefault();
+                    var favlist = context.FavList.Where(u => u.UserID.Equals(dto.UserID) && u.FavorID.Equals(dto.FavorID) && u.IsActive).FirstOrDefault();
                     if (favlist != null)
                     {
                         favlist.IsActive = false;
                         // todo: modified date olması gerekmiyor mu?
                         favlist.CreatedDate = DateTime.Now;
+
+                        var favlistProducts = context.ProductFavList.Where(x => x.FavorID == dto.FavorID && x.IsActive).ToList();
+                        favlistProducts.ForEach(x => x.IsActive = false);
                         context.SaveChanges();
                     }
                     else
@@ -104,7 +107,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    var favlist = context.FavList.Where(u => u.UserID.Equals(dto.UserID) && u.FavorID.Equals(dto.FavorID)).FirstOrDefault();
+                    var favlist = context.FavList.Where(u => u.UserID.Equals(dto.UserID) && u.FavorID.Equals(dto.FavorID) && u.IsActive).FirstOrDefault();
                     if (favlist != null)
                     {
                         favlist.FavoriListName = dto.FavoriListName;
@@ -144,7 +147,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                var favlist = GetByCondition(u => u.UserID.Equals(dto.ID)).ToList();
+                var favlist = GetByCondition(u => u.UserID.Equals(dto.ID) && u.IsActive).ToList();
                 if (favlist != null)
                 {
                     nLogger.Info("{} ID'li kullanicinin favori listeleri getirildi.", dto.ID);
@@ -178,7 +181,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                var favlist = GetByCondition(u => u.UserID.Equals(dto.UserID) && u.FavoriListName.Equals(dto.FavListName)).FirstOrDefault();
+                var favlist = GetByCondition(u => u.UserID.Equals(dto.UserID) && u.FavoriListName.Equals(dto.FavListName) && u.IsActive).FirstOrDefault();
                 if (favlist != null)
                 {
                     nLogger.Info("{} ID'li kullanicinin {} listesinin ID'si getirildi.", dto.UserID, dto.FavListName);

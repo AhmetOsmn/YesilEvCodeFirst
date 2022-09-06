@@ -24,7 +24,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    var result = context.Category.ToList();
+                    var result = context.Category.Where(x => x.IsActive).ToList();
 
                     categories = result;
                 }

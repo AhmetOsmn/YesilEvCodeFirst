@@ -29,7 +29,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
 
                 //todo: tolower kullanilacak mi karar verilecek
-                var tempSupplement = GetByCondition(supplement => supplement.SupplementName.ToLower() == dto.SupplementName.ToLower()).FirstOrDefault();
+                var tempSupplement = GetByCondition(supplement => supplement.SupplementName.ToLower() == dto.SupplementName.ToLower() && supplement.IsActive).FirstOrDefault();
                 if (tempSupplement == null)
                 {
                     Supplement eklenecekSupplement = MappingProfile.AddSupplementDTOToSupplement(dto);
@@ -64,7 +64,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    List<Supplement> result = context.Supplement.ToList();
+                    List<Supplement> result = context.Supplement.Where(x => x.IsActive).ToList();
 
                     supplements = result;
                 }

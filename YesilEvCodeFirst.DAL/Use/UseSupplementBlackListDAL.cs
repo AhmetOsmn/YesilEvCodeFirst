@@ -33,7 +33,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    var blacklist = context.BlackList.Where(u => u.UserID.Equals(dto.UserID)).FirstOrDefault();
+                    var blacklist = context.BlackList.Where(u => u.UserID.Equals(dto.UserID) && u.IsActive).FirstOrDefault();
                     if (blacklist == null)
                     {
 
@@ -83,7 +83,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    var suppblacklist = context.SupplementBlackList.Where(u => u.BlackListID.Equals(dto.BlackListID) && u.SupplementID.Equals(dto.SupplementID)).FirstOrDefault();
+                    var suppblacklist = context.SupplementBlackList.Where(u => u.BlackListID.Equals(dto.BlackListID) && u.SupplementID.Equals(dto.SupplementID) && u.IsActive).FirstOrDefault();
                     if (suppblacklist != null)
                     {
                         suppblacklist.IsActive = false;
@@ -123,7 +123,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                List<SupplementBlackList> supplements = GetByConditionWithInclude(u => u.BlackListID.Equals(dto.ID), "Supplement").ToList();
+                List<SupplementBlackList> supplements = GetByConditionWithInclude(u => u.BlackListID.Equals(dto.ID) && u.IsActive, "Supplement").ToList();
 
                 if (supplements != null)
                 {

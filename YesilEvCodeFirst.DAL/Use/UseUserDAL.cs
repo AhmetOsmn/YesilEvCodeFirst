@@ -32,7 +32,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                var user = GetByCondition(u => u.Email.Equals(dto.Email) && u.Password.Equals(dto.Password)).FirstOrDefault();
+                var user = GetByCondition(u => u.Email.Equals(dto.Email) && u.Password.Equals(dto.Password) && u.IsActive).FirstOrDefault();
                 if (user == null)
                 {
                     throw new Exception(Messages.UserNotFound);
@@ -68,7 +68,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    var tempUser = context.User.Where(u => u.Email.Equals(dto.Email)).FirstOrDefault();
+                    var tempUser = context.User.Where(u => u.Email.Equals(dto.Email) && u.IsActive).FirstOrDefault();
                     if (tempUser == null)
                     {
                         User addUser = MappingProfile.AddUserDTOtoUser(dto);
@@ -108,7 +108,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                User tempUser = GetByCondition(x => x.Email.Equals(dto.Email)).FirstOrDefault();
+                User tempUser = GetByCondition(x => x.Email.Equals(dto.Email) && x.IsActive).FirstOrDefault();
                 if (tempUser != null)
                 {
                     nLogger.Info("{} - kullanicisinin bilgileri getirildi", tempUser.FirstName + " " + tempUser.LastName);
@@ -142,7 +142,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                User tempUser = GetByCondition(x => x.UserID.Equals(dto.ID)).FirstOrDefault();
+                User tempUser = GetByCondition(x => x.UserID.Equals(dto.ID) && x.IsActive).FirstOrDefault();
                 if (tempUser != null)
                 {
                     nLogger.Info("{} - kullanicisinin bilgileri getirildi", tempUser.FirstName + " " + tempUser.LastName);
@@ -176,7 +176,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                User tempUser = GetByCondition(x => x.UserID.Equals(dto.UserID)).FirstOrDefault();
+                User tempUser = GetByCondition(x => x.UserID.Equals(dto.UserID) && x.IsActive).FirstOrDefault();
                 if (tempUser != null)
                 {
                     tempUser.FirstName = dto.FirstName;
@@ -214,7 +214,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                User tempUser = GetByCondition(x => x.UserID.Equals(dto.UserID)).FirstOrDefault();
+                User tempUser = GetByCondition(x => x.UserID.Equals(dto.UserID) && x.IsActive).FirstOrDefault();
                 if (tempUser != null)
                 {
                     tempUser.Email = dto.NewEmail;
@@ -250,7 +250,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                User tempUser = GetByCondition(x => x.UserID.Equals(dto.UserID)).FirstOrDefault();
+                User tempUser = GetByCondition(x => x.UserID.Equals(dto.UserID) && x.IsActive).FirstOrDefault();
                 if (tempUser != null)
                 {
                     tempUser.Password = dto.NewPassword;

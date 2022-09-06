@@ -47,7 +47,7 @@ namespace YesilEvCodeFirst.DAL.Use
         {
             try
             {
-                List<SearchHistory> searchHistoryList = GetAll();
+                List<SearchHistory> searchHistoryList = GetByCondition(x => x.IsActive).ToList();
 
                 if (searchHistoryList == null)
                 {
@@ -82,7 +82,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                List<SearchHistory> searchHistoryList = GetByConditionWithInclude(x => x.UserID == dto.ID, "User", "Product");
+                List<SearchHistory> searchHistoryList = GetByConditionWithInclude(x => x.UserID == dto.ID && x.IsActive, "User", "Product");
 
                 if (searchHistoryList == null)
                 {
@@ -121,7 +121,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                var histories = GetByCondition(x => x.UserID == dto.ID).ToList();
+                var histories = GetByCondition(x => x.UserID == dto.ID && x.IsActive).ToList();
                 DeleteRange(histories);
                 MySaveChanges();
                 return true;
