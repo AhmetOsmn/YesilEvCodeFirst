@@ -15,7 +15,7 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SignInSignUpForm());
+            Application.Run(new MaddeIslemleri());
         }
     }
 }

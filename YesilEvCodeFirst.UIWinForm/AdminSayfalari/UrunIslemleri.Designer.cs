@@ -38,19 +38,19 @@
             this.pnlListele = new System.Windows.Forms.Panel();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.pnlAra = new System.Windows.Forms.Panel();
-            this.tbUrunAra = new System.Windows.Forms.TextBox();
-            this.lblUrunAra = new System.Windows.Forms.Label();
-            this.dgvSearchProduct = new System.Windows.Forms.DataGridView();
-            this.btnUrunuAra = new System.Windows.Forms.Button();
             this.pnlApprove = new System.Windows.Forms.Panel();
             this.dgvApprove = new System.Windows.Forms.DataGridView();
+            this.btnUrunuAra = new System.Windows.Forms.Button();
+            this.lblUrunAra = new System.Windows.Forms.Label();
+            this.tbUrunAra = new System.Windows.Forms.TextBox();
+            this.dgvSearchProduct = new System.Windows.Forms.DataGridView();
             this.gbProduct.SuspendLayout();
             this.pnlListele.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.pnlAra.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProduct)).BeginInit();
             this.pnlApprove.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApprove)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // btnListele
@@ -148,49 +148,17 @@
             this.pnlAra.Controls.Add(this.lblUrunAra);
             this.pnlAra.Controls.Add(this.tbUrunAra);
             this.pnlAra.Controls.Add(this.dgvSearchProduct);
+            this.pnlAra.Controls.Add(this.pnlApprove);
             this.pnlAra.Location = new System.Drawing.Point(113, 22);
             this.pnlAra.Name = "pnlAra";
             this.pnlAra.Size = new System.Drawing.Size(1145, 416);
             this.pnlAra.TabIndex = 1;
             // 
-            // tbUrunAra
-            // 
-            this.tbUrunAra.Location = new System.Drawing.Point(120, 17);
-            this.tbUrunAra.Name = "tbUrunAra";
-            this.tbUrunAra.Size = new System.Drawing.Size(187, 20);
-            this.tbUrunAra.TabIndex = 0;
-            // 
-            // lblUrunAra
-            // 
-            this.lblUrunAra.AutoSize = true;
-            this.lblUrunAra.Location = new System.Drawing.Point(32, 20);
-            this.lblUrunAra.Name = "lblUrunAra";
-            this.lblUrunAra.Size = new System.Drawing.Size(82, 13);
-            this.lblUrunAra.TabIndex = 1;
-            this.lblUrunAra.Text = "Urun Adı Giriniz:";
-            // 
-            // dgvSearchProduct
-            // 
-            this.dgvSearchProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSearchProduct.Location = new System.Drawing.Point(3, 46);
-            this.dgvSearchProduct.Name = "dgvSearchProduct";
-            this.dgvSearchProduct.Size = new System.Drawing.Size(1136, 367);
-            this.dgvSearchProduct.TabIndex = 2;
-            // 
-            // btnUrunuAra
-            // 
-            this.btnUrunuAra.Location = new System.Drawing.Point(328, 17);
-            this.btnUrunuAra.Name = "btnUrunuAra";
-            this.btnUrunuAra.Size = new System.Drawing.Size(75, 20);
-            this.btnUrunuAra.TabIndex = 3;
-            this.btnUrunuAra.Text = "Ara";
-            this.btnUrunuAra.UseVisualStyleBackColor = true;
-            this.btnUrunuAra.Click += new System.EventHandler(this.btnUrunuAra_Click);
-            // 
             // pnlApprove
             // 
+            this.pnlApprove.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlApprove.Controls.Add(this.dgvApprove);
-            this.pnlApprove.Location = new System.Drawing.Point(113, 22);
+            this.pnlApprove.Location = new System.Drawing.Point(0, 0);
             this.pnlApprove.Name = "pnlApprove";
             this.pnlApprove.Size = new System.Drawing.Size(1145, 416);
             this.pnlApprove.TabIndex = 4;
@@ -203,12 +171,45 @@
             this.dgvApprove.Size = new System.Drawing.Size(1139, 393);
             this.dgvApprove.TabIndex = 5;
             // 
+            // btnUrunuAra
+            // 
+            this.btnUrunuAra.Location = new System.Drawing.Point(328, 17);
+            this.btnUrunuAra.Name = "btnUrunuAra";
+            this.btnUrunuAra.Size = new System.Drawing.Size(75, 20);
+            this.btnUrunuAra.TabIndex = 3;
+            this.btnUrunuAra.Text = "Ara";
+            this.btnUrunuAra.UseVisualStyleBackColor = true;
+            this.btnUrunuAra.Click += new System.EventHandler(this.btnUrunuAra_Click);
+            // 
+            // lblUrunAra
+            // 
+            this.lblUrunAra.AutoSize = true;
+            this.lblUrunAra.Location = new System.Drawing.Point(32, 20);
+            this.lblUrunAra.Name = "lblUrunAra";
+            this.lblUrunAra.Size = new System.Drawing.Size(82, 13);
+            this.lblUrunAra.TabIndex = 1;
+            this.lblUrunAra.Text = "Urun Adı Giriniz:";
+            // 
+            // tbUrunAra
+            // 
+            this.tbUrunAra.Location = new System.Drawing.Point(120, 17);
+            this.tbUrunAra.Name = "tbUrunAra";
+            this.tbUrunAra.Size = new System.Drawing.Size(187, 20);
+            this.tbUrunAra.TabIndex = 0;
+            // 
+            // dgvSearchProduct
+            // 
+            this.dgvSearchProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSearchProduct.Location = new System.Drawing.Point(3, 46);
+            this.dgvSearchProduct.Name = "dgvSearchProduct";
+            this.dgvSearchProduct.Size = new System.Drawing.Size(1136, 367);
+            this.dgvSearchProduct.TabIndex = 2;
+            // 
             // UrunIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1270, 450);
-            this.Controls.Add(this.pnlApprove);
             this.Controls.Add(this.gbProduct);
             this.Controls.Add(this.pnlAra);
             this.Controls.Add(this.pnlListele);
@@ -219,9 +220,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.pnlAra.ResumeLayout(false);
             this.pnlAra.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProduct)).EndInit();
             this.pnlApprove.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvApprove)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProduct)).EndInit();
             this.ResumeLayout(false);
 
         }
