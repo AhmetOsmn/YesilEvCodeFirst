@@ -607,6 +607,8 @@ namespace YesilEvCodeFirst.UIWinForm
                 dgvBlackListSupplements.Columns[0].Visible = false;
                 dgvBlackListSupplements.Columns[1].ReadOnly = true;
                 dgvBlackListSupplements.Columns[1].HeaderText = "Madde";
+                lblBlackListAddBlackList.Visible = false;
+                btnBlackListAddBlackList.Visible = false;
             }
             catch (FormatException fex)
             {
@@ -1027,6 +1029,34 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 MessageBox.Show("Kullanıcı Şifresi doğru değil.");
             }
+        }
+
+        private void btnAddBlackList_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IDDTO userIDDTO = new IDDTO()
+                {
+                    ID = User.UserID,
+                };
+                bool result = useBlackListDAL.AddBlackList(userIDDTO);
+                if (result)
+                {
+                    MessageBox.Show("Kara Liste Başarıyla Eklendi.");
+                    lblBlackListAddBlackList.Visible = false;
+                    btnBlackListAddBlackList.Visible = false;
+                    lblBlackListWarning.Text = "";
+                }
+            }
+            catch (FormatException fex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
         }
     }
 }

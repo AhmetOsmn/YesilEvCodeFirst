@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
-using YesilEvCodeFirst.UIWinForm.Raporlar;
+using YesilEvCodeFirst.UIWinForm.AdminSayfalari;
 
 namespace YesilEvCodeFirst.UIWinForm
 {
-    
+
     internal static class Program
     {
         /// <summary>
@@ -16,7 +16,7 @@ namespace YesilEvCodeFirst.UIWinForm
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
-            Application.Run(new SignInSignUpForm());
+            Application.Run(new AdminSayfasi());
         }
     }
 }
