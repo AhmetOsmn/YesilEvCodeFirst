@@ -5,6 +5,8 @@
         #region Validation
 
         public static string InvalidID = "Girilen ID 0'dan büyük olmalı.";
+        public static string CategoryIDNull = "Kategori alanı boş geçilemez.";
+        public static string SupplierIDNull = "Üretici alanı boş geçilemez.";
 
         public static string PasswordIsEmpty = "Şifre alanı boş geçilemez.";
         public static string PasswordMinLength = "Şifre minimum 5 karakter olabilir.";
