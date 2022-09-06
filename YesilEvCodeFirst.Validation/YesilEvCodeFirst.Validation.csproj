@@ -69,6 +69,7 @@
     <Compile Include="FluentValidator\Const\EmailDTOValidator.cs" />
     <Compile Include="FluentValidator\DeleteBlackListValidator.cs" />
     <Compile Include="FluentValidator\DeleteFavListValidator.cs" />
+    <Compile Include="FluentValidator\DeleteSupplementBlackListValidator.cs" />
     <Compile Include="FluentValidator\FavListProductDTOValidator.cs" />
     <Compile Include="FluentValidator\GetFavListIDWithFavListNameAndUserIDValidator.cs" />
     <Compile Include="FluentValidator\GetFavListsWithUserIDValidator.cs" />

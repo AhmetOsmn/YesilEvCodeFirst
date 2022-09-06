@@ -68,9 +68,9 @@ namespace YesilEvCodeFirst.DAL.Use
                 throw new Exception(ex.Message);
             }
         }
-        public bool DeleteSupplementBlackList(AddSupplementBlackListDTO dto)
+        public bool DeleteSupplementBlackList(DeleteSupplementBlackListDTO dto)
         {
-            SupplementBlackListValidator validator = new SupplementBlackListValidator();
+            DeleteSupplementBlackListValidator validator = new DeleteSupplementBlackListValidator();
             ValidationResult validationResult = validator.Validate(dto);
             try
             {
@@ -80,6 +80,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
+
                     var suppblacklist = context.SupplementBlackList.Where(u => u.BlackListID.Equals(dto.BlackListID) && u.SupplementID.Equals(dto.SupplementID) && u.IsActive).FirstOrDefault();
                     if (suppblacklist != null)
                     {

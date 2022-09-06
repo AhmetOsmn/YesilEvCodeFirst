@@ -496,11 +496,11 @@ namespace YesilEvCodeFirst.MyTest
         public void Deneme1Test()
         {
             UseSupplementBlackListDAL dal = new UseSupplementBlackListDAL();
-            var result = dal.DeleteSupplementBlackList(new AddSupplementBlackListDTO
+            var result = dal.DeleteSupplementBlackList(new DeleteSupplementBlackListDTO()
             {
 
                 BlackListID = 1,
-                //SupplementContext = 2,
+                SupplementID = 2,
 
             });
 

@@ -75,6 +75,7 @@
     <Compile Include="Rapor\Rapor04DTO.cs" />
     <Compile Include="Rapor\Rapor05DTO.cs" />
     <Compile Include="Rapor\Rapor15DTO.cs" />
+    <Compile Include="SupplementBlackList\DeleteSupplementBlackListDTO.cs" />
     <Compile Include="Supplement\AddSupplementDTO.cs" />
     <Compile Include="Supplement\ListSupplementDTO.cs" />
     <Compile Include="Supplement\SupplementDTO.cs" />

@@ -5,6 +5,7 @@
         #region Validation
 
         public static string InvalidID = "Girilen ID 0'dan büyük olmalı.";
+
         public static string CategoryIDNull = "Kategori alanı boş geçilemez.";
         public static string SupplierIDNull = "Üretici alanı boş geçilemez.";
 
@@ -40,6 +41,7 @@
         public static string BarcodeMaxLength = "Barkod numarası maksimum 50 karakter olabilir.";
         public static string BarcodeMinLength = "Barkod numarası minimum 7 karakter olabilir.";
         public static string ProductContentIsEmpty = "Ürün içerik alanı boş geçilemez.";
+        public static string SupplementIDIsEmpty = "SupplementID alanı boş olamaz";
 
 
 
@@ -66,6 +68,7 @@
         public static string ProductNotFound = "Ürün bulunamadı.";
         public static string ProductNotFoundForList = "Listelenecek ürün bulunamadı.";
         public static string SupplementNotFoundForList = "Listelenecek madde bulunamadı.";
+
         public static string SupplierNotFoundForList = "Listelenecek üretici bulunamadı.";
         public static string DoesNotBelongUser = "Ürün kullanıcıya ait değil.";
         public static string ProductListIsEmpty = "Ürün Listesi boş.";
