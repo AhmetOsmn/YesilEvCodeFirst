@@ -11,6 +11,7 @@ using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.ProductFavList;
 using YesilEvCodeFirst.DTOs.SearchHistory;
 using YesilEvCodeFirst.DTOs.Supplement;
+using YesilEvCodeFirst.DTOs.SupplementBlackList;
 using YesilEvCodeFirst.DTOs.Supplier;
 using YesilEvCodeFirst.DTOs.UserAdmin;
 using YesilEvCodeFirst.DTOs.UserFavList;
@@ -42,6 +43,7 @@ namespace YesilEvCodeFirst.UIWinForm
         readonly UseSupplementBlackListDAL useSupplementBlackListDAL = new UseSupplementBlackListDAL();
         readonly UseProductSupplementDAL useProductSupplementDAL = new UseProductSupplementDAL();
         readonly UseUserDAL useUserDAL = new UseUserDAL();
+        readonly UseSupplementDAL useSupplementDAL = new UseSupplementDAL();
 
         public UserSayfasi()
         {
@@ -458,14 +460,35 @@ namespace YesilEvCodeFirst.UIWinForm
             int azriskNum = 0;
             int ortariskNum = 0;
             int riskNum = 0;
-
+            int blacklist = 0;
             for (int i = 0; i < supplements.Count; i++)
             {
                 Label lbl = new Label();
                 lbl.Text = supplements[i].SupplementName;
                 lbl.Name = i.ToString();
                 lbl.Size = new Size(300, 18);
-
+                IDDTO userIDDTO = new IDDTO()
+                {
+                    ID = User.UserID
+                };
+                IDDTO blackListIDDTO = new IDDTO()
+                {
+                    ID = useBlackListDAL.GetBlackListIDWithUserID(userIDDTO)
+                };
+                SupplementDTO supdto = new SupplementDTO()
+                {
+                    SupplementName = supplements[i].SupplementName,
+                    SupplementID = useSupplementDAL.GetByCondition(x => x.SupplementName == supplements[i].SupplementName).FirstOrDefault().SupplementID,
+                };
+                var suplist = useSupplementBlackListDAL.GetSupplementsWithBlackListID(blackListIDDTO);
+                suplist.ForEach(x =>
+                {
+                    if (supdto.SupplementID == x.SupplementID && supdto.SupplementName == x.SupplementName)
+                    {
+                        lbl.BackColor= Color.Black;
+                        blacklist += 1;
+                    }
+                });
                 switch (supplements[i].RiskRatio)
                 {
                     case Risk.Temiz:
@@ -491,8 +514,6 @@ namespace YesilEvCodeFirst.UIWinForm
                     default:
                         break;
                 }
-
-                lbl.BackColor = Color.White;
                 lbl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
                 lbl.Location = new Point(15, 30 * (Y + 1));
                 Y++;
@@ -502,6 +523,7 @@ namespace YesilEvCodeFirst.UIWinForm
             lblProductDetailsLowerRiskCount.Text = azriskNum.ToString();
             lblProductDetailsMidRiskCount.Text = ortariskNum.ToString();
             lblProductDetailsHighRiskCount.Text = riskNum.ToString();
+            lblProductDetailsBlackListSupplementCount.Text = blacklist.ToString();
         }
 
         private void btnShowList_Click(object sender, EventArgs e)
@@ -609,6 +631,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 dgvBlackListSupplements.Columns[1].HeaderText = "Madde";
                 lblBlackListAddBlackList.Visible = false;
                 btnBlackListAddBlackList.Visible = false;
+                btnBlackListAddSupplement.Visible = true;
             }
             catch (FormatException fex)
             {
@@ -616,7 +639,7 @@ namespace YesilEvCodeFirst.UIWinForm
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                lblBlackListWarning.Text = ex.Message;
             }
         }
 
@@ -672,6 +695,7 @@ namespace YesilEvCodeFirst.UIWinForm
             ChangeEmail.Visible = false;
             ChangePassword.Visible = false;
             ChangeUserDetails.Visible = false;
+            SupplementBlackList.Visible = false;
             CloseSideBar();
             ProductSupplementDetailClose();
         }
@@ -1081,6 +1105,7 @@ namespace YesilEvCodeFirst.UIWinForm
                     lblBlackListAddBlackList.Visible = false;
                     btnBlackListAddBlackList.Visible = false;
                     lblBlackListWarning.Text = "";
+                    btnBlackListAddBlackList.Visible = true;
                 }
             }
             catch (FormatException fex)
@@ -1091,6 +1116,44 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void btnSupplementBlackListAdd_Click(object sender, EventArgs e)
+        {            
+            try
+            {
+                IDDTO userIDDTO = new IDDTO() { ID = User.UserID };
+                int blackListID = useBlackListDAL.GetBlackListIDWithUserID(userIDDTO);
+                AddSupplementBlackListDTO dto = new AddSupplementBlackListDTO()
+                {
+                    BlackListID = blackListID,
+                    SupplementContext = txtSupplementBlackListSupplements.Text,
+                    UserID = User.UserID,
+                };
+                bool result  = useSupplementBlackListDAL.AddSupplementBlackList(dto);
+                if (result)
+                {
+                    MessageBox.Show("Karalisteye maddeler eklendi");
+                    CloseAllPages();
+                    BlackList.Visible = true;
+                    GetBlackList();
+                }
+            }
+            catch (FormatException fex)
+            {
+                MessageBox.Show(fex.Message);
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }            
+        }
+
+        private void btnBlackListAddSupplement_Click(object sender, EventArgs e)
+        {
+            CloseAllPages();
+            SupplementBlackList.Visible = true;
 
         }
     }

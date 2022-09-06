@@ -94,12 +94,12 @@
             this.pnlListele.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.pnlAra.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProduct)).BeginInit();
             this.pnlApprove.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApprove)).BeginInit();
             this.pnlUrunGuncelle.SuspendLayout();
             this.pnlUrunEkle.SuspendLayout();
             this.pnlDeleteProduct.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // btnListele
@@ -204,8 +204,8 @@
             this.pnlAra.Location = new System.Drawing.Point(113, 12);
             this.pnlAra.Name = "pnlAra";
             this.pnlAra.Size = new System.Drawing.Size(1142, 429);
-            this.pnlAra.TabIndex = 1;
-            // 
+            this.pnlAra.TabIndex = 1;       
+            //
             // dgvSearchProduct
             // 
             this.dgvSearchProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -213,7 +213,7 @@
             this.dgvSearchProduct.Name = "dgvSearchProduct";
             this.dgvSearchProduct.Size = new System.Drawing.Size(1136, 382);
             this.dgvSearchProduct.TabIndex = 4;
-            // 
+            //
             // btnUrunuAra
             // 
             this.btnUrunuAra.Location = new System.Drawing.Point(328, 17);
@@ -708,6 +708,7 @@
             this.btnDeleteSearch.UseVisualStyleBackColor = true;
             this.btnDeleteSearch.Click += new System.EventHandler(this.btnDeleteSearch_Click);
             // 
+
             // UrunIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -727,7 +728,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.pnlAra.ResumeLayout(false);
             this.pnlAra.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProduct)).EndInit();
             this.pnlApprove.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvApprove)).EndInit();
             this.pnlUrunGuncelle.ResumeLayout(false);
@@ -736,8 +736,8 @@
             this.pnlUrunEkle.PerformLayout();
             this.pnlDeleteProduct.ResumeLayout(false);
             this.pnlDeleteProduct.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProduct)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion

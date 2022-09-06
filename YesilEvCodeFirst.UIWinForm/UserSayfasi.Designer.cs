@@ -238,6 +238,13 @@
             this.lblChangeUserDetailsLastName = new System.Windows.Forms.Label();
             this.lblChangeUserDetailsFirstName = new System.Windows.Forms.Label();
             this.btnChangeUserDetailsUser = new System.Windows.Forms.Button();
+            this.SupplementBlackList = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSupplementBlackListAdd = new System.Windows.Forms.Button();
+            this.lblSupplementBlackListWarning = new System.Windows.Forms.Label();
+            this.txtSupplementBlackListSupplements = new System.Windows.Forms.TextBox();
+            this.lblSupplementBlackListSupplements = new System.Windows.Forms.Label();
+            this.btnBlackListAddSupplement = new System.Windows.Forms.Button();
             this.pnlSideBarHome.SuspendLayout();
             this.pnlSideBarGiveStarApplication.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarGiveStarApplication)).BeginInit();
@@ -301,6 +308,7 @@
             this.ChangeEmail.SuspendLayout();
             this.ChangePassword.SuspendLayout();
             this.ChangeUserDetails.SuspendLayout();
+            this.SupplementBlackList.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSideBarHome
@@ -1925,6 +1933,7 @@
             // lblProductDetailsBlackListSupplement
             // 
             this.lblProductDetailsBlackListSupplement.AutoSize = true;
+            this.lblProductDetailsBlackListSupplement.BackColor = System.Drawing.Color.White;
             this.lblProductDetailsBlackListSupplement.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductDetailsBlackListSupplement.ForeColor = System.Drawing.Color.Black;
             this.lblProductDetailsBlackListSupplement.Location = new System.Drawing.Point(67, 108);
@@ -2259,6 +2268,7 @@
             // BlackList
             // 
             this.BlackList.BackColor = System.Drawing.Color.White;
+            this.BlackList.Controls.Add(this.btnBlackListAddSupplement);
             this.BlackList.Controls.Add(this.lblBlackListAddBlackList);
             this.BlackList.Controls.Add(this.btnBlackListAddBlackList);
             this.BlackList.Controls.Add(this.lblBlackListWarning);
@@ -2789,18 +2799,99 @@
             this.btnChangeUserDetailsUser.UseVisualStyleBackColor = true;
             this.btnChangeUserDetailsUser.Click += new System.EventHandler(this.UserButton_Click);
             // 
+            // SupplementBlackList
+            // 
+            this.SupplementBlackList.Controls.Add(this.button1);
+            this.SupplementBlackList.Controls.Add(this.btnSupplementBlackListAdd);
+            this.SupplementBlackList.Controls.Add(this.lblSupplementBlackListWarning);
+            this.SupplementBlackList.Controls.Add(this.txtSupplementBlackListSupplements);
+            this.SupplementBlackList.Controls.Add(this.lblSupplementBlackListSupplements);
+            this.SupplementBlackList.Location = new System.Drawing.Point(0, 0);
+            this.SupplementBlackList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SupplementBlackList.MaximumSize = new System.Drawing.Size(360, 510);
+            this.SupplementBlackList.MinimumSize = new System.Drawing.Size(360, 510);
+            this.SupplementBlackList.Name = "SupplementBlackList";
+            this.SupplementBlackList.Size = new System.Drawing.Size(360, 510);
+            this.SupplementBlackList.TabIndex = 20;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(285, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(60, 40);
+            this.button1.TabIndex = 10;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnSupplementBlackListAdd
+            // 
+            this.btnSupplementBlackListAdd.BackColor = System.Drawing.Color.Green;
+            this.btnSupplementBlackListAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSupplementBlackListAdd.FlatAppearance.BorderSize = 0;
+            this.btnSupplementBlackListAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSupplementBlackListAdd.ForeColor = System.Drawing.Color.White;
+            this.btnSupplementBlackListAdd.Location = new System.Drawing.Point(90, 309);
+            this.btnSupplementBlackListAdd.Name = "btnSupplementBlackListAdd";
+            this.btnSupplementBlackListAdd.Size = new System.Drawing.Size(180, 40);
+            this.btnSupplementBlackListAdd.TabIndex = 9;
+            this.btnSupplementBlackListAdd.Text = "Ekle";
+            this.btnSupplementBlackListAdd.UseVisualStyleBackColor = false;
+            this.btnSupplementBlackListAdd.Click += new System.EventHandler(this.btnSupplementBlackListAdd_Click);
+            // 
+            // lblSupplementBlackListWarning
+            // 
+            this.lblSupplementBlackListWarning.AutoSize = true;
+            this.lblSupplementBlackListWarning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSupplementBlackListWarning.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSupplementBlackListWarning.Location = new System.Drawing.Point(47, 260);
+            this.lblSupplementBlackListWarning.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSupplementBlackListWarning.Name = "lblSupplementBlackListWarning";
+            this.lblSupplementBlackListWarning.Size = new System.Drawing.Size(266, 38);
+            this.lblSupplementBlackListWarning.TabIndex = 8;
+            this.lblSupplementBlackListWarning.Text = "Lütfen Maddeler Arasına virgül koyunuz. \r\nAksi takdirde Madde düzgün eklenemez ";
+            // 
+            // txtSupplementBlackListSupplements
+            // 
+            this.txtSupplementBlackListSupplements.Location = new System.Drawing.Point(30, 130);
+            this.txtSupplementBlackListSupplements.Multiline = true;
+            this.txtSupplementBlackListSupplements.Name = "txtSupplementBlackListSupplements";
+            this.txtSupplementBlackListSupplements.Size = new System.Drawing.Size(301, 123);
+            this.txtSupplementBlackListSupplements.TabIndex = 7;
+            // 
+            // lblSupplementBlackListSupplements
+            // 
+            this.lblSupplementBlackListSupplements.AutoSize = true;
+            this.lblSupplementBlackListSupplements.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSupplementBlackListSupplements.Location = new System.Drawing.Point(22, 110);
+            this.lblSupplementBlackListSupplements.Name = "lblSupplementBlackListSupplements";
+            this.lblSupplementBlackListSupplements.Size = new System.Drawing.Size(173, 13);
+            this.lblSupplementBlackListSupplements.TabIndex = 6;
+            this.lblSupplementBlackListSupplements.Text = "Kara Listeye Eklenecek Maddeler";
+            // 
+            // btnBlackListAddSupplement
+            // 
+            this.btnBlackListAddSupplement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnBlackListAddSupplement.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBlackListAddSupplement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBlackListAddSupplement.ForeColor = System.Drawing.Color.White;
+            this.btnBlackListAddSupplement.Location = new System.Drawing.Point(247, 98);
+            this.btnBlackListAddSupplement.Name = "btnBlackListAddSupplement";
+            this.btnBlackListAddSupplement.Size = new System.Drawing.Size(103, 35);
+            this.btnBlackListAddSupplement.TabIndex = 23;
+            this.btnBlackListAddSupplement.Text = "Madde Ekle";
+            this.btnBlackListAddSupplement.UseVisualStyleBackColor = false;
+            this.btnBlackListAddSupplement.Visible = false;
+            this.btnBlackListAddSupplement.Click += new System.EventHandler(this.btnBlackListAddSupplement_Click);
+            // 
             // UserSayfasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 508);
-            this.Controls.Add(this.AddAndUpdateProduct);
-            this.Controls.Add(this.SearchHistory);
-            this.Controls.Add(this.SearchBarcode);
-            this.Controls.Add(this.AddFavoriList);
-            this.Controls.Add(this.ChangeEmail);
-            this.Controls.Add(this.ChangePassword);
-            this.Controls.Add(this.ChangeUserDetails);
             this.Controls.Add(this.SideBar);
             this.Controls.Add(this.Home);
             this.Controls.Add(this.UserDetails);
@@ -2808,6 +2899,14 @@
             this.Controls.Add(this.BlackList);
             this.Controls.Add(this.Favlists);
             this.Controls.Add(this.ProductDetails);
+            this.Controls.Add(this.AddAndUpdateProduct);
+            this.Controls.Add(this.SearchHistory);
+            this.Controls.Add(this.SearchBarcode);
+            this.Controls.Add(this.AddFavoriList);
+            this.Controls.Add(this.ChangeEmail);
+            this.Controls.Add(this.ChangePassword);
+            this.Controls.Add(this.ChangeUserDetails);
+            this.Controls.Add(this.SupplementBlackList);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(380, 547);
             this.MinimumSize = new System.Drawing.Size(380, 547);
@@ -2890,6 +2989,8 @@
             this.ChangePassword.PerformLayout();
             this.ChangeUserDetails.ResumeLayout(false);
             this.ChangeUserDetails.PerformLayout();
+            this.SupplementBlackList.ResumeLayout(false);
+            this.SupplementBlackList.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3104,5 +3205,12 @@
         private System.Windows.Forms.Button btnChangeUserDetailsSend;
         private System.Windows.Forms.Label lblBlackListAddBlackList;
         private System.Windows.Forms.Button btnBlackListAddBlackList;
+        private System.Windows.Forms.Panel SupplementBlackList;
+        private System.Windows.Forms.Button btnSupplementBlackListAdd;
+        private System.Windows.Forms.Label lblSupplementBlackListWarning;
+        private System.Windows.Forms.TextBox txtSupplementBlackListSupplements;
+        private System.Windows.Forms.Label lblSupplementBlackListSupplements;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBlackListAddSupplement;
     }
 }

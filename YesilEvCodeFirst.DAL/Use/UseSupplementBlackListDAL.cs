@@ -18,12 +18,11 @@ namespace YesilEvCodeFirst.DAL.Use
     public class UseSupplementBlackListDAL : EfRepoBase<YesilEvDbContext, SupplementBlackList>
     {
         readonly Logger nLogger = LogManager.GetCurrentClassLogger();
-
+        UseSupplementDAL useSupplementDAL = new UseSupplementDAL();
         public bool AddSupplementBlackList(AddSupplementBlackListDTO dto)
         {
             SupplementBlackListValidator validator = new SupplementBlackListValidator();
             ValidationResult validationResult = validator.Validate(dto);
-
             try
             {
                 if (!validationResult.IsValid)
@@ -33,42 +32,40 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    var blacklist = context.BlackList.Where(u => u.UserID.Equals(dto.UserID) && u.IsActive).FirstOrDefault();
-                    if (blacklist == null)
+                    var supplements = dto.SupplementContext.Split(',');
+                    Array.ForEach(supplements, item =>
                     {
-
-                        context.BlackList.Add(new BlackList
+                        var result = useSupplementDAL.GetByCondition(x => x.SupplementName.Equals(item.Trim())&& x.IsActive).FirstOrDefault();
+                        if (result == null)
                         {
-                            UserID = dto.UserID
+                            AddSupplementDTO addSupplementDTO = new AddSupplementDTO()
+                            {
+                                SupplementName = item.Trim()
+                            };
+                            useSupplementDAL.AddSupplement(addSupplementDTO);
+                            context.SaveChanges();
+                            result = useSupplementDAL.GetByCondition(x => x.SupplementName.Equals(item.Trim())&& x.IsActive).FirstOrDefault();                           
+                        }
+                        context.SupplementBlackList.Add(new SupplementBlackList()
+                        {
+                            BlackListID = dto.BlackListID,
+                            SupplementID = result.SupplementID
                         });
                         context.SaveChanges();
-                        context.SupplementBlackList.Add(new SupplementBlackList
-                        {
-                            SupplementID = dto.SupplementID,
-                            BlackListID = context.BlackList.LastOrDefault().BlackListID
-                        });
-                        context.SaveChanges();
-                    }
-                    else
-                    {
-                        context.SupplementBlackList.Add(new SupplementBlackList
-                        {
-                            SupplementID = dto.SupplementID,
-                            BlackListID = blacklist.BlackListID
-                        });
-                        context.SaveChanges();
-                        
-                    }
+                    });
+                    
                 }
-
                 nLogger.Info("Madde Ve Kara liste tablosuna ekleme işlemi yapıldı.");
-
                 return true;
             }
             catch(FormatException fex)
             {
                 nLogger.Error("System - {}", fex.Message);
                 throw new FormatException(fex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
         public bool DeleteSupplementBlackList(AddSupplementBlackListDTO dto)

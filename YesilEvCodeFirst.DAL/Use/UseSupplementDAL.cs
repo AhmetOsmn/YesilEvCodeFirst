@@ -7,6 +7,7 @@ using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
+using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.Mapping;
 using YesilEvCodeFirst.Validation.FluentValidator;
@@ -84,6 +85,34 @@ namespace YesilEvCodeFirst.DAL.Use
                 nLogger.Error("System - {}", ex.Message);
                 throw new Exception(ex.Message);
             }
+        }
+
+        public List<Supplement> GetSupplementsForAdmin()
+        {
+            try
+            {
+                // todo: inclue yapilarak getirilecek
+                List<Supplement> supplements = GetAll();
+                if (supplements == null)
+                {
+                    throw new Exception(Messages.ProductListIsEmpty);
+                }
+                else
+                {
+                    List<ListSupplementDTO> productDTOList = MappingProfile.SupplementListToSupplementListDTOList(supplements);
+                    nLogger.Info("Supplement tablosu listelendi.");
+                    return supplements;
+                }
+            }
+            catch (Exception ex)
+            {
+                nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
+            }
+        }
+        public List<Supplement> GetPSupplementListWithSearchbarForAdmin(string filter)
+        {
+            return GetByCondition(x => x.SupplementName.ToLower().Contains(filter.ToLower()));
         }
     }
 }
