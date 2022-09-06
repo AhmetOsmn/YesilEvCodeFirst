@@ -1,6 +1,6 @@
 ﻿namespace YesilEvCodeFirst.UIWinForm
 {
-    partial class Form1
+    partial class RaporIslemleri
     {
         /// <summary>
         /// Required designer variable.
@@ -72,18 +72,18 @@
             // 
             this.panel1.Location = new System.Drawing.Point(12, 47);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(720, 558);
+            this.panel1.Size = new System.Drawing.Size(1252, 406);
             this.panel1.TabIndex = 4;
             // 
-            // Form1
+            // RaporIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 617);
+            this.ClientSize = new System.Drawing.Size(1276, 459);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
-            this.Name = "Form1";
+            this.Name = "RaporIslemleri";
             this.Text = "Green Home";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

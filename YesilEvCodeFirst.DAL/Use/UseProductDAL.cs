@@ -324,5 +324,57 @@ namespace YesilEvCodeFirst.DAL.Use
                 throw new Exception(ex.Message);
             }
         }
+        
+        public List<Product> GetProductsForAdmin()
+        {
+            try
+            {
+                // todo: inclue yapilarak getirilecek
+                List<Product> products = GetAll();
+                if (products == null)
+                {
+                    throw new Exception(Messages.ProductListIsEmpty);
+                }
+                else
+                {
+                    List<ListProductDTO> productDTOList = MappingProfile.ProductListToProductListDTO(products);
+                    nLogger.Info("Product tablosu listelendi.");
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Product> GetProductListWithSearchbarForAdmin(string filter)
+        {
+            return GetByCondition(x => x.ProductName.ToLower().Contains(filter.ToLower()));
+        }
+
+        public List<Product> GetProductsForAdminApprove()
+        {
+            try
+            {
+                List<Product> products = GetByCondition(x => !x.IsApproved);
+                if (products == null)
+                {
+                    throw new Exception(Messages.ProductListIsEmpty);
+                }
+                else
+                {
+                    List<ListProductDTO> productDTOList = MappingProfile.ProductListToProductListDTO(products);
+                    nLogger.Info("Product tablosu listelendi.");
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
