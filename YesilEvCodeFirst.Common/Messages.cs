@@ -31,7 +31,7 @@
 
         public static string ListNameMaxLength = "Liste adı maksimum 50 karakter olabilir.";
         public static string ListNameMinLength = "Liste adı minimum 2 karakter olabilir.";
-        public static string ListNameIsEmpty = "Liste adı boş geçilemez";
+        public static string ListNameIsEmpty = "Liste adı boş geçilemez.";
 
         public static string ProductNameIsEmpty = "Ürün adı boş geçilemez";
         public static string ProductNameMaxLength = "Ürün adı maksimum 100 karakter olabilir.";

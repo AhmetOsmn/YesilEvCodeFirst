@@ -751,27 +751,39 @@ namespace YesilEvCodeFirst.UIWinForm
         private void dgvProducts_MouseClick(object sender, MouseEventArgs e)
         {
             IDDTO userIDDTO = new IDDTO() { ID = User.UserID };
-            var favLists = useFavListDAL.GetFavListsWithUserID(userIDDTO);
-            int selectedRow = -1;
-            selectedRow = dgvSearchProductProducts.HitTest(e.X, e.Y).RowIndex;
-            if (e.Button == MouseButtons.Right)
+            try
             {
-                if (selectedRow >= 0)
+                var favLists = useFavListDAL.GetFavListsWithUserID(userIDDTO);
+                int selectedRow = -1;
+                selectedRow = dgvSearchProductProducts.HitTest(e.X, e.Y).RowIndex;
+                if (e.Button == MouseButtons.Right)
                 {
-                    GetFavoriListsAddProductAndDeleteProduct(selectedRow, e.X, e.Y);
-                }
-                else if (selectedRow != dgvSearchProductProducts.RowCount - 1)
-                {
-                    MessageBox.Show("Yanlış yere tıkladınız.");
+                    if (selectedRow >= 0)
+                    {
+                        GetFavoriListsAddProductAndDeleteProduct(selectedRow, e.X, e.Y);
+                    }
+                    else if (selectedRow != dgvSearchProductProducts.RowCount - 1)
+                    {
+                        MessageBox.Show("Yanlış yere tıkladınız.");
+                    }
                 }
             }
+            catch(FormatException fex)
+            {
+                MessageBox.Show(fex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
         private void GetFavoriListsAddProductAndDeleteProduct(int selectedRow, int Eventx, int Eventy)
         {
-            IDDTO userIDDTO = new IDDTO() { ID = User.UserID };
-            var favLists = useFavListDAL.GetFavListsWithUserID(userIDDTO);
+            IDDTO userIDDTO = new IDDTO() { ID = User.UserID };       
             try
             {
+                var favLists = useFavListDAL.GetFavListsWithUserID(userIDDTO);
                 ContextMenu cm = new ContextMenu();
                 MenuItem favEkle = new MenuItem();
                 MenuItem favSil = new MenuItem();
@@ -817,7 +829,7 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 MessageBox.Show(ex.Message);
             }
-         
+
         }
         private void AddFav(object sender, EventArgs e)
         {
@@ -837,14 +849,14 @@ namespace YesilEvCodeFirst.UIWinForm
                     MessageBox.Show("Ürün Favoriye Eklenirken Hata Oluştu.");
                 }
             }
-            catch(FormatException fex)
+            catch (FormatException fex)
             {
                 MessageBox.Show(fex.Message);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }         
+            }
             addProductFavListDTO = null;
         }
         private void DeleteFav(object sender, EventArgs e)
@@ -852,17 +864,29 @@ namespace YesilEvCodeFirst.UIWinForm
             var clickMenuItem = sender as MenuItem;
             var MenuText = clickMenuItem.Text;
             GetFavListIDWithFavListNameAndUserIDDTO userIDAndListNameDTO = new GetFavListIDWithFavListNameAndUserIDDTO() { UserID = User.UserID, FavListName = MenuText };
-            addProductFavListDTO.FavorID = useFavListDAL.GetFavListIDWithFavListNameAndUserID(userIDAndListNameDTO);
-            bool result = useProductFavListDAL.DeleteProductFavList(addProductFavListDTO);
-            if (result)
+            try
             {
-                MessageBox.Show("Ürün Favori'den Silindi.");
+                addProductFavListDTO.FavorID = useFavListDAL.GetFavListIDWithFavListNameAndUserID(userIDAndListNameDTO);
+                bool result = useProductFavListDAL.DeleteProductFavList(addProductFavListDTO);
+                if (result)
+                {
+                    MessageBox.Show("Ürün Favori'den Silindi.");
+                }
+                else
+                {
+                    MessageBox.Show("Ürün Favori'den Silinirken Hata Oluştu.");
+                }
+                addProductFavListDTO = null;
             }
-            else
+            catch(FormatException fex)
             {
-                MessageBox.Show("Ürün Favori'den Silinirken Hata Oluştu.");
+                MessageBox.Show(fex.Message);
             }
-            addProductFavListDTO = null;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+         
         }
         private void AddFavoriListPage(object sender, EventArgs e)
         {
@@ -872,19 +896,14 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void btnAddFavoriList_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtAddFavoriFavoriName.Text.Trim()))
+            //to do messagebox favori isminden emin misiniz okay derse işlem yapılacak
+            AddFavListDTO addFavList = new AddFavListDTO()
             {
-                MessageBox.Show("Favori ismi alanı boş olamaz.");
-            }
-            else
+                FavoriListName = txtAddFavoriFavoriName.Text,
+                UserID = User.UserID,
+            };
+            try
             {
-                //to do messagebox favori isminden emin misiniz okay derse işlem yapılacak
-
-                AddFavListDTO addFavList = new AddFavListDTO()
-                {
-                    FavoriListName = txtAddFavoriFavoriName.Text,
-                    UserID = User.UserID,
-                };
                 bool result = useFavListDAL.AddFavList(addFavList);
                 if (result)
                 {
@@ -895,6 +914,10 @@ namespace YesilEvCodeFirst.UIWinForm
                     Favlists.Visible = true;
                 }
             }
+            catch (FormatException fex)
+            {
+                MessageBox.Show(fex.Message);
+            }     
         }
 
         private void btnUserDetailsMergeSocialMedia_Click(object sender, EventArgs e)
@@ -941,17 +964,29 @@ namespace YesilEvCodeFirst.UIWinForm
                 LastName = txtChangeUserDetailsLastName.Text,
                 Phone = txtChangeUserDetailsPhone.Text
             };
-            bool result = useUserDAL.UpdateUserDetails(userDetails);
-            if (result)
+            try
             {
-                MessageBox.Show("Kullanıcı Bilgileri Güncellendi.");
-                User.FirstName = txtChangeUserDetailsFirstName.Text;
-                User.LastName = txtChangeUserDetailsLastName.Text;
-                User.Phone = txtChangeUserDetailsPhone.Text;
+                bool result = useUserDAL.UpdateUserDetails(userDetails);
+                if (result)
+                {
+                    MessageBox.Show("Kullanıcı Bilgileri Güncellendi.");
+                    User.FirstName = txtChangeUserDetailsFirstName.Text;
+                    User.LastName = txtChangeUserDetailsLastName.Text;
+                    User.Phone = txtChangeUserDetailsPhone.Text;
+                }
+                else
+                {
+                    MessageBox.Show("Kullanıcı Bilgileri Güncellenirken Hata Oluştu.Sonra tekrar deneyiniz.");
+                }
+
             }
-            else
+            catch (FormatException fex)
             {
-                MessageBox.Show("Kullanıcı Bilgileri Güncellenirken Hata Oluştu.Sonra tekrar deneyiniz.");
+                MessageBox.Show(fex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -1033,12 +1068,12 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void btnAddBlackList_Click(object sender, EventArgs e)
         {
+            IDDTO userIDDTO = new IDDTO()
+            {
+                ID = User.UserID,
+            };
             try
             {
-                IDDTO userIDDTO = new IDDTO()
-                {
-                    ID = User.UserID,
-                };
                 bool result = useBlackListDAL.AddBlackList(userIDDTO);
                 if (result)
                 {
@@ -1050,13 +1085,13 @@ namespace YesilEvCodeFirst.UIWinForm
             }
             catch (FormatException fex)
             {
-
+                MessageBox.Show(fex.Message);
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
-            
+
         }
     }
 }
