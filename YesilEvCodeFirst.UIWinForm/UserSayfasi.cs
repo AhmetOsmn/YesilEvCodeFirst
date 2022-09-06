@@ -162,6 +162,7 @@ namespace YesilEvCodeFirst.UIWinForm
                         ProductContent = txtAddAndUpdateProductAddProductProductContext.Text,
                         PictureFronthPath = FileDialogAddProductFront.FileName,
                         PictureBackPath = FileDialogAddProductBack.FileName,
+                        PictureContentPath = FileDialogAddProductContent.FileName
                     });
                     if (result)
                     {
@@ -207,6 +208,7 @@ namespace YesilEvCodeFirst.UIWinForm
                                 SupplierID = ((SupplierDTO)cmbBoxAddAndUpdateProductUpdateProductSupplier.SelectedItem).SupplierID,
                                 PictureBackPath = FileDialogUpdateProductBack.FileName,
                                 PictureFronthPath = FileDialogUpdateProductFront.FileName,
+                                PictureContentPath = FileDialogUpdateProductContent.FileName,
                                 ProductContent = txtAddAndUpdateProductUpdateProductProductContext.Text
                             };
                             bool result = dal.UpdateProduct(updateDto);
@@ -336,6 +338,10 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             btnAddAndUpdateProductUpdateProductBack.Text = FileDialogUpdateProductBack.SafeFileName;
         }
+        private void UpdateProductContentImageName(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            btnAddAndUpdateProductAddProductProductContext.Text = FileDialogAddProductContent.SafeFileName;
+        }
         private void AddProductFrontImageName(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnAddAndUpdateProductAddProductFront.Text = FileDialogAddProductFront.SafeFileName;
@@ -343,9 +349,26 @@ namespace YesilEvCodeFirst.UIWinForm
         private void addProductBackImageName(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnAddAndUpdateProductAddProductBack.Text = FileDialogAddProductBack.SafeFileName;
+        } 
+        private void addProductContentImageName(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            btnAddAndUpdateProductAddProductProductContext.Text = FileDialogAddProductContent.SafeFileName;
         }
 
+
+
+
         #endregion
+
+        private void btnAddAndUpdateProductAddProductProductContext_Click(object sender, EventArgs e)
+        {
+            FileDialogAddProductContent.ShowDialog();
+        }
+
+        private void btnAddAndUpdateProductUpdateProductProductContext_Click(object sender, EventArgs e)
+        {
+            FileDialogUpdateProductContent.ShowDialog();
+        }
 
         private void UpdateProductFrontImageDialogShow(object sender, EventArgs e)
         {
@@ -371,13 +394,19 @@ namespace YesilEvCodeFirst.UIWinForm
 
             var backpicturepath = dto.PictureBackPath.Split('\\');
             var backpicture = backpicturepath[backpicturepath.Length - 1];
+
+            var contentpicturepath = dto.PictureContentPath.Split('\\');
+            var contentpicture = contentpicturepath[contentpicturepath.Length - 1];
+
+
             if (txtAddAndUpdateProductUpdateProductBarcodeNo.Text == dto.Barcode &&
                 txtAddAndUpdateProductUpdateProductProductName.Text == dto.ProductName &&
                 txtAddAndUpdateProductUpdateProductProductContext.Text == dto.ProductContent &&
                 ((CategoryDTO)cmbBoxAddAndUpdateProductUpdateProductCategory.SelectedItem).CategoryID == dto.CategoryID &&
                 ((SupplierDTO)cmbBoxAddAndUpdateProductUpdateProductSupplier.SelectedItem).SupplierID == dto.SupplierID &&
                 btnAddAndUpdateProductUpdateProductFront.Text == frontpicture &&
-                btnAddAndUpdateProductUpdateProductBack.Text == backpicture)
+                btnAddAndUpdateProductUpdateProductBack.Text == backpicture &&
+                btnAddAndUpdateProductUpdateProductProductContext.Text == contentpicture)
             {
                 MessageBox.Show("Ürünün güncellenen verisi yok.");
                 return false;
@@ -1156,5 +1185,6 @@ namespace YesilEvCodeFirst.UIWinForm
             SupplementBlackList.Visible = true;
 
         }
+
     }
 }

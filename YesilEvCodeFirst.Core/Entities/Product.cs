@@ -21,7 +21,7 @@ namespace YesilEvCodeFirst.Core.Entities
         public bool IsApproved { get; set; } = false;
         public string PictureFronthPath { get; set; }
         public string PictureBackPath { get; set; }
-        public string PictureContent { get; set; }
+        public string PictureContentPath{ get; set; }
         public string ProductContent { get; set; }
 
         #region Relations

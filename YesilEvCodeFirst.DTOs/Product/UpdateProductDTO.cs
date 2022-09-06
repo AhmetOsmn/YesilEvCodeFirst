@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace YesilEvCodeFirst.DTOs.Product
+﻿namespace YesilEvCodeFirst.DTOs.Product
 {
     public class UpdateProductDTO
     {
@@ -11,6 +9,7 @@ namespace YesilEvCodeFirst.DTOs.Product
         public string ProductContent { get; set; }
         public string PictureFronthPath { get; set; }
         public string PictureBackPath { get; set; }
+        public string PictureContentPath { get; set; }
         public int AddedBy { get; set; }
     }
 }

@@ -192,6 +192,7 @@
             this.lblFavoriListSelectFavoriLists = new System.Windows.Forms.Label();
             this.cmbBoxFavoriListFavoriLists = new System.Windows.Forms.ComboBox();
             this.BlackList = new System.Windows.Forms.Panel();
+            this.btnBlackListAddSupplement = new System.Windows.Forms.Button();
             this.lblBlackListAddBlackList = new System.Windows.Forms.Label();
             this.btnBlackListAddBlackList = new System.Windows.Forms.Button();
             this.lblBlackListWarning = new System.Windows.Forms.Label();
@@ -244,7 +245,8 @@
             this.lblSupplementBlackListWarning = new System.Windows.Forms.Label();
             this.txtSupplementBlackListSupplements = new System.Windows.Forms.TextBox();
             this.lblSupplementBlackListSupplements = new System.Windows.Forms.Label();
-            this.btnBlackListAddSupplement = new System.Windows.Forms.Button();
+            this.FileDialogAddProductContent = new System.Windows.Forms.OpenFileDialog();
+            this.FileDialogUpdateProductContent = new System.Windows.Forms.OpenFileDialog();
             this.pnlSideBarHome.SuspendLayout();
             this.pnlSideBarGiveStarApplication.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarGiveStarApplication)).BeginInit();
@@ -1395,6 +1397,7 @@
             this.btnAddAndUpdateProductAddProductProductContext.TabIndex = 4;
             this.btnAddAndUpdateProductAddProductProductContext.Text = "+";
             this.btnAddAndUpdateProductAddProductProductContext.UseVisualStyleBackColor = true;
+            this.btnAddAndUpdateProductAddProductProductContext.Click += new System.EventHandler(this.btnAddAndUpdateProductAddProductProductContext_Click);
             // 
             // txtAddAndUpdateProductAddProductProductContext
             // 
@@ -1575,6 +1578,7 @@
             this.btnAddAndUpdateProductUpdateProductProductContext.TabIndex = 4;
             this.btnAddAndUpdateProductUpdateProductProductContext.Text = "+";
             this.btnAddAndUpdateProductUpdateProductProductContext.UseVisualStyleBackColor = true;
+            this.btnAddAndUpdateProductUpdateProductProductContext.Click += new System.EventHandler(this.btnAddAndUpdateProductUpdateProductProductContext_Click);
             // 
             // txtAddAndUpdateProductUpdateProductProductContext
             // 
@@ -2282,6 +2286,21 @@
             this.BlackList.Size = new System.Drawing.Size(360, 510);
             this.BlackList.TabIndex = 9;
             // 
+            // btnBlackListAddSupplement
+            // 
+            this.btnBlackListAddSupplement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnBlackListAddSupplement.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBlackListAddSupplement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBlackListAddSupplement.ForeColor = System.Drawing.Color.White;
+            this.btnBlackListAddSupplement.Location = new System.Drawing.Point(247, 98);
+            this.btnBlackListAddSupplement.Name = "btnBlackListAddSupplement";
+            this.btnBlackListAddSupplement.Size = new System.Drawing.Size(103, 35);
+            this.btnBlackListAddSupplement.TabIndex = 23;
+            this.btnBlackListAddSupplement.Text = "Madde Ekle";
+            this.btnBlackListAddSupplement.UseVisualStyleBackColor = false;
+            this.btnBlackListAddSupplement.Visible = false;
+            this.btnBlackListAddSupplement.Click += new System.EventHandler(this.btnBlackListAddSupplement_Click);
+            // 
             // lblBlackListAddBlackList
             // 
             this.lblBlackListAddBlackList.AutoSize = true;
@@ -2807,7 +2826,7 @@
             this.SupplementBlackList.Controls.Add(this.txtSupplementBlackListSupplements);
             this.SupplementBlackList.Controls.Add(this.lblSupplementBlackListSupplements);
             this.SupplementBlackList.Location = new System.Drawing.Point(0, 0);
-            this.SupplementBlackList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SupplementBlackList.Margin = new System.Windows.Forms.Padding(2);
             this.SupplementBlackList.MaximumSize = new System.Drawing.Size(360, 510);
             this.SupplementBlackList.MinimumSize = new System.Drawing.Size(360, 510);
             this.SupplementBlackList.Name = "SupplementBlackList";
@@ -2872,33 +2891,19 @@
             this.lblSupplementBlackListSupplements.TabIndex = 6;
             this.lblSupplementBlackListSupplements.Text = "Kara Listeye Eklenecek Maddeler";
             // 
-            // btnBlackListAddSupplement
+            // FileDialogAddProductContent
             // 
-            this.btnBlackListAddSupplement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnBlackListAddSupplement.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBlackListAddSupplement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBlackListAddSupplement.ForeColor = System.Drawing.Color.White;
-            this.btnBlackListAddSupplement.Location = new System.Drawing.Point(247, 98);
-            this.btnBlackListAddSupplement.Name = "btnBlackListAddSupplement";
-            this.btnBlackListAddSupplement.Size = new System.Drawing.Size(103, 35);
-            this.btnBlackListAddSupplement.TabIndex = 23;
-            this.btnBlackListAddSupplement.Text = "Madde Ekle";
-            this.btnBlackListAddSupplement.UseVisualStyleBackColor = false;
-            this.btnBlackListAddSupplement.Visible = false;
-            this.btnBlackListAddSupplement.Click += new System.EventHandler(this.btnBlackListAddSupplement_Click);
+            this.FileDialogAddProductContent.FileName = "openFileDialog1";
+            // 
+            // FileDialogUpdateProductContent
+            // 
+            this.FileDialogUpdateProductContent.FileName = "openFileDialog1";
             // 
             // UserSayfasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 508);
-            this.Controls.Add(this.SideBar);
-            this.Controls.Add(this.Home);
-            this.Controls.Add(this.UserDetails);
-            this.Controls.Add(this.SearchProduct);
-            this.Controls.Add(this.BlackList);
-            this.Controls.Add(this.Favlists);
-            this.Controls.Add(this.ProductDetails);
             this.Controls.Add(this.AddAndUpdateProduct);
             this.Controls.Add(this.SearchHistory);
             this.Controls.Add(this.SearchBarcode);
@@ -2907,6 +2912,13 @@
             this.Controls.Add(this.ChangePassword);
             this.Controls.Add(this.ChangeUserDetails);
             this.Controls.Add(this.SupplementBlackList);
+            this.Controls.Add(this.SideBar);
+            this.Controls.Add(this.Home);
+            this.Controls.Add(this.UserDetails);
+            this.Controls.Add(this.SearchProduct);
+            this.Controls.Add(this.BlackList);
+            this.Controls.Add(this.Favlists);
+            this.Controls.Add(this.ProductDetails);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(380, 547);
             this.MinimumSize = new System.Drawing.Size(380, 547);
@@ -3212,5 +3224,7 @@
         private System.Windows.Forms.Label lblSupplementBlackListSupplements;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnBlackListAddSupplement;
+        private System.Windows.Forms.OpenFileDialog FileDialogAddProductContent;
+        private System.Windows.Forms.OpenFileDialog FileDialogUpdateProductContent;
     }
 }

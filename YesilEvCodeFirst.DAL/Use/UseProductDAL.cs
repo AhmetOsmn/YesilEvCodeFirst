@@ -117,6 +117,7 @@ namespace YesilEvCodeFirst.DAL.Use
                         tempProduct.AddedBy = dto.AddedBy;
                         tempProduct.PictureBackPath = dto.PictureBackPath;
                         tempProduct.PictureFronthPath = dto.PictureFronthPath;
+                        tempProduct.PictureContentPath = dto.PictureContentPath;
                         tempProduct.SupplierID = dto.SupplierID;
 
                         var supplements = tempProduct.ProductContent.Split(',');

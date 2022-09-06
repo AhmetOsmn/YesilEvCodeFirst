@@ -62,22 +62,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FluentValidator\AddBlackListValidator.cs" />
     <Compile Include="FluentValidator\AddFavListValidator.cs" />
     <Compile Include="FluentValidator\AddProductValidator.cs" />
     <Compile Include="FluentValidator\Const\BarcodeDTOValidator.cs" />
     <Compile Include="FluentValidator\Const\EmailDTOValidator.cs" />
-    <Compile Include="FluentValidator\DeleteBlackListValidator.cs" />
     <Compile Include="FluentValidator\DeleteFavListValidator.cs" />
     <Compile Include="FluentValidator\DeleteSupplementBlackListValidator.cs" />
     <Compile Include="FluentValidator\FavListProductDTOValidator.cs" />
     <Compile Include="FluentValidator\GetFavListIDWithFavListNameAndUserIDValidator.cs" />
-    <Compile Include="FluentValidator\GetFavListsWithUserIDValidator.cs" />
-    <Compile Include="FluentValidator\GetProductDetailWithProductIDValidator.cs" />
-    <Compile Include="FluentValidator\GetProductListWithUserIDValidator.cs" />
     <Compile Include="FluentValidator\Const\IDDTOValidator.cs" />
     <Compile Include="FluentValidator\UpdateFavListValidator.cs" />
-    <Compile Include="FluentValidator\GetBlackListIDWithUserIDValidator.cs" />
     <Compile Include="FluentValidator\LoginValidator.cs" />
     <Compile Include="FluentValidator\ProductFavListValidator.cs" />
     <Compile Include="FluentValidator\SearchHistoryValidator.cs" />
