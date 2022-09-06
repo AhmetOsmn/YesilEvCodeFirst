@@ -9,7 +9,7 @@ namespace YesilEvCodeFirst.DTOs.SupplementBlackList
     public class AddSupplementBlackListDTO
     {
         public int BlackListID { get; set; }
-        public int SupplementID { get; set; }
+        public string SupplementContext { get; set; }
         public int UserID { get; set; }
     }
 }

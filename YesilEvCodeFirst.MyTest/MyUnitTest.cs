@@ -482,7 +482,7 @@ namespace YesilEvCodeFirst.MyTest
             {
 
                 UserID = 1,
-                SupplementID = 1,
+                //SupplementContext = 1,
 
             });
             if (!result)
@@ -500,7 +500,7 @@ namespace YesilEvCodeFirst.MyTest
             {
 
                 BlackListID = 1,
-                SupplementID = 2,
+                //SupplementContext = 2,
 
             });
 

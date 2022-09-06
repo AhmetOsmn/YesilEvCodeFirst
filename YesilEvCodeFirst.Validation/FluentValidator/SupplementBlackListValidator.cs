@@ -13,8 +13,8 @@ namespace YesilEvCodeFirst.Validation.FluentValidator
             #endregion
 
             #region SupplementID Validation Black List Page
-            //SupplementID validation for Black List Page
-            RuleFor(x => x.SupplementID).GreaterThan(0).WithMessage("Madde ID sıfırdan küçük olamaz.");
+            //SupplementContext validation for Black List Page
+            RuleFor(x => x.SupplementContext).NotEmpty().WithMessage("Kara Listeye eklenecek madde içeriği boş olamaz");
             #endregion
 
             #region UserID Validation Black List Page
