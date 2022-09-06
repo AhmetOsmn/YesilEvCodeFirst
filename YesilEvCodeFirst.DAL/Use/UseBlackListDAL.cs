@@ -114,7 +114,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                BlackList blackList = GetByCondition(u => u.UserID.Equals(dto.ID)).FirstOrDefault();
+                BlackList blackList = GetByCondition(u => u.UserID.Equals(dto.ID) && u.IsActive).FirstOrDefault();
                 if (blackList != null)
                 {
                     nLogger.Info("{} ID'li kullanicinin kara liste ID'si getirildi.", dto.ID);

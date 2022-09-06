@@ -19,6 +19,7 @@ namespace YesilEvCodeFirst.DAL.Use
     // todo: transaction eklenecek mi?
     public class UseProductDAL : EfRepoBase<YesilEvDbContext, Product>
     {
+        
         readonly Logger nLogger = LogManager.GetCurrentClassLogger();
         public bool AddProduct(AddProductDTO dto)
         {
@@ -27,14 +28,14 @@ namespace YesilEvCodeFirst.DAL.Use
 
             try
             {
-                if(!validationResult.IsValid)
+                if (!validationResult.IsValid)
                 {
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    var tempProduct = context.Product.Where(p => p.Barcode.Equals(dto.Barcode)).FirstOrDefault();
+                    var tempProduct = context.Product.Where(p => p.Barcode.Equals(dto.Barcode) && p.IsActive).FirstOrDefault();
                     if (tempProduct == null)
                     {
                         Product eklenecekUrun = MappingProfile.AddProductDTOToProduct(dto);
@@ -45,7 +46,7 @@ namespace YesilEvCodeFirst.DAL.Use
                         for (int i = 0; i < supplements.Length; i++)
                         {
                             string sup = supplements[i].Trim();
-                            var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
+                            var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower()) && s.IsActive).FirstOrDefault();
                             if (result == null)
                             {
                                 UseSupplementDAL supplementDAL = new UseSupplementDAL();
@@ -104,9 +105,11 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    var tempProduct = context.Product.Where(x => x.Barcode.Equals(dto.Barcode)).FirstOrDefault();
-                    
-                    if (tempProduct != null && tempProduct.AddedBy == dto.AddedBy)
+                    var tempProduct = context.Product.Where(x => x.Barcode.Equals(dto.Barcode) && x.IsActive).FirstOrDefault();
+
+                    var adder = context.User.Where(x => x.UserID == dto.AddedBy).FirstOrDefault();
+
+                    if (tempProduct != null && (tempProduct.AddedBy == dto.AddedBy || adder.RolID == 1))
                     {
                         tempProduct.ProductName = dto.ProductName;
                         tempProduct.CategoryID = dto.CategoryID;
@@ -125,7 +128,7 @@ namespace YesilEvCodeFirst.DAL.Use
                         for (int i = 0; i < supplements.Length; i++)
                         {
                             string sup = supplements[i].Trim();
-                            var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower())).FirstOrDefault();
+                            var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower()) && s.IsActive).FirstOrDefault();
                             if (result == null)
                             {
                                 UseSupplementDAL supplementDAL = new UseSupplementDAL();
@@ -159,7 +162,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     else
                     {
                         throw new Exception(Messages.ProductNotFound);
-                    } 
+                    }
                 }
             }
             catch (FormatException fex)
@@ -174,17 +177,70 @@ namespace YesilEvCodeFirst.DAL.Use
             }
         }
 
+        public bool DeleteProduct(BarcodeDTO dto)
+        {
+            BarcodeDTOValidator validator = new BarcodeDTOValidator();
+            ValidationResult validationResult = validator.Validate(dto);
+
+            try
+            {
+                if (!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
+                Product deletedProduct = GetByCondition(p => p.Barcode.Equals(dto.Barcode.Trim()) && p.IsActive).FirstOrDefault();
+
+                if (deletedProduct != null)
+                {
+                    deletedProduct.IsActive = false;
+
+                    MySaveChanges();
+                    using (YesilEvDbContext context = new YesilEvDbContext())
+                    {
+                        var productSupplements = context.ProductSupplement.Where(x => x.ProductID == deletedProduct.ProductID).ToList();
+                        productSupplements.ForEach( x => x.IsActive = false);
+
+                        var productFavlists = context.ProductFavList.Where(x => x.ProductID == deletedProduct.ProductID).ToList();
+                        productFavlists.ForEach( x => x.IsActive = false);
+
+                        var productSearchHistories = context.SearchHistory.Where(x => x.ProductID == deletedProduct.ProductID).ToList();
+                        productSearchHistories.ForEach( x => x.IsActive = false);
+
+                        context.SaveChanges();
+                    }
+
+                    nLogger.Info("{} barkodlu ürün silindi.", dto.Barcode);
+                    return true;
+                }
+                else
+                {
+                    throw new Exception(Messages.ProductNotFound);
+                }
+            }
+            catch (FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new Exception(fex.Message);
+            }
+            catch (Exception ex)
+            {
+                nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
+            }
+        }
+
         public List<ListProductDTO> GetProductList()
         {
             try
             {
-                List<Product> products= null;
+                List<Product> products = null;
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    List<Product> productList = context.Product.ToList();
+                    List<Product> productList = context.Product.Where(x => x.IsActive).ToList();
                     products = productList;
                 }
-                if(products == null)
+                if (products == null)
                 {
                     throw new Exception(Messages.ProductListIsEmpty);
                 }
@@ -201,7 +257,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 throw new Exception(ex.Message);
             }
         }
-        
+
         public List<ListProductDTO> GetProductListWithUserID(IDDTO dto)
         {
             IDDTOValidator validator = new IDDTOValidator();
@@ -209,7 +265,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
             try
             {
-                if(!validationResult.IsValid)
+                if (!validationResult.IsValid)
                 {
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
@@ -217,7 +273,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 List<Product> products = null;
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    List<Product> productList = context.Product.Where(x=>x.AddedBy == dto.ID).ToList();
+                    List<Product> productList = context.Product.Where(x => x.AddedBy == dto.ID && x.IsActive).ToList();
                     products = productList;
                 }
                 if (products == null)
@@ -232,7 +288,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
 
             }
-            catch(FormatException fex)
+            catch (FormatException fex)
             {
                 nLogger.Error("System - {}", fex.Message);
                 throw new FormatException(fex.Message);
@@ -243,10 +299,10 @@ namespace YesilEvCodeFirst.DAL.Use
                 throw new Exception(ex.Message);
             }
         }
-       
+
         public List<ListProductDTO> GetProductListForSearchbar(string filter)
         {
-            List<ListProductDTO> listProductDTOList = MappingProfile.ProductListToProductListDTO(GetByCondition(x => x.ProductName.ToLower().Contains(filter.ToLower())));
+            List<ListProductDTO> listProductDTOList = MappingProfile.ProductListToProductListDTO(GetByCondition(x => x.ProductName.ToLower().Contains(filter.ToLower()) && x.IsActive));
             return listProductDTOList;
         }
 
@@ -256,14 +312,14 @@ namespace YesilEvCodeFirst.DAL.Use
             ValidationResult validationResult = validator.Validate(dto);
             try
             {
-                if(!validationResult.IsValid)
+                if (!validationResult.IsValid)
                 {
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    Product product = this.GetByConditionWithInclude(p => p.Barcode.Equals(dto.Barcode), "Supplier", "Category").FirstOrDefault();
+                    Product product = this.GetByConditionWithInclude(p => p.Barcode.Equals(dto.Barcode) && p.IsActive, "Supplier", "Category").FirstOrDefault();
                     if (product != null)
                     {
                         nLogger.Info("{} urunun detaylari getirildi", product.ProductName);
@@ -275,7 +331,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                 }
             }
-            catch(FormatException fex)
+            catch (FormatException fex)
             {
                 nLogger.Error("System - {}", fex.Message);
                 throw new FormatException(fex.Message);
@@ -294,14 +350,14 @@ namespace YesilEvCodeFirst.DAL.Use
 
             try
             {
-                if(!validationResult.IsValid)
+                if (!validationResult.IsValid)
                 {
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    Product product = this.GetByConditionWithInclude(p => p.ProductID.Equals(dto.ID), "Supplier", "Category").FirstOrDefault();
+                    Product product = this.GetByConditionWithInclude(p => p.ProductID.Equals(dto.ID) && p.IsActive, "Supplier", "Category").FirstOrDefault();
                     if (product != null)
                     {
                         nLogger.Info("{} urunun detaylari getirildi", product.ProductName);
@@ -313,7 +369,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                 }
             }
-            catch(FormatException fex)
+            catch (FormatException fex)
             {
                 nLogger.Error("System - {}", fex.Message);
                 throw new FormatException(fex.Message);
@@ -324,13 +380,13 @@ namespace YesilEvCodeFirst.DAL.Use
                 throw new Exception(ex.Message);
             }
         }
-        
+
         public List<Product> GetProductsForAdmin()
         {
             try
             {
                 // todo: inclue yapilarak getirilecek
-                List<Product> products = GetAll();
+                List<Product> products = GetByCondition(x => x.IsActive).ToList();
                 if (products == null)
                 {
                     throw new Exception(Messages.ProductListIsEmpty);
@@ -351,14 +407,14 @@ namespace YesilEvCodeFirst.DAL.Use
 
         public List<Product> GetProductListWithSearchbarForAdmin(string filter)
         {
-            return GetByCondition(x => x.ProductName.ToLower().Contains(filter.ToLower()));
+            return GetByCondition(x => x.ProductName.ToLower().Contains(filter.ToLower()) && x.IsActive);
         }
 
         public List<Product> GetProductsForAdminApprove()
         {
             try
             {
-                List<Product> products = GetByCondition(x => !x.IsApproved);
+                List<Product> products = GetByCondition(x => !x.IsApproved && x.IsActive);
                 if (products == null)
                 {
                     throw new Exception(Messages.ProductListIsEmpty);

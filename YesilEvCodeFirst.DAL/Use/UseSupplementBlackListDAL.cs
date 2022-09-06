@@ -35,7 +35,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     var supplements = dto.SupplementContext.Split(',');
                     Array.ForEach(supplements, item =>
                     {
-                        var result = useSupplementDAL.GetByCondition(x => x.SupplementName.Equals(item.Trim())).FirstOrDefault();
+                        var result = useSupplementDAL.GetByCondition(x => x.SupplementName.Equals(item.Trim())&& x.IsActive).FirstOrDefault();
                         if (result == null)
                         {
                             AddSupplementDTO addSupplementDTO = new AddSupplementDTO()
@@ -44,7 +44,7 @@ namespace YesilEvCodeFirst.DAL.Use
                             };
                             useSupplementDAL.AddSupplement(addSupplementDTO);
                             context.SaveChanges();
-                            result = useSupplementDAL.GetByCondition(x => x.SupplementName.Equals(item.Trim())).FirstOrDefault();                           
+                            result = useSupplementDAL.GetByCondition(x => x.SupplementName.Equals(item.Trim())&& x.IsActive).FirstOrDefault();                           
                         }
                         context.SupplementBlackList.Add(new SupplementBlackList()
                         {
@@ -80,7 +80,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    var suppblacklist = context.SupplementBlackList.Where(u => u.BlackListID.Equals(dto.BlackListID) && u.SupplementID.Equals(dto.SupplementContext)).FirstOrDefault();
+                    var suppblacklist = context.SupplementBlackList.Where(u => u.BlackListID.Equals(dto.BlackListID) && u.SupplementID.Equals(dto.SupplementID) && u.IsActive).FirstOrDefault();
                     if (suppblacklist != null)
                     {
                         suppblacklist.IsActive = false;
@@ -120,7 +120,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                List<SupplementBlackList> supplements = GetByConditionWithInclude(u => u.BlackListID.Equals(dto.ID), "Supplement").ToList();
+                List<SupplementBlackList> supplements = GetByConditionWithInclude(u => u.BlackListID.Equals(dto.ID) && u.IsActive, "Supplement").ToList();
 
                 if (supplements != null)
                 {

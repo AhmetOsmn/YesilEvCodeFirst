@@ -10,6 +10,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         public AdminSayfasi()
         {
             InitializeComponent();
+            OpenChildForm(new UrunIslemleri());
         }
 
         private Form activeForm = null;
@@ -60,5 +61,6 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         {
             OpenChildForm(new RaporIslemleri());
         }
+
     }
 }
