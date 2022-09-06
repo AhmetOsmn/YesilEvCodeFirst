@@ -90,7 +90,6 @@
             this.pictureUserDetailsChangeEmail = new System.Windows.Forms.PictureBox();
             this.pictureUserDetailsPremium = new System.Windows.Forms.PictureBox();
             this.btnUserDetailsLogout = new System.Windows.Forms.Button();
-            this.btnUserDetailsClearSearchHistory = new System.Windows.Forms.Button();
             this.btnUserDetailsBlacklist = new System.Windows.Forms.Button();
             this.btnUserDetailsFavoriLists = new System.Windows.Forms.Button();
             this.btnUserDetailsUpdateUserDetails = new System.Windows.Forms.Button();
@@ -102,6 +101,7 @@
             this.lblUserDetailsUserName = new System.Windows.Forms.Label();
             this.btnUserDetailsChangePassword = new System.Windows.Forms.Button();
             this.btnUserDetailsPremium = new System.Windows.Forms.Button();
+            this.btnUserDetailsClearSearchHistory = new System.Windows.Forms.Button();
             this.AddAndUpdateProduct = new System.Windows.Forms.Panel();
             this.btnAddAndUpdateProductUser = new System.Windows.Forms.Button();
             this.btnAddAndUpdateProductSend = new System.Windows.Forms.Button();
@@ -1129,23 +1129,6 @@
             this.btnUserDetailsLogout.UseVisualStyleBackColor = true;
             this.btnUserDetailsLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // btnUserDetailsClearSearchHistory
-            // 
-            this.btnUserDetailsClearSearchHistory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserDetailsClearSearchHistory.FlatAppearance.BorderSize = 0;
-            this.btnUserDetailsClearSearchHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserDetailsClearSearchHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUserDetailsClearSearchHistory.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserDetailsClearSearchHistory.Location = new System.Drawing.Point(64, 491);
-            this.btnUserDetailsClearSearchHistory.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUserDetailsClearSearchHistory.Name = "btnUserDetailsClearSearchHistory";
-            this.btnUserDetailsClearSearchHistory.Size = new System.Drawing.Size(367, 39);
-            this.btnUserDetailsClearSearchHistory.TabIndex = 3;
-            this.btnUserDetailsClearSearchHistory.Text = "         Arama geçmişini temizle";
-            this.btnUserDetailsClearSearchHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserDetailsClearSearchHistory.UseVisualStyleBackColor = true;
-            this.btnUserDetailsClearSearchHistory.Click += new System.EventHandler(this.ClearHistory);
-            // 
             // btnUserDetailsBlacklist
             // 
             this.btnUserDetailsBlacklist.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1314,6 +1297,23 @@
             this.btnUserDetailsPremium.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserDetailsPremium.UseVisualStyleBackColor = true;
             this.btnUserDetailsPremium.Click += new System.EventHandler(this.btnUserDetailsPremium_Click);
+            // 
+            // btnUserDetailsClearSearchHistory
+            // 
+            this.btnUserDetailsClearSearchHistory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserDetailsClearSearchHistory.FlatAppearance.BorderSize = 0;
+            this.btnUserDetailsClearSearchHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserDetailsClearSearchHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserDetailsClearSearchHistory.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnUserDetailsClearSearchHistory.Location = new System.Drawing.Point(64, 491);
+            this.btnUserDetailsClearSearchHistory.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUserDetailsClearSearchHistory.Name = "btnUserDetailsClearSearchHistory";
+            this.btnUserDetailsClearSearchHistory.Size = new System.Drawing.Size(367, 39);
+            this.btnUserDetailsClearSearchHistory.TabIndex = 3;
+            this.btnUserDetailsClearSearchHistory.Text = "         Arama geçmişini temizle";
+            this.btnUserDetailsClearSearchHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserDetailsClearSearchHistory.UseVisualStyleBackColor = true;
+            this.btnUserDetailsClearSearchHistory.Click += new System.EventHandler(this.ClearHistory);
             // 
             // AddAndUpdateProduct
             // 
@@ -2997,7 +2997,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 664);
+            this.ClientSize = new System.Drawing.Size(483, 617);
+            this.Controls.Add(this.SideBar);
+            this.Controls.Add(this.Home);
+            this.Controls.Add(this.UserDetails);
+            this.Controls.Add(this.SearchProduct);
             this.Controls.Add(this.BlackList);
             this.Controls.Add(this.Favlists);
             this.Controls.Add(this.ProductDetails);
@@ -3008,10 +3012,6 @@
             this.Controls.Add(this.ChangeEmail);
             this.Controls.Add(this.ChangePassword);
             this.Controls.Add(this.ChangeUserDetails);
-            this.Controls.Add(this.SideBar);
-            this.Controls.Add(this.Home);
-            this.Controls.Add(this.UserDetails);
-            this.Controls.Add(this.SearchProduct);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(501, 664);

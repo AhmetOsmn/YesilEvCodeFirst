@@ -1,10 +1,12 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using YesilEvCodeFirst.DTOs.UserAdmin;
 
 namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
 {
     public partial class AdminSayfasi : Form
     {
+        public UserDetailDTO User; 
         public AdminSayfasi()
         {
             InitializeComponent();

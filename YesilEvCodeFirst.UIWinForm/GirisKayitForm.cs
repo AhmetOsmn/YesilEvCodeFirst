@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.UserAdmin;
+using YesilEvCodeFirst.UIWinForm.AdminSayfalari;
 using YesilEvCodeFirst.Validation.FluentValidator;
 
 namespace YesilEvCodeFirst.UIWinForm
@@ -43,7 +44,15 @@ namespace YesilEvCodeFirst.UIWinForm
             try
             {
                 var result = userDAL.UserLogin(dto);
-                OpenUserPage(result);
+                if(result.RolID == 1)
+                {
+                    OpenAdminPage(result);
+                }
+                else if(result.RolID == 2)
+                {
+                    OpenUserPage(result);
+                }
+                
             }
             catch (FormatException fex)
             {
@@ -58,6 +67,13 @@ namespace YesilEvCodeFirst.UIWinForm
         private void OpenUserPage(UserDetailDTO result)
         {
             UserSayfasi f = new UserSayfasi();
+            f.User = result;
+            this.Hide();
+            f.ShowDialog();
+        }
+        private void OpenAdminPage(UserDetailDTO result)
+        {
+            AdminSayfasi f = new AdminSayfasi();
             f.User = result;
             this.Hide();
             f.ShowDialog();
