@@ -148,35 +148,33 @@ namespace YesilEvCodeFirst.UIWinForm
             UseProductDAL dal = new UseProductDAL();
             if (isAddProduct)
             {
-                if (isAddProductFieldValidator())
-                {
-                    bool result = dal.AddProduct(new AddProductDTO
-                    {
-                        AddedBy = User.UserID,
-                        Barcode = txtAddAndUpdateProductAddProductBarcodeNo.Text,
-                        SupplierID = ((SupplierDTO)cmbBoxAddAndUpdateProductAddProductSupplier.SelectedItem).SupplierID,
-                        ProductName = txtAddAndUpdateProductAddProductProductName.Text,
-                        CategoryID = ((CategoryDTO)cmbBoxAddAndUpdateProductAddProductCategory.SelectedItem).CategoryID,
-                        ProductContent = txtAddAndUpdateProductAddProductProductContext.Text,
-                        //to do file dialog get path
-                        PictureFronthPath = FileDialogAddProductFront.FileName,
-                        PictureBackPath = FileDialogAddProductBack.FileName,
-                    });
-                    if (result)
-                    {
-                        MessageBox.Show("Ürün Eklendi");
-                        CloseAllPages();
-                        BarcodeDTO barcodeDTO = new BarcodeDTO() { Barcode = txtAddAndUpdateProductAddProductBarcodeNo.Text };
-                        int lastAddedProductID = useProductDAL.GetProductDetailWithBarcode(barcodeDTO).ProductID;
-                        GoProductDetails(lastAddedProductID);
-                        // todo: eklenen ürüne ait olan detay sayfasında yonlendirilecek
-                        CleanAddAndUpdateProduct();
 
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ürün zaten mevcutta var");
-                    }
+                bool result = dal.AddProduct(new AddProductDTO
+                {
+                    AddedBy = User.UserID,
+                    Barcode = txtAddAndUpdateProductAddProductBarcodeNo.Text,
+                    SupplierID = cmbBoxAddAndUpdateProductAddProductSupplier.SelectedItem == null ? 0 : ((SupplierDTO)cmbBoxAddAndUpdateProductAddProductSupplier.SelectedItem).SupplierID,
+                    ProductName = txtAddAndUpdateProductAddProductProductName.Text,
+                    CategoryID = cmbBoxAddAndUpdateProductAddProductCategory.SelectedItem == null ? 0 : ((CategoryDTO)cmbBoxAddAndUpdateProductAddProductCategory.SelectedItem).CategoryID,
+                    ProductContent = txtAddAndUpdateProductAddProductProductContext.Text,
+                    //to do file dialog get path
+                    PictureFronthPath = FileDialogAddProductFront.FileName,
+                    PictureBackPath = FileDialogAddProductBack.FileName,
+                });
+                if (result)
+                {
+                    MessageBox.Show("Ürün Eklendi");
+                    CloseAllPages();
+                    BarcodeDTO barcodeDTO = new BarcodeDTO() { Barcode = txtAddAndUpdateProductAddProductBarcodeNo.Text };
+                    int lastAddedProductID = useProductDAL.GetProductDetailWithBarcode(barcodeDTO).ProductID;
+                    GoProductDetails(lastAddedProductID);
+                    // todo: eklenen ürüne ait olan detay sayfasında yonlendirilecek
+                    CleanAddAndUpdateProduct();
+
+                }
+                else
+                {
+                    MessageBox.Show("Ürün zaten mevcutta var");
                 }
             }
             else
@@ -189,9 +187,9 @@ namespace YesilEvCodeFirst.UIWinForm
                         {
                             AddedBy = User.UserID,
                             Barcode = txtAddAndUpdateProductUpdateProductBarcodeNo.Text,
-                            CategoryID = ((CategoryDTO)cmbBoxAddAndUpdateProductUpdateProductCategory.SelectedItem).CategoryID,
+                            CategoryID = cmbBoxAddAndUpdateProductAddProductCategory.SelectedItem == null ? 0 : ((CategoryDTO)cmbBoxAddAndUpdateProductUpdateProductCategory.SelectedItem).CategoryID,
                             ProductName = txtAddAndUpdateProductUpdateProductProductName.Text,
-                            SupplierID = ((SupplierDTO)cmbBoxAddAndUpdateProductUpdateProductSupplier.SelectedItem).SupplierID,
+                            SupplierID = cmbBoxAddAndUpdateProductAddProductSupplier.SelectedItem == null ? 0 : ((SupplierDTO)cmbBoxAddAndUpdateProductUpdateProductSupplier.SelectedItem).SupplierID,
                             PictureBackPath = FileDialogUpdateProductBack.FileName,
                             PictureFronthPath = FileDialogUpdateProductFront.FileName,
                             ProductContent = txtAddAndUpdateProductUpdateProductProductContext.Text
@@ -319,36 +317,6 @@ namespace YesilEvCodeFirst.UIWinForm
         private void AddProductBackImageDialogShow(object sender, EventArgs e)
         {
             FileDialogAddProductBack.ShowDialog();
-        }
-
-        private bool isAddProductFieldValidator()
-        {
-            if (string.IsNullOrEmpty(txtAddAndUpdateProductAddProductBarcodeNo.Text))
-            {
-                MessageBox.Show("Ürün barcode boş olamaz.");
-                return false;
-            }
-            else if (string.IsNullOrEmpty(txtAddAndUpdateProductAddProductProductName.Text))
-            {
-                MessageBox.Show("Ürün adı boş olamaz");
-                return false;
-            }
-            else if (cmbBoxAddAndUpdateProductAddProductCategory.SelectedItem == null)
-            {
-                MessageBox.Show("Ürün kategori seçilmedi");
-                return false;
-            }
-            else if (cmbBoxAddAndUpdateProductAddProductSupplier.SelectedItem == null)
-            {
-                MessageBox.Show("Ürün üretici secilmedi");
-                return false;
-            }
-            else if (string.IsNullOrEmpty(txtAddAndUpdateProductAddProductProductContext.Text))
-            {
-                MessageBox.Show("Ürün İçeriği boş olamaz");
-                return false;
-            }
-            return true;
         }
 
         private bool isUpdateProductFieldValidator()

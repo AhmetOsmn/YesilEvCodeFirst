@@ -8,8 +8,8 @@ namespace YesilEvCodeFirst.Validation.FluentValidator
     {
         public AddProductValidator()
         {
-            RuleFor(x => x.CategoryID).GreaterThan(0).WithMessage(Messages.InvalidID);
-            RuleFor(x => x.SupplierID).GreaterThan(0).WithMessage(Messages.InvalidID);
+            RuleFor(x => x.CategoryID).GreaterThan(0).WithMessage(Messages.CategoryIDNull);
+            RuleFor(x => x.SupplierID).GreaterThan(0).WithMessage(Messages.SupplierIDNull);
 
             RuleFor(x => x.ProductName).NotEmpty().WithMessage(Messages.ProductNameIsEmpty);
             RuleFor(x => x.ProductName).MinimumLength(2).WithMessage(Messages.ProductNameMinLength);
