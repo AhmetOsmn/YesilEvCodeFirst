@@ -272,19 +272,14 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception(Messages.ProductNotFound);
+                        return null;
                     }
                 }
             }
-            catch(FormatException fex)
-            {
-                nLogger.Error("System - {}", fex.Message);
-                throw new Exception(fex.Message);
-            }
-            catch (Exception ex)
+            catch (FormatException ex)
             {
                 nLogger.Error("System - {}", ex.Message);
-                throw new Exception(ex.Message);
+                throw new FormatException(ex.Message);
             }
         }
 

@@ -91,8 +91,6 @@
             this.pictureUserDetailsPremium = new System.Windows.Forms.PictureBox();
             this.btnUserDetailsLogout = new System.Windows.Forms.Button();
             this.btnUserDetailsClearSearchHistory = new System.Windows.Forms.Button();
-            this.btnUserDetailsBlacklist = new System.Windows.Forms.Button();
-            this.btnUserDetailsFavoriLists = new System.Windows.Forms.Button();
             this.btnUserDetailsUpdateUserDetails = new System.Windows.Forms.Button();
             this.btnUserDetailsMergeSocialMedia = new System.Windows.Forms.Button();
             this.btnUserDetailsChangeEmail = new System.Windows.Forms.Button();
@@ -102,6 +100,8 @@
             this.lblUserDetailsUserName = new System.Windows.Forms.Label();
             this.btnUserDetailsChangePassword = new System.Windows.Forms.Button();
             this.btnUserDetailsPremium = new System.Windows.Forms.Button();
+            this.btnUserDetailsBlacklist = new System.Windows.Forms.Button();
+            this.btnUserDetailsFavoriLists = new System.Windows.Forms.Button();
             this.AddAndUpdateProduct = new System.Windows.Forms.Panel();
             this.btnAddAndUpdateProductUser = new System.Windows.Forms.Button();
             this.btnAddAndUpdateProductSend = new System.Windows.Forms.Button();
@@ -889,6 +889,7 @@
             // 
             // Home
             // 
+            this.Home.BackColor = System.Drawing.Color.White;
             this.Home.Controls.Add(this.btnHomeUser);
             this.Home.Controls.Add(this.pictureHomeSearchHistoryAndFavoriLists);
             this.Home.Controls.Add(this.pictureHomeAddAndUpdateProduct);
@@ -921,6 +922,7 @@
             // 
             // UserDetails
             // 
+            this.UserDetails.BackColor = System.Drawing.Color.White;
             this.UserDetails.Controls.Add(this.lblUserDetailsAddProductCount);
             this.UserDetails.Controls.Add(this.pictureUserDetailsLogout);
             this.UserDetails.Controls.Add(this.pictureUserDetailsSearchHistory);
@@ -933,8 +935,6 @@
             this.UserDetails.Controls.Add(this.pictureUserDetailsPremium);
             this.UserDetails.Controls.Add(this.btnUserDetailsLogout);
             this.UserDetails.Controls.Add(this.btnUserDetailsClearSearchHistory);
-            this.UserDetails.Controls.Add(this.btnUserDetailsBlacklist);
-            this.UserDetails.Controls.Add(this.btnUserDetailsFavoriLists);
             this.UserDetails.Controls.Add(this.btnUserDetailsUpdateUserDetails);
             this.UserDetails.Controls.Add(this.btnUserDetailsMergeSocialMedia);
             this.UserDetails.Controls.Add(this.btnUserDetailsChangeEmail);
@@ -944,6 +944,8 @@
             this.UserDetails.Controls.Add(this.lblUserDetailsUserName);
             this.UserDetails.Controls.Add(this.btnUserDetailsChangePassword);
             this.UserDetails.Controls.Add(this.btnUserDetailsPremium);
+            this.UserDetails.Controls.Add(this.btnUserDetailsBlacklist);
+            this.UserDetails.Controls.Add(this.btnUserDetailsFavoriLists);
             this.UserDetails.Location = new System.Drawing.Point(0, 0);
             this.UserDetails.MaximumSize = new System.Drawing.Size(360, 510);
             this.UserDetails.MinimumSize = new System.Drawing.Size(360, 510);
@@ -1082,38 +1084,6 @@
             this.btnUserDetailsClearSearchHistory.UseVisualStyleBackColor = true;
             this.btnUserDetailsClearSearchHistory.Click += new System.EventHandler(this.ClearHistory);
             // 
-            // btnUserDetailsBlacklist
-            // 
-            this.btnUserDetailsBlacklist.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserDetailsBlacklist.FlatAppearance.BorderSize = 0;
-            this.btnUserDetailsBlacklist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserDetailsBlacklist.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUserDetailsBlacklist.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserDetailsBlacklist.Location = new System.Drawing.Point(49, 361);
-            this.btnUserDetailsBlacklist.Name = "btnUserDetailsBlacklist";
-            this.btnUserDetailsBlacklist.Size = new System.Drawing.Size(275, 32);
-            this.btnUserDetailsBlacklist.TabIndex = 3;
-            this.btnUserDetailsBlacklist.Text = "         Kara liste";
-            this.btnUserDetailsBlacklist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserDetailsBlacklist.UseVisualStyleBackColor = true;
-            this.btnUserDetailsBlacklist.Click += new System.EventHandler(this.GoBlackListPage);
-            // 
-            // btnUserDetailsFavoriLists
-            // 
-            this.btnUserDetailsFavoriLists.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserDetailsFavoriLists.FlatAppearance.BorderSize = 0;
-            this.btnUserDetailsFavoriLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserDetailsFavoriLists.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUserDetailsFavoriLists.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserDetailsFavoriLists.Location = new System.Drawing.Point(49, 323);
-            this.btnUserDetailsFavoriLists.Name = "btnUserDetailsFavoriLists";
-            this.btnUserDetailsFavoriLists.Size = new System.Drawing.Size(275, 32);
-            this.btnUserDetailsFavoriLists.TabIndex = 3;
-            this.btnUserDetailsFavoriLists.Text = "         Favoriler";
-            this.btnUserDetailsFavoriLists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserDetailsFavoriLists.UseVisualStyleBackColor = true;
-            this.btnUserDetailsFavoriLists.Click += new System.EventHandler(this.GoFavoriListPage);
-            // 
             // btnUserDetailsUpdateUserDetails
             // 
             this.btnUserDetailsUpdateUserDetails.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1240,8 +1210,41 @@
             this.btnUserDetailsPremium.UseVisualStyleBackColor = true;
             this.btnUserDetailsPremium.Click += new System.EventHandler(this.btnUserDetailsPremium_Click);
             // 
+            // btnUserDetailsBlacklist
+            // 
+            this.btnUserDetailsBlacklist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserDetailsBlacklist.FlatAppearance.BorderSize = 0;
+            this.btnUserDetailsBlacklist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserDetailsBlacklist.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserDetailsBlacklist.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnUserDetailsBlacklist.Location = new System.Drawing.Point(49, 361);
+            this.btnUserDetailsBlacklist.Name = "btnUserDetailsBlacklist";
+            this.btnUserDetailsBlacklist.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsBlacklist.TabIndex = 3;
+            this.btnUserDetailsBlacklist.Text = "         Kara liste";
+            this.btnUserDetailsBlacklist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserDetailsBlacklist.UseVisualStyleBackColor = true;
+            this.btnUserDetailsBlacklist.Click += new System.EventHandler(this.GoBlackListPage);
+            // 
+            // btnUserDetailsFavoriLists
+            // 
+            this.btnUserDetailsFavoriLists.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserDetailsFavoriLists.FlatAppearance.BorderSize = 0;
+            this.btnUserDetailsFavoriLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserDetailsFavoriLists.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUserDetailsFavoriLists.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.btnUserDetailsFavoriLists.Location = new System.Drawing.Point(49, 323);
+            this.btnUserDetailsFavoriLists.Name = "btnUserDetailsFavoriLists";
+            this.btnUserDetailsFavoriLists.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsFavoriLists.TabIndex = 3;
+            this.btnUserDetailsFavoriLists.Text = "         Favoriler";
+            this.btnUserDetailsFavoriLists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserDetailsFavoriLists.UseVisualStyleBackColor = true;
+            this.btnUserDetailsFavoriLists.Click += new System.EventHandler(this.GoFavoriListPage);
+            // 
             // AddAndUpdateProduct
             // 
+            this.AddAndUpdateProduct.BackColor = System.Drawing.Color.White;
             this.AddAndUpdateProduct.Controls.Add(this.btnAddAndUpdateProductUser);
             this.AddAndUpdateProduct.Controls.Add(this.btnAddAndUpdateProductSend);
             this.AddAndUpdateProduct.Controls.Add(this.btnAddAndUpdateProductAddProduct);
@@ -1383,6 +1386,7 @@
             this.btnAddAndUpdateProductAddProductProductContext.TabIndex = 4;
             this.btnAddAndUpdateProductAddProductProductContext.Text = "+";
             this.btnAddAndUpdateProductAddProductProductContext.UseVisualStyleBackColor = true;
+            this.btnAddAndUpdateProductAddProductProductContext.Click += new System.EventHandler(this.btnAddAndUpdateProductAddProductProductContext_Click);
             // 
             // txtAddAndUpdateProductAddProductProductContext
             // 
@@ -1975,6 +1979,7 @@
             // 
             // SearchHistory
             // 
+            this.SearchHistory.BackColor = System.Drawing.Color.White;
             this.SearchHistory.Controls.Add(this.lblSearchHistoryFavlists);
             this.SearchHistory.Controls.Add(this.btnSearchHistoryGoFavLists);
             this.SearchHistory.Controls.Add(this.btnSearchHistoryClearHistory);
@@ -2078,6 +2083,7 @@
             // 
             // SearchProduct
             // 
+            this.SearchProduct.BackColor = System.Drawing.Color.White;
             this.SearchProduct.Controls.Add(this.btnSearchProductClearDGV);
             this.SearchProduct.Controls.Add(this.dgvSearchProductProducts);
             this.SearchProduct.Controls.Add(this.btnSearchProductSearchSearchBar);
@@ -2169,6 +2175,7 @@
             // 
             // Favlists
             // 
+            this.Favlists.BackColor = System.Drawing.Color.White;
             this.Favlists.Controls.Add(this.lblFavoriListsAddFavori);
             this.Favlists.Controls.Add(this.btnFavoriListsAddFavori);
             this.Favlists.Controls.Add(this.btnFavoriListsUser);
@@ -2305,6 +2312,7 @@
             // 
             // SearchBarcode
             // 
+            this.SearchBarcode.BackColor = System.Drawing.Color.White;
             this.SearchBarcode.Controls.Add(this.btnSearchBarcodeUser);
             this.SearchBarcode.Controls.Add(this.btnSearchBarcodeSearchBarcode);
             this.SearchBarcode.Controls.Add(this.lblSearchBarcodeBarcodeNo);
@@ -2365,6 +2373,7 @@
             // 
             // AddFavoriList
             // 
+            this.AddFavoriList.BackColor = System.Drawing.Color.White;
             this.AddFavoriList.Controls.Add(this.btnAddFavoriList);
             this.AddFavoriList.Controls.Add(this.btnAddFavoriUser);
             this.AddFavoriList.Controls.Add(this.lblAddFavoriFavoris);
@@ -2446,6 +2455,7 @@
             // 
             // ChangeEmail
             // 
+            this.ChangeEmail.BackColor = System.Drawing.Color.White;
             this.ChangeEmail.Controls.Add(this.btnChangeEmailUser);
             this.ChangeEmail.Controls.Add(this.btnChangeEmailSend);
             this.ChangeEmail.Controls.Add(this.txtChangeEmaiReNewEmail);
@@ -2541,6 +2551,7 @@
             // 
             // ChangePassword
             // 
+            this.ChangePassword.BackColor = System.Drawing.Color.White;
             this.ChangePassword.Controls.Add(this.btnChangePasswordUser);
             this.ChangePassword.Controls.Add(this.btnChangePasswordSend);
             this.ChangePassword.Controls.Add(this.txtChangePasswordReNewPassword);
@@ -2639,6 +2650,7 @@
             // 
             // ChangeUserDetails
             // 
+            this.ChangeUserDetails.BackColor = System.Drawing.Color.White;
             this.ChangeUserDetails.Controls.Add(this.btnChangeUserDetailsSend);
             this.ChangeUserDetails.Controls.Add(this.txtChangeUserDetailsFirstName);
             this.ChangeUserDetails.Controls.Add(this.txtChangeUserDetailsLastName);
@@ -2766,10 +2778,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 509);
-            this.Controls.Add(this.SideBar);
             this.Controls.Add(this.Home);
             this.Controls.Add(this.UserDetails);
             this.Controls.Add(this.SearchProduct);
+            this.Controls.Add(this.SideBar);
             this.Controls.Add(this.BlackList);
             this.Controls.Add(this.Favlists);
             this.Controls.Add(this.ProductDetails);
@@ -2785,6 +2797,7 @@
             this.MaximumSize = new System.Drawing.Size(380, 548);
             this.MinimumSize = new System.Drawing.Size(380, 548);
             this.Name = "UserSayfasi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Green Home";
             this.pnlSideBarHome.ResumeLayout(false);
             this.pnlSideBarGiveStarApplication.ResumeLayout(false);

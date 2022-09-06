@@ -14,6 +14,7 @@ using YesilEvCodeFirst.DTOs.Supplement;
 using YesilEvCodeFirst.DTOs.Supplier;
 using YesilEvCodeFirst.DTOs.UserAdmin;
 using YesilEvCodeFirst.DTOs.UserFavList;
+using Tesseract;
 
 namespace YesilEvCodeFirst.UIWinForm
 {
@@ -138,19 +139,21 @@ namespace YesilEvCodeFirst.UIWinForm
             UserDetails.Visible = true;
             lblUserDetailsSignUpDateValue.Text = User.CreatedDate.ToString();
             lblUserDetailsUserName.Text = User.FirstName + " " + User.LastName;
-            IDDTO userIDDTO = new IDDTO() { ID = User.UserID};
+            IDDTO userIDDTO = new IDDTO() { ID = User.UserID };
             lblUserDetailsAddProductCount.Text = useProductDAL.GetProductListWithUserID(userIDDTO).Count.ToString();
         }
 
         private void AddAndUpdateProductBtnSend_Click(object sender, EventArgs e)
         {
             btnAddAndUpdateProductSend.Enabled = false;
-            UseProductDAL dal = new UseProductDAL();
+
             if (isAddProduct)
             {
-                if (isAddProductFieldValidator())
+                //if (isAddProductFieldValidator())
+                //{
+                try
                 {
-                    bool result = dal.AddProduct(new AddProductDTO
+                    bool result = useProductDAL.AddProduct(new AddProductDTO
                     {
                         AddedBy = User.UserID,
                         Barcode = txtAddAndUpdateProductAddProductBarcodeNo.Text,
@@ -158,7 +161,6 @@ namespace YesilEvCodeFirst.UIWinForm
                         ProductName = txtAddAndUpdateProductAddProductProductName.Text,
                         CategoryID = ((CategoryDTO)cmbBoxAddAndUpdateProductAddProductCategory.SelectedItem).CategoryID,
                         ProductContent = txtAddAndUpdateProductAddProductProductContext.Text,
-                        //to do file dialog get path
                         PictureFronthPath = FileDialogAddProductFront.FileName,
                         PictureBackPath = FileDialogAddProductBack.FileName,
                     });
@@ -166,18 +168,27 @@ namespace YesilEvCodeFirst.UIWinForm
                     {
                         MessageBox.Show("Ürün Eklendi");
                         CloseAllPages();
-                        BarcodeDTO barcodeDTO = new BarcodeDTO() { Barcode = txtAddAndUpdateProductAddProductBarcodeNo.Text};
+                        BarcodeDTO barcodeDTO = new BarcodeDTO() { Barcode = txtAddAndUpdateProductAddProductBarcodeNo.Text };
                         int lastAddedProductID = useProductDAL.GetProductDetailWithBarcode(barcodeDTO).ProductID;
                         GoProductDetails(lastAddedProductID);
-                        // todo: eklenen ürüne ait olan detay sayfasında yonlendirilecek
                         CleanAddAndUpdateProduct();
 
                     }
-                    else
-                    {
-                        MessageBox.Show("Ürün zaten mevcutta var");
-                    }
                 }
+                catch (FormatException fex)
+                {
+                    MessageBox.Show(fex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                //else
+                //{
+                //    MessageBox.Show("Ürün zaten mevcutta var");
+                //}
+                //}
             }
             else
             {
@@ -196,7 +207,7 @@ namespace YesilEvCodeFirst.UIWinForm
                             PictureFronthPath = FileDialogUpdateProductFront.FileName,
                             ProductContent = txtAddAndUpdateProductUpdateProductProductContext.Text
                         };
-                        bool result = dal.UpdateProduct(updateDto);
+                        bool result = useProductDAL.UpdateProduct(updateDto);
                         if (result)
                         {
                             MessageBox.Show("Ürün Güncellendi");
@@ -272,6 +283,9 @@ namespace YesilEvCodeFirst.UIWinForm
             CloseAllPages();
             dgvSearchHistory.DataSource = useSearchHistoryDAL.GetSearchHistoryListWithUserID(User.UserID).OrderByDescending(x => x.SearchDate).ToList();
             SearchHistory.Visible = true;
+            dgvSearchHistory.Columns[0].HeaderText = "Kullanıcı Adı";
+            dgvSearchHistory.Columns[1].HeaderText = "Ürün Adı";
+            dgvSearchHistory.Columns[2].HeaderText = "Arama Zamanı";
         }
 
         private void ClearHistory(object sender, EventArgs e)
@@ -299,7 +313,6 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             btnAddAndUpdateProductAddProductBack.Text = FileDialogAddProductBack.SafeFileName;
         }
-
         #endregion
 
         private void UpdateProductFrontImageDialogShow(object sender, EventArgs e)
@@ -318,37 +331,6 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             FileDialogAddProductBack.ShowDialog();
         }
-
-        private bool isAddProductFieldValidator()
-        {
-            if (string.IsNullOrEmpty(txtAddAndUpdateProductAddProductBarcodeNo.Text))
-            {
-                MessageBox.Show("Ürün barcode boş olamaz.");
-                return false;
-            }
-            else if (string.IsNullOrEmpty(txtAddAndUpdateProductAddProductProductName.Text))
-            {
-                MessageBox.Show("Ürün adı boş olamaz");
-                return false;
-            }
-            else if (cmbBoxAddAndUpdateProductAddProductCategory.SelectedItem == null)
-            {
-                MessageBox.Show("Ürün kategori seçilmedi");
-                return false;
-            }
-            else if (cmbBoxAddAndUpdateProductAddProductSupplier.SelectedItem == null)
-            {
-                MessageBox.Show("Ürün üretici secilmedi");
-                return false;
-            }
-            else if (string.IsNullOrEmpty(txtAddAndUpdateProductAddProductProductContext.Text))
-            {
-                MessageBox.Show("Ürün İçeriği boş olamaz");
-                return false;
-            }
-            return true;
-        }
-
         private bool isUpdateProductFieldValidator()
         {
             var frontpicturepath = dto.PictureFronthPath.Split('\\');
@@ -668,7 +650,7 @@ namespace YesilEvCodeFirst.UIWinForm
             CloseAllPages();
 
             ProductDetails.Visible = true;
-            IDDTO productIDDTO = new IDDTO() { ID = productID};
+            IDDTO productIDDTO = new IDDTO() { ID = productID };
             selectedProduct = useProductDAL.GetProductDetailWithProductID(productIDDTO);
             UserDetailDTO adder = useUserDAL.GetUserDetailWithID(selectedProduct.AddedBy);
 
@@ -684,29 +666,26 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void btnSearchProductWithBarcodeNo_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtSearchBarcodeBarcodeNo.Text.Trim()))
+            BarcodeDTO barcodeDTO = new BarcodeDTO() { Barcode = txtSearchBarcodeBarcodeNo.Text };
+            try
             {
-                MessageBox.Show("Barkod No boş olamaz.");
-            }
-            else if (txtSearchBarcodeBarcodeNo.Text.Length != 7)
-            {
-                MessageBox.Show("Barkod Hatalı tekrar giriş yapınız.");
-            }
-            else
-            {
-                CloseAllPages();
-                BarcodeDTO barcodeDTO = new BarcodeDTO() { Barcode = txtSearchBarcodeBarcodeNo .Text};
                 GetProductDetailDTO result = useProductDAL.GetProductDetailWithBarcode(barcodeDTO);
                 if (result != null)
                 {
                     ProductDetails.Visible = true;
                     GoProductDetails(result.ProductID);
+
                 }
                 else
                 {
+                    CloseAllPages();
                     AddAndUpdateProduct.Visible = true;
                     txtAddAndUpdateProductAddProductBarcodeNo.Text = txtSearchBarcodeBarcodeNo.Text;
                 }
+            }
+            catch (FormatException fex)
+            {
+                MessageBox.Show(fex.Message);
             }
         }
 
@@ -728,7 +707,8 @@ namespace YesilEvCodeFirst.UIWinForm
                 }
             }
         }
-        private void GetFavoriListsAddProductAndDeleteProduct(int selectedRow, int Eventx , int Eventy){
+        private void GetFavoriListsAddProductAndDeleteProduct(int selectedRow, int Eventx, int Eventy)
+        {
             IDDTO userIDDTO = new IDDTO() { ID = User.UserID };
             var favLists = useFavListDAL.GetFavListsWithUserID(userIDDTO);
             ContextMenu cm = new ContextMenu();
@@ -741,7 +721,8 @@ namespace YesilEvCodeFirst.UIWinForm
                 addProductFavListDTO = new AddProductFavListDTO();
                 addProductFavListDTO.ProductID = Convert.ToInt32(dgvSearchProductProducts.Rows[selectedRow].Cells[0].Value);
                 addProductFavListDTO.UserID = User.UserID;
-                favLists.ForEach(x => {
+                favLists.ForEach(x =>
+                {
                     if (!useProductFavListDAL.IsFavoriListHaveTheProduct(x.FavorID, addProductFavListDTO.ProductID))
                     {
                         favEkle.MenuItems.Add(new MenuItem(x.FavoriListName, new EventHandler(AddFav)));
@@ -772,7 +753,7 @@ namespace YesilEvCodeFirst.UIWinForm
             var clikMenuItem = sender as MenuItem;
             var MenuText = clikMenuItem.Text;
             //BarcodeDTO barcodeDTO = new BarcodeDTO() { Barcode = txtSearchBarcodeBarcodeNo.Text };
-            GetFavListIDWithFavListNameAndUserIDDTO userIDAndListNameDTO = new GetFavListIDWithFavListNameAndUserIDDTO() { UserID = User.UserID, FavListName = MenuText};
+            GetFavListIDWithFavListNameAndUserIDDTO userIDAndListNameDTO = new GetFavListIDWithFavListNameAndUserIDDTO() { UserID = User.UserID, FavListName = MenuText };
             addProductFavListDTO.FavorID = useFavListDAL.GetFavListIDWithFavListNameAndUserID(userIDAndListNameDTO);
             bool result = useProductFavListDAL.AddProductToFavList(addProductFavListDTO);
             if (result)
@@ -802,7 +783,7 @@ namespace YesilEvCodeFirst.UIWinForm
             }
             addProductFavListDTO = null;
         }
-        private void AddFavoriListPage(object sender , EventArgs e)
+        private void AddFavoriListPage(object sender, EventArgs e)
         {
             CloseAllPages();
             AddFavoriList.Visible = true;
@@ -905,9 +886,9 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void btnChangeEmailSend_Click(object sender, EventArgs e)
         {
-            if(txtChangeEmailUserEmail.Text == User.Email)
+            if (txtChangeEmailUserEmail.Text == User.Email)
             {
-                if(txtChangeEmailNewEmail.Text == txtChangeEmaiReNewEmail.Text)
+                if (txtChangeEmailNewEmail.Text == txtChangeEmaiReNewEmail.Text)
                 {
                     UpdateUserEmailDTO userDetails = new UpdateUserEmailDTO()
                     {
@@ -966,6 +947,18 @@ namespace YesilEvCodeFirst.UIWinForm
             else
             {
                 MessageBox.Show("Kullanıcı Şifresi doğru değil.");
+            }
+        }
+
+        private void btnAddAndUpdateProductAddProductProductContext_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                var img = new Bitmap(file.FileName);
+                var ocr = new TesseractEngine("./tessdata", "tur");
+                var result = ocr.Process(img);
+                txtAddAndUpdateProductAddProductProductContext.Text = result.GetText();
             }
         }
     }

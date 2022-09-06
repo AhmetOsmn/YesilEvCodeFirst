@@ -17,7 +17,7 @@
         public static string BarcodeMaxLength = "Barkod numarası maksimum 50 karakter olabilir.";
         public static string BarcodeMinLength = "Barkod numarası minimum 7 karakter olabilir.";
         public static string ProductContentIsEmpty = "Ürün içerik alanı boş geçilemez.";
-
+        public static string CategoryNameIsEmpty = "Kategori alanı boş geçilemez."; 
 
 
         #endregion
@@ -44,12 +44,6 @@
 
 
         #endregion
-
-
-
-
-
-
 
     }
 }
