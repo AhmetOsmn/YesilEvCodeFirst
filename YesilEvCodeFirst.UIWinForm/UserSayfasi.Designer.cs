@@ -889,6 +889,7 @@
             // 
             // Home
             // 
+            this.Home.BackColor = System.Drawing.Color.White;
             this.Home.Controls.Add(this.btnHomeUser);
             this.Home.Controls.Add(this.pictureHomeSearchHistoryAndFavoriLists);
             this.Home.Controls.Add(this.pictureHomeAddAndUpdateProduct);
@@ -921,6 +922,7 @@
             // 
             // UserDetails
             // 
+            this.UserDetails.BackColor = System.Drawing.Color.White;
             this.UserDetails.Controls.Add(this.lblUserDetailsAddProductCount);
             this.UserDetails.Controls.Add(this.pictureUserDetailsLogout);
             this.UserDetails.Controls.Add(this.pictureUserDetailsSearchHistory);
@@ -932,7 +934,6 @@
             this.UserDetails.Controls.Add(this.pictureUserDetailsChangeEmail);
             this.UserDetails.Controls.Add(this.pictureUserDetailsPremium);
             this.UserDetails.Controls.Add(this.btnUserDetailsLogout);
-            this.UserDetails.Controls.Add(this.btnUserDetailsClearSearchHistory);
             this.UserDetails.Controls.Add(this.btnUserDetailsBlacklist);
             this.UserDetails.Controls.Add(this.btnUserDetailsFavoriLists);
             this.UserDetails.Controls.Add(this.btnUserDetailsUpdateUserDetails);
@@ -944,6 +945,7 @@
             this.UserDetails.Controls.Add(this.lblUserDetailsUserName);
             this.UserDetails.Controls.Add(this.btnUserDetailsChangePassword);
             this.UserDetails.Controls.Add(this.btnUserDetailsPremium);
+            this.UserDetails.Controls.Add(this.btnUserDetailsClearSearchHistory);
             this.UserDetails.Location = new System.Drawing.Point(0, 0);
             this.UserDetails.MaximumSize = new System.Drawing.Size(360, 510);
             this.UserDetails.MinimumSize = new System.Drawing.Size(360, 510);
@@ -1242,6 +1244,7 @@
             // 
             // AddAndUpdateProduct
             // 
+            this.AddAndUpdateProduct.BackColor = System.Drawing.Color.White;
             this.AddAndUpdateProduct.Controls.Add(this.btnAddAndUpdateProductUser);
             this.AddAndUpdateProduct.Controls.Add(this.btnAddAndUpdateProductSend);
             this.AddAndUpdateProduct.Controls.Add(this.btnAddAndUpdateProductAddProduct);
@@ -1975,6 +1978,7 @@
             // 
             // SearchHistory
             // 
+            this.SearchHistory.BackColor = System.Drawing.Color.White;
             this.SearchHistory.Controls.Add(this.lblSearchHistoryFavlists);
             this.SearchHistory.Controls.Add(this.btnSearchHistoryGoFavLists);
             this.SearchHistory.Controls.Add(this.btnSearchHistoryClearHistory);
@@ -2078,6 +2082,7 @@
             // 
             // SearchProduct
             // 
+            this.SearchProduct.BackColor = System.Drawing.Color.White;
             this.SearchProduct.Controls.Add(this.btnSearchProductClearDGV);
             this.SearchProduct.Controls.Add(this.dgvSearchProductProducts);
             this.SearchProduct.Controls.Add(this.btnSearchProductSearchSearchBar);
@@ -2169,6 +2174,7 @@
             // 
             // Favlists
             // 
+            this.Favlists.BackColor = System.Drawing.Color.White;
             this.Favlists.Controls.Add(this.lblFavoriListsAddFavori);
             this.Favlists.Controls.Add(this.btnFavoriListsAddFavori);
             this.Favlists.Controls.Add(this.btnFavoriListsUser);
@@ -2251,6 +2257,7 @@
             // 
             // BlackList
             // 
+            this.BlackList.BackColor = System.Drawing.Color.White;
             this.BlackList.Controls.Add(this.lblBlackListWarning);
             this.BlackList.Controls.Add(this.lblBlacklistProductsInBlacklist);
             this.BlackList.Controls.Add(this.dgvBlackListSupplements);
@@ -2305,6 +2312,7 @@
             // 
             // SearchBarcode
             // 
+            this.SearchBarcode.BackColor = System.Drawing.Color.White;
             this.SearchBarcode.Controls.Add(this.btnSearchBarcodeUser);
             this.SearchBarcode.Controls.Add(this.btnSearchBarcodeSearchBarcode);
             this.SearchBarcode.Controls.Add(this.lblSearchBarcodeBarcodeNo);
@@ -2365,6 +2373,7 @@
             // 
             // AddFavoriList
             // 
+            this.AddFavoriList.BackColor = System.Drawing.Color.White;
             this.AddFavoriList.Controls.Add(this.btnAddFavoriList);
             this.AddFavoriList.Controls.Add(this.btnAddFavoriUser);
             this.AddFavoriList.Controls.Add(this.lblAddFavoriFavoris);
@@ -2446,6 +2455,7 @@
             // 
             // ChangeEmail
             // 
+            this.ChangeEmail.BackColor = System.Drawing.Color.White;
             this.ChangeEmail.Controls.Add(this.btnChangeEmailUser);
             this.ChangeEmail.Controls.Add(this.btnChangeEmailSend);
             this.ChangeEmail.Controls.Add(this.txtChangeEmaiReNewEmail);
@@ -2639,6 +2649,7 @@
             // 
             // ChangeUserDetails
             // 
+            this.ChangeUserDetails.BackColor = System.Drawing.Color.White;
             this.ChangeUserDetails.Controls.Add(this.btnChangeUserDetailsSend);
             this.ChangeUserDetails.Controls.Add(this.txtChangeUserDetailsFirstName);
             this.ChangeUserDetails.Controls.Add(this.txtChangeUserDetailsLastName);
@@ -2766,8 +2777,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 509);
-            this.Controls.Add(this.SideBar);
             this.Controls.Add(this.Home);
+            this.Controls.Add(this.SideBar);
             this.Controls.Add(this.UserDetails);
             this.Controls.Add(this.SearchProduct);
             this.Controls.Add(this.BlackList);
@@ -2785,6 +2796,7 @@
             this.MaximumSize = new System.Drawing.Size(380, 548);
             this.MinimumSize = new System.Drawing.Size(380, 548);
             this.Name = "UserSayfasi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Green Home";
             this.pnlSideBarHome.ResumeLayout(false);
             this.pnlSideBarGiveStarApplication.ResumeLayout(false);

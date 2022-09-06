@@ -285,6 +285,7 @@
             this.Controls.Add(this.GrpBoxSignIn);
             this.Controls.Add(this.GrpBoxSignUp);
             this.Name = "SignInSignUpForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Green Home";
             this.GrpBoxSignUp.ResumeLayout(false);
             this.GrpBoxSignUp.PerformLayout();
