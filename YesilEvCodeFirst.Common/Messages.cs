@@ -54,7 +54,7 @@
         public static string AdminNotFound = "Admin bulunamadı.";
 
         public static string BlackListAlreadyExist = "Kara liste zaten mevcut.";
-        public static string BlackListNotFound = "Kara liste bulunamadı";
+        public static string BlackListNotFound = "Kara liste bulunamadı.";
 
         public static string FavListAlreadyExist = "Favori listesi zaten mevcut.";
         public static string FavListNotFound = "Favori listesi bulunamadı";

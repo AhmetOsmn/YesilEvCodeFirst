@@ -51,7 +51,6 @@ namespace YesilEvCodeFirst.UIWinForm
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
