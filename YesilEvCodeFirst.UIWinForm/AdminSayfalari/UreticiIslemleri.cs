@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace YesilEvCodeFirst.UIWinForm.Raporlar
+namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
 {
-    public partial class Form16 : Form
+    public partial class UreticiIslemleri : Form
     {
-        public Form16()
+        public UreticiIslemleri()
         {
             InitializeComponent();
         }

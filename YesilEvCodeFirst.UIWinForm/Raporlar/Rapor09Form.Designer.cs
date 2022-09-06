@@ -38,7 +38,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(158, 28);
+            this.label1.Location = new System.Drawing.Point(487, 137);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(264, 17);
             this.label1.TabIndex = 16;
@@ -46,7 +46,7 @@
             // 
             // buttonRaporuGetir
             // 
-            this.buttonRaporuGetir.Location = new System.Drawing.Point(12, 12);
+            this.buttonRaporuGetir.Location = new System.Drawing.Point(553, 176);
             this.buttonRaporuGetir.Name = "buttonRaporuGetir";
             this.buttonRaporuGetir.Size = new System.Drawing.Size(116, 45);
             this.buttonRaporuGetir.TabIndex = 15;
@@ -55,17 +55,18 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 113);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(389, 387);
+            this.dataGridView1.Size = new System.Drawing.Size(389, 385);
             this.dataGridView1.TabIndex = 17;
             // 
             // Rapor09Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 517);
+            this.ClientSize = new System.Drawing.Size(796, 403);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonRaporuGetir);

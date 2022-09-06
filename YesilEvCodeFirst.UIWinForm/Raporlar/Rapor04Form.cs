@@ -43,5 +43,6 @@ namespace YesilEvCodeFirst.UIWinForm.Raporlar
             labelUrunSayisi.Text = list.Count().ToString();
             dataGridView1.DataSource = list;
         }
+
     }
 }

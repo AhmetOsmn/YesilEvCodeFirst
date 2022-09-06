@@ -14,11 +14,11 @@ using YesilEvCodeFirst.UIWinForm.Raporlar;
 
 namespace YesilEvCodeFirst.UIWinForm
 {
-    public partial class Form1 : Form
+    public partial class RaporIslemleri : Form
     {
         UseProductDAL use = new UseProductDAL();
 
-        public Form1()
+        public RaporIslemleri()
         {
             InitializeComponent();
         }

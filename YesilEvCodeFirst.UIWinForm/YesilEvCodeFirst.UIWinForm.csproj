@@ -67,11 +67,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AdminSayfalari\AdminSayfasi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AdminSayfalari\AdminSayfasi.Designer.cs">
+      <DependentUpon>AdminSayfasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSayfalari\KategoriIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSayfalari\KategoriIslemleri.Designer.cs">
+      <DependentUpon>KategoriIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSayfalari\KullaniciIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSayfalari\KullaniciIslemleri.Designer.cs">
+      <DependentUpon>KullaniciIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSayfalari\MaddeIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSayfalari\MaddeIslemleri.Designer.cs">
+      <DependentUpon>MaddeIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSayfalari\UreticiIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSayfalari\UreticiIslemleri.Designer.cs">
+      <DependentUpon>UreticiIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSayfalari\UrunIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSayfalari\UrunIslemleri.Designer.cs">
+      <DependentUpon>UrunIslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSayfalari\RaporIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminSayfalari\RaporIslemleri.Designer.cs">
+      <DependentUpon>RaporIslemleri.cs</DependentUpon>
     </Compile>
     <Compile Include="GirisKayitForm.cs">
       <SubType>Form</SubType>
@@ -83,12 +119,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Raporlar\Form16.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Raporlar\Form16.Designer.cs">
-      <DependentUpon>Form16.cs</DependentUpon>
     </Compile>
     <Compile Include="Raporlar\Rapor10Form.cs">
       <SubType>Form</SubType>
@@ -212,8 +242,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="AdminSayfalari\AdminSayfasi.resx">
+      <DependentUpon>AdminSayfasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSayfalari\KategoriIslemleri.resx">
+      <DependentUpon>KategoriIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSayfalari\KullaniciIslemleri.resx">
+      <DependentUpon>KullaniciIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSayfalari\MaddeIslemleri.resx">
+      <DependentUpon>MaddeIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSayfalari\UreticiIslemleri.resx">
+      <DependentUpon>UreticiIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSayfalari\UrunIslemleri.resx">
+      <DependentUpon>UrunIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSayfalari\RaporIslemleri.resx">
+      <DependentUpon>RaporIslemleri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GirisKayitForm.resx">
       <DependentUpon>GirisKayitForm.cs</DependentUpon>
