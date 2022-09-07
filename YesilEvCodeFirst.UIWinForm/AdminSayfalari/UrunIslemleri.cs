@@ -273,9 +273,21 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             if(dialogResult == DialogResult.Yes)
             {
                 BarcodeDTO barcodeDTO = new BarcodeDTO { Barcode = tbDeleteBarcode.Text };
-                useProductDAL.DeleteProduct(barcodeDTO);
-                MessageBox.Show("Ürün silindi!");
-                ClearDeleteProductPanel();
+                try
+                {
+                    useProductDAL.DeleteProduct(barcodeDTO);
+                    MessageBox.Show("Ürün silindi!");
+                    ClearDeleteProductPanel();
+                }
+                catch(FormatException fex)
+                {
+                    MessageBox.Show(fex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+               
             }
         }
 

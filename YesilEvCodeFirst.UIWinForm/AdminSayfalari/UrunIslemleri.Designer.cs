@@ -715,11 +715,11 @@
             this.ClientSize = new System.Drawing.Size(1276, 453);
             this.Controls.Add(this.gbProduct);
             this.Controls.Add(this.pnlListele);
-            this.Controls.Add(this.pnlDeleteProduct);
             this.Controls.Add(this.pnlAra);
             this.Controls.Add(this.pnlApprove);
             this.Controls.Add(this.pnlUrunGuncelle);
             this.Controls.Add(this.pnlUrunEkle);
+            this.Controls.Add(this.pnlDeleteProduct);
             this.Name = "UrunIslemleri";
             this.Text = "UrunIslemleri";
             this.gbProduct.ResumeLayout(false);
