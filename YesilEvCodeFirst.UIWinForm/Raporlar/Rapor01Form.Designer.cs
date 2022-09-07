@@ -36,6 +36,7 @@
             // 
             // buttonRaporuGetir
             // 
+            this.buttonRaporuGetir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRaporuGetir.Location = new System.Drawing.Point(492, 100);
             this.buttonRaporuGetir.Name = "buttonRaporuGetir";
             this.buttonRaporuGetir.Size = new System.Drawing.Size(116, 45);

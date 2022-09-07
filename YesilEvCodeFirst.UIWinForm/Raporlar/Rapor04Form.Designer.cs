@@ -48,6 +48,7 @@
             // 
             // buttonRaporuGetir
             // 
+            this.buttonRaporuGetir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRaporuGetir.Location = new System.Drawing.Point(563, 213);
             this.buttonRaporuGetir.Name = "buttonRaporuGetir";
             this.buttonRaporuGetir.Size = new System.Drawing.Size(116, 45);
@@ -64,7 +65,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 17);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Urun Sayisi:";
+            this.label2.Text = "Ürün Sayısı:";
             // 
             // labelUrunSayisi
             // 

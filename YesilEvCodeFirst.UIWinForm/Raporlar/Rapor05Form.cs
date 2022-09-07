@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using YesilEvCodeFirst.Core.Context;
+using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.DTOs.Rapor;
 
 namespace YesilEvCodeFirst.UIWinForm.Raporlar
@@ -32,27 +34,11 @@ namespace YesilEvCodeFirst.UIWinForm.Raporlar
 
             using (YesilEvDbContext context = new YesilEvDbContext())
             {
-                //var result = 
-                //    (
-                //        from supplement in context.Supplement
-                //        join sb in context.SupplementBlackList 
-                //        on supplement.SupplementID equals sb.SupplementID into sbs
-                //        from sbResult in sbs.DefaultIfEmpty()
-                //        join ps in context.ProductSupplement 
-                //        on sbResult.SupplementID equals ps.SupplementID into pss
-                //        from psResult in pss.DefaultIfEmpty()
-                //        join pf in context.ProductFavList 
-                //        on psResult.ProductID equals pf.ProductID into pfs
-                //        from pfResult in pfs.DefaultIfEmpty()
-                //        group new { supplement, sbResult, psResult, pfResult } by supplement.SupplementID into grup
-                //        select new Rapor05DTO
-                //        {
-                //            SupplementName = grup.Key.ToString(),
-                //            FavListCount = grup.Select(x => x.pfResult.FavListID).Distinct().Count(),
-                //            BlacListCount = grup.Select(x => x.sbResult.BlackListID).Distinct().Count()
-                //        }).ToList();
-
-                //list = result;
+                //select s.SupplementName,COUNT(u.FirstName) as 'Kişi Sayısı' from SupplementBlackList sb
+                //INNER JOIN Supplement s on sb.SupplementID = s.SupplementID
+                //INNER JOIN BlackList b on sb.BlackListID = b.BlackListID
+                //inner join[User] u on b.UserID = u.UserID
+                //GROUP BY s.SupplementName order by s.SupplementName
             }
 
 

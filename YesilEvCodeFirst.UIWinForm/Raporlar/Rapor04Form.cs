@@ -42,7 +42,17 @@ namespace YesilEvCodeFirst.UIWinForm.Raporlar
             }
             labelUrunSayisi.Text = list.Count().ToString();
             dataGridView1.DataSource = list;
+            ChangeDatagridViewsColumnNames(dataGridView1);
         }
-
+        private void ChangeDatagridViewsColumnNames(DataGridView colname)
+        {
+            colname.Columns[0].HeaderText = "Barkod";
+            colname.Columns[1].HeaderText = "Ürün Adı";
+            colname.ForeColor = Color.Black;
+            foreach (DataGridViewColumn col in colname.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+        }
     }
 }

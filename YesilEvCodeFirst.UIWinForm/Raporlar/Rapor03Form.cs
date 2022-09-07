@@ -48,6 +48,17 @@ namespace YesilEvCodeFirst.UIWinForm.Raporlar
             }
 
             dataGridView1.DataSource = list;
+            ChangeDatagridViewsColumnNames(dataGridView1);
+        }
+        private void ChangeDatagridViewsColumnNames(DataGridView colname)
+        {
+            colname.Columns[0].HeaderText = "Kullanıcı Adı";
+            colname.Columns[1].HeaderText = "Ürün Miktarı";
+            colname.ForeColor = Color.Black;
+            foreach (DataGridViewColumn col in colname.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
     }
 }
