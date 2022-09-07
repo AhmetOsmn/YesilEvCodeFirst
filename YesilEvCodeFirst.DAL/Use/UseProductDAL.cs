@@ -408,8 +408,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    List<ListProductDTO> productDTOList = MappingProfile.ProductListToProductListDTO(products);
-                    nLogger.Info("Product tablosu listelendi.");
+                    nLogger.Info("Product tablosu admin tarafından listelendi.");
                     return products;
                 }
             }

@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="FluentValidator\AddFavListValidator.cs" />
     <Compile Include="FluentValidator\AddProductValidator.cs" />
+    <Compile Include="FluentValidator\AddSupplierValidator.cs" />
     <Compile Include="FluentValidator\Const\BarcodeDTOValidator.cs" />
     <Compile Include="FluentValidator\Const\EmailDTOValidator.cs" />
     <Compile Include="FluentValidator\DeleteFavListValidator.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="FluentValidator\SupplementBlackListValidator.cs" />
     <Compile Include="FluentValidator\SupplementValidator.cs" />
     <Compile Include="FluentValidator\UpdateProductValidator.cs" />
+    <Compile Include="FluentValidator\UpdateSupplierValidator.cs" />
     <Compile Include="FluentValidator\UpdateUserDetailsValidator.cs" />
     <Compile Include="FluentValidator\UpdateUserMailValidator.cs" />
     <Compile Include="FluentValidator\UpdateUserPasswordValidator.cs" />
