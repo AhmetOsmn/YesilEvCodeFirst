@@ -1,6 +1,7 @@
 ﻿using FluentValidation.Results;
 using NLog;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Linq;
 using YesilEvCodeFirst.Common;
@@ -273,6 +274,106 @@ namespace YesilEvCodeFirst.DAL.Use
                 nLogger.Error("System - {}", ex.Message);
                 throw new Exception(ex.Message);
             }
+        }
+        public List<User> GetAllUserDetailForAdmin()
+        {
+            return GetAll();
+        }
+        public List<User> GetUserWithFilterForAdmin(string filter)
+        {
+            return GetByCondition(x=>x.FirstName.ToLower().Contains(filter.ToLower())&& x.IsActive).ToList();
+        }
+        public User GetUserWithEmailForAdmin(string email)
+        {
+            return GetByCondition(x=>x.Email.Equals(email)&& x.IsActive).FirstOrDefault();
+        }
+        public bool DeleteUserWithEmailForAdmin(string email)
+        {
+            try
+            {
+                var result = GetByCondition(x => x.Email == email && x.IsActive).FirstOrDefault();
+                if(result != null)
+                {
+                    result.IsActive = false;
+                    using(YesilEvDbContext context = new YesilEvDbContext())
+                    {
+                        var userFavlists = context.FavList.Where(x => x.UserID == result.UserID && x.IsActive).ToList();
+                        if(userFavlists != null)
+                        {
+                            userFavlists.ForEach(x =>
+                            {
+                                x.IsActive = false;
+                                var favListProducts = context.ProductFavList.Where(y => y.FavorID == x.FavorID && y.IsActive).ToList();
+                                favListProducts.ForEach(y =>
+                                {
+                                    y.IsActive = false;
+                                });
+                            });
+                        }                        
+                        var userBlackList = context.BlackList.Where(x => x.UserID == result.UserID && x.IsActive).FirstOrDefault();
+                        if(userBlackList != null)
+                        {
+                            userBlackList.IsActive = false;
+                            var blackListSupplements = context.SupplementBlackList.Where(y => y.BlackListID == userBlackList.BlackListID && y.IsActive).ToList();
+                            blackListSupplements.ForEach(x => {
+                                x.IsActive = false;
+                            });
+                        }                        
+                        var userSearchHistories = context.SearchHistory.Where(x => x.UserID == result.UserID && x.IsActive).ToList();
+                        if(userSearchHistories != null)
+                        {
+                            userSearchHistories.ForEach(x => {
+                                x.IsActive = false;
+                            });
+                        }
+                    }
+                    MySaveChanges();
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Kullanıcı Bulunamadı.");
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public bool UpdateUserForAdmin(UserForAdminDTO dto)
+        {
+            try
+            {
+                var temp = GetByCondition(x => x.UserID == dto.UserID && x.IsActive).FirstOrDefault();
+                temp.FirstName = dto.FirstName;
+                temp.LastName = dto.LastName;
+                temp.Email = dto.Email;
+                temp.Phone = dto.Phone;
+                temp.Password = dto.Password;
+                temp.RolID = dto.RolID;
+                MySaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hata Oluştu");
+            }
+        }
+        public bool AddUserForAdmin(UserForAdminDTO dto)
+        {
+            try
+            {
+                User user = MappingProfile.UserForAdminDTOtoUser(dto);
+                Add(user);
+                MySaveChanges();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Hata Oluştu.");
+            }
+            
         }
     }
 }
