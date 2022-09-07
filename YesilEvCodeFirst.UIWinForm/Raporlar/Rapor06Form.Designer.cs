@@ -53,6 +53,7 @@
             this.buttonRaporuGetir.TabIndex = 12;
             this.buttonRaporuGetir.Text = "Raporu Getir";
             this.buttonRaporuGetir.UseVisualStyleBackColor = true;
+            this.buttonRaporuGetir.Click += new System.EventHandler(this.buttonRaporuGetir_Click);
             // 
             // label2
             // 

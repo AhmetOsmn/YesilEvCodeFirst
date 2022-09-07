@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace YesilEvCodeFirst.UIWinForm.Raporlar
@@ -15,6 +8,14 @@ namespace YesilEvCodeFirst.UIWinForm.Raporlar
         public Rapor06Form()
         {
             InitializeComponent();
+        }
+
+        // select p.ProductName , Count(*) as FavoriSayisi from Product p
+        // join FavList f on p.ProductID = f.ProductID order by FavoriSayisi desc
+
+        private void buttonRaporuGetir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
