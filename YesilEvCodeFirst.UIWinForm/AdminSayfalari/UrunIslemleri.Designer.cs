@@ -845,6 +845,7 @@
             this.Controls.Add(this.pnlDeleteProduct);
             this.Controls.Add(this.pnlUrunEkle);
             this.Controls.Add(this.pnlListele);
+        
             this.Name = "UrunIslemleri";
             this.Text = "UrunIslemleri";
             this.gbProduct.ResumeLayout(false);

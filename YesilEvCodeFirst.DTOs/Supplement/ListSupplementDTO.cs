@@ -6,5 +6,6 @@ namespace YesilEvCodeFirst.DTOs.Supplement
     {
         public string SupplementName { get; set; }
         public Risk RiskRatio { get; set; }
+
     }
 }

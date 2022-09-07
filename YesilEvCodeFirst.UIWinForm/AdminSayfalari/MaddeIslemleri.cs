@@ -20,9 +20,11 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
     public partial class MaddeIslemleri : Form
     {
         readonly UseSupplementDAL useSupplementDAL = new UseSupplementDAL();
+
         public MaddeIslemleri()
         {
             InitializeComponent();
+            InitializeComboBox();
             CloseAllPanels();
             pnlSupplementList.Visible = true;
         }
@@ -43,6 +45,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             colname.Columns[3].HeaderText = "Aktif mi?";
             colname.Columns[4].HeaderText = "Oluşturulma Tarihi";
             colname.Columns[5].HeaderText = "Oluşturan Kişi";
+            colname.ForeColor = Color.Black;
             foreach (DataGridViewColumn col in colname.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -53,7 +56,9 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         {
             pnlSupplementList.Visible = false;
             pnlSearchSuppliers.Visible = false;
-            //pnlAddSupplement.Visible = false;
+            pnlAddSupplement.Visible = false;
+            pnlUpdateSupplements.Visible = false;
+            pnlDeleteSupplement.Visible = false;
         }
 
         private void btnAra_Click(object sender, EventArgs e)
@@ -70,42 +75,173 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             ChangeDatagridViewsColumnNames(dgvSearchSuppliers);
         }
 
+        private void InitializeComboBox()
+        {
+            cmbAddRiskRatio.Items.AddRange(Enum.GetNames(typeof(Risk)));
+            cmbUpdateRiskRatio.Items.AddRange(Enum.GetNames(typeof(Risk)));
+        }
         private void btnEkle_Click(object sender, EventArgs e)
         {
             CloseAllPanels();
-            //pnlAddSupplement.Visible = true;
-            //pnlAddSupplement.BorderStyle = BorderStyle.Fixed3D;
-            //try
-            //{
-            //bool result = useSupplementDAL.AddSupplement(new AddSupplementDTO
-            //{
-            //    SupplementName = txtSupplementName.Text,
-            //    Risk = (Risk)(cmbRiskRatio.SelectedIndex),
-            //});
-            //if (result)
-            //{
-            //    MessageBox.Show("Ürün Eklendi");
-            //    CloseAllPages();
-            //    BarcodeDTO barcodeDTO = new BarcodeDTO() { Barcode = txtAddAndUpdateProductAddProductBarcodeNo.Text };
-            //    int lastAddedProductID = useProductDAL.GetProductDetailWithBarcode(barcodeDTO).ProductID;
-            //    GoProductDetails(lastAddedProductID);
-            //    CleanAddAndUpdateProduct();
+            pnlAddSupplement.Visible = true;
+            pnlAddSupplement.BorderStyle = BorderStyle.Fixed3D;
+        }
 
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Ürün zaten mevcutta var");
-            //}
-            //}
-            //catch (FormatException fex)
-            //{
-            //    MessageBox.Show(fex.Message);
-            //}
-            //catch (Exception ex)
-            //{
+        private void Clear()
+        {
+            txtAddSupplementName.Text = "";
+            cmbAddRiskRatio.Text = "";
+            txtUpdateSupplementName.Text = "";
+            cmbUpdateRiskRatio.Text = "";
+            txtDeleteSupplementName.Text = "";
+            cmbDeleteRiskRatio.Text = "";
+        }
+        private void btnAddSupplement_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool result = useSupplementDAL.AddSupplement(new AddSupplementDTO
+                {
+                    SupplementName = txtAddSupplementName.Text,
+                    Risk = (Risk)(cmbAddRiskRatio.SelectedIndex),
+                });
 
-            //    MessageBox.Show(ex.Message);
-            //}
+                if (result)
+                {
+                    MessageBox.Show("Madde Eklendi.");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Madde zaten mevcutta var.");
+                }
+            }
+            catch (FormatException fex)
+            {
+                MessageBox.Show(fex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            CloseAllPanels();
+            pnlUpdateSupplements.Visible = true;
+            pnlUpdateSupplements.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void btnUpdateSupplement_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool result = useSupplementDAL.UpdateSupplementListWithSupplementName(new AddSupplementDTO
+                {
+                    SupplementName = txtUpdateSupplementName.Text,
+                    Risk = (Risk)(cmbUpdateRiskRatio.SelectedIndex),
+                });
+                if (result)
+                {
+                    MessageBox.Show("Madde Güncellendi.");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Madde zaten mevcutta var.");
+                }
+            }
+            catch (FormatException fex)
+            {
+                MessageBox.Show(fex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnGetSupplement_Click(object sender, EventArgs e)
+        {
+            AddSupplementDTO dto = new AddSupplementDTO { SupplementName = txtUpdateSupplementName.Text };
+            try
+            {
+                var listdto = useSupplementDAL.GetProductDetailWithBarcode(dto);
+                if (listdto != null)
+                {
+                    cmbUpdateRiskRatio.Text = listdto.Risk.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Aradığınız madde bulunamadı.");
+                }
+            }
+            catch (FormatException fex)
+            {
+                MessageBox.Show(fex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            CloseAllPanels();
+            pnlDeleteSupplement.Visible = true;
+            pnlDeleteSupplement.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void btnDeleteSupplementName_Click(object sender, EventArgs e)
+        {
+
+            DialogResult dialogResult = MessageBox.Show("Emin misiniz?", "Madde Sil", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                AddSupplementDTO supplement = new AddSupplementDTO { SupplementName = txtDeleteSupplementName.Text };
+                try
+                {
+                    useSupplementDAL.DeleteSupplement(supplement);
+                    MessageBox.Show("Madde silindi!");
+                    Clear();
+                }
+                catch (FormatException fex)
+                {
+                    MessageBox.Show(fex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+        }
+
+        private void btnDeletePageGetSupplementDetail_Click(object sender, EventArgs e)
+        {
+            AddSupplementDTO dto = new AddSupplementDTO { SupplementName = txtDeleteSupplementName.Text };
+            try
+            {
+                var listdto = useSupplementDAL.GetProductDetailWithBarcode(dto);
+                if (listdto != null)
+                {
+                    cmbDeleteRiskRatio.Text = listdto.Risk.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Aradığınız madde bulunamadı.");
+                }
+            }
+            catch (FormatException fex)
+            {
+                MessageBox.Show(fex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

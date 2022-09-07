@@ -1260,8 +1260,8 @@
             this.AddAndUpdateProduct.Controls.Add(this.btnAddAndUpdateProductSend);
             this.AddAndUpdateProduct.Controls.Add(this.btnAddAndUpdateProductAddProduct);
             this.AddAndUpdateProduct.Controls.Add(this.btnAddAndUpdateProductUpdateProduct);
-            this.AddAndUpdateProduct.Controls.Add(this.grpBoxAddAndUpdateProductAddProduct);
             this.AddAndUpdateProduct.Controls.Add(this.grpBoxAddAndUpdateProductUpdateProduct);
+            this.AddAndUpdateProduct.Controls.Add(this.grpBoxAddAndUpdateProductAddProduct);
             this.AddAndUpdateProduct.Location = new System.Drawing.Point(0, 0);
             this.AddAndUpdateProduct.MaximumSize = new System.Drawing.Size(360, 510);
             this.AddAndUpdateProduct.MinimumSize = new System.Drawing.Size(360, 510);
