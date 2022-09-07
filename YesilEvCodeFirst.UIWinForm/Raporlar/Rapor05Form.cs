@@ -28,19 +28,18 @@ namespace YesilEvCodeFirst.UIWinForm.Raporlar
         // left outer join ProductFavList f on pm.ProductID = f.ProductID
         // group by s.SupplementID
 
+        string query = "select s.SupplementName, Count(distinct f.FavorID) as FavListCount, Count(distinct sb.BlackListID) as BlacListCount from Supplement s left outer join [SupplementBlackList] sb on sb.SupplementID = s.SupplementID left outer join ProductSupplement pm on s.SupplementID = pm.SupplementID left outer join ProductFavList f on pm.ProductID = f.ProductID group by s.SupplementName";
         private void buttonRaporuGetir_Click(object sender, EventArgs e)
         {
             List<Rapor05DTO> list = null;
 
             using (YesilEvDbContext context = new YesilEvDbContext())
             {
-                //select s.SupplementName,COUNT(u.FirstName) as 'Kişi Sayısı' from SupplementBlackList sb
-                //INNER JOIN Supplement s on sb.SupplementID = s.SupplementID
-                //INNER JOIN BlackList b on sb.BlackListID = b.BlackListID
-                //inner join[User] u on b.UserID = u.UserID
-                //GROUP BY s.SupplementName order by s.SupplementName
-            }
 
+                var result = context.Database.SqlQuery<Rapor05DTO>(query).ToList();
+                    
+                list = result;
+            }
 
             dataGridView1.DataSource = list;
         }
