@@ -281,7 +281,7 @@ namespace YesilEvCodeFirst.DAL.Use
         }
         public List<User> GetUserWithFilterForAdmin(string filter)
         {
-            return GetByCondition(x=>x.FirstName.Contains(filter)&& x.IsActive).ToList();
+            return GetByCondition(x=>x.FirstName.ToLower().Contains(filter.ToLower())&& x.IsActive).ToList();
         }
         public User GetUserWithEmailForAdmin(string email)
         {
@@ -291,13 +291,54 @@ namespace YesilEvCodeFirst.DAL.Use
         {
             try
             {
-                Delete(GetUserWithEmailForAdmin(email));
-                MySaveChanges();
-                return true;
+                var result = GetByCondition(x => x.Email == email && x.IsActive).FirstOrDefault();
+                if(result != null)
+                {
+                    result.IsActive = false;
+                    using(YesilEvDbContext context = new YesilEvDbContext())
+                    {
+                        var userFavlists = context.FavList.Where(x => x.UserID == result.UserID && x.IsActive).ToList();
+                        if(userFavlists != null)
+                        {
+                            userFavlists.ForEach(x =>
+                            {
+                                x.IsActive = false;
+                                var favListProducts = context.ProductFavList.Where(y => y.FavorID == x.FavorID && y.IsActive).ToList();
+                                favListProducts.ForEach(y =>
+                                {
+                                    y.IsActive = false;
+                                });
+                            });
+                        }                        
+                        var userBlackList = context.BlackList.Where(x => x.UserID == result.UserID && x.IsActive).FirstOrDefault();
+                        if(userBlackList != null)
+                        {
+                            userBlackList.IsActive = false;
+                            var blackListSupplements = context.SupplementBlackList.Where(y => y.BlackListID == userBlackList.BlackListID && y.IsActive).ToList();
+                            blackListSupplements.ForEach(x => {
+                                x.IsActive = false;
+                            });
+                        }                        
+                        var userSearchHistories = context.SearchHistory.Where(x => x.UserID == result.UserID && x.IsActive).ToList();
+                        if(userSearchHistories != null)
+                        {
+                            userSearchHistories.ForEach(x => {
+                                x.IsActive = false;
+                            });
+                        }
+                    }
+                    MySaveChanges();
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Kullanıcı Bulunamadı.");
+                }
+                
             }
             catch(Exception ex)
             {
-                throw new Exception("Silme Başarısız");
+                throw new Exception(ex.Message);
             }
         }
         public bool UpdateUserForAdmin(UserForAdminDTO dto)

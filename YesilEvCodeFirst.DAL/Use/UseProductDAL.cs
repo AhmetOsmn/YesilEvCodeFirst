@@ -120,7 +120,7 @@ namespace YesilEvCodeFirst.DAL.Use
                         tempProduct.PictureFronthPath = dto.PictureFronthPath;
                         tempProduct.PictureContentPath = dto.PictureContentPath;
                         tempProduct.SupplierID = dto.SupplierID;
-
+                        MySaveChanges();
                         var supplements = tempProduct.ProductContent.Split(',');
                         //refactor edilecek
                         var temp = context.ProductSupplement.Where(x => x.ProductID == tempProduct.ProductID).ToList();

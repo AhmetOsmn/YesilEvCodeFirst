@@ -14,7 +14,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
 {
     public partial class KullaniciIslemleri : Form
     {
-        UserDetailDTO user;
+        UserDetailDTO user = new UserDetailDTO();
         UseUserDAL useUserDAL = new UseUserDAL();
         public KullaniciIslemleri()
         {
@@ -58,13 +58,16 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         {
             try
             {
-                useUserDAL.DeleteUserWithEmailForAdmin(txtDeleteUserEmail.Text);
+                bool result = useUserDAL.DeleteUserWithEmailForAdmin(txtDeleteUserEmail.Text);
+                if (result)
+                {
+                    MessageBox.Show("User silme başarılı");
+                }
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
 
         private void btnDeleteUserSearch_Click(object sender, EventArgs e)
@@ -185,7 +188,11 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
                 }
                 try
                 {
-                    useUserDAL.AddUserForAdmin(user);
+                    bool result1 = useUserDAL.AddUserForAdmin(user);
+                    if(result1 != false)
+                    {
+                        MessageBox.Show("Ekleme İşlemi Başarılı");
+                    }
                 }
                 catch (Exception ex)
                 {
