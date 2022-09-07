@@ -77,6 +77,7 @@
             this.tbUrunAra = new System.Windows.Forms.TextBox();
             this.dgvSearchProduct = new System.Windows.Forms.DataGridView();
             this.pnlApprove = new System.Windows.Forms.Panel();
+            this.btnApproveOnayla = new System.Windows.Forms.Button();
             this.lblUrunOnaylamaSayfasi = new System.Windows.Forms.Label();
             this.dgvApprove = new System.Windows.Forms.DataGridView();
             this.pnlUrunGuncelle = new System.Windows.Forms.Panel();
@@ -102,7 +103,6 @@
             this.FileDialogUpdateProductBack = new System.Windows.Forms.OpenFileDialog();
             this.FileDialogAddProductFront = new System.Windows.Forms.OpenFileDialog();
             this.FileDialogAddProductBack = new System.Windows.Forms.OpenFileDialog();
-            this.btnApproveOnayla = new System.Windows.Forms.Button();
             this.gbProduct.SuspendLayout();
             this.pnlListele.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -606,6 +606,16 @@
             this.pnlApprove.Size = new System.Drawing.Size(1142, 426);
             this.pnlApprove.TabIndex = 4;
             // 
+            // btnApproveOnayla
+            // 
+            this.btnApproveOnayla.Location = new System.Drawing.Point(1047, 3);
+            this.btnApproveOnayla.Name = "btnApproveOnayla";
+            this.btnApproveOnayla.Size = new System.Drawing.Size(75, 23);
+            this.btnApproveOnayla.TabIndex = 8;
+            this.btnApproveOnayla.Text = "Onayla";
+            this.btnApproveOnayla.UseVisualStyleBackColor = true;
+            this.btnApproveOnayla.Click += new System.EventHandler(this.btnApproveOnayla_Click);
+            // 
             // lblUrunOnaylamaSayfasi
             // 
             this.lblUrunOnaylamaSayfasi.AutoSize = true;
@@ -823,28 +833,18 @@
             // 
             this.FileDialogAddProductBack.FileName = "openFileDialog6";
             // 
-            // btnApproveOnayla
-            // 
-            this.btnApproveOnayla.Location = new System.Drawing.Point(1047, 3);
-            this.btnApproveOnayla.Name = "btnApproveOnayla";
-            this.btnApproveOnayla.Size = new System.Drawing.Size(75, 23);
-            this.btnApproveOnayla.TabIndex = 8;
-            this.btnApproveOnayla.Text = "Onayla";
-            this.btnApproveOnayla.UseVisualStyleBackColor = true;
-            this.btnApproveOnayla.Click += new System.EventHandler(this.btnApproveOnayla_Click);
-            // 
             // UrunIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1276, 453);
             this.Controls.Add(this.gbProduct);
+            this.Controls.Add(this.pnlUrunEkle);
+            this.Controls.Add(this.pnlListele);
             this.Controls.Add(this.pnlAra);
             this.Controls.Add(this.pnlApprove);
             this.Controls.Add(this.pnlUrunGuncelle);
             this.Controls.Add(this.pnlDeleteProduct);
-            this.Controls.Add(this.pnlUrunEkle);
-            this.Controls.Add(this.pnlListele);
             this.Name = "UrunIslemleri";
             this.Text = "UrunIslemleri";
             this.gbProduct.ResumeLayout(false);
