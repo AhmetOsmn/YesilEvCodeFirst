@@ -1,6 +1,7 @@
 ﻿using FluentValidation.Results;
 using NLog;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Linq;
 using YesilEvCodeFirst.Common;
@@ -273,6 +274,65 @@ namespace YesilEvCodeFirst.DAL.Use
                 nLogger.Error("System - {}", ex.Message);
                 throw new Exception(ex.Message);
             }
+        }
+        public List<User> GetAllUserDetailForAdmin()
+        {
+            return GetAll();
+        }
+        public List<User> GetUserWithFilterForAdmin(string filter)
+        {
+            return GetByCondition(x=>x.FirstName.Contains(filter)&& x.IsActive).ToList();
+        }
+        public User GetUserWithEmailForAdmin(string email)
+        {
+            return GetByCondition(x=>x.Email.Equals(email)&& x.IsActive).FirstOrDefault();
+        }
+        public bool DeleteUserWithEmailForAdmin(string email)
+        {
+            try
+            {
+                Delete(GetUserWithEmailForAdmin(email));
+                MySaveChanges();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Silme Başarısız");
+            }
+        }
+        public bool UpdateUserForAdmin(UserForAdminDTO dto)
+        {
+            try
+            {
+                var temp = GetByCondition(x => x.UserID == dto.UserID && x.IsActive).FirstOrDefault();
+                temp.FirstName = dto.FirstName;
+                temp.LastName = dto.LastName;
+                temp.Email = dto.Email;
+                temp.Phone = dto.Phone;
+                temp.Password = dto.Password;
+                temp.RolID = dto.RolID;
+                MySaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hata Oluştu");
+            }
+        }
+        public bool AddUserForAdmin(UserForAdminDTO dto)
+        {
+            try
+            {
+                User user = MappingProfile.UserForAdminDTOtoUser(dto);
+                Add(user);
+                MySaveChanges();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Hata Oluştu.");
+            }
+            
         }
     }
 }
