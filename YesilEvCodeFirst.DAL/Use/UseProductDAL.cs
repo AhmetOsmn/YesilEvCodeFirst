@@ -33,6 +33,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
+                // todo: transaction eklenecek
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
                     var tempProduct = context.Product.Where(p => p.Barcode.Equals(dto.Barcode) && p.IsActive).FirstOrDefault();

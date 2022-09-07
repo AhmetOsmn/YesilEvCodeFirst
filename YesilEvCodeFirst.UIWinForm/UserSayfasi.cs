@@ -257,10 +257,13 @@ namespace YesilEvCodeFirst.UIWinForm
                     cmbBoxAddAndUpdateProductUpdateProductCategory.SelectedIndex = cmbBoxAddAndUpdateProductUpdateProductCategory.FindString(dto.CategoryName);
                     FileDialogUpdateProductFront.FileName = dto.PictureFronthPath;
                     FileDialogUpdateProductBack.FileName = dto.PictureBackPath;
+                    FileDialogUpdateProductContent.FileName = dto.PictureContentPath;
                     var item = dto.PictureFronthPath.Split('\\');
                     btnAddAndUpdateProductUpdateProductFront.Text = item[item.Length - 1];
                     item = dto.PictureBackPath.Split('\\');
                     btnAddAndUpdateProductUpdateProductBack.Text = item[item.Length - 1];
+                    item = dto.PictureContentPath.Split('\\');
+                    btnAddAndUpdateProductAddProductProductContext.Text = item[item.Length - 1];
                     isUpdatable = true;
                 }
                 else
