@@ -21,13 +21,6 @@ namespace YesilEvCodeFirst.UIWinForm.Raporlar
             InitializeComponent();
         }
 
-        // comboBox1.Items.Add("Madde Favori/Karaliste Sayısı");
-        // select s.SupplementID, Count(distinct f.FavListID) as FavCount ,Count(distinct sb.BlackListID) as BlackCount from Supplement s
-        // left outer join[SupplementBlackList] sb on sb.SupplementID = s.SupplementID
-        // left outer join ProductSupplement pm on s.SupplementID = pm.SupplementID
-        // left outer join ProductFavList f on pm.ProductID = f.ProductID
-        // group by s.SupplementID
-
         string query = "select s.SupplementName, Count(distinct f.FavorID) as FavListCount, Count(distinct sb.BlackListID) as BlacListCount from Supplement s left outer join [SupplementBlackList] sb on sb.SupplementID = s.SupplementID left outer join ProductSupplement pm on s.SupplementID = pm.SupplementID left outer join ProductFavList f on pm.ProductID = f.ProductID group by s.SupplementName";
         private void buttonRaporuGetir_Click(object sender, EventArgs e)
         {
@@ -42,6 +35,18 @@ namespace YesilEvCodeFirst.UIWinForm.Raporlar
             }
 
             dataGridView1.DataSource = list;
+            ChangeDatagridViewsColumnNames(dataGridView1);
+        }
+        private void ChangeDatagridViewsColumnNames(DataGridView colname)
+        {
+            colname.Columns[0].HeaderText = "Madde Adı";
+            colname.Columns[1].HeaderText = "Favori Liste Sayısı";
+            colname.Columns[2].HeaderText = "Kara Liste Sayısı";
+            colname.ForeColor = Color.Black;
+            foreach (DataGridViewColumn col in colname.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
     }
 }
