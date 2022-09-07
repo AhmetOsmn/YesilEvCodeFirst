@@ -1,6 +1,7 @@
 ﻿using NLog;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.DAL.Use;
@@ -36,6 +37,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             pnlListele.Visible = true;
             dgvProducts.DataSource = null;
             dgvProducts.DataSource = useProductDAL.GetProductsForAdmin();
+            ChangeDatagridViewsColumnNames(dgvProducts);
         }
 
         private void btnAra_Click(object sender, EventArgs e)
@@ -44,13 +46,17 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             pnlAra.Visible = true;
         }
 
+        List<Product> onaylanmamisUrunler = null; 
+
         private void btnOnayla_Click(object sender, EventArgs e)
         {
             CloseAllPanels();
 
             pnlApprove.Visible = true;
             dgvApprove.DataSource = null;
-            dgvApprove.DataSource = useProductDAL.GetProductsForAdminApprove();
+            onaylanmamisUrunler = useProductDAL.GetProductsForAdminApprove();
+            dgvApprove.DataSource = onaylanmamisUrunler;
+            ChangeDatagridViewsColumnNames(dgvApprove);
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -89,6 +95,26 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         {
             dgvProducts.DataSource = null;
             dgvSearchProduct.DataSource = useProductDAL.GetProductListWithSearchbarForAdmin(tbUrunAra.Text);
+            ChangeDatagridViewsColumnNames(dgvSearchProduct);
+        }
+
+        #endregion
+
+        #region Approve
+
+        private void btnApproveOnayla_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvApprove.Rows)
+            {
+                bool isApproved = Convert.ToBoolean(row.Cells["IsApproved"].Value);
+                if (isApproved)
+                {
+                    //useProductDAL.UpdateIsApprovedForAdmin(Convert.ToInt32(row.Cells["ProductID"].Value),currentUser.UserID);
+                    useProductDAL.UpdateIsApprovedForAdmin(Convert.ToInt32(row.Cells["ProductID"].Value), 1);
+                }
+
+            }
+            dgvApprove.DataSource = useProductDAL.GetProductsForAdminApprove();
         }
 
         #endregion
@@ -98,16 +124,22 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         private void btnAddProductContenPic_Click(object sender, EventArgs e)
         {
             FileDialogAddProductContent.ShowDialog();
+            var path = FileDialogAddProductContent.FileName.Split('\\');
+            btnAddProductContenPic.Text = path[path.Length - 1];
         }
 
         private void btnFrontPic_Click(object sender, EventArgs e)
         {
             FileDialogAddProductFront.ShowDialog();
+            var path = FileDialogAddProductFront.FileName.Split('\\');
+            btnFrontPic.Text = path[path.Length - 1];
         }
 
         private void btnBackPic_Click(object sender, EventArgs e)
         {
             FileDialogAddProductBack.ShowDialog();
+            var path = FileDialogAddProductBack.FileName.Split('\\');
+            btnBackPic.Text = path[path.Length - 1];
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -131,6 +163,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
                 if (result)
                 {
                     MessageBox.Show("Ürün Eklendi");
+                    ClearAddProductPanel();
                 }
             }
             catch (FormatException fex)
@@ -201,16 +234,22 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         private void btnUpdateProductContentPic_Click(object sender, EventArgs e)
         {
             FileDialogUpdateProductContent.ShowDialog();
+            var path = FileDialogUpdateProductContent.FileName.Split('\\');
+            btnUpdateProductContentPic.Text = path[path.Length - 1];
         }
 
         private void btnUpdateBackPic_Click(object sender, EventArgs e)
         {
             FileDialogUpdateProductBack.ShowDialog();
+            var path = FileDialogUpdateProductBack.FileName.Split('\\');
+            btnUpdateBackPic.Text = path[path.Length - 1];
         }
 
         private void btnUpdateFrontPic_Click(object sender, EventArgs e)
         {
             FileDialogUpdateProductFront.ShowDialog();
+            var path = FileDialogUpdateProductFront.FileName.Split('\\');
+            btnUpdateFrontPic.Text = path[path.Length - 1];
         }
 
         private void btnUpdateSave_Click(object sender, EventArgs e)
@@ -377,6 +416,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             tbDeleteBarcode.Text = "";
             tbDeleteAdder.Text = "";
         }
+
         private void ClearUpdateProductPanel()
         {
             cbxUpdateCategories.Items.Clear();
@@ -386,9 +426,54 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             tbUpdateBarcode.Text = "";
             tbUpdateProductName.Text = "";
             tbUpdateProductContent.Text = "";
+            btnUpdateFrontPic.Text = "Ön Fotoğraf";
+            btnUpdateBackPic.Text = "Arka Fotoğraf";
+            btnUpdateProductContentPic.Text = "İçerik Fotoğraf";
+        }
+        
+        private void ClearAddProductPanel()
+        {
+            cbxCategories.Items.Clear();
+            cbxCategories.Text = "";
+            cbxSuppliers.Items.Clear();
+            cbxSuppliers.Text = "";
+            tbBarcode.Text = "";
+            tbProductName.Text = "";
+            tbProductContent.Text = "";
+            btnFrontPic.Text = "Ön Fotoğraf";
+            btnBackPic.Text = "Arka Fotoğraf";
+            btnAddProductContenPic.Text = "İçerik Fotoğraf";
+        }
+
+        private void ChangeDatagridViewsColumnNames(DataGridView colname)
+        {
+            colname.Columns[0].HeaderText = "ID";
+            colname.Columns[1].HeaderText = "Ürün Adı";
+            colname.Columns[2].HeaderText = "Barkod Numarası";
+            colname.Columns[3].HeaderText = "Takip Numarası";
+            colname.Columns[4].HeaderText = "Onaylı Mı";
+            colname.Columns[5].HeaderText = "Ön Fotoğraf";
+            colname.Columns[6].HeaderText = "Arka Fotoğraf";
+            colname.Columns[7].HeaderText = "İçerik Fotoğraf";
+            colname.Columns[8].HeaderText = "Ürün İçeriği";
+            colname.Columns[9].HeaderText = "Üretici ID";
+            colname.Columns[10].HeaderText = "Üretici";
+            colname.Columns[11].HeaderText = "Ürünü Ekleyen ID";
+            colname.Columns[12].HeaderText = "Ürünü Ekleyen";
+            colname.Columns[13].HeaderText = "Kategori ID";
+            colname.Columns[14].HeaderText = "Kategori";
+            colname.Columns[15].HeaderText = "Onaylayan ID";
+            colname.Columns[16].HeaderText = "Onaylayan";
+            colname.Columns[17].HeaderText = "Aktif Mi";
+            colname.Columns[18].HeaderText = "Oluşturulma Tarihi";
+            colname.Columns[19].HeaderText = "Oluşturan";
+            colname.ForeColor = Color.Black;
+            foreach (DataGridViewColumn col in colname.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
 
         #endregion
-
     }
 }
