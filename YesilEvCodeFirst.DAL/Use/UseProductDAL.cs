@@ -2,6 +2,7 @@
 using NLog;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Context;
@@ -33,44 +34,56 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                // todo: transaction eklenecek
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
                     var tempProduct = context.Product.Where(p => p.Barcode.Equals(dto.Barcode) && p.IsActive).FirstOrDefault();
                     if (tempProduct == null)
                     {
-                        Product eklenecekUrun = MappingProfile.AddProductDTOToProduct(dto);
-                        context.Product.Add(eklenecekUrun);
-                        context.SaveChanges();
-
-                        var supplements = eklenecekUrun.ProductContent.Split(',');
-                        for (int i = 0; i < supplements.Length; i++)
+                        using (DbContextTransaction transaction = context.Database.BeginTransaction())
                         {
-                            string sup = supplements[i].Trim();
-                            var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower()) && s.IsActive).FirstOrDefault();
-                            if (result == null)
+                            try
                             {
-                                UseSupplementDAL supplementDAL = new UseSupplementDAL();
-                                supplementDAL.AddSupplement(new AddSupplementDTO { SupplementName = sup });
-                                context.ProductSupplement.Add(new ProductSupplement()
+                                Product eklenecekUrun = MappingProfile.AddProductDTOToProduct(dto);
+                                context.Product.Add(eklenecekUrun);
+                                context.SaveChanges();
+
+                                var supplements = eklenecekUrun.ProductContent.Split(',');
+                                for (int i = 0; i < supplements.Length; i++)
                                 {
-                                    ProductID = context.Product.ToList().LastOrDefault().ProductID,
-                                    SupplementID = context.Supplement.ToList().LastOrDefault().SupplementID
-                                });
-                                nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", eklenecekUrun.ProductName, sup);
+                                    string sup = supplements[i].Trim();
+                                    var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower()) && s.IsActive).FirstOrDefault();
+                                    if (result == null)
+                                    {
+                                        UseSupplementDAL supplementDAL = new UseSupplementDAL();
+                                        supplementDAL.AddSupplement(new AddSupplementDTO { SupplementName = sup });
+                                        context.ProductSupplement.Add(new ProductSupplement()
+                                        {
+                                            ProductID = context.Product.ToList().LastOrDefault().ProductID,
+                                            SupplementID = context.Supplement.ToList().LastOrDefault().SupplementID
+                                        });
+                                        nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", eklenecekUrun.ProductName, sup);
+                                    }
+                                    else
+                                    {
+                                        context.ProductSupplement.Add(new ProductSupplement()
+                                        {
+                                            ProductID = context.Product.ToList().LastOrDefault().ProductID,
+                                            SupplementID = result.SupplementID
+                                        });
+                                        nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", dto.ProductName, sup);
+                                    }
+                                }
+                                context.SaveChanges();
+
+                                transaction.Commit();
+                                nLogger.Info("{} Product tablosuna eklendi.", dto.ProductName);
                             }
-                            else
+                            catch (Exception ex)
                             {
-                                context.ProductSupplement.Add(new ProductSupplement()
-                                {
-                                    ProductID = context.Product.ToList().LastOrDefault().ProductID,
-                                    SupplementID = result.SupplementID
-                                });
-                                nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", dto.ProductName, sup);
+                                transaction.Rollback();
+                                throw new Exception(ex.Message);
                             }
                         }
-                        context.SaveChanges();
-                        nLogger.Info("{} Product tablosuna eklendi.", dto.ProductName);
                     }
                     else
                     {
@@ -431,6 +444,29 @@ namespace YesilEvCodeFirst.DAL.Use
             catch (Exception ex)
             {
                 nLogger.Error("System - {}", ex.Message);
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public bool UpdateIsApprovedForAdmin(int id, int approvedBy)
+        {
+            try
+            {
+                var updatedProduct = GetByCondition(x => x.ProductID == id && x.IsActive).SingleOrDefault();
+                if (updatedProduct != null)
+                {
+                    updatedProduct.IsApproved = true;
+                    updatedProduct.ApprovedBy = approvedBy;
+                    MySaveChanges();
+                    return true;
+                }
+                else
+                {
+                    throw new Exception(Messages.ProductNotFound);
+                }
+            }
+            catch (Exception ex)
+            {
                 throw new Exception(ex.Message);
             }
         }

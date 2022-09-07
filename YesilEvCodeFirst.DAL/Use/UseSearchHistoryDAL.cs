@@ -122,7 +122,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
 
                 var histories = GetByCondition(x => x.UserID == dto.ID && x.IsActive).ToList();
-                DeleteRange(histories);
+                histories.ForEach(history => history.IsActive = false);
                 MySaveChanges();
                 return true;
             }

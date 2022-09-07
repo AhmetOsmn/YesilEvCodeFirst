@@ -64,6 +64,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 OpenSideBar();
             }
         }
+       
         private void OpenSideBar()
         {
             foreach (Panel item in SideBar.Controls)
@@ -81,6 +82,7 @@ namespace YesilEvCodeFirst.UIWinForm
             SideBar.Width = SideBar.MaximumSize.Width;
             SideBar.Height = SideBar.MaximumSize.Height;
         }
+       
         private void CloseSideBar()
         {
             foreach (Panel item in SideBar.Controls)
@@ -101,6 +103,7 @@ namespace YesilEvCodeFirst.UIWinForm
             SideBar.Width = SideBar.MinimumSize.Width;
             SideBar.Height = SideBar.MinimumSize.Height;
         }
+        
         private void Home_Click(object sender, EventArgs e)
         {
             CloseAllPages();
@@ -288,6 +291,7 @@ namespace YesilEvCodeFirst.UIWinForm
             f.Show();
             this.Close();
         }
+       
         private void btnSearchHistoryAndFavoriList_Click(object sender, EventArgs e)
         {
             CloseAllPages();
@@ -337,29 +341,31 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             btnAddAndUpdateProductUpdateProductFront.Text = FileDialogUpdateProductFront.SafeFileName;
         }
+        
         private void UpdateProductBackImageName(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnAddAndUpdateProductUpdateProductBack.Text = FileDialogUpdateProductBack.SafeFileName;
         }
+        
         private void UpdateProductContentImageName(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnAddAndUpdateProductAddProductProductContext.Text = FileDialogAddProductContent.SafeFileName;
         }
+        
         private void AddProductFrontImageName(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnAddAndUpdateProductAddProductFront.Text = FileDialogAddProductFront.SafeFileName;
         }
+        
         private void addProductBackImageName(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnAddAndUpdateProductAddProductBack.Text = FileDialogAddProductBack.SafeFileName;
         } 
+        
         private void addProductContentImageName(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnAddAndUpdateProductAddProductProductContext.Text = FileDialogAddProductContent.SafeFileName;
         }
-
-
-
 
         #endregion
 
@@ -377,14 +383,17 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             FileDialogUpdateProductFront.ShowDialog();
         }
+
         private void UpdateProductBackImageDialogShow(object sender, EventArgs e)
         {
             FileDialogUpdateProductBack.ShowDialog();
         }
+
         private void AddProductFrontImageDialogShow(object sender, EventArgs e)
         {
             FileDialogAddProductFront.ShowDialog();
         }
+
         private void AddProductBackImageDialogShow(object sender, EventArgs e)
         {
             FileDialogAddProductBack.ShowDialog();
@@ -479,7 +488,6 @@ namespace YesilEvCodeFirst.UIWinForm
             }
         }
 
-
         private void CreateProductsInLabel(List<ListSupplementDTO> supplements)
         {
             int Y = 0;
@@ -569,6 +577,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 ProductSupplementDetailClose();
             }
         }
+        
         private void btnClearDGV_Click(object sender, EventArgs e)
         {
             dgvSearchProductProducts.DataSource = null;
@@ -619,6 +628,7 @@ namespace YesilEvCodeFirst.UIWinForm
             GetFavoriLists();
             Favlists.Visible = true;
         }
+        
         private void GetFavoriLists()
         {
             cmbBoxFavoriListFavoriLists.Items.Clear();
@@ -643,6 +653,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 cmbBoxFavoriListFavoriLists.Text = "Favori listesi bulunamadı.";
             }
         }
+
         private void GoBlackListPage(object sender, EventArgs e)
         {
             CloseAllPages();
@@ -688,6 +699,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 pictureProductDetailsProductImage.Image = Image.FromFile(selectedProduct.PictureFronthPath);
             }
         }
+        
         private void ProductSupplementDetailOpen()
         {
             isProductSupplementOpen = true;
@@ -700,6 +712,7 @@ namespace YesilEvCodeFirst.UIWinForm
             pnlProductDetailsShowProducts.Visible = true;
             //btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\up.jpg");
         }
+        
         private void ProductSupplementDetailClose()
         {
             isProductSupplementOpen = false;
@@ -731,6 +744,7 @@ namespace YesilEvCodeFirst.UIWinForm
             CloseSideBar();
             ProductSupplementDetailClose();
         }
+       
         private void GetAddAndUpdateProductCategoriesAndSuppliers()
         {
             List<SupplierDTO> suppliers = useSupplierDAL.GetSupplierList();
@@ -832,8 +846,8 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 MessageBox.Show(ex.Message);
             }
-           
         }
+
         private void GetFavoriListsAddProductAndDeleteProduct(int selectedRow, int Eventx, int Eventy)
         {
             IDDTO userIDDTO = new IDDTO() { ID = User.UserID };       
@@ -887,6 +901,7 @@ namespace YesilEvCodeFirst.UIWinForm
             }
 
         }
+      
         private void AddFav(object sender, EventArgs e)
         {
             var clikMenuItem = sender as MenuItem;
@@ -915,6 +930,7 @@ namespace YesilEvCodeFirst.UIWinForm
             }
             addProductFavListDTO = null;
         }
+        
         private void DeleteFav(object sender, EventArgs e)
         {
             var clickMenuItem = sender as MenuItem;
@@ -944,6 +960,7 @@ namespace YesilEvCodeFirst.UIWinForm
             }
          
         }
+        
         private void AddFavoriListPage(object sender, EventArgs e)
         {
             CloseAllPages();

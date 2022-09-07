@@ -36,8 +36,10 @@
             this.btnEkle = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.pnlListele = new System.Windows.Forms.Panel();
+            this.lblUrunListelemeSayfasi = new System.Windows.Forms.Label();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.pnlDeleteProduct = new System.Windows.Forms.Panel();
+            this.lblUrunSilmeSayfasi = new System.Windows.Forms.Label();
             this.btnDeleteSearch = new System.Windows.Forms.Button();
             this.tbDeleteProductName = new System.Windows.Forms.TextBox();
             this.lblDeleteProductName = new System.Windows.Forms.Label();
@@ -53,6 +55,7 @@
             this.lblDeleteBarcode = new System.Windows.Forms.Label();
             this.lblDeleteProductContent = new System.Windows.Forms.Label();
             this.pnlUrunEkle = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnAddProductContenPic = new System.Windows.Forms.Button();
             this.btnBackPic = new System.Windows.Forms.Button();
@@ -68,13 +71,16 @@
             this.lblBarcode = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.pnlAra = new System.Windows.Forms.Panel();
+            this.lblUrunAramaSayfasi = new System.Windows.Forms.Label();
             this.btnUrunuAra = new System.Windows.Forms.Button();
             this.lblUrunAra = new System.Windows.Forms.Label();
             this.tbUrunAra = new System.Windows.Forms.TextBox();
             this.dgvSearchProduct = new System.Windows.Forms.DataGridView();
             this.pnlApprove = new System.Windows.Forms.Panel();
+            this.lblUrunOnaylamaSayfasi = new System.Windows.Forms.Label();
             this.dgvApprove = new System.Windows.Forms.DataGridView();
             this.pnlUrunGuncelle = new System.Windows.Forms.Panel();
+            this.lblUrunGuncellemeSayfasi = new System.Windows.Forms.Label();
             this.btnUpdateBarcodeSearch = new System.Windows.Forms.Button();
             this.btnUpdateSave = new System.Windows.Forms.Button();
             this.btnUpdateProductContentPic = new System.Windows.Forms.Button();
@@ -96,6 +102,7 @@
             this.FileDialogUpdateProductBack = new System.Windows.Forms.OpenFileDialog();
             this.FileDialogAddProductFront = new System.Windows.Forms.OpenFileDialog();
             this.FileDialogAddProductBack = new System.Windows.Forms.OpenFileDialog();
+            this.btnApproveOnayla = new System.Windows.Forms.Button();
             this.gbProduct.SuspendLayout();
             this.pnlListele.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -187,23 +194,36 @@
             // 
             this.pnlListele.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pnlListele.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlListele.Controls.Add(this.lblUrunListelemeSayfasi);
             this.pnlListele.Controls.Add(this.dgvProducts);
             this.pnlListele.Location = new System.Drawing.Point(113, 12);
             this.pnlListele.Name = "pnlListele";
             this.pnlListele.Size = new System.Drawing.Size(1142, 426);
             this.pnlListele.TabIndex = 2;
             // 
+            // lblUrunListelemeSayfasi
+            // 
+            this.lblUrunListelemeSayfasi.AutoSize = true;
+            this.lblUrunListelemeSayfasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUrunListelemeSayfasi.Location = new System.Drawing.Point(3, 7);
+            this.lblUrunListelemeSayfasi.Name = "lblUrunListelemeSayfasi";
+            this.lblUrunListelemeSayfasi.Size = new System.Drawing.Size(136, 13);
+            this.lblUrunListelemeSayfasi.TabIndex = 2;
+            this.lblUrunListelemeSayfasi.Text = "Ürün Listeleme Sayfası";
+            // 
             // dgvProducts
             // 
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Location = new System.Drawing.Point(3, 17);
+            this.dgvProducts.Location = new System.Drawing.Point(3, 28);
             this.dgvProducts.Name = "dgvProducts";
-            this.dgvProducts.Size = new System.Drawing.Size(1136, 406);
+            this.dgvProducts.ReadOnly = true;
+            this.dgvProducts.Size = new System.Drawing.Size(1136, 395);
             this.dgvProducts.TabIndex = 1;
             // 
             // pnlDeleteProduct
             // 
             this.pnlDeleteProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlDeleteProduct.Controls.Add(this.lblUrunSilmeSayfasi);
             this.pnlDeleteProduct.Controls.Add(this.btnDeleteSearch);
             this.pnlDeleteProduct.Controls.Add(this.tbDeleteProductName);
             this.pnlDeleteProduct.Controls.Add(this.lblDeleteProductName);
@@ -222,6 +242,16 @@
             this.pnlDeleteProduct.Name = "pnlDeleteProduct";
             this.pnlDeleteProduct.Size = new System.Drawing.Size(1148, 429);
             this.pnlDeleteProduct.TabIndex = 7;
+            // 
+            // lblUrunSilmeSayfasi
+            // 
+            this.lblUrunSilmeSayfasi.AutoSize = true;
+            this.lblUrunSilmeSayfasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUrunSilmeSayfasi.Location = new System.Drawing.Point(3, 7);
+            this.lblUrunSilmeSayfasi.Name = "lblUrunSilmeSayfasi";
+            this.lblUrunSilmeSayfasi.Size = new System.Drawing.Size(113, 13);
+            this.lblUrunSilmeSayfasi.TabIndex = 29;
+            this.lblUrunSilmeSayfasi.Text = "Ürün Silme Sayfası";
             // 
             // btnDeleteSearch
             // 
@@ -354,6 +384,7 @@
             // pnlUrunEkle
             // 
             this.pnlUrunEkle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlUrunEkle.Controls.Add(this.label6);
             this.pnlUrunEkle.Controls.Add(this.btnSave);
             this.pnlUrunEkle.Controls.Add(this.btnAddProductContenPic);
             this.pnlUrunEkle.Controls.Add(this.btnBackPic);
@@ -372,6 +403,16 @@
             this.pnlUrunEkle.Name = "pnlUrunEkle";
             this.pnlUrunEkle.Size = new System.Drawing.Size(1148, 429);
             this.pnlUrunEkle.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(3, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(124, 13);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Ürün Ekleme Sayfası";
             // 
             // btnSave
             // 
@@ -499,6 +540,7 @@
             // pnlAra
             // 
             this.pnlAra.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlAra.Controls.Add(this.lblUrunAramaSayfasi);
             this.pnlAra.Controls.Add(this.btnUrunuAra);
             this.pnlAra.Controls.Add(this.lblUrunAra);
             this.pnlAra.Controls.Add(this.tbUrunAra);
@@ -508,9 +550,19 @@
             this.pnlAra.Size = new System.Drawing.Size(1142, 429);
             this.pnlAra.TabIndex = 1;
             // 
+            // lblUrunAramaSayfasi
+            // 
+            this.lblUrunAramaSayfasi.AutoSize = true;
+            this.lblUrunAramaSayfasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUrunAramaSayfasi.Location = new System.Drawing.Point(3, 7);
+            this.lblUrunAramaSayfasi.Name = "lblUrunAramaSayfasi";
+            this.lblUrunAramaSayfasi.Size = new System.Drawing.Size(118, 13);
+            this.lblUrunAramaSayfasi.TabIndex = 5;
+            this.lblUrunAramaSayfasi.Text = "Ürün Arama Sayfası";
+            // 
             // btnUrunuAra
             // 
-            this.btnUrunuAra.Location = new System.Drawing.Point(328, 17);
+            this.btnUrunuAra.Location = new System.Drawing.Point(651, 4);
             this.btnUrunuAra.Name = "btnUrunuAra";
             this.btnUrunuAra.Size = new System.Drawing.Size(75, 20);
             this.btnUrunuAra.TabIndex = 3;
@@ -521,7 +573,7 @@
             // lblUrunAra
             // 
             this.lblUrunAra.AutoSize = true;
-            this.lblUrunAra.Location = new System.Drawing.Point(32, 20);
+            this.lblUrunAra.Location = new System.Drawing.Point(355, 7);
             this.lblUrunAra.Name = "lblUrunAra";
             this.lblUrunAra.Size = new System.Drawing.Size(82, 13);
             this.lblUrunAra.TabIndex = 1;
@@ -529,7 +581,7 @@
             // 
             // tbUrunAra
             // 
-            this.tbUrunAra.Location = new System.Drawing.Point(120, 17);
+            this.tbUrunAra.Location = new System.Drawing.Point(443, 4);
             this.tbUrunAra.Name = "tbUrunAra";
             this.tbUrunAra.Size = new System.Drawing.Size(187, 20);
             this.tbUrunAra.TabIndex = 0;
@@ -539,17 +591,30 @@
             this.dgvSearchProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSearchProduct.Location = new System.Drawing.Point(3, 43);
             this.dgvSearchProduct.Name = "dgvSearchProduct";
+            this.dgvSearchProduct.ReadOnly = true;
             this.dgvSearchProduct.Size = new System.Drawing.Size(1136, 382);
             this.dgvSearchProduct.TabIndex = 4;
             // 
             // pnlApprove
             // 
             this.pnlApprove.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlApprove.Controls.Add(this.btnApproveOnayla);
+            this.pnlApprove.Controls.Add(this.lblUrunOnaylamaSayfasi);
             this.pnlApprove.Controls.Add(this.dgvApprove);
             this.pnlApprove.Location = new System.Drawing.Point(113, 12);
             this.pnlApprove.Name = "pnlApprove";
             this.pnlApprove.Size = new System.Drawing.Size(1142, 426);
             this.pnlApprove.TabIndex = 4;
+            // 
+            // lblUrunOnaylamaSayfasi
+            // 
+            this.lblUrunOnaylamaSayfasi.AutoSize = true;
+            this.lblUrunOnaylamaSayfasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUrunOnaylamaSayfasi.Location = new System.Drawing.Point(3, 7);
+            this.lblUrunOnaylamaSayfasi.Name = "lblUrunOnaylamaSayfasi";
+            this.lblUrunOnaylamaSayfasi.Size = new System.Drawing.Size(138, 13);
+            this.lblUrunOnaylamaSayfasi.TabIndex = 6;
+            this.lblUrunOnaylamaSayfasi.Text = "Ürün Onaylama Sayfası";
             // 
             // dgvApprove
             // 
@@ -562,6 +627,7 @@
             // pnlUrunGuncelle
             // 
             this.pnlUrunGuncelle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlUrunGuncelle.Controls.Add(this.lblUrunGuncellemeSayfasi);
             this.pnlUrunGuncelle.Controls.Add(this.btnUpdateBarcodeSearch);
             this.pnlUrunGuncelle.Controls.Add(this.btnUpdateSave);
             this.pnlUrunGuncelle.Controls.Add(this.btnUpdateProductContentPic);
@@ -581,6 +647,16 @@
             this.pnlUrunGuncelle.Name = "pnlUrunGuncelle";
             this.pnlUrunGuncelle.Size = new System.Drawing.Size(1148, 426);
             this.pnlUrunGuncelle.TabIndex = 6;
+            // 
+            // lblUrunGuncellemeSayfasi
+            // 
+            this.lblUrunGuncellemeSayfasi.AutoSize = true;
+            this.lblUrunGuncellemeSayfasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUrunGuncellemeSayfasi.Location = new System.Drawing.Point(3, 7);
+            this.lblUrunGuncellemeSayfasi.Name = "lblUrunGuncellemeSayfasi";
+            this.lblUrunGuncellemeSayfasi.Size = new System.Drawing.Size(149, 13);
+            this.lblUrunGuncellemeSayfasi.TabIndex = 23;
+            this.lblUrunGuncellemeSayfasi.Text = "Ürün Güncelleme Sayfası";
             // 
             // btnUpdateBarcodeSearch
             // 
@@ -747,22 +823,33 @@
             // 
             this.FileDialogAddProductBack.FileName = "openFileDialog6";
             // 
+            // btnApproveOnayla
+            // 
+            this.btnApproveOnayla.Location = new System.Drawing.Point(1047, 3);
+            this.btnApproveOnayla.Name = "btnApproveOnayla";
+            this.btnApproveOnayla.Size = new System.Drawing.Size(75, 23);
+            this.btnApproveOnayla.TabIndex = 8;
+            this.btnApproveOnayla.Text = "Onayla";
+            this.btnApproveOnayla.UseVisualStyleBackColor = true;
+            this.btnApproveOnayla.Click += new System.EventHandler(this.btnApproveOnayla_Click);
+            // 
             // UrunIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1276, 453);
             this.Controls.Add(this.gbProduct);
+            this.Controls.Add(this.pnlAra);
             this.Controls.Add(this.pnlApprove);
             this.Controls.Add(this.pnlUrunGuncelle);
             this.Controls.Add(this.pnlDeleteProduct);
             this.Controls.Add(this.pnlUrunEkle);
             this.Controls.Add(this.pnlListele);
-            this.Controls.Add(this.pnlAra);
             this.Name = "UrunIslemleri";
             this.Text = "UrunIslemleri";
             this.gbProduct.ResumeLayout(false);
             this.pnlListele.ResumeLayout(false);
+            this.pnlListele.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.pnlDeleteProduct.ResumeLayout(false);
             this.pnlDeleteProduct.PerformLayout();
@@ -772,6 +859,7 @@
             this.pnlAra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProduct)).EndInit();
             this.pnlApprove.ResumeLayout(false);
+            this.pnlApprove.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApprove)).EndInit();
             this.pnlUrunGuncelle.ResumeLayout(false);
             this.pnlUrunGuncelle.PerformLayout();
@@ -849,5 +937,12 @@
         private System.Windows.Forms.OpenFileDialog FileDialogUpdateProductBack;
         private System.Windows.Forms.OpenFileDialog FileDialogAddProductFront;
         private System.Windows.Forms.OpenFileDialog FileDialogAddProductBack;
+        private System.Windows.Forms.Label lblUrunOnaylamaSayfasi;
+        private System.Windows.Forms.Label lblUrunGuncellemeSayfasi;
+        private System.Windows.Forms.Label lblUrunSilmeSayfasi;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblUrunListelemeSayfasi;
+        private System.Windows.Forms.Label lblUrunAramaSayfasi;
+        private System.Windows.Forms.Button btnApproveOnayla;
     }
 }
