@@ -43,7 +43,9 @@
         public static string ProductContentIsEmpty = "Ürün içerik alanı boş geçilemez.";
         public static string SupplementIDIsEmpty = "SupplementID alanı boş olamaz";
 
-
+        public static string SupplierNameEmpty = "Üretici adı boş geçilemez.";
+        public static string SupplierNameMinLength = "Üretici adı minimum 2 karakter olabilir.";
+        public static string SupplierNameMaxLength= "Üretici adı maksimum 100 karakter olabilir.";
 
         #endregion
 
@@ -52,6 +54,8 @@
 
         public static string UserNotFound = "Kullanıcı bulunamadı.";
         public static string EmailAlreadyExist = "Email zaten kayıtlı.";
+        public static string SupplierAlreadyExist = "Üretici zaten kayıtlı.";
+        public static string SupplierNotFound = "Üretici bulunamadı.";
 
         public static string AdminNotFound = "Admin bulunamadı.";
 
@@ -76,6 +80,8 @@
         public static string ProductAlreadyExistInList = "Listeden bulunan ürün tekrar listeye eklenemez.";
 
         public static string SupplementAlreadyExist = "Madde zaten mevcut.";
+
+
 
         #endregion
 
