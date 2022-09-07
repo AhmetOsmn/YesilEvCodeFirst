@@ -536,17 +536,6 @@ namespace YesilEvCodeFirst.MyTest
 
         #endregion
 
-        #region Rapor Testleri 
-
-        [TestMethod]
-        public void FavListProductCount()
-        {
-            UseRaporDAL dal = new UseRaporDAL();
-            dal.GetUserProductListCount();
-        }
-
-        #endregion
-
     }
 }
 
