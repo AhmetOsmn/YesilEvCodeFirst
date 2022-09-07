@@ -90,7 +90,5 @@ namespace YesilEvCodeFirst.Core.Repos
             _context.Entry(item).State = EntityState.Modified;
             _context.Set<TEntity>().Attach(item);
         }
-
-
     }
 }

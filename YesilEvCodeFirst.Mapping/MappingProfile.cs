@@ -70,10 +70,21 @@ namespace YesilEvCodeFirst.Mapping
 
         public static Supplement AddSupplementDTOToSupplement(AddSupplementDTO dto)
         {
-            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddSupplementDTO, Supplement>());
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddSupplementDTO, Supplement>()
+            .ForMember(dest => dest.RiskRatio, opt => opt.MapFrom(src => src.Risk)));
 
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<Supplement>(dto);
+        }
+        public static AddSupplementDTO SupplementToGetListSupplementDTO(Supplement supplement)
+        {
+            var mapperConfig = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Supplement, AddSupplementDTO>()
+                   .ForMember(dest => dest.Risk, opt => opt.MapFrom(src => src.RiskRatio));
+            });
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<AddSupplementDTO>(supplement);
         }
 
         #endregion
