@@ -37,11 +37,41 @@
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.pnlListele = new System.Windows.Forms.Panel();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
+            this.pnlDeleteProduct = new System.Windows.Forms.Panel();
+            this.btnDeleteSearch = new System.Windows.Forms.Button();
+            this.tbDeleteProductName = new System.Windows.Forms.TextBox();
+            this.lblDeleteProductName = new System.Windows.Forms.Label();
+            this.btnDeleteDelete = new System.Windows.Forms.Button();
+            this.tbDeleteAdder = new System.Windows.Forms.TextBox();
+            this.lblDeletyeAdder = new System.Windows.Forms.Label();
+            this.tbDeleteCategory = new System.Windows.Forms.TextBox();
+            this.tbDeleteSupplement = new System.Windows.Forms.TextBox();
+            this.lblDeleteCategory = new System.Windows.Forms.Label();
+            this.lblDeleteSupplier = new System.Windows.Forms.Label();
+            this.tbDeleteBarcode = new System.Windows.Forms.TextBox();
+            this.tbDeleteProductContent = new System.Windows.Forms.TextBox();
+            this.lblDeleteBarcode = new System.Windows.Forms.Label();
+            this.lblDeleteProductContent = new System.Windows.Forms.Label();
+            this.pnlUrunEkle = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnAddProductContenPic = new System.Windows.Forms.Button();
+            this.btnBackPic = new System.Windows.Forms.Button();
+            this.btnFrontPic = new System.Windows.Forms.Button();
+            this.tbProductContent = new System.Windows.Forms.TextBox();
+            this.cbxSuppliers = new System.Windows.Forms.ComboBox();
+            this.cbxCategories = new System.Windows.Forms.ComboBox();
+            this.tbBarcode = new System.Windows.Forms.TextBox();
+            this.tbProductName = new System.Windows.Forms.TextBox();
+            this.lblProductContent = new System.Windows.Forms.Label();
+            this.lblSupplier = new System.Windows.Forms.Label();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.lblBarcode = new System.Windows.Forms.Label();
+            this.lblProductName = new System.Windows.Forms.Label();
             this.pnlAra = new System.Windows.Forms.Panel();
-            this.dgvSearchProduct = new System.Windows.Forms.DataGridView();
             this.btnUrunuAra = new System.Windows.Forms.Button();
             this.lblUrunAra = new System.Windows.Forms.Label();
             this.tbUrunAra = new System.Windows.Forms.TextBox();
+            this.dgvSearchProduct = new System.Windows.Forms.DataGridView();
             this.pnlApprove = new System.Windows.Forms.Panel();
             this.dgvApprove = new System.Windows.Forms.DataGridView();
             this.pnlUrunGuncelle = new System.Windows.Forms.Panel();
@@ -60,46 +90,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pnlUrunEkle = new System.Windows.Forms.Panel();
-            this.pnlDeleteProduct = new System.Windows.Forms.Panel();
-            this.tbDeleteCategory = new System.Windows.Forms.TextBox();
-            this.tbDeleteSupplement = new System.Windows.Forms.TextBox();
-            this.lblDeleteCategory = new System.Windows.Forms.Label();
-            this.lblDeleteSupplier = new System.Windows.Forms.Label();
-            this.tbDeleteBarcode = new System.Windows.Forms.TextBox();
-            this.tbDeleteProductContent = new System.Windows.Forms.TextBox();
-            this.lblDeleteBarcode = new System.Windows.Forms.Label();
-            this.lblDeleteProductContent = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnBackPic = new System.Windows.Forms.Button();
-            this.btnFrontPic = new System.Windows.Forms.Button();
-            this.tbProductContent = new System.Windows.Forms.TextBox();
-            this.cbxSuppliers = new System.Windows.Forms.ComboBox();
-            this.cbxCategories = new System.Windows.Forms.ComboBox();
-            this.tbBarcode = new System.Windows.Forms.TextBox();
-            this.tbProductName = new System.Windows.Forms.TextBox();
-            this.lblProductContent = new System.Windows.Forms.Label();
-            this.lblSupplier = new System.Windows.Forms.Label();
-            this.lblCategory = new System.Windows.Forms.Label();
-            this.lblBarcode = new System.Windows.Forms.Label();
-            this.lblProductName = new System.Windows.Forms.Label();
-            this.tbDeleteAdder = new System.Windows.Forms.TextBox();
-            this.lblDeletyeAdder = new System.Windows.Forms.Label();
-            this.btnDeleteDelete = new System.Windows.Forms.Button();
-            this.tbDeleteProductName = new System.Windows.Forms.TextBox();
-            this.lblDeleteProductName = new System.Windows.Forms.Label();
-            this.btnDeleteSearch = new System.Windows.Forms.Button();
+            this.FileDialogAddProductContent = new System.Windows.Forms.OpenFileDialog();
+            this.FileDialogUpdateProductContent = new System.Windows.Forms.OpenFileDialog();
+            this.FileDialogUpdateProductFront = new System.Windows.Forms.OpenFileDialog();
+            this.FileDialogUpdateProductBack = new System.Windows.Forms.OpenFileDialog();
+            this.FileDialogAddProductFront = new System.Windows.Forms.OpenFileDialog();
+            this.FileDialogAddProductBack = new System.Windows.Forms.OpenFileDialog();
             this.gbProduct.SuspendLayout();
             this.pnlListele.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
+            this.pnlDeleteProduct.SuspendLayout();
+            this.pnlUrunEkle.SuspendLayout();
             this.pnlAra.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProduct)).BeginInit();
             this.pnlApprove.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApprove)).BeginInit();
             this.pnlUrunGuncelle.SuspendLayout();
-            this.pnlUrunEkle.SuspendLayout();
-            this.pnlDeleteProduct.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // btnListele
@@ -180,6 +186,7 @@
             // pnlListele
             // 
             this.pnlListele.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnlListele.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlListele.Controls.Add(this.dgvProducts);
             this.pnlListele.Location = new System.Drawing.Point(113, 12);
             this.pnlListele.Name = "pnlListele";
@@ -189,31 +196,318 @@
             // dgvProducts
             // 
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProducts.Location = new System.Drawing.Point(0, 0);
+            this.dgvProducts.Location = new System.Drawing.Point(3, 17);
             this.dgvProducts.Name = "dgvProducts";
-            this.dgvProducts.Size = new System.Drawing.Size(1142, 426);
+            this.dgvProducts.Size = new System.Drawing.Size(1136, 406);
             this.dgvProducts.TabIndex = 1;
+            // 
+            // pnlDeleteProduct
+            // 
+            this.pnlDeleteProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlDeleteProduct.Controls.Add(this.btnDeleteSearch);
+            this.pnlDeleteProduct.Controls.Add(this.tbDeleteProductName);
+            this.pnlDeleteProduct.Controls.Add(this.lblDeleteProductName);
+            this.pnlDeleteProduct.Controls.Add(this.btnDeleteDelete);
+            this.pnlDeleteProduct.Controls.Add(this.tbDeleteAdder);
+            this.pnlDeleteProduct.Controls.Add(this.lblDeletyeAdder);
+            this.pnlDeleteProduct.Controls.Add(this.tbDeleteCategory);
+            this.pnlDeleteProduct.Controls.Add(this.tbDeleteSupplement);
+            this.pnlDeleteProduct.Controls.Add(this.lblDeleteCategory);
+            this.pnlDeleteProduct.Controls.Add(this.lblDeleteSupplier);
+            this.pnlDeleteProduct.Controls.Add(this.tbDeleteBarcode);
+            this.pnlDeleteProduct.Controls.Add(this.tbDeleteProductContent);
+            this.pnlDeleteProduct.Controls.Add(this.lblDeleteBarcode);
+            this.pnlDeleteProduct.Controls.Add(this.lblDeleteProductContent);
+            this.pnlDeleteProduct.Location = new System.Drawing.Point(113, 12);
+            this.pnlDeleteProduct.Name = "pnlDeleteProduct";
+            this.pnlDeleteProduct.Size = new System.Drawing.Size(1148, 429);
+            this.pnlDeleteProduct.TabIndex = 7;
+            // 
+            // btnDeleteSearch
+            // 
+            this.btnDeleteSearch.Location = new System.Drawing.Point(443, 96);
+            this.btnDeleteSearch.Name = "btnDeleteSearch";
+            this.btnDeleteSearch.Size = new System.Drawing.Size(75, 20);
+            this.btnDeleteSearch.TabIndex = 28;
+            this.btnDeleteSearch.Text = "Ara";
+            this.btnDeleteSearch.UseVisualStyleBackColor = true;
+            this.btnDeleteSearch.Click += new System.EventHandler(this.btnDeleteSearch_Click);
+            // 
+            // tbDeleteProductName
+            // 
+            this.tbDeleteProductName.Enabled = false;
+            this.tbDeleteProductName.Location = new System.Drawing.Point(253, 127);
+            this.tbDeleteProductName.Name = "tbDeleteProductName";
+            this.tbDeleteProductName.Size = new System.Drawing.Size(172, 20);
+            this.tbDeleteProductName.TabIndex = 27;
+            // 
+            // lblDeleteProductName
+            // 
+            this.lblDeleteProductName.AutoSize = true;
+            this.lblDeleteProductName.Enabled = false;
+            this.lblDeleteProductName.Location = new System.Drawing.Point(196, 131);
+            this.lblDeleteProductName.Name = "lblDeleteProductName";
+            this.lblDeleteProductName.Size = new System.Drawing.Size(51, 13);
+            this.lblDeleteProductName.TabIndex = 26;
+            this.lblDeleteProductName.Text = "Ürün Adı:";
+            // 
+            // btnDeleteDelete
+            // 
+            this.btnDeleteDelete.Enabled = false;
+            this.btnDeleteDelete.Location = new System.Drawing.Point(253, 292);
+            this.btnDeleteDelete.Name = "btnDeleteDelete";
+            this.btnDeleteDelete.Size = new System.Drawing.Size(172, 42);
+            this.btnDeleteDelete.TabIndex = 25;
+            this.btnDeleteDelete.Text = "Ürünü Sil";
+            this.btnDeleteDelete.UseVisualStyleBackColor = true;
+            this.btnDeleteDelete.Click += new System.EventHandler(this.btnDeleteDelete_Click);
+            // 
+            // tbDeleteAdder
+            // 
+            this.tbDeleteAdder.Enabled = false;
+            this.tbDeleteAdder.Location = new System.Drawing.Point(253, 261);
+            this.tbDeleteAdder.Name = "tbDeleteAdder";
+            this.tbDeleteAdder.Size = new System.Drawing.Size(172, 20);
+            this.tbDeleteAdder.TabIndex = 24;
+            // 
+            // lblDeletyeAdder
+            // 
+            this.lblDeletyeAdder.AutoSize = true;
+            this.lblDeletyeAdder.Enabled = false;
+            this.lblDeletyeAdder.Location = new System.Drawing.Point(199, 264);
+            this.lblDeletyeAdder.Name = "lblDeletyeAdder";
+            this.lblDeletyeAdder.Size = new System.Drawing.Size(48, 13);
+            this.lblDeletyeAdder.TabIndex = 23;
+            this.lblDeletyeAdder.Text = "Ekleyen:";
+            // 
+            // tbDeleteCategory
+            // 
+            this.tbDeleteCategory.Enabled = false;
+            this.tbDeleteCategory.Location = new System.Drawing.Point(253, 235);
+            this.tbDeleteCategory.Name = "tbDeleteCategory";
+            this.tbDeleteCategory.Size = new System.Drawing.Size(172, 20);
+            this.tbDeleteCategory.TabIndex = 22;
+            // 
+            // tbDeleteSupplement
+            // 
+            this.tbDeleteSupplement.Enabled = false;
+            this.tbDeleteSupplement.Location = new System.Drawing.Point(253, 209);
+            this.tbDeleteSupplement.Name = "tbDeleteSupplement";
+            this.tbDeleteSupplement.Size = new System.Drawing.Size(172, 20);
+            this.tbDeleteSupplement.TabIndex = 21;
+            // 
+            // lblDeleteCategory
+            // 
+            this.lblDeleteCategory.AutoSize = true;
+            this.lblDeleteCategory.Enabled = false;
+            this.lblDeleteCategory.Location = new System.Drawing.Point(198, 238);
+            this.lblDeleteCategory.Name = "lblDeleteCategory";
+            this.lblDeleteCategory.Size = new System.Drawing.Size(49, 13);
+            this.lblDeleteCategory.TabIndex = 20;
+            this.lblDeleteCategory.Text = "Kategori:";
+            // 
+            // lblDeleteSupplier
+            // 
+            this.lblDeleteSupplier.AutoSize = true;
+            this.lblDeleteSupplier.Enabled = false;
+            this.lblDeleteSupplier.Location = new System.Drawing.Point(207, 212);
+            this.lblDeleteSupplier.Name = "lblDeleteSupplier";
+            this.lblDeleteSupplier.Size = new System.Drawing.Size(40, 13);
+            this.lblDeleteSupplier.TabIndex = 19;
+            this.lblDeleteSupplier.Text = "Üretici:";
+            // 
+            // tbDeleteBarcode
+            // 
+            this.tbDeleteBarcode.Location = new System.Drawing.Point(253, 96);
+            this.tbDeleteBarcode.Name = "tbDeleteBarcode";
+            this.tbDeleteBarcode.Size = new System.Drawing.Size(172, 20);
+            this.tbDeleteBarcode.TabIndex = 18;
+            // 
+            // tbDeleteProductContent
+            // 
+            this.tbDeleteProductContent.Enabled = false;
+            this.tbDeleteProductContent.Location = new System.Drawing.Point(253, 155);
+            this.tbDeleteProductContent.Multiline = true;
+            this.tbDeleteProductContent.Name = "tbDeleteProductContent";
+            this.tbDeleteProductContent.Size = new System.Drawing.Size(172, 48);
+            this.tbDeleteProductContent.TabIndex = 17;
+            // 
+            // lblDeleteBarcode
+            // 
+            this.lblDeleteBarcode.AutoSize = true;
+            this.lblDeleteBarcode.Location = new System.Drawing.Point(186, 100);
+            this.lblDeleteBarcode.Name = "lblDeleteBarcode";
+            this.lblDeleteBarcode.Size = new System.Drawing.Size(61, 13);
+            this.lblDeleteBarcode.TabIndex = 16;
+            this.lblDeleteBarcode.Text = "Barkod No:";
+            // 
+            // lblDeleteProductContent
+            // 
+            this.lblDeleteProductContent.AutoSize = true;
+            this.lblDeleteProductContent.Enabled = false;
+            this.lblDeleteProductContent.Location = new System.Drawing.Point(183, 157);
+            this.lblDeleteProductContent.Name = "lblDeleteProductContent";
+            this.lblDeleteProductContent.Size = new System.Drawing.Size(64, 13);
+            this.lblDeleteProductContent.TabIndex = 15;
+            this.lblDeleteProductContent.Text = "Ürün İçeriği:";
+            // 
+            // pnlUrunEkle
+            // 
+            this.pnlUrunEkle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlUrunEkle.Controls.Add(this.btnSave);
+            this.pnlUrunEkle.Controls.Add(this.btnAddProductContenPic);
+            this.pnlUrunEkle.Controls.Add(this.btnBackPic);
+            this.pnlUrunEkle.Controls.Add(this.btnFrontPic);
+            this.pnlUrunEkle.Controls.Add(this.tbProductContent);
+            this.pnlUrunEkle.Controls.Add(this.cbxSuppliers);
+            this.pnlUrunEkle.Controls.Add(this.cbxCategories);
+            this.pnlUrunEkle.Controls.Add(this.tbBarcode);
+            this.pnlUrunEkle.Controls.Add(this.tbProductName);
+            this.pnlUrunEkle.Controls.Add(this.lblProductContent);
+            this.pnlUrunEkle.Controls.Add(this.lblSupplier);
+            this.pnlUrunEkle.Controls.Add(this.lblCategory);
+            this.pnlUrunEkle.Controls.Add(this.lblBarcode);
+            this.pnlUrunEkle.Controls.Add(this.lblProductName);
+            this.pnlUrunEkle.Location = new System.Drawing.Point(113, 12);
+            this.pnlUrunEkle.Name = "pnlUrunEkle";
+            this.pnlUrunEkle.Size = new System.Drawing.Size(1148, 429);
+            this.pnlUrunEkle.TabIndex = 5;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(229, 290);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(172, 57);
+            this.btnSave.TabIndex = 21;
+            this.btnSave.Text = "Kaydet";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnAddProductContenPic
+            // 
+            this.btnAddProductContenPic.Location = new System.Drawing.Point(407, 153);
+            this.btnAddProductContenPic.Name = "btnAddProductContenPic";
+            this.btnAddProductContenPic.Size = new System.Drawing.Size(79, 56);
+            this.btnAddProductContenPic.TabIndex = 20;
+            this.btnAddProductContenPic.Text = "İçerik Fotoğraf";
+            this.btnAddProductContenPic.UseVisualStyleBackColor = true;
+            this.btnAddProductContenPic.Click += new System.EventHandler(this.btnAddProductContenPic_Click);
+            // 
+            // btnBackPic
+            // 
+            this.btnBackPic.Location = new System.Drawing.Point(322, 215);
+            this.btnBackPic.Name = "btnBackPic";
+            this.btnBackPic.Size = new System.Drawing.Size(79, 56);
+            this.btnBackPic.TabIndex = 19;
+            this.btnBackPic.Text = "Arka Fotoğraf";
+            this.btnBackPic.UseVisualStyleBackColor = true;
+            this.btnBackPic.Click += new System.EventHandler(this.btnBackPic_Click);
+            // 
+            // btnFrontPic
+            // 
+            this.btnFrontPic.Location = new System.Drawing.Point(229, 215);
+            this.btnFrontPic.Name = "btnFrontPic";
+            this.btnFrontPic.Size = new System.Drawing.Size(79, 56);
+            this.btnFrontPic.TabIndex = 18;
+            this.btnFrontPic.Text = "Ön Fotoğraf";
+            this.btnFrontPic.UseVisualStyleBackColor = true;
+            this.btnFrontPic.Click += new System.EventHandler(this.btnFrontPic_Click);
+            // 
+            // tbProductContent
+            // 
+            this.tbProductContent.Location = new System.Drawing.Point(229, 153);
+            this.tbProductContent.Multiline = true;
+            this.tbProductContent.Name = "tbProductContent";
+            this.tbProductContent.Size = new System.Drawing.Size(172, 56);
+            this.tbProductContent.TabIndex = 17;
+            // 
+            // cbxSuppliers
+            // 
+            this.cbxSuppliers.FormattingEnabled = true;
+            this.cbxSuppliers.Location = new System.Drawing.Point(229, 126);
+            this.cbxSuppliers.Name = "cbxSuppliers";
+            this.cbxSuppliers.Size = new System.Drawing.Size(172, 21);
+            this.cbxSuppliers.TabIndex = 16;
+            // 
+            // cbxCategories
+            // 
+            this.cbxCategories.FormattingEnabled = true;
+            this.cbxCategories.Location = new System.Drawing.Point(229, 99);
+            this.cbxCategories.Name = "cbxCategories";
+            this.cbxCategories.Size = new System.Drawing.Size(172, 21);
+            this.cbxCategories.TabIndex = 15;
+            // 
+            // tbBarcode
+            // 
+            this.tbBarcode.Location = new System.Drawing.Point(229, 73);
+            this.tbBarcode.Name = "tbBarcode";
+            this.tbBarcode.Size = new System.Drawing.Size(172, 20);
+            this.tbBarcode.TabIndex = 14;
+            // 
+            // tbProductName
+            // 
+            this.tbProductName.Location = new System.Drawing.Point(229, 47);
+            this.tbProductName.Name = "tbProductName";
+            this.tbProductName.Size = new System.Drawing.Size(172, 20);
+            this.tbProductName.TabIndex = 13;
+            // 
+            // lblProductContent
+            // 
+            this.lblProductContent.AutoSize = true;
+            this.lblProductContent.Location = new System.Drawing.Point(148, 156);
+            this.lblProductContent.Name = "lblProductContent";
+            this.lblProductContent.Size = new System.Drawing.Size(75, 13);
+            this.lblProductContent.TabIndex = 10;
+            this.lblProductContent.Text = "Ürün İçerikleri:";
+            // 
+            // lblSupplier
+            // 
+            this.lblSupplier.AutoSize = true;
+            this.lblSupplier.Location = new System.Drawing.Point(183, 129);
+            this.lblSupplier.Name = "lblSupplier";
+            this.lblSupplier.Size = new System.Drawing.Size(40, 13);
+            this.lblSupplier.TabIndex = 9;
+            this.lblSupplier.Text = "Üretici:";
+            // 
+            // lblCategory
+            // 
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Location = new System.Drawing.Point(174, 103);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(49, 13);
+            this.lblCategory.TabIndex = 8;
+            this.lblCategory.Text = "Kategori:";
+            // 
+            // lblBarcode
+            // 
+            this.lblBarcode.AutoSize = true;
+            this.lblBarcode.Location = new System.Drawing.Point(162, 80);
+            this.lblBarcode.Name = "lblBarcode";
+            this.lblBarcode.Size = new System.Drawing.Size(61, 13);
+            this.lblBarcode.TabIndex = 7;
+            this.lblBarcode.Text = "Barkod No:";
+            // 
+            // lblProductName
+            // 
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Location = new System.Drawing.Point(172, 50);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(51, 13);
+            this.lblProductName.TabIndex = 6;
+            this.lblProductName.Text = "Ürün Adı:";
             // 
             // pnlAra
             // 
-            this.pnlAra.Controls.Add(this.dgvSearchProduct);
+            this.pnlAra.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlAra.Controls.Add(this.btnUrunuAra);
             this.pnlAra.Controls.Add(this.lblUrunAra);
             this.pnlAra.Controls.Add(this.tbUrunAra);
+            this.pnlAra.Controls.Add(this.dgvSearchProduct);
             this.pnlAra.Location = new System.Drawing.Point(113, 12);
             this.pnlAra.Name = "pnlAra";
             this.pnlAra.Size = new System.Drawing.Size(1142, 429);
-            this.pnlAra.TabIndex = 1;       
-            //
-            // dgvSearchProduct
+            this.pnlAra.TabIndex = 1;
             // 
-            this.dgvSearchProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSearchProduct.Location = new System.Drawing.Point(3, 43);
-            this.dgvSearchProduct.Name = "dgvSearchProduct";
-            this.dgvSearchProduct.Size = new System.Drawing.Size(1136, 382);
-            this.dgvSearchProduct.TabIndex = 4;
-            //
             // btnUrunuAra
             // 
             this.btnUrunuAra.Location = new System.Drawing.Point(328, 17);
@@ -240,8 +534,17 @@
             this.tbUrunAra.Size = new System.Drawing.Size(187, 20);
             this.tbUrunAra.TabIndex = 0;
             // 
+            // dgvSearchProduct
+            // 
+            this.dgvSearchProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSearchProduct.Location = new System.Drawing.Point(3, 43);
+            this.dgvSearchProduct.Name = "dgvSearchProduct";
+            this.dgvSearchProduct.Size = new System.Drawing.Size(1136, 382);
+            this.dgvSearchProduct.TabIndex = 4;
+            // 
             // pnlApprove
             // 
+            this.pnlApprove.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlApprove.Controls.Add(this.dgvApprove);
             this.pnlApprove.Location = new System.Drawing.Point(113, 12);
             this.pnlApprove.Name = "pnlApprove";
@@ -274,7 +577,7 @@
             this.pnlUrunGuncelle.Controls.Add(this.label3);
             this.pnlUrunGuncelle.Controls.Add(this.label4);
             this.pnlUrunGuncelle.Controls.Add(this.label5);
-            this.pnlUrunGuncelle.Location = new System.Drawing.Point(113, 11);
+            this.pnlUrunGuncelle.Location = new System.Drawing.Point(113, 12);
             this.pnlUrunGuncelle.Name = "pnlUrunGuncelle";
             this.pnlUrunGuncelle.Size = new System.Drawing.Size(1148, 426);
             this.pnlUrunGuncelle.TabIndex = 6;
@@ -309,6 +612,7 @@
             this.btnUpdateProductContentPic.TabIndex = 20;
             this.btnUpdateProductContentPic.Text = "İçerik Fotoğraf";
             this.btnUpdateProductContentPic.UseVisualStyleBackColor = true;
+            this.btnUpdateProductContentPic.Click += new System.EventHandler(this.btnUpdateProductContentPic_Click);
             // 
             // btnUpdateBackPic
             // 
@@ -319,6 +623,7 @@
             this.btnUpdateBackPic.TabIndex = 19;
             this.btnUpdateBackPic.Text = "Arka Fotoğraf";
             this.btnUpdateBackPic.UseVisualStyleBackColor = true;
+            this.btnUpdateBackPic.Click += new System.EventHandler(this.btnUpdateBackPic_Click);
             // 
             // btnUpdateFrontPic
             // 
@@ -329,6 +634,7 @@
             this.btnUpdateFrontPic.TabIndex = 18;
             this.btnUpdateFrontPic.Text = "Ön Fotoğraf";
             this.btnUpdateFrontPic.UseVisualStyleBackColor = true;
+            this.btnUpdateFrontPic.Click += new System.EventHandler(this.btnUpdateFrontPic_Click);
             // 
             // tbUpdateProductContent
             // 
@@ -417,327 +723,60 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Ürün Adı:";
             // 
-            // pnlUrunEkle
+            // FileDialogAddProductContent
             // 
-            this.pnlUrunEkle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlUrunEkle.Controls.Add(this.btnSave);
-            this.pnlUrunEkle.Controls.Add(this.button1);
-            this.pnlUrunEkle.Controls.Add(this.btnBackPic);
-            this.pnlUrunEkle.Controls.Add(this.btnFrontPic);
-            this.pnlUrunEkle.Controls.Add(this.tbProductContent);
-            this.pnlUrunEkle.Controls.Add(this.cbxSuppliers);
-            this.pnlUrunEkle.Controls.Add(this.cbxCategories);
-            this.pnlUrunEkle.Controls.Add(this.tbBarcode);
-            this.pnlUrunEkle.Controls.Add(this.tbProductName);
-            this.pnlUrunEkle.Controls.Add(this.lblProductContent);
-            this.pnlUrunEkle.Controls.Add(this.lblSupplier);
-            this.pnlUrunEkle.Controls.Add(this.lblCategory);
-            this.pnlUrunEkle.Controls.Add(this.lblBarcode);
-            this.pnlUrunEkle.Controls.Add(this.lblProductName);
-            this.pnlUrunEkle.Location = new System.Drawing.Point(113, 12);
-            this.pnlUrunEkle.Name = "pnlUrunEkle";
-            this.pnlUrunEkle.Size = new System.Drawing.Size(1148, 429);
-            this.pnlUrunEkle.TabIndex = 5;
+            this.FileDialogAddProductContent.FileName = "openFileDialog1";
             // 
-            // pnlDeleteProduct
+            // FileDialogUpdateProductContent
             // 
-            this.pnlDeleteProduct.Controls.Add(this.btnDeleteSearch);
-            this.pnlDeleteProduct.Controls.Add(this.tbDeleteProductName);
-            this.pnlDeleteProduct.Controls.Add(this.lblDeleteProductName);
-            this.pnlDeleteProduct.Controls.Add(this.btnDeleteDelete);
-            this.pnlDeleteProduct.Controls.Add(this.tbDeleteAdder);
-            this.pnlDeleteProduct.Controls.Add(this.lblDeletyeAdder);
-            this.pnlDeleteProduct.Controls.Add(this.tbDeleteCategory);
-            this.pnlDeleteProduct.Controls.Add(this.tbDeleteSupplement);
-            this.pnlDeleteProduct.Controls.Add(this.lblDeleteCategory);
-            this.pnlDeleteProduct.Controls.Add(this.lblDeleteSupplier);
-            this.pnlDeleteProduct.Controls.Add(this.tbDeleteBarcode);
-            this.pnlDeleteProduct.Controls.Add(this.tbDeleteProductContent);
-            this.pnlDeleteProduct.Controls.Add(this.lblDeleteBarcode);
-            this.pnlDeleteProduct.Controls.Add(this.lblDeleteProductContent);
-            this.pnlDeleteProduct.Location = new System.Drawing.Point(-2, -2);
-            this.pnlDeleteProduct.Name = "pnlDeleteProduct";
-            this.pnlDeleteProduct.Size = new System.Drawing.Size(1148, 429);
-            this.pnlDeleteProduct.TabIndex = 7;
+            this.FileDialogUpdateProductContent.FileName = "openFileDialog2";
             // 
-            // tbDeleteCategory
+            // FileDialogUpdateProductFront
             // 
-            this.tbDeleteCategory.Enabled = false;
-            this.tbDeleteCategory.Location = new System.Drawing.Point(253, 235);
-            this.tbDeleteCategory.Name = "tbDeleteCategory";
-            this.tbDeleteCategory.Size = new System.Drawing.Size(172, 20);
-            this.tbDeleteCategory.TabIndex = 22;
+            this.FileDialogUpdateProductFront.FileName = "openFileDialog3";
             // 
-            // tbDeleteSupplement
+            // FileDialogUpdateProductBack
             // 
-            this.tbDeleteSupplement.Enabled = false;
-            this.tbDeleteSupplement.Location = new System.Drawing.Point(253, 209);
-            this.tbDeleteSupplement.Name = "tbDeleteSupplement";
-            this.tbDeleteSupplement.Size = new System.Drawing.Size(172, 20);
-            this.tbDeleteSupplement.TabIndex = 21;
+            this.FileDialogUpdateProductBack.FileName = "openFileDialog4";
             // 
-            // lblDeleteCategory
+            // FileDialogAddProductFront
             // 
-            this.lblDeleteCategory.AutoSize = true;
-            this.lblDeleteCategory.Enabled = false;
-            this.lblDeleteCategory.Location = new System.Drawing.Point(198, 238);
-            this.lblDeleteCategory.Name = "lblDeleteCategory";
-            this.lblDeleteCategory.Size = new System.Drawing.Size(49, 13);
-            this.lblDeleteCategory.TabIndex = 20;
-            this.lblDeleteCategory.Text = "Kategori:";
+            this.FileDialogAddProductFront.FileName = "openFileDialog5";
             // 
-            // lblDeleteSupplier
+            // FileDialogAddProductBack
             // 
-            this.lblDeleteSupplier.AutoSize = true;
-            this.lblDeleteSupplier.Enabled = false;
-            this.lblDeleteSupplier.Location = new System.Drawing.Point(207, 212);
-            this.lblDeleteSupplier.Name = "lblDeleteSupplier";
-            this.lblDeleteSupplier.Size = new System.Drawing.Size(40, 13);
-            this.lblDeleteSupplier.TabIndex = 19;
-            this.lblDeleteSupplier.Text = "Üretici:";
+            this.FileDialogAddProductBack.FileName = "openFileDialog6";
             // 
-            // tbDeleteBarcode
-            // 
-            this.tbDeleteBarcode.Location = new System.Drawing.Point(253, 96);
-            this.tbDeleteBarcode.Name = "tbDeleteBarcode";
-            this.tbDeleteBarcode.Size = new System.Drawing.Size(172, 20);
-            this.tbDeleteBarcode.TabIndex = 18;
-            // 
-            // tbDeleteProductContent
-            // 
-            this.tbDeleteProductContent.Enabled = false;
-            this.tbDeleteProductContent.Location = new System.Drawing.Point(253, 155);
-            this.tbDeleteProductContent.Multiline = true;
-            this.tbDeleteProductContent.Name = "tbDeleteProductContent";
-            this.tbDeleteProductContent.Size = new System.Drawing.Size(172, 48);
-            this.tbDeleteProductContent.TabIndex = 17;
-            // 
-            // lblDeleteBarcode
-            // 
-            this.lblDeleteBarcode.AutoSize = true;
-            this.lblDeleteBarcode.Location = new System.Drawing.Point(186, 100);
-            this.lblDeleteBarcode.Name = "lblDeleteBarcode";
-            this.lblDeleteBarcode.Size = new System.Drawing.Size(61, 13);
-            this.lblDeleteBarcode.TabIndex = 16;
-            this.lblDeleteBarcode.Text = "Barkod No:";
-            // 
-            // lblDeleteProductContent
-            // 
-            this.lblDeleteProductContent.AutoSize = true;
-            this.lblDeleteProductContent.Enabled = false;
-            this.lblDeleteProductContent.Location = new System.Drawing.Point(183, 157);
-            this.lblDeleteProductContent.Name = "lblDeleteProductContent";
-            this.lblDeleteProductContent.Size = new System.Drawing.Size(64, 13);
-            this.lblDeleteProductContent.TabIndex = 15;
-            this.lblDeleteProductContent.Text = "Ürün İçeriği:";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(229, 290);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(172, 57);
-            this.btnSave.TabIndex = 21;
-            this.btnSave.Text = "Kaydet";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(407, 153);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 56);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "İçerik Fotoğraf";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnBackPic
-            // 
-            this.btnBackPic.Location = new System.Drawing.Point(322, 215);
-            this.btnBackPic.Name = "btnBackPic";
-            this.btnBackPic.Size = new System.Drawing.Size(79, 56);
-            this.btnBackPic.TabIndex = 19;
-            this.btnBackPic.Text = "Arka Fotoğraf";
-            this.btnBackPic.UseVisualStyleBackColor = true;
-            // 
-            // btnFrontPic
-            // 
-            this.btnFrontPic.Location = new System.Drawing.Point(229, 215);
-            this.btnFrontPic.Name = "btnFrontPic";
-            this.btnFrontPic.Size = new System.Drawing.Size(79, 56);
-            this.btnFrontPic.TabIndex = 18;
-            this.btnFrontPic.Text = "Ön Fotoğraf";
-            this.btnFrontPic.UseVisualStyleBackColor = true;
-            // 
-            // tbProductContent
-            // 
-            this.tbProductContent.Location = new System.Drawing.Point(229, 153);
-            this.tbProductContent.Multiline = true;
-            this.tbProductContent.Name = "tbProductContent";
-            this.tbProductContent.Size = new System.Drawing.Size(172, 56);
-            this.tbProductContent.TabIndex = 17;
-            // 
-            // cbxSuppliers
-            // 
-            this.cbxSuppliers.FormattingEnabled = true;
-            this.cbxSuppliers.Location = new System.Drawing.Point(229, 126);
-            this.cbxSuppliers.Name = "cbxSuppliers";
-            this.cbxSuppliers.Size = new System.Drawing.Size(172, 21);
-            this.cbxSuppliers.TabIndex = 16;
-            // 
-            // cbxCategories
-            // 
-            this.cbxCategories.FormattingEnabled = true;
-            this.cbxCategories.Location = new System.Drawing.Point(229, 99);
-            this.cbxCategories.Name = "cbxCategories";
-            this.cbxCategories.Size = new System.Drawing.Size(172, 21);
-            this.cbxCategories.TabIndex = 15;
-            // 
-            // tbBarcode
-            // 
-            this.tbBarcode.Location = new System.Drawing.Point(229, 73);
-            this.tbBarcode.Name = "tbBarcode";
-            this.tbBarcode.Size = new System.Drawing.Size(172, 20);
-            this.tbBarcode.TabIndex = 14;
-            // 
-            // tbProductName
-            // 
-            this.tbProductName.Location = new System.Drawing.Point(229, 47);
-            this.tbProductName.Name = "tbProductName";
-            this.tbProductName.Size = new System.Drawing.Size(172, 20);
-            this.tbProductName.TabIndex = 13;
-            // 
-            // lblProductContent
-            // 
-            this.lblProductContent.AutoSize = true;
-            this.lblProductContent.Location = new System.Drawing.Point(148, 172);
-            this.lblProductContent.Name = "lblProductContent";
-            this.lblProductContent.Size = new System.Drawing.Size(75, 13);
-            this.lblProductContent.TabIndex = 10;
-            this.lblProductContent.Text = "Ürün İçerikleri:";
-            // 
-            // lblSupplier
-            // 
-            this.lblSupplier.AutoSize = true;
-            this.lblSupplier.Location = new System.Drawing.Point(183, 138);
-            this.lblSupplier.Name = "lblSupplier";
-            this.lblSupplier.Size = new System.Drawing.Size(40, 13);
-            this.lblSupplier.TabIndex = 9;
-            this.lblSupplier.Text = "Üretici:";
-            // 
-            // lblCategory
-            // 
-            this.lblCategory.AutoSize = true;
-            this.lblCategory.Location = new System.Drawing.Point(174, 104);
-            this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(49, 13);
-            this.lblCategory.TabIndex = 8;
-            this.lblCategory.Text = "Kategori:";
-            // 
-            // lblBarcode
-            // 
-            this.lblBarcode.AutoSize = true;
-            this.lblBarcode.Location = new System.Drawing.Point(162, 74);
-            this.lblBarcode.Name = "lblBarcode";
-            this.lblBarcode.Size = new System.Drawing.Size(61, 13);
-            this.lblBarcode.TabIndex = 7;
-            this.lblBarcode.Text = "Barkod No:";
-            // 
-            // lblProductName
-            // 
-            this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(172, 50);
-            this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(51, 13);
-            this.lblProductName.TabIndex = 6;
-            this.lblProductName.Text = "Ürün Adı:";
-            // 
-            // tbDeleteAdder
-            // 
-            this.tbDeleteAdder.Enabled = false;
-            this.tbDeleteAdder.Location = new System.Drawing.Point(253, 261);
-            this.tbDeleteAdder.Name = "tbDeleteAdder";
-            this.tbDeleteAdder.Size = new System.Drawing.Size(172, 20);
-            this.tbDeleteAdder.TabIndex = 24;
-            // 
-            // lblDeletyeAdder
-            // 
-            this.lblDeletyeAdder.AutoSize = true;
-            this.lblDeletyeAdder.Enabled = false;
-            this.lblDeletyeAdder.Location = new System.Drawing.Point(199, 264);
-            this.lblDeletyeAdder.Name = "lblDeletyeAdder";
-            this.lblDeletyeAdder.Size = new System.Drawing.Size(48, 13);
-            this.lblDeletyeAdder.TabIndex = 23;
-            this.lblDeletyeAdder.Text = "Ekleyen:";
-            // 
-            // btnDeleteDelete
-            // 
-            this.btnDeleteDelete.Enabled = false;
-            this.btnDeleteDelete.Location = new System.Drawing.Point(253, 292);
-            this.btnDeleteDelete.Name = "btnDeleteDelete";
-            this.btnDeleteDelete.Size = new System.Drawing.Size(172, 42);
-            this.btnDeleteDelete.TabIndex = 25;
-            this.btnDeleteDelete.Text = "Ürünü Sil";
-            this.btnDeleteDelete.UseVisualStyleBackColor = true;
-            this.btnDeleteDelete.Click += new System.EventHandler(this.btnDeleteDelete_Click);
-            // 
-            // tbDeleteProductName
-            // 
-            this.tbDeleteProductName.Enabled = false;
-            this.tbDeleteProductName.Location = new System.Drawing.Point(253, 127);
-            this.tbDeleteProductName.Name = "tbDeleteProductName";
-            this.tbDeleteProductName.Size = new System.Drawing.Size(172, 20);
-            this.tbDeleteProductName.TabIndex = 27;
-            // 
-            // lblDeleteProductName
-            // 
-            this.lblDeleteProductName.AutoSize = true;
-            this.lblDeleteProductName.Enabled = false;
-            this.lblDeleteProductName.Location = new System.Drawing.Point(196, 131);
-            this.lblDeleteProductName.Name = "lblDeleteProductName";
-            this.lblDeleteProductName.Size = new System.Drawing.Size(51, 13);
-            this.lblDeleteProductName.TabIndex = 26;
-            this.lblDeleteProductName.Text = "Ürün Adı:";
-            // 
-            // btnDeleteSearch
-            // 
-            this.btnDeleteSearch.Location = new System.Drawing.Point(443, 96);
-            this.btnDeleteSearch.Name = "btnDeleteSearch";
-            this.btnDeleteSearch.Size = new System.Drawing.Size(75, 20);
-            this.btnDeleteSearch.TabIndex = 28;
-            this.btnDeleteSearch.Text = "Ara";
-            this.btnDeleteSearch.UseVisualStyleBackColor = true;
-            this.btnDeleteSearch.Click += new System.EventHandler(this.btnDeleteSearch_Click);
-            // 
-
             // UrunIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1276, 453);
             this.Controls.Add(this.gbProduct);
-            this.Controls.Add(this.pnlUrunEkle);
-            this.Controls.Add(this.pnlListele);
-            this.Controls.Add(this.pnlDeleteProduct);
-            this.Controls.Add(this.pnlAra);
             this.Controls.Add(this.pnlApprove);
             this.Controls.Add(this.pnlUrunGuncelle);
+            this.Controls.Add(this.pnlDeleteProduct);
+            this.Controls.Add(this.pnlUrunEkle);
+            this.Controls.Add(this.pnlListele);
+            this.Controls.Add(this.pnlAra);
             this.Name = "UrunIslemleri";
             this.Text = "UrunIslemleri";
             this.gbProduct.ResumeLayout(false);
             this.pnlListele.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
+            this.pnlDeleteProduct.ResumeLayout(false);
+            this.pnlDeleteProduct.PerformLayout();
+            this.pnlUrunEkle.ResumeLayout(false);
+            this.pnlUrunEkle.PerformLayout();
             this.pnlAra.ResumeLayout(false);
             this.pnlAra.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProduct)).EndInit();
             this.pnlApprove.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvApprove)).EndInit();
             this.pnlUrunGuncelle.ResumeLayout(false);
             this.pnlUrunGuncelle.PerformLayout();
-            this.pnlUrunEkle.ResumeLayout(false);
-            this.pnlUrunEkle.PerformLayout();
-            this.pnlDeleteProduct.ResumeLayout(false);
-            this.pnlDeleteProduct.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchProduct)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -764,7 +803,7 @@
         private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.TextBox tbProductName;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddProductContenPic;
         private System.Windows.Forms.Button btnBackPic;
         private System.Windows.Forms.Button btnFrontPic;
         private System.Windows.Forms.TextBox tbProductContent;
@@ -804,5 +843,11 @@
         private System.Windows.Forms.TextBox tbDeleteProductName;
         private System.Windows.Forms.Label lblDeleteProductName;
         private System.Windows.Forms.Button btnDeleteSearch;
+        private System.Windows.Forms.OpenFileDialog FileDialogAddProductContent;
+        private System.Windows.Forms.OpenFileDialog FileDialogUpdateProductContent;
+        private System.Windows.Forms.OpenFileDialog FileDialogUpdateProductFront;
+        private System.Windows.Forms.OpenFileDialog FileDialogUpdateProductBack;
+        private System.Windows.Forms.OpenFileDialog FileDialogAddProductFront;
+        private System.Windows.Forms.OpenFileDialog FileDialogAddProductBack;
     }
 }

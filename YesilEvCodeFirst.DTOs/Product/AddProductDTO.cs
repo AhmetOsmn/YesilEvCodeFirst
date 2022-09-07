@@ -10,6 +10,7 @@
         public string ProductContent { get; set; }
         public string PictureFronthPath { get; set; }
         public string PictureBackPath { get; set; }
+        public string PictureContentPath { get; set; }
         public int AddedBy { get; set; }
 
     }

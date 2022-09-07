@@ -33,6 +33,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
+                // todo: transaction eklenecek
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
                     var tempProduct = context.Product.Where(p => p.Barcode.Equals(dto.Barcode) && p.IsActive).FirstOrDefault();
@@ -117,6 +118,7 @@ namespace YesilEvCodeFirst.DAL.Use
                         tempProduct.AddedBy = dto.AddedBy;
                         tempProduct.PictureBackPath = dto.PictureBackPath;
                         tempProduct.PictureFronthPath = dto.PictureFronthPath;
+                        tempProduct.PictureContentPath = dto.PictureContentPath;
                         tempProduct.SupplierID = dto.SupplierID;
 
                         var supplements = tempProduct.ProductContent.Split(',');
