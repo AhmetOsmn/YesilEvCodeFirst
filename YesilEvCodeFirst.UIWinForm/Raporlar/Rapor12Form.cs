@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using YesilEvCodeFirst.Core.Context;
+using YesilEvCodeFirst.DTOs.Rapor;
 
 namespace YesilEvCodeFirst.UIWinForm.Raporlar
 {
@@ -15,6 +12,22 @@ namespace YesilEvCodeFirst.UIWinForm.Raporlar
         public Rapor12Form()
         {
             InitializeComponent();
+        }
+
+        string query = "select top(5) u.FirstName, u.Email, COUNT(p.ProductID) UrunSayisi from [User] u join Product p on p.AddedBy =  u.UserID group by  u.FirstName, u.Email order by UrunSayisi desc";
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<Rapor12DTO> list = null;
+
+            using (YesilEvDbContext context = new YesilEvDbContext())
+            {
+
+                var result = context.Database.SqlQuery<Rapor12DTO>(query).ToList();
+
+                list = result;
+            }
+
+            dataGridView1.DataSource = list;
         }
     }
 }
