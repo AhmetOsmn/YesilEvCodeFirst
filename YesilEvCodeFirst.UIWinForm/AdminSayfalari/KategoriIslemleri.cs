@@ -7,14 +7,174 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YesilEvCodeFirst.DAL.Use;
+using YesilEvCodeFirst.DTOs.Category;
 
 namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
 {
     public partial class KategoriIslemleri : Form
     {
+        UseCategoryDAL useCategoryDAL = new UseCategoryDAL();
         public KategoriIslemleri()
         {
             InitializeComponent();
+        }
+
+        private void CloseAllPages()
+        {
+            pnlAra.Visible = false;
+            pnlEkle.Visible = false;
+            pnlGuncelle.Visible = false;
+            pnlListele.Visible = false;
+            pnlSil.Visible = false;
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            CloseAllPages();
+            var result = useCategoryDAL.GetCategoryList();
+            result.ForEach(x =>
+            {
+                cmbBoxAddCategoryUpperCategory.Items.Add(x.CategoryName);
+            });
+            pnlEkle.Visible = true;
+        }
+
+        private void btnListele_Click(object sender, EventArgs e)
+        {
+            CloseAllPages();
+            pnlListele.Visible = true;
+            dataGridView1.DataSource = useCategoryDAL.GetAll();
+        }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            CloseAllPages();
+            pnlAra.Visible = true;
+
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            CloseAllPages();
+            pnlGuncelle.Visible=true;
+            var result = useCategoryDAL.GetCategoryList();
+            result.ForEach(x =>
+            {
+                cmbBoxUpdateCategoryUpperCategory.Items.Add(x.CategoryName);
+            });
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            CloseAllPages();
+            var result = useCategoryDAL.GetCategoryList();
+            result.ForEach(x =>
+            {
+                cmbBoxDeleteCategoryUpperCategory.Items.Add(x.CategoryName);
+            });
+            pnlSil.Visible=true;
+        }
+
+        private void btnSearchCategorySearch_Click(object sender, EventArgs e)
+        {
+            dataGridView2.DataSource = useCategoryDAL.GetCategoriesWithFilterForAdmin(txtSearchCategoryName.Text);
+        }
+
+        private void btnDeleteCategorySearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var result = useCategoryDAL.GetCategoryDetailsWithCategoryName(txtDeleteCategoryName.Text);
+                if (result != null)
+                {
+                    cmbBoxDeleteCategoryUpperCategory.SelectedIndex = cmbBoxDeleteCategoryUpperCategory.FindString(useCategoryDAL.GetCategoryNameWithCategoryID(result.UstCategoryID));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnDeleteCategoryDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CategoryDTO categoryDTO = new CategoryDTO()
+                {
+                    CategoryName = txtDeleteCategoryName.Text,
+                };
+                bool result = useCategoryDAL.DeleteCategory(categoryDTO);
+                if (result)
+                {
+                    MessageBox.Show("Kategori Silindi");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void btnUpdateCategorySearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var result = useCategoryDAL.GetCategoryDetailsWithCategoryName(txtDeleteCategoryName.Text);
+                if (result != null)
+                {
+                    cmbBoxUpdateCategoryUpperCategory.SelectedIndex = cmbBoxUpdateCategoryUpperCategory.FindString(useCategoryDAL.GetCategoryNameWithCategoryID(result.UstCategoryID));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnUpdateCategoryUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateCategoryDTO categoryDTO = new UpdateCategoryDTO()
+                {
+                    CategoryName = txtUpdateCategoryName.Text,
+                    UstCategoryID = ((CategoryDTO)cmbBoxUpdateCategoryUpperCategory.SelectedItem).CategoryID,
+                };
+                bool result = useCategoryDAL.UpdateCategory(categoryDTO);
+                if (result)
+                {
+                    MessageBox.Show("Kategori Güncellendi");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAddCategoryAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddCategoryDTO categoryDTO = new AddCategoryDTO()
+                {
+                    CategoryName = txtAddCategoryName.Text,
+                    UstCategoryID = ((CategoryDTO)cmbBoxAddCategoryUpperCategory.SelectedItem).CategoryID,
+                };
+                var result = useCategoryDAL.AddCategory(categoryDTO);
+                if (result)
+                {
+                    MessageBox.Show("Kategori Eklendi");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }
