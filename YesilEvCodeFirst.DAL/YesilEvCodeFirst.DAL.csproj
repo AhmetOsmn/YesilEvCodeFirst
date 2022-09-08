@@ -74,7 +74,6 @@
     <Compile Include="Use\UseSupplementBlackListDAL.cs" />
     <Compile Include="Use\UseFavListDAL.cs" />
     <Compile Include="Use\UseProductFavListDAL.cs" />
-    <Compile Include="Use\UseRaporDAL.cs" />
     <Compile Include="Use\UseAdminDAL.cs" />
     <Compile Include="Use\UseBlackListDAL.cs" />
     <Compile Include="Use\UseCategoryDAL.cs" />

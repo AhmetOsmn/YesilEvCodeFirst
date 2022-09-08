@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YesilEvCodeFirst.Core.Context;
+using YesilEvCodeFirst.DTOs.Rapor;
 
 namespace YesilEvCodeFirst.UIWinForm.Raporlar
 {
@@ -17,35 +19,21 @@ namespace YesilEvCodeFirst.UIWinForm.Raporlar
             InitializeComponent();
         }
 
-        private void Rapor16Form_Load(object sender, EventArgs e)
-        {
+        string query = "select r.RolName as Rol , Count(u.FirstName) Sayi from Role r  join [User] u on r.RolID = u.RolID  group by r.RolName";
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<Rapor16DTO> list = null;
+
+            using (YesilEvDbContext context = new YesilEvDbContext())
+            {
+
+                var result = context.Database.SqlQuery<Rapor16DTO>(query).ToList();
+
+                list = result;
+            }
+
+            dataGridView1.DataSource = list;
         }
     }
 }
-
-//IQueryable<Job> jobs = (from j in _db.Jobs
-//                        join jt in _db.JobTranslators on j.Id equals jt.JobId into jts
-//
-//                        from jtResult in jts.DefaultIfEmpty()
-//
-//                        join jr in _db.JobRevisors on jtResult.Id equals jr.JobId into jrs
-//                        from jrResult in jrs.DefaultIfEmpty()
-//
-//                        join u in _db.Users on jtResult.UserId equals u.Id into jtU
-//                        from jtUResult in jtU.DefaultIfEmpty()
-
-//                        where jtUResult.Id == userId
-//                        orderby j.Id
-//                        select j).Concat(
-//                        from j in _db.Jobs
-//                        join jt in _db.JobTranslators on j.Id equals jt.JobId into jts
-//                        from jtResult in jts.DefaultIfEmpty()
-//                        join jr in _db.JobRevisors on jtResult.Id equals jr.JobId into jrs
-//                        from jrResult in jrs.DefaultIfEmpty()
-//                        join u in _db.Users on jrResult.UserId equals u.Id into jrU
-//                        from jrUResult in jrU.DefaultIfEmpty()
-//                        where jtUResult.Id == userId
-//                        orderby j.Id
-//                        select j
-//                        ).Distinct()
