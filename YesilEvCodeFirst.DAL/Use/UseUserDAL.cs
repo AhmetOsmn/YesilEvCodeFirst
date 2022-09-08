@@ -357,7 +357,7 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             catch (Exception ex)
             {
-                throw new Exception("Hata Oluştu");
+                throw new Exception(ex.Message);
             }
         }
         public bool AddUserForAdmin(UserForAdminDTO dto)
@@ -371,7 +371,7 @@ namespace YesilEvCodeFirst.DAL.Use
             }
             catch(Exception ex)
             {
-                throw new Exception("Hata Oluştu.");
+                throw new Exception(ex.Message);
             }
             
         }

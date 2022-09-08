@@ -43,16 +43,17 @@ namespace YesilEvCodeFirst.UIWinForm
             };
             try
             {
+                //var result = userDAL.UserLogin(dto);
+                //if(result.RolID == 1)
+                //{
+                //    OpenAdminPage(result);
+                //}
+                //else if(result.RolID == 2)
+                //{
+                //    OpenUserPage(result);
+                //}
                 var result = userDAL.UserLogin(dto);
-                if(result.RolID == 1)
-                {
-                    OpenAdminPage(result);
-                }
-                else if(result.RolID == 2)
-                {
-                    OpenUserPage(result);
-                }
-                
+                OpenUserPage(result);
             }
             catch (FormatException fex)
             {
@@ -73,8 +74,7 @@ namespace YesilEvCodeFirst.UIWinForm
         }
         private void OpenAdminPage(UserDetailDTO result)
         {
-            AdminSayfasi f = new AdminSayfasi();
-            f.User = result;
+            AdminSayfasi f = new AdminSayfasi(result);
             this.Hide();
             f.ShowDialog();
         }

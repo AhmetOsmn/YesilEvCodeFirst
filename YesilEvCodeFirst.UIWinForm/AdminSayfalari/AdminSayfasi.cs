@@ -6,11 +6,12 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
 {
     public partial class AdminSayfasi : Form
     {
-        public UserDetailDTO User; 
-        public AdminSayfasi()
+        public UserDetailDTO currentAdmin; 
+        public AdminSayfasi(UserDetailDTO dto)
         {
             InitializeComponent();
-            OpenChildForm(new UrunIslemleri());
+            currentAdmin = dto;
+            OpenChildForm(new UrunIslemleri(currentAdmin));
         }
 
         private Form activeForm = null;
@@ -34,7 +35,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
 
         private void tsProduct_Click(object sender, System.EventArgs e)
         {
-            OpenChildForm(new UrunIslemleri());
+            OpenChildForm(new UrunIslemleri(currentAdmin));
         }
 
         private void tsSupplement_Click(object sender, System.EventArgs e)
