@@ -66,10 +66,12 @@
     <Compile Include="Product\ProductRaporDTO.cs" />
     <Compile Include="Product\UpdateProductDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rapor\Rapor06DTO.cs" />
+    <Compile Include="Rapor\Rapor08DTO.cs" />
+    <Compile Include="Rapor\Rapor09DTO.cs" />
     <Compile Include="Rapor\Rapor12DTO.cs" />
     <Compile Include="Rapor\Rapor13DTO.cs" />
     <Compile Include="Rapor\Rapor14DTO.cs" />
-    <Compile Include="Rapor\Rapor08DTO.cs" />
     <Compile Include="Rapor\Rapor14DTO2.cs" />
     <Compile Include="Rapor\Rapor15DTO2.cs" />
     <Compile Include="Rapor\Rapor16DTO.cs" />
