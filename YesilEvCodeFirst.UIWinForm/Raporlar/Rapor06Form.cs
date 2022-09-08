@@ -18,15 +18,15 @@ namespace YesilEvCodeFirst.UIWinForm.Raporlar
         // select p.ProductName , Count(*) as FavoriSayisi from Product p
         // join FavList f on p.ProductID = f.ProductID order by FavoriSayisi desc
 
-        string query = "select p.ProductName from ProductSupplement ps inner join Product p on ps.ProductID = p.ProductID inner join Supplement s on ps.SupplementID = s.SupplementID group by p.ProductName,s.RiskRatio Having s.RiskRatio>=2 order by s.RiskRatio desc";
+        string query = "select p.ProductName, case when s.RiskRatio = 2 then 'Orta Riskli' when s.RiskRatio = 3 then 'Çok riskli' end as RiskRatio from ProductSupplement ps inner join Product p on ps.ProductID = p.ProductID inner join Supplement s on ps.SupplementID = s.SupplementID group by p.ProductName,s.RiskRatio Having s.RiskRatio>=2 order by s.RiskRatio desc";
         private void buttonRaporuGetir_Click(object sender, EventArgs e)
         {
-            List<Rapor08DTO> list = null;
+            List<Rapor06DTO> list = null;
 
             using (YesilEvDbContext context = new YesilEvDbContext())
             {
 
-                var result = context.Database.SqlQuery<Rapor08DTO>(query).ToList();
+                var result = context.Database.SqlQuery<Rapor06DTO>(query).ToList();
 
                 list = result;
             }
@@ -37,6 +37,7 @@ namespace YesilEvCodeFirst.UIWinForm.Raporlar
         private void ChangeDatagridViewsColumnNames(DataGridView colname)
         {
             colname.Columns[0].HeaderText = "Ürün Adı";
+            colname.Columns[1].HeaderText = "Risk Seviyesi";
             colname.ForeColor = Color.Black;
             foreach (DataGridViewColumn col in colname.Columns)
             {

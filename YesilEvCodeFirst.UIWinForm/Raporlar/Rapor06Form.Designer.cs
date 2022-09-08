@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.buttonRaporuGetir = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -39,51 +38,44 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(500, 113);
+            this.label1.Location = new System.Drawing.Point(667, 139);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 17);
+            this.label1.Size = new System.Drawing.Size(137, 17);
             this.label1.TabIndex = 13;
-            this.label1.Text = "En riskli ürünler ";
+            this.label1.Text = "En riskli ürünler ?";
             // 
             // buttonRaporuGetir
             // 
             this.buttonRaporuGetir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRaporuGetir.Location = new System.Drawing.Point(571, 172);
+            this.buttonRaporuGetir.Location = new System.Drawing.Point(761, 212);
+            this.buttonRaporuGetir.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRaporuGetir.Name = "buttonRaporuGetir";
-            this.buttonRaporuGetir.Size = new System.Drawing.Size(116, 45);
+            this.buttonRaporuGetir.Size = new System.Drawing.Size(155, 55);
             this.buttonRaporuGetir.TabIndex = 12;
             this.buttonRaporuGetir.Text = "Raporu Getir";
             this.buttonRaporuGetir.UseVisualStyleBackColor = true;
             this.buttonRaporuGetir.Click += new System.EventHandler(this.buttonRaporuGetir_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(500, 141);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(277, 17);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Kara listelere en çok eklenen ürünler";
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 15);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(389, 385);
+            this.dataGridView1.Size = new System.Drawing.Size(519, 474);
             this.dataGridView1.TabIndex = 16;
             // 
             // Rapor06Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 408);
+            this.ClientSize = new System.Drawing.Size(1075, 502);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonRaporuGetir);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Rapor06Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rapor6Form";
@@ -96,7 +88,6 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonRaporuGetir;
-        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

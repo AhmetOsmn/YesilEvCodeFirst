@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YesilEvCodeFirst.Core.Context;
+using YesilEvCodeFirst.DTOs.Rapor;
 
 namespace YesilEvCodeFirst.UIWinForm.Raporlar
 {
@@ -15,6 +17,32 @@ namespace YesilEvCodeFirst.UIWinForm.Raporlar
         public Rapor07Form()
         {
             InitializeComponent();
+        }
+
+        string query = "select p.ProductName,count(p.ProductName) as names from ProductFavList pf inner join Product p on pf.ProductID = p.ProductID group by p.ProductName order by names desc";
+        private void buttonRaporuGetir_Click(object sender, EventArgs e)
+        {
+            List<Rapor08DTO> list = null;
+
+            using (YesilEvDbContext context = new YesilEvDbContext())
+            {
+
+                var result = context.Database.SqlQuery<Rapor08DTO>(query).ToList();
+
+                list = result;
+            }
+
+            dataGridView1.DataSource = list;
+            ChangeDatagridViewsColumnNames(dataGridView1);
+        }
+        private void ChangeDatagridViewsColumnNames(DataGridView colname)
+        {
+            colname.Columns[0].HeaderText = "Ürün Adı";
+            colname.ForeColor = Color.Black;
+            foreach (DataGridViewColumn col in colname.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
     }
 }
