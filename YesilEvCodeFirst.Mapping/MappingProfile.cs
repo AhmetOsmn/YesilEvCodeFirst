@@ -47,6 +47,19 @@ namespace YesilEvCodeFirst.Mapping
             return mapper.Map<GetProductDetailDTO>(product);
         }
 
+        public static List<ProductListForAdminDTO> ProductListToProductListForAdminDTOList(List<Product> products)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<Product, ProductListForAdminDTO>()
+                                                        .ForMember(dest => dest.AdderName, opt => opt.MapFrom(src => src.Adder.FirstName + " " + src.Adder.LastName))
+                                                        .ForMember(dest => dest.ApproverName, opt => opt.MapFrom(src => src.Approver.FirstName + " " + src.Approver.LastName))
+                                                        .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.CategoryName))
+                                                        .ForMember(dest => dest.SupplierName, opt => opt.MapFrom(src => src.Supplier.SupplierName)));
+
+            var mapper = new Mapper(mapperConfig);
+
+            return mapper.Map<List<ProductListForAdminDTO>>(products);
+        }
+
         #endregion
 
         #region Supplement

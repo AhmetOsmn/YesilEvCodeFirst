@@ -9,6 +9,7 @@ using YesilEvCodeFirst.DTOs;
 using YesilEvCodeFirst.DTOs.Category;
 using YesilEvCodeFirst.DTOs.Product;
 using YesilEvCodeFirst.DTOs.Supplier;
+using YesilEvCodeFirst.DTOs.UserAdmin;
 
 namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
 {
@@ -19,14 +20,15 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         readonly UseCategoryDAL useCategoryDAL = new UseCategoryDAL();
         readonly Logger nLogger = LogManager.GetCurrentClassLogger();
 
-        User currentUser = null;
+        UserDetailDTO currentUser = null;
         GetProductDetailDTO currentProductDTO = null;
 
-        public UrunIslemleri()
+        public UrunIslemleri(UserDetailDTO dto)
         {
             InitializeComponent();
             CloseAllPanels();
             pnlListele.Visible = true;
+            currentUser = dto;
         }
 
         #region Group Box 
@@ -37,7 +39,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             pnlListele.Visible = true;
             dgvProducts.DataSource = null;
             dgvProducts.DataSource = useProductDAL.GetProductsForAdmin();
-            ChangeDatagridViewsColumnNames(dgvProducts);
+            //ChangeDatagridViewsColumnNames(dgvProducts);
         }
 
         private void btnAra_Click(object sender, EventArgs e)
@@ -46,7 +48,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             pnlAra.Visible = true;
         }
 
-        List<Product> onaylanmamisUrunler = null; 
+        List<ProductListForAdminDTO> onaylanmamisUrunler = null; 
 
         private void btnOnayla_Click(object sender, EventArgs e)
         {
@@ -56,7 +58,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             dgvApprove.DataSource = null;
             onaylanmamisUrunler = useProductDAL.GetProductsForAdminApprove();
             dgvApprove.DataSource = onaylanmamisUrunler;
-            ChangeDatagridViewsColumnNames(dgvApprove);
+            //ChangeDatagridViewsColumnNames(dgvApprove);
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -95,7 +97,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         {
             dgvProducts.DataSource = null;
             dgvSearchProduct.DataSource = useProductDAL.GetProductListWithSearchbarForAdmin(tbUrunAra.Text);
-            ChangeDatagridViewsColumnNames(dgvSearchProduct);
+            //ChangeDatagridViewsColumnNames(dgvSearchProduct);
         }
 
         #endregion
@@ -109,8 +111,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
                 bool isApproved = Convert.ToBoolean(row.Cells["IsApproved"].Value);
                 if (isApproved)
                 {
-                    //useProductDAL.UpdateIsApprovedForAdmin(Convert.ToInt32(row.Cells["ProductID"].Value),currentUser.UserID);
-                    useProductDAL.UpdateIsApprovedForAdmin(Convert.ToInt32(row.Cells["ProductID"].Value), 1);
+                    useProductDAL.UpdateIsApprovedForAdmin(Convert.ToInt32(row.Cells["ProductID"].Value), currentUser.UserID);
                 }
 
             }
@@ -148,8 +149,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             {
                 AddProductDTO addDTO = new AddProductDTO()
                 {
-                    //AddedBy = currentUser.UserID,
-                    AddedBy = 2,
+                    AddedBy = currentUser.UserID,
                     Barcode = tbBarcode.Text,
                     CategoryID = cbxCategories.SelectedItem == null ? 0 : ((CategoryDTO)cbxCategories.SelectedItem).CategoryID,
                     ProductName = tbProductName.Text,
@@ -183,8 +183,6 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
 
         private void btnUpdateBarcodeSearch_Click(object sender, EventArgs e)
         {
-            // todo urun guncellerken resim secildiginde hata veriyor bakilacak
-
             List<SupplierDTO> suppliers = useSupplierDAL.GetSupplierList();
             List<CategoryDTO> categories = useCategoryDAL.GetCategoryList();
             foreach (SupplierDTO item in suppliers)
@@ -260,8 +258,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
                 {
                     UpdateProductDTO updateDto = new UpdateProductDTO()
                     {
-                        //AddedBy = currentUser.UserID,
-                        AddedBy = 2,
+                        AddedBy = currentUser.UserID,
                         Barcode = tbUpdateBarcode.Text,
                         CategoryID = cbxUpdateCategories.SelectedItem == null ? 0 : ((CategoryDTO)cbxUpdateCategories.SelectedItem).CategoryID,
                         ProductName = tbUpdateProductName.Text,

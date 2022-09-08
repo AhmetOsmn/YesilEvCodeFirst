@@ -79,6 +79,7 @@
             this.Home = new System.Windows.Forms.Panel();
             this.btnHomeUser = new System.Windows.Forms.Button();
             this.UserDetails = new System.Windows.Forms.Panel();
+            this.btnShowAdminPanel = new System.Windows.Forms.Button();
             this.lblUserDetailsAddProductCount = new System.Windows.Forms.Label();
             this.pictureUserDetailsLogout = new System.Windows.Forms.PictureBox();
             this.pictureUserDetailsSearchHistory = new System.Windows.Forms.PictureBox();
@@ -107,22 +108,6 @@
             this.btnAddAndUpdateProductSend = new System.Windows.Forms.Button();
             this.btnAddAndUpdateProductAddProduct = new System.Windows.Forms.Button();
             this.btnAddAndUpdateProductUpdateProduct = new System.Windows.Forms.Button();
-            this.grpBoxAddAndUpdateProductAddProduct = new System.Windows.Forms.GroupBox();
-            this.cmbBoxAddAndUpdateProductAddProductCategory = new System.Windows.Forms.ComboBox();
-            this.cmbBoxAddAndUpdateProductAddProductSupplier = new System.Windows.Forms.ComboBox();
-            this.btnAddAndUpdateProductAddProductFront = new System.Windows.Forms.Button();
-            this.btnAddAndUpdateProductAddProductBack = new System.Windows.Forms.Button();
-            this.btnAddAndUpdateProductAddProductProductContext = new System.Windows.Forms.Button();
-            this.txtAddAndUpdateProductAddProductProductContext = new System.Windows.Forms.TextBox();
-            this.lblAddAndUpdateProductAddProductBack = new System.Windows.Forms.Label();
-            this.lblAddAndUpdateProductAddProductFront = new System.Windows.Forms.Label();
-            this.lblAddAndUpdateProductAddProductProductContext = new System.Windows.Forms.Label();
-            this.txtAddAndUpdateProductAddProductProductName = new System.Windows.Forms.TextBox();
-            this.txtAddAndUpdateProductAddProductBarcodeNo = new System.Windows.Forms.TextBox();
-            this.lblAddAndUpdateProductAddProductCategory = new System.Windows.Forms.Label();
-            this.lblAddAndUpdateProductAddProductProductName = new System.Windows.Forms.Label();
-            this.lblAddAndUpdateProductAddProductSupplier = new System.Windows.Forms.Label();
-            this.lblAddAndUpdateProductAddProductBarcodeNo = new System.Windows.Forms.Label();
             this.grpBoxAddAndUpdateProductUpdateProduct = new System.Windows.Forms.GroupBox();
             this.cmbBoxAddAndUpdateProductUpdateProductCategory = new System.Windows.Forms.ComboBox();
             this.cmbBoxAddAndUpdateProductUpdateProductSupplier = new System.Windows.Forms.ComboBox();
@@ -140,6 +125,22 @@
             this.lblAddAndUpdateProductUpdateProductProductName = new System.Windows.Forms.Label();
             this.lblAddAndUpdateProductUpdateProductSupplier = new System.Windows.Forms.Label();
             this.lblAddAndUpdateProductUpdateProductBarcodeNo = new System.Windows.Forms.Label();
+            this.grpBoxAddAndUpdateProductAddProduct = new System.Windows.Forms.GroupBox();
+            this.cmbBoxAddAndUpdateProductAddProductCategory = new System.Windows.Forms.ComboBox();
+            this.cmbBoxAddAndUpdateProductAddProductSupplier = new System.Windows.Forms.ComboBox();
+            this.btnAddAndUpdateProductAddProductFront = new System.Windows.Forms.Button();
+            this.btnAddAndUpdateProductAddProductBack = new System.Windows.Forms.Button();
+            this.btnAddAndUpdateProductAddProductProductContext = new System.Windows.Forms.Button();
+            this.txtAddAndUpdateProductAddProductProductContext = new System.Windows.Forms.TextBox();
+            this.lblAddAndUpdateProductAddProductBack = new System.Windows.Forms.Label();
+            this.lblAddAndUpdateProductAddProductFront = new System.Windows.Forms.Label();
+            this.lblAddAndUpdateProductAddProductProductContext = new System.Windows.Forms.Label();
+            this.txtAddAndUpdateProductAddProductProductName = new System.Windows.Forms.TextBox();
+            this.txtAddAndUpdateProductAddProductBarcodeNo = new System.Windows.Forms.TextBox();
+            this.lblAddAndUpdateProductAddProductCategory = new System.Windows.Forms.Label();
+            this.lblAddAndUpdateProductAddProductProductName = new System.Windows.Forms.Label();
+            this.lblAddAndUpdateProductAddProductSupplier = new System.Windows.Forms.Label();
+            this.lblAddAndUpdateProductAddProductBarcodeNo = new System.Windows.Forms.Label();
             this.ProductDetails = new System.Windows.Forms.Panel();
             this.pictureProductDetailsProductImage = new System.Windows.Forms.PictureBox();
             this.btnProductDetailChangePicture = new System.Windows.Forms.Button();
@@ -288,8 +289,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsChangeEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsPremium)).BeginInit();
             this.AddAndUpdateProduct.SuspendLayout();
-            this.grpBoxAddAndUpdateProductAddProduct.SuspendLayout();
             this.grpBoxAddAndUpdateProductUpdateProduct.SuspendLayout();
+            this.grpBoxAddAndUpdateProductAddProduct.SuspendLayout();
             this.ProductDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProductDetailsProductImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProductDetailsCleanContext)).BeginInit();
@@ -934,6 +935,7 @@
             // UserDetails
             // 
             this.UserDetails.BackColor = System.Drawing.Color.White;
+            this.UserDetails.Controls.Add(this.btnShowAdminPanel);
             this.UserDetails.Controls.Add(this.lblUserDetailsAddProductCount);
             this.UserDetails.Controls.Add(this.pictureUserDetailsLogout);
             this.UserDetails.Controls.Add(this.pictureUserDetailsSearchHistory);
@@ -963,6 +965,16 @@
             this.UserDetails.Name = "UserDetails";
             this.UserDetails.Size = new System.Drawing.Size(360, 510);
             this.UserDetails.TabIndex = 7;
+            // 
+            // btnShowAdminPanel
+            // 
+            this.btnShowAdminPanel.Location = new System.Drawing.Point(144, 12);
+            this.btnShowAdminPanel.Name = "btnShowAdminPanel";
+            this.btnShowAdminPanel.Size = new System.Drawing.Size(88, 33);
+            this.btnShowAdminPanel.TabIndex = 6;
+            this.btnShowAdminPanel.Text = "Admin Panel";
+            this.btnShowAdminPanel.UseVisualStyleBackColor = true;
+            this.btnShowAdminPanel.Click += new System.EventHandler(this.btnShowAdminPanel_Click);
             // 
             // lblUserDetailsAddProductCount
             // 
@@ -1329,170 +1341,6 @@
             this.btnAddAndUpdateProductUpdateProduct.UseVisualStyleBackColor = false;
             this.btnAddAndUpdateProductUpdateProduct.Click += new System.EventHandler(this.UpdateProduct_Click);
             // 
-            // grpBoxAddAndUpdateProductAddProduct
-            // 
-            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.cmbBoxAddAndUpdateProductAddProductCategory);
-            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.cmbBoxAddAndUpdateProductAddProductSupplier);
-            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.btnAddAndUpdateProductAddProductFront);
-            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.btnAddAndUpdateProductAddProductBack);
-            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.btnAddAndUpdateProductAddProductProductContext);
-            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.txtAddAndUpdateProductAddProductProductContext);
-            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductBack);
-            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductFront);
-            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductProductContext);
-            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.txtAddAndUpdateProductAddProductProductName);
-            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.txtAddAndUpdateProductAddProductBarcodeNo);
-            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductCategory);
-            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductProductName);
-            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductSupplier);
-            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductBarcodeNo);
-            this.grpBoxAddAndUpdateProductAddProduct.Location = new System.Drawing.Point(26, 133);
-            this.grpBoxAddAndUpdateProductAddProduct.Name = "grpBoxAddAndUpdateProductAddProduct";
-            this.grpBoxAddAndUpdateProductAddProduct.Size = new System.Drawing.Size(318, 277);
-            this.grpBoxAddAndUpdateProductAddProduct.TabIndex = 0;
-            this.grpBoxAddAndUpdateProductAddProduct.TabStop = false;
-            this.grpBoxAddAndUpdateProductAddProduct.Text = "Ürün Ekle";
-            // 
-            // cmbBoxAddAndUpdateProductAddProductCategory
-            // 
-            this.cmbBoxAddAndUpdateProductAddProductCategory.FormattingEnabled = true;
-            this.cmbBoxAddAndUpdateProductAddProductCategory.Location = new System.Drawing.Point(89, 125);
-            this.cmbBoxAddAndUpdateProductAddProductCategory.Name = "cmbBoxAddAndUpdateProductAddProductCategory";
-            this.cmbBoxAddAndUpdateProductAddProductCategory.Size = new System.Drawing.Size(210, 21);
-            this.cmbBoxAddAndUpdateProductAddProductCategory.TabIndex = 4;
-            // 
-            // cmbBoxAddAndUpdateProductAddProductSupplier
-            // 
-            this.cmbBoxAddAndUpdateProductAddProductSupplier.FormattingEnabled = true;
-            this.cmbBoxAddAndUpdateProductAddProductSupplier.Location = new System.Drawing.Point(89, 64);
-            this.cmbBoxAddAndUpdateProductAddProductSupplier.Name = "cmbBoxAddAndUpdateProductAddProductSupplier";
-            this.cmbBoxAddAndUpdateProductAddProductSupplier.Size = new System.Drawing.Size(210, 21);
-            this.cmbBoxAddAndUpdateProductAddProductSupplier.TabIndex = 2;
-            // 
-            // btnAddAndUpdateProductAddProductFront
-            // 
-            this.btnAddAndUpdateProductAddProductFront.Location = new System.Drawing.Point(43, 207);
-            this.btnAddAndUpdateProductAddProductFront.Name = "btnAddAndUpdateProductAddProductFront";
-            this.btnAddAndUpdateProductAddProductFront.Size = new System.Drawing.Size(75, 45);
-            this.btnAddAndUpdateProductAddProductFront.TabIndex = 6;
-            this.btnAddAndUpdateProductAddProductFront.Text = "+";
-            this.btnAddAndUpdateProductAddProductFront.UseVisualStyleBackColor = true;
-            this.btnAddAndUpdateProductAddProductFront.Click += new System.EventHandler(this.AddProductFrontImageDialogShow);
-            // 
-            // btnAddAndUpdateProductAddProductBack
-            // 
-            this.btnAddAndUpdateProductAddProductBack.Location = new System.Drawing.Point(203, 207);
-            this.btnAddAndUpdateProductAddProductBack.Name = "btnAddAndUpdateProductAddProductBack";
-            this.btnAddAndUpdateProductAddProductBack.Size = new System.Drawing.Size(75, 45);
-            this.btnAddAndUpdateProductAddProductBack.TabIndex = 7;
-            this.btnAddAndUpdateProductAddProductBack.Text = "+";
-            this.btnAddAndUpdateProductAddProductBack.UseVisualStyleBackColor = true;
-            this.btnAddAndUpdateProductAddProductBack.Click += new System.EventHandler(this.AddProductBackImageDialogShow);
-            // 
-            // btnAddAndUpdateProductAddProductProductContext
-            // 
-            this.btnAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(266, 156);
-            this.btnAddAndUpdateProductAddProductProductContext.Name = "btnAddAndUpdateProductAddProductProductContext";
-            this.btnAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(33, 23);
-            this.btnAddAndUpdateProductAddProductProductContext.TabIndex = 4;
-            this.btnAddAndUpdateProductAddProductProductContext.Text = "+";
-            this.btnAddAndUpdateProductAddProductProductContext.UseVisualStyleBackColor = true;
-            this.btnAddAndUpdateProductAddProductProductContext.Click += new System.EventHandler(this.btnAddAndUpdateProductAddProductProductContext_Click);
-            // 
-            // txtAddAndUpdateProductAddProductProductContext
-            // 
-            this.txtAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(89, 156);
-            this.txtAddAndUpdateProductAddProductProductContext.Multiline = true;
-            this.txtAddAndUpdateProductAddProductProductContext.Name = "txtAddAndUpdateProductAddProductProductContext";
-            this.txtAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(171, 23);
-            this.txtAddAndUpdateProductAddProductProductContext.TabIndex = 5;
-            // 
-            // lblAddAndUpdateProductAddProductBack
-            // 
-            this.lblAddAndUpdateProductAddProductBack.AutoSize = true;
-            this.lblAddAndUpdateProductAddProductBack.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductAddProductBack.Location = new System.Drawing.Point(193, 191);
-            this.lblAddAndUpdateProductAddProductBack.Name = "lblAddAndUpdateProductAddProductBack";
-            this.lblAddAndUpdateProductAddProductBack.Size = new System.Drawing.Size(96, 13);
-            this.lblAddAndUpdateProductAddProductBack.TabIndex = 2;
-            this.lblAddAndUpdateProductAddProductBack.Text = "Ürün\'ün Arka Yüzü";
-            // 
-            // lblAddAndUpdateProductAddProductFront
-            // 
-            this.lblAddAndUpdateProductAddProductFront.AutoSize = true;
-            this.lblAddAndUpdateProductAddProductFront.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductAddProductFront.Location = new System.Drawing.Point(40, 191);
-            this.lblAddAndUpdateProductAddProductFront.Name = "lblAddAndUpdateProductAddProductFront";
-            this.lblAddAndUpdateProductAddProductFront.Size = new System.Drawing.Size(87, 13);
-            this.lblAddAndUpdateProductAddProductFront.TabIndex = 2;
-            this.lblAddAndUpdateProductAddProductFront.Text = "Ürün\'ün Ön Yüzü";
-            // 
-            // lblAddAndUpdateProductAddProductProductContext
-            // 
-            this.lblAddAndUpdateProductAddProductProductContext.AutoSize = true;
-            this.lblAddAndUpdateProductAddProductProductContext.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(22, 159);
-            this.lblAddAndUpdateProductAddProductProductContext.Name = "lblAddAndUpdateProductAddProductProductContext";
-            this.lblAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(61, 13);
-            this.lblAddAndUpdateProductAddProductProductContext.TabIndex = 2;
-            this.lblAddAndUpdateProductAddProductProductContext.Text = "Ürün İçerik";
-            // 
-            // txtAddAndUpdateProductAddProductProductName
-            // 
-            this.txtAddAndUpdateProductAddProductProductName.Location = new System.Drawing.Point(89, 94);
-            this.txtAddAndUpdateProductAddProductProductName.Multiline = true;
-            this.txtAddAndUpdateProductAddProductProductName.Name = "txtAddAndUpdateProductAddProductProductName";
-            this.txtAddAndUpdateProductAddProductProductName.Size = new System.Drawing.Size(210, 23);
-            this.txtAddAndUpdateProductAddProductProductName.TabIndex = 3;
-            // 
-            // txtAddAndUpdateProductAddProductBarcodeNo
-            // 
-            this.txtAddAndUpdateProductAddProductBarcodeNo.Location = new System.Drawing.Point(89, 34);
-            this.txtAddAndUpdateProductAddProductBarcodeNo.Multiline = true;
-            this.txtAddAndUpdateProductAddProductBarcodeNo.Name = "txtAddAndUpdateProductAddProductBarcodeNo";
-            this.txtAddAndUpdateProductAddProductBarcodeNo.Size = new System.Drawing.Size(210, 23);
-            this.txtAddAndUpdateProductAddProductBarcodeNo.TabIndex = 1;
-            // 
-            // lblAddAndUpdateProductAddProductCategory
-            // 
-            this.lblAddAndUpdateProductAddProductCategory.AutoSize = true;
-            this.lblAddAndUpdateProductAddProductCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductAddProductCategory.Location = new System.Drawing.Point(21, 128);
-            this.lblAddAndUpdateProductAddProductCategory.Name = "lblAddAndUpdateProductAddProductCategory";
-            this.lblAddAndUpdateProductAddProductCategory.Size = new System.Drawing.Size(51, 13);
-            this.lblAddAndUpdateProductAddProductCategory.TabIndex = 0;
-            this.lblAddAndUpdateProductAddProductCategory.Text = "Kategori";
-            // 
-            // lblAddAndUpdateProductAddProductProductName
-            // 
-            this.lblAddAndUpdateProductAddProductProductName.AutoSize = true;
-            this.lblAddAndUpdateProductAddProductProductName.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductAddProductProductName.Location = new System.Drawing.Point(21, 97);
-            this.lblAddAndUpdateProductAddProductProductName.Name = "lblAddAndUpdateProductAddProductProductName";
-            this.lblAddAndUpdateProductAddProductProductName.Size = new System.Drawing.Size(51, 13);
-            this.lblAddAndUpdateProductAddProductProductName.TabIndex = 0;
-            this.lblAddAndUpdateProductAddProductProductName.Text = "Ürün Adı";
-            // 
-            // lblAddAndUpdateProductAddProductSupplier
-            // 
-            this.lblAddAndUpdateProductAddProductSupplier.AutoSize = true;
-            this.lblAddAndUpdateProductAddProductSupplier.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductAddProductSupplier.Location = new System.Drawing.Point(21, 67);
-            this.lblAddAndUpdateProductAddProductSupplier.Name = "lblAddAndUpdateProductAddProductSupplier";
-            this.lblAddAndUpdateProductAddProductSupplier.Size = new System.Drawing.Size(40, 13);
-            this.lblAddAndUpdateProductAddProductSupplier.TabIndex = 0;
-            this.lblAddAndUpdateProductAddProductSupplier.Text = "Üretici";
-            // 
-            // lblAddAndUpdateProductAddProductBarcodeNo
-            // 
-            this.lblAddAndUpdateProductAddProductBarcodeNo.AutoSize = true;
-            this.lblAddAndUpdateProductAddProductBarcodeNo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductAddProductBarcodeNo.Location = new System.Drawing.Point(21, 41);
-            this.lblAddAndUpdateProductAddProductBarcodeNo.Name = "lblAddAndUpdateProductAddProductBarcodeNo";
-            this.lblAddAndUpdateProductAddProductBarcodeNo.Size = new System.Drawing.Size(62, 13);
-            this.lblAddAndUpdateProductAddProductBarcodeNo.TabIndex = 0;
-            this.lblAddAndUpdateProductAddProductBarcodeNo.Text = "Barkod No";
-            // 
             // grpBoxAddAndUpdateProductUpdateProduct
             // 
             this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.cmbBoxAddAndUpdateProductUpdateProductCategory);
@@ -1676,6 +1524,170 @@
             this.lblAddAndUpdateProductUpdateProductBarcodeNo.Size = new System.Drawing.Size(62, 13);
             this.lblAddAndUpdateProductUpdateProductBarcodeNo.TabIndex = 0;
             this.lblAddAndUpdateProductUpdateProductBarcodeNo.Text = "Barkod No";
+            // 
+            // grpBoxAddAndUpdateProductAddProduct
+            // 
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.cmbBoxAddAndUpdateProductAddProductCategory);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.cmbBoxAddAndUpdateProductAddProductSupplier);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.btnAddAndUpdateProductAddProductFront);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.btnAddAndUpdateProductAddProductBack);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.btnAddAndUpdateProductAddProductProductContext);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.txtAddAndUpdateProductAddProductProductContext);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductBack);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductFront);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductProductContext);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.txtAddAndUpdateProductAddProductProductName);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.txtAddAndUpdateProductAddProductBarcodeNo);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductCategory);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductProductName);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductSupplier);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductBarcodeNo);
+            this.grpBoxAddAndUpdateProductAddProduct.Location = new System.Drawing.Point(26, 133);
+            this.grpBoxAddAndUpdateProductAddProduct.Name = "grpBoxAddAndUpdateProductAddProduct";
+            this.grpBoxAddAndUpdateProductAddProduct.Size = new System.Drawing.Size(318, 277);
+            this.grpBoxAddAndUpdateProductAddProduct.TabIndex = 0;
+            this.grpBoxAddAndUpdateProductAddProduct.TabStop = false;
+            this.grpBoxAddAndUpdateProductAddProduct.Text = "Ürün Ekle";
+            // 
+            // cmbBoxAddAndUpdateProductAddProductCategory
+            // 
+            this.cmbBoxAddAndUpdateProductAddProductCategory.FormattingEnabled = true;
+            this.cmbBoxAddAndUpdateProductAddProductCategory.Location = new System.Drawing.Point(89, 125);
+            this.cmbBoxAddAndUpdateProductAddProductCategory.Name = "cmbBoxAddAndUpdateProductAddProductCategory";
+            this.cmbBoxAddAndUpdateProductAddProductCategory.Size = new System.Drawing.Size(210, 21);
+            this.cmbBoxAddAndUpdateProductAddProductCategory.TabIndex = 4;
+            // 
+            // cmbBoxAddAndUpdateProductAddProductSupplier
+            // 
+            this.cmbBoxAddAndUpdateProductAddProductSupplier.FormattingEnabled = true;
+            this.cmbBoxAddAndUpdateProductAddProductSupplier.Location = new System.Drawing.Point(89, 64);
+            this.cmbBoxAddAndUpdateProductAddProductSupplier.Name = "cmbBoxAddAndUpdateProductAddProductSupplier";
+            this.cmbBoxAddAndUpdateProductAddProductSupplier.Size = new System.Drawing.Size(210, 21);
+            this.cmbBoxAddAndUpdateProductAddProductSupplier.TabIndex = 2;
+            // 
+            // btnAddAndUpdateProductAddProductFront
+            // 
+            this.btnAddAndUpdateProductAddProductFront.Location = new System.Drawing.Point(43, 207);
+            this.btnAddAndUpdateProductAddProductFront.Name = "btnAddAndUpdateProductAddProductFront";
+            this.btnAddAndUpdateProductAddProductFront.Size = new System.Drawing.Size(75, 45);
+            this.btnAddAndUpdateProductAddProductFront.TabIndex = 6;
+            this.btnAddAndUpdateProductAddProductFront.Text = "+";
+            this.btnAddAndUpdateProductAddProductFront.UseVisualStyleBackColor = true;
+            this.btnAddAndUpdateProductAddProductFront.Click += new System.EventHandler(this.AddProductFrontImageDialogShow);
+            // 
+            // btnAddAndUpdateProductAddProductBack
+            // 
+            this.btnAddAndUpdateProductAddProductBack.Location = new System.Drawing.Point(203, 207);
+            this.btnAddAndUpdateProductAddProductBack.Name = "btnAddAndUpdateProductAddProductBack";
+            this.btnAddAndUpdateProductAddProductBack.Size = new System.Drawing.Size(75, 45);
+            this.btnAddAndUpdateProductAddProductBack.TabIndex = 7;
+            this.btnAddAndUpdateProductAddProductBack.Text = "+";
+            this.btnAddAndUpdateProductAddProductBack.UseVisualStyleBackColor = true;
+            this.btnAddAndUpdateProductAddProductBack.Click += new System.EventHandler(this.AddProductBackImageDialogShow);
+            // 
+            // btnAddAndUpdateProductAddProductProductContext
+            // 
+            this.btnAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(266, 156);
+            this.btnAddAndUpdateProductAddProductProductContext.Name = "btnAddAndUpdateProductAddProductProductContext";
+            this.btnAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(33, 23);
+            this.btnAddAndUpdateProductAddProductProductContext.TabIndex = 4;
+            this.btnAddAndUpdateProductAddProductProductContext.Text = "+";
+            this.btnAddAndUpdateProductAddProductProductContext.UseVisualStyleBackColor = true;
+            this.btnAddAndUpdateProductAddProductProductContext.Click += new System.EventHandler(this.btnAddAndUpdateProductAddProductProductContext_Click);
+            // 
+            // txtAddAndUpdateProductAddProductProductContext
+            // 
+            this.txtAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(89, 156);
+            this.txtAddAndUpdateProductAddProductProductContext.Multiline = true;
+            this.txtAddAndUpdateProductAddProductProductContext.Name = "txtAddAndUpdateProductAddProductProductContext";
+            this.txtAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(171, 23);
+            this.txtAddAndUpdateProductAddProductProductContext.TabIndex = 5;
+            // 
+            // lblAddAndUpdateProductAddProductBack
+            // 
+            this.lblAddAndUpdateProductAddProductBack.AutoSize = true;
+            this.lblAddAndUpdateProductAddProductBack.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductAddProductBack.Location = new System.Drawing.Point(193, 191);
+            this.lblAddAndUpdateProductAddProductBack.Name = "lblAddAndUpdateProductAddProductBack";
+            this.lblAddAndUpdateProductAddProductBack.Size = new System.Drawing.Size(96, 13);
+            this.lblAddAndUpdateProductAddProductBack.TabIndex = 2;
+            this.lblAddAndUpdateProductAddProductBack.Text = "Ürün\'ün Arka Yüzü";
+            // 
+            // lblAddAndUpdateProductAddProductFront
+            // 
+            this.lblAddAndUpdateProductAddProductFront.AutoSize = true;
+            this.lblAddAndUpdateProductAddProductFront.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductAddProductFront.Location = new System.Drawing.Point(40, 191);
+            this.lblAddAndUpdateProductAddProductFront.Name = "lblAddAndUpdateProductAddProductFront";
+            this.lblAddAndUpdateProductAddProductFront.Size = new System.Drawing.Size(87, 13);
+            this.lblAddAndUpdateProductAddProductFront.TabIndex = 2;
+            this.lblAddAndUpdateProductAddProductFront.Text = "Ürün\'ün Ön Yüzü";
+            // 
+            // lblAddAndUpdateProductAddProductProductContext
+            // 
+            this.lblAddAndUpdateProductAddProductProductContext.AutoSize = true;
+            this.lblAddAndUpdateProductAddProductProductContext.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(22, 159);
+            this.lblAddAndUpdateProductAddProductProductContext.Name = "lblAddAndUpdateProductAddProductProductContext";
+            this.lblAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(61, 13);
+            this.lblAddAndUpdateProductAddProductProductContext.TabIndex = 2;
+            this.lblAddAndUpdateProductAddProductProductContext.Text = "Ürün İçerik";
+            // 
+            // txtAddAndUpdateProductAddProductProductName
+            // 
+            this.txtAddAndUpdateProductAddProductProductName.Location = new System.Drawing.Point(89, 94);
+            this.txtAddAndUpdateProductAddProductProductName.Multiline = true;
+            this.txtAddAndUpdateProductAddProductProductName.Name = "txtAddAndUpdateProductAddProductProductName";
+            this.txtAddAndUpdateProductAddProductProductName.Size = new System.Drawing.Size(210, 23);
+            this.txtAddAndUpdateProductAddProductProductName.TabIndex = 3;
+            // 
+            // txtAddAndUpdateProductAddProductBarcodeNo
+            // 
+            this.txtAddAndUpdateProductAddProductBarcodeNo.Location = new System.Drawing.Point(89, 34);
+            this.txtAddAndUpdateProductAddProductBarcodeNo.Multiline = true;
+            this.txtAddAndUpdateProductAddProductBarcodeNo.Name = "txtAddAndUpdateProductAddProductBarcodeNo";
+            this.txtAddAndUpdateProductAddProductBarcodeNo.Size = new System.Drawing.Size(210, 23);
+            this.txtAddAndUpdateProductAddProductBarcodeNo.TabIndex = 1;
+            // 
+            // lblAddAndUpdateProductAddProductCategory
+            // 
+            this.lblAddAndUpdateProductAddProductCategory.AutoSize = true;
+            this.lblAddAndUpdateProductAddProductCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductAddProductCategory.Location = new System.Drawing.Point(21, 128);
+            this.lblAddAndUpdateProductAddProductCategory.Name = "lblAddAndUpdateProductAddProductCategory";
+            this.lblAddAndUpdateProductAddProductCategory.Size = new System.Drawing.Size(51, 13);
+            this.lblAddAndUpdateProductAddProductCategory.TabIndex = 0;
+            this.lblAddAndUpdateProductAddProductCategory.Text = "Kategori";
+            // 
+            // lblAddAndUpdateProductAddProductProductName
+            // 
+            this.lblAddAndUpdateProductAddProductProductName.AutoSize = true;
+            this.lblAddAndUpdateProductAddProductProductName.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductAddProductProductName.Location = new System.Drawing.Point(21, 97);
+            this.lblAddAndUpdateProductAddProductProductName.Name = "lblAddAndUpdateProductAddProductProductName";
+            this.lblAddAndUpdateProductAddProductProductName.Size = new System.Drawing.Size(51, 13);
+            this.lblAddAndUpdateProductAddProductProductName.TabIndex = 0;
+            this.lblAddAndUpdateProductAddProductProductName.Text = "Ürün Adı";
+            // 
+            // lblAddAndUpdateProductAddProductSupplier
+            // 
+            this.lblAddAndUpdateProductAddProductSupplier.AutoSize = true;
+            this.lblAddAndUpdateProductAddProductSupplier.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductAddProductSupplier.Location = new System.Drawing.Point(21, 67);
+            this.lblAddAndUpdateProductAddProductSupplier.Name = "lblAddAndUpdateProductAddProductSupplier";
+            this.lblAddAndUpdateProductAddProductSupplier.Size = new System.Drawing.Size(40, 13);
+            this.lblAddAndUpdateProductAddProductSupplier.TabIndex = 0;
+            this.lblAddAndUpdateProductAddProductSupplier.Text = "Üretici";
+            // 
+            // lblAddAndUpdateProductAddProductBarcodeNo
+            // 
+            this.lblAddAndUpdateProductAddProductBarcodeNo.AutoSize = true;
+            this.lblAddAndUpdateProductAddProductBarcodeNo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAddAndUpdateProductAddProductBarcodeNo.Location = new System.Drawing.Point(21, 41);
+            this.lblAddAndUpdateProductAddProductBarcodeNo.Name = "lblAddAndUpdateProductAddProductBarcodeNo";
+            this.lblAddAndUpdateProductAddProductBarcodeNo.Size = new System.Drawing.Size(62, 13);
+            this.lblAddAndUpdateProductAddProductBarcodeNo.TabIndex = 0;
+            this.lblAddAndUpdateProductAddProductBarcodeNo.Text = "Barkod No";
             // 
             // ProductDetails
             // 
@@ -2904,6 +2916,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 508);
+            this.Controls.Add(this.SideBar);
+            this.Controls.Add(this.Home);
+            this.Controls.Add(this.UserDetails);
+            this.Controls.Add(this.SearchProduct);
+            this.Controls.Add(this.BlackList);
+            this.Controls.Add(this.Favlists);
+            this.Controls.Add(this.ProductDetails);
             this.Controls.Add(this.AddAndUpdateProduct);
             this.Controls.Add(this.SearchHistory);
             this.Controls.Add(this.SearchBarcode);
@@ -2912,13 +2931,6 @@
             this.Controls.Add(this.ChangePassword);
             this.Controls.Add(this.ChangeUserDetails);
             this.Controls.Add(this.SupplementBlackList);
-            this.Controls.Add(this.SideBar);
-            this.Controls.Add(this.Home);
-            this.Controls.Add(this.UserDetails);
-            this.Controls.Add(this.SearchProduct);
-            this.Controls.Add(this.BlackList);
-            this.Controls.Add(this.Favlists);
-            this.Controls.Add(this.ProductDetails);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(380, 547);
             this.MinimumSize = new System.Drawing.Size(380, 547);
@@ -2967,10 +2979,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsChangeEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserDetailsPremium)).EndInit();
             this.AddAndUpdateProduct.ResumeLayout(false);
-            this.grpBoxAddAndUpdateProductAddProduct.ResumeLayout(false);
-            this.grpBoxAddAndUpdateProductAddProduct.PerformLayout();
             this.grpBoxAddAndUpdateProductUpdateProduct.ResumeLayout(false);
             this.grpBoxAddAndUpdateProductUpdateProduct.PerformLayout();
+            this.grpBoxAddAndUpdateProductAddProduct.ResumeLayout(false);
+            this.grpBoxAddAndUpdateProductAddProduct.PerformLayout();
             this.ProductDetails.ResumeLayout(false);
             this.ProductDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProductDetailsProductImage)).EndInit();
@@ -3226,5 +3238,6 @@
         private System.Windows.Forms.Button btnBlackListAddSupplement;
         private System.Windows.Forms.OpenFileDialog FileDialogAddProductContent;
         private System.Windows.Forms.OpenFileDialog FileDialogUpdateProductContent;
+        private System.Windows.Forms.Button btnShowAdminPanel;
     }
 }

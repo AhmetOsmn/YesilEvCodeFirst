@@ -396,12 +396,11 @@ namespace YesilEvCodeFirst.DAL.Use
             }
         }
 
-        public List<Product> GetProductsForAdmin()
+        public List<ProductListForAdminDTO> GetProductsForAdmin()
         {
             try
             {
-                // todo: inclue yapilarak getirilecek
-                List<Product> products = GetByCondition(x => x.IsActive).ToList();
+                List<Product> products = GetByConditionWithInclude(x => x.IsActive,"Category","Supplier","Adder", "Approver").ToList();
                 if (products == null)
                 {
                     throw new Exception(Messages.ProductListIsEmpty);
@@ -409,7 +408,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 else
                 {
                     nLogger.Info("Product tablosu admin tarafından listelendi.");
-                    return products;
+                    return MappingProfile.ProductListToProductListForAdminDTOList(products);
                 }
             }
             catch (Exception ex)
@@ -419,12 +418,14 @@ namespace YesilEvCodeFirst.DAL.Use
             }
         }
 
-        public List<Product> GetProductListWithSearchbarForAdmin(string filter)
+        public List<ProductListForAdminDTO> GetProductListWithSearchbarForAdmin(string filter)
         {
-            return GetByCondition(x => x.ProductName.ToLower().Contains(filter.ToLower()) && x.IsActive);
+            List<Product> products = GetByConditionWithInclude(x => x.ProductName.ToLower().Contains(filter.ToLower()) && x.IsActive, "Category", "Supplier", "Adder", "Approver").ToList();
+      
+            return MappingProfile.ProductListToProductListForAdminDTOList(products);
         }
 
-        public List<Product> GetProductsForAdminApprove()
+        public List<ProductListForAdminDTO> GetProductsForAdminApprove()
         {
             try
             {
@@ -435,9 +436,8 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    List<ListProductDTO> productDTOList = MappingProfile.ProductListToProductListDTO(products);
                     nLogger.Info("Product tablosu listelendi.");
-                    return products;
+                    return MappingProfile.ProductListToProductListForAdminDTOList(products);
                 }
             }
             catch (Exception ex)

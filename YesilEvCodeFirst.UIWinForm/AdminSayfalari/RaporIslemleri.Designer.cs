@@ -85,7 +85,6 @@
             this.Controls.Add(this.comboBox1);
             this.Name = "RaporIslemleri";
             this.Text = "Green Home";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
