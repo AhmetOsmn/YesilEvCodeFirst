@@ -41,12 +41,13 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(500, 113);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 17);
+            this.label1.Size = new System.Drawing.Size(128, 17);
             this.label1.TabIndex = 13;
-            this.label1.Text = "En riskli ürünler -";
+            this.label1.Text = "En riskli ürünler ";
             // 
             // buttonRaporuGetir
             // 
+            this.buttonRaporuGetir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRaporuGetir.Location = new System.Drawing.Point(571, 172);
             this.buttonRaporuGetir.Name = "buttonRaporuGetir";
             this.buttonRaporuGetir.Size = new System.Drawing.Size(116, 45);
@@ -84,6 +85,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonRaporuGetir);
             this.Name = "Rapor06Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rapor6Form";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

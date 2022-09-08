@@ -83,6 +83,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonRaporuGetir);
             this.Name = "Rapor07Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rapor7Form";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

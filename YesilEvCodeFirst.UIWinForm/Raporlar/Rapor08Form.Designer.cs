@@ -46,12 +46,14 @@
             // 
             // buttonRaporuGetir
             // 
+            this.buttonRaporuGetir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRaporuGetir.Location = new System.Drawing.Point(576, 167);
             this.buttonRaporuGetir.Name = "buttonRaporuGetir";
             this.buttonRaporuGetir.Size = new System.Drawing.Size(116, 45);
             this.buttonRaporuGetir.TabIndex = 12;
             this.buttonRaporuGetir.Text = "Raporu Getir";
             this.buttonRaporuGetir.UseVisualStyleBackColor = true;
+            this.buttonRaporuGetir.Click += new System.EventHandler(this.buttonRaporuGetir_Click);
             // 
             // dataGridView1
             // 
@@ -71,6 +73,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonRaporuGetir);
             this.Name = "Rapor08Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rapor8Form";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

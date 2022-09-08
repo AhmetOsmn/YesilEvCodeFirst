@@ -46,6 +46,7 @@
             // 
             // buttonRaporuGetir
             // 
+            this.buttonRaporuGetir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRaporuGetir.Location = new System.Drawing.Point(566, 144);
             this.buttonRaporuGetir.Name = "buttonRaporuGetir";
             this.buttonRaporuGetir.Size = new System.Drawing.Size(116, 45);
@@ -72,6 +73,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonRaporuGetir);
             this.Name = "Rapor05Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rapor5Form";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
