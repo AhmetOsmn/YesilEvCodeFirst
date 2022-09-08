@@ -40,9 +40,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(507, 135);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 17);
+            this.label1.Size = new System.Drawing.Size(249, 17);
             this.label1.TabIndex = 12;
-            this.label1.Text = "User, Karaliste-favliste sayisi";
+            this.label1.Text = "User Favori/Karaliste Ürün Sayısı";
             // 
             // buttonRaporuGetir
             // 
