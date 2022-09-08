@@ -15,6 +15,7 @@ using YesilEvCodeFirst.DTOs.SupplementBlackList;
 using YesilEvCodeFirst.DTOs.Supplier;
 using YesilEvCodeFirst.DTOs.UserAdmin;
 using YesilEvCodeFirst.DTOs.UserFavList;
+using YesilEvCodeFirst.UIWinForm.AdminSayfalari;
 
 namespace YesilEvCodeFirst.UIWinForm
 {
@@ -140,6 +141,7 @@ namespace YesilEvCodeFirst.UIWinForm
         private void UserButton_Click(object sender, EventArgs e)
         {
             CloseAllPages();
+            btnShowAdminPanel.Visible = User.RolID == 1 ? true : false;
             UserDetails.Visible = true;
             lblUserDetailsSignUpDateValue.Text = User.CreatedDate.ToString();
             lblUserDetailsUserName.Text = User.FirstName + " " + User.LastName;
@@ -1206,5 +1208,10 @@ namespace YesilEvCodeFirst.UIWinForm
 
         }
 
+        private void btnShowAdminPanel_Click(object sender, EventArgs e)
+        {
+            AdminSayfasi adminForm = new AdminSayfasi(User);
+            adminForm.Show();
+        }
     }
 }
