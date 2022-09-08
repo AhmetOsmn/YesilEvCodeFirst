@@ -53,7 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BarcodeDTO.cs" />
+    <Compile Include="Category\AddCategoryDTO.cs" />
     <Compile Include="Category\CategoryDTO.cs" />
+    <Compile Include="Category\UpdateCategoryDTO.cs" />
     <Compile Include="EmailDTO.cs" />
     <Compile Include="IDDTO.cs" />
     <Compile Include="LoginDTO.cs" />

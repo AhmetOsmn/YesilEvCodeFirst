@@ -100,6 +100,24 @@ namespace YesilEvCodeFirst.Mapping
             return mapper.Map<List<CategoryDTO>>(categoryList);
         }
 
+        public static CategoryDTO CategoryToCategoryDTO(Category category)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<Category, CategoryDTO>());
+
+            var mapper = new Mapper(mapperConfig);
+
+            return mapper.Map<CategoryDTO>(category);
+        }
+
+        public static Category AddCategoryDTOToCategory(AddCategoryDTO category)
+        {
+            var mapperConfig = new MapperConfiguration(cfg => cfg.CreateMap<AddCategoryDTO, Category>());
+
+            var mapper = new Mapper(mapperConfig);
+
+            return mapper.Map<Category>(category);
+        }
+
         #endregion
 
         #region Supplier
