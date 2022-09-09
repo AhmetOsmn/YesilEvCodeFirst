@@ -17,7 +17,6 @@ using YesilEvCodeFirst.Validation.FluentValidator.Const;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
-    // todo: transaction eklenecek mi?
     public class UseProductDAL : EfRepoBase<YesilEvDbContext, Product>
     {
         

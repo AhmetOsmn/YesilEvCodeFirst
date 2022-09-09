@@ -165,9 +165,9 @@ namespace YesilEvCodeFirst.UIWinForm
                         ProductName = txtAddAndUpdateProductAddProductProductName.Text,
                         CategoryID = cmbBoxAddAndUpdateProductAddProductCategory.SelectedItem == null ? 0 : ((CategoryDTO)cmbBoxAddAndUpdateProductAddProductCategory.SelectedItem).CategoryID,
                         ProductContent = txtAddAndUpdateProductAddProductProductContext.Text,
-                        PictureFronthPath = FileDialogAddProductFront.FileName,
-                        PictureBackPath = FileDialogAddProductBack.FileName,
-                        PictureContentPath = FileDialogAddProductContent.FileName
+                        PictureFronthPath = FileDialogAddProductFront.FileName == "FileDialogUrunEkleOnYuz" ? "C:\\Projects\\BAYP\\YesilEvCodeFirst\\YesilEvCodeFirst.UIWinForm\\ContextLtst\\Image\\product.png" : FileDialogAddProductFront.FileName,
+                        PictureBackPath = FileDialogAddProductBack.FileName == "FileDialogUrunEkleArkaYuz" ? ".C:\\Projects\\BAYP\\YesilEvCodeFirst\\YesilEvCodeFirst.UIWinForm\\ContextLtst\\Image\\product.png" : FileDialogAddProductBack.FileName,
+                        PictureContentPath = FileDialogAddProductContent.FileName == "openFileDialog1" ? "C:\\Projects\\BAYP\\YesilEvCodeFirst\\YesilEvCodeFirst.UIWinForm\\ContextLtst\\Image\\product.png" : FileDialogAddProductContent.FileName,
                     });
                     if (result)
                     {
