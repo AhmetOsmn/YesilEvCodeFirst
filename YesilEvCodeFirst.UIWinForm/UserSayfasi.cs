@@ -710,7 +710,7 @@ namespace YesilEvCodeFirst.UIWinForm
             this.Height = 630;
             ProductDetails.Height = 630;
             pnlProductDetailsShowProducts.Height = 550;
-            pnlProductDetailsShowProducts.BackColor = Color.Gray;
+            pnlProductDetailsShowProducts.BackColor = Color.White;
             pnlProductDetailsShowProducts.Visible = true;
             //btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\up.jpg");
         }
@@ -1077,67 +1077,104 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void btnChangeEmailSend_Click(object sender, EventArgs e)
         {
-            if (txtChangeEmailUserEmail.Text == User.Email)
+            UpdateUserEmailDTO userDetails = new UpdateUserEmailDTO()
             {
-                if (txtChangeEmailNewEmail.Text == txtChangeEmaiReNewEmail.Text)
+                UserID = User.UserID,
+                NewEmail = txtChangeEmailNewEmail.Text,
+            };
+            try
+            {
+                if (txtChangeEmailNewEmail.Text != txtChangeEmailUserEmail.Text && txtChangeEmailReNewEmail.Text == txtChangeEmailNewEmail.Text)
                 {
-                    UpdateUserEmailDTO userDetails = new UpdateUserEmailDTO()
+                    if (txtChangeEmailNewEmail.Text == txtChangeEmailReNewEmail.Text)
                     {
-                        UserID = User.UserID,
-                        NewEmail = txtChangeEmailNewEmail.Text,
-                    };
-                    bool result = useUserDAL.UpdateUserEmail(userDetails);
-                    if (result)
-                    {
-                        MessageBox.Show("Email Bilgisi Güncellendi.");
-                        User.Email = txtChangeEmailNewEmail.Text;
+                        bool result = useUserDAL.UpdateUserEmail(userDetails);
+                        if (result)
+                        {
+                            MessageBox.Show("Email Bilgisi Güncellendi.");
+                            User.Email = txtChangeEmailNewEmail.Text;
+                            CloseAllPages();
+                            Home.Visible = true;
+                            txtChangeEmailNewEmail.Text = "";
+                            txtChangeEmailReNewEmail.Text = "";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Kullanıcı Bilgileri Güncellenirken Hata Oluştu.Sonra tekrar deneyiniz.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Kullanıcı Bilgileri Güncellenirken Hata Oluştu.Sonra tekrar deneyiniz.");
+                        MessageBox.Show("Yeni email alanları birbirleri ile uyuşmuyor.Lütfen kontrol ediniz.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Yeni Email ve Yeni Email Tekrar Alanları aynı değil.");
+                    MessageBox.Show("Yeni email ile eski email aynı.Lütfen kontrol ediniz.");
                 }
             }
-            else
+            catch (FormatException fex)
             {
-                MessageBox.Show("Kullanıcı Email doğru değil.");
+                MessageBox.Show(fex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnChangePasswordSend_Click(object sender, EventArgs e)
         {
-            if (txtChangePasswordPassword.Text == User.Password)
+            UpdateUserPasswordDTO userDetails = new UpdateUserPasswordDTO()
             {
-                if (txtChangePasswordNewPassword == txtChangePasswordReNewPassword)
+                UserID = User.UserID,
+                NewPassword = txtChangePasswordNewPassword.Text,
+            };
+            try
+            {
+                if (txtChangePasswordPassword.Text == User.Password)
                 {
-                    UpdateUserPasswordDTO userDetails = new UpdateUserPasswordDTO()
+                    if (txtChangePasswordNewPassword.Text != txtChangePasswordPassword.Text && txtChangePasswordReNewPassword.Text == txtChangePasswordNewPassword.Text)
                     {
-                        UserID = User.UserID,
-                        NewPassword = txtChangePasswordNewPassword.Text,
-                    };
-                    bool result = useUserDAL.UpdateUserPassword(userDetails);
-                    if (result)
-                    {
-                        MessageBox.Show("Şifre Bilgisi Güncellendi.");
-                        User.Password = txtChangePasswordNewPassword.Text;
+                        if (txtChangePasswordNewPassword != txtChangePasswordReNewPassword)
+                        {
+                            bool result = useUserDAL.UpdateUserPassword(userDetails);
+                            if (result)
+                            {
+                                MessageBox.Show("Şifre Bilgisi Güncellendi.");
+                                User.Password = txtChangePasswordNewPassword.Text;
+                                CloseAllPages();
+                                Home.Visible = true;
+                                txtChangePasswordNewPassword.Text = "";
+                                txtChangePasswordReNewPassword.Text = "";
+                            }
+                            else
+                            {
+                                MessageBox.Show("Kullanıcı Bilgileri Güncellenirken Hata Oluştu.Sonra tekrar deneyiniz.");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Yeni Şifre ve Yeni Şifre Tekrar Alanları aynı değil.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Kullanıcı Bilgileri Güncellenirken Hata Oluştu.Sonra tekrar deneyiniz.");
+                        MessageBox.Show("Yeni şifre ile eski şifre aynı.Lütfen kontrol ediniz.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Yeni Şifre ve Yeni Şifre Tekrar Alanları aynı değil.");
+                    MessageBox.Show("Kullanıcı Şifresi doğru değil.");
                 }
             }
-            else
+            catch (FormatException fex)
             {
-                MessageBox.Show("Kullanıcı Şifresi doğru değil.");
+                MessageBox.Show(fex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

@@ -63,5 +63,9 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             OpenChildForm(new RaporIslemleri());
         }
 
+        private void tsLogOut_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

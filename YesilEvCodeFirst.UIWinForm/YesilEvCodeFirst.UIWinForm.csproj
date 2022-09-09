@@ -374,6 +374,10 @@
     <Content Include="yesilev.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\YesilEvCodeFirst.Common\YesilEvCodeFirst.Common.csproj">
+      <Project>{a226c8bb-85fb-4330-9e98-37f32e2ab732}</Project>
+      <Name>YesilEvCodeFirst.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\YesilEvCodeFirst.Core\YesilEvCodeFirst.Core.csproj">
       <Project>{A4183C9B-69C0-441D-8258-D0677FA06E86}</Project>
       <Name>YesilEvCodeFirst.Core</Name>
