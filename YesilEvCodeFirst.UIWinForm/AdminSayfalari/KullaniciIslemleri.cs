@@ -26,6 +26,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             dataGridView1.DataSource = useUserDAL.GetAllUserDetailForAdmin();
             CloseAllPages();
             pnlListele.Visible = true;
+            ChangeDatagridViewsColumnNames(dataGridView1);
         }
 
         private void btnAra_Click(object sender, EventArgs e)
@@ -46,6 +47,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         {
             dataGridView2.DataSource = null;
             dataGridView2.DataSource = useUserDAL.GetUserWithFilterForAdmin(txtSearchUserName.Text);
+            ChangeDatagridViewsColumnNames(dataGridView2);
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -199,6 +201,24 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
                     MessageBox.Show(ex.Message);
                 }
                 
+            }
+        }
+        private void ChangeDatagridViewsColumnNames(DataGridView colname)
+        {
+            colname.Columns[0].HeaderText = "Kullanıcı ID";
+            colname.Columns[1].HeaderText = "Kullanıcı Adı";
+            colname.Columns[2].HeaderText = "Kullanıcı Soyadı";
+            colname.Columns[3].HeaderText = "Email Adresi";
+            colname.Columns[4].HeaderText = "Telefonu";
+            colname.Columns[5].HeaderText = "Şifresi";
+            colname.Columns[6].HeaderText = "Rolü";
+            colname.Columns[7].HeaderText = "Aktif Mi?";
+            colname.Columns[8].HeaderText = "Oluşturulma Tarihi";
+            colname.Columns[9].HeaderText = "Oluşturan Kişi";
+            colname.ForeColor = Color.Black;
+            foreach (DataGridViewColumn col in colname.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
         }
     }

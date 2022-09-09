@@ -53,7 +53,8 @@ namespace YesilEvCodeFirst.Mapping
                                                         .ForMember(dest => dest.AdderName, opt => opt.MapFrom(src => src.Adder.FirstName + " " + src.Adder.LastName))
                                                         .ForMember(dest => dest.ApproverName, opt => opt.MapFrom(src => src.Approver.FirstName + " " + src.Approver.LastName))
                                                         .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.CategoryName))
-                                                        .ForMember(dest => dest.SupplierName, opt => opt.MapFrom(src => src.Supplier.SupplierName)));
+                                                        .ForMember(dest => dest.SupplierName, opt => opt.MapFrom(src => src.Supplier.SupplierName))
+                                                        .ForMember(dest => dest.CreatedDate, opt => opt.MapFrom(src => src.CreatedDate)));
 
             var mapper = new Mapper(mapperConfig);
 
@@ -169,6 +170,16 @@ namespace YesilEvCodeFirst.Mapping
 
             var mapper = new Mapper(mapperConfig);
             return mapper.Map<UserDetailDTO>(user);
+        }
+        public static List<ListUserDTO> ListUserDTOToUser(List<User> user)
+        {
+            var mapperConfig = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<User, ListUserDTO>()
+                   .ForMember(dest => dest.RolName, opt => opt.MapFrom(src => src.Rol.RolName));
+            });
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<List<ListUserDTO>>(user);
         }
 
         #endregion

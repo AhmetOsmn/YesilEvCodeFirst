@@ -59,6 +59,10 @@ namespace YesilEvCodeFirst.Core.Repos
             return _context.Set<TEntity>().ToList();
         }
 
+        public List<TEntity> GetAllWithInclude(string table)
+        {
+            return _context.Set<TEntity>().Include(table).ToList();
+        }
         public List<TEntity> GetByCondition(Func<TEntity, bool> whereCondition)
         {
             return _context.Set<TEntity>().Where(whereCondition).ToList();

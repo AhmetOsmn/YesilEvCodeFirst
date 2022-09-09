@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs.Supplier;
@@ -37,7 +38,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             pnlUreticiListele.Visible = true;
             dgvSuppliers.DataSource = null;
             dgvSuppliers.DataSource = useSupplierDAL.GetSuppliersForAdmin();
-            //ChangeDatagridViewsColumnNames(dgvProducts);
+            ChangeDatagridViewsColumnNames(dgvSuppliers);
         }
 
         private void btnAra_Click(object sender, System.EventArgs e)
@@ -72,15 +73,8 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         {
             dgvSearchSuppliers.DataSource = null;
             dgvSearchSuppliers.DataSource = useSupplierDAL.GetSupplierListWithSearchbarForAdmin(tbUreticiAra.Text);
-            //ChangeDatagridViewsColumnNames(dgvSearchProduct);
+            ChangeDatagridViewsColumnNames(dgvSearchSuppliers);
         }
-
-
-
-
-
-
-
 
         #endregion
 
@@ -138,8 +132,8 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
 
         #endregion
 
+        #region Delete
         // todo: uretici silinince, uretici ile iliskili urun icin bir sey yapilmali mi?
-
         private void btnUreticiyiSil_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Emin misiniz?", "Üretici Sil", MessageBoxButtons.YesNo);
@@ -164,5 +158,22 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
                 }
             }
         }
+        #endregion
+
+        #region Datagrid Fuc
+        private void ChangeDatagridViewsColumnNames(DataGridView colname)
+        {
+            colname.Columns[0].HeaderText = "Tedarikçi ID";
+            colname.Columns[1].HeaderText = "Tedarikçi Adı";
+            colname.Columns[2].HeaderText = "Aktif Mi?";
+            colname.Columns[3].HeaderText = "Oluşturulma Tarihi";
+            colname.Columns[4].HeaderText = "Oluşturan Kişi";
+            colname.ForeColor = Color.Black;
+            foreach (DataGridViewColumn col in colname.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+        }
+        #endregion
     }
 }
