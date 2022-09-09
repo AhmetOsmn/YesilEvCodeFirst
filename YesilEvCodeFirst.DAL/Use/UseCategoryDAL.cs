@@ -8,6 +8,7 @@ using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
 using YesilEvCodeFirst.DTOs.Category;
+using YesilEvCodeFirst.DTOs.UserAdmin;
 using YesilEvCodeFirst.Mapping;
 using YesilEvCodeFirst.Validation.FluentValidator;
 
@@ -57,6 +58,11 @@ namespace YesilEvCodeFirst.DAL.Use
         public Category GetCategoryDetailsWithCategoryName(string CategoryName)
         {
             return GetByCondition(x=>x.CategoryName.Equals(CategoryName)&&x.IsActive).FirstOrDefault();
+        }
+        public List<ListCategoryDTO> GetAllCategoryDetailForAdmin()
+        {
+            var result = GetAllWithInclude("UstCategory");
+            return MappingProfile.ListCategoryDTOToCategory(result);
         }
         public string GetCategoryNameWithCategoryID(int? CategoryID)
         {
