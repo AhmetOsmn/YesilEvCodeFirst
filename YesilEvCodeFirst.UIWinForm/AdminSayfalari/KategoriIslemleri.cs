@@ -45,6 +45,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             CloseAllPages();
             pnlListele.Visible = true;
             dataGridView1.DataSource = useCategoryDAL.GetAll();
+            ChangeDatagridViewsColumnNames(dataGridView1);
         }
 
         private void btnAra_Click(object sender, EventArgs e)
@@ -79,6 +80,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         private void btnSearchCategorySearch_Click(object sender, EventArgs e)
         {
             dataGridView2.DataSource = useCategoryDAL.GetCategoriesWithFilterForAdmin(txtSearchCategoryName.Text);
+            ChangeDatagridViewsColumnNames(dataGridView2);
         }
 
         private void btnDeleteCategorySearch_Click(object sender, EventArgs e)
@@ -175,6 +177,21 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
                 MessageBox.Show(ex.Message);
             }
             
+        }
+        private void ChangeDatagridViewsColumnNames(DataGridView colname)
+        {
+            colname.Columns[0].HeaderText = "Kategori ID";
+            colname.Columns[1].HeaderText = "Kategori Adı";
+            colname.Columns[2].HeaderText = "Üst Kategori ID";
+            colname.Columns[3].HeaderText = "Üst Kategori Adı";
+            colname.Columns[4].HeaderText = "Aktif Mi?";
+            colname.Columns[5].HeaderText = "Oluşturulma Tarihi";
+            colname.Columns[6].HeaderText = "Oluşturan Kişi";
+            colname.ForeColor = Color.Black;
+            foreach (DataGridViewColumn col in colname.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
     }
 }

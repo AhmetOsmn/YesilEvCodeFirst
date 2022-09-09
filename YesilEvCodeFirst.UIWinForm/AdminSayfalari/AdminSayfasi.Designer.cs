@@ -80,7 +80,8 @@
             this.tsLogOut});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1273, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1697, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -137,6 +138,7 @@
             this.tsLogOut.Name = "tsLogOut";
             this.tsLogOut.Size = new System.Drawing.Size(66, 20);
             this.tsLogOut.Text = "Çıkış Yap";
+            this.tsLogOut.Click += new System.EventHandler(this.tsLogOut_Click);
             // 
             // toolStripSeparator
             // 
@@ -240,8 +242,9 @@
             // 
             this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChildForm.Location = new System.Drawing.Point(0, 24);
+            this.pnlChildForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlChildForm.Name = "pnlChildForm";
-            this.pnlChildForm.Size = new System.Drawing.Size(1273, 477);
+            this.pnlChildForm.Size = new System.Drawing.Size(1697, 593);
             this.pnlChildForm.TabIndex = 2;
             // 
             // newToolStripMenuItem
@@ -317,12 +320,13 @@
             // 
             // AdminSayfasi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1273, 501);
+            this.ClientSize = new System.Drawing.Size(1697, 617);
             this.Controls.Add(this.pnlChildForm);
             this.Controls.Add(this.menuStrip1);
-            this.MinimumSize = new System.Drawing.Size(900, 540);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1195, 656);
             this.Name = "AdminSayfasi";
             this.Text = "AdminSayfasi";
             this.menuStrip1.ResumeLayout(false);

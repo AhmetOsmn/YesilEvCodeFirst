@@ -98,18 +98,21 @@
             this.gbSupplement.Controls.Add(this.btnAra);
             this.gbSupplement.Controls.Add(this.btnEkle);
             this.gbSupplement.Controls.Add(this.btnGuncelle);
-            this.gbSupplement.Location = new System.Drawing.Point(12, 12);
+            this.gbSupplement.Location = new System.Drawing.Point(16, 15);
+            this.gbSupplement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbSupplement.Name = "gbSupplement";
-            this.gbSupplement.Size = new System.Drawing.Size(95, 426);
+            this.gbSupplement.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbSupplement.Size = new System.Drawing.Size(127, 524);
             this.gbSupplement.TabIndex = 5;
             this.gbSupplement.TabStop = false;
             this.gbSupplement.Text = "Kullanıcı İşlemleri";
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(6, 263);
+            this.btnSil.Location = new System.Drawing.Point(8, 324);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(83, 43);
+            this.btnSil.Size = new System.Drawing.Size(111, 53);
             this.btnSil.TabIndex = 4;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
@@ -117,9 +120,10 @@
             // 
             // btnListele
             // 
-            this.btnListele.Location = new System.Drawing.Point(6, 67);
+            this.btnListele.Location = new System.Drawing.Point(8, 82);
+            this.btnListele.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnListele.Name = "btnListele";
-            this.btnListele.Size = new System.Drawing.Size(83, 43);
+            this.btnListele.Size = new System.Drawing.Size(111, 53);
             this.btnListele.TabIndex = 0;
             this.btnListele.Text = "Listele";
             this.btnListele.UseVisualStyleBackColor = true;
@@ -127,9 +131,10 @@
             // 
             // btnAra
             // 
-            this.btnAra.Location = new System.Drawing.Point(6, 116);
+            this.btnAra.Location = new System.Drawing.Point(8, 143);
+            this.btnAra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(83, 43);
+            this.btnAra.Size = new System.Drawing.Size(111, 53);
             this.btnAra.TabIndex = 1;
             this.btnAra.Text = "Ara";
             this.btnAra.UseVisualStyleBackColor = true;
@@ -137,9 +142,10 @@
             // 
             // btnEkle
             // 
-            this.btnEkle.Location = new System.Drawing.Point(6, 165);
+            this.btnEkle.Location = new System.Drawing.Point(8, 203);
+            this.btnEkle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(83, 43);
+            this.btnEkle.Size = new System.Drawing.Size(111, 53);
             this.btnEkle.TabIndex = 2;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
@@ -147,9 +153,10 @@
             // 
             // btnGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(6, 214);
+            this.btnGuncelle.Location = new System.Drawing.Point(8, 263);
+            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(83, 43);
+            this.btnGuncelle.Size = new System.Drawing.Size(111, 53);
             this.btnGuncelle.TabIndex = 3;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
@@ -159,20 +166,22 @@
             // 
             this.pnlListele.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pnlListele.Controls.Add(this.dataGridView1);
-            this.pnlListele.Location = new System.Drawing.Point(112, 20);
+            this.pnlListele.Location = new System.Drawing.Point(149, 25);
+            this.pnlListele.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlListele.Name = "pnlListele";
-            this.pnlListele.Size = new System.Drawing.Size(1159, 416);
+            this.pnlListele.Size = new System.Drawing.Size(1545, 512);
             this.pnlListele.TabIndex = 6;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 2);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1148, 412);
+            this.dataGridView1.Size = new System.Drawing.Size(1531, 508);
             this.dataGridView1.TabIndex = 0;
             // 
             // pnlAra
@@ -182,28 +191,30 @@
             this.pnlAra.Controls.Add(this.btnSearchUserSearch);
             this.pnlAra.Controls.Add(this.txtSearchUserName);
             this.pnlAra.Controls.Add(this.lblSearchUserName);
-            this.pnlAra.Location = new System.Drawing.Point(112, 20);
+            this.pnlAra.Location = new System.Drawing.Point(149, 25);
+            this.pnlAra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlAra.Name = "pnlAra";
-            this.pnlAra.Size = new System.Drawing.Size(1159, 416);
+            this.pnlAra.Size = new System.Drawing.Size(1545, 512);
             this.pnlAra.TabIndex = 7;
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(2, 33);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView2.Location = new System.Drawing.Point(3, 41);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(1155, 380);
+            this.dataGridView2.Size = new System.Drawing.Size(1540, 469);
             this.dataGridView2.TabIndex = 3;
             // 
             // btnSearchUserSearch
             // 
-            this.btnSearchUserSearch.Location = new System.Drawing.Point(262, 10);
-            this.btnSearchUserSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchUserSearch.Location = new System.Drawing.Point(349, 12);
+            this.btnSearchUserSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchUserSearch.Name = "btnSearchUserSearch";
-            this.btnSearchUserSearch.Size = new System.Drawing.Size(56, 19);
+            this.btnSearchUserSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearchUserSearch.TabIndex = 2;
             this.btnSearchUserSearch.Text = "Ara";
             this.btnSearchUserSearch.UseVisualStyleBackColor = true;
@@ -211,19 +222,18 @@
             // 
             // txtSearchUserName
             // 
-            this.txtSearchUserName.Location = new System.Drawing.Point(80, 11);
-            this.txtSearchUserName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearchUserName.Location = new System.Drawing.Point(107, 14);
+            this.txtSearchUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearchUserName.Name = "txtSearchUserName";
-            this.txtSearchUserName.Size = new System.Drawing.Size(170, 20);
+            this.txtSearchUserName.Size = new System.Drawing.Size(225, 22);
             this.txtSearchUserName.TabIndex = 1;
             // 
             // lblSearchUserName
             // 
             this.lblSearchUserName.AutoSize = true;
-            this.lblSearchUserName.Location = new System.Drawing.Point(14, 13);
-            this.lblSearchUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSearchUserName.Location = new System.Drawing.Point(19, 16);
             this.lblSearchUserName.Name = "lblSearchUserName";
-            this.lblSearchUserName.Size = new System.Drawing.Size(67, 13);
+            this.lblSearchUserName.Size = new System.Drawing.Size(83, 16);
             this.lblSearchUserName.TabIndex = 0;
             this.lblSearchUserName.Text = "Kullanıcı İsmi";
             // 
@@ -243,26 +253,27 @@
             this.pnlEkle.Controls.Add(this.lblAddUserName);
             this.pnlEkle.Controls.Add(this.txtAddUserEmail);
             this.pnlEkle.Controls.Add(this.lblAddUserEmail);
-            this.pnlEkle.Location = new System.Drawing.Point(112, 20);
+            this.pnlEkle.Location = new System.Drawing.Point(149, 25);
+            this.pnlEkle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlEkle.Name = "pnlEkle";
-            this.pnlEkle.Size = new System.Drawing.Size(1159, 416);
+            this.pnlEkle.Size = new System.Drawing.Size(1545, 512);
             this.pnlEkle.TabIndex = 8;
             // 
             // cmbBoxAddUserRole
             // 
             this.cmbBoxAddUserRole.FormattingEnabled = true;
-            this.cmbBoxAddUserRole.Location = new System.Drawing.Point(200, 190);
-            this.cmbBoxAddUserRole.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbBoxAddUserRole.Location = new System.Drawing.Point(267, 234);
+            this.cmbBoxAddUserRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbBoxAddUserRole.Name = "cmbBoxAddUserRole";
-            this.cmbBoxAddUserRole.Size = new System.Drawing.Size(170, 21);
+            this.cmbBoxAddUserRole.Size = new System.Drawing.Size(225, 24);
             this.cmbBoxAddUserRole.TabIndex = 38;
             // 
             // btnAddUserAdd
             // 
-            this.btnAddUserAdd.Location = new System.Drawing.Point(340, 240);
-            this.btnAddUserAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddUserAdd.Location = new System.Drawing.Point(453, 295);
+            this.btnAddUserAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddUserAdd.Name = "btnAddUserAdd";
-            this.btnAddUserAdd.Size = new System.Drawing.Size(109, 34);
+            this.btnAddUserAdd.Size = new System.Drawing.Size(145, 42);
             this.btnAddUserAdd.TabIndex = 37;
             this.btnAddUserAdd.Text = "Ekle";
             this.btnAddUserAdd.UseVisualStyleBackColor = true;
@@ -270,101 +281,95 @@
             // 
             // txtAddUserLastName
             // 
-            this.txtAddUserLastName.Location = new System.Drawing.Point(460, 167);
-            this.txtAddUserLastName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddUserLastName.Location = new System.Drawing.Point(613, 206);
+            this.txtAddUserLastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddUserLastName.Name = "txtAddUserLastName";
-            this.txtAddUserLastName.Size = new System.Drawing.Size(170, 20);
+            this.txtAddUserLastName.Size = new System.Drawing.Size(225, 22);
             this.txtAddUserLastName.TabIndex = 36;
             // 
             // lblAddUserLastName
             // 
             this.lblAddUserLastName.AutoSize = true;
-            this.lblAddUserLastName.Location = new System.Drawing.Point(378, 170);
-            this.lblAddUserLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddUserLastName.Location = new System.Drawing.Point(504, 209);
             this.lblAddUserLastName.Name = "lblAddUserLastName";
-            this.lblAddUserLastName.Size = new System.Drawing.Size(84, 13);
+            this.lblAddUserLastName.Size = new System.Drawing.Size(107, 16);
             this.lblAddUserLastName.TabIndex = 35;
             this.lblAddUserLastName.Text = "Kullanıcı Soyisim";
             // 
             // lblAddUserRole
             // 
             this.lblAddUserRole.AutoSize = true;
-            this.lblAddUserRole.Location = new System.Drawing.Point(130, 193);
-            this.lblAddUserRole.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddUserRole.Location = new System.Drawing.Point(173, 238);
             this.lblAddUserRole.Name = "lblAddUserRole";
-            this.lblAddUserRole.Size = new System.Drawing.Size(65, 13);
+            this.lblAddUserRole.Size = new System.Drawing.Size(80, 16);
             this.lblAddUserRole.TabIndex = 30;
             this.lblAddUserRole.Text = "Kullanıcı Rol";
             // 
             // txtAddUserPassword
             // 
-            this.txtAddUserPassword.Location = new System.Drawing.Point(200, 167);
-            this.txtAddUserPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddUserPassword.Location = new System.Drawing.Point(267, 206);
+            this.txtAddUserPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddUserPassword.Name = "txtAddUserPassword";
-            this.txtAddUserPassword.Size = new System.Drawing.Size(170, 20);
+            this.txtAddUserPassword.Size = new System.Drawing.Size(225, 22);
             this.txtAddUserPassword.TabIndex = 33;
             // 
             // lblAddUserPassword
             // 
             this.lblAddUserPassword.AutoSize = true;
-            this.lblAddUserPassword.Location = new System.Drawing.Point(130, 169);
-            this.lblAddUserPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddUserPassword.Location = new System.Drawing.Point(173, 208);
             this.lblAddUserPassword.Name = "lblAddUserPassword";
-            this.lblAddUserPassword.Size = new System.Drawing.Size(70, 13);
+            this.lblAddUserPassword.Size = new System.Drawing.Size(86, 16);
             this.lblAddUserPassword.TabIndex = 31;
             this.lblAddUserPassword.Text = "Kullanıcı Şifre";
             // 
             // txtAddUserPhone
             // 
-            this.txtAddUserPhone.Location = new System.Drawing.Point(460, 191);
-            this.txtAddUserPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddUserPhone.Location = new System.Drawing.Point(613, 235);
+            this.txtAddUserPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddUserPhone.Name = "txtAddUserPhone";
-            this.txtAddUserPhone.Size = new System.Drawing.Size(170, 20);
+            this.txtAddUserPhone.Size = new System.Drawing.Size(225, 22);
             this.txtAddUserPhone.TabIndex = 34;
             // 
             // lblAddUserPhone
             // 
             this.lblAddUserPhone.AutoSize = true;
-            this.lblAddUserPhone.Location = new System.Drawing.Point(376, 193);
-            this.lblAddUserPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddUserPhone.Location = new System.Drawing.Point(501, 238);
             this.lblAddUserPhone.Name = "lblAddUserPhone";
-            this.lblAddUserPhone.Size = new System.Drawing.Size(85, 13);
+            this.lblAddUserPhone.Size = new System.Drawing.Size(105, 16);
             this.lblAddUserPhone.TabIndex = 32;
             this.lblAddUserPhone.Text = "Kullanıcı Telefon";
             // 
             // txtAddUserName
             // 
-            this.txtAddUserName.Location = new System.Drawing.Point(200, 142);
-            this.txtAddUserName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddUserName.Location = new System.Drawing.Point(267, 175);
+            this.txtAddUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddUserName.Name = "txtAddUserName";
-            this.txtAddUserName.Size = new System.Drawing.Size(170, 20);
+            this.txtAddUserName.Size = new System.Drawing.Size(225, 22);
             this.txtAddUserName.TabIndex = 29;
             // 
             // lblAddUserName
             // 
             this.lblAddUserName.AutoSize = true;
-            this.lblAddUserName.Location = new System.Drawing.Point(132, 145);
-            this.lblAddUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddUserName.Location = new System.Drawing.Point(176, 178);
             this.lblAddUserName.Name = "lblAddUserName";
-            this.lblAddUserName.Size = new System.Drawing.Size(67, 13);
+            this.lblAddUserName.Size = new System.Drawing.Size(83, 16);
             this.lblAddUserName.TabIndex = 28;
             this.lblAddUserName.Text = "Kullanıcı İsim";
             // 
             // txtAddUserEmail
             // 
-            this.txtAddUserEmail.Location = new System.Drawing.Point(460, 142);
-            this.txtAddUserEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddUserEmail.Location = new System.Drawing.Point(613, 175);
+            this.txtAddUserEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddUserEmail.Name = "txtAddUserEmail";
-            this.txtAddUserEmail.Size = new System.Drawing.Size(170, 20);
+            this.txtAddUserEmail.Size = new System.Drawing.Size(225, 22);
             this.txtAddUserEmail.TabIndex = 27;
             // 
             // lblAddUserEmail
             // 
             this.lblAddUserEmail.AutoSize = true;
-            this.lblAddUserEmail.Location = new System.Drawing.Point(386, 145);
-            this.lblAddUserEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddUserEmail.Location = new System.Drawing.Point(515, 178);
             this.lblAddUserEmail.Name = "lblAddUserEmail";
-            this.lblAddUserEmail.Size = new System.Drawing.Size(74, 13);
+            this.lblAddUserEmail.Size = new System.Drawing.Size(93, 16);
             this.lblAddUserEmail.TabIndex = 26;
             this.lblAddUserEmail.Text = "Kullanıcı Email";
             // 
@@ -385,26 +390,27 @@
             this.pnlGuncelle.Controls.Add(this.btnUpdateUserSearch);
             this.pnlGuncelle.Controls.Add(this.txtUpdateUserEmail);
             this.pnlGuncelle.Controls.Add(this.lblUpdateUserEmail);
-            this.pnlGuncelle.Location = new System.Drawing.Point(112, 20);
+            this.pnlGuncelle.Location = new System.Drawing.Point(149, 25);
+            this.pnlGuncelle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlGuncelle.Name = "pnlGuncelle";
-            this.pnlGuncelle.Size = new System.Drawing.Size(1159, 416);
+            this.pnlGuncelle.Size = new System.Drawing.Size(1545, 512);
             this.pnlGuncelle.TabIndex = 9;
             // 
             // cmbBoxUpdateUserRole
             // 
             this.cmbBoxUpdateUserRole.FormattingEnabled = true;
-            this.cmbBoxUpdateUserRole.Location = new System.Drawing.Point(243, 168);
-            this.cmbBoxUpdateUserRole.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbBoxUpdateUserRole.Location = new System.Drawing.Point(324, 207);
+            this.cmbBoxUpdateUserRole.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbBoxUpdateUserRole.Name = "cmbBoxUpdateUserRole";
-            this.cmbBoxUpdateUserRole.Size = new System.Drawing.Size(170, 21);
+            this.cmbBoxUpdateUserRole.Size = new System.Drawing.Size(225, 24);
             this.cmbBoxUpdateUserRole.TabIndex = 25;
             // 
             // btnUpdateUserUpdate
             // 
-            this.btnUpdateUserUpdate.Location = new System.Drawing.Point(383, 217);
-            this.btnUpdateUserUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateUserUpdate.Location = new System.Drawing.Point(511, 267);
+            this.btnUpdateUserUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateUserUpdate.Name = "btnUpdateUserUpdate";
-            this.btnUpdateUserUpdate.Size = new System.Drawing.Size(109, 34);
+            this.btnUpdateUserUpdate.Size = new System.Drawing.Size(145, 42);
             this.btnUpdateUserUpdate.TabIndex = 24;
             this.btnUpdateUserUpdate.Text = "Güncelle";
             this.btnUpdateUserUpdate.UseVisualStyleBackColor = true;
@@ -412,92 +418,87 @@
             // 
             // txtUpdateUserLastName
             // 
-            this.txtUpdateUserLastName.Location = new System.Drawing.Point(504, 145);
-            this.txtUpdateUserLastName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUpdateUserLastName.Location = new System.Drawing.Point(672, 178);
+            this.txtUpdateUserLastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUpdateUserLastName.Name = "txtUpdateUserLastName";
-            this.txtUpdateUserLastName.Size = new System.Drawing.Size(170, 20);
+            this.txtUpdateUserLastName.Size = new System.Drawing.Size(225, 22);
             this.txtUpdateUserLastName.TabIndex = 23;
             // 
             // lblUpdateUserLastName
             // 
             this.lblUpdateUserLastName.AutoSize = true;
-            this.lblUpdateUserLastName.Location = new System.Drawing.Point(421, 147);
-            this.lblUpdateUserLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUpdateUserLastName.Location = new System.Drawing.Point(561, 181);
             this.lblUpdateUserLastName.Name = "lblUpdateUserLastName";
-            this.lblUpdateUserLastName.Size = new System.Drawing.Size(84, 13);
+            this.lblUpdateUserLastName.Size = new System.Drawing.Size(107, 16);
             this.lblUpdateUserLastName.TabIndex = 22;
             this.lblUpdateUserLastName.Text = "Kullanıcı Soyisim";
             // 
             // lblUpdateUserRole
             // 
             this.lblUpdateUserRole.AutoSize = true;
-            this.lblUpdateUserRole.Location = new System.Drawing.Point(173, 171);
-            this.lblUpdateUserRole.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUpdateUserRole.Location = new System.Drawing.Point(231, 210);
             this.lblUpdateUserRole.Name = "lblUpdateUserRole";
-            this.lblUpdateUserRole.Size = new System.Drawing.Size(65, 13);
+            this.lblUpdateUserRole.Size = new System.Drawing.Size(80, 16);
             this.lblUpdateUserRole.TabIndex = 20;
             this.lblUpdateUserRole.Text = "Kullanıcı Rol";
             // 
             // txtUpdateUserPassword
             // 
-            this.txtUpdateUserPassword.Location = new System.Drawing.Point(243, 144);
-            this.txtUpdateUserPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUpdateUserPassword.Location = new System.Drawing.Point(324, 177);
+            this.txtUpdateUserPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUpdateUserPassword.Name = "txtUpdateUserPassword";
-            this.txtUpdateUserPassword.Size = new System.Drawing.Size(170, 20);
+            this.txtUpdateUserPassword.Size = new System.Drawing.Size(225, 22);
             this.txtUpdateUserPassword.TabIndex = 21;
             // 
             // lblUpdateUserPassword
             // 
             this.lblUpdateUserPassword.AutoSize = true;
-            this.lblUpdateUserPassword.Location = new System.Drawing.Point(173, 146);
-            this.lblUpdateUserPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUpdateUserPassword.Location = new System.Drawing.Point(231, 180);
             this.lblUpdateUserPassword.Name = "lblUpdateUserPassword";
-            this.lblUpdateUserPassword.Size = new System.Drawing.Size(70, 13);
+            this.lblUpdateUserPassword.Size = new System.Drawing.Size(86, 16);
             this.lblUpdateUserPassword.TabIndex = 20;
             this.lblUpdateUserPassword.Text = "Kullanıcı Şifre";
             // 
             // txtUpdateUserPhone
             // 
-            this.txtUpdateUserPhone.Location = new System.Drawing.Point(504, 168);
-            this.txtUpdateUserPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUpdateUserPhone.Location = new System.Drawing.Point(672, 207);
+            this.txtUpdateUserPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUpdateUserPhone.Name = "txtUpdateUserPhone";
-            this.txtUpdateUserPhone.Size = new System.Drawing.Size(170, 20);
+            this.txtUpdateUserPhone.Size = new System.Drawing.Size(225, 22);
             this.txtUpdateUserPhone.TabIndex = 21;
             // 
             // lblUpdateUserPhone
             // 
             this.lblUpdateUserPhone.AutoSize = true;
-            this.lblUpdateUserPhone.Location = new System.Drawing.Point(420, 171);
-            this.lblUpdateUserPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUpdateUserPhone.Location = new System.Drawing.Point(560, 210);
             this.lblUpdateUserPhone.Name = "lblUpdateUserPhone";
-            this.lblUpdateUserPhone.Size = new System.Drawing.Size(85, 13);
+            this.lblUpdateUserPhone.Size = new System.Drawing.Size(105, 16);
             this.lblUpdateUserPhone.TabIndex = 20;
             this.lblUpdateUserPhone.Text = "Kullanıcı Telefon";
             // 
             // txtUpdateUserName
             // 
-            this.txtUpdateUserName.Location = new System.Drawing.Point(243, 120);
-            this.txtUpdateUserName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUpdateUserName.Location = new System.Drawing.Point(324, 148);
+            this.txtUpdateUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUpdateUserName.Name = "txtUpdateUserName";
-            this.txtUpdateUserName.Size = new System.Drawing.Size(170, 20);
+            this.txtUpdateUserName.Size = new System.Drawing.Size(225, 22);
             this.txtUpdateUserName.TabIndex = 19;
             // 
             // lblUpdateUserName
             // 
             this.lblUpdateUserName.AutoSize = true;
-            this.lblUpdateUserName.Location = new System.Drawing.Point(175, 122);
-            this.lblUpdateUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUpdateUserName.Location = new System.Drawing.Point(233, 150);
             this.lblUpdateUserName.Name = "lblUpdateUserName";
-            this.lblUpdateUserName.Size = new System.Drawing.Size(67, 13);
+            this.lblUpdateUserName.Size = new System.Drawing.Size(83, 16);
             this.lblUpdateUserName.TabIndex = 18;
             this.lblUpdateUserName.Text = "Kullanıcı İsim";
             // 
             // btnUpdateUserSearch
             // 
-            this.btnUpdateUserSearch.Location = new System.Drawing.Point(686, 119);
-            this.btnUpdateUserSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateUserSearch.Location = new System.Drawing.Point(915, 146);
+            this.btnUpdateUserSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateUserSearch.Name = "btnUpdateUserSearch";
-            this.btnUpdateUserSearch.Size = new System.Drawing.Size(56, 19);
+            this.btnUpdateUserSearch.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateUserSearch.TabIndex = 17;
             this.btnUpdateUserSearch.Text = "Ara";
             this.btnUpdateUserSearch.UseVisualStyleBackColor = true;
@@ -505,19 +506,18 @@
             // 
             // txtUpdateUserEmail
             // 
-            this.txtUpdateUserEmail.Location = new System.Drawing.Point(504, 120);
-            this.txtUpdateUserEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUpdateUserEmail.Location = new System.Drawing.Point(672, 148);
+            this.txtUpdateUserEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUpdateUserEmail.Name = "txtUpdateUserEmail";
-            this.txtUpdateUserEmail.Size = new System.Drawing.Size(170, 20);
+            this.txtUpdateUserEmail.Size = new System.Drawing.Size(225, 22);
             this.txtUpdateUserEmail.TabIndex = 16;
             // 
             // lblUpdateUserEmail
             // 
             this.lblUpdateUserEmail.AutoSize = true;
-            this.lblUpdateUserEmail.Location = new System.Drawing.Point(428, 122);
-            this.lblUpdateUserEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUpdateUserEmail.Location = new System.Drawing.Point(571, 150);
             this.lblUpdateUserEmail.Name = "lblUpdateUserEmail";
-            this.lblUpdateUserEmail.Size = new System.Drawing.Size(74, 13);
+            this.lblUpdateUserEmail.Size = new System.Drawing.Size(93, 16);
             this.lblUpdateUserEmail.TabIndex = 15;
             this.lblUpdateUserEmail.Text = "Kullanıcı Email";
             // 
@@ -534,17 +534,18 @@
             this.pnlSil.Controls.Add(this.btnDeleteUserSearch);
             this.pnlSil.Controls.Add(this.txtDeleteUserEmail);
             this.pnlSil.Controls.Add(this.lblDeleteUserEmail);
-            this.pnlSil.Location = new System.Drawing.Point(112, 20);
+            this.pnlSil.Location = new System.Drawing.Point(149, 25);
+            this.pnlSil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSil.Name = "pnlSil";
-            this.pnlSil.Size = new System.Drawing.Size(1159, 416);
+            this.pnlSil.Size = new System.Drawing.Size(1545, 512);
             this.pnlSil.TabIndex = 10;
             // 
             // btnDeleteUserDelete
             // 
-            this.btnDeleteUserDelete.Location = new System.Drawing.Point(375, 213);
-            this.btnDeleteUserDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeleteUserDelete.Location = new System.Drawing.Point(500, 262);
+            this.btnDeleteUserDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDeleteUserDelete.Name = "btnDeleteUserDelete";
-            this.btnDeleteUserDelete.Size = new System.Drawing.Size(109, 34);
+            this.btnDeleteUserDelete.Size = new System.Drawing.Size(145, 42);
             this.btnDeleteUserDelete.TabIndex = 14;
             this.btnDeleteUserDelete.Text = "Sil";
             this.btnDeleteUserDelete.UseVisualStyleBackColor = true;
@@ -552,64 +553,61 @@
             // 
             // txtDeleteUserLastName
             // 
-            this.txtDeleteUserLastName.Location = new System.Drawing.Point(523, 155);
-            this.txtDeleteUserLastName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDeleteUserLastName.Location = new System.Drawing.Point(697, 191);
+            this.txtDeleteUserLastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDeleteUserLastName.Name = "txtDeleteUserLastName";
-            this.txtDeleteUserLastName.Size = new System.Drawing.Size(170, 20);
+            this.txtDeleteUserLastName.Size = new System.Drawing.Size(225, 22);
             this.txtDeleteUserLastName.TabIndex = 13;
             // 
             // lblDeleteUserLastName
             // 
             this.lblDeleteUserLastName.AutoSize = true;
-            this.lblDeleteUserLastName.Location = new System.Drawing.Point(440, 158);
-            this.lblDeleteUserLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDeleteUserLastName.Location = new System.Drawing.Point(587, 194);
             this.lblDeleteUserLastName.Name = "lblDeleteUserLastName";
-            this.lblDeleteUserLastName.Size = new System.Drawing.Size(84, 13);
+            this.lblDeleteUserLastName.Size = new System.Drawing.Size(107, 16);
             this.lblDeleteUserLastName.TabIndex = 12;
             this.lblDeleteUserLastName.Text = "Kullanıcı Soyisim";
             // 
             // txtDeleteUserPhone
             // 
-            this.txtDeleteUserPhone.Location = new System.Drawing.Point(262, 177);
-            this.txtDeleteUserPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDeleteUserPhone.Location = new System.Drawing.Point(349, 218);
+            this.txtDeleteUserPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDeleteUserPhone.Name = "txtDeleteUserPhone";
-            this.txtDeleteUserPhone.Size = new System.Drawing.Size(170, 20);
+            this.txtDeleteUserPhone.Size = new System.Drawing.Size(225, 22);
             this.txtDeleteUserPhone.TabIndex = 9;
             // 
             // lblDeleteUserPhone
             // 
             this.lblDeleteUserPhone.AutoSize = true;
-            this.lblDeleteUserPhone.Location = new System.Drawing.Point(178, 180);
-            this.lblDeleteUserPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDeleteUserPhone.Location = new System.Drawing.Point(237, 222);
             this.lblDeleteUserPhone.Name = "lblDeleteUserPhone";
-            this.lblDeleteUserPhone.Size = new System.Drawing.Size(85, 13);
+            this.lblDeleteUserPhone.Size = new System.Drawing.Size(105, 16);
             this.lblDeleteUserPhone.TabIndex = 8;
             this.lblDeleteUserPhone.Text = "Kullanıcı Telefon";
             // 
             // txtDeleteUserName
             // 
-            this.txtDeleteUserName.Location = new System.Drawing.Point(262, 153);
-            this.txtDeleteUserName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDeleteUserName.Location = new System.Drawing.Point(349, 188);
+            this.txtDeleteUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDeleteUserName.Name = "txtDeleteUserName";
-            this.txtDeleteUserName.Size = new System.Drawing.Size(170, 20);
+            this.txtDeleteUserName.Size = new System.Drawing.Size(225, 22);
             this.txtDeleteUserName.TabIndex = 7;
             // 
             // lblDeleteUserName
             // 
             this.lblDeleteUserName.AutoSize = true;
-            this.lblDeleteUserName.Location = new System.Drawing.Point(194, 155);
-            this.lblDeleteUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDeleteUserName.Location = new System.Drawing.Point(259, 191);
             this.lblDeleteUserName.Name = "lblDeleteUserName";
-            this.lblDeleteUserName.Size = new System.Drawing.Size(67, 13);
+            this.lblDeleteUserName.Size = new System.Drawing.Size(83, 16);
             this.lblDeleteUserName.TabIndex = 6;
             this.lblDeleteUserName.Text = "Kullanıcı İsim";
             // 
             // btnDeleteUserSearch
             // 
-            this.btnDeleteUserSearch.Location = new System.Drawing.Point(444, 127);
-            this.btnDeleteUserSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeleteUserSearch.Location = new System.Drawing.Point(592, 156);
+            this.btnDeleteUserSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDeleteUserSearch.Name = "btnDeleteUserSearch";
-            this.btnDeleteUserSearch.Size = new System.Drawing.Size(56, 19);
+            this.btnDeleteUserSearch.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteUserSearch.TabIndex = 5;
             this.btnDeleteUserSearch.Text = "Ara";
             this.btnDeleteUserSearch.UseVisualStyleBackColor = true;
@@ -617,33 +615,33 @@
             // 
             // txtDeleteUserEmail
             // 
-            this.txtDeleteUserEmail.Location = new System.Drawing.Point(262, 128);
-            this.txtDeleteUserEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDeleteUserEmail.Location = new System.Drawing.Point(349, 158);
+            this.txtDeleteUserEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDeleteUserEmail.Name = "txtDeleteUserEmail";
-            this.txtDeleteUserEmail.Size = new System.Drawing.Size(170, 20);
+            this.txtDeleteUserEmail.Size = new System.Drawing.Size(225, 22);
             this.txtDeleteUserEmail.TabIndex = 4;
             // 
             // lblDeleteUserEmail
             // 
             this.lblDeleteUserEmail.AutoSize = true;
-            this.lblDeleteUserEmail.Location = new System.Drawing.Point(188, 130);
-            this.lblDeleteUserEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDeleteUserEmail.Location = new System.Drawing.Point(251, 160);
             this.lblDeleteUserEmail.Name = "lblDeleteUserEmail";
-            this.lblDeleteUserEmail.Size = new System.Drawing.Size(74, 13);
+            this.lblDeleteUserEmail.Size = new System.Drawing.Size(93, 16);
             this.lblDeleteUserEmail.TabIndex = 3;
             this.lblDeleteUserEmail.Text = "Kullanıcı Email";
             // 
             // KullaniciIslemleri
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1273, 501);
+            this.ClientSize = new System.Drawing.Size(1697, 617);
             this.Controls.Add(this.gbSupplement);
-            this.Controls.Add(this.pnlListele);
-            this.Controls.Add(this.pnlEkle);
             this.Controls.Add(this.pnlAra);
             this.Controls.Add(this.pnlSil);
             this.Controls.Add(this.pnlGuncelle);
+            this.Controls.Add(this.pnlListele);
+            this.Controls.Add(this.pnlEkle);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "KullaniciIslemleri";
             this.Text = "KullaniciIslemleri";
             this.gbSupplement.ResumeLayout(false);
