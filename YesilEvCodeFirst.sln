@@ -5,8 +5,6 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YesilEvCodeFirst.MyTest", "YesilEvCodeFirst.MyTest\YesilEvCodeFirst.MyTest.csproj", "{18304CFF-2F22-478B-A40F-6E22B4146DF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YesilEvCodeFirst.UIConsoleApp", "YesilEvCodeFirst.UIConsoleApp\YesilEvCodeFirst.UIConsoleApp.csproj", "{19097726-3BB4-49AC-B73F-81B18FEA80ED}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YesilEvCodeFirst.Mapping", "YesilEvCodeFirst.Mapping\YesilEvCodeFirst.Mapping.csproj", "{94D00F1C-7006-49F9-9AB8-2804DEFE0036}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YesilEvCodeFirst.Logs", "YesilEvCodeFirst.Logs\YesilEvCodeFirst.Logs.csproj", "{4B8FD883-6D4B-49A2-B1DB-39836431FA17}"
@@ -35,10 +33,6 @@ Global
 		{18304CFF-2F22-478B-A40F-6E22B4146DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18304CFF-2F22-478B-A40F-6E22B4146DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18304CFF-2F22-478B-A40F-6E22B4146DF2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19097726-3BB4-49AC-B73F-81B18FEA80ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19097726-3BB4-49AC-B73F-81B18FEA80ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19097726-3BB4-49AC-B73F-81B18FEA80ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19097726-3BB4-49AC-B73F-81B18FEA80ED}.Release|Any CPU.Build.0 = Release|Any CPU
 		{94D00F1C-7006-49F9-9AB8-2804DEFE0036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{94D00F1C-7006-49F9-9AB8-2804DEFE0036}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94D00F1C-7006-49F9-9AB8-2804DEFE0036}.Release|Any CPU.ActiveCfg = Release|Any CPU

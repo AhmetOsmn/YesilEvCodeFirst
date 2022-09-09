@@ -28,7 +28,6 @@ namespace YesilEvCodeFirst.Core.Entities
         [Column(TypeName = "NVARCHAR")]
         [StringLength(30)]
         public string Password { get; set; }
-
         public int RolID { get; set; }
         [ForeignKey("RolID")]
         public Role Rol { get; set; }

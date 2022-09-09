@@ -1,5 +1,6 @@
 ﻿using FluentValidation.Results;
 using NLog;
+using NLog.Filters;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
@@ -9,6 +10,7 @@ using YesilEvCodeFirst.Core.Context;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.Core.Repos;
 using YesilEvCodeFirst.DTOs;
+using YesilEvCodeFirst.DTOs.Rapor;
 using YesilEvCodeFirst.DTOs.UserAdmin;
 using YesilEvCodeFirst.Mapping;
 using YesilEvCodeFirst.Validation.FluentValidator;
@@ -104,7 +106,7 @@ namespace YesilEvCodeFirst.DAL.Use
             ValidationResult validationResult = validator.Validate(dto);
             try
             {
-                if(!validationResult.IsValid)
+                if (!validationResult.IsValid)
                 {
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
@@ -120,7 +122,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new Exception(Messages.UserNotFound);
                 }
             }
-            catch(FormatException fex)
+            catch (FormatException fex)
             {
                 nLogger.Error("System - {}", fex.Message);
                 throw new Exception(fex.Message);
@@ -138,7 +140,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
             try
             {
-                if(!validationResult.IsValid)
+                if (!validationResult.IsValid)
                 {
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
@@ -154,7 +156,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new Exception(Messages.UserNotFound);
                 }
             }
-            catch(FormatException fex)
+            catch (FormatException fex)
             {
                 nLogger.Error("System - {}", fex.Message);
                 throw new FormatException(fex.Message);
@@ -168,11 +170,11 @@ namespace YesilEvCodeFirst.DAL.Use
         public bool UpdateUserDetails(UpdateUserDetailsDTO dto)
         {
             UpdateUserDetailsValidator validator = new UpdateUserDetailsValidator();
-            ValidationResult validationResult = validator.Validate(dto); 
+            ValidationResult validationResult = validator.Validate(dto);
 
             try
             {
-                if(!validationResult.IsValid)
+                if (!validationResult.IsValid)
                 {
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
@@ -192,7 +194,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new Exception(Messages.UserNotFound);
                 }
             }
-            catch(FormatException fex)
+            catch (FormatException fex)
             {
                 nLogger.Error("System - {}", fex.Message);
                 throw new FormatException(fex.Message);
@@ -210,7 +212,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
             try
             {
-                if(!validationResult.IsValid)
+                if (!validationResult.IsValid)
                 {
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
@@ -228,7 +230,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new Exception(Messages.UserNotFound);
                 }
             }
-            catch(FormatException fex)
+            catch (FormatException fex)
             {
                 nLogger.Error("System - {}", fex.Message);
                 throw new FormatException(fex.Message);
@@ -246,7 +248,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
             try
             {
-                if(!validationResult.IsValid)
+                if (!validationResult.IsValid)
                 {
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
@@ -264,7 +266,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new Exception(Messages.UserNotFound);
                 }
             }
-            catch(FormatException fex)
+            catch (FormatException fex)
             {
                 nLogger.Error("System - {}", fex.Message);
                 throw new FormatException(fex.Message);
@@ -275,30 +277,32 @@ namespace YesilEvCodeFirst.DAL.Use
                 throw new Exception(ex.Message);
             }
         }
-        public List<User> GetAllUserDetailForAdmin()
+        public List<ListUserDTO> GetAllUserDetailForAdmin()
         {
-            return GetAll();
+            var result = GetAllWithInclude("Rol");
+            return MappingProfile.ListUserDTOToUser(result);
         }
-        public List<User> GetUserWithFilterForAdmin(string filter)
+        public List<ListUserDTO> GetUserWithFilterForAdmin(string filter)
         {
-            return GetByCondition(x=>x.FirstName.ToLower().Contains(filter.ToLower())&& x.IsActive).ToList();
+            var result = GetByConditionWithInclude(x => x.FirstName.ToLower().Contains(filter.ToLower()) && x.IsActive, "Rol").ToList();
+            return MappingProfile.ListUserDTOToUser(result);
         }
         public User GetUserWithEmailForAdmin(string email)
         {
-            return GetByCondition(x=>x.Email.Equals(email)&& x.IsActive).FirstOrDefault();
+            return GetByCondition(x => x.Email.Equals(email) && x.IsActive).FirstOrDefault();
         }
         public bool DeleteUserWithEmailForAdmin(string email)
         {
             try
             {
                 var result = GetByCondition(x => x.Email == email && x.IsActive).FirstOrDefault();
-                if(result != null)
+                if (result != null)
                 {
                     result.IsActive = false;
-                    using(YesilEvDbContext context = new YesilEvDbContext())
+                    using (YesilEvDbContext context = new YesilEvDbContext())
                     {
                         var userFavlists = context.FavList.Where(x => x.UserID == result.UserID && x.IsActive).ToList();
-                        if(userFavlists != null)
+                        if (userFavlists != null)
                         {
                             userFavlists.ForEach(x =>
                             {
@@ -309,20 +313,22 @@ namespace YesilEvCodeFirst.DAL.Use
                                     y.IsActive = false;
                                 });
                             });
-                        }                        
+                        }
                         var userBlackList = context.BlackList.Where(x => x.UserID == result.UserID && x.IsActive).FirstOrDefault();
-                        if(userBlackList != null)
+                        if (userBlackList != null)
                         {
                             userBlackList.IsActive = false;
                             var blackListSupplements = context.SupplementBlackList.Where(y => y.BlackListID == userBlackList.BlackListID && y.IsActive).ToList();
-                            blackListSupplements.ForEach(x => {
+                            blackListSupplements.ForEach(x =>
+                            {
                                 x.IsActive = false;
                             });
-                        }                        
+                        }
                         var userSearchHistories = context.SearchHistory.Where(x => x.UserID == result.UserID && x.IsActive).ToList();
-                        if(userSearchHistories != null)
+                        if (userSearchHistories != null)
                         {
-                            userSearchHistories.ForEach(x => {
+                            userSearchHistories.ForEach(x =>
+                            {
                                 x.IsActive = false;
                             });
                         }
@@ -334,9 +340,9 @@ namespace YesilEvCodeFirst.DAL.Use
                 {
                     throw new Exception("Kullanıcı Bulunamadı.");
                 }
-                
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
@@ -369,11 +375,11 @@ namespace YesilEvCodeFirst.DAL.Use
                 MySaveChanges();
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-            
+
         }
     }
 }

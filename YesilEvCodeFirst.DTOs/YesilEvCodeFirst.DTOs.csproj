@@ -92,6 +92,7 @@
     <Compile Include="Supplier\SupplierDTO.cs" />
     <Compile Include="Supplier\UpdateSupplierDTO.cs" />
     <Compile Include="UserAdmin\AddUserDTO.cs" />
+    <Compile Include="UserAdmin\ListUserDTO.cs" />
     <Compile Include="UserAdmin\UpdateUserDetailsDTO.cs" />
     <Compile Include="UserAdmin\UpdateUserEmailDTO.cs" />
     <Compile Include="UserAdmin\UserForAdminDTO.cs" />

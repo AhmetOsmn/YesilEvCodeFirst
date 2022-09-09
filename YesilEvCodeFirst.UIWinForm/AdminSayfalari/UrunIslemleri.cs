@@ -39,7 +39,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             pnlListele.Visible = true;
             dgvProducts.DataSource = null;
             dgvProducts.DataSource = useProductDAL.GetProductsForAdmin();
-            //ChangeDatagridViewsColumnNames(dgvProducts);
+            ChangeDatagridViewsColumnNames(dgvProducts);
         }
 
         private void btnAra_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             dgvApprove.DataSource = null;
             onaylanmamisUrunler = useProductDAL.GetProductsForAdminApprove();
             dgvApprove.DataSource = onaylanmamisUrunler;
-            //ChangeDatagridViewsColumnNames(dgvApprove);
+            ChangeDatagridViewsColumnNames(dgvApprove);
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -444,26 +444,20 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
 
         private void ChangeDatagridViewsColumnNames(DataGridView colname)
         {
-            colname.Columns[0].HeaderText = "ID";
+            colname.Columns[0].HeaderText = "ÜrünID";
             colname.Columns[1].HeaderText = "Ürün Adı";
             colname.Columns[2].HeaderText = "Barkod Numarası";
             colname.Columns[3].HeaderText = "Takip Numarası";
-            colname.Columns[4].HeaderText = "Onaylı Mı";
+            colname.Columns[4].HeaderText = "Onaylandı Mı?";
             colname.Columns[5].HeaderText = "Ön Fotoğraf";
             colname.Columns[6].HeaderText = "Arka Fotoğraf";
             colname.Columns[7].HeaderText = "İçerik Fotoğraf";
-            colname.Columns[8].HeaderText = "Ürün İçeriği";
-            colname.Columns[9].HeaderText = "Üretici ID";
-            colname.Columns[10].HeaderText = "Üretici";
-            colname.Columns[11].HeaderText = "Ürünü Ekleyen ID";
-            colname.Columns[12].HeaderText = "Ürünü Ekleyen";
-            colname.Columns[13].HeaderText = "Kategori ID";
-            colname.Columns[14].HeaderText = "Kategori";
-            colname.Columns[15].HeaderText = "Onaylayan ID";
-            colname.Columns[16].HeaderText = "Onaylayan";
-            colname.Columns[17].HeaderText = "Aktif Mi";
-            colname.Columns[18].HeaderText = "Oluşturulma Tarihi";
-            colname.Columns[19].HeaderText = "Oluşturan";
+            colname.Columns[8].HeaderText = "Ürün İçerikleri";
+            colname.Columns[9].HeaderText = "Tedarikçi Adı";
+            colname.Columns[10].HeaderText = "Ekleyen Kişi";
+            colname.Columns[11].HeaderText = "Kategori Adı";
+            colname.Columns[12].HeaderText = "Eklenme Tarihi";
+            colname.Columns[13].HeaderText = "Onaylayan Kişi";
             colname.ForeColor = Color.Black;
             foreach (DataGridViewColumn col in colname.Columns)
             {

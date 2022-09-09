@@ -38,8 +38,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(643, 156);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(444, 126);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(382, 17);
             this.label1.TabIndex = 19;
@@ -47,10 +46,9 @@
             // 
             // buttonRaporuGetir
             // 
-            this.buttonRaporuGetir.Location = new System.Drawing.Point(781, 206);
-            this.buttonRaporuGetir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRaporuGetir.Location = new System.Drawing.Point(586, 167);
             this.buttonRaporuGetir.Name = "buttonRaporuGetir";
-            this.buttonRaporuGetir.Size = new System.Drawing.Size(155, 55);
+            this.buttonRaporuGetir.Size = new System.Drawing.Size(116, 45);
             this.buttonRaporuGetir.TabIndex = 18;
             this.buttonRaporuGetir.Text = "Raporu Getir";
             this.buttonRaporuGetir.UseVisualStyleBackColor = true;
@@ -59,21 +57,19 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 15);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(519, 474);
+            this.dataGridView1.Size = new System.Drawing.Size(389, 385);
             this.dataGridView1.TabIndex = 20;
             // 
             // Rapor10Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 497);
+            this.ClientSize = new System.Drawing.Size(838, 404);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonRaporuGetir);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Rapor10Form";
             this.Text = "Rapor10Form";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
