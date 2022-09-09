@@ -31,7 +31,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 if (categories == null)
                 {
-                    throw new Exception(Messages.CategoryNotFound);
+                    throw new Exception(ExceptionMessages.CategoryNotFound);
                 }
                 else
                 {
@@ -68,9 +68,9 @@ namespace YesilEvCodeFirst.DAL.Use
             {
                 return GetByCondition(x => x.CategoryID == CategoryID && x.IsActive).SingleOrDefault().CategoryName;
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                throw new Exception(Messages.CategoryNotFound);
+                throw new Exception(ExceptionMessages.CategoryNotFound);
             }            
         }
         public bool DeleteCategory(CategoryDTO dto)
@@ -107,7 +107,7 @@ namespace YesilEvCodeFirst.DAL.Use
         {
             try
             {
-                var result = GetByCondition(x=>x.CategoryName == dto.CategoryName && x.IsActive).SingleOrDefault();
+                var result = GetByCondition(x=>x.CategoryName == dto.CategoryName && x.IsActive).FirstOrDefault();
                 if (result != null)
                 {
                     result.UstCategoryID = dto.UstCategoryID;
@@ -117,7 +117,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(Messages.CategoryNotFound);
+                    throw new Exception(ExceptionMessages.CategoryNotFound);
                 } 
             }
             catch(Exception ex)
@@ -129,14 +129,24 @@ namespace YesilEvCodeFirst.DAL.Use
         {
             try
             {
-                Category category = MappingProfile.AddCategoryDTOToCategory(dto);
-                Add(category);
-                MySaveChanges();
-                return true;
+       
+                Category category = GetByCondition(x => x.CategoryName.ToLower().Equals(dto.CategoryName) && x.IsActive).FirstOrDefault();
+                if (category == null)
+                {
+                    
+                    Add(MappingProfile.AddCategoryDTOToCategory(dto));
+                    MySaveChanges();
+                    nLogger.Info("{} kategorisi eklendi", dto.CategoryName);
+                    return true;
+                }
+                else
+                {
+                    throw new Exception(ExceptionMessages.CategoryAlreadyExist);
+                }
             }
             catch(Exception ex)
             {
-                throw new Exception("Kategori Eklenirken Hata Oluştu.");
+                throw new Exception(ex.Message);
             }
         }
     }

@@ -31,7 +31,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     User tempUser = context.User.Where(u => u.Email.Equals(dto.Email) && u.Password.Equals(dto.Password) && u.RolID.Equals(1) && u.IsActive).FirstOrDefault();
                     if (tempUser == null)
                     {
-                        throw new Exception(Messages.AdminNotFound);
+                        throw new Exception(ExceptionMessages.AdminNotFound);
                     }
                     nLogger.Info("{} - admin login islemi basarili.", tempUser.FirstName + " " + tempUser.LastName);
                 }

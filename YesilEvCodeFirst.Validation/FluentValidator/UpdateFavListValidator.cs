@@ -8,8 +8,8 @@ namespace YesilEvCodeFirst.Validation.FluentValidator
     {
         public UpdateFavListValidator()
         {
-            RuleFor(x => x.UserID).GreaterThan(0).WithMessage(Messages.InvalidID);
-            RuleFor(x => x.FavorID).GreaterThan(0).WithMessage(Messages.InvalidID);
+            RuleFor(x => x.UserID).GreaterThan(0).WithMessage(ValidationMessages.InvalidID);
+            RuleFor(x => x.FavorID).GreaterThan(0).WithMessage(ValidationMessages.InvalidID);
         }
     }
 }

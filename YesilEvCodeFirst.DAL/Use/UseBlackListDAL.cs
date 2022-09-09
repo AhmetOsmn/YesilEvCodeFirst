@@ -39,7 +39,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception(Messages.BlackListAlreadyExist);
+                        throw new Exception(ExceptionMessages.BlackListAlreadyExist);
                     }
                 }
 
@@ -82,7 +82,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception(Messages.BlackListNotFound);
+                        throw new Exception(ExceptionMessages.BlackListNotFound);
                     }
                 }
 
@@ -122,7 +122,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(Messages.BlackListNotFound);
+                    throw new Exception(ExceptionMessages.BlackListNotFound);
                 }
             }
             catch (FormatException fex)

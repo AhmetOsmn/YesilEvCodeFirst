@@ -8,11 +8,14 @@ namespace YesilEvCodeFirst.Validation.FluentValidator
     {
         public UpdateUserPasswordValidator()
         {
-            RuleFor(x => x.UserID).GreaterThan(0).WithMessage(Messages.InvalidID);
+            RuleFor(x => x.UserID).GreaterThan(0).WithMessage(ValidationMessages.InvalidID);
 
-            RuleFor(x => x.NewPassword).NotEmpty().WithMessage(Messages.PasswordIsEmpty);
-            RuleFor(x => x.NewPassword).MinimumLength(5).WithMessage(Messages.PasswordMinLength);
-            RuleFor(x => x.NewPassword).MaximumLength(30).WithMessage(Messages.PasswordMaxLength);
+            RuleFor(x => x.NewPassword).NotEmpty().WithMessage(ValidationMessages.PasswordIsEmpty);
+            RuleFor(x => x.NewPassword).MinimumLength(5).WithMessage(ValidationMessages.PasswordMinLength);
+            RuleFor(x => x.NewPassword).MaximumLength(30).WithMessage(ValidationMessages.PasswordMaxLength);
+
+            RuleFor(x => x.ReNewPassword).NotEmpty().WithMessage(ValidationMessages.PasswordIsEmpty);
+            RuleFor(x => x.ReNewPassword).Equal(x => x.NewPassword).WithMessage(ValidationMessages.PasswordsNotEqual);
         }
     }
 }

@@ -31,7 +31,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 if (suppliers == null)
                 {
-                    throw new Exception(Messages.SupplierNotFoundForList);
+                    throw new Exception(ExceptionMessages.SupplierNotFoundForList);
                 }
                 else
                 {
@@ -70,7 +70,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(Messages.SupplierAlreadyExist);
+                    throw new Exception(ExceptionMessages.SupplierAlreadyExist);
                 }
 
             }
@@ -108,7 +108,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(Messages.SupplierNotFound);
+                    throw new Exception(ExceptionMessages.SupplierNotFound);
                 }
             }
             catch (FormatException fex)
@@ -146,7 +146,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(Messages.SupplierNotFound);
+                    throw new Exception(ExceptionMessages.SupplierNotFound);
                 }
             }
             catch (FormatException fex)
@@ -168,7 +168,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 List<Supplier> suppliers = GetByCondition(x => x.IsActive).ToList();
                 if (suppliers == null)
                 {
-                    throw new Exception(Messages.SupplierNotFoundForList);
+                    throw new Exception(ExceptionMessages.SupplierNotFoundForList);
                 }
                 else
                 {

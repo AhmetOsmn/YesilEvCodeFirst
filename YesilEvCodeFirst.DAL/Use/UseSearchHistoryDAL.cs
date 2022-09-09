@@ -51,7 +51,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 if (searchHistoryList == null)
                 {
-                    throw new Exception(Messages.SearchHistoryNotFoundForList);
+                    throw new Exception(ExceptionMessages.SearchHistoryNotFound);
                 }
                 else
                 {
@@ -86,7 +86,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 if (searchHistoryList == null)
                 {
-                    throw new Exception(Messages.SearchHistoryNotFoundForList);
+                    throw new Exception(ExceptionMessages.SearchHistoryNotFound);
                 }
                 else
                 {

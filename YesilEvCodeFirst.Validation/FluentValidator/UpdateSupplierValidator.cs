@@ -8,13 +8,13 @@ namespace YesilEvCodeFirst.Validation.FluentValidator
     {
         public UpdateSupplierValidator()
         {
-            RuleFor(x => x.SupplierName).NotEmpty().WithMessage("Eski " + Messages.SupplierNameEmpty);
-            RuleFor(x => x.SupplierName).MinimumLength(2).WithMessage("Eski " + Messages.SupplierNameMinLength);
-            RuleFor(x => x.SupplierName).MaximumLength(100).WithMessage("Eski " + Messages.SupplierNameMaxLength);
+            RuleFor(x => x.SupplierName).NotEmpty().WithMessage("Eski " + ValidationMessages.SupplierNameEmpty);
+            RuleFor(x => x.SupplierName).MinimumLength(2).WithMessage("Eski " + ValidationMessages.SupplierNameMinLength);
+            RuleFor(x => x.SupplierName).MaximumLength(100).WithMessage("Eski " + ValidationMessages.SupplierNameMaxLength);
 
-            RuleFor(x => x.SupplierNewName).NotEmpty().WithMessage("Yeni " + Messages.SupplierNameEmpty);
-            RuleFor(x => x.SupplierNewName).MinimumLength(2).WithMessage("Yeni " + Messages.SupplierNameMinLength);
-            RuleFor(x => x.SupplierNewName).MaximumLength(100).WithMessage("Yeni " + Messages.SupplierNameMaxLength);
+            RuleFor(x => x.SupplierNewName).NotEmpty().WithMessage("Yeni " + ValidationMessages.SupplierNameEmpty);
+            RuleFor(x => x.SupplierNewName).MinimumLength(2).WithMessage("Yeni " + ValidationMessages.SupplierNameMinLength);
+            RuleFor(x => x.SupplierNewName).MaximumLength(100).WithMessage("Yeni " + ValidationMessages.SupplierNameMaxLength);
         }
     }
 }
