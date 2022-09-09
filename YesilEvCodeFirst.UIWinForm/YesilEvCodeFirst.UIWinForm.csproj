@@ -243,24 +243,6 @@
     <Compile Include="UserSayfasi.Designer.cs">
       <DependentUpon>UserSayfasi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helper\CustomButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Helper\CustomComboBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Helper\CustomPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Helper\CustomPictureBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Helper\CustomTextBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Helper\CustomTextBox.designer.cs">
-      <DependentUpon>CustomTextBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminSayfalari\AdminSayfasi.resx">
@@ -338,9 +320,6 @@
     <EmbeddedResource Include="UserSayfasi.resx">
       <DependentUpon>UserSayfasi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Helper\CustomTextBox.resx">
-      <DependentUpon>CustomTextBox.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -383,6 +362,7 @@
     <Content Include="ContextLtst\Image\menu.png" />
     <Content Include="ContextLtst\Image\paylas.png" />
     <Content Include="ContextLtst\Image\premium.png" />
+    <Content Include="ContextLtst\Image\product.png" />
     <Content Include="ContextLtst\Image\profilduzenle.png" />
     <Content Include="ContextLtst\Image\puanver.png" />
     <Content Include="ContextLtst\Image\sifredegistir.png" />

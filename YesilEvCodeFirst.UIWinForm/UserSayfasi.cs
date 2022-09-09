@@ -65,7 +65,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 OpenSideBar();
             }
         }
-       
+
         private void OpenSideBar()
         {
             foreach (Panel item in SideBar.Controls)
@@ -83,7 +83,7 @@ namespace YesilEvCodeFirst.UIWinForm
             SideBar.Width = SideBar.MaximumSize.Width;
             SideBar.Height = SideBar.MaximumSize.Height;
         }
-       
+
         private void CloseSideBar()
         {
             foreach (Panel item in SideBar.Controls)
@@ -104,7 +104,7 @@ namespace YesilEvCodeFirst.UIWinForm
             SideBar.Width = SideBar.MinimumSize.Width;
             SideBar.Height = SideBar.MinimumSize.Height;
         }
-        
+
         private void Home_Click(object sender, EventArgs e)
         {
             CloseAllPages();
@@ -165,9 +165,9 @@ namespace YesilEvCodeFirst.UIWinForm
                         ProductName = txtAddAndUpdateProductAddProductProductName.Text,
                         CategoryID = cmbBoxAddAndUpdateProductAddProductCategory.SelectedItem == null ? 0 : ((CategoryDTO)cmbBoxAddAndUpdateProductAddProductCategory.SelectedItem).CategoryID,
                         ProductContent = txtAddAndUpdateProductAddProductProductContext.Text,
-                        PictureFronthPath = FileDialogAddProductFront.FileName,
-                        PictureBackPath = FileDialogAddProductBack.FileName,
-                        PictureContentPath = FileDialogAddProductContent.FileName
+                        PictureFronthPath = FileDialogAddProductFront.FileName == "FileDialogUrunEkleOnYuz" ? "C:\\Projects\\BAYP\\YesilEvCodeFirst\\YesilEvCodeFirst.UIWinForm\\ContextLtst\\Image\\product.png" : FileDialogAddProductFront.FileName,
+                        PictureBackPath = FileDialogAddProductBack.FileName == "FileDialogUrunEkleArkaYuz" ? ".C:\\Projects\\BAYP\\YesilEvCodeFirst\\YesilEvCodeFirst.UIWinForm\\ContextLtst\\Image\\product.png" : FileDialogAddProductBack.FileName,
+                        PictureContentPath = FileDialogAddProductContent.FileName == "openFileDialog1" ? "C:\\Projects\\BAYP\\YesilEvCodeFirst\\YesilEvCodeFirst.UIWinForm\\ContextLtst\\Image\\product.png" : FileDialogAddProductContent.FileName,
                     });
                     if (result)
                     {
@@ -293,7 +293,7 @@ namespace YesilEvCodeFirst.UIWinForm
             f.Show();
             this.Close();
         }
-       
+
         private void btnSearchHistoryAndFavoriList_Click(object sender, EventArgs e)
         {
             CloseAllPages();
@@ -343,27 +343,27 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             btnAddAndUpdateProductUpdateProductFront.Text = FileDialogUpdateProductFront.SafeFileName;
         }
-        
+
         private void UpdateProductBackImageName(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnAddAndUpdateProductUpdateProductBack.Text = FileDialogUpdateProductBack.SafeFileName;
         }
-        
+
         private void UpdateProductContentImageName(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnAddAndUpdateProductAddProductProductContext.Text = FileDialogAddProductContent.SafeFileName;
         }
-        
+
         private void AddProductFrontImageName(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnAddAndUpdateProductAddProductFront.Text = FileDialogAddProductFront.SafeFileName;
         }
-        
+
         private void addProductBackImageName(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnAddAndUpdateProductAddProductBack.Text = FileDialogAddProductBack.SafeFileName;
-        } 
-        
+        }
+
         private void addProductContentImageName(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnAddAndUpdateProductAddProductProductContext.Text = FileDialogAddProductContent.SafeFileName;
@@ -527,7 +527,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 {
                     if (supdto.SupplementID == x.SupplementID && supdto.SupplementName == x.SupplementName)
                     {
-                        lbl.BackColor= Color.Black;
+                        lbl.BackColor = Color.Black;
                         blacklist += 1;
                     }
                 });
@@ -579,7 +579,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 ProductSupplementDetailClose();
             }
         }
-        
+
         private void btnClearDGV_Click(object sender, EventArgs e)
         {
             dgvSearchProductProducts.DataSource = null;
@@ -630,7 +630,7 @@ namespace YesilEvCodeFirst.UIWinForm
             GetFavoriLists();
             Favlists.Visible = true;
         }
-        
+
         private void GetFavoriLists()
         {
             cmbBoxFavoriListFavoriLists.Items.Clear();
@@ -701,7 +701,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 pictureProductDetailsProductImage.Image = Image.FromFile(selectedProduct.PictureFronthPath);
             }
         }
-        
+
         private void ProductSupplementDetailOpen()
         {
             isProductSupplementOpen = true;
@@ -714,7 +714,7 @@ namespace YesilEvCodeFirst.UIWinForm
             pnlProductDetailsShowProducts.Visible = true;
             //btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\up.jpg");
         }
-        
+
         private void ProductSupplementDetailClose()
         {
             isProductSupplementOpen = false;
@@ -746,7 +746,7 @@ namespace YesilEvCodeFirst.UIWinForm
             CloseSideBar();
             ProductSupplementDetailClose();
         }
-       
+
         private void GetAddAndUpdateProductCategoriesAndSuppliers()
         {
             List<SupplierDTO> suppliers = useSupplierDAL.GetSupplierList();
@@ -840,7 +840,7 @@ namespace YesilEvCodeFirst.UIWinForm
                     }
                 }
             }
-            catch(FormatException fex)
+            catch (FormatException fex)
             {
                 MessageBox.Show(fex.Message);
             }
@@ -852,7 +852,7 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void GetFavoriListsAddProductAndDeleteProduct(int selectedRow, int Eventx, int Eventy)
         {
-            IDDTO userIDDTO = new IDDTO() { ID = User.UserID };       
+            IDDTO userIDDTO = new IDDTO() { ID = User.UserID };
             try
             {
                 var favLists = useFavListDAL.GetFavListsWithUserID(userIDDTO);
@@ -903,7 +903,7 @@ namespace YesilEvCodeFirst.UIWinForm
             }
 
         }
-      
+
         private void AddFav(object sender, EventArgs e)
         {
             var clikMenuItem = sender as MenuItem;
@@ -932,7 +932,7 @@ namespace YesilEvCodeFirst.UIWinForm
             }
             addProductFavListDTO = null;
         }
-        
+
         private void DeleteFav(object sender, EventArgs e)
         {
             var clickMenuItem = sender as MenuItem;
@@ -952,7 +952,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 }
                 addProductFavListDTO = null;
             }
-            catch(FormatException fex)
+            catch (FormatException fex)
             {
                 MessageBox.Show(fex.Message);
             }
@@ -960,9 +960,9 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 MessageBox.Show(ex.Message);
             }
-         
+
         }
-        
+
         private void AddFavoriListPage(object sender, EventArgs e)
         {
             CloseAllPages();
@@ -992,7 +992,7 @@ namespace YesilEvCodeFirst.UIWinForm
             catch (FormatException fex)
             {
                 MessageBox.Show(fex.Message);
-            }     
+            }
         }
 
         private void btnUserDetailsMergeSocialMedia_Click(object sender, EventArgs e)
@@ -1171,7 +1171,7 @@ namespace YesilEvCodeFirst.UIWinForm
         }
 
         private void btnSupplementBlackListAdd_Click(object sender, EventArgs e)
-        {            
+        {
             try
             {
                 IDDTO userIDDTO = new IDDTO() { ID = User.UserID };
@@ -1182,7 +1182,7 @@ namespace YesilEvCodeFirst.UIWinForm
                     SupplementContext = txtSupplementBlackListSupplements.Text,
                     UserID = User.UserID,
                 };
-                bool result  = useSupplementBlackListDAL.AddSupplementBlackList(dto);
+                bool result = useSupplementBlackListDAL.AddSupplementBlackList(dto);
                 if (result)
                 {
                     MessageBox.Show("Karalisteye maddeler eklendi");
@@ -1195,10 +1195,10 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 MessageBox.Show(fex.Message);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }            
+            }
         }
 
         private void btnBlackListAddSupplement_Click(object sender, EventArgs e)
