@@ -164,13 +164,17 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
                 AddCategoryDTO categoryDTO = new AddCategoryDTO()
                 {
                     CategoryName = txtAddCategoryName.Text,
-                    UstCategoryID = ((CategoryDTO)cmbBoxAddCategoryUpperCategory.SelectedItem).CategoryID,
+                    UstCategoryID = cmbBoxAddCategoryUpperCategory.SelectedItem == null ? 0 : ((CategoryDTO)cmbBoxAddCategoryUpperCategory.SelectedItem).CategoryID,
                 };
                 var result = useCategoryDAL.AddCategory(categoryDTO);
                 if (result)
                 {
                     MessageBox.Show("Kategori Eklendi");
                 }
+            }
+            catch(FormatException fex)
+            {
+                MessageBox.Show(fex.Message);
             }
             catch (Exception ex)
             {

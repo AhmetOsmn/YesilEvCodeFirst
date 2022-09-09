@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FluentValidator\AddCategoryValidator.cs" />
     <Compile Include="FluentValidator\AddFavListValidator.cs" />
     <Compile Include="FluentValidator\AddProductValidator.cs" />
     <Compile Include="FluentValidator\AddSupplierValidator.cs" />
