@@ -216,7 +216,7 @@
             this.ChangeEmail = new System.Windows.Forms.Panel();
             this.btnChangeEmailUser = new System.Windows.Forms.Button();
             this.btnChangeEmailSend = new System.Windows.Forms.Button();
-            this.txtChangeEmaiReNewEmail = new System.Windows.Forms.TextBox();
+            this.txtChangeEmailReNewEmail = new System.Windows.Forms.TextBox();
             this.txtChangeEmailNewEmail = new System.Windows.Forms.TextBox();
             this.lblChangeEmailReNewEmail = new System.Windows.Forms.Label();
             this.txtChangeEmailUserEmail = new System.Windows.Forms.TextBox();
@@ -319,9 +319,10 @@
             this.pnlSideBarHome.BackColor = System.Drawing.Color.PapayaWhip;
             this.pnlSideBarHome.Controls.Add(this.btnSideBarHome);
             this.pnlSideBarHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlSideBarHome.Location = new System.Drawing.Point(199, 463);
+            this.pnlSideBarHome.Location = new System.Drawing.Point(265, 574);
+            this.pnlSideBarHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSideBarHome.Name = "pnlSideBarHome";
-            this.pnlSideBarHome.Size = new System.Drawing.Size(60, 40);
+            this.pnlSideBarHome.Size = new System.Drawing.Size(80, 49);
             this.pnlSideBarHome.TabIndex = 1;
             // 
             // btnSideBarHome
@@ -334,8 +335,9 @@
             this.btnSideBarHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSideBarHome.ForeColor = System.Drawing.Color.White;
             this.btnSideBarHome.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSideBarHome.Name = "btnSideBarHome";
-            this.btnSideBarHome.Size = new System.Drawing.Size(60, 40);
+            this.btnSideBarHome.Size = new System.Drawing.Size(80, 49);
             this.btnSideBarHome.TabIndex = 0;
             this.btnSideBarHome.UseVisualStyleBackColor = false;
             this.btnSideBarHome.Click += new System.EventHandler(this.Home_Click);
@@ -348,8 +350,9 @@
             this.btnSideBarMenu.FlatAppearance.BorderSize = 0;
             this.btnSideBarMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSideBarMenu.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSideBarMenu.Name = "btnSideBarMenu";
-            this.btnSideBarMenu.Size = new System.Drawing.Size(60, 40);
+            this.btnSideBarMenu.Size = new System.Drawing.Size(80, 49);
             this.btnSideBarMenu.TabIndex = 0;
             this.btnSideBarMenu.UseVisualStyleBackColor = true;
             this.btnSideBarMenu.Click += new System.EventHandler(this.Menu_Click);
@@ -362,18 +365,20 @@
             this.pnlSideBarGiveStarApplication.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSideBarGiveStarApplication.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.pnlSideBarGiveStarApplication.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlSideBarGiveStarApplication.Location = new System.Drawing.Point(3, 463);
+            this.pnlSideBarGiveStarApplication.Location = new System.Drawing.Point(4, 574);
+            this.pnlSideBarGiveStarApplication.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSideBarGiveStarApplication.Name = "pnlSideBarGiveStarApplication";
-            this.pnlSideBarGiveStarApplication.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarGiveStarApplication.Size = new System.Drawing.Size(253, 49);
             this.pnlSideBarGiveStarApplication.TabIndex = 0;
             // 
             // pictureSideBarGiveStarApplication
             // 
             this.pictureSideBarGiveStarApplication.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarGiveStarApplication.BackgroundImage")));
             this.pictureSideBarGiveStarApplication.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureSideBarGiveStarApplication.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarGiveStarApplication.Location = new System.Drawing.Point(203, -1);
+            this.pictureSideBarGiveStarApplication.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureSideBarGiveStarApplication.Name = "pictureSideBarGiveStarApplication";
-            this.pictureSideBarGiveStarApplication.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarGiveStarApplication.Size = new System.Drawing.Size(53, 52);
             this.pictureSideBarGiveStarApplication.TabIndex = 4;
             this.pictureSideBarGiveStarApplication.TabStop = false;
             // 
@@ -385,8 +390,9 @@
             this.btnSideBarGiveStarApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSideBarGiveStarApplication.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSideBarGiveStarApplication.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarGiveStarApplication.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSideBarGiveStarApplication.Name = "btnSideBarGiveStarApplication";
-            this.btnSideBarGiveStarApplication.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarGiveStarApplication.Size = new System.Drawing.Size(253, 49);
             this.btnSideBarGiveStarApplication.TabIndex = 0;
             this.btnSideBarGiveStarApplication.Text = "Uygulama\'ya Puan Ver";
             this.btnSideBarGiveStarApplication.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -401,18 +407,20 @@
             this.pnlSideBarShareApplication.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSideBarShareApplication.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.pnlSideBarShareApplication.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlSideBarShareApplication.Location = new System.Drawing.Point(3, 417);
+            this.pnlSideBarShareApplication.Location = new System.Drawing.Point(4, 517);
+            this.pnlSideBarShareApplication.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSideBarShareApplication.Name = "pnlSideBarShareApplication";
-            this.pnlSideBarShareApplication.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarShareApplication.Size = new System.Drawing.Size(253, 49);
             this.pnlSideBarShareApplication.TabIndex = 0;
             // 
             // pictureSideBarShareApplication
             // 
             this.pictureSideBarShareApplication.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarShareApplication.BackgroundImage")));
             this.pictureSideBarShareApplication.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureSideBarShareApplication.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarShareApplication.Location = new System.Drawing.Point(203, -1);
+            this.pictureSideBarShareApplication.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureSideBarShareApplication.Name = "pictureSideBarShareApplication";
-            this.pictureSideBarShareApplication.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarShareApplication.Size = new System.Drawing.Size(53, 52);
             this.pictureSideBarShareApplication.TabIndex = 4;
             this.pictureSideBarShareApplication.TabStop = false;
             // 
@@ -422,8 +430,9 @@
             this.btnSideBarShareApplication.FlatAppearance.BorderSize = 0;
             this.btnSideBarShareApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSideBarShareApplication.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarShareApplication.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSideBarShareApplication.Name = "btnSideBarShareApplication";
-            this.btnSideBarShareApplication.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarShareApplication.Size = new System.Drawing.Size(253, 49);
             this.btnSideBarShareApplication.TabIndex = 0;
             this.btnSideBarShareApplication.Text = "Uygulama\'yı Paylaş";
             this.btnSideBarShareApplication.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -438,18 +447,20 @@
             this.pnlSideBarFacebook.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSideBarFacebook.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.pnlSideBarFacebook.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlSideBarFacebook.Location = new System.Drawing.Point(3, 371);
+            this.pnlSideBarFacebook.Location = new System.Drawing.Point(4, 460);
+            this.pnlSideBarFacebook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSideBarFacebook.Name = "pnlSideBarFacebook";
-            this.pnlSideBarFacebook.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarFacebook.Size = new System.Drawing.Size(253, 49);
             this.pnlSideBarFacebook.TabIndex = 0;
             // 
             // pictureSideBarFacebook
             // 
             this.pictureSideBarFacebook.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarFacebook.BackgroundImage")));
             this.pictureSideBarFacebook.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureSideBarFacebook.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarFacebook.Location = new System.Drawing.Point(203, -1);
+            this.pictureSideBarFacebook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureSideBarFacebook.Name = "pictureSideBarFacebook";
-            this.pictureSideBarFacebook.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarFacebook.Size = new System.Drawing.Size(53, 52);
             this.pictureSideBarFacebook.TabIndex = 4;
             this.pictureSideBarFacebook.TabStop = false;
             // 
@@ -459,8 +470,9 @@
             this.btnSideBarFacebook.FlatAppearance.BorderSize = 0;
             this.btnSideBarFacebook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSideBarFacebook.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarFacebook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSideBarFacebook.Name = "btnSideBarFacebook";
-            this.btnSideBarFacebook.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarFacebook.Size = new System.Drawing.Size(253, 49);
             this.btnSideBarFacebook.TabIndex = 0;
             this.btnSideBarFacebook.Text = "Facebook";
             this.btnSideBarFacebook.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -475,18 +487,20 @@
             this.pnlSideBarTwitter.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSideBarTwitter.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.pnlSideBarTwitter.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlSideBarTwitter.Location = new System.Drawing.Point(3, 325);
+            this.pnlSideBarTwitter.Location = new System.Drawing.Point(4, 403);
+            this.pnlSideBarTwitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSideBarTwitter.Name = "pnlSideBarTwitter";
-            this.pnlSideBarTwitter.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarTwitter.Size = new System.Drawing.Size(253, 49);
             this.pnlSideBarTwitter.TabIndex = 0;
             // 
             // pictureSideBarTwitter
             // 
             this.pictureSideBarTwitter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarTwitter.BackgroundImage")));
             this.pictureSideBarTwitter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureSideBarTwitter.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarTwitter.Location = new System.Drawing.Point(203, -1);
+            this.pictureSideBarTwitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureSideBarTwitter.Name = "pictureSideBarTwitter";
-            this.pictureSideBarTwitter.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarTwitter.Size = new System.Drawing.Size(53, 52);
             this.pictureSideBarTwitter.TabIndex = 4;
             this.pictureSideBarTwitter.TabStop = false;
             // 
@@ -496,8 +510,9 @@
             this.btnSideBarTwitter.FlatAppearance.BorderSize = 0;
             this.btnSideBarTwitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSideBarTwitter.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarTwitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSideBarTwitter.Name = "btnSideBarTwitter";
-            this.btnSideBarTwitter.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarTwitter.Size = new System.Drawing.Size(253, 49);
             this.btnSideBarTwitter.TabIndex = 0;
             this.btnSideBarTwitter.Text = "Twitter";
             this.btnSideBarTwitter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -512,18 +527,20 @@
             this.pnlSideBarInstagram.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSideBarInstagram.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.pnlSideBarInstagram.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlSideBarInstagram.Location = new System.Drawing.Point(3, 279);
+            this.pnlSideBarInstagram.Location = new System.Drawing.Point(4, 346);
+            this.pnlSideBarInstagram.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSideBarInstagram.Name = "pnlSideBarInstagram";
-            this.pnlSideBarInstagram.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarInstagram.Size = new System.Drawing.Size(253, 49);
             this.pnlSideBarInstagram.TabIndex = 0;
             // 
             // pictureSideBarInstagram
             // 
             this.pictureSideBarInstagram.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarInstagram.BackgroundImage")));
             this.pictureSideBarInstagram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureSideBarInstagram.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarInstagram.Location = new System.Drawing.Point(203, -1);
+            this.pictureSideBarInstagram.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureSideBarInstagram.Name = "pictureSideBarInstagram";
-            this.pictureSideBarInstagram.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarInstagram.Size = new System.Drawing.Size(53, 52);
             this.pictureSideBarInstagram.TabIndex = 4;
             this.pictureSideBarInstagram.TabStop = false;
             // 
@@ -533,8 +550,9 @@
             this.btnSideBarInstagram.FlatAppearance.BorderSize = 0;
             this.btnSideBarInstagram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSideBarInstagram.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarInstagram.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSideBarInstagram.Name = "btnSideBarInstagram";
-            this.btnSideBarInstagram.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarInstagram.Size = new System.Drawing.Size(253, 49);
             this.btnSideBarInstagram.TabIndex = 0;
             this.btnSideBarInstagram.Text = "Instagram";
             this.btnSideBarInstagram.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -549,18 +567,20 @@
             this.pnlSideBarNotifications.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSideBarNotifications.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.pnlSideBarNotifications.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlSideBarNotifications.Location = new System.Drawing.Point(3, 233);
+            this.pnlSideBarNotifications.Location = new System.Drawing.Point(4, 289);
+            this.pnlSideBarNotifications.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSideBarNotifications.Name = "pnlSideBarNotifications";
-            this.pnlSideBarNotifications.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarNotifications.Size = new System.Drawing.Size(253, 49);
             this.pnlSideBarNotifications.TabIndex = 0;
             // 
             // pictureSideBarNotifications
             // 
             this.pictureSideBarNotifications.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarNotifications.BackgroundImage")));
             this.pictureSideBarNotifications.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureSideBarNotifications.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarNotifications.Location = new System.Drawing.Point(203, -1);
+            this.pictureSideBarNotifications.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureSideBarNotifications.Name = "pictureSideBarNotifications";
-            this.pictureSideBarNotifications.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarNotifications.Size = new System.Drawing.Size(53, 52);
             this.pictureSideBarNotifications.TabIndex = 4;
             this.pictureSideBarNotifications.TabStop = false;
             // 
@@ -570,8 +590,9 @@
             this.btnSideBarNotifications.FlatAppearance.BorderSize = 0;
             this.btnSideBarNotifications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSideBarNotifications.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarNotifications.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSideBarNotifications.Name = "btnSideBarNotifications";
-            this.btnSideBarNotifications.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarNotifications.Size = new System.Drawing.Size(253, 49);
             this.btnSideBarNotifications.TabIndex = 0;
             this.btnSideBarNotifications.Text = "Bildirim";
             this.btnSideBarNotifications.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -586,18 +607,20 @@
             this.pnlSideBarTermsofUse.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSideBarTermsofUse.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.pnlSideBarTermsofUse.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlSideBarTermsofUse.Location = new System.Drawing.Point(3, 187);
+            this.pnlSideBarTermsofUse.Location = new System.Drawing.Point(4, 232);
+            this.pnlSideBarTermsofUse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSideBarTermsofUse.Name = "pnlSideBarTermsofUse";
-            this.pnlSideBarTermsofUse.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarTermsofUse.Size = new System.Drawing.Size(253, 49);
             this.pnlSideBarTermsofUse.TabIndex = 0;
             // 
             // pictureSideBarTermofUse
             // 
             this.pictureSideBarTermofUse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarTermofUse.BackgroundImage")));
             this.pictureSideBarTermofUse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureSideBarTermofUse.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarTermofUse.Location = new System.Drawing.Point(203, -1);
+            this.pictureSideBarTermofUse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureSideBarTermofUse.Name = "pictureSideBarTermofUse";
-            this.pictureSideBarTermofUse.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarTermofUse.Size = new System.Drawing.Size(53, 52);
             this.pictureSideBarTermofUse.TabIndex = 4;
             this.pictureSideBarTermofUse.TabStop = false;
             // 
@@ -607,8 +630,9 @@
             this.btnSideBarTermsofUse.FlatAppearance.BorderSize = 0;
             this.btnSideBarTermsofUse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSideBarTermsofUse.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarTermsofUse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSideBarTermsofUse.Name = "btnSideBarTermsofUse";
-            this.btnSideBarTermsofUse.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarTermsofUse.Size = new System.Drawing.Size(253, 49);
             this.btnSideBarTermsofUse.TabIndex = 0;
             this.btnSideBarTermsofUse.Text = "Kullanım Koşulları";
             this.btnSideBarTermsofUse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -623,18 +647,20 @@
             this.pnlSideBarContactUs.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSideBarContactUs.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.pnlSideBarContactUs.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlSideBarContactUs.Location = new System.Drawing.Point(3, 141);
+            this.pnlSideBarContactUs.Location = new System.Drawing.Point(4, 175);
+            this.pnlSideBarContactUs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSideBarContactUs.Name = "pnlSideBarContactUs";
-            this.pnlSideBarContactUs.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarContactUs.Size = new System.Drawing.Size(253, 49);
             this.pnlSideBarContactUs.TabIndex = 0;
             // 
             // pictureSideBarContactUs
             // 
             this.pictureSideBarContactUs.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarContactUs.BackgroundImage")));
             this.pictureSideBarContactUs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureSideBarContactUs.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarContactUs.Location = new System.Drawing.Point(203, -1);
+            this.pictureSideBarContactUs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureSideBarContactUs.Name = "pictureSideBarContactUs";
-            this.pictureSideBarContactUs.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarContactUs.Size = new System.Drawing.Size(53, 52);
             this.pictureSideBarContactUs.TabIndex = 4;
             this.pictureSideBarContactUs.TabStop = false;
             // 
@@ -644,8 +670,9 @@
             this.btnSideBarContactUs.FlatAppearance.BorderSize = 0;
             this.btnSideBarContactUs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSideBarContactUs.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarContactUs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSideBarContactUs.Name = "btnSideBarContactUs";
-            this.btnSideBarContactUs.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarContactUs.Size = new System.Drawing.Size(253, 49);
             this.btnSideBarContactUs.TabIndex = 0;
             this.btnSideBarContactUs.Text = "Bize Ulaşın";
             this.btnSideBarContactUs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -660,18 +687,20 @@
             this.pnlSideBarAbout.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSideBarAbout.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.pnlSideBarAbout.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlSideBarAbout.Location = new System.Drawing.Point(3, 95);
+            this.pnlSideBarAbout.Location = new System.Drawing.Point(4, 118);
+            this.pnlSideBarAbout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSideBarAbout.Name = "pnlSideBarAbout";
-            this.pnlSideBarAbout.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarAbout.Size = new System.Drawing.Size(253, 49);
             this.pnlSideBarAbout.TabIndex = 0;
             // 
             // pictureSideBarAbout
             // 
             this.pictureSideBarAbout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarAbout.BackgroundImage")));
             this.pictureSideBarAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureSideBarAbout.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarAbout.Location = new System.Drawing.Point(203, -1);
+            this.pictureSideBarAbout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureSideBarAbout.Name = "pictureSideBarAbout";
-            this.pictureSideBarAbout.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarAbout.Size = new System.Drawing.Size(53, 52);
             this.pictureSideBarAbout.TabIndex = 4;
             this.pictureSideBarAbout.TabStop = false;
             // 
@@ -682,8 +711,9 @@
             this.btnSideBarAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSideBarAbout.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnSideBarAbout.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarAbout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSideBarAbout.Name = "btnSideBarAbout";
-            this.btnSideBarAbout.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarAbout.Size = new System.Drawing.Size(253, 49);
             this.btnSideBarAbout.TabIndex = 0;
             this.btnSideBarAbout.Text = "Hakkında";
             this.btnSideBarAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -698,18 +728,20 @@
             this.pnlSideBarPremium.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSideBarPremium.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.pnlSideBarPremium.ForeColor = System.Drawing.Color.DarkGreen;
-            this.pnlSideBarPremium.Location = new System.Drawing.Point(3, 49);
+            this.pnlSideBarPremium.Location = new System.Drawing.Point(4, 61);
+            this.pnlSideBarPremium.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSideBarPremium.Name = "pnlSideBarPremium";
-            this.pnlSideBarPremium.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarPremium.Size = new System.Drawing.Size(253, 49);
             this.pnlSideBarPremium.TabIndex = 0;
             // 
             // pictureSideBarPremium
             // 
             this.pictureSideBarPremium.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarPremium.BackgroundImage")));
             this.pictureSideBarPremium.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureSideBarPremium.Location = new System.Drawing.Point(152, -1);
+            this.pictureSideBarPremium.Location = new System.Drawing.Point(203, -1);
+            this.pictureSideBarPremium.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureSideBarPremium.Name = "pictureSideBarPremium";
-            this.pictureSideBarPremium.Size = new System.Drawing.Size(40, 42);
+            this.pictureSideBarPremium.Size = new System.Drawing.Size(53, 52);
             this.pictureSideBarPremium.TabIndex = 4;
             this.pictureSideBarPremium.TabStop = false;
             // 
@@ -721,8 +753,9 @@
             this.btnSideBarPremium.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSideBarPremium.ForeColor = System.Drawing.Color.DarkGreen;
             this.btnSideBarPremium.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarPremium.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSideBarPremium.Name = "btnSideBarPremium";
-            this.btnSideBarPremium.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarPremium.Size = new System.Drawing.Size(253, 49);
             this.btnSideBarPremium.TabIndex = 0;
             this.btnSideBarPremium.Text = "Premium Üyelik";
             this.btnSideBarPremium.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -733,9 +766,10 @@
             this.pnlSideBarMenu.Controls.Add(this.btnSideBarMenu);
             this.pnlSideBarMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlSideBarMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSideBarMenu.Location = new System.Drawing.Point(199, 3);
+            this.pnlSideBarMenu.Location = new System.Drawing.Point(265, 4);
+            this.pnlSideBarMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSideBarMenu.Name = "pnlSideBarMenu";
-            this.pnlSideBarMenu.Size = new System.Drawing.Size(60, 40);
+            this.pnlSideBarMenu.Size = new System.Drawing.Size(80, 49);
             this.pnlSideBarMenu.TabIndex = 1;
             // 
             // SideBar
@@ -755,10 +789,11 @@
             this.SideBar.Controls.Add(this.pnlSideBarGiveStarApplication);
             this.SideBar.Controls.Add(this.pnlSideBarHome);
             this.SideBar.Location = new System.Drawing.Point(0, 0);
-            this.SideBar.MaximumSize = new System.Drawing.Size(270, 510);
-            this.SideBar.MinimumSize = new System.Drawing.Size(60, 90);
+            this.SideBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SideBar.MaximumSize = new System.Drawing.Size(360, 628);
+            this.SideBar.MinimumSize = new System.Drawing.Size(80, 111);
             this.SideBar.Name = "SideBar";
-            this.SideBar.Size = new System.Drawing.Size(270, 510);
+            this.SideBar.Size = new System.Drawing.Size(360, 628);
             this.SideBar.TabIndex = 0;
             // 
             // pnlSideBarYesilEv
@@ -767,9 +802,10 @@
             this.pnlSideBarYesilEv.Controls.Add(this.pictureSideBarYesilEv);
             this.pnlSideBarYesilEv.Controls.Add(this.btnSideBarYesilEv);
             this.pnlSideBarYesilEv.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSideBarYesilEv.Location = new System.Drawing.Point(3, 3);
+            this.pnlSideBarYesilEv.Location = new System.Drawing.Point(4, 4);
+            this.pnlSideBarYesilEv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSideBarYesilEv.Name = "pnlSideBarYesilEv";
-            this.pnlSideBarYesilEv.Size = new System.Drawing.Size(190, 40);
+            this.pnlSideBarYesilEv.Size = new System.Drawing.Size(253, 49);
             this.pnlSideBarYesilEv.TabIndex = 0;
             // 
             // pictureSideBarYesilEv
@@ -777,9 +813,10 @@
             this.pictureSideBarYesilEv.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureSideBarYesilEv.BackgroundImage")));
             this.pictureSideBarYesilEv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureSideBarYesilEv.Enabled = false;
-            this.pictureSideBarYesilEv.Location = new System.Drawing.Point(-3, -12);
+            this.pictureSideBarYesilEv.Location = new System.Drawing.Point(-4, -15);
+            this.pictureSideBarYesilEv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureSideBarYesilEv.Name = "pictureSideBarYesilEv";
-            this.pictureSideBarYesilEv.Size = new System.Drawing.Size(38, 63);
+            this.pictureSideBarYesilEv.Size = new System.Drawing.Size(51, 78);
             this.pictureSideBarYesilEv.TabIndex = 1;
             this.pictureSideBarYesilEv.TabStop = false;
             // 
@@ -794,8 +831,9 @@
             this.btnSideBarYesilEv.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSideBarYesilEv.ForeColor = System.Drawing.Color.White;
             this.btnSideBarYesilEv.Location = new System.Drawing.Point(0, 0);
+            this.btnSideBarYesilEv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSideBarYesilEv.Name = "btnSideBarYesilEv";
-            this.btnSideBarYesilEv.Size = new System.Drawing.Size(190, 40);
+            this.btnSideBarYesilEv.Size = new System.Drawing.Size(253, 49);
             this.btnSideBarYesilEv.TabIndex = 0;
             this.btnSideBarYesilEv.Text = "    Yeşil Ev";
             this.btnSideBarYesilEv.UseVisualStyleBackColor = false;
@@ -806,9 +844,10 @@
             this.btnHomeSearchProductWithBarcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHomeSearchProductWithBarcode.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnHomeSearchProductWithBarcode.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnHomeSearchProductWithBarcode.Location = new System.Drawing.Point(68, 138);
+            this.btnHomeSearchProductWithBarcode.Location = new System.Drawing.Point(91, 170);
+            this.btnHomeSearchProductWithBarcode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHomeSearchProductWithBarcode.Name = "btnHomeSearchProductWithBarcode";
-            this.btnHomeSearchProductWithBarcode.Size = new System.Drawing.Size(226, 38);
+            this.btnHomeSearchProductWithBarcode.Size = new System.Drawing.Size(301, 47);
             this.btnHomeSearchProductWithBarcode.TabIndex = 1;
             this.btnHomeSearchProductWithBarcode.Text = "               Barkod Okuma";
             this.btnHomeSearchProductWithBarcode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -821,9 +860,10 @@
             this.btnHomeSearchProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHomeSearchProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnHomeSearchProduct.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnHomeSearchProduct.Location = new System.Drawing.Point(68, 182);
+            this.btnHomeSearchProduct.Location = new System.Drawing.Point(91, 224);
+            this.btnHomeSearchProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHomeSearchProduct.Name = "btnHomeSearchProduct";
-            this.btnHomeSearchProduct.Size = new System.Drawing.Size(226, 38);
+            this.btnHomeSearchProduct.Size = new System.Drawing.Size(301, 47);
             this.btnHomeSearchProduct.TabIndex = 2;
             this.btnHomeSearchProduct.Text = "               Arama";
             this.btnHomeSearchProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -836,9 +876,10 @@
             this.btnHomeAddAndUpdateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHomeAddAndUpdateProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnHomeAddAndUpdateProduct.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnHomeAddAndUpdateProduct.Location = new System.Drawing.Point(68, 226);
+            this.btnHomeAddAndUpdateProduct.Location = new System.Drawing.Point(91, 278);
+            this.btnHomeAddAndUpdateProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHomeAddAndUpdateProduct.Name = "btnHomeAddAndUpdateProduct";
-            this.btnHomeAddAndUpdateProduct.Size = new System.Drawing.Size(226, 38);
+            this.btnHomeAddAndUpdateProduct.Size = new System.Drawing.Size(301, 47);
             this.btnHomeAddAndUpdateProduct.TabIndex = 3;
             this.btnHomeAddAndUpdateProduct.Text = "               Ürün Ekleme / Düzeltme";
             this.btnHomeAddAndUpdateProduct.UseVisualStyleBackColor = true;
@@ -850,9 +891,10 @@
             this.btnHomeSearchHistoryAndFavoriLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHomeSearchHistoryAndFavoriLists.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnHomeSearchHistoryAndFavoriLists.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnHomeSearchHistoryAndFavoriLists.Location = new System.Drawing.Point(68, 269);
+            this.btnHomeSearchHistoryAndFavoriLists.Location = new System.Drawing.Point(91, 331);
+            this.btnHomeSearchHistoryAndFavoriLists.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHomeSearchHistoryAndFavoriLists.Name = "btnHomeSearchHistoryAndFavoriLists";
-            this.btnHomeSearchHistoryAndFavoriLists.Size = new System.Drawing.Size(226, 38);
+            this.btnHomeSearchHistoryAndFavoriLists.Size = new System.Drawing.Size(301, 47);
             this.btnHomeSearchHistoryAndFavoriLists.TabIndex = 4;
             this.btnHomeSearchHistoryAndFavoriLists.Text = "               Arama Geçmişi / Favori";
             this.btnHomeSearchHistoryAndFavoriLists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -863,9 +905,10 @@
             // 
             this.pictureHomeSearchProductWithBarcode.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureHomeSearchProductWithBarcode.BackgroundImage")));
             this.pictureHomeSearchProductWithBarcode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureHomeSearchProductWithBarcode.Location = new System.Drawing.Point(83, 141);
+            this.pictureHomeSearchProductWithBarcode.Location = new System.Drawing.Point(111, 174);
+            this.pictureHomeSearchProductWithBarcode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureHomeSearchProductWithBarcode.Name = "pictureHomeSearchProductWithBarcode";
-            this.pictureHomeSearchProductWithBarcode.Size = new System.Drawing.Size(36, 32);
+            this.pictureHomeSearchProductWithBarcode.Size = new System.Drawing.Size(48, 39);
             this.pictureHomeSearchProductWithBarcode.TabIndex = 5;
             this.pictureHomeSearchProductWithBarcode.TabStop = false;
             // 
@@ -873,9 +916,10 @@
             // 
             this.pictureHomeSearchProduct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureHomeSearchProduct.BackgroundImage")));
             this.pictureHomeSearchProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureHomeSearchProduct.Location = new System.Drawing.Point(83, 185);
+            this.pictureHomeSearchProduct.Location = new System.Drawing.Point(111, 228);
+            this.pictureHomeSearchProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureHomeSearchProduct.Name = "pictureHomeSearchProduct";
-            this.pictureHomeSearchProduct.Size = new System.Drawing.Size(36, 32);
+            this.pictureHomeSearchProduct.Size = new System.Drawing.Size(48, 39);
             this.pictureHomeSearchProduct.TabIndex = 5;
             this.pictureHomeSearchProduct.TabStop = false;
             // 
@@ -883,9 +927,10 @@
             // 
             this.pictureHomeAddAndUpdateProduct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureHomeAddAndUpdateProduct.BackgroundImage")));
             this.pictureHomeAddAndUpdateProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureHomeAddAndUpdateProduct.Location = new System.Drawing.Point(83, 229);
+            this.pictureHomeAddAndUpdateProduct.Location = new System.Drawing.Point(111, 282);
+            this.pictureHomeAddAndUpdateProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureHomeAddAndUpdateProduct.Name = "pictureHomeAddAndUpdateProduct";
-            this.pictureHomeAddAndUpdateProduct.Size = new System.Drawing.Size(36, 32);
+            this.pictureHomeAddAndUpdateProduct.Size = new System.Drawing.Size(48, 39);
             this.pictureHomeAddAndUpdateProduct.TabIndex = 5;
             this.pictureHomeAddAndUpdateProduct.TabStop = false;
             // 
@@ -893,9 +938,10 @@
             // 
             this.pictureHomeSearchHistoryAndFavoriLists.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureHomeSearchHistoryAndFavoriLists.BackgroundImage")));
             this.pictureHomeSearchHistoryAndFavoriLists.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureHomeSearchHistoryAndFavoriLists.Location = new System.Drawing.Point(83, 273);
+            this.pictureHomeSearchHistoryAndFavoriLists.Location = new System.Drawing.Point(111, 336);
+            this.pictureHomeSearchHistoryAndFavoriLists.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureHomeSearchHistoryAndFavoriLists.Name = "pictureHomeSearchHistoryAndFavoriLists";
-            this.pictureHomeSearchHistoryAndFavoriLists.Size = new System.Drawing.Size(36, 32);
+            this.pictureHomeSearchHistoryAndFavoriLists.Size = new System.Drawing.Size(48, 39);
             this.pictureHomeSearchHistoryAndFavoriLists.TabIndex = 5;
             this.pictureHomeSearchHistoryAndFavoriLists.TabStop = false;
             // 
@@ -912,10 +958,11 @@
             this.Home.Controls.Add(this.btnHomeSearchProduct);
             this.Home.Controls.Add(this.btnHomeSearchProductWithBarcode);
             this.Home.Location = new System.Drawing.Point(0, 0);
-            this.Home.MaximumSize = new System.Drawing.Size(360, 510);
-            this.Home.MinimumSize = new System.Drawing.Size(360, 510);
+            this.Home.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Home.MaximumSize = new System.Drawing.Size(480, 628);
+            this.Home.MinimumSize = new System.Drawing.Size(480, 628);
             this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(360, 510);
+            this.Home.Size = new System.Drawing.Size(480, 628);
             this.Home.TabIndex = 6;
             // 
             // btnHomeUser
@@ -925,9 +972,10 @@
             this.btnHomeUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHomeUser.FlatAppearance.BorderSize = 0;
             this.btnHomeUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHomeUser.Location = new System.Drawing.Point(285, 15);
+            this.btnHomeUser.Location = new System.Drawing.Point(380, 18);
+            this.btnHomeUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHomeUser.Name = "btnHomeUser";
-            this.btnHomeUser.Size = new System.Drawing.Size(60, 40);
+            this.btnHomeUser.Size = new System.Drawing.Size(80, 49);
             this.btnHomeUser.TabIndex = 0;
             this.btnHomeUser.UseVisualStyleBackColor = true;
             this.btnHomeUser.Click += new System.EventHandler(this.UserButton_Click);
@@ -960,17 +1008,23 @@
             this.UserDetails.Controls.Add(this.btnUserDetailsPremium);
             this.UserDetails.Controls.Add(this.btnUserDetailsClearSearchHistory);
             this.UserDetails.Location = new System.Drawing.Point(0, 0);
-            this.UserDetails.MaximumSize = new System.Drawing.Size(360, 510);
-            this.UserDetails.MinimumSize = new System.Drawing.Size(360, 510);
+            this.UserDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserDetails.MaximumSize = new System.Drawing.Size(480, 628);
+            this.UserDetails.MinimumSize = new System.Drawing.Size(480, 628);
             this.UserDetails.Name = "UserDetails";
-            this.UserDetails.Size = new System.Drawing.Size(360, 510);
+            this.UserDetails.Size = new System.Drawing.Size(480, 628);
             this.UserDetails.TabIndex = 7;
             // 
             // btnShowAdminPanel
             // 
-            this.btnShowAdminPanel.Location = new System.Drawing.Point(144, 12);
+            this.btnShowAdminPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowAdminPanel.FlatAppearance.BorderSize = 0;
+            this.btnShowAdminPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowAdminPanel.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnShowAdminPanel.Location = new System.Drawing.Point(255, 15);
+            this.btnShowAdminPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShowAdminPanel.Name = "btnShowAdminPanel";
-            this.btnShowAdminPanel.Size = new System.Drawing.Size(88, 33);
+            this.btnShowAdminPanel.Size = new System.Drawing.Size(83, 52);
             this.btnShowAdminPanel.TabIndex = 6;
             this.btnShowAdminPanel.Text = "Admin Panel";
             this.btnShowAdminPanel.UseVisualStyleBackColor = true;
@@ -979,9 +1033,10 @@
             // lblUserDetailsAddProductCount
             // 
             this.lblUserDetailsAddProductCount.AutoSize = true;
-            this.lblUserDetailsAddProductCount.Location = new System.Drawing.Point(239, 105);
+            this.lblUserDetailsAddProductCount.Location = new System.Drawing.Point(319, 129);
+            this.lblUserDetailsAddProductCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserDetailsAddProductCount.Name = "lblUserDetailsAddProductCount";
-            this.lblUserDetailsAddProductCount.Size = new System.Drawing.Size(10, 13);
+            this.lblUserDetailsAddProductCount.Size = new System.Drawing.Size(11, 16);
             this.lblUserDetailsAddProductCount.TabIndex = 5;
             this.lblUserDetailsAddProductCount.Text = "-";
             // 
@@ -989,9 +1044,10 @@
             // 
             this.pictureUserDetailsLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsLogout.BackgroundImage")));
             this.pictureUserDetailsLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserDetailsLogout.Location = new System.Drawing.Point(46, 437);
+            this.pictureUserDetailsLogout.Location = new System.Drawing.Point(61, 538);
+            this.pictureUserDetailsLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureUserDetailsLogout.Name = "pictureUserDetailsLogout";
-            this.pictureUserDetailsLogout.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsLogout.Size = new System.Drawing.Size(49, 39);
             this.pictureUserDetailsLogout.TabIndex = 4;
             this.pictureUserDetailsLogout.TabStop = false;
             // 
@@ -999,9 +1055,10 @@
             // 
             this.pictureUserDetailsSearchHistory.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsSearchHistory.BackgroundImage")));
             this.pictureUserDetailsSearchHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserDetailsSearchHistory.Location = new System.Drawing.Point(46, 399);
+            this.pictureUserDetailsSearchHistory.Location = new System.Drawing.Point(61, 491);
+            this.pictureUserDetailsSearchHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureUserDetailsSearchHistory.Name = "pictureUserDetailsSearchHistory";
-            this.pictureUserDetailsSearchHistory.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsSearchHistory.Size = new System.Drawing.Size(49, 39);
             this.pictureUserDetailsSearchHistory.TabIndex = 4;
             this.pictureUserDetailsSearchHistory.TabStop = false;
             // 
@@ -1009,9 +1066,10 @@
             // 
             this.pictureUserDetailsBlackList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsBlackList.BackgroundImage")));
             this.pictureUserDetailsBlackList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserDetailsBlackList.Location = new System.Drawing.Point(46, 361);
+            this.pictureUserDetailsBlackList.Location = new System.Drawing.Point(61, 444);
+            this.pictureUserDetailsBlackList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureUserDetailsBlackList.Name = "pictureUserDetailsBlackList";
-            this.pictureUserDetailsBlackList.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsBlackList.Size = new System.Drawing.Size(49, 39);
             this.pictureUserDetailsBlackList.TabIndex = 4;
             this.pictureUserDetailsBlackList.TabStop = false;
             // 
@@ -1019,9 +1077,10 @@
             // 
             this.pictureUserDetailsFavoriLists.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsFavoriLists.BackgroundImage")));
             this.pictureUserDetailsFavoriLists.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserDetailsFavoriLists.Location = new System.Drawing.Point(46, 323);
+            this.pictureUserDetailsFavoriLists.Location = new System.Drawing.Point(61, 398);
+            this.pictureUserDetailsFavoriLists.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureUserDetailsFavoriLists.Name = "pictureUserDetailsFavoriLists";
-            this.pictureUserDetailsFavoriLists.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsFavoriLists.Size = new System.Drawing.Size(49, 39);
             this.pictureUserDetailsFavoriLists.TabIndex = 4;
             this.pictureUserDetailsFavoriLists.TabStop = false;
             // 
@@ -1029,9 +1088,10 @@
             // 
             this.pictureUserDetailsUpdateUserDetails.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsUpdateUserDetails.BackgroundImage")));
             this.pictureUserDetailsUpdateUserDetails.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserDetailsUpdateUserDetails.Location = new System.Drawing.Point(46, 285);
+            this.pictureUserDetailsUpdateUserDetails.Location = new System.Drawing.Point(61, 351);
+            this.pictureUserDetailsUpdateUserDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureUserDetailsUpdateUserDetails.Name = "pictureUserDetailsUpdateUserDetails";
-            this.pictureUserDetailsUpdateUserDetails.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsUpdateUserDetails.Size = new System.Drawing.Size(49, 39);
             this.pictureUserDetailsUpdateUserDetails.TabIndex = 4;
             this.pictureUserDetailsUpdateUserDetails.TabStop = false;
             // 
@@ -1039,9 +1099,10 @@
             // 
             this.pictureUserDetailsMergeSocialMedia.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsMergeSocialMedia.BackgroundImage")));
             this.pictureUserDetailsMergeSocialMedia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserDetailsMergeSocialMedia.Location = new System.Drawing.Point(46, 247);
+            this.pictureUserDetailsMergeSocialMedia.Location = new System.Drawing.Point(61, 304);
+            this.pictureUserDetailsMergeSocialMedia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureUserDetailsMergeSocialMedia.Name = "pictureUserDetailsMergeSocialMedia";
-            this.pictureUserDetailsMergeSocialMedia.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsMergeSocialMedia.Size = new System.Drawing.Size(49, 39);
             this.pictureUserDetailsMergeSocialMedia.TabIndex = 4;
             this.pictureUserDetailsMergeSocialMedia.TabStop = false;
             // 
@@ -1049,9 +1110,10 @@
             // 
             this.pictureUserDetailsChangePassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsChangePassword.BackgroundImage")));
             this.pictureUserDetailsChangePassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserDetailsChangePassword.Location = new System.Drawing.Point(46, 209);
+            this.pictureUserDetailsChangePassword.Location = new System.Drawing.Point(61, 257);
+            this.pictureUserDetailsChangePassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureUserDetailsChangePassword.Name = "pictureUserDetailsChangePassword";
-            this.pictureUserDetailsChangePassword.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsChangePassword.Size = new System.Drawing.Size(49, 39);
             this.pictureUserDetailsChangePassword.TabIndex = 4;
             this.pictureUserDetailsChangePassword.TabStop = false;
             // 
@@ -1059,9 +1121,10 @@
             // 
             this.pictureUserDetailsChangeEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsChangeEmail.BackgroundImage")));
             this.pictureUserDetailsChangeEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserDetailsChangeEmail.Location = new System.Drawing.Point(46, 171);
+            this.pictureUserDetailsChangeEmail.Location = new System.Drawing.Point(61, 210);
+            this.pictureUserDetailsChangeEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureUserDetailsChangeEmail.Name = "pictureUserDetailsChangeEmail";
-            this.pictureUserDetailsChangeEmail.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsChangeEmail.Size = new System.Drawing.Size(49, 39);
             this.pictureUserDetailsChangeEmail.TabIndex = 4;
             this.pictureUserDetailsChangeEmail.TabStop = false;
             // 
@@ -1069,9 +1132,10 @@
             // 
             this.pictureUserDetailsPremium.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureUserDetailsPremium.BackgroundImage")));
             this.pictureUserDetailsPremium.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureUserDetailsPremium.Location = new System.Drawing.Point(46, 133);
+            this.pictureUserDetailsPremium.Location = new System.Drawing.Point(61, 164);
+            this.pictureUserDetailsPremium.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureUserDetailsPremium.Name = "pictureUserDetailsPremium";
-            this.pictureUserDetailsPremium.Size = new System.Drawing.Size(37, 32);
+            this.pictureUserDetailsPremium.Size = new System.Drawing.Size(49, 39);
             this.pictureUserDetailsPremium.TabIndex = 4;
             this.pictureUserDetailsPremium.TabStop = false;
             // 
@@ -1082,9 +1146,10 @@
             this.btnUserDetailsLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserDetailsLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserDetailsLogout.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserDetailsLogout.Location = new System.Drawing.Point(48, 437);
+            this.btnUserDetailsLogout.Location = new System.Drawing.Point(64, 538);
+            this.btnUserDetailsLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUserDetailsLogout.Name = "btnUserDetailsLogout";
-            this.btnUserDetailsLogout.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsLogout.Size = new System.Drawing.Size(367, 39);
             this.btnUserDetailsLogout.TabIndex = 3;
             this.btnUserDetailsLogout.Text = "         Çıkış yap";
             this.btnUserDetailsLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1098,9 +1163,10 @@
             this.btnUserDetailsBlacklist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserDetailsBlacklist.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserDetailsBlacklist.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserDetailsBlacklist.Location = new System.Drawing.Point(49, 361);
+            this.btnUserDetailsBlacklist.Location = new System.Drawing.Point(65, 444);
+            this.btnUserDetailsBlacklist.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUserDetailsBlacklist.Name = "btnUserDetailsBlacklist";
-            this.btnUserDetailsBlacklist.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsBlacklist.Size = new System.Drawing.Size(367, 39);
             this.btnUserDetailsBlacklist.TabIndex = 3;
             this.btnUserDetailsBlacklist.Text = "         Kara liste";
             this.btnUserDetailsBlacklist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1114,9 +1180,10 @@
             this.btnUserDetailsFavoriLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserDetailsFavoriLists.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserDetailsFavoriLists.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserDetailsFavoriLists.Location = new System.Drawing.Point(49, 323);
+            this.btnUserDetailsFavoriLists.Location = new System.Drawing.Point(65, 398);
+            this.btnUserDetailsFavoriLists.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUserDetailsFavoriLists.Name = "btnUserDetailsFavoriLists";
-            this.btnUserDetailsFavoriLists.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsFavoriLists.Size = new System.Drawing.Size(367, 39);
             this.btnUserDetailsFavoriLists.TabIndex = 3;
             this.btnUserDetailsFavoriLists.Text = "         Favoriler";
             this.btnUserDetailsFavoriLists.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1130,9 +1197,10 @@
             this.btnUserDetailsUpdateUserDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserDetailsUpdateUserDetails.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserDetailsUpdateUserDetails.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserDetailsUpdateUserDetails.Location = new System.Drawing.Point(49, 285);
+            this.btnUserDetailsUpdateUserDetails.Location = new System.Drawing.Point(65, 351);
+            this.btnUserDetailsUpdateUserDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUserDetailsUpdateUserDetails.Name = "btnUserDetailsUpdateUserDetails";
-            this.btnUserDetailsUpdateUserDetails.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsUpdateUserDetails.Size = new System.Drawing.Size(367, 39);
             this.btnUserDetailsUpdateUserDetails.TabIndex = 3;
             this.btnUserDetailsUpdateUserDetails.Text = "         Profil bilgileri güncelle";
             this.btnUserDetailsUpdateUserDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1146,9 +1214,10 @@
             this.btnUserDetailsMergeSocialMedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserDetailsMergeSocialMedia.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserDetailsMergeSocialMedia.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserDetailsMergeSocialMedia.Location = new System.Drawing.Point(48, 247);
+            this.btnUserDetailsMergeSocialMedia.Location = new System.Drawing.Point(64, 304);
+            this.btnUserDetailsMergeSocialMedia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUserDetailsMergeSocialMedia.Name = "btnUserDetailsMergeSocialMedia";
-            this.btnUserDetailsMergeSocialMedia.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsMergeSocialMedia.Size = new System.Drawing.Size(367, 39);
             this.btnUserDetailsMergeSocialMedia.TabIndex = 3;
             this.btnUserDetailsMergeSocialMedia.Text = "         Sosyal medya hesabı ile birleştir";
             this.btnUserDetailsMergeSocialMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1162,9 +1231,10 @@
             this.btnUserDetailsChangeEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserDetailsChangeEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserDetailsChangeEmail.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserDetailsChangeEmail.Location = new System.Drawing.Point(48, 171);
+            this.btnUserDetailsChangeEmail.Location = new System.Drawing.Point(64, 210);
+            this.btnUserDetailsChangeEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUserDetailsChangeEmail.Name = "btnUserDetailsChangeEmail";
-            this.btnUserDetailsChangeEmail.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsChangeEmail.Size = new System.Drawing.Size(367, 39);
             this.btnUserDetailsChangeEmail.TabIndex = 3;
             this.btnUserDetailsChangeEmail.Text = "         E-Posta Adresini değiştir";
             this.btnUserDetailsChangeEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1177,7 +1247,8 @@
             this.lblUserDetailsAddProduct.BackColor = System.Drawing.Color.White;
             this.lblUserDetailsAddProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUserDetailsAddProduct.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblUserDetailsAddProduct.Location = new System.Drawing.Point(119, 104);
+            this.lblUserDetailsAddProduct.Location = new System.Drawing.Point(159, 128);
+            this.lblUserDetailsAddProduct.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserDetailsAddProduct.Name = "lblUserDetailsAddProduct";
             this.lblUserDetailsAddProduct.Size = new System.Drawing.Size(116, 15);
             this.lblUserDetailsAddProduct.TabIndex = 2;
@@ -1189,7 +1260,8 @@
             this.lblUserDetailsSignUpDateValue.BackColor = System.Drawing.Color.White;
             this.lblUserDetailsSignUpDateValue.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUserDetailsSignUpDateValue.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblUserDetailsSignUpDateValue.Location = new System.Drawing.Point(152, 76);
+            this.lblUserDetailsSignUpDateValue.Location = new System.Drawing.Point(203, 94);
+            this.lblUserDetailsSignUpDateValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserDetailsSignUpDateValue.Name = "lblUserDetailsSignUpDateValue";
             this.lblUserDetailsSignUpDateValue.Size = new System.Drawing.Size(0, 15);
             this.lblUserDetailsSignUpDateValue.TabIndex = 1;
@@ -1200,7 +1272,8 @@
             this.lblUserDetailsSignUpDate.BackColor = System.Drawing.Color.White;
             this.lblUserDetailsSignUpDate.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUserDetailsSignUpDate.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblUserDetailsSignUpDate.Location = new System.Drawing.Point(66, 76);
+            this.lblUserDetailsSignUpDate.Location = new System.Drawing.Point(88, 94);
+            this.lblUserDetailsSignUpDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserDetailsSignUpDate.Name = "lblUserDetailsSignUpDate";
             this.lblUserDetailsSignUpDate.Size = new System.Drawing.Size(80, 15);
             this.lblUserDetailsSignUpDate.TabIndex = 1;
@@ -1211,7 +1284,8 @@
             this.lblUserDetailsUserName.AutoSize = true;
             this.lblUserDetailsUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUserDetailsUserName.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblUserDetailsUserName.Location = new System.Drawing.Point(118, 48);
+            this.lblUserDetailsUserName.Location = new System.Drawing.Point(157, 59);
+            this.lblUserDetailsUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserDetailsUserName.Name = "lblUserDetailsUserName";
             this.lblUserDetailsUserName.Size = new System.Drawing.Size(86, 21);
             this.lblUserDetailsUserName.TabIndex = 0;
@@ -1224,9 +1298,10 @@
             this.btnUserDetailsChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserDetailsChangePassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserDetailsChangePassword.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserDetailsChangePassword.Location = new System.Drawing.Point(49, 209);
+            this.btnUserDetailsChangePassword.Location = new System.Drawing.Point(65, 257);
+            this.btnUserDetailsChangePassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUserDetailsChangePassword.Name = "btnUserDetailsChangePassword";
-            this.btnUserDetailsChangePassword.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsChangePassword.Size = new System.Drawing.Size(367, 39);
             this.btnUserDetailsChangePassword.TabIndex = 3;
             this.btnUserDetailsChangePassword.Text = "         Şifre değiştir";
             this.btnUserDetailsChangePassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1240,9 +1315,10 @@
             this.btnUserDetailsPremium.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserDetailsPremium.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserDetailsPremium.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserDetailsPremium.Location = new System.Drawing.Point(48, 133);
+            this.btnUserDetailsPremium.Location = new System.Drawing.Point(64, 164);
+            this.btnUserDetailsPremium.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUserDetailsPremium.Name = "btnUserDetailsPremium";
-            this.btnUserDetailsPremium.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsPremium.Size = new System.Drawing.Size(367, 39);
             this.btnUserDetailsPremium.TabIndex = 3;
             this.btnUserDetailsPremium.Text = "         Premium üye ol";
             this.btnUserDetailsPremium.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1256,9 +1332,10 @@
             this.btnUserDetailsClearSearchHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserDetailsClearSearchHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserDetailsClearSearchHistory.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.btnUserDetailsClearSearchHistory.Location = new System.Drawing.Point(48, 399);
+            this.btnUserDetailsClearSearchHistory.Location = new System.Drawing.Point(64, 491);
+            this.btnUserDetailsClearSearchHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUserDetailsClearSearchHistory.Name = "btnUserDetailsClearSearchHistory";
-            this.btnUserDetailsClearSearchHistory.Size = new System.Drawing.Size(275, 32);
+            this.btnUserDetailsClearSearchHistory.Size = new System.Drawing.Size(367, 39);
             this.btnUserDetailsClearSearchHistory.TabIndex = 3;
             this.btnUserDetailsClearSearchHistory.Text = "         Arama geçmişini temizle";
             this.btnUserDetailsClearSearchHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1275,10 +1352,11 @@
             this.AddAndUpdateProduct.Controls.Add(this.grpBoxAddAndUpdateProductUpdateProduct);
             this.AddAndUpdateProduct.Controls.Add(this.grpBoxAddAndUpdateProductAddProduct);
             this.AddAndUpdateProduct.Location = new System.Drawing.Point(0, 0);
-            this.AddAndUpdateProduct.MaximumSize = new System.Drawing.Size(360, 510);
-            this.AddAndUpdateProduct.MinimumSize = new System.Drawing.Size(360, 510);
+            this.AddAndUpdateProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddAndUpdateProduct.MaximumSize = new System.Drawing.Size(480, 628);
+            this.AddAndUpdateProduct.MinimumSize = new System.Drawing.Size(480, 628);
             this.AddAndUpdateProduct.Name = "AddAndUpdateProduct";
-            this.AddAndUpdateProduct.Size = new System.Drawing.Size(360, 510);
+            this.AddAndUpdateProduct.Size = new System.Drawing.Size(480, 628);
             this.AddAndUpdateProduct.TabIndex = 6;
             // 
             // btnAddAndUpdateProductUser
@@ -1288,9 +1366,10 @@
             this.btnAddAndUpdateProductUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddAndUpdateProductUser.FlatAppearance.BorderSize = 0;
             this.btnAddAndUpdateProductUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddAndUpdateProductUser.Location = new System.Drawing.Point(285, 15);
+            this.btnAddAndUpdateProductUser.Location = new System.Drawing.Point(380, 18);
+            this.btnAddAndUpdateProductUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddAndUpdateProductUser.Name = "btnAddAndUpdateProductUser";
-            this.btnAddAndUpdateProductUser.Size = new System.Drawing.Size(60, 40);
+            this.btnAddAndUpdateProductUser.Size = new System.Drawing.Size(80, 49);
             this.btnAddAndUpdateProductUser.TabIndex = 7;
             this.btnAddAndUpdateProductUser.UseVisualStyleBackColor = true;
             this.btnAddAndUpdateProductUser.Click += new System.EventHandler(this.UserButton_Click);
@@ -1301,9 +1380,10 @@
             this.btnAddAndUpdateProductSend.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddAndUpdateProductSend.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAddAndUpdateProductSend.ForeColor = System.Drawing.Color.White;
-            this.btnAddAndUpdateProductSend.Location = new System.Drawing.Point(69, 416);
+            this.btnAddAndUpdateProductSend.Location = new System.Drawing.Point(92, 512);
+            this.btnAddAndUpdateProductSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddAndUpdateProductSend.Name = "btnAddAndUpdateProductSend";
-            this.btnAddAndUpdateProductSend.Size = new System.Drawing.Size(246, 40);
+            this.btnAddAndUpdateProductSend.Size = new System.Drawing.Size(328, 49);
             this.btnAddAndUpdateProductSend.TabIndex = 9;
             this.btnAddAndUpdateProductSend.Text = "Gönder";
             this.btnAddAndUpdateProductSend.UseVisualStyleBackColor = false;
@@ -1317,9 +1397,10 @@
             this.btnAddAndUpdateProductAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddAndUpdateProductAddProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAddAndUpdateProductAddProduct.ForeColor = System.Drawing.Color.White;
-            this.btnAddAndUpdateProductAddProduct.Location = new System.Drawing.Point(213, 87);
+            this.btnAddAndUpdateProductAddProduct.Location = new System.Drawing.Point(284, 107);
+            this.btnAddAndUpdateProductAddProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddAndUpdateProductAddProduct.Name = "btnAddAndUpdateProductAddProduct";
-            this.btnAddAndUpdateProductAddProduct.Size = new System.Drawing.Size(112, 40);
+            this.btnAddAndUpdateProductAddProduct.Size = new System.Drawing.Size(149, 49);
             this.btnAddAndUpdateProductAddProduct.TabIndex = 1;
             this.btnAddAndUpdateProductAddProduct.Text = "Ürün Ekle";
             this.btnAddAndUpdateProductAddProduct.UseVisualStyleBackColor = false;
@@ -1333,9 +1414,10 @@
             this.btnAddAndUpdateProductUpdateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddAndUpdateProductUpdateProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAddAndUpdateProductUpdateProduct.ForeColor = System.Drawing.Color.White;
-            this.btnAddAndUpdateProductUpdateProduct.Location = new System.Drawing.Point(68, 87);
+            this.btnAddAndUpdateProductUpdateProduct.Location = new System.Drawing.Point(91, 107);
+            this.btnAddAndUpdateProductUpdateProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddAndUpdateProductUpdateProduct.Name = "btnAddAndUpdateProductUpdateProduct";
-            this.btnAddAndUpdateProductUpdateProduct.Size = new System.Drawing.Size(114, 40);
+            this.btnAddAndUpdateProductUpdateProduct.Size = new System.Drawing.Size(152, 49);
             this.btnAddAndUpdateProductUpdateProduct.TabIndex = 1;
             this.btnAddAndUpdateProductUpdateProduct.Text = "Ürün Düzenle";
             this.btnAddAndUpdateProductUpdateProduct.UseVisualStyleBackColor = false;
@@ -1359,9 +1441,11 @@
             this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.lblAddAndUpdateProductUpdateProductProductName);
             this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.lblAddAndUpdateProductUpdateProductSupplier);
             this.grpBoxAddAndUpdateProductUpdateProduct.Controls.Add(this.lblAddAndUpdateProductUpdateProductBarcodeNo);
-            this.grpBoxAddAndUpdateProductUpdateProduct.Location = new System.Drawing.Point(26, 133);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Location = new System.Drawing.Point(35, 164);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpBoxAddAndUpdateProductUpdateProduct.Name = "grpBoxAddAndUpdateProductUpdateProduct";
-            this.grpBoxAddAndUpdateProductUpdateProduct.Size = new System.Drawing.Size(318, 277);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpBoxAddAndUpdateProductUpdateProduct.Size = new System.Drawing.Size(424, 341);
             this.grpBoxAddAndUpdateProductUpdateProduct.TabIndex = 0;
             this.grpBoxAddAndUpdateProductUpdateProduct.TabStop = false;
             this.grpBoxAddAndUpdateProductUpdateProduct.Text = "Ürün Düzenle";
@@ -1370,26 +1454,29 @@
             // 
             this.cmbBoxAddAndUpdateProductUpdateProductCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.cmbBoxAddAndUpdateProductUpdateProductCategory.FormattingEnabled = true;
-            this.cmbBoxAddAndUpdateProductUpdateProductCategory.Location = new System.Drawing.Point(89, 93);
+            this.cmbBoxAddAndUpdateProductUpdateProductCategory.Location = new System.Drawing.Point(119, 114);
+            this.cmbBoxAddAndUpdateProductUpdateProductCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbBoxAddAndUpdateProductUpdateProductCategory.Name = "cmbBoxAddAndUpdateProductUpdateProductCategory";
-            this.cmbBoxAddAndUpdateProductUpdateProductCategory.Size = new System.Drawing.Size(210, 21);
+            this.cmbBoxAddAndUpdateProductUpdateProductCategory.Size = new System.Drawing.Size(279, 24);
             this.cmbBoxAddAndUpdateProductUpdateProductCategory.TabIndex = 4;
             // 
             // cmbBoxAddAndUpdateProductUpdateProductSupplier
             // 
             this.cmbBoxAddAndUpdateProductUpdateProductSupplier.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.cmbBoxAddAndUpdateProductUpdateProductSupplier.FormattingEnabled = true;
-            this.cmbBoxAddAndUpdateProductUpdateProductSupplier.Location = new System.Drawing.Point(89, 64);
+            this.cmbBoxAddAndUpdateProductUpdateProductSupplier.Location = new System.Drawing.Point(119, 79);
+            this.cmbBoxAddAndUpdateProductUpdateProductSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbBoxAddAndUpdateProductUpdateProductSupplier.Name = "cmbBoxAddAndUpdateProductUpdateProductSupplier";
-            this.cmbBoxAddAndUpdateProductUpdateProductSupplier.Size = new System.Drawing.Size(210, 21);
+            this.cmbBoxAddAndUpdateProductUpdateProductSupplier.Size = new System.Drawing.Size(279, 24);
             this.cmbBoxAddAndUpdateProductUpdateProductSupplier.TabIndex = 3;
             // 
             // btnAddAndUpdateProductUpdateProductGetProductDetail
             // 
             this.btnAddAndUpdateProductUpdateProductGetProductDetail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddAndUpdateProductUpdateProductGetProductDetail.Location = new System.Drawing.Point(227, 33);
+            this.btnAddAndUpdateProductUpdateProductGetProductDetail.Location = new System.Drawing.Point(303, 41);
+            this.btnAddAndUpdateProductUpdateProductGetProductDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddAndUpdateProductUpdateProductGetProductDetail.Name = "btnAddAndUpdateProductUpdateProductGetProductDetail";
-            this.btnAddAndUpdateProductUpdateProductGetProductDetail.Size = new System.Drawing.Size(72, 24);
+            this.btnAddAndUpdateProductUpdateProductGetProductDetail.Size = new System.Drawing.Size(96, 30);
             this.btnAddAndUpdateProductUpdateProductGetProductDetail.TabIndex = 2;
             this.btnAddAndUpdateProductUpdateProductGetProductDetail.Text = "Ürün\'ü Getir";
             this.btnAddAndUpdateProductUpdateProductGetProductDetail.UseVisualStyleBackColor = true;
@@ -1398,9 +1485,10 @@
             // btnAddAndUpdateProductUpdateProductFront
             // 
             this.btnAddAndUpdateProductUpdateProductFront.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddAndUpdateProductUpdateProductFront.Location = new System.Drawing.Point(43, 202);
+            this.btnAddAndUpdateProductUpdateProductFront.Location = new System.Drawing.Point(57, 249);
+            this.btnAddAndUpdateProductUpdateProductFront.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddAndUpdateProductUpdateProductFront.Name = "btnAddAndUpdateProductUpdateProductFront";
-            this.btnAddAndUpdateProductUpdateProductFront.Size = new System.Drawing.Size(75, 45);
+            this.btnAddAndUpdateProductUpdateProductFront.Size = new System.Drawing.Size(100, 55);
             this.btnAddAndUpdateProductUpdateProductFront.TabIndex = 7;
             this.btnAddAndUpdateProductUpdateProductFront.Text = "+";
             this.btnAddAndUpdateProductUpdateProductFront.UseVisualStyleBackColor = true;
@@ -1409,9 +1497,10 @@
             // btnAddAndUpdateProductUpdateProductBack
             // 
             this.btnAddAndUpdateProductUpdateProductBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddAndUpdateProductUpdateProductBack.Location = new System.Drawing.Point(203, 202);
+            this.btnAddAndUpdateProductUpdateProductBack.Location = new System.Drawing.Point(271, 249);
+            this.btnAddAndUpdateProductUpdateProductBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddAndUpdateProductUpdateProductBack.Name = "btnAddAndUpdateProductUpdateProductBack";
-            this.btnAddAndUpdateProductUpdateProductBack.Size = new System.Drawing.Size(75, 45);
+            this.btnAddAndUpdateProductUpdateProductBack.Size = new System.Drawing.Size(100, 55);
             this.btnAddAndUpdateProductUpdateProductBack.TabIndex = 8;
             this.btnAddAndUpdateProductUpdateProductBack.Text = "+";
             this.btnAddAndUpdateProductUpdateProductBack.UseVisualStyleBackColor = true;
@@ -1420,9 +1509,10 @@
             // btnAddAndUpdateProductUpdateProductProductContext
             // 
             this.btnAddAndUpdateProductUpdateProductProductContext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddAndUpdateProductUpdateProductProductContext.Location = new System.Drawing.Point(266, 151);
+            this.btnAddAndUpdateProductUpdateProductProductContext.Location = new System.Drawing.Point(355, 186);
+            this.btnAddAndUpdateProductUpdateProductProductContext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddAndUpdateProductUpdateProductProductContext.Name = "btnAddAndUpdateProductUpdateProductProductContext";
-            this.btnAddAndUpdateProductUpdateProductProductContext.Size = new System.Drawing.Size(33, 23);
+            this.btnAddAndUpdateProductUpdateProductProductContext.Size = new System.Drawing.Size(44, 28);
             this.btnAddAndUpdateProductUpdateProductProductContext.TabIndex = 4;
             this.btnAddAndUpdateProductUpdateProductProductContext.Text = "+";
             this.btnAddAndUpdateProductUpdateProductProductContext.UseVisualStyleBackColor = true;
@@ -1431,17 +1521,19 @@
             // txtAddAndUpdateProductUpdateProductProductContext
             // 
             this.txtAddAndUpdateProductUpdateProductProductContext.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAddAndUpdateProductUpdateProductProductContext.Location = new System.Drawing.Point(89, 151);
+            this.txtAddAndUpdateProductUpdateProductProductContext.Location = new System.Drawing.Point(119, 186);
+            this.txtAddAndUpdateProductUpdateProductProductContext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAddAndUpdateProductUpdateProductProductContext.Multiline = true;
             this.txtAddAndUpdateProductUpdateProductProductContext.Name = "txtAddAndUpdateProductUpdateProductProductContext";
-            this.txtAddAndUpdateProductUpdateProductProductContext.Size = new System.Drawing.Size(171, 23);
+            this.txtAddAndUpdateProductUpdateProductProductContext.Size = new System.Drawing.Size(227, 27);
             this.txtAddAndUpdateProductUpdateProductProductContext.TabIndex = 6;
             // 
             // lblAddAndUpdateProductUpdateProductBack
             // 
             this.lblAddAndUpdateProductUpdateProductBack.AutoSize = true;
             this.lblAddAndUpdateProductUpdateProductBack.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductUpdateProductBack.Location = new System.Drawing.Point(193, 186);
+            this.lblAddAndUpdateProductUpdateProductBack.Location = new System.Drawing.Point(257, 229);
+            this.lblAddAndUpdateProductUpdateProductBack.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddAndUpdateProductUpdateProductBack.Name = "lblAddAndUpdateProductUpdateProductBack";
             this.lblAddAndUpdateProductUpdateProductBack.Size = new System.Drawing.Size(96, 13);
             this.lblAddAndUpdateProductUpdateProductBack.TabIndex = 2;
@@ -1451,7 +1543,8 @@
             // 
             this.lblAddAndUpdateProductUpdateProductFront.AutoSize = true;
             this.lblAddAndUpdateProductUpdateProductFront.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductUpdateProductFront.Location = new System.Drawing.Point(40, 186);
+            this.lblAddAndUpdateProductUpdateProductFront.Location = new System.Drawing.Point(53, 229);
+            this.lblAddAndUpdateProductUpdateProductFront.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddAndUpdateProductUpdateProductFront.Name = "lblAddAndUpdateProductUpdateProductFront";
             this.lblAddAndUpdateProductUpdateProductFront.Size = new System.Drawing.Size(87, 13);
             this.lblAddAndUpdateProductUpdateProductFront.TabIndex = 2;
@@ -1461,7 +1554,8 @@
             // 
             this.lblAddAndUpdateProductUpdateProductProductContext.AutoSize = true;
             this.lblAddAndUpdateProductUpdateProductProductContext.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductUpdateProductProductContext.Location = new System.Drawing.Point(21, 156);
+            this.lblAddAndUpdateProductUpdateProductProductContext.Location = new System.Drawing.Point(28, 192);
+            this.lblAddAndUpdateProductUpdateProductProductContext.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddAndUpdateProductUpdateProductProductContext.Name = "lblAddAndUpdateProductUpdateProductProductContext";
             this.lblAddAndUpdateProductUpdateProductProductContext.Size = new System.Drawing.Size(61, 13);
             this.lblAddAndUpdateProductUpdateProductProductContext.TabIndex = 2;
@@ -1470,26 +1564,29 @@
             // txtAddAndUpdateProductUpdateProductProductName
             // 
             this.txtAddAndUpdateProductUpdateProductProductName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAddAndUpdateProductUpdateProductProductName.Location = new System.Drawing.Point(89, 122);
+            this.txtAddAndUpdateProductUpdateProductProductName.Location = new System.Drawing.Point(119, 150);
+            this.txtAddAndUpdateProductUpdateProductProductName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAddAndUpdateProductUpdateProductProductName.Multiline = true;
             this.txtAddAndUpdateProductUpdateProductProductName.Name = "txtAddAndUpdateProductUpdateProductProductName";
-            this.txtAddAndUpdateProductUpdateProductProductName.Size = new System.Drawing.Size(210, 23);
+            this.txtAddAndUpdateProductUpdateProductProductName.Size = new System.Drawing.Size(279, 27);
             this.txtAddAndUpdateProductUpdateProductProductName.TabIndex = 5;
             // 
             // txtAddAndUpdateProductUpdateProductBarcodeNo
             // 
             this.txtAddAndUpdateProductUpdateProductBarcodeNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAddAndUpdateProductUpdateProductBarcodeNo.Location = new System.Drawing.Point(89, 34);
+            this.txtAddAndUpdateProductUpdateProductBarcodeNo.Location = new System.Drawing.Point(119, 42);
+            this.txtAddAndUpdateProductUpdateProductBarcodeNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAddAndUpdateProductUpdateProductBarcodeNo.Multiline = true;
             this.txtAddAndUpdateProductUpdateProductBarcodeNo.Name = "txtAddAndUpdateProductUpdateProductBarcodeNo";
-            this.txtAddAndUpdateProductUpdateProductBarcodeNo.Size = new System.Drawing.Size(132, 23);
+            this.txtAddAndUpdateProductUpdateProductBarcodeNo.Size = new System.Drawing.Size(175, 27);
             this.txtAddAndUpdateProductUpdateProductBarcodeNo.TabIndex = 1;
             // 
             // lblAddAndUpdateProductUpdateProductCategory
             // 
             this.lblAddAndUpdateProductUpdateProductCategory.AutoSize = true;
             this.lblAddAndUpdateProductUpdateProductCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductUpdateProductCategory.Location = new System.Drawing.Point(21, 96);
+            this.lblAddAndUpdateProductUpdateProductCategory.Location = new System.Drawing.Point(28, 118);
+            this.lblAddAndUpdateProductUpdateProductCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddAndUpdateProductUpdateProductCategory.Name = "lblAddAndUpdateProductUpdateProductCategory";
             this.lblAddAndUpdateProductUpdateProductCategory.Size = new System.Drawing.Size(51, 13);
             this.lblAddAndUpdateProductUpdateProductCategory.TabIndex = 0;
@@ -1499,7 +1596,8 @@
             // 
             this.lblAddAndUpdateProductUpdateProductProductName.AutoSize = true;
             this.lblAddAndUpdateProductUpdateProductProductName.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductUpdateProductProductName.Location = new System.Drawing.Point(21, 125);
+            this.lblAddAndUpdateProductUpdateProductProductName.Location = new System.Drawing.Point(28, 154);
+            this.lblAddAndUpdateProductUpdateProductProductName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddAndUpdateProductUpdateProductProductName.Name = "lblAddAndUpdateProductUpdateProductProductName";
             this.lblAddAndUpdateProductUpdateProductProductName.Size = new System.Drawing.Size(51, 13);
             this.lblAddAndUpdateProductUpdateProductProductName.TabIndex = 0;
@@ -1509,7 +1607,8 @@
             // 
             this.lblAddAndUpdateProductUpdateProductSupplier.AutoSize = true;
             this.lblAddAndUpdateProductUpdateProductSupplier.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductUpdateProductSupplier.Location = new System.Drawing.Point(21, 67);
+            this.lblAddAndUpdateProductUpdateProductSupplier.Location = new System.Drawing.Point(28, 82);
+            this.lblAddAndUpdateProductUpdateProductSupplier.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddAndUpdateProductUpdateProductSupplier.Name = "lblAddAndUpdateProductUpdateProductSupplier";
             this.lblAddAndUpdateProductUpdateProductSupplier.Size = new System.Drawing.Size(40, 13);
             this.lblAddAndUpdateProductUpdateProductSupplier.TabIndex = 0;
@@ -1519,7 +1618,8 @@
             // 
             this.lblAddAndUpdateProductUpdateProductBarcodeNo.AutoSize = true;
             this.lblAddAndUpdateProductUpdateProductBarcodeNo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductUpdateProductBarcodeNo.Location = new System.Drawing.Point(21, 41);
+            this.lblAddAndUpdateProductUpdateProductBarcodeNo.Location = new System.Drawing.Point(28, 50);
+            this.lblAddAndUpdateProductUpdateProductBarcodeNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddAndUpdateProductUpdateProductBarcodeNo.Name = "lblAddAndUpdateProductUpdateProductBarcodeNo";
             this.lblAddAndUpdateProductUpdateProductBarcodeNo.Size = new System.Drawing.Size(62, 13);
             this.lblAddAndUpdateProductUpdateProductBarcodeNo.TabIndex = 0;
@@ -1542,9 +1642,11 @@
             this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductProductName);
             this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductSupplier);
             this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.lblAddAndUpdateProductAddProductBarcodeNo);
-            this.grpBoxAddAndUpdateProductAddProduct.Location = new System.Drawing.Point(26, 133);
+            this.grpBoxAddAndUpdateProductAddProduct.Location = new System.Drawing.Point(35, 164);
+            this.grpBoxAddAndUpdateProductAddProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpBoxAddAndUpdateProductAddProduct.Name = "grpBoxAddAndUpdateProductAddProduct";
-            this.grpBoxAddAndUpdateProductAddProduct.Size = new System.Drawing.Size(318, 277);
+            this.grpBoxAddAndUpdateProductAddProduct.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpBoxAddAndUpdateProductAddProduct.Size = new System.Drawing.Size(424, 341);
             this.grpBoxAddAndUpdateProductAddProduct.TabIndex = 0;
             this.grpBoxAddAndUpdateProductAddProduct.TabStop = false;
             this.grpBoxAddAndUpdateProductAddProduct.Text = "Ürün Ekle";
@@ -1552,24 +1654,27 @@
             // cmbBoxAddAndUpdateProductAddProductCategory
             // 
             this.cmbBoxAddAndUpdateProductAddProductCategory.FormattingEnabled = true;
-            this.cmbBoxAddAndUpdateProductAddProductCategory.Location = new System.Drawing.Point(89, 125);
+            this.cmbBoxAddAndUpdateProductAddProductCategory.Location = new System.Drawing.Point(119, 154);
+            this.cmbBoxAddAndUpdateProductAddProductCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbBoxAddAndUpdateProductAddProductCategory.Name = "cmbBoxAddAndUpdateProductAddProductCategory";
-            this.cmbBoxAddAndUpdateProductAddProductCategory.Size = new System.Drawing.Size(210, 21);
+            this.cmbBoxAddAndUpdateProductAddProductCategory.Size = new System.Drawing.Size(279, 24);
             this.cmbBoxAddAndUpdateProductAddProductCategory.TabIndex = 4;
             // 
             // cmbBoxAddAndUpdateProductAddProductSupplier
             // 
             this.cmbBoxAddAndUpdateProductAddProductSupplier.FormattingEnabled = true;
-            this.cmbBoxAddAndUpdateProductAddProductSupplier.Location = new System.Drawing.Point(89, 64);
+            this.cmbBoxAddAndUpdateProductAddProductSupplier.Location = new System.Drawing.Point(119, 79);
+            this.cmbBoxAddAndUpdateProductAddProductSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbBoxAddAndUpdateProductAddProductSupplier.Name = "cmbBoxAddAndUpdateProductAddProductSupplier";
-            this.cmbBoxAddAndUpdateProductAddProductSupplier.Size = new System.Drawing.Size(210, 21);
+            this.cmbBoxAddAndUpdateProductAddProductSupplier.Size = new System.Drawing.Size(279, 24);
             this.cmbBoxAddAndUpdateProductAddProductSupplier.TabIndex = 2;
             // 
             // btnAddAndUpdateProductAddProductFront
             // 
-            this.btnAddAndUpdateProductAddProductFront.Location = new System.Drawing.Point(43, 207);
+            this.btnAddAndUpdateProductAddProductFront.Location = new System.Drawing.Point(57, 255);
+            this.btnAddAndUpdateProductAddProductFront.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddAndUpdateProductAddProductFront.Name = "btnAddAndUpdateProductAddProductFront";
-            this.btnAddAndUpdateProductAddProductFront.Size = new System.Drawing.Size(75, 45);
+            this.btnAddAndUpdateProductAddProductFront.Size = new System.Drawing.Size(100, 55);
             this.btnAddAndUpdateProductAddProductFront.TabIndex = 6;
             this.btnAddAndUpdateProductAddProductFront.Text = "+";
             this.btnAddAndUpdateProductAddProductFront.UseVisualStyleBackColor = true;
@@ -1577,9 +1682,10 @@
             // 
             // btnAddAndUpdateProductAddProductBack
             // 
-            this.btnAddAndUpdateProductAddProductBack.Location = new System.Drawing.Point(203, 207);
+            this.btnAddAndUpdateProductAddProductBack.Location = new System.Drawing.Point(271, 255);
+            this.btnAddAndUpdateProductAddProductBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddAndUpdateProductAddProductBack.Name = "btnAddAndUpdateProductAddProductBack";
-            this.btnAddAndUpdateProductAddProductBack.Size = new System.Drawing.Size(75, 45);
+            this.btnAddAndUpdateProductAddProductBack.Size = new System.Drawing.Size(100, 55);
             this.btnAddAndUpdateProductAddProductBack.TabIndex = 7;
             this.btnAddAndUpdateProductAddProductBack.Text = "+";
             this.btnAddAndUpdateProductAddProductBack.UseVisualStyleBackColor = true;
@@ -1587,9 +1693,10 @@
             // 
             // btnAddAndUpdateProductAddProductProductContext
             // 
-            this.btnAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(266, 156);
+            this.btnAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(355, 192);
+            this.btnAddAndUpdateProductAddProductProductContext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddAndUpdateProductAddProductProductContext.Name = "btnAddAndUpdateProductAddProductProductContext";
-            this.btnAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(33, 23);
+            this.btnAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(44, 28);
             this.btnAddAndUpdateProductAddProductProductContext.TabIndex = 4;
             this.btnAddAndUpdateProductAddProductProductContext.Text = "+";
             this.btnAddAndUpdateProductAddProductProductContext.UseVisualStyleBackColor = true;
@@ -1597,17 +1704,19 @@
             // 
             // txtAddAndUpdateProductAddProductProductContext
             // 
-            this.txtAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(89, 156);
+            this.txtAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(119, 192);
+            this.txtAddAndUpdateProductAddProductProductContext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAddAndUpdateProductAddProductProductContext.Multiline = true;
             this.txtAddAndUpdateProductAddProductProductContext.Name = "txtAddAndUpdateProductAddProductProductContext";
-            this.txtAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(171, 23);
+            this.txtAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(227, 27);
             this.txtAddAndUpdateProductAddProductProductContext.TabIndex = 5;
             // 
             // lblAddAndUpdateProductAddProductBack
             // 
             this.lblAddAndUpdateProductAddProductBack.AutoSize = true;
             this.lblAddAndUpdateProductAddProductBack.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductAddProductBack.Location = new System.Drawing.Point(193, 191);
+            this.lblAddAndUpdateProductAddProductBack.Location = new System.Drawing.Point(257, 235);
+            this.lblAddAndUpdateProductAddProductBack.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddAndUpdateProductAddProductBack.Name = "lblAddAndUpdateProductAddProductBack";
             this.lblAddAndUpdateProductAddProductBack.Size = new System.Drawing.Size(96, 13);
             this.lblAddAndUpdateProductAddProductBack.TabIndex = 2;
@@ -1617,7 +1726,8 @@
             // 
             this.lblAddAndUpdateProductAddProductFront.AutoSize = true;
             this.lblAddAndUpdateProductAddProductFront.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductAddProductFront.Location = new System.Drawing.Point(40, 191);
+            this.lblAddAndUpdateProductAddProductFront.Location = new System.Drawing.Point(53, 235);
+            this.lblAddAndUpdateProductAddProductFront.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddAndUpdateProductAddProductFront.Name = "lblAddAndUpdateProductAddProductFront";
             this.lblAddAndUpdateProductAddProductFront.Size = new System.Drawing.Size(87, 13);
             this.lblAddAndUpdateProductAddProductFront.TabIndex = 2;
@@ -1627,7 +1737,8 @@
             // 
             this.lblAddAndUpdateProductAddProductProductContext.AutoSize = true;
             this.lblAddAndUpdateProductAddProductProductContext.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(22, 159);
+            this.lblAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(29, 196);
+            this.lblAddAndUpdateProductAddProductProductContext.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddAndUpdateProductAddProductProductContext.Name = "lblAddAndUpdateProductAddProductProductContext";
             this.lblAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(61, 13);
             this.lblAddAndUpdateProductAddProductProductContext.TabIndex = 2;
@@ -1635,25 +1746,28 @@
             // 
             // txtAddAndUpdateProductAddProductProductName
             // 
-            this.txtAddAndUpdateProductAddProductProductName.Location = new System.Drawing.Point(89, 94);
+            this.txtAddAndUpdateProductAddProductProductName.Location = new System.Drawing.Point(119, 116);
+            this.txtAddAndUpdateProductAddProductProductName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAddAndUpdateProductAddProductProductName.Multiline = true;
             this.txtAddAndUpdateProductAddProductProductName.Name = "txtAddAndUpdateProductAddProductProductName";
-            this.txtAddAndUpdateProductAddProductProductName.Size = new System.Drawing.Size(210, 23);
+            this.txtAddAndUpdateProductAddProductProductName.Size = new System.Drawing.Size(279, 27);
             this.txtAddAndUpdateProductAddProductProductName.TabIndex = 3;
             // 
             // txtAddAndUpdateProductAddProductBarcodeNo
             // 
-            this.txtAddAndUpdateProductAddProductBarcodeNo.Location = new System.Drawing.Point(89, 34);
+            this.txtAddAndUpdateProductAddProductBarcodeNo.Location = new System.Drawing.Point(119, 42);
+            this.txtAddAndUpdateProductAddProductBarcodeNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAddAndUpdateProductAddProductBarcodeNo.Multiline = true;
             this.txtAddAndUpdateProductAddProductBarcodeNo.Name = "txtAddAndUpdateProductAddProductBarcodeNo";
-            this.txtAddAndUpdateProductAddProductBarcodeNo.Size = new System.Drawing.Size(210, 23);
+            this.txtAddAndUpdateProductAddProductBarcodeNo.Size = new System.Drawing.Size(279, 27);
             this.txtAddAndUpdateProductAddProductBarcodeNo.TabIndex = 1;
             // 
             // lblAddAndUpdateProductAddProductCategory
             // 
             this.lblAddAndUpdateProductAddProductCategory.AutoSize = true;
             this.lblAddAndUpdateProductAddProductCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductAddProductCategory.Location = new System.Drawing.Point(21, 128);
+            this.lblAddAndUpdateProductAddProductCategory.Location = new System.Drawing.Point(28, 158);
+            this.lblAddAndUpdateProductAddProductCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddAndUpdateProductAddProductCategory.Name = "lblAddAndUpdateProductAddProductCategory";
             this.lblAddAndUpdateProductAddProductCategory.Size = new System.Drawing.Size(51, 13);
             this.lblAddAndUpdateProductAddProductCategory.TabIndex = 0;
@@ -1663,7 +1777,8 @@
             // 
             this.lblAddAndUpdateProductAddProductProductName.AutoSize = true;
             this.lblAddAndUpdateProductAddProductProductName.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductAddProductProductName.Location = new System.Drawing.Point(21, 97);
+            this.lblAddAndUpdateProductAddProductProductName.Location = new System.Drawing.Point(28, 119);
+            this.lblAddAndUpdateProductAddProductProductName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddAndUpdateProductAddProductProductName.Name = "lblAddAndUpdateProductAddProductProductName";
             this.lblAddAndUpdateProductAddProductProductName.Size = new System.Drawing.Size(51, 13);
             this.lblAddAndUpdateProductAddProductProductName.TabIndex = 0;
@@ -1673,7 +1788,8 @@
             // 
             this.lblAddAndUpdateProductAddProductSupplier.AutoSize = true;
             this.lblAddAndUpdateProductAddProductSupplier.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductAddProductSupplier.Location = new System.Drawing.Point(21, 67);
+            this.lblAddAndUpdateProductAddProductSupplier.Location = new System.Drawing.Point(28, 82);
+            this.lblAddAndUpdateProductAddProductSupplier.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddAndUpdateProductAddProductSupplier.Name = "lblAddAndUpdateProductAddProductSupplier";
             this.lblAddAndUpdateProductAddProductSupplier.Size = new System.Drawing.Size(40, 13);
             this.lblAddAndUpdateProductAddProductSupplier.TabIndex = 0;
@@ -1683,7 +1799,8 @@
             // 
             this.lblAddAndUpdateProductAddProductBarcodeNo.AutoSize = true;
             this.lblAddAndUpdateProductAddProductBarcodeNo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductAddProductBarcodeNo.Location = new System.Drawing.Point(21, 41);
+            this.lblAddAndUpdateProductAddProductBarcodeNo.Location = new System.Drawing.Point(28, 50);
+            this.lblAddAndUpdateProductAddProductBarcodeNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddAndUpdateProductAddProductBarcodeNo.Name = "lblAddAndUpdateProductAddProductBarcodeNo";
             this.lblAddAndUpdateProductAddProductBarcodeNo.Size = new System.Drawing.Size(62, 13);
             this.lblAddAndUpdateProductAddProductBarcodeNo.TabIndex = 0;
@@ -1719,18 +1836,20 @@
             this.ProductDetails.Controls.Add(this.lblProductDetailsLowerCategory);
             this.ProductDetails.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ProductDetails.Location = new System.Drawing.Point(0, 0);
-            this.ProductDetails.MaximumSize = new System.Drawing.Size(360, 510);
-            this.ProductDetails.MinimumSize = new System.Drawing.Size(360, 510);
+            this.ProductDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProductDetails.MaximumSize = new System.Drawing.Size(480, 628);
+            this.ProductDetails.MinimumSize = new System.Drawing.Size(480, 628);
             this.ProductDetails.Name = "ProductDetails";
-            this.ProductDetails.Size = new System.Drawing.Size(360, 510);
+            this.ProductDetails.Size = new System.Drawing.Size(480, 628);
             this.ProductDetails.TabIndex = 8;
             // 
             // pictureProductDetailsProductImage
             // 
             this.pictureProductDetailsProductImage.Image = ((System.Drawing.Image)(resources.GetObject("pictureProductDetailsProductImage.Image")));
-            this.pictureProductDetailsProductImage.Location = new System.Drawing.Point(259, 118);
+            this.pictureProductDetailsProductImage.Location = new System.Drawing.Point(345, 145);
+            this.pictureProductDetailsProductImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureProductDetailsProductImage.Name = "pictureProductDetailsProductImage";
-            this.pictureProductDetailsProductImage.Size = new System.Drawing.Size(90, 115);
+            this.pictureProductDetailsProductImage.Size = new System.Drawing.Size(120, 142);
             this.pictureProductDetailsProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureProductDetailsProductImage.TabIndex = 9;
             this.pictureProductDetailsProductImage.TabStop = false;
@@ -1741,9 +1860,10 @@
             this.btnProductDetailChangePicture.FlatAppearance.BorderSize = 0;
             this.btnProductDetailChangePicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductDetailChangePicture.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnProductDetailChangePicture.Location = new System.Drawing.Point(259, 238);
+            this.btnProductDetailChangePicture.Location = new System.Drawing.Point(345, 293);
+            this.btnProductDetailChangePicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnProductDetailChangePicture.Name = "btnProductDetailChangePicture";
-            this.btnProductDetailChangePicture.Size = new System.Drawing.Size(90, 36);
+            this.btnProductDetailChangePicture.Size = new System.Drawing.Size(120, 44);
             this.btnProductDetailChangePicture.TabIndex = 32;
             this.btnProductDetailChangePicture.Text = " ← →";
             this.btnProductDetailChangePicture.UseVisualStyleBackColor = true;
@@ -1756,9 +1876,10 @@
             this.btnProductDetailUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProductDetailUser.FlatAppearance.BorderSize = 0;
             this.btnProductDetailUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductDetailUser.Location = new System.Drawing.Point(285, 15);
+            this.btnProductDetailUser.Location = new System.Drawing.Point(380, 18);
+            this.btnProductDetailUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnProductDetailUser.Name = "btnProductDetailUser";
-            this.btnProductDetailUser.Size = new System.Drawing.Size(60, 40);
+            this.btnProductDetailUser.Size = new System.Drawing.Size(80, 49);
             this.btnProductDetailUser.TabIndex = 8;
             this.btnProductDetailUser.UseVisualStyleBackColor = true;
             this.btnProductDetailUser.Click += new System.EventHandler(this.UserButton_Click);
@@ -1766,21 +1887,24 @@
             // pnlProductDetailsShowProducts
             // 
             this.pnlProductDetailsShowProducts.AutoScroll = true;
-            this.pnlProductDetailsShowProducts.Location = new System.Drawing.Point(10, 380);
+            this.pnlProductDetailsShowProducts.Location = new System.Drawing.Point(13, 468);
+            this.pnlProductDetailsShowProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlProductDetailsShowProducts.Name = "pnlProductDetailsShowProducts";
-            this.pnlProductDetailsShowProducts.Size = new System.Drawing.Size(340, 120);
+            this.pnlProductDetailsShowProducts.Size = new System.Drawing.Size(453, 148);
             this.pnlProductDetailsShowProducts.TabIndex = 31;
             this.pnlProductDetailsShowProducts.Visible = false;
             // 
             // btnProductDetailsShowList
             // 
             this.btnProductDetailsShowList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProductDetailsShowList.BackgroundImage")));
+            this.btnProductDetailsShowList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProductDetailsShowList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProductDetailsShowList.FlatAppearance.BorderSize = 0;
             this.btnProductDetailsShowList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductDetailsShowList.Location = new System.Drawing.Point(303, 342);
+            this.btnProductDetailsShowList.Location = new System.Drawing.Point(404, 421);
+            this.btnProductDetailsShowList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnProductDetailsShowList.Name = "btnProductDetailsShowList";
-            this.btnProductDetailsShowList.Size = new System.Drawing.Size(30, 30);
+            this.btnProductDetailsShowList.Size = new System.Drawing.Size(40, 37);
             this.btnProductDetailsShowList.TabIndex = 30;
             this.btnProductDetailsShowList.UseVisualStyleBackColor = true;
             this.btnProductDetailsShowList.Click += new System.EventHandler(this.btnShowList_Click);
@@ -1790,7 +1914,8 @@
             this.lblProductDetailsProductContext.AutoSize = true;
             this.lblProductDetailsProductContext.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductDetailsProductContext.ForeColor = System.Drawing.Color.Black;
-            this.lblProductDetailsProductContext.Location = new System.Drawing.Point(13, 346);
+            this.lblProductDetailsProductContext.Location = new System.Drawing.Point(17, 426);
+            this.lblProductDetailsProductContext.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductDetailsProductContext.Name = "lblProductDetailsProductContext";
             this.lblProductDetailsProductContext.Size = new System.Drawing.Size(91, 17);
             this.lblProductDetailsProductContext.TabIndex = 29;
@@ -1801,7 +1926,8 @@
             this.lblProductDetailsMessage.AutoSize = true;
             this.lblProductDetailsMessage.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductDetailsMessage.ForeColor = System.Drawing.Color.Green;
-            this.lblProductDetailsMessage.Location = new System.Drawing.Point(29, 315);
+            this.lblProductDetailsMessage.Location = new System.Drawing.Point(39, 388);
+            this.lblProductDetailsMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductDetailsMessage.Name = "lblProductDetailsMessage";
             this.lblProductDetailsMessage.Size = new System.Drawing.Size(265, 17);
             this.lblProductDetailsMessage.TabIndex = 28;
@@ -1812,7 +1938,8 @@
             this.lblProductDetailsCleanCount.AutoSize = true;
             this.lblProductDetailsCleanCount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductDetailsCleanCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblProductDetailsCleanCount.Location = new System.Drawing.Point(219, 268);
+            this.lblProductDetailsCleanCount.Location = new System.Drawing.Point(292, 330);
+            this.lblProductDetailsCleanCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductDetailsCleanCount.Name = "lblProductDetailsCleanCount";
             this.lblProductDetailsCleanCount.Size = new System.Drawing.Size(13, 17);
             this.lblProductDetailsCleanCount.TabIndex = 27;
@@ -1823,7 +1950,8 @@
             this.lblProductDetailsLowerRiskCount.AutoSize = true;
             this.lblProductDetailsLowerRiskCount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductDetailsLowerRiskCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
-            this.lblProductDetailsLowerRiskCount.Location = new System.Drawing.Point(219, 228);
+            this.lblProductDetailsLowerRiskCount.Location = new System.Drawing.Point(292, 281);
+            this.lblProductDetailsLowerRiskCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductDetailsLowerRiskCount.Name = "lblProductDetailsLowerRiskCount";
             this.lblProductDetailsLowerRiskCount.Size = new System.Drawing.Size(15, 17);
             this.lblProductDetailsLowerRiskCount.TabIndex = 26;
@@ -1834,7 +1962,8 @@
             this.lblProductDetailsMidRiskCount.AutoSize = true;
             this.lblProductDetailsMidRiskCount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductDetailsMidRiskCount.ForeColor = System.Drawing.Color.Orange;
-            this.lblProductDetailsMidRiskCount.Location = new System.Drawing.Point(219, 188);
+            this.lblProductDetailsMidRiskCount.Location = new System.Drawing.Point(292, 231);
+            this.lblProductDetailsMidRiskCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductDetailsMidRiskCount.Name = "lblProductDetailsMidRiskCount";
             this.lblProductDetailsMidRiskCount.Size = new System.Drawing.Size(15, 17);
             this.lblProductDetailsMidRiskCount.TabIndex = 25;
@@ -1845,7 +1974,8 @@
             this.lblProductDetailsHighRiskCount.AutoSize = true;
             this.lblProductDetailsHighRiskCount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductDetailsHighRiskCount.ForeColor = System.Drawing.Color.Red;
-            this.lblProductDetailsHighRiskCount.Location = new System.Drawing.Point(219, 148);
+            this.lblProductDetailsHighRiskCount.Location = new System.Drawing.Point(292, 182);
+            this.lblProductDetailsHighRiskCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductDetailsHighRiskCount.Name = "lblProductDetailsHighRiskCount";
             this.lblProductDetailsHighRiskCount.Size = new System.Drawing.Size(13, 17);
             this.lblProductDetailsHighRiskCount.TabIndex = 24;
@@ -1856,7 +1986,8 @@
             this.lblProductDetailsClean.AutoSize = true;
             this.lblProductDetailsClean.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductDetailsClean.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblProductDetailsClean.Location = new System.Drawing.Point(67, 268);
+            this.lblProductDetailsClean.Location = new System.Drawing.Point(89, 330);
+            this.lblProductDetailsClean.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductDetailsClean.Name = "lblProductDetailsClean";
             this.lblProductDetailsClean.Size = new System.Drawing.Size(92, 17);
             this.lblProductDetailsClean.TabIndex = 23;
@@ -1867,7 +1998,8 @@
             this.lblProductDetailsLowerRisk.AutoSize = true;
             this.lblProductDetailsLowerRisk.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductDetailsLowerRisk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
-            this.lblProductDetailsLowerRisk.Location = new System.Drawing.Point(67, 228);
+            this.lblProductDetailsLowerRisk.Location = new System.Drawing.Point(89, 281);
+            this.lblProductDetailsLowerRisk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductDetailsLowerRisk.Name = "lblProductDetailsLowerRisk";
             this.lblProductDetailsLowerRisk.Size = new System.Drawing.Size(104, 17);
             this.lblProductDetailsLowerRisk.TabIndex = 22;
@@ -1878,7 +2010,8 @@
             this.lblProductDetailsMidRisk.AutoSize = true;
             this.lblProductDetailsMidRisk.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductDetailsMidRisk.ForeColor = System.Drawing.Color.Orange;
-            this.lblProductDetailsMidRisk.Location = new System.Drawing.Point(67, 188);
+            this.lblProductDetailsMidRisk.Location = new System.Drawing.Point(89, 231);
+            this.lblProductDetailsMidRisk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductDetailsMidRisk.Name = "lblProductDetailsMidRisk";
             this.lblProductDetailsMidRisk.Size = new System.Drawing.Size(116, 17);
             this.lblProductDetailsMidRisk.TabIndex = 21;
@@ -1889,7 +2022,8 @@
             this.lblProductDetailsHighRisk.AutoSize = true;
             this.lblProductDetailsHighRisk.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductDetailsHighRisk.ForeColor = System.Drawing.Color.Red;
-            this.lblProductDetailsHighRisk.Location = new System.Drawing.Point(67, 148);
+            this.lblProductDetailsHighRisk.Location = new System.Drawing.Point(89, 182);
+            this.lblProductDetailsHighRisk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductDetailsHighRisk.Name = "lblProductDetailsHighRisk";
             this.lblProductDetailsHighRisk.Size = new System.Drawing.Size(88, 17);
             this.lblProductDetailsHighRisk.TabIndex = 20;
@@ -1898,9 +2032,10 @@
             // pictureProductDetailsCleanContext
             // 
             this.pictureProductDetailsCleanContext.Image = ((System.Drawing.Image)(resources.GetObject("pictureProductDetailsCleanContext.Image")));
-            this.pictureProductDetailsCleanContext.Location = new System.Drawing.Point(32, 263);
+            this.pictureProductDetailsCleanContext.Location = new System.Drawing.Point(43, 324);
+            this.pictureProductDetailsCleanContext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureProductDetailsCleanContext.Name = "pictureProductDetailsCleanContext";
-            this.pictureProductDetailsCleanContext.Size = new System.Drawing.Size(30, 30);
+            this.pictureProductDetailsCleanContext.Size = new System.Drawing.Size(40, 37);
             this.pictureProductDetailsCleanContext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureProductDetailsCleanContext.TabIndex = 19;
             this.pictureProductDetailsCleanContext.TabStop = false;
@@ -1908,9 +2043,10 @@
             // pictureProductDetailsLowerRiskContext
             // 
             this.pictureProductDetailsLowerRiskContext.Image = ((System.Drawing.Image)(resources.GetObject("pictureProductDetailsLowerRiskContext.Image")));
-            this.pictureProductDetailsLowerRiskContext.Location = new System.Drawing.Point(32, 223);
+            this.pictureProductDetailsLowerRiskContext.Location = new System.Drawing.Point(43, 274);
+            this.pictureProductDetailsLowerRiskContext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureProductDetailsLowerRiskContext.Name = "pictureProductDetailsLowerRiskContext";
-            this.pictureProductDetailsLowerRiskContext.Size = new System.Drawing.Size(30, 30);
+            this.pictureProductDetailsLowerRiskContext.Size = new System.Drawing.Size(40, 37);
             this.pictureProductDetailsLowerRiskContext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureProductDetailsLowerRiskContext.TabIndex = 18;
             this.pictureProductDetailsLowerRiskContext.TabStop = false;
@@ -1918,9 +2054,10 @@
             // pictureProductDetailsMidRiskContext
             // 
             this.pictureProductDetailsMidRiskContext.Image = ((System.Drawing.Image)(resources.GetObject("pictureProductDetailsMidRiskContext.Image")));
-            this.pictureProductDetailsMidRiskContext.Location = new System.Drawing.Point(32, 183);
+            this.pictureProductDetailsMidRiskContext.Location = new System.Drawing.Point(43, 225);
+            this.pictureProductDetailsMidRiskContext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureProductDetailsMidRiskContext.Name = "pictureProductDetailsMidRiskContext";
-            this.pictureProductDetailsMidRiskContext.Size = new System.Drawing.Size(30, 30);
+            this.pictureProductDetailsMidRiskContext.Size = new System.Drawing.Size(40, 37);
             this.pictureProductDetailsMidRiskContext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureProductDetailsMidRiskContext.TabIndex = 17;
             this.pictureProductDetailsMidRiskContext.TabStop = false;
@@ -1928,9 +2065,10 @@
             // pictureProductDetailsHighRiskContext
             // 
             this.pictureProductDetailsHighRiskContext.Image = ((System.Drawing.Image)(resources.GetObject("pictureProductDetailsHighRiskContext.Image")));
-            this.pictureProductDetailsHighRiskContext.Location = new System.Drawing.Point(32, 143);
+            this.pictureProductDetailsHighRiskContext.Location = new System.Drawing.Point(43, 176);
+            this.pictureProductDetailsHighRiskContext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureProductDetailsHighRiskContext.Name = "pictureProductDetailsHighRiskContext";
-            this.pictureProductDetailsHighRiskContext.Size = new System.Drawing.Size(30, 30);
+            this.pictureProductDetailsHighRiskContext.Size = new System.Drawing.Size(40, 37);
             this.pictureProductDetailsHighRiskContext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureProductDetailsHighRiskContext.TabIndex = 16;
             this.pictureProductDetailsHighRiskContext.TabStop = false;
@@ -1940,7 +2078,8 @@
             this.lblProductDetailsBlackListSupplementCount.AutoSize = true;
             this.lblProductDetailsBlackListSupplementCount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductDetailsBlackListSupplementCount.ForeColor = System.Drawing.Color.Black;
-            this.lblProductDetailsBlackListSupplementCount.Location = new System.Drawing.Point(219, 108);
+            this.lblProductDetailsBlackListSupplementCount.Location = new System.Drawing.Point(292, 133);
+            this.lblProductDetailsBlackListSupplementCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductDetailsBlackListSupplementCount.Name = "lblProductDetailsBlackListSupplementCount";
             this.lblProductDetailsBlackListSupplementCount.Size = new System.Drawing.Size(13, 17);
             this.lblProductDetailsBlackListSupplementCount.TabIndex = 15;
@@ -1952,7 +2091,8 @@
             this.lblProductDetailsBlackListSupplement.BackColor = System.Drawing.Color.White;
             this.lblProductDetailsBlackListSupplement.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductDetailsBlackListSupplement.ForeColor = System.Drawing.Color.Black;
-            this.lblProductDetailsBlackListSupplement.Location = new System.Drawing.Point(67, 108);
+            this.lblProductDetailsBlackListSupplement.Location = new System.Drawing.Point(89, 133);
+            this.lblProductDetailsBlackListSupplement.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductDetailsBlackListSupplement.Name = "lblProductDetailsBlackListSupplement";
             this.lblProductDetailsBlackListSupplement.Size = new System.Drawing.Size(138, 17);
             this.lblProductDetailsBlackListSupplement.TabIndex = 14;
@@ -1961,9 +2101,10 @@
             // pictureProductDetailsBlacklistContext
             // 
             this.pictureProductDetailsBlacklistContext.Image = ((System.Drawing.Image)(resources.GetObject("pictureProductDetailsBlacklistContext.Image")));
-            this.pictureProductDetailsBlacklistContext.Location = new System.Drawing.Point(32, 103);
+            this.pictureProductDetailsBlacklistContext.Location = new System.Drawing.Point(43, 127);
+            this.pictureProductDetailsBlacklistContext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureProductDetailsBlacklistContext.Name = "pictureProductDetailsBlacklistContext";
-            this.pictureProductDetailsBlacklistContext.Size = new System.Drawing.Size(30, 30);
+            this.pictureProductDetailsBlacklistContext.Size = new System.Drawing.Size(40, 37);
             this.pictureProductDetailsBlacklistContext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureProductDetailsBlacklistContext.TabIndex = 13;
             this.pictureProductDetailsBlacklistContext.TabStop = false;
@@ -1973,7 +2114,8 @@
             this.lblProductDetailsProductName.AutoSize = true;
             this.lblProductDetailsProductName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductDetailsProductName.ForeColor = System.Drawing.Color.Green;
-            this.lblProductDetailsProductName.Location = new System.Drawing.Point(77, 18);
+            this.lblProductDetailsProductName.Location = new System.Drawing.Point(103, 22);
+            this.lblProductDetailsProductName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductDetailsProductName.Name = "lblProductDetailsProductName";
             this.lblProductDetailsProductName.Size = new System.Drawing.Size(188, 20);
             this.lblProductDetailsProductName.TabIndex = 12;
@@ -1984,7 +2126,8 @@
             this.lblProductDetailsSupplier.AutoSize = true;
             this.lblProductDetailsSupplier.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductDetailsSupplier.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lblProductDetailsSupplier.Location = new System.Drawing.Point(84, 41);
+            this.lblProductDetailsSupplier.Location = new System.Drawing.Point(112, 50);
+            this.lblProductDetailsSupplier.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductDetailsSupplier.Name = "lblProductDetailsSupplier";
             this.lblProductDetailsSupplier.Size = new System.Drawing.Size(66, 17);
             this.lblProductDetailsSupplier.TabIndex = 11;
@@ -1996,7 +2139,8 @@
             this.lblProductDetailsLowerCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblProductDetailsLowerCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblProductDetailsLowerCategory.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lblProductDetailsLowerCategory.Location = new System.Drawing.Point(84, 64);
+            this.lblProductDetailsLowerCategory.Location = new System.Drawing.Point(112, 79);
+            this.lblProductDetailsLowerCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductDetailsLowerCategory.Name = "lblProductDetailsLowerCategory";
             this.lblProductDetailsLowerCategory.Size = new System.Drawing.Size(124, 17);
             this.lblProductDetailsLowerCategory.TabIndex = 10;
@@ -2011,18 +2155,20 @@
             this.SearchHistory.Controls.Add(this.btnSearchHistoryUser);
             this.SearchHistory.Controls.Add(this.dgvSearchHistory);
             this.SearchHistory.Location = new System.Drawing.Point(0, 0);
-            this.SearchHistory.MaximumSize = new System.Drawing.Size(360, 510);
-            this.SearchHistory.MinimumSize = new System.Drawing.Size(360, 510);
+            this.SearchHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchHistory.MaximumSize = new System.Drawing.Size(480, 628);
+            this.SearchHistory.MinimumSize = new System.Drawing.Size(480, 628);
             this.SearchHistory.Name = "SearchHistory";
-            this.SearchHistory.Size = new System.Drawing.Size(360, 510);
+            this.SearchHistory.Size = new System.Drawing.Size(480, 628);
             this.SearchHistory.TabIndex = 7;
             // 
             // lblSearchHistoryFavlists
             // 
             this.lblSearchHistoryFavlists.AutoSize = true;
-            this.lblSearchHistoryFavlists.Location = new System.Drawing.Point(156, 83);
+            this.lblSearchHistoryFavlists.Location = new System.Drawing.Point(208, 102);
+            this.lblSearchHistoryFavlists.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearchHistoryFavlists.Name = "lblSearchHistoryFavlists";
-            this.lblSearchHistoryFavlists.Size = new System.Drawing.Size(47, 13);
+            this.lblSearchHistoryFavlists.Size = new System.Drawing.Size(60, 16);
             this.lblSearchHistoryFavlists.TabIndex = 18;
             this.lblSearchHistoryFavlists.Text = "Favoriler";
             // 
@@ -2032,9 +2178,10 @@
             this.btnSearchHistoryGoFavLists.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSearchHistoryGoFavLists.FlatAppearance.BorderSize = 0;
             this.btnSearchHistoryGoFavLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchHistoryGoFavLists.Location = new System.Drawing.Point(146, 11);
+            this.btnSearchHistoryGoFavLists.Location = new System.Drawing.Point(195, 14);
+            this.btnSearchHistoryGoFavLists.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchHistoryGoFavLists.Name = "btnSearchHistoryGoFavLists";
-            this.btnSearchHistoryGoFavLists.Size = new System.Drawing.Size(65, 65);
+            this.btnSearchHistoryGoFavLists.Size = new System.Drawing.Size(87, 80);
             this.btnSearchHistoryGoFavLists.TabIndex = 17;
             this.btnSearchHistoryGoFavLists.UseVisualStyleBackColor = true;
             this.btnSearchHistoryGoFavLists.Click += new System.EventHandler(this.GoFavoriListPage);
@@ -2042,9 +2189,10 @@
             // btnSearchHistoryClearHistory
             // 
             this.btnSearchHistoryClearHistory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchHistoryClearHistory.Location = new System.Drawing.Point(258, 75);
+            this.btnSearchHistoryClearHistory.Location = new System.Drawing.Point(344, 92);
+            this.btnSearchHistoryClearHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchHistoryClearHistory.Name = "btnSearchHistoryClearHistory";
-            this.btnSearchHistoryClearHistory.Size = new System.Drawing.Size(91, 26);
+            this.btnSearchHistoryClearHistory.Size = new System.Drawing.Size(121, 32);
             this.btnSearchHistoryClearHistory.TabIndex = 8;
             this.btnSearchHistoryClearHistory.Text = "Geçmişi Temizle";
             this.btnSearchHistoryClearHistory.UseVisualStyleBackColor = true;
@@ -2057,9 +2205,10 @@
             this.btnSearchHistoryUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchHistoryUser.FlatAppearance.BorderSize = 0;
             this.btnSearchHistoryUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchHistoryUser.Location = new System.Drawing.Point(285, 15);
+            this.btnSearchHistoryUser.Location = new System.Drawing.Point(380, 18);
+            this.btnSearchHistoryUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchHistoryUser.Name = "btnSearchHistoryUser";
-            this.btnSearchHistoryUser.Size = new System.Drawing.Size(60, 40);
+            this.btnSearchHistoryUser.Size = new System.Drawing.Size(80, 49);
             this.btnSearchHistoryUser.TabIndex = 7;
             this.btnSearchHistoryUser.UseVisualStyleBackColor = true;
             this.btnSearchHistoryUser.Click += new System.EventHandler(this.UserButton_Click);
@@ -2067,10 +2216,11 @@
             // dgvSearchHistory
             // 
             this.dgvSearchHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSearchHistory.Location = new System.Drawing.Point(11, 107);
+            this.dgvSearchHistory.Location = new System.Drawing.Point(15, 132);
+            this.dgvSearchHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvSearchHistory.Name = "dgvSearchHistory";
             this.dgvSearchHistory.RowHeadersWidth = 51;
-            this.dgvSearchHistory.Size = new System.Drawing.Size(338, 373);
+            this.dgvSearchHistory.Size = new System.Drawing.Size(451, 459);
             this.dgvSearchHistory.TabIndex = 0;
             // 
             // FileDialogUpdateProductFront
@@ -2118,17 +2268,19 @@
             this.SearchProduct.Controls.Add(this.menuStrip1);
             this.SearchProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SearchProduct.Location = new System.Drawing.Point(0, 0);
-            this.SearchProduct.MaximumSize = new System.Drawing.Size(360, 510);
-            this.SearchProduct.MinimumSize = new System.Drawing.Size(360, 510);
+            this.SearchProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchProduct.MaximumSize = new System.Drawing.Size(480, 628);
+            this.SearchProduct.MinimumSize = new System.Drawing.Size(480, 628);
             this.SearchProduct.Name = "SearchProduct";
-            this.SearchProduct.Size = new System.Drawing.Size(360, 510);
+            this.SearchProduct.Size = new System.Drawing.Size(480, 628);
             this.SearchProduct.TabIndex = 7;
             // 
             // btnSearchProductClearDGV
             // 
-            this.btnSearchProductClearDGV.Location = new System.Drawing.Point(282, 128);
+            this.btnSearchProductClearDGV.Location = new System.Drawing.Point(376, 158);
+            this.btnSearchProductClearDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchProductClearDGV.Name = "btnSearchProductClearDGV";
-            this.btnSearchProductClearDGV.Size = new System.Drawing.Size(54, 22);
+            this.btnSearchProductClearDGV.Size = new System.Drawing.Size(72, 27);
             this.btnSearchProductClearDGV.TabIndex = 13;
             this.btnSearchProductClearDGV.Text = "Temizle";
             this.btnSearchProductClearDGV.UseVisualStyleBackColor = true;
@@ -2140,20 +2292,22 @@
             this.dgvSearchProductProducts.AllowUserToDeleteRows = false;
             this.dgvSearchProductProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSearchProductProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSearchProductProducts.Location = new System.Drawing.Point(10, 155);
+            this.dgvSearchProductProducts.Location = new System.Drawing.Point(13, 191);
+            this.dgvSearchProductProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvSearchProductProducts.Name = "dgvSearchProductProducts";
             this.dgvSearchProductProducts.ReadOnly = true;
             this.dgvSearchProductProducts.RowHeadersWidth = 51;
-            this.dgvSearchProductProducts.Size = new System.Drawing.Size(340, 340);
+            this.dgvSearchProductProducts.Size = new System.Drawing.Size(453, 418);
             this.dgvSearchProductProducts.TabIndex = 12;
             this.dgvSearchProductProducts.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewProducts_CellMouseDoubleClick);
             this.dgvSearchProductProducts.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvProducts_MouseClick);
             // 
             // btnSearchProductSearchSearchBar
             // 
-            this.btnSearchProductSearchSearchBar.Location = new System.Drawing.Point(282, 99);
+            this.btnSearchProductSearchSearchBar.Location = new System.Drawing.Point(376, 122);
+            this.btnSearchProductSearchSearchBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchProductSearchSearchBar.Name = "btnSearchProductSearchSearchBar";
-            this.btnSearchProductSearchSearchBar.Size = new System.Drawing.Size(54, 23);
+            this.btnSearchProductSearchSearchBar.Size = new System.Drawing.Size(72, 28);
             this.btnSearchProductSearchSearchBar.TabIndex = 11;
             this.btnSearchProductSearchSearchBar.Text = "Ara";
             this.btnSearchProductSearchSearchBar.UseVisualStyleBackColor = true;
@@ -2162,17 +2316,19 @@
             // lblSearchProductSearchSearchBar
             // 
             this.lblSearchProductSearchSearchBar.AutoSize = true;
-            this.lblSearchProductSearchSearchBar.Location = new System.Drawing.Point(16, 104);
+            this.lblSearchProductSearchSearchBar.Location = new System.Drawing.Point(21, 128);
+            this.lblSearchProductSearchSearchBar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearchProductSearchSearchBar.Name = "lblSearchProductSearchSearchBar";
-            this.lblSearchProductSearchSearchBar.Size = new System.Drawing.Size(64, 13);
+            this.lblSearchProductSearchSearchBar.Size = new System.Drawing.Size(77, 16);
             this.lblSearchProductSearchSearchBar.TabIndex = 9;
             this.lblSearchProductSearchSearchBar.Text = "Ürün Giriniz:";
             // 
             // txtSearchProductSearchSearchbar
             // 
-            this.txtSearchProductSearchSearchbar.Location = new System.Drawing.Point(86, 99);
+            this.txtSearchProductSearchSearchbar.Location = new System.Drawing.Point(115, 122);
+            this.txtSearchProductSearchSearchbar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearchProductSearchSearchbar.Name = "txtSearchProductSearchSearchbar";
-            this.txtSearchProductSearchSearchbar.Size = new System.Drawing.Size(186, 20);
+            this.txtSearchProductSearchSearchbar.Size = new System.Drawing.Size(247, 22);
             this.txtSearchProductSearchSearchbar.TabIndex = 8;
             // 
             // btnSearchProductUser
@@ -2181,9 +2337,10 @@
             this.btnSearchProductUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSearchProductUser.FlatAppearance.BorderSize = 0;
             this.btnSearchProductUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchProductUser.Location = new System.Drawing.Point(285, 15);
+            this.btnSearchProductUser.Location = new System.Drawing.Point(380, 18);
+            this.btnSearchProductUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchProductUser.Name = "btnSearchProductUser";
-            this.btnSearchProductUser.Size = new System.Drawing.Size(60, 40);
+            this.btnSearchProductUser.Size = new System.Drawing.Size(80, 49);
             this.btnSearchProductUser.TabIndex = 7;
             this.btnSearchProductUser.UseVisualStyleBackColor = true;
             this.btnSearchProductUser.Click += new System.EventHandler(this.UserButton_Click);
@@ -2193,8 +2350,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(360, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(480, 24);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -2208,18 +2365,20 @@
             this.Favlists.Controls.Add(this.lblFavoriListSelectFavoriLists);
             this.Favlists.Controls.Add(this.cmbBoxFavoriListFavoriLists);
             this.Favlists.Location = new System.Drawing.Point(0, 0);
-            this.Favlists.MaximumSize = new System.Drawing.Size(360, 510);
-            this.Favlists.MinimumSize = new System.Drawing.Size(360, 510);
+            this.Favlists.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Favlists.MaximumSize = new System.Drawing.Size(480, 628);
+            this.Favlists.MinimumSize = new System.Drawing.Size(480, 628);
             this.Favlists.Name = "Favlists";
-            this.Favlists.Size = new System.Drawing.Size(360, 510);
+            this.Favlists.Size = new System.Drawing.Size(480, 628);
             this.Favlists.TabIndex = 17;
             // 
             // lblFavoriListsAddFavori
             // 
             this.lblFavoriListsAddFavori.AutoSize = true;
-            this.lblFavoriListsAddFavori.Location = new System.Drawing.Point(126, 85);
+            this.lblFavoriListsAddFavori.Location = new System.Drawing.Point(168, 105);
+            this.lblFavoriListsAddFavori.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFavoriListsAddFavori.Name = "lblFavoriListsAddFavori";
-            this.lblFavoriListsAddFavori.Size = new System.Drawing.Size(116, 13);
+            this.lblFavoriListsAddFavori.Size = new System.Drawing.Size(146, 16);
             this.lblFavoriListsAddFavori.TabIndex = 10;
             this.lblFavoriListsAddFavori.Text = "Yeni Favori Listesi Ekle";
             // 
@@ -2230,9 +2389,10 @@
             this.btnFavoriListsAddFavori.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFavoriListsAddFavori.FlatAppearance.BorderSize = 0;
             this.btnFavoriListsAddFavori.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFavoriListsAddFavori.Location = new System.Drawing.Point(141, 9);
+            this.btnFavoriListsAddFavori.Location = new System.Drawing.Point(188, 11);
+            this.btnFavoriListsAddFavori.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFavoriListsAddFavori.Name = "btnFavoriListsAddFavori";
-            this.btnFavoriListsAddFavori.Size = new System.Drawing.Size(84, 71);
+            this.btnFavoriListsAddFavori.Size = new System.Drawing.Size(112, 87);
             this.btnFavoriListsAddFavori.TabIndex = 9;
             this.btnFavoriListsAddFavori.UseVisualStyleBackColor = true;
             this.btnFavoriListsAddFavori.Click += new System.EventHandler(this.AddFavoriListPage);
@@ -2244,9 +2404,10 @@
             this.btnFavoriListsUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFavoriListsUser.FlatAppearance.BorderSize = 0;
             this.btnFavoriListsUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFavoriListsUser.Location = new System.Drawing.Point(285, 15);
+            this.btnFavoriListsUser.Location = new System.Drawing.Point(380, 18);
+            this.btnFavoriListsUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFavoriListsUser.Name = "btnFavoriListsUser";
-            this.btnFavoriListsUser.Size = new System.Drawing.Size(60, 40);
+            this.btnFavoriListsUser.Size = new System.Drawing.Size(80, 49);
             this.btnFavoriListsUser.TabIndex = 8;
             this.btnFavoriListsUser.UseVisualStyleBackColor = true;
             this.btnFavoriListsUser.Click += new System.EventHandler(this.UserButton_Click);
@@ -2255,19 +2416,21 @@
             // 
             this.dgvFavoriListFavProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFavoriListFavProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFavoriListFavProducts.Location = new System.Drawing.Point(12, 133);
+            this.dgvFavoriListFavProducts.Location = new System.Drawing.Point(16, 164);
+            this.dgvFavoriListFavProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvFavoriListFavProducts.Name = "dgvFavoriListFavProducts";
             this.dgvFavoriListFavProducts.RowHeadersWidth = 51;
-            this.dgvFavoriListFavProducts.Size = new System.Drawing.Size(338, 367);
+            this.dgvFavoriListFavProducts.Size = new System.Drawing.Size(451, 452);
             this.dgvFavoriListFavProducts.TabIndex = 2;
             this.dgvFavoriListFavProducts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFavProducts_CellDoubleClick);
             // 
             // lblFavoriListSelectFavoriLists
             // 
             this.lblFavoriListSelectFavoriLists.AutoSize = true;
-            this.lblFavoriListSelectFavoriLists.Location = new System.Drawing.Point(43, 106);
+            this.lblFavoriListSelectFavoriLists.Location = new System.Drawing.Point(57, 130);
+            this.lblFavoriListSelectFavoriLists.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFavoriListSelectFavoriLists.Name = "lblFavoriListSelectFavoriLists";
-            this.lblFavoriListSelectFavoriLists.Size = new System.Drawing.Size(86, 13);
+            this.lblFavoriListSelectFavoriLists.Size = new System.Drawing.Size(106, 16);
             this.lblFavoriListSelectFavoriLists.TabIndex = 1;
             this.lblFavoriListSelectFavoriLists.Text = "Favori Liste Seç:";
             // 
@@ -2275,9 +2438,10 @@
             // 
             this.cmbBoxFavoriListFavoriLists.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbBoxFavoriListFavoriLists.FormattingEnabled = true;
-            this.cmbBoxFavoriListFavoriLists.Location = new System.Drawing.Point(135, 103);
+            this.cmbBoxFavoriListFavoriLists.Location = new System.Drawing.Point(180, 127);
+            this.cmbBoxFavoriListFavoriLists.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbBoxFavoriListFavoriLists.Name = "cmbBoxFavoriListFavoriLists";
-            this.cmbBoxFavoriListFavoriLists.Size = new System.Drawing.Size(178, 21);
+            this.cmbBoxFavoriListFavoriLists.Size = new System.Drawing.Size(236, 24);
             this.cmbBoxFavoriListFavoriLists.TabIndex = 0;
             this.cmbBoxFavoriListFavoriLists.SelectedIndexChanged += new System.EventHandler(this.cbFavLists_SelectedIndexChanged);
             // 
@@ -2292,10 +2456,11 @@
             this.BlackList.Controls.Add(this.dgvBlackListSupplements);
             this.BlackList.Controls.Add(this.btnBlackListUser);
             this.BlackList.Location = new System.Drawing.Point(0, 0);
-            this.BlackList.MaximumSize = new System.Drawing.Size(360, 510);
-            this.BlackList.MinimumSize = new System.Drawing.Size(360, 510);
+            this.BlackList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BlackList.MaximumSize = new System.Drawing.Size(480, 628);
+            this.BlackList.MinimumSize = new System.Drawing.Size(480, 628);
             this.BlackList.Name = "BlackList";
-            this.BlackList.Size = new System.Drawing.Size(360, 510);
+            this.BlackList.Size = new System.Drawing.Size(480, 628);
             this.BlackList.TabIndex = 9;
             // 
             // btnBlackListAddSupplement
@@ -2304,9 +2469,10 @@
             this.btnBlackListAddSupplement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBlackListAddSupplement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBlackListAddSupplement.ForeColor = System.Drawing.Color.White;
-            this.btnBlackListAddSupplement.Location = new System.Drawing.Point(247, 98);
+            this.btnBlackListAddSupplement.Location = new System.Drawing.Point(329, 121);
+            this.btnBlackListAddSupplement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBlackListAddSupplement.Name = "btnBlackListAddSupplement";
-            this.btnBlackListAddSupplement.Size = new System.Drawing.Size(103, 35);
+            this.btnBlackListAddSupplement.Size = new System.Drawing.Size(137, 43);
             this.btnBlackListAddSupplement.TabIndex = 23;
             this.btnBlackListAddSupplement.Text = "Madde Ekle";
             this.btnBlackListAddSupplement.UseVisualStyleBackColor = false;
@@ -2316,9 +2482,10 @@
             // lblBlackListAddBlackList
             // 
             this.lblBlackListAddBlackList.AutoSize = true;
-            this.lblBlackListAddBlackList.Location = new System.Drawing.Point(120, 93);
+            this.lblBlackListAddBlackList.Location = new System.Drawing.Point(160, 114);
+            this.lblBlackListAddBlackList.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBlackListAddBlackList.Name = "lblBlackListAddBlackList";
-            this.lblBlackListAddBlackList.Size = new System.Drawing.Size(121, 13);
+            this.lblBlackListAddBlackList.Size = new System.Drawing.Size(150, 16);
             this.lblBlackListAddBlackList.TabIndex = 22;
             this.lblBlackListAddBlackList.Text = "Yeni Kara Listesi Oluştur";
             // 
@@ -2329,9 +2496,10 @@
             this.btnBlackListAddBlackList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBlackListAddBlackList.FlatAppearance.BorderSize = 0;
             this.btnBlackListAddBlackList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBlackListAddBlackList.Location = new System.Drawing.Point(135, 16);
+            this.btnBlackListAddBlackList.Location = new System.Drawing.Point(180, 20);
+            this.btnBlackListAddBlackList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBlackListAddBlackList.Name = "btnBlackListAddBlackList";
-            this.btnBlackListAddBlackList.Size = new System.Drawing.Size(84, 71);
+            this.btnBlackListAddBlackList.Size = new System.Drawing.Size(112, 87);
             this.btnBlackListAddBlackList.TabIndex = 21;
             this.btnBlackListAddBlackList.UseVisualStyleBackColor = true;
             this.btnBlackListAddBlackList.Click += new System.EventHandler(this.btnAddBlackList_Click);
@@ -2339,17 +2507,19 @@
             // lblBlackListWarning
             // 
             this.lblBlackListWarning.AutoSize = true;
-            this.lblBlackListWarning.Location = new System.Drawing.Point(165, 123);
+            this.lblBlackListWarning.Location = new System.Drawing.Point(220, 151);
+            this.lblBlackListWarning.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBlackListWarning.Name = "lblBlackListWarning";
-            this.lblBlackListWarning.Size = new System.Drawing.Size(0, 13);
+            this.lblBlackListWarning.Size = new System.Drawing.Size(0, 16);
             this.lblBlackListWarning.TabIndex = 20;
             // 
             // lblBlacklistProductsInBlacklist
             // 
             this.lblBlacklistProductsInBlacklist.AutoSize = true;
-            this.lblBlacklistProductsInBlacklist.Location = new System.Drawing.Point(10, 123);
+            this.lblBlacklistProductsInBlacklist.Location = new System.Drawing.Point(13, 151);
+            this.lblBlacklistProductsInBlacklist.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBlacklistProductsInBlacklist.Name = "lblBlacklistProductsInBlacklist";
-            this.lblBlacklistProductsInBlacklist.Size = new System.Drawing.Size(138, 13);
+            this.lblBlacklistProductsInBlacklist.Size = new System.Drawing.Size(175, 16);
             this.lblBlacklistProductsInBlacklist.TabIndex = 19;
             this.lblBlacklistProductsInBlacklist.Text = "Kara Listede olan maddeler:";
             // 
@@ -2357,10 +2527,11 @@
             // 
             this.dgvBlackListSupplements.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBlackListSupplements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBlackListSupplements.Location = new System.Drawing.Point(11, 138);
+            this.dgvBlackListSupplements.Location = new System.Drawing.Point(15, 170);
+            this.dgvBlackListSupplements.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvBlackListSupplements.Name = "dgvBlackListSupplements";
             this.dgvBlackListSupplements.RowHeadersWidth = 51;
-            this.dgvBlackListSupplements.Size = new System.Drawing.Size(338, 358);
+            this.dgvBlackListSupplements.Size = new System.Drawing.Size(451, 441);
             this.dgvBlackListSupplements.TabIndex = 18;
             // 
             // btnBlackListUser
@@ -2370,9 +2541,10 @@
             this.btnBlackListUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBlackListUser.FlatAppearance.BorderSize = 0;
             this.btnBlackListUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBlackListUser.Location = new System.Drawing.Point(285, 15);
+            this.btnBlackListUser.Location = new System.Drawing.Point(380, 18);
+            this.btnBlackListUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBlackListUser.Name = "btnBlackListUser";
-            this.btnBlackListUser.Size = new System.Drawing.Size(60, 40);
+            this.btnBlackListUser.Size = new System.Drawing.Size(80, 49);
             this.btnBlackListUser.TabIndex = 8;
             this.btnBlackListUser.UseVisualStyleBackColor = true;
             this.btnBlackListUser.Click += new System.EventHandler(this.UserButton_Click);
@@ -2385,10 +2557,11 @@
             this.SearchBarcode.Controls.Add(this.lblSearchBarcodeBarcodeNo);
             this.SearchBarcode.Controls.Add(this.txtSearchBarcodeBarcodeNo);
             this.SearchBarcode.Location = new System.Drawing.Point(0, 0);
-            this.SearchBarcode.MaximumSize = new System.Drawing.Size(360, 510);
-            this.SearchBarcode.MinimumSize = new System.Drawing.Size(360, 510);
+            this.SearchBarcode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchBarcode.MaximumSize = new System.Drawing.Size(480, 628);
+            this.SearchBarcode.MinimumSize = new System.Drawing.Size(480, 628);
             this.SearchBarcode.Name = "SearchBarcode";
-            this.SearchBarcode.Size = new System.Drawing.Size(360, 510);
+            this.SearchBarcode.Size = new System.Drawing.Size(480, 628);
             this.SearchBarcode.TabIndex = 0;
             // 
             // btnSearchBarcodeUser
@@ -2398,9 +2571,10 @@
             this.btnSearchBarcodeUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchBarcodeUser.FlatAppearance.BorderSize = 0;
             this.btnSearchBarcodeUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchBarcodeUser.Location = new System.Drawing.Point(285, 15);
+            this.btnSearchBarcodeUser.Location = new System.Drawing.Point(380, 18);
+            this.btnSearchBarcodeUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchBarcodeUser.Name = "btnSearchBarcodeUser";
-            this.btnSearchBarcodeUser.Size = new System.Drawing.Size(60, 40);
+            this.btnSearchBarcodeUser.Size = new System.Drawing.Size(80, 49);
             this.btnSearchBarcodeUser.TabIndex = 16;
             this.btnSearchBarcodeUser.UseVisualStyleBackColor = true;
             this.btnSearchBarcodeUser.Click += new System.EventHandler(this.UserButton_Click);
@@ -2408,9 +2582,10 @@
             // btnSearchBarcodeSearchBarcode
             // 
             this.btnSearchBarcodeSearchBarcode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchBarcodeSearchBarcode.Location = new System.Drawing.Point(285, 98);
+            this.btnSearchBarcodeSearchBarcode.Location = new System.Drawing.Point(380, 121);
+            this.btnSearchBarcodeSearchBarcode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchBarcodeSearchBarcode.Name = "btnSearchBarcodeSearchBarcode";
-            this.btnSearchBarcodeSearchBarcode.Size = new System.Drawing.Size(54, 23);
+            this.btnSearchBarcodeSearchBarcode.Size = new System.Drawing.Size(72, 28);
             this.btnSearchBarcodeSearchBarcode.TabIndex = 14;
             this.btnSearchBarcodeSearchBarcode.Text = "Ara";
             this.btnSearchBarcodeSearchBarcode.UseVisualStyleBackColor = true;
@@ -2419,17 +2594,19 @@
             // lblSearchBarcodeBarcodeNo
             // 
             this.lblSearchBarcodeBarcodeNo.AutoSize = true;
-            this.lblSearchBarcodeBarcodeNo.Location = new System.Drawing.Point(8, 103);
+            this.lblSearchBarcodeBarcodeNo.Location = new System.Drawing.Point(11, 127);
+            this.lblSearchBarcodeBarcodeNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearchBarcodeBarcodeNo.Name = "lblSearchBarcodeBarcodeNo";
-            this.lblSearchBarcodeBarcodeNo.Size = new System.Drawing.Size(98, 13);
+            this.lblSearchBarcodeBarcodeNo.Size = new System.Drawing.Size(120, 16);
             this.lblSearchBarcodeBarcodeNo.TabIndex = 13;
             this.lblSearchBarcodeBarcodeNo.Text = "Barkod No Giriniz : ";
             // 
             // txtSearchBarcodeBarcodeNo
             // 
-            this.txtSearchBarcodeBarcodeNo.Location = new System.Drawing.Point(107, 100);
+            this.txtSearchBarcodeBarcodeNo.Location = new System.Drawing.Point(143, 123);
+            this.txtSearchBarcodeBarcodeNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearchBarcodeBarcodeNo.Name = "txtSearchBarcodeBarcodeNo";
-            this.txtSearchBarcodeBarcodeNo.Size = new System.Drawing.Size(169, 20);
+            this.txtSearchBarcodeBarcodeNo.Size = new System.Drawing.Size(224, 22);
             this.txtSearchBarcodeBarcodeNo.TabIndex = 12;
             // 
             // contextMenuStrip1
@@ -2448,10 +2625,11 @@
             this.AddFavoriList.Controls.Add(this.txtAddFavoriFavoriName);
             this.AddFavoriList.Controls.Add(this.lblAddFavoriFavoriName);
             this.AddFavoriList.Location = new System.Drawing.Point(0, 0);
-            this.AddFavoriList.MaximumSize = new System.Drawing.Size(360, 510);
-            this.AddFavoriList.MinimumSize = new System.Drawing.Size(360, 510);
+            this.AddFavoriList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddFavoriList.MaximumSize = new System.Drawing.Size(480, 628);
+            this.AddFavoriList.MinimumSize = new System.Drawing.Size(480, 628);
             this.AddFavoriList.Name = "AddFavoriList";
-            this.AddFavoriList.Size = new System.Drawing.Size(360, 510);
+            this.AddFavoriList.Size = new System.Drawing.Size(480, 628);
             this.AddFavoriList.TabIndex = 6;
             // 
             // btnAddFavoriList
@@ -2459,9 +2637,10 @@
             this.btnAddFavoriList.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.btnAddFavoriList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddFavoriList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddFavoriList.Location = new System.Drawing.Point(119, 149);
+            this.btnAddFavoriList.Location = new System.Drawing.Point(159, 183);
+            this.btnAddFavoriList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddFavoriList.Name = "btnAddFavoriList";
-            this.btnAddFavoriList.Size = new System.Drawing.Size(140, 30);
+            this.btnAddFavoriList.Size = new System.Drawing.Size(187, 37);
             this.btnAddFavoriList.TabIndex = 22;
             this.btnAddFavoriList.Text = "Favori Listesi Oluştur";
             this.btnAddFavoriList.UseVisualStyleBackColor = true;
@@ -2474,9 +2653,10 @@
             this.btnAddFavoriUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddFavoriUser.FlatAppearance.BorderSize = 0;
             this.btnAddFavoriUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddFavoriUser.Location = new System.Drawing.Point(285, 15);
+            this.btnAddFavoriUser.Location = new System.Drawing.Point(380, 18);
+            this.btnAddFavoriUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddFavoriUser.Name = "btnAddFavoriUser";
-            this.btnAddFavoriUser.Size = new System.Drawing.Size(60, 40);
+            this.btnAddFavoriUser.Size = new System.Drawing.Size(80, 49);
             this.btnAddFavoriUser.TabIndex = 21;
             this.btnAddFavoriUser.UseVisualStyleBackColor = true;
             this.btnAddFavoriUser.Click += new System.EventHandler(this.UserButton_Click);
@@ -2484,9 +2664,10 @@
             // lblAddFavoriFavoris
             // 
             this.lblAddFavoriFavoris.AutoSize = true;
-            this.lblAddFavoriFavoris.Location = new System.Drawing.Point(162, 82);
+            this.lblAddFavoriFavoris.Location = new System.Drawing.Point(216, 101);
+            this.lblAddFavoriFavoris.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddFavoriFavoris.Name = "lblAddFavoriFavoris";
-            this.lblAddFavoriFavoris.Size = new System.Drawing.Size(47, 13);
+            this.lblAddFavoriFavoris.Size = new System.Drawing.Size(60, 16);
             this.lblAddFavoriFavoris.TabIndex = 20;
             this.lblAddFavoriFavoris.Text = "Favoriler";
             // 
@@ -2497,26 +2678,29 @@
             this.btnAddFavoriGoFavoriLists.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddFavoriGoFavoriLists.FlatAppearance.BorderSize = 0;
             this.btnAddFavoriGoFavoriLists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddFavoriGoFavoriLists.Location = new System.Drawing.Point(152, 10);
+            this.btnAddFavoriGoFavoriLists.Location = new System.Drawing.Point(203, 12);
+            this.btnAddFavoriGoFavoriLists.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddFavoriGoFavoriLists.Name = "btnAddFavoriGoFavoriLists";
-            this.btnAddFavoriGoFavoriLists.Size = new System.Drawing.Size(65, 65);
+            this.btnAddFavoriGoFavoriLists.Size = new System.Drawing.Size(87, 80);
             this.btnAddFavoriGoFavoriLists.TabIndex = 19;
             this.btnAddFavoriGoFavoriLists.UseVisualStyleBackColor = true;
             this.btnAddFavoriGoFavoriLists.Click += new System.EventHandler(this.GoFavoriListPage);
             // 
             // txtAddFavoriFavoriName
             // 
-            this.txtAddFavoriFavoriName.Location = new System.Drawing.Point(141, 103);
+            this.txtAddFavoriFavoriName.Location = new System.Drawing.Point(188, 127);
+            this.txtAddFavoriFavoriName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAddFavoriFavoriName.Name = "txtAddFavoriFavoriName";
-            this.txtAddFavoriFavoriName.Size = new System.Drawing.Size(203, 20);
+            this.txtAddFavoriFavoriName.Size = new System.Drawing.Size(269, 22);
             this.txtAddFavoriFavoriName.TabIndex = 1;
             // 
             // lblAddFavoriFavoriName
             // 
             this.lblAddFavoriFavoriName.AutoSize = true;
-            this.lblAddFavoriFavoriName.Location = new System.Drawing.Point(13, 106);
+            this.lblAddFavoriFavoriName.Location = new System.Drawing.Point(17, 130);
+            this.lblAddFavoriFavoriName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddFavoriFavoriName.Name = "lblAddFavoriFavoriName";
-            this.lblAddFavoriFavoriName.Size = new System.Drawing.Size(122, 13);
+            this.lblAddFavoriFavoriName.Size = new System.Drawing.Size(152, 16);
             this.lblAddFavoriFavoriName.TabIndex = 0;
             this.lblAddFavoriFavoriName.Text = "Favori Liste Adını giriniz :";
             // 
@@ -2525,17 +2709,18 @@
             this.ChangeEmail.BackColor = System.Drawing.Color.White;
             this.ChangeEmail.Controls.Add(this.btnChangeEmailUser);
             this.ChangeEmail.Controls.Add(this.btnChangeEmailSend);
-            this.ChangeEmail.Controls.Add(this.txtChangeEmaiReNewEmail);
+            this.ChangeEmail.Controls.Add(this.txtChangeEmailReNewEmail);
             this.ChangeEmail.Controls.Add(this.txtChangeEmailNewEmail);
             this.ChangeEmail.Controls.Add(this.lblChangeEmailReNewEmail);
             this.ChangeEmail.Controls.Add(this.txtChangeEmailUserEmail);
             this.ChangeEmail.Controls.Add(this.lblChangeEmailNewEmail);
             this.ChangeEmail.Controls.Add(this.lblChangeEmailUserEmail);
             this.ChangeEmail.Location = new System.Drawing.Point(0, 0);
-            this.ChangeEmail.MaximumSize = new System.Drawing.Size(360, 510);
-            this.ChangeEmail.MinimumSize = new System.Drawing.Size(360, 510);
+            this.ChangeEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ChangeEmail.MaximumSize = new System.Drawing.Size(480, 628);
+            this.ChangeEmail.MinimumSize = new System.Drawing.Size(480, 628);
             this.ChangeEmail.Name = "ChangeEmail";
-            this.ChangeEmail.Size = new System.Drawing.Size(360, 510);
+            this.ChangeEmail.Size = new System.Drawing.Size(480, 628);
             this.ChangeEmail.TabIndex = 6;
             // 
             // btnChangeEmailUser
@@ -2545,9 +2730,10 @@
             this.btnChangeEmailUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangeEmailUser.FlatAppearance.BorderSize = 0;
             this.btnChangeEmailUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeEmailUser.Location = new System.Drawing.Point(285, 15);
+            this.btnChangeEmailUser.Location = new System.Drawing.Point(380, 18);
+            this.btnChangeEmailUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChangeEmailUser.Name = "btnChangeEmailUser";
-            this.btnChangeEmailUser.Size = new System.Drawing.Size(60, 40);
+            this.btnChangeEmailUser.Size = new System.Drawing.Size(80, 49);
             this.btnChangeEmailUser.TabIndex = 22;
             this.btnChangeEmailUser.UseVisualStyleBackColor = true;
             this.btnChangeEmailUser.Click += new System.EventHandler(this.UserButton_Click);
@@ -2559,60 +2745,67 @@
             this.btnChangeEmailSend.FlatAppearance.BorderSize = 0;
             this.btnChangeEmailSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeEmailSend.ForeColor = System.Drawing.Color.White;
-            this.btnChangeEmailSend.Location = new System.Drawing.Point(90, 250);
+            this.btnChangeEmailSend.Location = new System.Drawing.Point(120, 308);
+            this.btnChangeEmailSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChangeEmailSend.Name = "btnChangeEmailSend";
-            this.btnChangeEmailSend.Size = new System.Drawing.Size(180, 40);
+            this.btnChangeEmailSend.Size = new System.Drawing.Size(240, 49);
             this.btnChangeEmailSend.TabIndex = 2;
             this.btnChangeEmailSend.Text = "Onayla";
             this.btnChangeEmailSend.UseVisualStyleBackColor = false;
             this.btnChangeEmailSend.Click += new System.EventHandler(this.btnChangeEmailSend_Click);
             // 
-            // txtChangeEmaiReNewEmail
+            // txtChangeEmailReNewEmail
             // 
-            this.txtChangeEmaiReNewEmail.Location = new System.Drawing.Point(140, 205);
-            this.txtChangeEmaiReNewEmail.Name = "txtChangeEmaiReNewEmail";
-            this.txtChangeEmaiReNewEmail.Size = new System.Drawing.Size(198, 20);
-            this.txtChangeEmaiReNewEmail.TabIndex = 1;
+            this.txtChangeEmailReNewEmail.Location = new System.Drawing.Point(187, 252);
+            this.txtChangeEmailReNewEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtChangeEmailReNewEmail.Name = "txtChangeEmailReNewEmail";
+            this.txtChangeEmailReNewEmail.Size = new System.Drawing.Size(263, 22);
+            this.txtChangeEmailReNewEmail.TabIndex = 1;
             // 
             // txtChangeEmailNewEmail
             // 
-            this.txtChangeEmailNewEmail.Location = new System.Drawing.Point(140, 176);
+            this.txtChangeEmailNewEmail.Location = new System.Drawing.Point(187, 217);
+            this.txtChangeEmailNewEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtChangeEmailNewEmail.Name = "txtChangeEmailNewEmail";
-            this.txtChangeEmailNewEmail.Size = new System.Drawing.Size(198, 20);
+            this.txtChangeEmailNewEmail.Size = new System.Drawing.Size(263, 22);
             this.txtChangeEmailNewEmail.TabIndex = 1;
             // 
             // lblChangeEmailReNewEmail
             // 
             this.lblChangeEmailReNewEmail.AutoSize = true;
-            this.lblChangeEmailReNewEmail.Location = new System.Drawing.Point(27, 208);
+            this.lblChangeEmailReNewEmail.Location = new System.Drawing.Point(36, 256);
+            this.lblChangeEmailReNewEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChangeEmailReNewEmail.Name = "lblChangeEmailReNewEmail";
-            this.lblChangeEmailReNewEmail.Size = new System.Drawing.Size(111, 13);
+            this.lblChangeEmailReNewEmail.Size = new System.Drawing.Size(137, 16);
             this.lblChangeEmailReNewEmail.TabIndex = 0;
             this.lblChangeEmailReNewEmail.Text = "Yeni E-Posta Tekrar : ";
             // 
             // txtChangeEmailUserEmail
             // 
-            this.txtChangeEmailUserEmail.Location = new System.Drawing.Point(140, 149);
+            this.txtChangeEmailUserEmail.Location = new System.Drawing.Point(187, 183);
+            this.txtChangeEmailUserEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtChangeEmailUserEmail.Name = "txtChangeEmailUserEmail";
-            this.txtChangeEmailUserEmail.Size = new System.Drawing.Size(198, 20);
+            this.txtChangeEmailUserEmail.Size = new System.Drawing.Size(263, 22);
             this.txtChangeEmailUserEmail.TabIndex = 1;
             this.txtChangeEmailUserEmail.Click += new System.EventHandler(this.txtFirstClickClear);
             // 
             // lblChangeEmailNewEmail
             // 
             this.lblChangeEmailNewEmail.AutoSize = true;
-            this.lblChangeEmailNewEmail.Location = new System.Drawing.Point(19, 180);
+            this.lblChangeEmailNewEmail.Location = new System.Drawing.Point(25, 222);
+            this.lblChangeEmailNewEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChangeEmailNewEmail.Name = "lblChangeEmailNewEmail";
-            this.lblChangeEmailNewEmail.Size = new System.Drawing.Size(119, 13);
+            this.lblChangeEmailNewEmail.Size = new System.Drawing.Size(146, 16);
             this.lblChangeEmailNewEmail.TabIndex = 0;
             this.lblChangeEmailNewEmail.Text = "Kullanıcı Yeni E-Posta : ";
             // 
             // lblChangeEmailUserEmail
             // 
             this.lblChangeEmailUserEmail.AutoSize = true;
-            this.lblChangeEmailUserEmail.Location = new System.Drawing.Point(43, 152);
+            this.lblChangeEmailUserEmail.Location = new System.Drawing.Point(57, 187);
+            this.lblChangeEmailUserEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChangeEmailUserEmail.Name = "lblChangeEmailUserEmail";
-            this.lblChangeEmailUserEmail.Size = new System.Drawing.Size(95, 13);
+            this.lblChangeEmailUserEmail.Size = new System.Drawing.Size(116, 16);
             this.lblChangeEmailUserEmail.TabIndex = 0;
             this.lblChangeEmailUserEmail.Text = "Kullanıcı E-Posta : ";
             // 
@@ -2627,10 +2820,11 @@
             this.ChangePassword.Controls.Add(this.lblChangePasswordNewPassword);
             this.ChangePassword.Controls.Add(this.lblChangePasswordPassword);
             this.ChangePassword.Location = new System.Drawing.Point(0, 0);
-            this.ChangePassword.MaximumSize = new System.Drawing.Size(360, 510);
-            this.ChangePassword.MinimumSize = new System.Drawing.Size(360, 510);
+            this.ChangePassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ChangePassword.MaximumSize = new System.Drawing.Size(480, 628);
+            this.ChangePassword.MinimumSize = new System.Drawing.Size(480, 628);
             this.ChangePassword.Name = "ChangePassword";
-            this.ChangePassword.Size = new System.Drawing.Size(360, 510);
+            this.ChangePassword.Size = new System.Drawing.Size(480, 628);
             this.ChangePassword.TabIndex = 18;
             this.ChangePassword.Click += new System.EventHandler(this.UserButton_Click);
             // 
@@ -2641,9 +2835,10 @@
             this.btnChangePasswordUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangePasswordUser.FlatAppearance.BorderSize = 0;
             this.btnChangePasswordUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePasswordUser.Location = new System.Drawing.Point(285, 15);
+            this.btnChangePasswordUser.Location = new System.Drawing.Point(380, 18);
+            this.btnChangePasswordUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChangePasswordUser.Name = "btnChangePasswordUser";
-            this.btnChangePasswordUser.Size = new System.Drawing.Size(60, 40);
+            this.btnChangePasswordUser.Size = new System.Drawing.Size(80, 49);
             this.btnChangePasswordUser.TabIndex = 23;
             this.btnChangePasswordUser.UseVisualStyleBackColor = true;
             this.btnChangePasswordUser.Click += new System.EventHandler(this.UserButton_Click);
@@ -2655,9 +2850,10 @@
             this.btnChangePasswordSend.FlatAppearance.BorderSize = 0;
             this.btnChangePasswordSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePasswordSend.ForeColor = System.Drawing.Color.White;
-            this.btnChangePasswordSend.Location = new System.Drawing.Point(90, 250);
+            this.btnChangePasswordSend.Location = new System.Drawing.Point(120, 308);
+            this.btnChangePasswordSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChangePasswordSend.Name = "btnChangePasswordSend";
-            this.btnChangePasswordSend.Size = new System.Drawing.Size(180, 40);
+            this.btnChangePasswordSend.Size = new System.Drawing.Size(240, 49);
             this.btnChangePasswordSend.TabIndex = 9;
             this.btnChangePasswordSend.Text = "Onayla";
             this.btnChangePasswordSend.UseVisualStyleBackColor = false;
@@ -2665,52 +2861,58 @@
             // 
             // txtChangePasswordReNewPassword
             // 
-            this.txtChangePasswordReNewPassword.Location = new System.Drawing.Point(138, 205);
+            this.txtChangePasswordReNewPassword.Location = new System.Drawing.Point(184, 252);
+            this.txtChangePasswordReNewPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtChangePasswordReNewPassword.Name = "txtChangePasswordReNewPassword";
             this.txtChangePasswordReNewPassword.PasswordChar = '*';
-            this.txtChangePasswordReNewPassword.Size = new System.Drawing.Size(198, 20);
+            this.txtChangePasswordReNewPassword.Size = new System.Drawing.Size(263, 22);
             this.txtChangePasswordReNewPassword.TabIndex = 6;
             // 
             // txtChangePasswordNewPassword
             // 
-            this.txtChangePasswordNewPassword.Location = new System.Drawing.Point(138, 176);
+            this.txtChangePasswordNewPassword.Location = new System.Drawing.Point(184, 217);
+            this.txtChangePasswordNewPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtChangePasswordNewPassword.Name = "txtChangePasswordNewPassword";
             this.txtChangePasswordNewPassword.PasswordChar = '*';
-            this.txtChangePasswordNewPassword.Size = new System.Drawing.Size(198, 20);
+            this.txtChangePasswordNewPassword.Size = new System.Drawing.Size(263, 22);
             this.txtChangePasswordNewPassword.TabIndex = 7;
             // 
             // lblChangePasswordReNewPassword
             // 
             this.lblChangePasswordReNewPassword.AutoSize = true;
-            this.lblChangePasswordReNewPassword.Location = new System.Drawing.Point(34, 208);
+            this.lblChangePasswordReNewPassword.Location = new System.Drawing.Point(45, 256);
+            this.lblChangePasswordReNewPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChangePasswordReNewPassword.Name = "lblChangePasswordReNewPassword";
-            this.lblChangePasswordReNewPassword.Size = new System.Drawing.Size(95, 13);
+            this.lblChangePasswordReNewPassword.Size = new System.Drawing.Size(116, 16);
             this.lblChangePasswordReNewPassword.TabIndex = 3;
             this.lblChangePasswordReNewPassword.Text = "Yeni Şifre Tekrar : ";
             // 
             // txtChangePasswordPassword
             // 
-            this.txtChangePasswordPassword.Location = new System.Drawing.Point(138, 149);
+            this.txtChangePasswordPassword.Location = new System.Drawing.Point(184, 183);
+            this.txtChangePasswordPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtChangePasswordPassword.Name = "txtChangePasswordPassword";
             this.txtChangePasswordPassword.PasswordChar = '*';
-            this.txtChangePasswordPassword.Size = new System.Drawing.Size(198, 20);
+            this.txtChangePasswordPassword.Size = new System.Drawing.Size(263, 22);
             this.txtChangePasswordPassword.TabIndex = 8;
             // 
             // lblChangePasswordNewPassword
             // 
             this.lblChangePasswordNewPassword.AutoSize = true;
-            this.lblChangePasswordNewPassword.Location = new System.Drawing.Point(26, 180);
+            this.lblChangePasswordNewPassword.Location = new System.Drawing.Point(35, 222);
+            this.lblChangePasswordNewPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChangePasswordNewPassword.Name = "lblChangePasswordNewPassword";
-            this.lblChangePasswordNewPassword.Size = new System.Drawing.Size(103, 13);
+            this.lblChangePasswordNewPassword.Size = new System.Drawing.Size(125, 16);
             this.lblChangePasswordNewPassword.TabIndex = 4;
             this.lblChangePasswordNewPassword.Text = "Kullanıcı Yeni Şifre : ";
             // 
             // lblChangePasswordPassword
             // 
             this.lblChangePasswordPassword.AutoSize = true;
-            this.lblChangePasswordPassword.Location = new System.Drawing.Point(50, 152);
+            this.lblChangePasswordPassword.Location = new System.Drawing.Point(67, 187);
+            this.lblChangePasswordPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChangePasswordPassword.Name = "lblChangePasswordPassword";
-            this.lblChangePasswordPassword.Size = new System.Drawing.Size(76, 13);
+            this.lblChangePasswordPassword.Size = new System.Drawing.Size(92, 16);
             this.lblChangePasswordPassword.TabIndex = 5;
             this.lblChangePasswordPassword.Text = "Kullanıcı Şifre :";
             // 
@@ -2726,10 +2928,11 @@
             this.ChangeUserDetails.Controls.Add(this.lblChangeUserDetailsFirstName);
             this.ChangeUserDetails.Controls.Add(this.btnChangeUserDetailsUser);
             this.ChangeUserDetails.Location = new System.Drawing.Point(0, 0);
-            this.ChangeUserDetails.MaximumSize = new System.Drawing.Size(360, 510);
-            this.ChangeUserDetails.MinimumSize = new System.Drawing.Size(360, 510);
+            this.ChangeUserDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ChangeUserDetails.MaximumSize = new System.Drawing.Size(480, 628);
+            this.ChangeUserDetails.MinimumSize = new System.Drawing.Size(480, 628);
             this.ChangeUserDetails.Name = "ChangeUserDetails";
-            this.ChangeUserDetails.Size = new System.Drawing.Size(360, 510);
+            this.ChangeUserDetails.Size = new System.Drawing.Size(480, 628);
             this.ChangeUserDetails.TabIndex = 19;
             // 
             // btnChangeUserDetailsSend
@@ -2739,9 +2942,10 @@
             this.btnChangeUserDetailsSend.FlatAppearance.BorderSize = 0;
             this.btnChangeUserDetailsSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeUserDetailsSend.ForeColor = System.Drawing.Color.White;
-            this.btnChangeUserDetailsSend.Location = new System.Drawing.Point(90, 250);
+            this.btnChangeUserDetailsSend.Location = new System.Drawing.Point(120, 308);
+            this.btnChangeUserDetailsSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChangeUserDetailsSend.Name = "btnChangeUserDetailsSend";
-            this.btnChangeUserDetailsSend.Size = new System.Drawing.Size(180, 40);
+            this.btnChangeUserDetailsSend.Size = new System.Drawing.Size(240, 49);
             this.btnChangeUserDetailsSend.TabIndex = 33;
             this.btnChangeUserDetailsSend.Text = "Onayla";
             this.btnChangeUserDetailsSend.UseVisualStyleBackColor = false;
@@ -2751,10 +2955,11 @@
             // 
             this.txtChangeUserDetailsFirstName.BackColor = System.Drawing.Color.White;
             this.txtChangeUserDetailsFirstName.ForeColor = System.Drawing.Color.Black;
-            this.txtChangeUserDetailsFirstName.Location = new System.Drawing.Point(25, 163);
+            this.txtChangeUserDetailsFirstName.Location = new System.Drawing.Point(33, 201);
+            this.txtChangeUserDetailsFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtChangeUserDetailsFirstName.Multiline = true;
             this.txtChangeUserDetailsFirstName.Name = "txtChangeUserDetailsFirstName";
-            this.txtChangeUserDetailsFirstName.Size = new System.Drawing.Size(145, 20);
+            this.txtChangeUserDetailsFirstName.Size = new System.Drawing.Size(192, 24);
             this.txtChangeUserDetailsFirstName.TabIndex = 27;
             this.txtChangeUserDetailsFirstName.Tag = "0";
             this.txtChangeUserDetailsFirstName.Click += new System.EventHandler(this.txtFirstClickClear);
@@ -2763,10 +2968,11 @@
             // 
             this.txtChangeUserDetailsLastName.BackColor = System.Drawing.Color.White;
             this.txtChangeUserDetailsLastName.ForeColor = System.Drawing.Color.Black;
-            this.txtChangeUserDetailsLastName.Location = new System.Drawing.Point(191, 163);
+            this.txtChangeUserDetailsLastName.Location = new System.Drawing.Point(255, 201);
+            this.txtChangeUserDetailsLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtChangeUserDetailsLastName.Multiline = true;
             this.txtChangeUserDetailsLastName.Name = "txtChangeUserDetailsLastName";
-            this.txtChangeUserDetailsLastName.Size = new System.Drawing.Size(145, 20);
+            this.txtChangeUserDetailsLastName.Size = new System.Drawing.Size(192, 24);
             this.txtChangeUserDetailsLastName.TabIndex = 29;
             this.txtChangeUserDetailsLastName.Tag = "0";
             this.txtChangeUserDetailsLastName.Click += new System.EventHandler(this.txtFirstClickClear);
@@ -2775,10 +2981,11 @@
             // 
             this.txtChangeUserDetailsPhone.BackColor = System.Drawing.Color.White;
             this.txtChangeUserDetailsPhone.ForeColor = System.Drawing.Color.Black;
-            this.txtChangeUserDetailsPhone.Location = new System.Drawing.Point(26, 211);
+            this.txtChangeUserDetailsPhone.Location = new System.Drawing.Point(35, 260);
+            this.txtChangeUserDetailsPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtChangeUserDetailsPhone.Multiline = true;
             this.txtChangeUserDetailsPhone.Name = "txtChangeUserDetailsPhone";
-            this.txtChangeUserDetailsPhone.Size = new System.Drawing.Size(310, 20);
+            this.txtChangeUserDetailsPhone.Size = new System.Drawing.Size(412, 24);
             this.txtChangeUserDetailsPhone.TabIndex = 32;
             this.txtChangeUserDetailsPhone.Tag = "0";
             this.txtChangeUserDetailsPhone.Click += new System.EventHandler(this.txtFirstClickClear);
@@ -2788,9 +2995,10 @@
             this.lblChangeUserDetailsPhone.AutoSize = true;
             this.lblChangeUserDetailsPhone.BackColor = System.Drawing.Color.White;
             this.lblChangeUserDetailsPhone.ForeColor = System.Drawing.Color.Black;
-            this.lblChangeUserDetailsPhone.Location = new System.Drawing.Point(23, 195);
+            this.lblChangeUserDetailsPhone.Location = new System.Drawing.Point(31, 240);
+            this.lblChangeUserDetailsPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChangeUserDetailsPhone.Name = "lblChangeUserDetailsPhone";
-            this.lblChangeUserDetailsPhone.Size = new System.Drawing.Size(90, 13);
+            this.lblChangeUserDetailsPhone.Size = new System.Drawing.Size(114, 16);
             this.lblChangeUserDetailsPhone.TabIndex = 30;
             this.lblChangeUserDetailsPhone.Text = "Telefon Numarası";
             // 
@@ -2799,9 +3007,10 @@
             this.lblChangeUserDetailsLastName.AutoSize = true;
             this.lblChangeUserDetailsLastName.BackColor = System.Drawing.Color.White;
             this.lblChangeUserDetailsLastName.ForeColor = System.Drawing.Color.Black;
-            this.lblChangeUserDetailsLastName.Location = new System.Drawing.Point(189, 148);
+            this.lblChangeUserDetailsLastName.Location = new System.Drawing.Point(252, 182);
+            this.lblChangeUserDetailsLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChangeUserDetailsLastName.Name = "lblChangeUserDetailsLastName";
-            this.lblChangeUserDetailsLastName.Size = new System.Drawing.Size(42, 13);
+            this.lblChangeUserDetailsLastName.Size = new System.Drawing.Size(55, 16);
             this.lblChangeUserDetailsLastName.TabIndex = 25;
             this.lblChangeUserDetailsLastName.Text = "Soyisim";
             // 
@@ -2810,9 +3019,10 @@
             this.lblChangeUserDetailsFirstName.AutoSize = true;
             this.lblChangeUserDetailsFirstName.BackColor = System.Drawing.Color.White;
             this.lblChangeUserDetailsFirstName.ForeColor = System.Drawing.Color.Black;
-            this.lblChangeUserDetailsFirstName.Location = new System.Drawing.Point(23, 147);
+            this.lblChangeUserDetailsFirstName.Location = new System.Drawing.Point(31, 181);
+            this.lblChangeUserDetailsFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChangeUserDetailsFirstName.Name = "lblChangeUserDetailsFirstName";
-            this.lblChangeUserDetailsFirstName.Size = new System.Drawing.Size(25, 13);
+            this.lblChangeUserDetailsFirstName.Size = new System.Drawing.Size(31, 16);
             this.lblChangeUserDetailsFirstName.TabIndex = 26;
             this.lblChangeUserDetailsFirstName.Text = "İsim";
             // 
@@ -2823,9 +3033,10 @@
             this.btnChangeUserDetailsUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangeUserDetailsUser.FlatAppearance.BorderSize = 0;
             this.btnChangeUserDetailsUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeUserDetailsUser.Location = new System.Drawing.Point(285, 15);
+            this.btnChangeUserDetailsUser.Location = new System.Drawing.Point(380, 18);
+            this.btnChangeUserDetailsUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChangeUserDetailsUser.Name = "btnChangeUserDetailsUser";
-            this.btnChangeUserDetailsUser.Size = new System.Drawing.Size(60, 40);
+            this.btnChangeUserDetailsUser.Size = new System.Drawing.Size(80, 49);
             this.btnChangeUserDetailsUser.TabIndex = 24;
             this.btnChangeUserDetailsUser.UseVisualStyleBackColor = true;
             this.btnChangeUserDetailsUser.Click += new System.EventHandler(this.UserButton_Click);
@@ -2838,11 +3049,11 @@
             this.SupplementBlackList.Controls.Add(this.txtSupplementBlackListSupplements);
             this.SupplementBlackList.Controls.Add(this.lblSupplementBlackListSupplements);
             this.SupplementBlackList.Location = new System.Drawing.Point(0, 0);
-            this.SupplementBlackList.Margin = new System.Windows.Forms.Padding(2);
-            this.SupplementBlackList.MaximumSize = new System.Drawing.Size(360, 510);
-            this.SupplementBlackList.MinimumSize = new System.Drawing.Size(360, 510);
+            this.SupplementBlackList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SupplementBlackList.MaximumSize = new System.Drawing.Size(480, 628);
+            this.SupplementBlackList.MinimumSize = new System.Drawing.Size(480, 628);
             this.SupplementBlackList.Name = "SupplementBlackList";
-            this.SupplementBlackList.Size = new System.Drawing.Size(360, 510);
+            this.SupplementBlackList.Size = new System.Drawing.Size(480, 628);
             this.SupplementBlackList.TabIndex = 20;
             // 
             // button1
@@ -2852,9 +3063,10 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(285, 15);
+            this.button1.Location = new System.Drawing.Point(380, 18);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 40);
+            this.button1.Size = new System.Drawing.Size(80, 49);
             this.button1.TabIndex = 10;
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -2865,9 +3077,10 @@
             this.btnSupplementBlackListAdd.FlatAppearance.BorderSize = 0;
             this.btnSupplementBlackListAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupplementBlackListAdd.ForeColor = System.Drawing.Color.White;
-            this.btnSupplementBlackListAdd.Location = new System.Drawing.Point(90, 309);
+            this.btnSupplementBlackListAdd.Location = new System.Drawing.Point(120, 380);
+            this.btnSupplementBlackListAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSupplementBlackListAdd.Name = "btnSupplementBlackListAdd";
-            this.btnSupplementBlackListAdd.Size = new System.Drawing.Size(180, 40);
+            this.btnSupplementBlackListAdd.Size = new System.Drawing.Size(240, 49);
             this.btnSupplementBlackListAdd.TabIndex = 9;
             this.btnSupplementBlackListAdd.Text = "Ekle";
             this.btnSupplementBlackListAdd.UseVisualStyleBackColor = false;
@@ -2878,8 +3091,7 @@
             this.lblSupplementBlackListWarning.AutoSize = true;
             this.lblSupplementBlackListWarning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSupplementBlackListWarning.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSupplementBlackListWarning.Location = new System.Drawing.Point(47, 260);
-            this.lblSupplementBlackListWarning.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSupplementBlackListWarning.Location = new System.Drawing.Point(63, 320);
             this.lblSupplementBlackListWarning.Name = "lblSupplementBlackListWarning";
             this.lblSupplementBlackListWarning.Size = new System.Drawing.Size(266, 38);
             this.lblSupplementBlackListWarning.TabIndex = 8;
@@ -2887,17 +3099,19 @@
             // 
             // txtSupplementBlackListSupplements
             // 
-            this.txtSupplementBlackListSupplements.Location = new System.Drawing.Point(30, 130);
+            this.txtSupplementBlackListSupplements.Location = new System.Drawing.Point(40, 160);
+            this.txtSupplementBlackListSupplements.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSupplementBlackListSupplements.Multiline = true;
             this.txtSupplementBlackListSupplements.Name = "txtSupplementBlackListSupplements";
-            this.txtSupplementBlackListSupplements.Size = new System.Drawing.Size(301, 123);
+            this.txtSupplementBlackListSupplements.Size = new System.Drawing.Size(400, 150);
             this.txtSupplementBlackListSupplements.TabIndex = 7;
             // 
             // lblSupplementBlackListSupplements
             // 
             this.lblSupplementBlackListSupplements.AutoSize = true;
             this.lblSupplementBlackListSupplements.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSupplementBlackListSupplements.Location = new System.Drawing.Point(22, 110);
+            this.lblSupplementBlackListSupplements.Location = new System.Drawing.Point(29, 135);
+            this.lblSupplementBlackListSupplements.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSupplementBlackListSupplements.Name = "lblSupplementBlackListSupplements";
             this.lblSupplementBlackListSupplements.Size = new System.Drawing.Size(173, 13);
             this.lblSupplementBlackListSupplements.TabIndex = 6;
@@ -2913,15 +3127,9 @@
             // 
             // UserSayfasi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 508);
-            this.Controls.Add(this.SideBar);
-            this.Controls.Add(this.Home);
-            this.Controls.Add(this.UserDetails);
-            this.Controls.Add(this.SearchProduct);
-            this.Controls.Add(this.BlackList);
-            this.Controls.Add(this.Favlists);
+            this.ClientSize = new System.Drawing.Size(485, 625);
             this.Controls.Add(this.ProductDetails);
             this.Controls.Add(this.AddAndUpdateProduct);
             this.Controls.Add(this.SearchHistory);
@@ -2931,9 +3139,16 @@
             this.Controls.Add(this.ChangePassword);
             this.Controls.Add(this.ChangeUserDetails);
             this.Controls.Add(this.SupplementBlackList);
+            this.Controls.Add(this.Home);
+            this.Controls.Add(this.SideBar);
+            this.Controls.Add(this.UserDetails);
+            this.Controls.Add(this.SearchProduct);
+            this.Controls.Add(this.BlackList);
+            this.Controls.Add(this.Favlists);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(380, 547);
-            this.MinimumSize = new System.Drawing.Size(380, 547);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(501, 664);
+            this.MinimumSize = new System.Drawing.Size(501, 664);
             this.Name = "UserSayfasi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Green Home";
@@ -3207,7 +3422,7 @@
         private System.Windows.Forms.Label lblChangeEmailUserEmail;
         private System.Windows.Forms.TextBox txtChangeEmailNewEmail;
         private System.Windows.Forms.Label lblChangeEmailNewEmail;
-        private System.Windows.Forms.TextBox txtChangeEmaiReNewEmail;
+        private System.Windows.Forms.TextBox txtChangeEmailReNewEmail;
         private System.Windows.Forms.Label lblChangeEmailReNewEmail;
         private System.Windows.Forms.Button btnChangeEmailSend;
         private System.Windows.Forms.Button btnChangePasswordSend;

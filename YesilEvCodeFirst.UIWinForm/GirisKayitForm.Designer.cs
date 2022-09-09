@@ -57,9 +57,10 @@
             this.btnGrpBoxSignUp.FlatAppearance.BorderSize = 0;
             this.btnGrpBoxSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrpBoxSignUp.ForeColor = System.Drawing.Color.White;
-            this.btnGrpBoxSignUp.Location = new System.Drawing.Point(12, 42);
+            this.btnGrpBoxSignUp.Location = new System.Drawing.Point(16, 52);
+            this.btnGrpBoxSignUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGrpBoxSignUp.Name = "btnGrpBoxSignUp";
-            this.btnGrpBoxSignUp.Size = new System.Drawing.Size(215, 37);
+            this.btnGrpBoxSignUp.Size = new System.Drawing.Size(287, 46);
             this.btnGrpBoxSignUp.TabIndex = 0;
             this.btnGrpBoxSignUp.Text = "Kayıt Ol";
             this.btnGrpBoxSignUp.UseVisualStyleBackColor = false;
@@ -72,9 +73,10 @@
             this.btnGrpBoxSignIn.FlatAppearance.BorderSize = 0;
             this.btnGrpBoxSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrpBoxSignIn.ForeColor = System.Drawing.Color.White;
-            this.btnGrpBoxSignIn.Location = new System.Drawing.Point(229, 42);
+            this.btnGrpBoxSignIn.Location = new System.Drawing.Point(305, 52);
+            this.btnGrpBoxSignIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGrpBoxSignIn.Name = "btnGrpBoxSignIn";
-            this.btnGrpBoxSignIn.Size = new System.Drawing.Size(215, 37);
+            this.btnGrpBoxSignIn.Size = new System.Drawing.Size(287, 46);
             this.btnGrpBoxSignIn.TabIndex = 0;
             this.btnGrpBoxSignIn.Text = "Giriş Yap";
             this.btnGrpBoxSignIn.UseVisualStyleBackColor = false;
@@ -92,9 +94,11 @@
             this.GrpBoxSignUp.Controls.Add(this.lblLastName);
             this.GrpBoxSignUp.Controls.Add(this.lblFirstName);
             this.GrpBoxSignUp.ForeColor = System.Drawing.Color.White;
-            this.GrpBoxSignUp.Location = new System.Drawing.Point(12, 102);
+            this.GrpBoxSignUp.Location = new System.Drawing.Point(16, 126);
+            this.GrpBoxSignUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GrpBoxSignUp.Name = "GrpBoxSignUp";
-            this.GrpBoxSignUp.Size = new System.Drawing.Size(432, 299);
+            this.GrpBoxSignUp.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GrpBoxSignUp.Size = new System.Drawing.Size(576, 368);
             this.GrpBoxSignUp.TabIndex = 1;
             this.GrpBoxSignUp.TabStop = false;
             this.GrpBoxSignUp.Text = "Ücretsiz Kayıt Ol";
@@ -108,9 +112,10 @@
             this.btnSignUp.FlatAppearance.BorderSize = 0;
             this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignUp.ForeColor = System.Drawing.Color.White;
-            this.btnSignUp.Location = new System.Drawing.Point(69, 230);
+            this.btnSignUp.Location = new System.Drawing.Point(92, 283);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(289, 41);
+            this.btnSignUp.Size = new System.Drawing.Size(385, 50);
             this.btnSignUp.TabIndex = 5;
             this.btnSignUp.Text = "Kayıt Ol";
             this.btnSignUp.UseVisualStyleBackColor = false;
@@ -120,41 +125,45 @@
             // 
             this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.txtFirstName.ForeColor = System.Drawing.Color.White;
-            this.txtFirstName.Location = new System.Drawing.Point(20, 54);
+            this.txtFirstName.Location = new System.Drawing.Point(27, 66);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFirstName.Multiline = true;
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(179, 26);
+            this.txtFirstName.Size = new System.Drawing.Size(237, 31);
             this.txtFirstName.TabIndex = 1;
             // 
             // txtLastName
             // 
             this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.txtLastName.ForeColor = System.Drawing.Color.White;
-            this.txtLastName.Location = new System.Drawing.Point(230, 53);
+            this.txtLastName.Location = new System.Drawing.Point(307, 65);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLastName.Multiline = true;
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(179, 26);
+            this.txtLastName.Size = new System.Drawing.Size(237, 31);
             this.txtLastName.TabIndex = 2;
             // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.txtPassword.ForeColor = System.Drawing.Color.White;
-            this.txtPassword.Location = new System.Drawing.Point(22, 181);
+            this.txtPassword.Location = new System.Drawing.Point(29, 223);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(387, 26);
+            this.txtPassword.Size = new System.Drawing.Size(515, 31);
             this.txtPassword.TabIndex = 4;
             // 
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.txtEmail.ForeColor = System.Drawing.Color.White;
-            this.txtEmail.Location = new System.Drawing.Point(22, 116);
+            this.txtEmail.Location = new System.Drawing.Point(29, 143);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(387, 26);
+            this.txtEmail.Size = new System.Drawing.Size(515, 31);
             this.txtEmail.TabIndex = 3;
             // 
             // lblPassword
@@ -162,9 +171,10 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(19, 165);
+            this.lblPassword.Location = new System.Drawing.Point(25, 203);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(28, 13);
+            this.lblPassword.Size = new System.Drawing.Size(34, 16);
             this.lblPassword.TabIndex = 2;
             this.lblPassword.Text = "Şifre";
             // 
@@ -173,9 +183,10 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(19, 100);
+            this.lblEmail.Location = new System.Drawing.Point(25, 123);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.Size = new System.Drawing.Size(41, 16);
             this.lblEmail.TabIndex = 1;
             this.lblEmail.Text = "Email";
             // 
@@ -184,9 +195,10 @@
             this.lblLastName.AutoSize = true;
             this.lblLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.lblLastName.ForeColor = System.Drawing.Color.White;
-            this.lblLastName.Location = new System.Drawing.Point(230, 38);
+            this.lblLastName.Location = new System.Drawing.Point(307, 47);
+            this.lblLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(42, 13);
+            this.lblLastName.Size = new System.Drawing.Size(55, 16);
             this.lblLastName.TabIndex = 0;
             this.lblLastName.Text = "Soyisim";
             // 
@@ -195,9 +207,10 @@
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.lblFirstName.ForeColor = System.Drawing.Color.White;
-            this.lblFirstName.Location = new System.Drawing.Point(19, 38);
+            this.lblFirstName.Location = new System.Drawing.Point(25, 47);
+            this.lblFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(25, 13);
+            this.lblFirstName.Size = new System.Drawing.Size(31, 16);
             this.lblFirstName.TabIndex = 0;
             this.lblFirstName.Text = "İsim";
             // 
@@ -209,9 +222,11 @@
             this.GrpBoxSignIn.Controls.Add(this.txtSignInEmail);
             this.GrpBoxSignIn.Controls.Add(this.lblSignInEmail);
             this.GrpBoxSignIn.ForeColor = System.Drawing.Color.White;
-            this.GrpBoxSignIn.Location = new System.Drawing.Point(12, 102);
+            this.GrpBoxSignIn.Location = new System.Drawing.Point(16, 126);
+            this.GrpBoxSignIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GrpBoxSignIn.Name = "GrpBoxSignIn";
-            this.GrpBoxSignIn.Size = new System.Drawing.Size(432, 277);
+            this.GrpBoxSignIn.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GrpBoxSignIn.Size = new System.Drawing.Size(576, 341);
             this.GrpBoxSignIn.TabIndex = 2;
             this.GrpBoxSignIn.TabStop = false;
             this.GrpBoxSignIn.Text = "Giriş Yap";
@@ -223,9 +238,10 @@
             this.btnSignIn.FlatAppearance.BorderSize = 0;
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignIn.ForeColor = System.Drawing.Color.White;
-            this.btnSignIn.Location = new System.Drawing.Point(69, 197);
+            this.btnSignIn.Location = new System.Drawing.Point(92, 242);
+            this.btnSignIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(289, 41);
+            this.btnSignIn.Size = new System.Drawing.Size(385, 50);
             this.btnSignIn.TabIndex = 3;
             this.btnSignIn.Text = "Giriş Yap";
             this.btnSignIn.UseVisualStyleBackColor = false;
@@ -235,21 +251,23 @@
             // 
             this.txtSignInPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.txtSignInPassword.ForeColor = System.Drawing.Color.White;
-            this.txtSignInPassword.Location = new System.Drawing.Point(17, 135);
+            this.txtSignInPassword.Location = new System.Drawing.Point(23, 166);
+            this.txtSignInPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSignInPassword.Name = "txtSignInPassword";
             this.txtSignInPassword.PasswordChar = '*';
-            this.txtSignInPassword.Size = new System.Drawing.Size(387, 20);
+            this.txtSignInPassword.Size = new System.Drawing.Size(515, 22);
             this.txtSignInPassword.TabIndex = 2;
-            this.txtSignInPassword.Text = "mert555";
+            this.txtSignInPassword.Text = "12345";
             // 
             // lblSignInPassword
             // 
             this.lblSignInPassword.AutoSize = true;
             this.lblSignInPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.lblSignInPassword.ForeColor = System.Drawing.Color.White;
-            this.lblSignInPassword.Location = new System.Drawing.Point(17, 119);
+            this.lblSignInPassword.Location = new System.Drawing.Point(23, 146);
+            this.lblSignInPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSignInPassword.Name = "lblSignInPassword";
-            this.lblSignInPassword.Size = new System.Drawing.Size(28, 13);
+            this.lblSignInPassword.Size = new System.Drawing.Size(34, 16);
             this.lblSignInPassword.TabIndex = 1;
             this.lblSignInPassword.Text = "Şifre";
             // 
@@ -257,33 +275,36 @@
             // 
             this.txtSignInEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.txtSignInEmail.ForeColor = System.Drawing.Color.White;
-            this.txtSignInEmail.Location = new System.Drawing.Point(17, 83);
+            this.txtSignInEmail.Location = new System.Drawing.Point(23, 102);
+            this.txtSignInEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSignInEmail.Name = "txtSignInEmail";
-            this.txtSignInEmail.Size = new System.Drawing.Size(387, 20);
+            this.txtSignInEmail.Size = new System.Drawing.Size(515, 22);
             this.txtSignInEmail.TabIndex = 1;
-            this.txtSignInEmail.Text = "mertdalkiran@gmail.com";
+            this.txtSignInEmail.Text = "sarp@gmail.com";
             // 
             // lblSignInEmail
             // 
             this.lblSignInEmail.AutoSize = true;
             this.lblSignInEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
             this.lblSignInEmail.ForeColor = System.Drawing.Color.White;
-            this.lblSignInEmail.Location = new System.Drawing.Point(17, 67);
+            this.lblSignInEmail.Location = new System.Drawing.Point(23, 82);
+            this.lblSignInEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSignInEmail.Name = "lblSignInEmail";
-            this.lblSignInEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblSignInEmail.Size = new System.Drawing.Size(41, 16);
             this.lblSignInEmail.TabIndex = 1;
             this.lblSignInEmail.Text = "Email";
             // 
             // SignInSignUpForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(49)))), ((int)(((byte)(60)))));
-            this.ClientSize = new System.Drawing.Size(456, 475);
+            this.ClientSize = new System.Drawing.Size(608, 585);
             this.Controls.Add(this.btnGrpBoxSignUp);
             this.Controls.Add(this.btnGrpBoxSignIn);
             this.Controls.Add(this.GrpBoxSignIn);
             this.Controls.Add(this.GrpBoxSignUp);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SignInSignUpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Green Home";
