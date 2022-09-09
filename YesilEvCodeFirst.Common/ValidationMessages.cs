@@ -47,5 +47,9 @@
         public static string SupplierNameEmpty = "Üretici adı boş geçilemez.";
         public static string SupplierNameMinLength = "Üretici adı minimum 2 karakter olabilir.";
         public static string SupplierNameMaxLength = "Üretici adı maksimum 100 karakter olabilir.";
+
+        public static string CategoryNameEmpty = "Kategori adı boş geçilemez.";
+        public static string CategoryNameMinLength = "Kategori adı minimum 2 karakter olabilir.";
+        public static string CategoryNameMaxLength = "Kategori adı maksimum 100 karakter olabilir.";
     }
 }

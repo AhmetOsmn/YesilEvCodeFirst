@@ -38,10 +38,10 @@
             this.pnlListele = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnlAra = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnSearchCategorySearch = new System.Windows.Forms.Button();
             this.txtSearchCategoryName = new System.Windows.Forms.TextBox();
             this.lblSearchCategoryName = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.pnlEkle = new System.Windows.Forms.Panel();
             this.cmbBoxAddCategoryUpperCategory = new System.Windows.Forms.ComboBox();
             this.btnAddCategoryAdd = new System.Windows.Forms.Button();
@@ -79,21 +79,18 @@
             this.gbSupplement.Controls.Add(this.btnAra);
             this.gbSupplement.Controls.Add(this.btnEkle);
             this.gbSupplement.Controls.Add(this.btnGuncelle);
-            this.gbSupplement.Location = new System.Drawing.Point(16, 15);
-            this.gbSupplement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbSupplement.Location = new System.Drawing.Point(12, 12);
             this.gbSupplement.Name = "gbSupplement";
-            this.gbSupplement.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbSupplement.Size = new System.Drawing.Size(127, 524);
+            this.gbSupplement.Size = new System.Drawing.Size(95, 426);
             this.gbSupplement.TabIndex = 5;
             this.gbSupplement.TabStop = false;
             this.gbSupplement.Text = "Kategori İşlemleri";
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(8, 324);
-            this.btnSil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSil.Location = new System.Drawing.Point(6, 263);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(111, 53);
+            this.btnSil.Size = new System.Drawing.Size(83, 43);
             this.btnSil.TabIndex = 4;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
@@ -101,10 +98,9 @@
             // 
             // btnListele
             // 
-            this.btnListele.Location = new System.Drawing.Point(8, 82);
-            this.btnListele.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnListele.Location = new System.Drawing.Point(6, 67);
             this.btnListele.Name = "btnListele";
-            this.btnListele.Size = new System.Drawing.Size(111, 53);
+            this.btnListele.Size = new System.Drawing.Size(83, 43);
             this.btnListele.TabIndex = 0;
             this.btnListele.Text = "Listele";
             this.btnListele.UseVisualStyleBackColor = true;
@@ -112,10 +108,9 @@
             // 
             // btnAra
             // 
-            this.btnAra.Location = new System.Drawing.Point(8, 143);
-            this.btnAra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAra.Location = new System.Drawing.Point(6, 116);
             this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(111, 53);
+            this.btnAra.Size = new System.Drawing.Size(83, 43);
             this.btnAra.TabIndex = 1;
             this.btnAra.Text = "Ara";
             this.btnAra.UseVisualStyleBackColor = true;
@@ -123,10 +118,9 @@
             // 
             // btnEkle
             // 
-            this.btnEkle.Location = new System.Drawing.Point(8, 203);
-            this.btnEkle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEkle.Location = new System.Drawing.Point(6, 165);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(111, 53);
+            this.btnEkle.Size = new System.Drawing.Size(83, 43);
             this.btnEkle.TabIndex = 2;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
@@ -134,10 +128,9 @@
             // 
             // btnGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(8, 263);
-            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuncelle.Location = new System.Drawing.Point(6, 214);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(111, 53);
+            this.btnGuncelle.Size = new System.Drawing.Size(83, 43);
             this.btnGuncelle.TabIndex = 3;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
@@ -147,22 +140,21 @@
             // 
             this.pnlListele.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pnlListele.Controls.Add(this.dataGridView1);
-            this.pnlListele.Location = new System.Drawing.Point(149, 25);
-            this.pnlListele.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlListele.Location = new System.Drawing.Point(112, 20);
             this.pnlListele.Name = "pnlListele";
-            this.pnlListele.Size = new System.Drawing.Size(1545, 512);
+            this.pnlListele.Size = new System.Drawing.Size(1159, 416);
             this.pnlListele.TabIndex = 6;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 2);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1531, 507);
+            this.dataGridView1.Size = new System.Drawing.Size(1148, 412);
             this.dataGridView1.TabIndex = 0;
             // 
             // pnlAra
@@ -172,30 +164,17 @@
             this.pnlAra.Controls.Add(this.txtSearchCategoryName);
             this.pnlAra.Controls.Add(this.lblSearchCategoryName);
             this.pnlAra.Controls.Add(this.dataGridView2);
-            this.pnlAra.Location = new System.Drawing.Point(149, 25);
-            this.pnlAra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlAra.Location = new System.Drawing.Point(112, 20);
             this.pnlAra.Name = "pnlAra";
-            this.pnlAra.Size = new System.Drawing.Size(1545, 512);
+            this.pnlAra.Size = new System.Drawing.Size(1159, 416);
             this.pnlAra.TabIndex = 7;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 41);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(1540, 471);
-            this.dataGridView2.TabIndex = 3;
             // 
             // btnSearchCategorySearch
             // 
-            this.btnSearchCategorySearch.Location = new System.Drawing.Point(349, 12);
-            this.btnSearchCategorySearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchCategorySearch.Location = new System.Drawing.Point(262, 10);
+            this.btnSearchCategorySearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearchCategorySearch.Name = "btnSearchCategorySearch";
-            this.btnSearchCategorySearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchCategorySearch.Size = new System.Drawing.Size(56, 19);
             this.btnSearchCategorySearch.TabIndex = 2;
             this.btnSearchCategorySearch.Text = "Ara";
             this.btnSearchCategorySearch.UseVisualStyleBackColor = true;
@@ -203,20 +182,33 @@
             // 
             // txtSearchCategoryName
             // 
-            this.txtSearchCategoryName.Location = new System.Drawing.Point(107, 14);
-            this.txtSearchCategoryName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearchCategoryName.Location = new System.Drawing.Point(80, 11);
+            this.txtSearchCategoryName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSearchCategoryName.Name = "txtSearchCategoryName";
-            this.txtSearchCategoryName.Size = new System.Drawing.Size(225, 22);
+            this.txtSearchCategoryName.Size = new System.Drawing.Size(170, 20);
             this.txtSearchCategoryName.TabIndex = 1;
             // 
             // lblSearchCategoryName
             // 
             this.lblSearchCategoryName.AutoSize = true;
-            this.lblSearchCategoryName.Location = new System.Drawing.Point(19, 16);
+            this.lblSearchCategoryName.Location = new System.Drawing.Point(14, 13);
+            this.lblSearchCategoryName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchCategoryName.Name = "lblSearchCategoryName";
-            this.lblSearchCategoryName.Size = new System.Drawing.Size(84, 16);
+            this.lblSearchCategoryName.Size = new System.Drawing.Size(67, 13);
             this.lblSearchCategoryName.TabIndex = 0;
             this.lblSearchCategoryName.Text = "Kategori İsmi";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(2, 33);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(1155, 383);
+            this.dataGridView2.TabIndex = 3;
             // 
             // pnlEkle
             // 
@@ -226,27 +218,25 @@
             this.pnlEkle.Controls.Add(this.txtAddCategoryName);
             this.pnlEkle.Controls.Add(this.lblAddCategoryName);
             this.pnlEkle.Controls.Add(this.lblAddCategoryUpperCategory);
-            this.pnlEkle.Location = new System.Drawing.Point(149, 25);
-            this.pnlEkle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlEkle.Location = new System.Drawing.Point(112, 20);
             this.pnlEkle.Name = "pnlEkle";
-            this.pnlEkle.Size = new System.Drawing.Size(1545, 512);
+            this.pnlEkle.Size = new System.Drawing.Size(1159, 416);
             this.pnlEkle.TabIndex = 8;
             // 
             // cmbBoxAddCategoryUpperCategory
             // 
             this.cmbBoxAddCategoryUpperCategory.FormattingEnabled = true;
-            this.cmbBoxAddCategoryUpperCategory.Location = new System.Drawing.Point(608, 174);
-            this.cmbBoxAddCategoryUpperCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbBoxAddCategoryUpperCategory.Location = new System.Drawing.Point(456, 141);
             this.cmbBoxAddCategoryUpperCategory.Name = "cmbBoxAddCategoryUpperCategory";
-            this.cmbBoxAddCategoryUpperCategory.Size = new System.Drawing.Size(225, 24);
+            this.cmbBoxAddCategoryUpperCategory.Size = new System.Drawing.Size(170, 21);
             this.cmbBoxAddCategoryUpperCategory.TabIndex = 38;
             // 
             // btnAddCategoryAdd
             // 
-            this.btnAddCategoryAdd.Location = new System.Drawing.Point(444, 218);
-            this.btnAddCategoryAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddCategoryAdd.Location = new System.Drawing.Point(333, 177);
+            this.btnAddCategoryAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddCategoryAdd.Name = "btnAddCategoryAdd";
-            this.btnAddCategoryAdd.Size = new System.Drawing.Size(145, 42);
+            this.btnAddCategoryAdd.Size = new System.Drawing.Size(109, 34);
             this.btnAddCategoryAdd.TabIndex = 37;
             this.btnAddCategoryAdd.Text = "Ekle";
             this.btnAddCategoryAdd.UseVisualStyleBackColor = true;
@@ -254,27 +244,29 @@
             // 
             // txtAddCategoryName
             // 
-            this.txtAddCategoryName.Location = new System.Drawing.Point(267, 175);
-            this.txtAddCategoryName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAddCategoryName.Location = new System.Drawing.Point(200, 142);
+            this.txtAddCategoryName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAddCategoryName.Name = "txtAddCategoryName";
-            this.txtAddCategoryName.Size = new System.Drawing.Size(225, 22);
+            this.txtAddCategoryName.Size = new System.Drawing.Size(170, 20);
             this.txtAddCategoryName.TabIndex = 29;
             // 
             // lblAddCategoryName
             // 
             this.lblAddCategoryName.AutoSize = true;
-            this.lblAddCategoryName.Location = new System.Drawing.Point(176, 178);
+            this.lblAddCategoryName.Location = new System.Drawing.Point(132, 145);
+            this.lblAddCategoryName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddCategoryName.Name = "lblAddCategoryName";
-            this.lblAddCategoryName.Size = new System.Drawing.Size(84, 16);
+            this.lblAddCategoryName.Size = new System.Drawing.Size(67, 13);
             this.lblAddCategoryName.TabIndex = 28;
             this.lblAddCategoryName.Text = "Kategori İsim";
             // 
             // lblAddCategoryUpperCategory
             // 
             this.lblAddCategoryUpperCategory.AutoSize = true;
-            this.lblAddCategoryUpperCategory.Location = new System.Drawing.Point(515, 178);
+            this.lblAddCategoryUpperCategory.Location = new System.Drawing.Point(386, 145);
+            this.lblAddCategoryUpperCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddCategoryUpperCategory.Name = "lblAddCategoryUpperCategory";
-            this.lblAddCategoryUpperCategory.Size = new System.Drawing.Size(80, 16);
+            this.lblAddCategoryUpperCategory.Size = new System.Drawing.Size(65, 13);
             this.lblAddCategoryUpperCategory.TabIndex = 26;
             this.lblAddCategoryUpperCategory.Text = "Üst Kategori";
             // 
@@ -287,27 +279,25 @@
             this.pnlGuncelle.Controls.Add(this.lblUpdateCategoryName);
             this.pnlGuncelle.Controls.Add(this.btnUpdateCategorySearch);
             this.pnlGuncelle.Controls.Add(this.lblUpdateCategoryEmail);
-            this.pnlGuncelle.Location = new System.Drawing.Point(149, 25);
-            this.pnlGuncelle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlGuncelle.Location = new System.Drawing.Point(112, 20);
             this.pnlGuncelle.Name = "pnlGuncelle";
-            this.pnlGuncelle.Size = new System.Drawing.Size(1545, 512);
+            this.pnlGuncelle.Size = new System.Drawing.Size(1159, 416);
             this.pnlGuncelle.TabIndex = 9;
             // 
             // cmbBoxUpdateCategoryUpperCategory
             // 
             this.cmbBoxUpdateCategoryUpperCategory.FormattingEnabled = true;
-            this.cmbBoxUpdateCategoryUpperCategory.Location = new System.Drawing.Point(341, 145);
-            this.cmbBoxUpdateCategoryUpperCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbBoxUpdateCategoryUpperCategory.Location = new System.Drawing.Point(256, 118);
             this.cmbBoxUpdateCategoryUpperCategory.Name = "cmbBoxUpdateCategoryUpperCategory";
-            this.cmbBoxUpdateCategoryUpperCategory.Size = new System.Drawing.Size(225, 24);
+            this.cmbBoxUpdateCategoryUpperCategory.Size = new System.Drawing.Size(170, 21);
             this.cmbBoxUpdateCategoryUpperCategory.TabIndex = 25;
             // 
             // btnUpdateCategoryUpdate
             // 
-            this.btnUpdateCategoryUpdate.Location = new System.Drawing.Point(519, 198);
-            this.btnUpdateCategoryUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdateCategoryUpdate.Location = new System.Drawing.Point(389, 161);
+            this.btnUpdateCategoryUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdateCategoryUpdate.Name = "btnUpdateCategoryUpdate";
-            this.btnUpdateCategoryUpdate.Size = new System.Drawing.Size(145, 42);
+            this.btnUpdateCategoryUpdate.Size = new System.Drawing.Size(109, 34);
             this.btnUpdateCategoryUpdate.TabIndex = 24;
             this.btnUpdateCategoryUpdate.Text = "Güncelle";
             this.btnUpdateCategoryUpdate.UseVisualStyleBackColor = true;
@@ -315,27 +305,28 @@
             // 
             // txtUpdateCategoryName
             // 
-            this.txtUpdateCategoryName.Location = new System.Drawing.Point(683, 145);
-            this.txtUpdateCategoryName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUpdateCategoryName.Location = new System.Drawing.Point(512, 118);
+            this.txtUpdateCategoryName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUpdateCategoryName.Name = "txtUpdateCategoryName";
-            this.txtUpdateCategoryName.Size = new System.Drawing.Size(225, 22);
+            this.txtUpdateCategoryName.Size = new System.Drawing.Size(170, 20);
             this.txtUpdateCategoryName.TabIndex = 19;
             // 
             // lblUpdateCategoryName
             // 
             this.lblUpdateCategoryName.AutoSize = true;
-            this.lblUpdateCategoryName.Location = new System.Drawing.Point(592, 148);
+            this.lblUpdateCategoryName.Location = new System.Drawing.Point(444, 120);
+            this.lblUpdateCategoryName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUpdateCategoryName.Name = "lblUpdateCategoryName";
-            this.lblUpdateCategoryName.Size = new System.Drawing.Size(84, 16);
+            this.lblUpdateCategoryName.Size = new System.Drawing.Size(67, 13);
             this.lblUpdateCategoryName.TabIndex = 18;
             this.lblUpdateCategoryName.Text = "Kategori İsim";
             // 
             // btnUpdateCategorySearch
             // 
-            this.btnUpdateCategorySearch.Location = new System.Drawing.Point(915, 146);
-            this.btnUpdateCategorySearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdateCategorySearch.Location = new System.Drawing.Point(686, 119);
+            this.btnUpdateCategorySearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdateCategorySearch.Name = "btnUpdateCategorySearch";
-            this.btnUpdateCategorySearch.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateCategorySearch.Size = new System.Drawing.Size(56, 19);
             this.btnUpdateCategorySearch.TabIndex = 17;
             this.btnUpdateCategorySearch.Text = "Ara";
             this.btnUpdateCategorySearch.UseVisualStyleBackColor = true;
@@ -344,9 +335,10 @@
             // lblUpdateCategoryEmail
             // 
             this.lblUpdateCategoryEmail.AutoSize = true;
-            this.lblUpdateCategoryEmail.Location = new System.Drawing.Point(249, 149);
+            this.lblUpdateCategoryEmail.Location = new System.Drawing.Point(187, 121);
+            this.lblUpdateCategoryEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUpdateCategoryEmail.Name = "lblUpdateCategoryEmail";
-            this.lblUpdateCategoryEmail.Size = new System.Drawing.Size(80, 16);
+            this.lblUpdateCategoryEmail.Size = new System.Drawing.Size(65, 13);
             this.lblUpdateCategoryEmail.TabIndex = 15;
             this.lblUpdateCategoryEmail.Text = "Üst Kategori";
             // 
@@ -359,27 +351,25 @@
             this.pnlSil.Controls.Add(this.btnDeleteCategorySearch);
             this.pnlSil.Controls.Add(this.txtDeleteCategoryName);
             this.pnlSil.Controls.Add(this.lblDeleteCategoryName);
-            this.pnlSil.Location = new System.Drawing.Point(149, 25);
-            this.pnlSil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlSil.Location = new System.Drawing.Point(112, 20);
             this.pnlSil.Name = "pnlSil";
-            this.pnlSil.Size = new System.Drawing.Size(1545, 512);
+            this.pnlSil.Size = new System.Drawing.Size(1159, 416);
             this.pnlSil.TabIndex = 10;
             // 
             // cmbBoxDeleteCategoryUpperCategory
             // 
             this.cmbBoxDeleteCategoryUpperCategory.FormattingEnabled = true;
-            this.cmbBoxDeleteCategoryUpperCategory.Location = new System.Drawing.Point(349, 188);
-            this.cmbBoxDeleteCategoryUpperCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbBoxDeleteCategoryUpperCategory.Location = new System.Drawing.Point(262, 153);
             this.cmbBoxDeleteCategoryUpperCategory.Name = "cmbBoxDeleteCategoryUpperCategory";
-            this.cmbBoxDeleteCategoryUpperCategory.Size = new System.Drawing.Size(225, 24);
+            this.cmbBoxDeleteCategoryUpperCategory.Size = new System.Drawing.Size(170, 21);
             this.cmbBoxDeleteCategoryUpperCategory.TabIndex = 15;
             // 
             // btnDeleteCategoryDelete
             // 
-            this.btnDeleteCategoryDelete.Location = new System.Drawing.Point(376, 238);
-            this.btnDeleteCategoryDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeleteCategoryDelete.Location = new System.Drawing.Point(282, 193);
+            this.btnDeleteCategoryDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDeleteCategoryDelete.Name = "btnDeleteCategoryDelete";
-            this.btnDeleteCategoryDelete.Size = new System.Drawing.Size(145, 42);
+            this.btnDeleteCategoryDelete.Size = new System.Drawing.Size(109, 34);
             this.btnDeleteCategoryDelete.TabIndex = 14;
             this.btnDeleteCategoryDelete.Text = "Sil";
             this.btnDeleteCategoryDelete.UseVisualStyleBackColor = true;
@@ -388,18 +378,19 @@
             // lblDeleteCategoryUpperCategory
             // 
             this.lblDeleteCategoryUpperCategory.AutoSize = true;
-            this.lblDeleteCategoryUpperCategory.Location = new System.Drawing.Point(259, 191);
+            this.lblDeleteCategoryUpperCategory.Location = new System.Drawing.Point(194, 155);
+            this.lblDeleteCategoryUpperCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDeleteCategoryUpperCategory.Name = "lblDeleteCategoryUpperCategory";
-            this.lblDeleteCategoryUpperCategory.Size = new System.Drawing.Size(80, 16);
+            this.lblDeleteCategoryUpperCategory.Size = new System.Drawing.Size(65, 13);
             this.lblDeleteCategoryUpperCategory.TabIndex = 6;
             this.lblDeleteCategoryUpperCategory.Text = "Üst Kategori";
             // 
             // btnDeleteCategorySearch
             // 
-            this.btnDeleteCategorySearch.Location = new System.Drawing.Point(589, 159);
-            this.btnDeleteCategorySearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeleteCategorySearch.Location = new System.Drawing.Point(442, 129);
+            this.btnDeleteCategorySearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDeleteCategorySearch.Name = "btnDeleteCategorySearch";
-            this.btnDeleteCategorySearch.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteCategorySearch.Size = new System.Drawing.Size(56, 19);
             this.btnDeleteCategorySearch.TabIndex = 5;
             this.btnDeleteCategorySearch.Text = "Ara";
             this.btnDeleteCategorySearch.UseVisualStyleBackColor = true;
@@ -407,33 +398,33 @@
             // 
             // txtDeleteCategoryName
             // 
-            this.txtDeleteCategoryName.Location = new System.Drawing.Point(349, 158);
-            this.txtDeleteCategoryName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDeleteCategoryName.Location = new System.Drawing.Point(262, 128);
+            this.txtDeleteCategoryName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDeleteCategoryName.Name = "txtDeleteCategoryName";
-            this.txtDeleteCategoryName.Size = new System.Drawing.Size(225, 22);
+            this.txtDeleteCategoryName.Size = new System.Drawing.Size(170, 20);
             this.txtDeleteCategoryName.TabIndex = 4;
             // 
             // lblDeleteCategoryName
             // 
             this.lblDeleteCategoryName.AutoSize = true;
-            this.lblDeleteCategoryName.Location = new System.Drawing.Point(259, 161);
+            this.lblDeleteCategoryName.Location = new System.Drawing.Point(194, 131);
+            this.lblDeleteCategoryName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDeleteCategoryName.Name = "lblDeleteCategoryName";
-            this.lblDeleteCategoryName.Size = new System.Drawing.Size(84, 16);
+            this.lblDeleteCategoryName.Size = new System.Drawing.Size(67, 13);
             this.lblDeleteCategoryName.TabIndex = 3;
             this.lblDeleteCategoryName.Text = "Kategori İsmi";
             // 
             // KategoriIslemleri
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1697, 617);
+            this.ClientSize = new System.Drawing.Size(1273, 501);
             this.Controls.Add(this.gbSupplement);
-            this.Controls.Add(this.pnlAra);
             this.Controls.Add(this.pnlSil);
             this.Controls.Add(this.pnlGuncelle);
             this.Controls.Add(this.pnlListele);
             this.Controls.Add(this.pnlEkle);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.pnlAra);
             this.Name = "KategoriIslemleri";
             this.Text = "KategoriIslemleri";
             this.gbSupplement.ResumeLayout(false);

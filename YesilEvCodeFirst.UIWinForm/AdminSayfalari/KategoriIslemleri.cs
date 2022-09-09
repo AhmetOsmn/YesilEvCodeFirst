@@ -165,10 +165,15 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
                     CategoryName = txtAddCategoryName.Text,
                     UstCategoryID = ((CategoryDTO)cmbBoxAddCategoryUpperCategory.SelectedItem).CategoryID,
                 });
+                
                 if (result)
                 {
                     MessageBox.Show("Kategori Eklendi.");
                 }
+            }
+            catch(FormatException fex)
+            {
+                MessageBox.Show(fex.Message);
             }
             catch (Exception ex)
             {

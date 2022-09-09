@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using FluentValidation.Results;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ using YesilEvCodeFirst.Core.Repos;
 using YesilEvCodeFirst.DTOs.Category;
 using YesilEvCodeFirst.DTOs.UserAdmin;
 using YesilEvCodeFirst.Mapping;
+using YesilEvCodeFirst.Validation.FluentValidator;
 
 namespace YesilEvCodeFirst.DAL.Use
 {
@@ -55,7 +57,7 @@ namespace YesilEvCodeFirst.DAL.Use
         }
         public Category GetCategoryDetailsWithCategoryName(string CategoryName)
         {
-            return GetByCondition(x=>x.CategoryName.Equals(CategoryName)&&x.IsActive).SingleOrDefault();
+            return GetByCondition(x=>x.CategoryName.Equals(CategoryName)&&x.IsActive).FirstOrDefault();
         }
         public List<ListCategoryDTO> GetAllCategoryDetailForAdmin()
         {
@@ -127,9 +129,15 @@ namespace YesilEvCodeFirst.DAL.Use
         }
         public bool AddCategory(AddCategoryDTO dto)
         {
+            AddCategoryValidator validator = new AddCategoryValidator();
+            ValidationResult validationResult = validator.Validate(dto);
             try
             {
-       
+                if(!validationResult.IsValid)
+                {
+                    throw new FormatException(validationResult.Errors[0].ErrorMessage);
+                }
+
                 Category category = GetByCondition(x => x.CategoryName.ToLower().Equals(dto.CategoryName) && x.IsActive).FirstOrDefault();
                 if (category == null)
                 {
@@ -144,8 +152,14 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new Exception(ExceptionMessages.CategoryAlreadyExist);
                 }
             }
+            catch(FormatException fex)
+            {
+                nLogger.Error("System - {}", fex.Message);
+                throw new FormatException(fex.Message);
+            }
             catch(Exception ex)
             {
+                nLogger.Error("System - {}", ex.Message);
                 throw new Exception(ex.Message);
             }
         }
