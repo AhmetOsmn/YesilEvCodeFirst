@@ -74,7 +74,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception(Messages.FavListNotFound);
+                        throw new Exception(ExceptionMessages.FavListNotFound);
                     }
                 }
 
@@ -116,7 +116,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception(Messages.FavListNotFound);
+                        throw new Exception(ExceptionMessages.FavListNotFound);
                     }
                 }
 
@@ -155,7 +155,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(Messages.FavListNotFound);
+                    throw new Exception(ExceptionMessages.FavListNotFound);
                 }
             }
             catch (FormatException fex)
@@ -189,7 +189,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(Messages.FavListNotFound);
+                    throw new Exception(ExceptionMessages.FavListNotFound);
                 }
             }
             catch (FormatException fex)

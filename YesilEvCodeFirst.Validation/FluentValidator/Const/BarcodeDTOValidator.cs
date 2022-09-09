@@ -8,9 +8,9 @@ namespace YesilEvCodeFirst.Validation.FluentValidator.Const
     {
         public BarcodeDTOValidator()
         {
-            RuleFor(x => x.Barcode).NotEmpty().WithMessage(Messages.BarcodeIsEmpty);
-            RuleFor(x => x.Barcode).MinimumLength(7).WithMessage(Messages.BarcodeMinLength);
-            RuleFor(x => x.Barcode).MaximumLength(50).WithMessage(Messages.BarcodeMaxLength);
+            RuleFor(x => x.Barcode).NotEmpty().WithMessage(ValidationMessages.BarcodeIsEmpty);
+            RuleFor(x => x.Barcode).MinimumLength(7).WithMessage(ValidationMessages.BarcodeMinLength);
+            RuleFor(x => x.Barcode).MaximumLength(50).WithMessage(ValidationMessages.BarcodeMaxLength);
         }
     }
 }

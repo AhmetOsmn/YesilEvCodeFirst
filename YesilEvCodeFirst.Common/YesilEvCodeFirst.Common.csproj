@@ -53,8 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Messages.cs" />
+    <Compile Include="ExceptionMessages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidationMessages.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YesilEvCodeFirst.DTOs\YesilEvCodeFirst.DTOs.csproj">

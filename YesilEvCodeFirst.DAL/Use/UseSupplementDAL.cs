@@ -32,7 +32,6 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                //todo: tolower kullanilacak mi karar verilecek
                 var tempSupplement = GetByCondition(supplement => supplement.SupplementName.ToLower() == dto.SupplementName.ToLower() && supplement.IsActive).FirstOrDefault();
                 if (tempSupplement == null)
                 {
@@ -43,7 +42,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(Messages.SupplementAlreadyExist);
+                    throw new Exception(ExceptionMessages.SupplementAlreadyExist);
                 }
 
                 return true;
@@ -74,7 +73,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 if (supplements == null)
                 {
-                    throw new Exception(Messages.SupplementNotFoundForList);
+                    throw new Exception(ExceptionMessages.SupplementNotFoundForList);
                 }
                 else
                 {
@@ -98,7 +97,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 List<Supplement> supplements = GetAll();
                 if (supplements == null)
                 {
-                    throw new Exception(Messages.ProductListIsEmpty);
+                    throw new Exception(ExceptionMessages.ProductListIsEmpty);
                 }
                 else
                 {
@@ -142,7 +141,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception(Messages.BlackListNotFound);
+                        throw new Exception(ExceptionMessages.BlackListNotFound);
                     }
                 }
 
@@ -194,7 +193,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(Messages.ProductNotFound);
+                    throw new Exception(ExceptionMessages.ProductNotFound);
                 }
             }
             catch (FormatException fex)
@@ -230,7 +229,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception(Messages.ProductNotFound);
+                        throw new Exception(ExceptionMessages.ProductNotFound);
                     }
                 }
             }

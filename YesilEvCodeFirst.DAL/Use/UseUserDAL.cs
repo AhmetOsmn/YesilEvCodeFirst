@@ -38,7 +38,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 var user = GetByCondition(u => u.Email.Equals(dto.Email) && u.Password.Equals(dto.Password) && u.IsActive).FirstOrDefault();
                 if (user == null)
                 {
-                    throw new Exception(Messages.UserNotFound);
+                    throw new Exception(ExceptionMessages.UserNotFound);
                 }
                 else
                 {
@@ -83,7 +83,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception(Messages.EmailAlreadyExist);
+                        throw new Exception(ExceptionMessages.EmailAlreadyExist);
                     }
                 }
 
@@ -119,7 +119,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(Messages.UserNotFound);
+                    throw new Exception(ExceptionMessages.UserNotFound);
                 }
             }
             catch (FormatException fex)
@@ -153,7 +153,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(Messages.UserNotFound);
+                    throw new Exception(ExceptionMessages.UserNotFound);
                 }
             }
             catch (FormatException fex)
@@ -191,7 +191,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(Messages.UserNotFound);
+                    throw new Exception(ExceptionMessages.UserNotFound);
                 }
             }
             catch (FormatException fex)
@@ -227,7 +227,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(Messages.UserNotFound);
+                    throw new Exception(ExceptionMessages.UserNotFound);
                 }
             }
             catch (FormatException fex)
@@ -263,7 +263,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(Messages.UserNotFound);
+                    throw new Exception(ExceptionMessages.UserNotFound);
                 }
             }
             catch (FormatException fex)
