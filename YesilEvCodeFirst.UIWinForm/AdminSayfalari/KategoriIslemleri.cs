@@ -43,8 +43,8 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         private void btnListele_Click(object sender, EventArgs e)
         {
             CloseAllPages();
+            dataGridView1.DataSource = useCategoryDAL.GetAllCategoryDetailForAdmin();
             pnlListele.Visible = true;
-            dataGridView1.DataSource = useCategoryDAL.GetAll();
             ChangeDatagridViewsColumnNames(dataGridView1);
         }
 
@@ -58,7 +58,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             CloseAllPages();
-            pnlGuncelle.Visible=true;
+            pnlGuncelle.Visible = true;
             var result = useCategoryDAL.GetCategoryList();
             result.ForEach(x =>
             {
@@ -74,7 +74,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             {
                 cmbBoxDeleteCategoryUpperCategory.Items.Add(x.CategoryName);
             });
-            pnlSil.Visible=true;
+            pnlSil.Visible = true;
         }
 
         private void btnSearchCategorySearch_Click(object sender, EventArgs e)
@@ -103,21 +103,20 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         {
             try
             {
-                CategoryDTO categoryDTO = new CategoryDTO()
+                bool result = useCategoryDAL.DeleteCategory(new CategoryDTO()
                 {
                     CategoryName = txtDeleteCategoryName.Text,
-                };
-                bool result = useCategoryDAL.DeleteCategory(categoryDTO);
+                });
                 if (result)
                 {
                     MessageBox.Show("Kategori Silindi");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
+            txtDeleteCategoryName.Text = "";
         }
 
         private void btnUpdateCategorySearch_Click(object sender, EventArgs e)
@@ -148,7 +147,7 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
                 bool result = useCategoryDAL.UpdateCategory(categoryDTO);
                 if (result)
                 {
-                    MessageBox.Show("Kategori Güncellendi");
+                    MessageBox.Show("Kategori Güncellendi.");
                 }
             }
             catch (Exception ex)
@@ -161,32 +160,30 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         {
             try
             {
-                AddCategoryDTO categoryDTO = new AddCategoryDTO()
+                bool result = useCategoryDAL.AddCategory(new AddCategoryDTO()
                 {
                     CategoryName = txtAddCategoryName.Text,
                     UstCategoryID = ((CategoryDTO)cmbBoxAddCategoryUpperCategory.SelectedItem).CategoryID,
-                };
-                var result = useCategoryDAL.AddCategory(categoryDTO);
+                });
                 if (result)
                 {
-                    MessageBox.Show("Kategori Eklendi");
+                    MessageBox.Show("Kategori Eklendi.");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
         private void ChangeDatagridViewsColumnNames(DataGridView colname)
         {
             colname.Columns[0].HeaderText = "Kategori ID";
             colname.Columns[1].HeaderText = "Kategori Adı";
-            colname.Columns[2].HeaderText = "Üst Kategori ID";
-            colname.Columns[3].HeaderText = "Üst Kategori Adı";
-            colname.Columns[4].HeaderText = "Aktif Mi?";
-            colname.Columns[5].HeaderText = "Oluşturulma Tarihi";
-            colname.Columns[6].HeaderText = "Oluşturan Kişi";
+            colname.Columns[2].HeaderText = "Üst Kategori Adı";
+            colname.Columns[3].HeaderText = "Aktif Mi?";
+            colname.Columns[4].HeaderText = "Oluşturulma Tarihi";
+            colname.Columns[5].HeaderText = "Oluşturan Kişi";
             colname.ForeColor = Color.Black;
             foreach (DataGridViewColumn col in colname.Columns)
             {
