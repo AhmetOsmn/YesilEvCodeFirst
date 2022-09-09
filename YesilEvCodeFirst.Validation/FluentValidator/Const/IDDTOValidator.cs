@@ -8,7 +8,7 @@ namespace YesilEvCodeFirst.Validation.FluentValidator
     {
         public IDDTOValidator()
         {
-            RuleFor(x => x.ID).GreaterThan(0).WithMessage(Messages.InvalidID);
+            RuleFor(x => x.ID).GreaterThan(0).WithMessage(ValidationMessages.InvalidID);
         }
     }
 }

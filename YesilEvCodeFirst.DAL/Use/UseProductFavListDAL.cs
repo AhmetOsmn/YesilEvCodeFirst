@@ -49,7 +49,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception(Messages.ProductAlreadyExistInList);
+                        throw new Exception(ExceptionMessages.ProductAlreadyExistInList);
                     }
                 }
                 nLogger.Info("Ürün Ve Favori liste tablosuna ekleme işlemi yapıldı.");
@@ -89,7 +89,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception(Messages.ProductNotFoundForList);
+                        throw new Exception(ExceptionMessages.ProductNotFoundForList);
                     }
                 }
 
@@ -128,7 +128,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(Messages.ProductNotFoundForList);
+                    throw new Exception(ExceptionMessages.ProductNotFoundForList);
                 }
             }
             catch (FormatException fex)

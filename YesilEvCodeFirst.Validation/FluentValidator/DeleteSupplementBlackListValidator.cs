@@ -20,7 +20,7 @@ namespace YesilEvCodeFirst.Validation.FluentValidator
 
             #region SupplementID Validation Black List Page
             //SupplementContext validation for Black List Page
-            RuleFor(x => x.SupplementID).GreaterThan(0).WithMessage(Messages.SupplementIDIsEmpty);
+            RuleFor(x => x.SupplementID).GreaterThan(0).WithMessage(ValidationMessages.SupplementIDIsEmpty);
             #endregion
 
             #region UserID Validation Black List Page

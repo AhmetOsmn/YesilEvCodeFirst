@@ -166,7 +166,7 @@ namespace YesilEvCodeFirst.UIWinForm
                         CategoryID = cmbBoxAddAndUpdateProductAddProductCategory.SelectedItem == null ? 0 : ((CategoryDTO)cmbBoxAddAndUpdateProductAddProductCategory.SelectedItem).CategoryID,
                         ProductContent = txtAddAndUpdateProductAddProductProductContext.Text,
                         PictureFronthPath = FileDialogAddProductFront.FileName == "FileDialogUrunEkleOnYuz" ? "C:\\Projects\\BAYP\\YesilEvCodeFirst\\YesilEvCodeFirst.UIWinForm\\ContextLtst\\Image\\product.png" : FileDialogAddProductFront.FileName,
-                        PictureBackPath = FileDialogAddProductBack.FileName == "FileDialogUrunEkleArkaYuz" ? ".C:\\Projects\\BAYP\\YesilEvCodeFirst\\YesilEvCodeFirst.UIWinForm\\ContextLtst\\Image\\product.png" : FileDialogAddProductBack.FileName,
+                        PictureBackPath = FileDialogAddProductBack.FileName == "FileDialogUrunEkleArkaYuz" ? "C:\\Projects\\BAYP\\YesilEvCodeFirst\\YesilEvCodeFirst.UIWinForm\\ContextLtst\\Image\\product.png" : FileDialogAddProductBack.FileName,
                         PictureContentPath = FileDialogAddProductContent.FileName == "openFileDialog1" ? "C:\\Projects\\BAYP\\YesilEvCodeFirst\\YesilEvCodeFirst.UIWinForm\\ContextLtst\\Image\\product.png" : FileDialogAddProductContent.FileName,
                     });
                     if (result)
@@ -199,43 +199,43 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 if (isUpdatable)
                 {
-                    if (isUpdateProductFieldValidator())
+                    //if (isUpdateProductFieldValidator())
+                    //{
+                    try
                     {
-                        try
+                        //to do combobox boş bırakılmaıyor sonra bak
+                        UpdateProductDTO updateDto = new UpdateProductDTO()
                         {
-                            //to do combobox boş bırakılmaıyor sonra bak
-                            UpdateProductDTO updateDto = new UpdateProductDTO()
-                            {
-                                AddedBy = User.UserID,
-                                Barcode = txtAddAndUpdateProductUpdateProductBarcodeNo.Text,
-                                CategoryID = ((CategoryDTO)cmbBoxAddAndUpdateProductUpdateProductCategory.SelectedItem).CategoryID,
-                                ProductName = txtAddAndUpdateProductUpdateProductProductName.Text,
-                                SupplierID = ((SupplierDTO)cmbBoxAddAndUpdateProductUpdateProductSupplier.SelectedItem).SupplierID,
-                                PictureBackPath = FileDialogUpdateProductBack.FileName,
-                                PictureFronthPath = FileDialogUpdateProductFront.FileName,
-                                PictureContentPath = FileDialogUpdateProductContent.FileName,
-                                ProductContent = txtAddAndUpdateProductUpdateProductProductContext.Text
-                            };
-                            bool result = dal.UpdateProduct(updateDto);
-                            if (result)
-                            {
-                                MessageBox.Show("Ürün Güncellendi");
-                                BarcodeDTO barcodeDTO = new BarcodeDTO() { Barcode = txtAddAndUpdateProductUpdateProductBarcodeNo.Text };
-                                int lastUpdatedProductID = useProductDAL.GetProductDetailWithBarcode(barcodeDTO).ProductID;
-                                GoProductDetails(lastUpdatedProductID);
-                                CleanAddAndUpdateProduct();
-                            }
-                        }
-                        catch (FormatException fex)
+                            AddedBy = User.UserID,
+                            Barcode = txtAddAndUpdateProductUpdateProductBarcodeNo.Text,
+                            CategoryID = cmbBoxAddAndUpdateProductUpdateProductCategory.SelectedItem == null ? 0 : ((CategoryDTO)cmbBoxAddAndUpdateProductUpdateProductCategory.SelectedItem).CategoryID,
+                            ProductName = txtAddAndUpdateProductUpdateProductProductName.Text,
+                            SupplierID = cmbBoxAddAndUpdateProductUpdateProductSupplier.SelectedItem == null ? 0 : ((SupplierDTO)cmbBoxAddAndUpdateProductUpdateProductSupplier.SelectedItem).SupplierID,
+                            PictureBackPath = FileDialogUpdateProductBack.FileName,
+                            PictureFronthPath = FileDialogUpdateProductFront.FileName,
+                            PictureContentPath = FileDialogUpdateProductContent.FileName,
+                            ProductContent = txtAddAndUpdateProductUpdateProductProductContext.Text
+                        };
+                        bool result = dal.UpdateProduct(updateDto);
+                        if (result)
                         {
-                            MessageBox.Show(fex.Message);
-                        }
-                        catch (Exception ex)
-                        {
-
-                            MessageBox.Show(ex.Message);
+                            MessageBox.Show("Ürün Güncellendi");
+                            BarcodeDTO barcodeDTO = new BarcodeDTO() { Barcode = txtAddAndUpdateProductUpdateProductBarcodeNo.Text };
+                            int lastUpdatedProductID = useProductDAL.GetProductDetailWithBarcode(barcodeDTO).ProductID;
+                            GoProductDetails(lastUpdatedProductID);
+                            CleanAddAndUpdateProduct();
                         }
                     }
+                    catch (FormatException fex)
+                    {
+                        MessageBox.Show(fex.Message);
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message);
+                    }
+                    //}
                 }
                 else
                 {
@@ -349,11 +349,6 @@ namespace YesilEvCodeFirst.UIWinForm
             btnAddAndUpdateProductUpdateProductBack.Text = FileDialogUpdateProductBack.SafeFileName;
         }
 
-        private void UpdateProductContentImageName(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            btnAddAndUpdateProductAddProductProductContext.Text = FileDialogAddProductContent.SafeFileName;
-        }
-
         private void AddProductFrontImageName(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnAddAndUpdateProductAddProductFront.Text = FileDialogAddProductFront.SafeFileName;
@@ -362,11 +357,6 @@ namespace YesilEvCodeFirst.UIWinForm
         private void addProductBackImageName(object sender, System.ComponentModel.CancelEventArgs e)
         {
             btnAddAndUpdateProductAddProductBack.Text = FileDialogAddProductBack.SafeFileName;
-        }
-
-        private void addProductContentImageName(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            btnAddAndUpdateProductAddProductProductContext.Text = FileDialogAddProductContent.SafeFileName;
         }
 
         #endregion
@@ -804,6 +794,13 @@ namespace YesilEvCodeFirst.UIWinForm
                 if (result != null)
                 {
                     ProductDetails.Visible = true;
+
+                    useSearchHistoryDAL.AddSearchHistory(new AddSearchHistoryDTO
+                    {
+                        UserID = User.UserID,
+                        ProductID = result.ProductID,
+                    });
+
                     GoProductDetails(result.ProductID);
 
                 }
@@ -817,6 +814,10 @@ namespace YesilEvCodeFirst.UIWinForm
             catch (FormatException fex)
             {
                 MessageBox.Show(fex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -1081,45 +1082,37 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 UserID = User.UserID,
                 NewEmail = txtChangeEmailNewEmail.Text,
+                ReNewEmail = txtChangeEmailReNewEmail.Text
             };
-            try
+
+
+            if (txtChangeEmailNewEmail.Text != txtChangeEmailUserEmail.Text)
             {
-                if (txtChangeEmailNewEmail.Text != txtChangeEmailUserEmail.Text && txtChangeEmailReNewEmail.Text == txtChangeEmailNewEmail.Text)
+                try
                 {
-                    if (txtChangeEmailNewEmail.Text == txtChangeEmailReNewEmail.Text)
+                    bool result = useUserDAL.UpdateUserEmail(userDetails);
+                    if (result)
                     {
-                        bool result = useUserDAL.UpdateUserEmail(userDetails);
-                        if (result)
-                        {
-                            MessageBox.Show("Email Bilgisi Güncellendi.");
-                            User.Email = txtChangeEmailNewEmail.Text;
-                            CloseAllPages();
-                            Home.Visible = true;
-                            txtChangeEmailNewEmail.Text = "";
-                            txtChangeEmailReNewEmail.Text = "";
-                        }
-                        else
-                        {
-                            MessageBox.Show("Kullanıcı Bilgileri Güncellenirken Hata Oluştu.Sonra tekrar deneyiniz.");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Yeni email alanları birbirleri ile uyuşmuyor.Lütfen kontrol ediniz.");
+                        MessageBox.Show("Email Bilgisi Güncellendi.");
+                        User.Email = txtChangeEmailNewEmail.Text;
+                        CloseAllPages();
+                        Home.Visible = true;
+                        txtChangeEmailNewEmail.Text = "";
+                        txtChangeEmailReNewEmail.Text = "";
                     }
                 }
-                else
+                catch (FormatException fex)
                 {
-                    MessageBox.Show("Yeni email ile eski email aynı.Lütfen kontrol ediniz.");
+                    MessageBox.Show(fex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (FormatException fex)
+            else
             {
-                MessageBox.Show(fex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Yeni email ile eski email aynı.Lütfen kontrol ediniz.");
             }
         }
 
@@ -1129,52 +1122,44 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 UserID = User.UserID,
                 NewPassword = txtChangePasswordNewPassword.Text,
+                ReNewPassword = txtChangePasswordReNewPassword.Text
             };
-            try
+
+            if (txtChangePasswordPassword.Text == User.Password)
             {
-                if (txtChangePasswordPassword.Text == User.Password)
+                if (txtChangePasswordNewPassword.Text != User.Password)
                 {
-                    if (txtChangePasswordNewPassword.Text != txtChangePasswordPassword.Text && txtChangePasswordReNewPassword.Text == txtChangePasswordNewPassword.Text)
+                    try
                     {
-                        if (txtChangePasswordNewPassword != txtChangePasswordReNewPassword)
+                        bool result = useUserDAL.UpdateUserPassword(userDetails);
+                        if (result)
                         {
-                            bool result = useUserDAL.UpdateUserPassword(userDetails);
-                            if (result)
-                            {
-                                MessageBox.Show("Şifre Bilgisi Güncellendi.");
-                                User.Password = txtChangePasswordNewPassword.Text;
-                                CloseAllPages();
-                                Home.Visible = true;
-                                txtChangePasswordNewPassword.Text = "";
-                                txtChangePasswordReNewPassword.Text = "";
-                            }
-                            else
-                            {
-                                MessageBox.Show("Kullanıcı Bilgileri Güncellenirken Hata Oluştu.Sonra tekrar deneyiniz.");
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Yeni Şifre ve Yeni Şifre Tekrar Alanları aynı değil.");
+                            MessageBox.Show("Şifre Bilgisi Güncellendi.");
+                            User.Password = txtChangePasswordNewPassword.Text;
+                            CloseAllPages();
+                            Home.Visible = true;
+                            txtChangePasswordNewPassword.Text = "";
+                            txtChangePasswordReNewPassword.Text = "";
                         }
                     }
-                    else
+                    catch (FormatException fex)
                     {
-                        MessageBox.Show("Yeni şifre ile eski şifre aynı.Lütfen kontrol ediniz.");
+                        MessageBox.Show(fex.Message);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Kullanıcı Şifresi doğru değil.");
+                    MessageBox.Show("Eski şifre ile yeni şifre aynı.");
                 }
+
             }
-            catch (FormatException fex)
+            else
             {
-                MessageBox.Show(fex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Girilen şifre yanlış.");
             }
         }
 

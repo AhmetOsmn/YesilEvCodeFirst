@@ -90,7 +90,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     }
                     else
                     {
-                        throw new Exception(Messages.BlackListNotFound);
+                        throw new Exception(ExceptionMessages.BlackListNotFound);
                     }
 
                 }            
@@ -130,7 +130,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(Messages.SupplementNotFoundForList);
+                    throw new Exception(ExceptionMessages.SupplementNotFoundForList);
                 }
             }
             catch(FormatException fex)
