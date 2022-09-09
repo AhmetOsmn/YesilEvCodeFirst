@@ -131,6 +131,16 @@ namespace YesilEvCodeFirst.Mapping
 
             return mapper.Map<Category>(category);
         }
+        public static List<ListCategoryDTO> ListCategoryDTOToCategory(List<Category> category)
+        {
+            var mapperConfig = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Category, ListCategoryDTO>()
+                   .ForMember(dest => dest.UstCategoryName, opt => opt.MapFrom(src => src.UstCategory.CategoryName));
+            });
+            var mapper = new Mapper(mapperConfig);
+            return mapper.Map<List<ListCategoryDTO>>(category);
+        }
 
         #endregion
 

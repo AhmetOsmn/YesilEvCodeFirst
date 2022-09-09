@@ -9,6 +9,6 @@ namespace YesilEvCodeFirst.DTOs.Category
     public class AddCategoryDTO
     {
         public string CategoryName { get; set; }
-        public int UstCategoryID { get; set; }
+        public int? UstCategoryID { get; set; }
     }
 }

@@ -209,8 +209,8 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
             colname.Columns[1].HeaderText = "Kullanıcı Adı";
             colname.Columns[2].HeaderText = "Kullanıcı Soyadı";
             colname.Columns[3].HeaderText = "Email Adresi";
-            colname.Columns[4].HeaderText = "Telefonu";
-            colname.Columns[5].HeaderText = "Şifresi";
+            colname.Columns[4].HeaderText = "Şifresi";
+            colname.Columns[5].HeaderText = "Telefonu";
             colname.Columns[6].HeaderText = "Rolü";
             colname.Columns[7].HeaderText = "Aktif Mi?";
             colname.Columns[8].HeaderText = "Oluşturulma Tarihi";

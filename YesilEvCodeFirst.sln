@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YesilEvCodeFirst.ExceptionH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YesilEvCodeFirst.UIWinForm", "YesilEvCodeFirst.UIWinForm\YesilEvCodeFirst.UIWinForm.csproj", "{CF4073F1-EECF-44CD-A41C-C08C5FBE13BD}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup3", "Setup3\Setup3.vdproj", "{F60C1587-DC15-4F4C-B219-A3E10BCD82E3}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "YesilEv", "YesilEv\YesilEv.vdproj", "{E2CD708E-55B3-4ACB-907A-99E9616C417F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,8 +71,8 @@ Global
 		{CF4073F1-EECF-44CD-A41C-C08C5FBE13BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF4073F1-EECF-44CD-A41C-C08C5FBE13BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF4073F1-EECF-44CD-A41C-C08C5FBE13BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F60C1587-DC15-4F4C-B219-A3E10BCD82E3}.Debug|Any CPU.ActiveCfg = Debug
-		{F60C1587-DC15-4F4C-B219-A3E10BCD82E3}.Release|Any CPU.ActiveCfg = Release
+		{E2CD708E-55B3-4ACB-907A-99E9616C417F}.Debug|Any CPU.ActiveCfg = Debug
+		{E2CD708E-55B3-4ACB-907A-99E9616C417F}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
