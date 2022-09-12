@@ -2925,6 +2925,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 508);
+            this.Controls.Add(this.SideBar);
+            this.Controls.Add(this.Home);
+            this.Controls.Add(this.UserDetails);
+            this.Controls.Add(this.SearchProduct);
+            this.Controls.Add(this.BlackList);
+            this.Controls.Add(this.Favlists);
+            this.Controls.Add(this.ProductDetails);
             this.Controls.Add(this.AddAndUpdateProduct);
             this.Controls.Add(this.SearchHistory);
             this.Controls.Add(this.SearchBarcode);
@@ -2933,13 +2940,6 @@
             this.Controls.Add(this.ChangePassword);
             this.Controls.Add(this.ChangeUserDetails);
             this.Controls.Add(this.SupplementBlackList);
-            this.Controls.Add(this.SideBar);
-            this.Controls.Add(this.Home);
-            this.Controls.Add(this.UserDetails);
-            this.Controls.Add(this.SearchProduct);
-            this.Controls.Add(this.BlackList);
-            this.Controls.Add(this.Favlists);
-            this.Controls.Add(this.ProductDetails);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(380, 547);
             this.MinimumSize = new System.Drawing.Size(380, 547);

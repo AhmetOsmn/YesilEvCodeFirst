@@ -386,7 +386,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    Product product = this.GetByConditionWithInclude(p => p.ProductID.Equals(dto.ID) && p.IsActive, "Supplier", "Category").FirstOrDefault();
+                    Product product = context.Product.Include("Supplier").Include("Category").Where(p => p.ProductID == dto.ID && p.IsActive).FirstOrDefault();
                     if (product != null)
                     {
                         nLogger.Info("{} urunun detaylari getirildi", product.ProductName);
