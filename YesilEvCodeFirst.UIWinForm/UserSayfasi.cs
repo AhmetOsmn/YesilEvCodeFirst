@@ -746,6 +746,7 @@ namespace YesilEvCodeFirst.UIWinForm
             ChangePassword.Visible = false;
             ChangeUserDetails.Visible = false;
             SupplementBlackList.Visible = false;
+            SupplementRisk.Visible = false;
             CloseSideBar();
             ProductSupplementDetailClose();
         }
@@ -767,17 +768,13 @@ namespace YesilEvCodeFirst.UIWinForm
 
         }
         private void btnReadBarcode_Click(object sender, EventArgs e)
-        {
-            // todo: bir urun barkod numarasi ile arandığında da bu işlem arama geçmişine eklenecek mi?
+        {            
             CloseAllPages();
             SearchBarcode.Visible = true;
         }
 
         private void GoProductDetails(int productID)
         {
-            // todo: urun duzenleme yapildigi zaman, bu metot cagirildiginda 612. satirda guncellemeden onceki verileri getiriliyor.
-            // hocaya sorulacak
-
             CloseAllPages();
 
             ProductDetails.Visible = true;
@@ -1254,6 +1251,30 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             AdminSayfasi adminForm = new AdminSayfasi(User);
             adminForm.Show();
+        }
+
+        private void txtAddAndUpdateProductAddProductProductContext_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Lütfen ürün içeriklerini ',' (virgül) ile ayırarak giriniz. Aksi halde tek bir içerik olarak kayıt edilecektir.");
+        }
+
+        private void btnSupplementRiskSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSupplementRiskSave_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddAndUpdateProductRisk_Click(object sender, EventArgs e)
+        {
+            CloseAllPages();
+            SupplementRisk.Visible = true;
+            this.Width = this.MaximumSize.Width;
+            SupplementRisk.Width = SupplementRisk.MaximumSize.Width;
+
         }
     }
 }

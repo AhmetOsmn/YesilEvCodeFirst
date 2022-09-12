@@ -248,6 +248,15 @@
             this.lblSupplementBlackListSupplements = new System.Windows.Forms.Label();
             this.FileDialogAddProductContent = new System.Windows.Forms.OpenFileDialog();
             this.FileDialogUpdateProductContent = new System.Windows.Forms.OpenFileDialog();
+            this.SupplementRisk = new System.Windows.Forms.Panel();
+            this.lbSupplementRiskSuppelments = new System.Windows.Forms.ListBox();
+            this.cmbBoxSupplementRiskRisks = new System.Windows.Forms.ComboBox();
+            this.btnSupplementRiskUndo = new System.Windows.Forms.Button();
+            this.lbSupplementRiskSupplementsWithRisk = new System.Windows.Forms.ListBox();
+            this.btnSupplementRiskSaveRisk = new System.Windows.Forms.Button();
+            this.btnSupplementRiskSave = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAddAndUpdateProductRisk = new System.Windows.Forms.Button();
             this.pnlSideBarHome.SuspendLayout();
             this.pnlSideBarGiveStarApplication.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarGiveStarApplication)).BeginInit();
@@ -312,6 +321,7 @@
             this.ChangePassword.SuspendLayout();
             this.ChangeUserDetails.SuspendLayout();
             this.SupplementBlackList.SuspendLayout();
+            this.SupplementRisk.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSideBarHome
@@ -972,7 +982,7 @@
             this.btnShowAdminPanel.FlatAppearance.BorderSize = 0;
             this.btnShowAdminPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowAdminPanel.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnShowAdminPanel.Location = new System.Drawing.Point(191, 12);
+            this.btnShowAdminPanel.Location = new System.Drawing.Point(285, 15);
             this.btnShowAdminPanel.Name = "btnShowAdminPanel";
             this.btnShowAdminPanel.Size = new System.Drawing.Size(62, 42);
             this.btnShowAdminPanel.TabIndex = 6;
@@ -1347,6 +1357,8 @@
             // 
             // grpBoxAddAndUpdateProductAddProduct
             // 
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.btnAddAndUpdateProductRisk);
+            this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.label1);
             this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.cmbBoxAddAndUpdateProductAddProductCategory);
             this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.cmbBoxAddAndUpdateProductAddProductSupplier);
             this.grpBoxAddAndUpdateProductAddProduct.Controls.Add(this.btnAddAndUpdateProductAddProductFront);
@@ -1387,7 +1399,7 @@
             // 
             // btnAddAndUpdateProductAddProductFront
             // 
-            this.btnAddAndUpdateProductAddProductFront.Location = new System.Drawing.Point(43, 207);
+            this.btnAddAndUpdateProductAddProductFront.Location = new System.Drawing.Point(23, 209);
             this.btnAddAndUpdateProductAddProductFront.Name = "btnAddAndUpdateProductAddProductFront";
             this.btnAddAndUpdateProductAddProductFront.Size = new System.Drawing.Size(75, 45);
             this.btnAddAndUpdateProductAddProductFront.TabIndex = 6;
@@ -1397,7 +1409,7 @@
             // 
             // btnAddAndUpdateProductAddProductBack
             // 
-            this.btnAddAndUpdateProductAddProductBack.Location = new System.Drawing.Point(203, 207);
+            this.btnAddAndUpdateProductAddProductBack.Location = new System.Drawing.Point(119, 209);
             this.btnAddAndUpdateProductAddProductBack.Name = "btnAddAndUpdateProductAddProductBack";
             this.btnAddAndUpdateProductAddProductBack.Size = new System.Drawing.Size(75, 45);
             this.btnAddAndUpdateProductAddProductBack.TabIndex = 7;
@@ -1407,9 +1419,9 @@
             // 
             // btnAddAndUpdateProductAddProductProductContext
             // 
-            this.btnAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(266, 156);
+            this.btnAddAndUpdateProductAddProductProductContext.Location = new System.Drawing.Point(212, 209);
             this.btnAddAndUpdateProductAddProductProductContext.Name = "btnAddAndUpdateProductAddProductProductContext";
-            this.btnAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(33, 23);
+            this.btnAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(75, 45);
             this.btnAddAndUpdateProductAddProductProductContext.TabIndex = 4;
             this.btnAddAndUpdateProductAddProductProductContext.Text = "+";
             this.btnAddAndUpdateProductAddProductProductContext.UseVisualStyleBackColor = true;
@@ -1422,12 +1434,13 @@
             this.txtAddAndUpdateProductAddProductProductContext.Name = "txtAddAndUpdateProductAddProductProductContext";
             this.txtAddAndUpdateProductAddProductProductContext.Size = new System.Drawing.Size(171, 23);
             this.txtAddAndUpdateProductAddProductProductContext.TabIndex = 5;
+            this.txtAddAndUpdateProductAddProductProductContext.Click += new System.EventHandler(this.txtAddAndUpdateProductAddProductProductContext_Click);
             // 
             // lblAddAndUpdateProductAddProductBack
             // 
             this.lblAddAndUpdateProductAddProductBack.AutoSize = true;
             this.lblAddAndUpdateProductAddProductBack.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductAddProductBack.Location = new System.Drawing.Point(193, 191);
+            this.lblAddAndUpdateProductAddProductBack.Location = new System.Drawing.Point(109, 193);
             this.lblAddAndUpdateProductAddProductBack.Name = "lblAddAndUpdateProductAddProductBack";
             this.lblAddAndUpdateProductAddProductBack.Size = new System.Drawing.Size(96, 13);
             this.lblAddAndUpdateProductAddProductBack.TabIndex = 2;
@@ -1437,7 +1450,7 @@
             // 
             this.lblAddAndUpdateProductAddProductFront.AutoSize = true;
             this.lblAddAndUpdateProductAddProductFront.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddAndUpdateProductAddProductFront.Location = new System.Drawing.Point(40, 191);
+            this.lblAddAndUpdateProductAddProductFront.Location = new System.Drawing.Point(20, 193);
             this.lblAddAndUpdateProductAddProductFront.Name = "lblAddAndUpdateProductAddProductFront";
             this.lblAddAndUpdateProductAddProductFront.Size = new System.Drawing.Size(87, 13);
             this.lblAddAndUpdateProductAddProductFront.TabIndex = 2;
@@ -1770,6 +1783,7 @@
             // pnlProductDetailsShowProducts
             // 
             this.pnlProductDetailsShowProducts.AutoScroll = true;
+            this.pnlProductDetailsShowProducts.AutoSize = true;
             this.pnlProductDetailsShowProducts.Location = new System.Drawing.Point(10, 380);
             this.pnlProductDetailsShowProducts.Name = "pnlProductDetailsShowProducts";
             this.pnlProductDetailsShowProducts.Size = new System.Drawing.Size(340, 120);
@@ -2920,19 +2934,108 @@
             this.FileDialogUpdateProductContent.RestoreDirectory = true;
             this.FileDialogUpdateProductContent.Title = "Browse Text Files";
             // 
+            // SupplementRisk
+            // 
+            this.SupplementRisk.Controls.Add(this.btnSupplementRiskSave);
+            this.SupplementRisk.Controls.Add(this.btnSupplementRiskSaveRisk);
+            this.SupplementRisk.Controls.Add(this.lbSupplementRiskSupplementsWithRisk);
+            this.SupplementRisk.Controls.Add(this.btnSupplementRiskUndo);
+            this.SupplementRisk.Controls.Add(this.cmbBoxSupplementRiskRisks);
+            this.SupplementRisk.Controls.Add(this.lbSupplementRiskSuppelments);
+            this.SupplementRisk.Location = new System.Drawing.Point(0, 0);
+            this.SupplementRisk.MaximumSize = new System.Drawing.Size(360, 510);
+            this.SupplementRisk.MinimumSize = new System.Drawing.Size(360, 510);
+            this.SupplementRisk.Name = "SupplementRisk";
+            this.SupplementRisk.Size = new System.Drawing.Size(360, 510);
+            this.SupplementRisk.TabIndex = 21;
+            // 
+            // lbSupplementRiskSuppelments
+            // 
+            this.lbSupplementRiskSuppelments.FormattingEnabled = true;
+            this.lbSupplementRiskSuppelments.Location = new System.Drawing.Point(9, 15);
+            this.lbSupplementRiskSuppelments.Name = "lbSupplementRiskSuppelments";
+            this.lbSupplementRiskSuppelments.Size = new System.Drawing.Size(131, 485);
+            this.lbSupplementRiskSuppelments.TabIndex = 0;
+            // 
+            // cmbBoxSupplementRiskRisks
+            // 
+            this.cmbBoxSupplementRiskRisks.FormattingEnabled = true;
+            this.cmbBoxSupplementRiskRisks.Location = new System.Drawing.Point(146, 167);
+            this.cmbBoxSupplementRiskRisks.Name = "cmbBoxSupplementRiskRisks";
+            this.cmbBoxSupplementRiskRisks.Size = new System.Drawing.Size(123, 21);
+            this.cmbBoxSupplementRiskRisks.TabIndex = 1;
+            // 
+            // btnSupplementRiskUndo
+            // 
+            this.btnSupplementRiskUndo.Location = new System.Drawing.Point(146, 200);
+            this.btnSupplementRiskUndo.Name = "btnSupplementRiskUndo";
+            this.btnSupplementRiskUndo.Size = new System.Drawing.Size(123, 35);
+            this.btnSupplementRiskUndo.TabIndex = 3;
+            this.btnSupplementRiskUndo.Text = "Geri Al";
+            this.btnSupplementRiskUndo.UseVisualStyleBackColor = true;
+            // 
+            // lbSupplementRiskSupplementsWithRisk
+            // 
+            this.lbSupplementRiskSupplementsWithRisk.FormattingEnabled = true;
+            this.lbSupplementRiskSupplementsWithRisk.Location = new System.Drawing.Point(275, 15);
+            this.lbSupplementRiskSupplementsWithRisk.Name = "lbSupplementRiskSupplementsWithRisk";
+            this.lbSupplementRiskSupplementsWithRisk.Size = new System.Drawing.Size(197, 485);
+            this.lbSupplementRiskSupplementsWithRisk.TabIndex = 4;
+            // 
+            // btnSupplementRiskSaveRisk
+            // 
+            this.btnSupplementRiskSaveRisk.Location = new System.Drawing.Point(146, 242);
+            this.btnSupplementRiskSaveRisk.Name = "btnSupplementRiskSaveRisk";
+            this.btnSupplementRiskSaveRisk.Size = new System.Drawing.Size(123, 35);
+            this.btnSupplementRiskSaveRisk.TabIndex = 5;
+            this.btnSupplementRiskSaveRisk.Text = "Riski Kaydet";
+            this.btnSupplementRiskSaveRisk.UseVisualStyleBackColor = true;
+            this.btnSupplementRiskSaveRisk.Click += new System.EventHandler(this.btnSupplementRiskSave_Click);
+            // 
+            // btnSupplementRiskSave
+            // 
+            this.btnSupplementRiskSave.Location = new System.Drawing.Point(147, 460);
+            this.btnSupplementRiskSave.Name = "btnSupplementRiskSave";
+            this.btnSupplementRiskSave.Size = new System.Drawing.Size(123, 35);
+            this.btnSupplementRiskSave.TabIndex = 6;
+            this.btnSupplementRiskSave.Text = "Kaydet";
+            this.btnSupplementRiskSave.UseVisualStyleBackColor = true;
+            this.btnSupplementRiskSave.Click += new System.EventHandler(this.btnSupplementRiskSave_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(209, 193);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Ürün\'ün İçeriği";
+            // 
+            // btnAddAndUpdateProductRisk
+            // 
+            this.btnAddAndUpdateProductRisk.Location = new System.Drawing.Point(266, 156);
+            this.btnAddAndUpdateProductRisk.Name = "btnAddAndUpdateProductRisk";
+            this.btnAddAndUpdateProductRisk.Size = new System.Drawing.Size(39, 23);
+            this.btnAddAndUpdateProductRisk.TabIndex = 9;
+            this.btnAddAndUpdateProductRisk.Text = "Risk";
+            this.btnAddAndUpdateProductRisk.UseVisualStyleBackColor = true;
+            this.btnAddAndUpdateProductRisk.Click += new System.EventHandler(this.btnAddAndUpdateProductRisk_Click);
+            // 
             // UserSayfasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 508);
-            this.Controls.Add(this.SideBar);
             this.Controls.Add(this.Home);
+            this.Controls.Add(this.SideBar);
             this.Controls.Add(this.UserDetails);
             this.Controls.Add(this.SearchProduct);
             this.Controls.Add(this.BlackList);
             this.Controls.Add(this.Favlists);
             this.Controls.Add(this.ProductDetails);
             this.Controls.Add(this.AddAndUpdateProduct);
+            this.Controls.Add(this.SupplementRisk);
             this.Controls.Add(this.SearchHistory);
             this.Controls.Add(this.SearchBarcode);
             this.Controls.Add(this.AddFavoriList);
@@ -2941,7 +3044,7 @@
             this.Controls.Add(this.ChangeUserDetails);
             this.Controls.Add(this.SupplementBlackList);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(380, 547);
+            this.MaximumSize = new System.Drawing.Size(500, 547);
             this.MinimumSize = new System.Drawing.Size(380, 547);
             this.Name = "UserSayfasi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -3024,6 +3127,7 @@
             this.ChangeUserDetails.PerformLayout();
             this.SupplementBlackList.ResumeLayout(false);
             this.SupplementBlackList.PerformLayout();
+            this.SupplementRisk.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -3248,5 +3352,14 @@
         private System.Windows.Forms.OpenFileDialog FileDialogAddProductContent;
         private System.Windows.Forms.OpenFileDialog FileDialogUpdateProductContent;
         private System.Windows.Forms.Button btnShowAdminPanel;
+        private System.Windows.Forms.Panel SupplementRisk;
+        private System.Windows.Forms.ListBox lbSupplementRiskSupplementsWithRisk;
+        private System.Windows.Forms.Button btnSupplementRiskUndo;
+        private System.Windows.Forms.ComboBox cmbBoxSupplementRiskRisks;
+        private System.Windows.Forms.ListBox lbSupplementRiskSuppelments;
+        private System.Windows.Forms.Button btnSupplementRiskSaveRisk;
+        private System.Windows.Forms.Button btnSupplementRiskSave;
+        private System.Windows.Forms.Button btnAddAndUpdateProductRisk;
+        private System.Windows.Forms.Label label1;
     }
 }

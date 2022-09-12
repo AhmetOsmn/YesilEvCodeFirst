@@ -133,7 +133,6 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
         #endregion
 
         #region Delete
-        // todo: uretici silinince, uretici ile iliskili urun icin bir sey yapilmali mi?
         private void btnUreticiyiSil_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Emin misiniz?", "Üretici Sil", MessageBoxButtons.YesNo);
