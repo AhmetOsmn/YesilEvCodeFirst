@@ -2298,6 +2298,7 @@
             this.dgvFavoriListFavProducts.Size = new System.Drawing.Size(338, 367);
             this.dgvFavoriListFavProducts.TabIndex = 2;
             this.dgvFavoriListFavProducts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFavProducts_CellDoubleClick);
+            this.dgvFavoriListFavProducts.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvFavoriListFavProducts_MouseClick);
             // 
             // lblFavoriListSelectFavoriLists
             // 
@@ -3026,12 +3027,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 508);
-            this.Controls.Add(this.SupplementRisk);
-            this.Controls.Add(this.SideBar);
-            this.Controls.Add(this.Home);
-            this.Controls.Add(this.UserDetails);
-            this.Controls.Add(this.SearchProduct);
-            this.Controls.Add(this.BlackList);
             this.Controls.Add(this.Favlists);
             this.Controls.Add(this.ProductDetails);
             this.Controls.Add(this.AddAndUpdateProduct);
@@ -3042,6 +3037,12 @@
             this.Controls.Add(this.ChangePassword);
             this.Controls.Add(this.ChangeUserDetails);
             this.Controls.Add(this.SupplementBlackList);
+            this.Controls.Add(this.SupplementRisk);
+            this.Controls.Add(this.SideBar);
+            this.Controls.Add(this.Home);
+            this.Controls.Add(this.UserDetails);
+            this.Controls.Add(this.SearchProduct);
+            this.Controls.Add(this.BlackList);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(500, 547);
             this.MinimumSize = new System.Drawing.Size(380, 547);

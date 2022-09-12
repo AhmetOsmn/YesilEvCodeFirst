@@ -515,7 +515,7 @@ namespace YesilEvCodeFirst.UIWinForm
                     SupplementName = supplements[i].SupplementName,
                     SupplementID = useSupplementDAL.GetByCondition(x => x.SupplementName == supplements[i].SupplementName).FirstOrDefault().SupplementID,
                 };
-                if(blackListIDDTO.ID != -1)
+                if (blackListIDDTO.ID != -1)
                 {
                     var suplist = useSupplementBlackListDAL.GetSupplementsWithBlackListID(blackListIDDTO);
                     suplist.ForEach(x =>
@@ -665,7 +665,7 @@ namespace YesilEvCodeFirst.UIWinForm
             try
             {
                 int blacklistID = useBlackListDAL.GetBlackListIDWithUserID(userIDDTO);
-                if(blacklistID >= 0)
+                if (blacklistID >= 0)
                 {
                     IDDTO blacklistIDDTO = new IDDTO { ID = blacklistID };
                     dgvBlackListSupplements.DataSource = useSupplementBlackListDAL.GetSupplementsWithBlackListID(blacklistIDDTO);
@@ -768,7 +768,7 @@ namespace YesilEvCodeFirst.UIWinForm
 
         }
         private void btnReadBarcode_Click(object sender, EventArgs e)
-        {            
+        {
             CloseAllPages();
             SearchBarcode.Visible = true;
         }
@@ -955,13 +955,14 @@ namespace YesilEvCodeFirst.UIWinForm
                 bool result = useProductFavListDAL.DeleteProductFavList(addProductFavListDTO);
                 if (result)
                 {
-                    MessageBox.Show("Ürün Favori'den Silindi.");
+                    addProductFavListDTO = null;
+                    throw new Exception("Ürün Favori'den Silindi.");
                 }
                 else
                 {
-                    MessageBox.Show("Ürün Favori'den Silinirken Hata Oluştu.");
+                    addProductFavListDTO = null;
+                    throw new Exception("Ürün Favori'den Silinirken Hata Oluştu.");
                 }
-                addProductFavListDTO = null;
             }
             catch (FormatException fex)
             {
@@ -1208,7 +1209,7 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 IDDTO userIDDTO = new IDDTO() { ID = User.UserID };
                 int blackListID = useBlackListDAL.GetBlackListIDWithUserID(userIDDTO);
-                if(blackListID >= 0)
+                if (blackListID >= 0)
                 {
                     AddSupplementBlackListDTO dto = new AddSupplementBlackListDTO()
                     {
@@ -1228,7 +1229,7 @@ namespace YesilEvCodeFirst.UIWinForm
                 else
                 {
                     throw new Exception(ExceptionMessages.BlackListNotFound);
-                }                
+                }
             }
             catch (FormatException fex)
             {
@@ -1274,8 +1275,76 @@ namespace YesilEvCodeFirst.UIWinForm
             SupplementRisk.Visible = true;
             this.MaximumSize = new Size(500, 547);
             this.Size = MaximumSize;
-            SupplementRisk.Size =new Size(SupplementRisk.MaximumSize.Width,SupplementRisk.MaximumSize.Height);
+            SupplementRisk.Size = new Size(SupplementRisk.MaximumSize.Width, SupplementRisk.MaximumSize.Height);
 
+        }
+
+        private void dgvFavoriListFavProducts_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                int selectedRow = -1;
+                selectedRow = dgvFavoriListFavProducts.HitTest(e.X, e.Y).RowIndex;
+                if (e.Button == MouseButtons.Right)
+                {
+                    if (selectedRow >= 0)
+                    {
+                        //GetFavoriListsAddProductAndDeleteProduct(selectedRow, e.X, e.Y);
+                        addProductFavListDTO = new AddProductFavListDTO()
+                        {
+                            ProductID = Convert.ToInt32(dgvFavoriListFavProducts.Rows[selectedRow].Cells[0].Value),
+                            FavorID = ((FavListDTO)cmbBoxFavoriListFavoriLists.SelectedItem).FavorID,
+                            UserID = User.UserID
+                        };
+                        ContextMenu cm = new ContextMenu();
+                        MenuItem favSil = new MenuItem("Favori'den kaldır.", new EventHandler(DeleteProductFromFavList));
+                        cm.MenuItems.Add(favSil);
+                        cm.Show(dgvFavoriListFavProducts, new Point(e.X, e.Y));
+                    }
+                    else if (selectedRow != dgvFavoriListFavProducts.RowCount - 1)
+                    {
+                        throw new Exception("Yanlış yere tıkladınız.");
+                    }
+                }
+
+            }
+            catch (FormatException fex)
+            {
+                MessageBox.Show(fex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+       private void DeleteProductFromFavList(object sender, EventArgs e)
+        {
+            try
+            {
+                bool result = useProductFavListDAL.DeleteProductFavList(addProductFavListDTO);
+                if (result)
+                {
+
+                    MessageBox.Show("Ürün Favori'den Silindi.");
+                    dgvFavoriListFavProducts.DataSource = null;
+                    IDDTO favListIDDTO = new IDDTO { ID = addProductFavListDTO.FavorID};
+                    dgvFavoriListFavProducts.DataSource = useProductFavListDAL.GetProductsWithFavListID(favListIDDTO);
+                    dgvFavoriListFavProducts.Columns[0].Visible = false;
+                    dgvFavoriListFavProducts.Columns[1].ReadOnly = true;
+                    dgvFavoriListFavProducts.Columns[1].HeaderText = "Ürün";
+                    addProductFavListDTO = null;
+                }
+                else
+                {
+                    addProductFavListDTO = null;
+                    throw new Exception("Ürün Favori'den Silinirken Hata Oluştu.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
