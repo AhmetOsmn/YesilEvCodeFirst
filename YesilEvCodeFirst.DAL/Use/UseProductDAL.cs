@@ -54,7 +54,9 @@ namespace YesilEvCodeFirst.DAL.Use
                                     if (result == null)
                                     {
                                         UseSupplementDAL supplementDAL = new UseSupplementDAL();
-                                        supplementDAL.AddSupplement(new AddSupplementDTO { SupplementName = sup });
+                                        supplementDAL.AddSupplement(new AddSupplementDTO { SupplementName = sup,
+                                 });
+
                                         context.ProductSupplement.Add(new ProductSupplement()
                                         {
                                             ProductID = context.Product.ToList().LastOrDefault().ProductID,

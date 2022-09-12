@@ -121,6 +121,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
 
                 List<ProductFavList> products = GetByConditionWithInclude(u => u.FavorID.Equals(dto.ID) && u.IsActive, "Product").ToList();
+
                 if (products != null)
                 {
                     nLogger.Info("{} ID'li kullanicinin favori listeleri getirildi.", dto.ID);
