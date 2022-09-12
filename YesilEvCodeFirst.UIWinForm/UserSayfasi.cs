@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using YesilEvCodeFirst.Common;
 using YesilEvCodeFirst.Core.Entities;
 using YesilEvCodeFirst.DAL.Use;
 using YesilEvCodeFirst.DTOs;
@@ -503,24 +504,29 @@ namespace YesilEvCodeFirst.UIWinForm
                 {
                     ID = User.UserID
                 };
+
                 IDDTO blackListIDDTO = new IDDTO()
                 {
-                    ID = useBlackListDAL.GetBlackListIDWithUserID(userIDDTO)
+                    ID = useBlackListDAL.GetBlackListIDWithUserID(userIDDTO),
                 };
+
                 SupplementDTO supdto = new SupplementDTO()
                 {
                     SupplementName = supplements[i].SupplementName,
                     SupplementID = useSupplementDAL.GetByCondition(x => x.SupplementName == supplements[i].SupplementName).FirstOrDefault().SupplementID,
                 };
-                var suplist = useSupplementBlackListDAL.GetSupplementsWithBlackListID(blackListIDDTO);
-                suplist.ForEach(x =>
+                if(blackListIDDTO.ID != -1)
                 {
-                    if (supdto.SupplementID == x.SupplementID && supdto.SupplementName == x.SupplementName)
+                    var suplist = useSupplementBlackListDAL.GetSupplementsWithBlackListID(blackListIDDTO);
+                    suplist.ForEach(x =>
                     {
-                        lbl.BackColor = Color.Black;
-                        blacklist += 1;
-                    }
-                });
+                        if (supdto.SupplementID == x.SupplementID && supdto.SupplementName == x.SupplementName)
+                        {
+                            lbl.BackColor = Color.Black;
+                            blacklist += 1;
+                        }
+                    });
+                }
                 switch (supplements[i].RiskRatio)
                 {
                     case Risk.Temiz:
@@ -659,14 +665,21 @@ namespace YesilEvCodeFirst.UIWinForm
             try
             {
                 int blacklistID = useBlackListDAL.GetBlackListIDWithUserID(userIDDTO);
-                IDDTO blacklistIDDTO = new IDDTO { ID = blacklistID };
-                dgvBlackListSupplements.DataSource = useSupplementBlackListDAL.GetSupplementsWithBlackListID(blacklistIDDTO);
-                dgvBlackListSupplements.Columns[0].Visible = false;
-                dgvBlackListSupplements.Columns[1].ReadOnly = true;
-                dgvBlackListSupplements.Columns[1].HeaderText = "Madde";
-                lblBlackListAddBlackList.Visible = false;
-                btnBlackListAddBlackList.Visible = false;
-                btnBlackListAddSupplement.Visible = true;
+                if(blacklistID >= 0)
+                {
+                    IDDTO blacklistIDDTO = new IDDTO { ID = blacklistID };
+                    dgvBlackListSupplements.DataSource = useSupplementBlackListDAL.GetSupplementsWithBlackListID(blacklistIDDTO);
+                    dgvBlackListSupplements.Columns[0].Visible = false;
+                    dgvBlackListSupplements.Columns[1].ReadOnly = true;
+                    dgvBlackListSupplements.Columns[1].HeaderText = "Madde";
+                    lblBlackListAddBlackList.Visible = false;
+                    btnBlackListAddBlackList.Visible = false;
+                    btnBlackListAddSupplement.Visible = true;
+                }
+                else
+                {
+                    throw new Exception(ExceptionMessages.BlackListNotFound);
+                }
             }
             catch (FormatException fex)
             {
@@ -1198,20 +1211,27 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 IDDTO userIDDTO = new IDDTO() { ID = User.UserID };
                 int blackListID = useBlackListDAL.GetBlackListIDWithUserID(userIDDTO);
-                AddSupplementBlackListDTO dto = new AddSupplementBlackListDTO()
+                if(blackListID >= 0)
                 {
-                    BlackListID = blackListID,
-                    SupplementContext = txtSupplementBlackListSupplements.Text,
-                    UserID = User.UserID,
-                };
-                bool result = useSupplementBlackListDAL.AddSupplementBlackList(dto);
-                if (result)
-                {
-                    MessageBox.Show("Karalisteye maddeler eklendi");
-                    CloseAllPages();
-                    BlackList.Visible = true;
-                    GetBlackList();
+                    AddSupplementBlackListDTO dto = new AddSupplementBlackListDTO()
+                    {
+                        BlackListID = blackListID,
+                        SupplementContext = txtSupplementBlackListSupplements.Text,
+                        UserID = User.UserID,
+                    };
+                    bool result = useSupplementBlackListDAL.AddSupplementBlackList(dto);
+                    if (result)
+                    {
+                        MessageBox.Show("Karalisteye maddeler eklendi");
+                        CloseAllPages();
+                        BlackList.Visible = true;
+                        GetBlackList();
+                    }
                 }
+                else
+                {
+                    throw new Exception(ExceptionMessages.BlackListNotFound);
+                }                
             }
             catch (FormatException fex)
             {

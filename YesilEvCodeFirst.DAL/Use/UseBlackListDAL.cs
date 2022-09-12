@@ -122,7 +122,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 }
                 else
                 {
-                    throw new Exception(ExceptionMessages.BlackListNotFound);
+                    return -1;
                 }
             }
             catch (FormatException fex)
