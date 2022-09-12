@@ -33,6 +33,7 @@ namespace YesilEvCodeFirst.UIWinForm
         GetProductDetailDTO selectedProduct = null;
         FavListDTO selectedFavList = null;
         AddProductFavListDTO addProductFavListDTO = null;
+        DeleteSupplementBlackListDTO deleteSupplementBlackListDTO = null; 
 
         public UserDetailDTO User;
         readonly UseSupplierDAL useSupplierDAL = new UseSupplierDAL();
@@ -1223,6 +1224,7 @@ namespace YesilEvCodeFirst.UIWinForm
                         MessageBox.Show("Karalisteye maddeler eklendi");
                         CloseAllPages();
                         BlackList.Visible = true;
+                        dgvBlackListSupplements.DataSource = null;
                         GetBlackList();
                     }
                 }
@@ -1254,6 +1256,24 @@ namespace YesilEvCodeFirst.UIWinForm
             adminForm.Show();
         }
 
+        private void BlackListDeleteSupplement(int row,int x,int y)
+        {
+            IDDTO userIDDTO = new IDDTO() { ID = User.UserID };
+            try
+            {
+                var blacklistID = useBlackListDAL.GetBlackListIDWithUserID(userIDDTO);
+                deleteSupplementBlackListDTO.BlackListID = blacklistID;
+                ContextMenu cm = new ContextMenu();
+                MenuItem deleteSupplement = new MenuItem("Maddeyi Çıkar", new EventHandler(DeleteSupplement));
+                cm.MenuItems.Add(deleteSupplement);
+                cm.Show(dgvBlackListSupplements, new Point(x, y));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
         private void txtAddAndUpdateProductAddProductProductContext_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Lütfen ürün içeriklerini ',' (virgül) ile ayırarak giriniz. Aksi halde tek bir içerik olarak kayıt edilecektir.");
@@ -1317,8 +1337,54 @@ namespace YesilEvCodeFirst.UIWinForm
                 MessageBox.Show(ex.Message);
             }
         }
+        private void DeleteSupplement(object sender , EventArgs e)
+        {
+            var result = useSupplementBlackListDAL.DeleteSupplementBlackList(deleteSupplementBlackListDTO);
+            if(result)
+            {
+                MessageBox.Show("Ürün Kaldırıldı");
+                deleteSupplementBlackListDTO = null;
+                dgvBlackListSupplements.DataSource = null;
+                GetBlackList();
+            }
+        }
 
-       private void DeleteProductFromFavList(object sender, EventArgs e)
+        private void dgvBlackListSupplements_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (dgvBlackListSupplements.Controls.Count != 0)
+            {
+                try
+                {
+                    deleteSupplementBlackListDTO = new DeleteSupplementBlackListDTO();
+                    var selectedRow = -1;
+                    selectedRow = dgvBlackListSupplements.HitTest(e.X, e.Y).RowIndex;
+
+                    if (e.Button == MouseButtons.Right)
+                    {
+                        if (selectedRow >= 0)
+                        {
+                            deleteSupplementBlackListDTO.SupplementID = Convert.ToInt32(dgvBlackListSupplements.Rows[selectedRow].Cells[0].Value);
+                            deleteSupplementBlackListDTO.UserID = User.UserID;
+                            BlackListDeleteSupplement(selectedRow, e.X, e.Y);
+                        }
+                        else if (selectedRow != dgvSearchProductProducts.RowCount - 1)
+                        {
+                            MessageBox.Show("Yanlış yere tıkladınız.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Madde bulunmamaktadır.");
+             }
+        }
+
+        private void DeleteProductFromFavList(object sender, EventArgs e)
         {
             try
             {

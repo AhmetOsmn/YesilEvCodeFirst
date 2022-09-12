@@ -119,16 +119,11 @@ namespace YesilEvCodeFirst.DAL.Use
                 {
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
-
                 List<ProductFavList> products;
-
-                //GetByConditionWithInclude(u => u.FavorID.Equals(dto.ID) && u.IsActive, "Product").ToList();
-
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
                     products = context.ProductFavList.Include("Product").Where(u => u.IsActive && u.FavorID == dto.ID).ToList();
                 }
-
                 if (products != null)
                 {
                     nLogger.Info("{} ID'li kullanicinin favori listeleri getirildi.", dto.ID);
