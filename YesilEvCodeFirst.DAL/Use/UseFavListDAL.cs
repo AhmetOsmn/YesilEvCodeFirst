@@ -65,7 +65,6 @@ namespace YesilEvCodeFirst.DAL.Use
                     if (favlist != null)
                     {
                         favlist.IsActive = false;
-                        // todo: modified date olması gerekmiyor mu?
                         favlist.CreatedDate = DateTime.Now;
 
                         var favlistProducts = context.ProductFavList.Where(x => x.FavorID == dto.FavorID && x.IsActive).ToList();

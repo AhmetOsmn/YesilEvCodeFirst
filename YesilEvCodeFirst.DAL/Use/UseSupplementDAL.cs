@@ -93,7 +93,6 @@ namespace YesilEvCodeFirst.DAL.Use
         {
             try
             {
-                // todo: inclue yapilarak getirilecek
                 List<Supplement> supplements = GetAll();
                 if (supplements == null)
                 {

@@ -32,7 +32,7 @@ namespace YesilEvCodeFirst.DAL.Use
 
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
-                    var list = context.ProductFavList.Where(u => u.FavorID.Equals(dto.FavorID) && u.ProductID.Equals(dto.ProductID) && u.IsActive).FirstOrDefault();
+                    var list = context.ProductFavList.Where(u => u.FavorID == dto.FavorID && u.ProductID == dto.ProductID).FirstOrDefault();
                     if (list == null)
                     {
                         context.ProductFavList.Add(new ProductFavList
@@ -119,9 +119,11 @@ namespace YesilEvCodeFirst.DAL.Use
                 {
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
-
-                List<ProductFavList> products = GetByConditionWithInclude(u => u.FavorID.Equals(dto.ID) && u.IsActive, "Product").ToList();
-
+                List<ProductFavList> products;
+                using (YesilEvDbContext context = new YesilEvDbContext())
+                {
+                    products = context.ProductFavList.Include("Product").Where(u => u.IsActive && u.FavorID == dto.ID).ToList();
+                }
                 if (products != null)
                 {
                     nLogger.Info("{} ID'li kullanicinin favori listeleri getirildi.", dto.ID);

@@ -329,7 +329,6 @@ namespace YesilEvCodeFirst.UIWinForm.AdminSayfalari
                     tbDeleteProductContent.Text = currentProductDTO.ProductContent;
                     tbDeleteSupplement.Text = currentProductDTO.SupplierName;
                     tbDeleteCategory.Text = currentProductDTO.CategoryName;
-                    //todo: ekleyenin id'si yerine ismi getirilecek
                     tbDeleteAdder.Text = currentProductDTO.AddedBy.ToString();
                 }
                 btnDeleteDelete.Enabled = true;
