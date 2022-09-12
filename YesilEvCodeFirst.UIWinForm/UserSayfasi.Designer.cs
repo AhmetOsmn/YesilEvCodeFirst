@@ -109,6 +109,8 @@
             this.btnAddAndUpdateProductAddProduct = new System.Windows.Forms.Button();
             this.btnAddAndUpdateProductUpdateProduct = new System.Windows.Forms.Button();
             this.grpBoxAddAndUpdateProductAddProduct = new System.Windows.Forms.GroupBox();
+            this.btnAddAndUpdateProductRisk = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.cmbBoxAddAndUpdateProductAddProductCategory = new System.Windows.Forms.ComboBox();
             this.cmbBoxAddAndUpdateProductAddProductSupplier = new System.Windows.Forms.ComboBox();
             this.btnAddAndUpdateProductAddProductFront = new System.Windows.Forms.Button();
@@ -249,14 +251,12 @@
             this.FileDialogAddProductContent = new System.Windows.Forms.OpenFileDialog();
             this.FileDialogUpdateProductContent = new System.Windows.Forms.OpenFileDialog();
             this.SupplementRisk = new System.Windows.Forms.Panel();
-            this.lbSupplementRiskSuppelments = new System.Windows.Forms.ListBox();
-            this.cmbBoxSupplementRiskRisks = new System.Windows.Forms.ComboBox();
-            this.btnSupplementRiskUndo = new System.Windows.Forms.Button();
-            this.lbSupplementRiskSupplementsWithRisk = new System.Windows.Forms.ListBox();
-            this.btnSupplementRiskSaveRisk = new System.Windows.Forms.Button();
             this.btnSupplementRiskSave = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAddAndUpdateProductRisk = new System.Windows.Forms.Button();
+            this.btnSupplementRiskSaveRisk = new System.Windows.Forms.Button();
+            this.lbSupplementRiskSupplementsWithRisk = new System.Windows.Forms.ListBox();
+            this.btnSupplementRiskUndo = new System.Windows.Forms.Button();
+            this.cmbBoxSupplementRiskRisks = new System.Windows.Forms.ComboBox();
+            this.lbSupplementRiskSuppelments = new System.Windows.Forms.ListBox();
             this.pnlSideBarHome.SuspendLayout();
             this.pnlSideBarGiveStarApplication.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSideBarGiveStarApplication)).BeginInit();
@@ -1381,6 +1381,26 @@
             this.grpBoxAddAndUpdateProductAddProduct.TabStop = false;
             this.grpBoxAddAndUpdateProductAddProduct.Text = "Ürün Ekle";
             // 
+            // btnAddAndUpdateProductRisk
+            // 
+            this.btnAddAndUpdateProductRisk.Location = new System.Drawing.Point(266, 156);
+            this.btnAddAndUpdateProductRisk.Name = "btnAddAndUpdateProductRisk";
+            this.btnAddAndUpdateProductRisk.Size = new System.Drawing.Size(39, 23);
+            this.btnAddAndUpdateProductRisk.TabIndex = 9;
+            this.btnAddAndUpdateProductRisk.Text = "Risk";
+            this.btnAddAndUpdateProductRisk.UseVisualStyleBackColor = true;
+            this.btnAddAndUpdateProductRisk.Click += new System.EventHandler(this.btnAddAndUpdateProductRisk_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(209, 193);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Ürün\'ün İçeriği";
+            // 
             // cmbBoxAddAndUpdateProductAddProductCategory
             // 
             this.cmbBoxAddAndUpdateProductAddProductCategory.FormattingEnabled = true;
@@ -1783,7 +1803,6 @@
             // pnlProductDetailsShowProducts
             // 
             this.pnlProductDetailsShowProducts.AutoScroll = true;
-            this.pnlProductDetailsShowProducts.AutoSize = true;
             this.pnlProductDetailsShowProducts.Location = new System.Drawing.Point(10, 380);
             this.pnlProductDetailsShowProducts.Name = "pnlProductDetailsShowProducts";
             this.pnlProductDetailsShowProducts.Size = new System.Drawing.Size(340, 120);
@@ -2943,54 +2962,11 @@
             this.SupplementRisk.Controls.Add(this.cmbBoxSupplementRiskRisks);
             this.SupplementRisk.Controls.Add(this.lbSupplementRiskSuppelments);
             this.SupplementRisk.Location = new System.Drawing.Point(0, 0);
-            this.SupplementRisk.MaximumSize = new System.Drawing.Size(360, 510);
+            this.SupplementRisk.MaximumSize = new System.Drawing.Size(480, 510);
             this.SupplementRisk.MinimumSize = new System.Drawing.Size(360, 510);
             this.SupplementRisk.Name = "SupplementRisk";
             this.SupplementRisk.Size = new System.Drawing.Size(360, 510);
             this.SupplementRisk.TabIndex = 21;
-            // 
-            // lbSupplementRiskSuppelments
-            // 
-            this.lbSupplementRiskSuppelments.FormattingEnabled = true;
-            this.lbSupplementRiskSuppelments.Location = new System.Drawing.Point(9, 15);
-            this.lbSupplementRiskSuppelments.Name = "lbSupplementRiskSuppelments";
-            this.lbSupplementRiskSuppelments.Size = new System.Drawing.Size(131, 485);
-            this.lbSupplementRiskSuppelments.TabIndex = 0;
-            // 
-            // cmbBoxSupplementRiskRisks
-            // 
-            this.cmbBoxSupplementRiskRisks.FormattingEnabled = true;
-            this.cmbBoxSupplementRiskRisks.Location = new System.Drawing.Point(146, 167);
-            this.cmbBoxSupplementRiskRisks.Name = "cmbBoxSupplementRiskRisks";
-            this.cmbBoxSupplementRiskRisks.Size = new System.Drawing.Size(123, 21);
-            this.cmbBoxSupplementRiskRisks.TabIndex = 1;
-            // 
-            // btnSupplementRiskUndo
-            // 
-            this.btnSupplementRiskUndo.Location = new System.Drawing.Point(146, 200);
-            this.btnSupplementRiskUndo.Name = "btnSupplementRiskUndo";
-            this.btnSupplementRiskUndo.Size = new System.Drawing.Size(123, 35);
-            this.btnSupplementRiskUndo.TabIndex = 3;
-            this.btnSupplementRiskUndo.Text = "Geri Al";
-            this.btnSupplementRiskUndo.UseVisualStyleBackColor = true;
-            // 
-            // lbSupplementRiskSupplementsWithRisk
-            // 
-            this.lbSupplementRiskSupplementsWithRisk.FormattingEnabled = true;
-            this.lbSupplementRiskSupplementsWithRisk.Location = new System.Drawing.Point(275, 15);
-            this.lbSupplementRiskSupplementsWithRisk.Name = "lbSupplementRiskSupplementsWithRisk";
-            this.lbSupplementRiskSupplementsWithRisk.Size = new System.Drawing.Size(197, 485);
-            this.lbSupplementRiskSupplementsWithRisk.TabIndex = 4;
-            // 
-            // btnSupplementRiskSaveRisk
-            // 
-            this.btnSupplementRiskSaveRisk.Location = new System.Drawing.Point(146, 242);
-            this.btnSupplementRiskSaveRisk.Name = "btnSupplementRiskSaveRisk";
-            this.btnSupplementRiskSaveRisk.Size = new System.Drawing.Size(123, 35);
-            this.btnSupplementRiskSaveRisk.TabIndex = 5;
-            this.btnSupplementRiskSaveRisk.Text = "Riski Kaydet";
-            this.btnSupplementRiskSaveRisk.UseVisualStyleBackColor = true;
-            this.btnSupplementRiskSaveRisk.Click += new System.EventHandler(this.btnSupplementRiskSave_Click);
             // 
             // btnSupplementRiskSave
             // 
@@ -3002,40 +2978,63 @@
             this.btnSupplementRiskSave.UseVisualStyleBackColor = true;
             this.btnSupplementRiskSave.Click += new System.EventHandler(this.btnSupplementRiskSave_Click_1);
             // 
-            // label1
+            // btnSupplementRiskSaveRisk
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(209, 193);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Ürün\'ün İçeriği";
+            this.btnSupplementRiskSaveRisk.Location = new System.Drawing.Point(146, 242);
+            this.btnSupplementRiskSaveRisk.Name = "btnSupplementRiskSaveRisk";
+            this.btnSupplementRiskSaveRisk.Size = new System.Drawing.Size(123, 35);
+            this.btnSupplementRiskSaveRisk.TabIndex = 5;
+            this.btnSupplementRiskSaveRisk.Text = "Riski Kaydet";
+            this.btnSupplementRiskSaveRisk.UseVisualStyleBackColor = true;
+            this.btnSupplementRiskSaveRisk.Click += new System.EventHandler(this.btnSupplementRiskSave_Click);
             // 
-            // btnAddAndUpdateProductRisk
+            // lbSupplementRiskSupplementsWithRisk
             // 
-            this.btnAddAndUpdateProductRisk.Location = new System.Drawing.Point(266, 156);
-            this.btnAddAndUpdateProductRisk.Name = "btnAddAndUpdateProductRisk";
-            this.btnAddAndUpdateProductRisk.Size = new System.Drawing.Size(39, 23);
-            this.btnAddAndUpdateProductRisk.TabIndex = 9;
-            this.btnAddAndUpdateProductRisk.Text = "Risk";
-            this.btnAddAndUpdateProductRisk.UseVisualStyleBackColor = true;
-            this.btnAddAndUpdateProductRisk.Click += new System.EventHandler(this.btnAddAndUpdateProductRisk_Click);
+            this.lbSupplementRiskSupplementsWithRisk.FormattingEnabled = true;
+            this.lbSupplementRiskSupplementsWithRisk.Location = new System.Drawing.Point(275, 15);
+            this.lbSupplementRiskSupplementsWithRisk.Name = "lbSupplementRiskSupplementsWithRisk";
+            this.lbSupplementRiskSupplementsWithRisk.Size = new System.Drawing.Size(197, 485);
+            this.lbSupplementRiskSupplementsWithRisk.TabIndex = 4;
+            // 
+            // btnSupplementRiskUndo
+            // 
+            this.btnSupplementRiskUndo.Location = new System.Drawing.Point(146, 200);
+            this.btnSupplementRiskUndo.Name = "btnSupplementRiskUndo";
+            this.btnSupplementRiskUndo.Size = new System.Drawing.Size(123, 35);
+            this.btnSupplementRiskUndo.TabIndex = 3;
+            this.btnSupplementRiskUndo.Text = "Geri Al";
+            this.btnSupplementRiskUndo.UseVisualStyleBackColor = true;
+            // 
+            // cmbBoxSupplementRiskRisks
+            // 
+            this.cmbBoxSupplementRiskRisks.FormattingEnabled = true;
+            this.cmbBoxSupplementRiskRisks.Location = new System.Drawing.Point(146, 167);
+            this.cmbBoxSupplementRiskRisks.Name = "cmbBoxSupplementRiskRisks";
+            this.cmbBoxSupplementRiskRisks.Size = new System.Drawing.Size(123, 21);
+            this.cmbBoxSupplementRiskRisks.TabIndex = 1;
+            // 
+            // lbSupplementRiskSuppelments
+            // 
+            this.lbSupplementRiskSuppelments.FormattingEnabled = true;
+            this.lbSupplementRiskSuppelments.Location = new System.Drawing.Point(9, 15);
+            this.lbSupplementRiskSuppelments.Name = "lbSupplementRiskSuppelments";
+            this.lbSupplementRiskSuppelments.Size = new System.Drawing.Size(131, 485);
+            this.lbSupplementRiskSuppelments.TabIndex = 0;
             // 
             // UserSayfasi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 508);
-            this.Controls.Add(this.Home);
+            this.Controls.Add(this.SupplementRisk);
             this.Controls.Add(this.SideBar);
+            this.Controls.Add(this.Home);
             this.Controls.Add(this.UserDetails);
             this.Controls.Add(this.SearchProduct);
             this.Controls.Add(this.BlackList);
             this.Controls.Add(this.Favlists);
             this.Controls.Add(this.ProductDetails);
             this.Controls.Add(this.AddAndUpdateProduct);
-            this.Controls.Add(this.SupplementRisk);
             this.Controls.Add(this.SearchHistory);
             this.Controls.Add(this.SearchBarcode);
             this.Controls.Add(this.AddFavoriList);

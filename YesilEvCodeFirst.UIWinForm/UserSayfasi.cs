@@ -707,25 +707,25 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void ProductSupplementDetailOpen()
         {
+            pnlProductDetailsShowProducts.Visible = true;
             isProductSupplementOpen = true;
             this.MaximumSize = new Size(380, 630);
             this.MinimumSize = new Size(380, 630);
             this.Height = 630;
             ProductDetails.Height = 630;
-            pnlProductDetailsShowProducts.Height = 550;
+            pnlProductDetailsShowProducts.Height = 110;
             pnlProductDetailsShowProducts.BackColor = Color.White;
-            pnlProductDetailsShowProducts.Visible = true;
             //btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\up.jpg");
         }
 
         private void ProductSupplementDetailClose()
         {
+            pnlProductDetailsShowProducts.Visible = false;
             isProductSupplementOpen = false;
             this.MaximumSize = new Size(380, 550);
             this.MinimumSize = new Size(380, 550);
             this.Height = 550;
             pnlProductDetailsShowProducts.Height = 35;
-            pnlProductDetailsShowProducts.Visible = false;
             //btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\drop.jpg");
         }
 
@@ -1272,8 +1272,9 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             CloseAllPages();
             SupplementRisk.Visible = true;
-            this.Width = this.MaximumSize.Width;
-            SupplementRisk.Width = SupplementRisk.MaximumSize.Width;
+            this.MaximumSize = new Size(500, 547);
+            this.Size = MaximumSize;
+            SupplementRisk.Size =new Size(SupplementRisk.MaximumSize.Width,SupplementRisk.MaximumSize.Height);
 
         }
     }
