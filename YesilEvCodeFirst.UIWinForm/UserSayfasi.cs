@@ -33,6 +33,7 @@ namespace YesilEvCodeFirst.UIWinForm
         GetProductDetailDTO selectedProduct = null;
         FavListDTO selectedFavList = null;
         AddProductFavListDTO addProductFavListDTO = null;
+        DeleteSupplementBlackListDTO deleteSupplementBlackListDTO = null; 
 
         public UserDetailDTO User;
         readonly UseSupplierDAL useSupplierDAL = new UseSupplierDAL();
@@ -515,7 +516,7 @@ namespace YesilEvCodeFirst.UIWinForm
                     SupplementName = supplements[i].SupplementName,
                     SupplementID = useSupplementDAL.GetByCondition(x => x.SupplementName == supplements[i].SupplementName).FirstOrDefault().SupplementID,
                 };
-                if(blackListIDDTO.ID != -1)
+                if (blackListIDDTO.ID != -1)
                 {
                     var suplist = useSupplementBlackListDAL.GetSupplementsWithBlackListID(blackListIDDTO);
                     suplist.ForEach(x =>
@@ -665,7 +666,7 @@ namespace YesilEvCodeFirst.UIWinForm
             try
             {
                 int blacklistID = useBlackListDAL.GetBlackListIDWithUserID(userIDDTO);
-                if(blacklistID >= 0)
+                if (blacklistID >= 0)
                 {
                     IDDTO blacklistIDDTO = new IDDTO { ID = blacklistID };
                     dgvBlackListSupplements.DataSource = useSupplementBlackListDAL.GetSupplementsWithBlackListID(blacklistIDDTO);
@@ -707,25 +708,25 @@ namespace YesilEvCodeFirst.UIWinForm
 
         private void ProductSupplementDetailOpen()
         {
+            pnlProductDetailsShowProducts.Visible = true;
             isProductSupplementOpen = true;
             this.MaximumSize = new Size(380, 630);
             this.MinimumSize = new Size(380, 630);
             this.Height = 630;
             ProductDetails.Height = 630;
-            pnlProductDetailsShowProducts.Height = 550;
+            pnlProductDetailsShowProducts.Height = 110;
             pnlProductDetailsShowProducts.BackColor = Color.White;
-            pnlProductDetailsShowProducts.Visible = true;
             //btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\up.jpg");
         }
 
         private void ProductSupplementDetailClose()
         {
+            pnlProductDetailsShowProducts.Visible = false;
             isProductSupplementOpen = false;
             this.MaximumSize = new Size(380, 550);
             this.MinimumSize = new Size(380, 550);
             this.Height = 550;
             pnlProductDetailsShowProducts.Height = 35;
-            pnlProductDetailsShowProducts.Visible = false;
             //btnShowList.BackgroundImage = Image.FromFile(@"C:\Projects\BAYP\YesilEvCodeFirst\YesilEvCodeFirst.UIWinForm\ContextLtst\Image\drop.jpg");
         }
 
@@ -746,6 +747,7 @@ namespace YesilEvCodeFirst.UIWinForm
             ChangePassword.Visible = false;
             ChangeUserDetails.Visible = false;
             SupplementBlackList.Visible = false;
+            SupplementRisk.Visible = false;
             CloseSideBar();
             ProductSupplementDetailClose();
         }
@@ -768,16 +770,12 @@ namespace YesilEvCodeFirst.UIWinForm
         }
         private void btnReadBarcode_Click(object sender, EventArgs e)
         {
-            // todo: bir urun barkod numarasi ile arandığında da bu işlem arama geçmişine eklenecek mi?
             CloseAllPages();
             SearchBarcode.Visible = true;
         }
 
         private void GoProductDetails(int productID)
         {
-            // todo: urun duzenleme yapildigi zaman, bu metot cagirildiginda 612. satirda guncellemeden onceki verileri getiriliyor.
-            // hocaya sorulacak
-
             CloseAllPages();
 
             ProductDetails.Visible = true;
@@ -958,13 +956,14 @@ namespace YesilEvCodeFirst.UIWinForm
                 bool result = useProductFavListDAL.DeleteProductFavList(addProductFavListDTO);
                 if (result)
                 {
-                    MessageBox.Show("Ürün Favori'den Silindi.");
+                    addProductFavListDTO = null;
+                    throw new Exception("Ürün Favori'den Silindi.");
                 }
                 else
                 {
-                    MessageBox.Show("Ürün Favori'den Silinirken Hata Oluştu.");
+                    addProductFavListDTO = null;
+                    throw new Exception("Ürün Favori'den Silinirken Hata Oluştu.");
                 }
-                addProductFavListDTO = null;
             }
             catch (FormatException fex)
             {
@@ -1211,7 +1210,7 @@ namespace YesilEvCodeFirst.UIWinForm
             {
                 IDDTO userIDDTO = new IDDTO() { ID = User.UserID };
                 int blackListID = useBlackListDAL.GetBlackListIDWithUserID(userIDDTO);
-                if(blackListID >= 0)
+                if (blackListID >= 0)
                 {
                     AddSupplementBlackListDTO dto = new AddSupplementBlackListDTO()
                     {
@@ -1225,13 +1224,14 @@ namespace YesilEvCodeFirst.UIWinForm
                         MessageBox.Show("Karalisteye maddeler eklendi");
                         CloseAllPages();
                         BlackList.Visible = true;
+                        dgvBlackListSupplements.DataSource = null;
                         GetBlackList();
                     }
                 }
                 else
                 {
                     throw new Exception(ExceptionMessages.BlackListNotFound);
-                }                
+                }
             }
             catch (FormatException fex)
             {
@@ -1254,6 +1254,163 @@ namespace YesilEvCodeFirst.UIWinForm
         {
             AdminSayfasi adminForm = new AdminSayfasi(User);
             adminForm.Show();
+        }
+
+        private void BlackListDeleteSupplement(int row,int x,int y)
+        {
+            IDDTO userIDDTO = new IDDTO() { ID = User.UserID };
+            try
+            {
+                var blacklistID = useBlackListDAL.GetBlackListIDWithUserID(userIDDTO);
+                deleteSupplementBlackListDTO.BlackListID = blacklistID;
+                ContextMenu cm = new ContextMenu();
+                MenuItem deleteSupplement = new MenuItem("Maddeyi Çıkar", new EventHandler(DeleteSupplement));
+                cm.MenuItems.Add(deleteSupplement);
+                cm.Show(dgvBlackListSupplements, new Point(x, y));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
+        private void txtAddAndUpdateProductAddProductProductContext_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Lütfen ürün içeriklerini ',' (virgül) ile ayırarak giriniz. Aksi halde tek bir içerik olarak kayıt edilecektir.");
+        }
+
+        private void btnSupplementRiskSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSupplementRiskSave_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddAndUpdateProductRisk_Click(object sender, EventArgs e)
+        {
+            CloseAllPages();
+            SupplementRisk.Visible = true;
+            this.MaximumSize = new Size(500, 547);
+            this.Size = MaximumSize;
+            SupplementRisk.Size = new Size(SupplementRisk.MaximumSize.Width, SupplementRisk.MaximumSize.Height);
+
+        }
+
+        private void dgvFavoriListFavProducts_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                int selectedRow = -1;
+                selectedRow = dgvFavoriListFavProducts.HitTest(e.X, e.Y).RowIndex;
+                if (e.Button == MouseButtons.Right)
+                {
+                    if (selectedRow >= 0)
+                    {
+                        //GetFavoriListsAddProductAndDeleteProduct(selectedRow, e.X, e.Y);
+                        addProductFavListDTO = new AddProductFavListDTO()
+                        {
+                            ProductID = Convert.ToInt32(dgvFavoriListFavProducts.Rows[selectedRow].Cells[0].Value),
+                            FavorID = ((FavListDTO)cmbBoxFavoriListFavoriLists.SelectedItem).FavorID,
+                            UserID = User.UserID
+                        };
+                        ContextMenu cm = new ContextMenu();
+                        MenuItem favSil = new MenuItem("Favori'den kaldır.", new EventHandler(DeleteProductFromFavList));
+                        cm.MenuItems.Add(favSil);
+                        cm.Show(dgvFavoriListFavProducts, new Point(e.X, e.Y));
+                    }
+                    else if (selectedRow != dgvFavoriListFavProducts.RowCount - 1)
+                    {
+                        throw new Exception("Yanlış yere tıkladınız.");
+                    }
+                }
+
+            }
+            catch (FormatException fex)
+            {
+                MessageBox.Show(fex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void DeleteSupplement(object sender , EventArgs e)
+        {
+            var result = useSupplementBlackListDAL.DeleteSupplementBlackList(deleteSupplementBlackListDTO);
+            if(result)
+            {
+                MessageBox.Show("Ürün Kaldırıldı");
+                deleteSupplementBlackListDTO = null;
+                dgvBlackListSupplements.DataSource = null;
+                GetBlackList();
+            }
+        }
+
+        private void dgvBlackListSupplements_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (dgvBlackListSupplements.Controls.Count != 0)
+            {
+                try
+                {
+                    deleteSupplementBlackListDTO = new DeleteSupplementBlackListDTO();
+                    var selectedRow = -1;
+                    selectedRow = dgvBlackListSupplements.HitTest(e.X, e.Y).RowIndex;
+
+                    if (e.Button == MouseButtons.Right)
+                    {
+                        if (selectedRow >= 0)
+                        {
+                            deleteSupplementBlackListDTO.SupplementID = Convert.ToInt32(dgvBlackListSupplements.Rows[selectedRow].Cells[0].Value);
+                            deleteSupplementBlackListDTO.UserID = User.UserID;
+                            BlackListDeleteSupplement(selectedRow, e.X, e.Y);
+                        }
+                        else if (selectedRow != dgvSearchProductProducts.RowCount - 1)
+                        {
+                            MessageBox.Show("Yanlış yere tıkladınız.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Madde bulunmamaktadır.");
+             }
+        }
+
+        private void DeleteProductFromFavList(object sender, EventArgs e)
+        {
+            try
+            {
+                bool result = useProductFavListDAL.DeleteProductFavList(addProductFavListDTO);
+                if (result)
+                {
+
+                    MessageBox.Show("Ürün Favori'den Silindi.");
+                    dgvFavoriListFavProducts.DataSource = null;
+                    IDDTO favListIDDTO = new IDDTO { ID = addProductFavListDTO.FavorID};
+                    dgvFavoriListFavProducts.DataSource = useProductFavListDAL.GetProductsWithFavListID(favListIDDTO);
+                    dgvFavoriListFavProducts.Columns[0].Visible = false;
+                    dgvFavoriListFavProducts.Columns[1].ReadOnly = true;
+                    dgvFavoriListFavProducts.Columns[1].HeaderText = "Ürün";
+                    addProductFavListDTO = null;
+                }
+                else
+                {
+                    addProductFavListDTO = null;
+                    throw new Exception("Ürün Favori'den Silinirken Hata Oluştu.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

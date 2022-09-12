@@ -35,7 +35,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     var supplements = dto.SupplementContext.Split(',');
                     Array.ForEach(supplements, item =>
                     {
-                        var result = useSupplementDAL.GetByCondition(x => x.SupplementName.Equals(item.Trim())&& x.IsActive).FirstOrDefault();
+                        var result = context.Supplement.Where(x => x.SupplementName.Equals(item.Trim()) && x.IsActive).FirstOrDefault();
                         if (result == null)
                         {
                             AddSupplementDTO addSupplementDTO = new AddSupplementDTO()
@@ -44,14 +44,24 @@ namespace YesilEvCodeFirst.DAL.Use
                             };
                             useSupplementDAL.AddSupplement(addSupplementDTO);
                             context.SaveChanges();
-                            result = useSupplementDAL.GetByCondition(x => x.SupplementName.Equals(item.Trim())&& x.IsActive).FirstOrDefault();                           
+                            result = context.Supplement.Where(x => x.SupplementName.Equals(item.Trim()) && x.IsActive).FirstOrDefault();
                         }
-                        context.SupplementBlackList.Add(new SupplementBlackList()
+                        var result1 = context.SupplementBlackList.Where(p => p.SupplementID == result.SupplementID && p.BlackListID == dto.BlackListID).FirstOrDefault();
+                        if (result1 == null)
                         {
-                            BlackListID = dto.BlackListID,
-                            SupplementID = result.SupplementID
-                        });
-                        context.SaveChanges();
+                            context.SupplementBlackList.Add(new SupplementBlackList()
+                            {
+                                BlackListID = dto.BlackListID,
+                                SupplementID = result.SupplementID,
+                            });
+                            context.SaveChanges();
+                        }
+                        else if(!result1.IsActive)
+                        {
+                            result1.IsActive = true;
+                            context.SaveChanges();
+                        }                                               
+                        
                     });
                     
                 }
@@ -81,7 +91,7 @@ namespace YesilEvCodeFirst.DAL.Use
                 using (YesilEvDbContext context = new YesilEvDbContext())
                 {
 
-                    var suppblacklist = context.SupplementBlackList.Where(u => u.BlackListID.Equals(dto.BlackListID) && u.SupplementID.Equals(dto.SupplementID) && u.IsActive).FirstOrDefault();
+                    var suppblacklist = context.SupplementBlackList.Where(u => u.BlackListID == dto.BlackListID && u.SupplementID == dto.SupplementID && u.IsActive).FirstOrDefault();
                     if (suppblacklist != null)
                     {
                         suppblacklist.IsActive = false;
@@ -121,8 +131,12 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                List<SupplementBlackList> supplements = GetByConditionWithInclude(u => u.BlackListID.Equals(dto.ID) && u.IsActive, "Supplement").ToList();
-
+                //List<SupplementBlackList> supplements = GetByConditionWithInclude(u => u.BlackListID == dto.ID && u.IsActive, "Supplement").ToList();
+                List<SupplementBlackList> supplements;
+                using (YesilEvDbContext context = new YesilEvDbContext())
+                {
+                    supplements = context.SupplementBlackList.Include("Supplement").Where(u => u.BlackListID == dto.ID && u.IsActive).ToList();
+                }
                 if (supplements != null)
                 {
                     nLogger.Info("{} ID'li kullanicinin kara listedeki maddeleri getirildi.", dto.ID);

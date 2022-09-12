@@ -145,7 +145,7 @@ namespace YesilEvCodeFirst.DAL.Use
                     throw new FormatException(validationResult.Errors[0].ErrorMessage);
                 }
 
-                User tempUser = GetByCondition(x => x.UserID.Equals(dto.ID) && x.IsActive).FirstOrDefault();
+                User tempUser = GetByCondition(x => x.UserID.Equals(dto.ID)).FirstOrDefault();
                 if (tempUser != null)
                 {
                     nLogger.Info("{} - kullanicisinin bilgileri getirildi", tempUser.FirstName + " " + tempUser.LastName);
