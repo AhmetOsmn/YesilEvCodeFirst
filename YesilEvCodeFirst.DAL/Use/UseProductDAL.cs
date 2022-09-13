@@ -141,50 +141,63 @@ namespace YesilEvCodeFirst.DAL.Use
 
                     if (tempProduct != null && (tempProduct.AddedBy == dto.AddedBy || adder.RolID == 1))
                     {
-                        tempProduct.ProductName = dto.ProductName;
-                        tempProduct.CategoryID = dto.CategoryID;
-                        tempProduct.ProductContent = dto.ProductContent;
-                        tempProduct.AddedBy = dto.AddedBy;
-                        tempProduct.PictureBackPath = dto.PictureBackPath;
-                        tempProduct.PictureFronthPath = dto.PictureFronthPath;
-                        tempProduct.PictureContentPath = dto.PictureContentPath;
-                        tempProduct.SupplierID = dto.SupplierID;
-                        MySaveChanges();
-                        var supplements = tempProduct.ProductContent.Split(',');
-                        //refactor edilecek
-                        var temp = context.ProductSupplement.Where(x => x.ProductID == tempProduct.ProductID).ToList();
-                        context.ProductSupplement.RemoveRange(temp);
-                        MySaveChanges();
-                        nLogger.Info("Urunun eski icerikleri silindi"); ;
-                        for (int i = 0; i < supplements.Length; i++)
+
+                        using (DbContextTransaction transaction = context.Database.BeginTransaction())
                         {
-                            string sup = supplements[i].Trim();
-                            var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower()) && s.IsActive).FirstOrDefault();
-                            if (result == null)
+                            try
                             {
-                                UseSupplementDAL supplementDAL = new UseSupplementDAL();
-                                supplementDAL.AddSupplement(new AddSupplementDTO { SupplementName = sup });
-                                context.ProductSupplement.Add(new ProductSupplement()
+                                tempProduct.ProductName = dto.ProductName;
+                                tempProduct.CategoryID = dto.CategoryID;
+                                tempProduct.ProductContent = dto.ProductContent;
+                                tempProduct.AddedBy = dto.AddedBy;
+                                tempProduct.PictureBackPath = dto.PictureBackPath;
+                                tempProduct.PictureFronthPath = dto.PictureFronthPath;
+                                tempProduct.PictureContentPath = dto.PictureContentPath;
+                                tempProduct.SupplierID = dto.SupplierID;
+                                MySaveChanges();
+                                var supplements = tempProduct.ProductContent.Split(',');
+                                //refactor edilecek
+                                var temp = context.ProductSupplement.Where(x => x.ProductID == tempProduct.ProductID).ToList();
+                                context.ProductSupplement.RemoveRange(temp);
+                                MySaveChanges();
+                                nLogger.Info("Urunun eski icerikleri silindi"); ;
+                                for (int i = 0; i < supplements.Length; i++)
                                 {
-                                    ProductID = tempProduct.ProductID,
-                                    SupplementID = context.Supplement.ToList().LastOrDefault().SupplementID
-                                });
-                                nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", tempProduct.ProductName, sup);
+                                    string sup = supplements[i].Trim();
+                                    var result = context.Supplement.Where(s => s.SupplementName.ToLower().Equals(sup.ToLower()) && s.IsActive).FirstOrDefault();
+                                    if (result == null)
+                                    {
+                                        UseSupplementDAL supplementDAL = new UseSupplementDAL();
+                                        supplementDAL.AddSupplement(new AddSupplementDTO { SupplementName = sup });
+                                        context.ProductSupplement.Add(new ProductSupplement()
+                                        {
+                                            ProductID = tempProduct.ProductID,
+                                            SupplementID = context.Supplement.ToList().LastOrDefault().SupplementID
+                                        });
+                                        nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", tempProduct.ProductName, sup);
+                                    }
+                                    else
+                                    {
+                                        context.ProductSupplement.Add(new ProductSupplement()
+                                        {
+                                            ProductID = tempProduct.ProductID,
+                                            SupplementID = result.SupplementID
+                                        });
+                                        nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", tempProduct.ProductName, sup);
+                                    }
+                                }
+
+                                context.SaveChanges();
+                                nLogger.Info("{} urunu guncellendi", tempProduct.ProductName);
+                                transaction.Commit();
+                                return true;
                             }
-                            else
+                            catch (Exception ex)
                             {
-                                context.ProductSupplement.Add(new ProductSupplement()
-                                {
-                                    ProductID = tempProduct.ProductID,
-                                    SupplementID = result.SupplementID
-                                });
-                                nLogger.Info("{} - {} ProductSupplement tablosuna eklendi.", tempProduct.ProductName, sup);
+                                transaction.Rollback();
+                                throw new Exception(ex.Message);
                             }
                         }
-
-                        context.SaveChanges();
-                        nLogger.Info("{} urunu guncellendi", tempProduct.ProductName);
-                        return true;
                     }
                     else if (tempProduct.AddedBy != dto.AddedBy)
                     {
